@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Paginator\Adapter
+ * @category   Zend2
+ * @package    Zend2\Paginator\Adapter
  * @subpackage Exception
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id$
  */
 
-namespace Zend\Paginator\Adapter\Exception;
+namespace Zend2\Paginator\Adapter\Exception;
 
 /**
- * @uses       Zend\Paginator\Adapter\Exception
- * @category   Zend
- * @package    Zend\Paginator\Adapter
+ * @uses       Zend2\Paginator\Adapter\Exception
+ * @category   Zend2
+ * @package    Zend2\Paginator\Adapter
  * @subpackage Exception
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class UnexpectedValueException extends \UnexpectedValueException implements \Zend\Paginator\Adapter\Exception
+class UnexpectedValueException extends \UnexpectedValueException implements \Zend2\Paginator\Adapter\Exception
 {}

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Filter;
+namespace Zend2\Filter;
 
 /**
  * Compresses a given string
  *
- * @uses       Zend\Filter\Exception
- * @uses       Zend\Filter\AbstractFilter
- * @uses       Zend\Loader
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Filter\Exception
+ * @uses       Zend2\Filter\AbstractFilter
+ * @uses       Zend2\Loader
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Compress extends AbstractFilter
@@ -50,7 +50,7 @@ class Compress extends AbstractFilter
      */
     public function __construct($options = null)
     {
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         }
         if (is_string($options)) {
@@ -66,7 +66,7 @@ class Compress extends AbstractFilter
      * Set filter setate
      *
      * @param  array $options
-     * @return \Zend\Filter\Compress
+     * @return \Zend2\Filter\Compress
      */
     public function setOptions(array $options)
     {
@@ -96,7 +96,7 @@ class Compress extends AbstractFilter
         $adapter = $this->_adapter;
         $options = $this->getAdapterOptions();
         if (!class_exists($adapter)) {
-            $adapter = 'Zend\\Filter\\Compress\\' . ucfirst($adapter);
+            $adapter = 'Zend2\\Filter\\Compress\\' . ucfirst($adapter);
             if (!class_exists($adapter)) {
                 throw new Exception\RuntimeException(sprintf(
                     '%s unable to load adapter; class "%s" not found',
@@ -108,7 +108,7 @@ class Compress extends AbstractFilter
 
         $this->_adapter = new $adapter($options);
         if (!$this->_adapter instanceof Compress\CompressionAlgorithm) {
-            throw new Exception\InvalidArgumentException("Compression adapter '" . $adapter . "' does not implement Zend\\Filter\\Compress\\CompressionAlgorithm");
+            throw new Exception\InvalidArgumentException("Compression adapter '" . $adapter . "' does not implement Zend2\\Filter\\Compress\\CompressionAlgorithm");
         }
         return $this->_adapter;
     }
@@ -126,8 +126,8 @@ class Compress extends AbstractFilter
     /**
      * Sets compression adapter
      *
-     * @param  string|\Zend\Filter\Compress\CompressInterface $adapter Adapter to use
-     * @return \Zend\Filter\Compress\Compress
+     * @param  string|\Zend2\Filter\Compress\CompressInterface $adapter Adapter to use
+     * @return \Zend2\Filter\Compress\Compress
      */
     public function setAdapter($adapter)
     {
@@ -136,7 +136,7 @@ class Compress extends AbstractFilter
             return $this;
         }
         if (!is_string($adapter)) {
-            throw new Exception\InvalidArgumentException('Invalid adapter provided; must be string or instance of Zend\\Filter\\Compress\\CompressionAlgorithm');
+            throw new Exception\InvalidArgumentException('Invalid adapter provided; must be string or instance of Zend2\\Filter\\Compress\\CompressionAlgorithm');
         }
         $this->_adapter = $adapter;
 
@@ -182,7 +182,7 @@ class Compress extends AbstractFilter
     }
 
     /**
-     * Defined by Zend_Filter_Filter
+     * Defined by Zend2_Filter_Filter
      *
      * Compresses the content $value with the defined settings
      *

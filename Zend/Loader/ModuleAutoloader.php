@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Loader;
+namespace Zend2\Loader;
 
 // Grab SplAutoloader interface
 require_once __DIR__ . '/SplAutoloader.php';
@@ -261,7 +261,7 @@ class ModuleAutoloader implements SplAutoloader
     {
         if (!is_array($paths) && !$paths instanceof Traversable) {
             throw new \InvalidArgumentException(
-                'Parameter to \\Zend\\Loader\\ModuleAutoloader\'s '
+                'Parameter to \\Zend2\\Loader\\ModuleAutoloader\'s '
                 . 'registerPaths method must be an array or '
                 . 'implement the \\Traversable interface'
             );

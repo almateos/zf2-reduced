@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Http
+ * @category   Zend2
+ * @package    Zend2_Http
  * @subpackage Client_Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Http\Client\Adapter;
+namespace Zend2\Http\Client\Adapter;
 
 /**
- * An interface description for Zend_Http_Client_Adapter_Stream classes.
+ * An interface description for Zend2_Http_Client_Adapter_Stream classes.
  *
- * This interface decribes Zend_Http_Client_Adapter which supports streaming.
+ * This interface decribes Zend2_Http_Client_Adapter which supports streaming.
  *
- * @category   Zend
- * @package    Zend_Http
+ * @category   Zend2
+ * @package    Zend2_Http
  * @subpackage Client_Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface Stream

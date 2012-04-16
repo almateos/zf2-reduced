@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Navigation
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Navigation
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Navigation;
+namespace Zend2\Navigation;
 
 use Countable,
     RecursiveIterator,
     RecursiveIteratorIterator,
     Traversable,
-    Zend\Stdlib\ArrayUtils;
+    Zend2\Stdlib\ArrayUtils;
 
 /**
- * Zend_Navigation_Container
+ * Zend2_Navigation_Container
  *
- * Container class for Zend\Navigation\Page classes.
+ * Container class for Zend2\Navigation\Page classes.
  *
- * @category  Zend
- * @package   Zend_Navigation
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Navigation
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Container implements RecursiveIterator, Countable
@@ -124,7 +124,7 @@ abstract class Container implements RecursiveIterator, Countable
             if (!is_array($page) && !$page instanceof Traversable) {
                 throw new Exception\InvalidArgumentException(
                     'Invalid argument: $page must be an instance of '
-                    . 'Zend\Navigation\Page\AbstractPage or Traversable, or an array'
+                    . 'Zend2\Navigation\Page\AbstractPage or Traversable, or an array'
                 );
             }
             $page = Page\AbstractPage::factory($page);
@@ -162,7 +162,7 @@ abstract class Container implements RecursiveIterator, Countable
             throw new Exception\InvalidArgumentException(
                 'Invalid argument: $pages must be an array, an '
                 . 'instance of Traversable or an instance of '
-                . 'Zend\Navigation\Container'
+                . 'Zend2\Navigation\Container'
             );
         }
 

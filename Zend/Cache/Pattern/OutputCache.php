@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Pattern
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Cache\Pattern;
+namespace Zend2\Cache\Pattern;
 
-use Zend\Cache\Exception,
-    Zend\Cache\StorageFactory,
-    Zend\Cache\Storage\Adapter as StorageAdapter;
+use Zend2\Cache\Exception,
+    Zend2\Cache\StorageFactory,
+    Zend2\Cache\Storage\Adapter as StorageAdapter;
 
 /**
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Pattern
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class OutputCache extends AbstractPattern
@@ -62,7 +62,7 @@ class OutputCache extends AbstractPattern
      * else start buffering output until end() is called or the script ends.
      *
      * @param  string  $key            Key
-     * @param  array   $storageOptions Options passing to Zend\Cache\Storage\Adapter::getItem
+     * @param  array   $storageOptions Options passing to Zend2\Cache\Storage\Adapter::getItem
      * @return boolean
      * @throws Exception
      */
@@ -88,7 +88,7 @@ class OutputCache extends AbstractPattern
      * Stops bufferung output, write buffered data to cache using the given key on start()
      * and displays the buffer.
      *
-     * @param  array   $storageOptions Options passed to Zend\Cache\Storage\Adapter::setItem
+     * @param  array   $storageOptions Options passed to Zend2\Cache\Storage\Adapter::setItem
      * @return boolean TRUE on success, FALSE on failure writing to cache
      * @throws Exception
      */

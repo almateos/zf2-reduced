@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Measure
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Measure
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Measure;
-use Zend\Registry;
-use Zend\Locale;
-use Zend\Locale\Math;
+namespace Zend2\Measure;
+use Zend2\Registry;
+use Zend2\Locale;
+use Zend2\Locale\Math;
 
 /**
  * Abstract class for all measurements
  *
- * @uses       Zend\Locale\Locale
- * @uses       Zend\Locale\Locale\Math
- * @uses       Zend\Registry
- * @category   Zend
- * @package    Zend_Measure
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Locale\Locale
+ * @uses       Zend2\Locale\Locale\Math
+ * @uses       Zend2\Registry
+ * @category   Zend2
+ * @package    Zend2_Measure
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractMeasure
@@ -63,12 +63,12 @@ abstract class AbstractMeasure
     protected $_units = array();
 
     /**
-     * Zend\Measure\MeasureAbstract is an abstract class for the different measurement types
+     * Zend2\Measure\MeasureAbstract is an abstract class for the different measurement types
      *
      * @param  mixed       $value  Value as string, integer, real or float
-     * @param  string      $type   OPTIONAL a measure type f.e. Zend\Measure\Length::METER
-     * @param  Zend_Locale $locale OPTIONAL a Zend\Zend\Locale Type
-     * @throws Zend\Measure\Exception
+     * @param  string      $type   OPTIONAL a measure type f.e. Zend2\Measure\Length::METER
+     * @param  Zend2_Locale $locale OPTIONAL a Zend2\Zend2\Locale Type
+     * @throws Zend2\Measure\Exception
      */
     public function __construct($value, $type = null, $locale = null)
     {
@@ -102,15 +102,15 @@ abstract class AbstractMeasure
     /**
      * Sets a new locale for the value representation
      *
-     * @param string|Zend\Locale\Locale $locale (Optional) New locale to set
+     * @param string|Zend2\Locale\Locale $locale (Optional) New locale to set
      * @param boolean                   $check  False, check but don't set; True, set the new locale
-     * @return Zend\Measure\AbstractMeasure
+     * @return Zend2\Measure\AbstractMeasure
      */
     public function setLocale($locale = null, $check = false)
     {
         if (empty($locale)) {
-            if (Registry::isRegistered('Zend_Locale') === true) {
-                $locale = Registry::get('Zend_Locale');
+            if (Registry::isRegistered('Zend2_Locale') === true) {
+                $locale = Registry::get('Zend2_Locale');
             }
         }
 
@@ -137,7 +137,7 @@ abstract class AbstractMeasure
      *
      * @param integer                   $round  (Optional) Rounds the value to an given precision,
      *                                                     Default is -1 which returns without rounding
-     * @param string|Zend\Locale\Locale $locale (Optional) Locale for number representation
+     * @param string|Zend2\Locale\Locale $locale (Optional) Locale for number representation
      * @return integer|string
      */
     public function getValue($round = -1, $locale = null)
@@ -160,10 +160,10 @@ abstract class AbstractMeasure
      * Set a new value
      *
      * @param  integer|string             $value   Value as string, integer, real or float
-     * @param  string                     $type    OPTIONAL A measure type f.e. Zend_Measure_Length::METER
-     * @param  string|Zend\Locale\Locale  $locale  OPTIONAL Locale for parsing numbers
-     * @throws Zend\Measure\Exception
-     * @return Zend\Measure\AbstractMeasure
+     * @param  string                     $type    OPTIONAL A measure type f.e. Zend2_Measure_Length::METER
+     * @param  string|Zend2\Locale\Locale  $locale  OPTIONAL Locale for parsing numbers
+     * @throws Zend2\Measure\Exception
+     * @return Zend2\Measure\AbstractMeasure
      */
     public function setValue($value, $type = null, $locale = null)
     {
@@ -210,8 +210,8 @@ abstract class AbstractMeasure
      * Set a new type, and convert the value
      *
      * @param  string $type New type to set
-     * @throws Zend\Measure\Exception
-     * @return Zend\Measure\AbstractMeasure
+     * @throws Zend2\Measure\Exception
+     * @return Zend2\Measure\AbstractMeasure
      */
     public function setType($type)
     {
@@ -280,7 +280,7 @@ abstract class AbstractMeasure
     /**
      * Compare if the value and type is equal
      *
-     * @param  Zend\Measure\AbstractMeasure $object object to compare
+     * @param  Zend2\Measure\AbstractMeasure $object object to compare
      * @return boolean
      */
     public function equals($object)
@@ -296,7 +296,7 @@ abstract class AbstractMeasure
      * Returns a string representation
      *
      * @param  integer                   $round  (Optional) Runds the value to an given exception
-     * @param  string|Zend\Locale\Locale $locale (Optional) Locale to set for the number
+     * @param  string|Zend2\Locale\Locale $locale (Optional) Locale to set for the number
      * @return string
      */
     public function toString($round = -1, $locale = null)
@@ -333,7 +333,7 @@ abstract class AbstractMeasure
      *
      * @param  string                    $type   Constant Type
      * @param  integer                   $round  (Optional) Rounds the value to a given precision
-     * @param  string|Zend\Locale\Locale $locale (Optional) Locale to set for the number
+     * @param  string|Zend2\Locale\Locale $locale (Optional) Locale to set for the number
      * @return string
      */
     public function convertTo($type, $round = 2, $locale = null)
@@ -345,8 +345,8 @@ abstract class AbstractMeasure
     /**
      * Adds an unit to another one
      *
-     * @param  Zend\Measure\AbstractMeasure $object object of same unit type
-     * @return Zend\Measure\AbstractMeasure
+     * @param  Zend2\Measure\AbstractMeasure $object object of same unit type
+     * @return Zend2\Measure\AbstractMeasure
      */
     public function add($object)
     {
@@ -360,8 +360,8 @@ abstract class AbstractMeasure
     /**
      * Substracts an unit from another one
      *
-     * @param  Zend\Measure\AbstractMeasure $object object of same unit type
-     * @return Zend\Measure\AbstractMeasure
+     * @param  Zend2\Measure\AbstractMeasure $object object of same unit type
+     * @return Zend2\Measure\AbstractMeasure
      */
     public function sub($object)
     {
@@ -375,7 +375,7 @@ abstract class AbstractMeasure
     /**
      * Compares two units
      *
-     * @param  Zend\Measure\AbstractMeasure $object object of same unit type
+     * @param  Zend2\Measure\AbstractMeasure $object object of same unit type
      * @return boolean
      */
     public function compare($object)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Pubsubhubbub
+ * @category   Zend2
+ * @package    Zend2_Feed_Pubsubhubbub
  * @subpackage Callback
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\PubSubHubbub;
+namespace Zend2\Feed\PubSubHubbub;
 
 /**
- * @category   Zend
- * @package    Zend_Feed_Pubsubhubbub
+ * @category   Zend2
+ * @package    Zend2_Feed_Pubsubhubbub
  * @subpackage Callback
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface Callback
@@ -42,7 +42,7 @@ interface Callback
 
     /**
      * Send the response, including all headers.
-     * If you wish to handle this via Zend_Controller, use the getter methods
+     * If you wish to handle this via Zend2_Controller, use the getter methods
      * to retrieve any data needed to be set on your HTTP Response object, or
      * simply give this object the HTTP Response instance to work with for you!
      *
@@ -52,19 +52,19 @@ interface Callback
 
     /**
      * An instance of a class handling Http Responses. This is implemented in
-     * Zend_Feed_Pubsubhubbub_HttpResponse which shares an unenforced interface with
-     * (i.e. not inherited from) Zend_Controller_Response_Http.
+     * Zend2_Feed_Pubsubhubbub_HttpResponse which shares an unenforced interface with
+     * (i.e. not inherited from) Zend2_Controller_Response_Http.
      *
-     * @param Zend\Feed\PubSubHubbub\HttpResponse|\Zend\Controller\Response\Http $httpResponse
+     * @param Zend2\Feed\PubSubHubbub\HttpResponse|\Zend2\Controller\Response\Http $httpResponse
      */
     public function setHttpResponse($httpResponse);
 
     /**
      * An instance of a class handling Http Responses. This is implemented in
-     * Zend_Feed_Pubsubhubbub_HttpResponse which shares an unenforced interface with
-     * (i.e. not inherited from) Zend_Controller_Response_Http.
+     * Zend2_Feed_Pubsubhubbub_HttpResponse which shares an unenforced interface with
+     * (i.e. not inherited from) Zend2_Controller_Response_Http.
      *
-     * @return Zend\Feed\PubSubHubbub\HttpResponse|\Zend\Controller\Response\Http
+     * @return Zend2\Feed\PubSubHubbub\HttpResponse|\Zend2\Controller\Response\Http
      */
     public function getHttpResponse();
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search\Query;
-use Zend\Search\Lucene;
-use Zend\Search\Lucene\Search\Highlighter;
-use Zend\Search\Lucene\Document;
+namespace Zend2\Search\Lucene\Search\Query;
+use Zend2\Search\Lucene;
+use Zend2\Search\Lucene\Search\Highlighter;
+use Zend2\Search\Lucene\Document;
 
 /**
- * @uses       \Zend\Search\Lucene\Search\Highlighter\Default
- * @uses       \Zend\Search\Lucene\Document\HTML
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Search\Highlighter\Default
+ * @uses       \Zend2\Search\Lucene\Document\HTML
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractQuery
@@ -45,7 +45,7 @@ abstract class AbstractQuery
     /**
      * AbstractQuery weight
      *
-     * @var \Zend\Search\Lucene\Search\Weight\Weight
+     * @var \Zend2\Search\Lucene\Search\Weight\Weight
      */
     protected $_weight = null;
 
@@ -75,7 +75,7 @@ abstract class AbstractQuery
      * Score specified document
      *
      * @param integer $docId
-     * @param \Zend\Search\Lucene\SearchIndex $reader
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
      * @return float
      */
     abstract public function score($docId, Lucene\SearchIndex $reader);
@@ -95,23 +95,23 @@ abstract class AbstractQuery
      *
      * AbstractQuery specific implementation
      *
-     * @param \Zend\Search\Lucene\SearchIndex $reader
-     * @param \Zend\Search\Lucene\Index\DocsFilter|null $docsFilter
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
+     * @param \Zend2\Search\Lucene\Index\DocsFilter|null $docsFilter
      */
     abstract public function execute(Lucene\SearchIndex $reader, $docsFilter = null);
 
     /**
      * Constructs an appropriate Weight implementation for this query.
      *
-     * @param \Zend\Search\Lucene\SearchIndex $reader
-     * @return \Zend\Search\Lucene\Search\Weight\Weight
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
+     * @return \Zend2\Search\Lucene\Search\Weight\Weight
      */
     abstract public function createWeight(Lucene\SearchIndex $reader);
 
     /**
      * Constructs an initializes a Weight for a _top-level_query_.
      *
-     * @param \Zend\Search\Lucene\SearchIndex $reader
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
      */
     protected function _initWeight(Lucene\SearchIndex $reader)
     {
@@ -129,16 +129,16 @@ abstract class AbstractQuery
     /**
      * Re-write query into primitive queries in the context of specified index
      *
-     * @param \Zend\Search\Lucene\SearchIndex $index
-     * @return \Zend\Search\Lucene\Search\AbstractQuery\AbstractQuery
+     * @param \Zend2\Search\Lucene\SearchIndex $index
+     * @return \Zend2\Search\Lucene\Search\AbstractQuery\AbstractQuery
      */
     abstract public function rewrite(Lucene\SearchIndex $index);
 
     /**
      * Optimize query in the context of specified index
      *
-     * @param \Zend\Search\Lucene\SearchIndex $index
-     * @return \Zend\Search\Lucene\Search\AbstractQuery\AbstractQuery
+     * @param \Zend2\Search\Lucene\SearchIndex $index
+     * @return \Zend2\Search\Lucene\Search\AbstractQuery\AbstractQuery
      */
     abstract public function optimize(Lucene\SearchIndex $index);
 
@@ -169,7 +169,7 @@ abstract class AbstractQuery
     /**
      * AbstractQuery specific matches highlighting
      *
-     * @param \Zend\Search\Lucene\Search\Highlighter $highlighter  Highlighter object (also contains doc for highlighting)
+     * @param \Zend2\Search\Lucene\Search\Highlighter $highlighter  Highlighter object (also contains doc for highlighting)
      */
     abstract protected function _highlightMatches(Highlighter $highlighter);
 
@@ -178,7 +178,7 @@ abstract class AbstractQuery
      *
      * @param string $inputHTML
      * @param string  $defaultEncoding   HTML encoding, is used if it's not specified using Content-type HTTP-EQUIV meta tag.
-     * @param \Zend\Search\Lucene\Search\Highlighter|null $highlighter
+     * @param \Zend2\Search\Lucene\Search\Highlighter|null $highlighter
      * @return string
      */
     public function highlightMatches($inputHTML, $defaultEncoding = '', $highlighter = null)
@@ -200,7 +200,7 @@ abstract class AbstractQuery
      *
      * @param string $inputHTMLFragment
      * @param string  $encoding   Input HTML string encoding
-     * @param \Zend\Search\Lucene\Search\Highlighter|null $highlighter
+     * @param \Zend2\Search\Lucene\Search\Highlighter|null $highlighter
      * @return string
      */
     public function htmlFragmentHighlightMatches($inputHTMLFragment, $encoding = 'UTF-8', $highlighter = null)

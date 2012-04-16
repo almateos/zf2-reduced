@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Filter\Word;
+namespace Zend2\Filter\Word;
 
-use Zend\Filter\PregReplace as PregReplaceFilter;
+use Zend2\Filter\PregReplace as PregReplaceFilter;
 
 /**
- * @uses       \Zend\Filter\Exception
- * @uses       \Zend\Filter\PregReplace
- * @category   Zend
- * @package    Zend_Filter
- * @uses       \Zend\Filter\PregReplace
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Filter\Exception
+ * @uses       \Zend2\Filter\PregReplace
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @uses       \Zend2\Filter\PregReplace
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractSeparator extends PregReplaceFilter
@@ -56,7 +56,7 @@ abstract class AbstractSeparator extends PregReplaceFilter
     public function setSeparator($separator)
     {
         if ($separator == null) {
-            throw new \Zend\Filter\Exception\InvalidArgumentException('"' . $separator . '" is not a valid separator.');
+            throw new \Zend2\Filter\Exception\InvalidArgumentException('"' . $separator . '" is not a valid separator.');
         }
         $this->_separator = $separator;
         return $this;

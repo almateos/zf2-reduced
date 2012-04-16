@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,19 +12,19 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Json
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Json
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Json\Server;
+namespace Zend2\Json\Server;
 
 /**
- * @uses       \Zend\Json\Json
- * @category   Zend
- * @package    Zend_Json
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Json\Json
+ * @category   Zend2
+ * @package    Zend2_Json
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Error
@@ -86,7 +86,7 @@ class Error
      * Set error code
      *
      * @param  int $code
-     * @return \Zend\Json\Server\Error
+     * @return \Zend2\Json\Server\Error
      */
     public function setCode($code)
     {
@@ -118,7 +118,7 @@ class Error
      * Set error message
      *
      * @param  string $message
-     * @return \Zend\Json\Server\Error
+     * @return \Zend2\Json\Server\Error
      */
     public function setMessage($message)
     {
@@ -144,7 +144,7 @@ class Error
      * Set error data
      *
      * @param  mixed $data
-     * @return \Zend\Json\Server\Error
+     * @return \Zend2\Json\Server\Error
      */
     public function setData($data)
     {
@@ -183,7 +183,7 @@ class Error
      */
     public function toJson()
     {
-        return \Zend\Json\Json::encode($this->toArray());
+        return \Zend2\Json\Json::encode($this->toArray());
     }
 
     /**

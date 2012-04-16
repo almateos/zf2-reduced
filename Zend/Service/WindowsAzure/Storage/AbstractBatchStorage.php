@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,46 +12,46 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Http_Client
- * @uses       Zend_Http_Response
- * @uses       Zend_Service_WindowsAzure_Credentials_AbstractCredentials
- * @uses       Zend_Service_WindowsAzure_Exception
- * @uses       Zend_Service_WindowsAzure_Storage
- * @uses       Zend_Service_WindowsAzure_Storage_Batch
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @uses       Zend2_Http_Client
+ * @uses       Zend2_Http_Response
+ * @uses       Zend2_Service_WindowsAzure_Credentials_AbstractCredentials
+ * @uses       Zend2_Service_WindowsAzure_Exception
+ * @uses       Zend2_Service_WindowsAzure_Storage
+ * @uses       Zend2_Service_WindowsAzure_Storage_Batch
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class Zend_Service_WindowsAzure_Storage_AbstractBatchStorage
-    extends Zend_Service_WindowsAzure_Storage
+abstract class Zend2_Service_WindowsAzure_Storage_AbstractBatchStorage
+    extends Zend2_Service_WindowsAzure_Storage
 {	
     /**
      * Current batch
      * 
-     * @var Zend_Service_WindowsAzure_Storage_Batch
+     * @var Zend2_Service_WindowsAzure_Storage_Batch
      */
     protected $_currentBatch = null;
     
     /**
      * Set current batch
      * 
-     * @param Zend_Service_WindowsAzure_Storage_Batch $batch Current batch
-     * @throws Zend_Service_WindowsAzure_Exception
+     * @param Zend2_Service_WindowsAzure_Storage_Batch $batch Current batch
+     * @throws Zend2_Service_WindowsAzure_Exception
      */
-    public function setCurrentBatch(Zend_Service_WindowsAzure_Storage_Batch $batch = null)
+    public function setCurrentBatch(Zend2_Service_WindowsAzure_Storage_Batch $batch = null)
     {
         if ($batch !== null && $this->isInBatch()) {
-            throw new Zend_Service_WindowsAzure_Exception('Only one batch can be active at a time.');
+            throw new Zend2_Service_WindowsAzure_Exception('Only one batch can be active at a time.');
         }
         $this->_currentBatch = $batch;
     }
@@ -59,7 +59,7 @@ abstract class Zend_Service_WindowsAzure_Storage_AbstractBatchStorage
     /**
      * Get current batch
      * 
-     * @return Zend_Service_WindowsAzure_Storage_Batch
+     * @return Zend2_Service_WindowsAzure_Storage_Batch
      */
     public function getCurrentBatch()
     {
@@ -79,25 +79,25 @@ abstract class Zend_Service_WindowsAzure_Storage_AbstractBatchStorage
     /**
      * Starts a new batch operation set
      * 
-     * @return Zend_Service_WindowsAzure_Storage_Batch
-     * @throws Zend_Service_WindowsAzure_Exception
+     * @return Zend2_Service_WindowsAzure_Storage_Batch
+     * @throws Zend2_Service_WindowsAzure_Exception
      */
     public function startBatch()
     {
-        return new Zend_Service_WindowsAzure_Storage_Batch($this, $this->getBaseUrl());
+        return new Zend2_Service_WindowsAzure_Storage_Batch($this, $this->getBaseUrl());
     }
 	
 	/**
-	 * Perform batch using Zend_Http_Client channel, combining all batch operations into one request
+	 * Perform batch using Zend2_Http_Client channel, combining all batch operations into one request
 	 *
 	 * @param array $operations Operations in batch
 	 * @param boolean $forTableStorage Is the request for table storage?
 	 * @param boolean $isSingleSelect Is the request a single select statement?
 	 * @param string $resourceType Resource type
 	 * @param string $requiredPermission Required permission
-	 * @return Zend_Http_Response
+	 * @return Zend2_Http_Response
 	 */
-	public function performBatch($operations = array(), $forTableStorage = false, $isSingleSelect = false, $resourceType = Zend_Service_WindowsAzure_Storage::RESOURCE_UNKNOWN, $requiredPermission = Zend_Service_WindowsAzure_Credentials_AbstractCredentials::PERMISSION_READ)
+	public function performBatch($operations = array(), $forTableStorage = false, $isSingleSelect = false, $resourceType = Zend2_Service_WindowsAzure_Storage::RESOURCE_UNKNOWN, $requiredPermission = Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::PERMISSION_READ)
 	{
 	    // Generate boundaries
 	    $batchBoundary = 'batch_' . md5(time() . microtime());
@@ -117,7 +117,7 @@ abstract class Zend_Service_WindowsAzure_Storage_AbstractBatchStorage
 		$queryString    = '';
 		
 		// Set verb
-		$httpVerb = Zend_Http_Client::POST;
+		$httpVerb = Zend2_Http_Client::POST;
 		
 		// Generate raw data
     	$rawData = '';

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Test
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Test\PHPUnit\Db\DataSet;
+namespace Zend2\Test\PHPUnit\Db\DataSet;
 
 /**
- * Represent a PHPUnit Database Extension table with Queries using a Zend_Db adapter for assertion against other tables.
+ * Represent a PHPUnit Database Extension table with Queries using a Zend2_Db adapter for assertion against other tables.
  *
  * @uses       PHPUnit_Extensions_Database_DataSet_DefaultTableMetaData
  * @uses       PHPUnit_Extensions_Database_DataSet_QueryTable
  * @uses       PHPUnit_Extensions_Database_DB_IDatabaseConnection
- * @uses       \Zend\Db\Db
- * @uses       \Zend\Test\PHPUnit\Db\Exception\InvalidArgumentException
- * @category   Zend
- * @package    Zend_Test
+ * @uses       \Zend2\Db\Db
+ * @uses       \Zend2\Test\PHPUnit\Db\Exception\InvalidArgumentException
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class QueryTable extends \PHPUnit_Extensions_Database_DataSet_QueryTable
@@ -46,9 +46,9 @@ class QueryTable extends \PHPUnit_Extensions_Database_DataSet_QueryTable
      */
     public function __construct($tableName, $query, \PHPUnit_Extensions_Database_DB_IDatabaseConnection $databaseConnection)
     {
-        if( !($databaseConnection instanceof \Zend\Test\PHPUnit\Db\Connection) ) {
-            throw new \Zend\Test\PHPUnit\Db\Exception\InvalidArgumentException(
-            	"Zend\Test\PHPUnit\Db\DataSet\QueryTable only works with Zend\Test\PHPUnit\Db\Connection connections-"
+        if( !($databaseConnection instanceof \Zend2\Test\PHPUnit\Db\Connection) ) {
+            throw new \Zend2\Test\PHPUnit\Db\Exception\InvalidArgumentException(
+            	"Zend2\Test\PHPUnit\Db\DataSet\QueryTable only works with Zend2\Test\PHPUnit\Db\Connection connections-"
             );
         }
         parent::__construct($tableName, $query, $databaseConnection);
@@ -63,7 +63,7 @@ class QueryTable extends \PHPUnit_Extensions_Database_DataSet_QueryTable
     {
         if($this->data === null) {
             $stmt = $this->databaseConnection->getConnection()->query($this->query);
-            $this->data = $stmt->fetchAll(\Zend\Db\Db::FETCH_ASSOC);
+            $this->data = $stmt->fetchAll(\Zend2\Db\Db::FETCH_ASSOC);
         }
     }
 

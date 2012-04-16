@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
+namespace Zend2\Validator;
 
 /**
- * @uses       \Zend\Filter\Digits
- * @uses       \Zend\Validator\AbstractValidator
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Filter\Digits
+ * @uses       \Zend2\Validator\AbstractValidator
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Digits extends AbstractValidator
@@ -37,7 +37,7 @@ class Digits extends AbstractValidator
     /**
      * Digits filter used for validation
      *
-     * @var \Zend\Filter\Digits
+     * @var \Zend2\Filter\Digits
      */
     protected static $_filter = null;
 
@@ -73,7 +73,7 @@ class Digits extends AbstractValidator
         }
 
         if (null === self::$_filter) {
-            self::$_filter = new \Zend\Filter\Digits();
+            self::$_filter = new \Zend2\Filter\Digits();
         }
 
         if ($this->getValue() !== self::$_filter->filter($this->getValue())) {

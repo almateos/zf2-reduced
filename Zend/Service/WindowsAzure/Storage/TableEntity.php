@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * @uses       ReflectionClass
- * @uses       Zend_Service_WindowsAzure_Exception
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @uses       Zend2_Service_WindowsAzure_Exception
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_WindowsAzure_Storage_TableEntity
+class Zend2_Service_WindowsAzure_Storage_TableEntity
 {
     /**
      * Partition key
@@ -194,8 +194,8 @@ class Zend_Service_WindowsAzure_Storage_TableEntity
      * Set Azure values
      * 
      * @param array $values
-     * @param boolean $throwOnError Throw Zend_Service_WindowsAzure_Exception when a property is not specified in $values?
-     * @throws Zend_Service_WindowsAzure_Exception
+     * @param boolean $throwOnError Throw Zend2_Service_WindowsAzure_Exception when a property is not specified in $values?
+     * @throws Zend2_Service_WindowsAzure_Exception
      */
     public function setAzureValues($values = array(), $throwOnError = false)
     {
@@ -232,7 +232,7 @@ class Zend_Service_WindowsAzure_Storage_TableEntity
                     $this->$method($values[$accessor->AzurePropertyName]);
                 }
             } else if ($throwOnError) {
-                throw new Zend_Service_WindowsAzure_Exception("Property '" . $accessor->AzurePropertyName . "' was not found in \$values array");    
+                throw new Zend2_Service_WindowsAzure_Exception("Property '" . $accessor->AzurePropertyName . "' was not found in \$values array");    
             }
         }
         

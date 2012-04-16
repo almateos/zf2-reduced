@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Service\Rackspace
+ * @category   Zend2
+ * @package    Zend2\Service\Rackspace
  * @subpackage Files
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Rackspace\Files;
+namespace Zend2\Service\Rackspace\Files;
 
-use Zend\Service\Rackspace\Files as RackspaceFiles;
+use Zend2\Service\Rackspace\Files as RackspaceFiles;
 
 class Object
 {
     /**
      * The service that has created the object
      *
-     * @var Zend\Service\Rackspace\Files
+     * @var Zend2\Service\Rackspace\Files
      */
     protected $service;
     /**

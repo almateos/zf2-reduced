@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_Amazon
+ * @category   Zend2
+ * @package    Zend2_Service_Amazon
  * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Amazon\Ec2;
-use Zend\Crypt;
+namespace Zend2\Service\Amazon\Ec2;
+use Zend2\Crypt;
 
 /**
  * An Amazon EC2 interface that allows yout to run, terminate, reboot and describe Amazon
  * Ec2 Instances.
  *
- * @uses       Zend_Crypt_Hmac
- * @uses       Zend_Json
- * @uses       Zend_Service_Amazon_Ec2_Abstract
- * @category   Zend
- * @package    Zend_Service_Amazon
+ * @uses       Zend2_Crypt_Hmac
+ * @uses       Zend2_Json
+ * @uses       Zend2_Service_Amazon_Ec2_Abstract
+ * @category   Zend2
+ * @package    Zend2_Service_Amazon
  * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class WindowsInstance extends AbstractEc2
@@ -168,7 +168,7 @@ class WindowsInstance extends AbstractEc2
         $arrParams['conditions'][] = array('acl' => 'ec2-bundle-read');
         $arrParams['conditions'][] = array('starts-with', '$key', $prefix);
 
-        return base64_encode(\Zend\Json\Json::encode($arrParams));
+        return base64_encode(\Zend2\Json\Json::encode($arrParams));
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,19 +12,19 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form\Decorator;
+namespace Zend2\Form\Decorator;
 
-use Zend\Filter;
+use Zend2\Filter;
 
 /**
- * Zend_Form_Decorator_Element_HtmlTag
+ * Zend2_Form_Decorator_Element_HtmlTag
  *
  * Wraps content in an HTML block tag.
  *
@@ -39,14 +39,14 @@ use Zend\Filter;
  *
  * Any other options passed are processed as HTML attributes of the tag.
  *
- * @uses       \Zend\Filter\FilterChain
- * @uses       \Zend\Filter\Alnum
- * @uses       \Zend\Filter\StringToLower
- * @uses       \Zend\Form\Decorator\AbstractDecorator
- * @category   Zend
- * @package    Zend_Form
+ * @uses       \Zend2\Filter\FilterChain
+ * @uses       \Zend2\Filter\Alnum
+ * @uses       \Zend2\Filter\StringToLower
+ * @uses       \Zend2\Form\Decorator\AbstractDecorator
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class HtmlTag extends AbstractDecorator
@@ -70,7 +70,7 @@ class HtmlTag extends AbstractDecorator
     protected $_tag;
 
     /**
-     * @var \Zend\Filter\FilterChain
+     * @var \Zend2\Filter\FilterChain
      */
     protected $_tagFilter;
 
@@ -122,7 +122,7 @@ class HtmlTag extends AbstractDecorator
      * Set tag to use
      *
      * @param  string $tag
-     * @return \Zend\Form\Decorator\HtmlTag
+     * @return \Zend2\Form\Decorator\HtmlTag
      */
     public function setTag($tag)
     {

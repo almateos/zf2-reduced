@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Di\Definition;
+namespace Zend2\Di\Definition;
 
 class ClassDefinition implements Definition, PartialMarker
 {

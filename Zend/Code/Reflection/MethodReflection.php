@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Code\Reflection;
+namespace Zend2\Code\Reflection;
 
 use ReflectionMethod as PhpReflectionMethod,
-    Zend\Code\Reflection,
-    Zend\Code\Annotation,
-    Zend\Code\Scanner\CachingFileScanner,
-    Zend\Code\Scanner\AnnotationScanner;
+    Zend2\Code\Reflection,
+    Zend2\Code\Annotation,
+    Zend2\Code\Scanner\CachingFileScanner,
+    Zend2\Code\Scanner\AnnotationScanner;
 
 /**
  * @uses       ReflectionMethod
- * @uses       Zend\Code\Reflection\ReflectionClass
- * @uses       Zend_Reflection_Docblock
- * @uses       Zend\Code\Reflection\Exception
- * @uses       Zend\Code\Reflection\ReflectionParameter
- * @category   Zend
- * @package    Zend_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Code\Reflection\ReflectionClass
+ * @uses       Zend2_Reflection_Docblock
+ * @uses       Zend2\Code\Reflection\Exception
+ * @uses       Zend2\Code\Reflection\ReflectionParameter
+ * @category   Zend2
+ * @package    Zend2_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class MethodReflection extends PhpReflectionMethod implements Reflection
@@ -61,8 +61,8 @@ class MethodReflection extends PhpReflectionMethod implements Reflection
     }
 
     /**
-     * @param \Zend\Code\Annotation\AnnotationManager $annotationManager
-     * @return \Zend\Code\Annotation\AnnotationCollection
+     * @param \Zend2\Code\Annotation\AnnotationManager $annotationManager
+     * @return \Zend2\Code\Annotation\AnnotationCollection
      */
     public function getAnnotations(Annotation\AnnotationManager $annotationManager)
     {
@@ -115,7 +115,7 @@ class MethodReflection extends PhpReflectionMethod implements Reflection
      * Get all method parameter reflection objects
      *
      * @param  string $reflectionClass Name of reflection class to use
-     * @return array of \Zend\Code\Reflection\ReflectionParameter objects
+     * @return array of \Zend2\Code\Reflection\ReflectionParameter objects
      */
     public function getParameters()
     {

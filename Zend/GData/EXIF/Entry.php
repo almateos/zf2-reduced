@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,37 +12,37 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Exif
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\EXIF;
+namespace Zend2\GData\EXIF;
 
-use Zend\GData\EXIF;
+use Zend2\GData\EXIF;
 
 /**
  * An Atom entry containing EXIF metadata.
  *
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\EXIF
- * @uses       \Zend\GData\EXIF\Extension\Tags
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\EXIF
+ * @uses       \Zend2\GData\EXIF\Extension\Tags
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Exif
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Entry extends \Zend\GData\Entry
+class Entry extends \Zend2\GData\Entry
 {
     /**
      * The classname for individual feed elements.
      *
      * @var string
      */
-    protected $_entryClassName = '\Zend\GData\EXIF\Entry';
+    protected $_entryClassName = '\Zend2\GData\EXIF\Entry';
 
     /**
      * The tags that belong to the Exif group.
@@ -107,7 +107,7 @@ class Entry extends \Zend\GData\Entry
      * Retrieve the tags for this entry.
      *
      * @see setTags
-     * @return \Zend\GData\EXIF\Extension\Tags The requested object
+     * @return \Zend2\GData\EXIF\Extension\Tags The requested object
      *              or null if not set.
      */
     public function getTags()
@@ -122,9 +122,9 @@ class Entry extends \Zend\GData\Entry
      * This corresponds to the <exif:tags> property in the Google Data
      * protocol.
      *
-     * @param \Zend\GData\EXIF\Extension\Tags $value The desired value
+     * @param \Zend2\GData\EXIF\Extension\Tags $value The desired value
      *              this element, or null to unset.
-     * @return \Zend\GData\EXIF\Entry Provides a fluent interface
+     * @return \Zend2\GData\EXIF\Entry Provides a fluent interface
      */
     public function setTags($value)
     {

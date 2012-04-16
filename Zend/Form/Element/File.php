@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Form
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form\Element;
+namespace Zend2\Form\Element;
 
-use Zend\Form\Element\Exception,
-    Zend\Form\Form,
-    Zend\Form\Decorator\FileDecorator,
-    Zend\Loader\PrefixPathLoader,
-    Zend\Loader\PrefixPathMapper,
-    Zend\View\Renderer as View,
-    Zend\File\Transfer\Adapter\AbstractAdapter as AbstractFileAdapter;
+use Zend2\Form\Element\Exception,
+    Zend2\Form\Form,
+    Zend2\Form\Decorator\FileDecorator,
+    Zend2\Loader\PrefixPathLoader,
+    Zend2\Loader\PrefixPathMapper,
+    Zend2\View\Renderer as View,
+    Zend2\File\Transfer\Adapter\AbstractAdapter as AbstractFileAdapter;
 
 /**
- * Zend_Form_Element
+ * Zend2_Form_Element
  *
- * @category   Zend
- * @package    Zend_Form
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class File extends Xhtml
@@ -50,7 +50,7 @@ class File extends Xhtml
     public $helper = 'formFile';
 
     /**
-     * @var \Zend\File\Transfer\Adapter\AbstractAdapter
+     * @var \Zend2\File\Transfer\Adapter\AbstractAdapter
      */
     protected $_adapter;
 
@@ -77,7 +77,7 @@ class File extends Xhtml
     /**
      * Load default decorators
      *
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function loadDefaultDecorators()
     {
@@ -99,9 +99,9 @@ class File extends Xhtml
     /**
      * Set plugin loader
      *
-     * @param  \Zend\Loader\PrefixPathMapper $loader
+     * @param  \Zend2\Loader\PrefixPathMapper $loader
      * @param  string $type
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function setPluginLoader(PrefixPathMapper $loader, $type)
     {
@@ -119,7 +119,7 @@ class File extends Xhtml
      * Get Plugin Loader
      *
      * @param  string $type
-     * @return \Zend\Loader\PrefixPathMapper
+     * @return \Zend2\Loader\PrefixPathMapper
      */
     public function getPluginLoader($type)
     {
@@ -131,7 +131,7 @@ class File extends Xhtml
 
         if (!array_key_exists($type, $this->_loaders)) {
             $loader = new PrefixPathLoader(array(
-                'Zend\File\Transfer\Adapter' => 'Zend/File/Transfer/Adapter/',
+                'Zend2\File\Transfer\Adapter' => 'Zend2/File/Transfer/Adapter/',
             ));
             $this->setPluginLoader($loader, self::TRANSFER_ADAPTER);
         }
@@ -145,7 +145,7 @@ class File extends Xhtml
      * @param  string $prefix:
      * @param  string $path
      * @param  string $type
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function addPrefixPath($prefix, $path, $type = null)
     {
@@ -170,8 +170,8 @@ class File extends Xhtml
     /**
      * Set transfer adapter
      *
-     * @param  string|\Zend\File\Transfer\Adapter\AbstractAdapter $adapter
-     * @return \Zend\Form\Element\File
+     * @param  string|\Zend2\File\Transfer\Adapter\AbstractAdapter $adapter
+     * @return \Zend2\Form\Element\File
      */
     public function setTransferAdapter($adapter)
     {
@@ -198,7 +198,7 @@ class File extends Xhtml
      *
      * Lazy loads HTTP transfer adapter when no adapter registered.
      *
-     * @return \Zend\File\Transfer\Adapter\AbstractAdapter
+     * @return \Zend2\File\Transfer\Adapter\AbstractAdapter
      */
     public function getTransferAdapter()
     {
@@ -211,10 +211,10 @@ class File extends Xhtml
     /**
      * Add Validator; proxy to adapter
      *
-     * @param  string|\Zend\Validator\Validator $validator
+     * @param  string|\Zend2\Validator\Validator $validator
      * @param  bool $breakChainOnFailure
      * @param  mixed $options
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function addValidator($validator, $breakChainOnFailure = false, $options = array())
     {
@@ -229,7 +229,7 @@ class File extends Xhtml
      * Add multiple validators at once; proxy to adapter
      *
      * @param  array $validators
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function addValidators(array $validators)
     {
@@ -244,7 +244,7 @@ class File extends Xhtml
      * Add multiple validators at once, overwriting; proxy to adapter
      *
      * @param  array $validators
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function setValidators(array $validators)
     {
@@ -259,7 +259,7 @@ class File extends Xhtml
      * Retrieve validator by name; proxy to adapter
      *
      * @param  string $name
-     * @return \Zend\Validator\Validator|null
+     * @return \Zend2\Validator\Validator|null
      */
     public function getValidator($name)
     {
@@ -287,7 +287,7 @@ class File extends Xhtml
      * Remove validator by name; proxy to adapter
      *
      * @param  string $name
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function removeValidator($name)
     {
@@ -301,7 +301,7 @@ class File extends Xhtml
     /**
      * Remove all validators; proxy to adapter
      *
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function clearValidators()
     {
@@ -317,7 +317,7 @@ class File extends Xhtml
      *
      * @param  string|array $filter  Type of filter to add
      * @param  string|array $options Options to set for the filter
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function addFilter($filter, $options = null)
     {
@@ -331,7 +331,7 @@ class File extends Xhtml
      * Add Multiple filters at once; proxy to adapter
      *
      * @param  array $filters
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function addFilters(array $filters)
     {
@@ -345,7 +345,7 @@ class File extends Xhtml
      * Sets a filter for the class, erasing all previous set; proxy to adapter
      *
      * @param  string|array $filter Filter to set
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function setFilters(array $filters)
     {
@@ -359,7 +359,7 @@ class File extends Xhtml
      * Retrieve individual filter; proxy to adapter
      *
      * @param  string $name
-     * @return \Zend\Filter\Filter|null
+     * @return \Zend2\Filter\Filter|null
      */
     public function getFilter($name)
     {
@@ -387,7 +387,7 @@ class File extends Xhtml
      * Remove an individual filter; proxy to adapter
      *
      * @param  string $name
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function removeFilter($name)
     {
@@ -400,7 +400,7 @@ class File extends Xhtml
     /**
      * Remove all filters; proxy to adapter
      *
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function clearFilters()
     {
@@ -508,7 +508,7 @@ class File extends Xhtml
      * Set the upload destination
      *
      * @param  string $path
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function setDestination($path)
     {
@@ -561,7 +561,7 @@ class File extends Xhtml
      * Set a multifile element
      *
      * @param integer $count Number of file elements
-     * @return \Zend\Form\Element\File Provides fluent interface
+     * @return \Zend2\Form\Element\File Provides fluent interface
      */
     public function setMultiFile($count)
     {
@@ -674,7 +674,7 @@ class File extends Xhtml
      * This defaults to false which will force receive() when calling getValues()
      *
      * @param boolean $flag Sets if the file is handled as the elements value
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function setValueDisabled($flag)
     {
@@ -724,7 +724,7 @@ class File extends Xhtml
      * Disallow setting the value
      *
      * @param  mixed $value
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function setValue($value)
     {
@@ -734,8 +734,8 @@ class File extends Xhtml
     /**
      * Set translator object for localization
      *
-     * @param  \Zend\Translator\Translator|null $translator
-     * @return \Zend\Form\Element\File
+     * @param  \Zend2\Translator\Translator|null $translator
+     * @return \Zend2\Form\Element\File
      */
     public function setTranslator($translator = null)
     {
@@ -749,7 +749,7 @@ class File extends Xhtml
     /**
      * Retrieve localization translator object
      *
-     * @return \Zend\Translator\Adapter\Adapter|null
+     * @return \Zend2\Translator\Adapter\Adapter|null
      */
     public function getTranslator()
     {
@@ -769,7 +769,7 @@ class File extends Xhtml
      * Indicate whether or not translation should be disabled
      *
      * @param  bool $flag
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function setDisableTranslator($flag)
     {
@@ -840,7 +840,7 @@ class File extends Xhtml
      * Set object state from options array
      *
      * @param  array $options
-     * @return \Zend\Form\Element\File
+     * @return \Zend2\Form\Element\File
      */
     public function setOptions(array $options)
     {
@@ -876,7 +876,7 @@ class File extends Xhtml
      * Render form element
      * Checks for decorator interface to prevent errors
      *
-     * @param  \Zend\View\Renderer $view
+     * @param  \Zend2\View\Renderer $view
      * @return string
      */
     public function render(View $view = null)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Code\Reflection;
+namespace Zend2\Code\Reflection;
 
 use ReflectionParameter,
-    Zend\Code\Reflection;
+    Zend2\Code\Reflection;
 
 /**
  * @uses       ReflectionParameter
- * @uses       \Zend\Code\Reflection\Exception
- * @category   Zend
- * @package    Zend_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Code\Reflection\Exception
+ * @category   Zend2
+ * @package    Zend2_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ParameterReflection extends ReflectionParameter implements Reflection
@@ -42,7 +42,7 @@ class ParameterReflection extends ReflectionParameter implements Reflection
      * Get declaring class reflection object
      *
      * @param  string $reflectionClass Reflection class to use
-     * @return \Zend\Code\Reflection\ReflectionClass
+     * @return \Zend2\Code\Reflection\ReflectionClass
      */
     public function getDeclaringClass()
     {
@@ -56,7 +56,7 @@ class ParameterReflection extends ReflectionParameter implements Reflection
      * Get class reflection object
      *
      * @param  string $reflectionClass Reflection class to use
-     * @return \Zend\Code\Reflection\ReflectionClass
+     * @return \Zend2\Code\Reflection\ReflectionClass
      */
     public function getClass()
     {
@@ -73,7 +73,7 @@ class ParameterReflection extends ReflectionParameter implements Reflection
      * Get declaring function reflection object
      *
      * @param  string $reflectionClass Reflection class to use
-     * @return Zend_Reflection_Function|\MethodReflection\Code\Reflection\ReflectionMethod
+     * @return Zend2_Reflection_Function|\MethodReflection\Code\Reflection\ReflectionMethod
      */
     public function getDeclaringFunction($reflectionClass = null)
     {

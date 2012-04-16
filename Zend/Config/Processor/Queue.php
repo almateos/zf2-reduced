@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Config
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Config\Processor;
+namespace Zend2\Config\Processor;
 
-use Zend\Config\Config,
-    Zend\Config\Processor,
-    Zend\Config\Exception\InvalidArgumentException,
-    Zend\Stdlib\PriorityQueue;
+use Zend2\Config\Config,
+    Zend2\Config\Processor,
+    Zend2\Config\Exception\InvalidArgumentException,
+    Zend2\Stdlib\PriorityQueue;
 
 /**
- * @category   Zend
- * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Config
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Queue extends PriorityQueue implements Processor
@@ -36,8 +36,8 @@ class Queue extends PriorityQueue implements Processor
     /**
      * Process the whole config structure with each parser in the queue.
      *
-     * @param \Zend\Config\Config $config
-     * @throws \Zend\Config\Exception\InvalidArgumentException
+     * @param \Zend2\Config\Config $config
+     * @throws \Zend2\Config\Exception\InvalidArgumentException
      */
     public function process(Config $config)
     {
@@ -46,7 +46,7 @@ class Queue extends PriorityQueue implements Processor
         }
 
         foreach ($this as $parser) {
-            /** @var $parser \Zend\Config\Processor */
+            /** @var $parser \Zend2\Config\Processor */
             $parser->process($config);
         }
     }
@@ -60,7 +60,7 @@ class Queue extends PriorityQueue implements Processor
     public function processValue($value)
     {
         foreach ($this as $parser) {
-            /** @var $parser \Zend\Config\Processor */
+            /** @var $parser \Zend2\Config\Processor */
             $value = $parser->processValue($value);
         }
 

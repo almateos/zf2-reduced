@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,13 +12,13 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Locale
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Locale
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Locale;
+namespace Zend2\Locale;
 
 /**
  * Utility class for proxying math function to bcmath functions, if present,
@@ -26,10 +26,10 @@ namespace Zend\Locale;
  * Sampling of PHP environments and platforms suggests that at least 80% to 90% support bcmath.
  * This file should only be loaded for the 10% to 20% lacking access to the bcmath extension.
  *
- * @uses       \Zend\Locale\Exception\MathException
- * @category   Zend
- * @package    Zend_Locale
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Locale\Exception\MathException
+ * @category   Zend2
+ * @package    Zend2_Locale
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PhpMath extends Math
@@ -37,15 +37,15 @@ class PhpMath extends Math
     public static function disable()
     {
         self::$_bcmathDisabled = true;
-        self::$add   = 'Zend\Locale\PhpMath::Add';
-        self::$sub   = 'Zend\Locale\PhpMath::Sub';
-        self::$pow   = 'Zend\Locale\PhpMath::Pow';
-        self::$mul   = 'Zend\Locale\PhpMath::Mul';
-        self::$div   = 'Zend\Locale\PhpMath::Div';
-        self::$comp  = 'Zend\Locale\PhpMath::Comp';
-        self::$sqrt  = 'Zend\Locale\PhpMath::Sqrt';
-        self::$mod   = 'Zend\Locale\PhpMath::Mod';
-        self::$scale = 'Zend\Locale\PhpMath::Scale';
+        self::$add   = 'Zend2\Locale\PhpMath::Add';
+        self::$sub   = 'Zend2\Locale\PhpMath::Sub';
+        self::$pow   = 'Zend2\Locale\PhpMath::Pow';
+        self::$mul   = 'Zend2\Locale\PhpMath::Mul';
+        self::$div   = 'Zend2\Locale\PhpMath::Div';
+        self::$comp  = 'Zend2\Locale\PhpMath::Comp';
+        self::$sqrt  = 'Zend2\Locale\PhpMath::Sqrt';
+        self::$mod   = 'Zend2\Locale\PhpMath::Mod';
+        self::$scale = 'Zend2\Locale\PhpMath::Scale';
 
         self::$defaultScale     = 0;
         self::$defaultPrecision = 1;

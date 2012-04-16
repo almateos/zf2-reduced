@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard\XML\Assertion;
+namespace Zend2\InfoCard\XML\Assertion;
 
-use Zend\InfoCard\XML\Assertion as XMLAssertion,
-    Zend\InfoCard\XML\AbstractElement,
-    Zend\InfoCard\XML\Exception;
+use Zend2\InfoCard\XML\Assertion as XMLAssertion,
+    Zend2\InfoCard\XML\AbstractElement,
+    Zend2\InfoCard\XML\Exception;
 
 /**
  * A Xml Assertion Document in SAML Token format
  *
- * @uses       \Zend\InfoCard\Exception
- * @uses       \Zend\InfoCard\XML\Assertion
- * @uses       \Zend\InfoCard\XML\AbstractElement
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\InfoCard\Exception
+ * @uses       \Zend2\InfoCard\XML\Assertion
+ * @uses       \Zend2\InfoCard\XML\AbstractElement
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class SAML extends AbstractElement implements XMLAssertion
@@ -194,7 +194,7 @@ class SAML extends AbstractElement implements XMLAssertion
     /**
      * Return an array of conditions which the assertions are predicated on
      *
-     * @throws \Zend\InfoCard\XML\Exception
+     * @throws \Zend2\InfoCard\XML\Exception
      * @return array an array of conditions
      */
     public function getConditions()

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\InternalType;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
+namespace Zend2\Pdf\InternalType;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
 
 /**
  * PDF file 'name' element implementation
  *
- * @uses       \Zend\Pdf\InternalType\AbstractTypeObject
- * @uses       \Zend\Pdf\Exception
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\InternalType\AbstractTypeObject
+ * @uses       \Zend2\Pdf\Exception
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class NameObject extends AbstractTypeObject
@@ -48,7 +48,7 @@ class NameObject extends AbstractTypeObject
      * Object constructor
      *
      * @param string $val
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct($val)
     {
@@ -153,7 +153,7 @@ class NameObject extends AbstractTypeObject
     /**
      * Return object as string
      *
-     * @param \Zend\Pdf\ObjectFactory $factory
+     * @param \Zend2\Pdf\ObjectFactory $factory
      * @return string
      */
     public function toString(Pdf\ObjectFactory $factory = null)

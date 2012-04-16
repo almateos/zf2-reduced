@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Crypt
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Crypt
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Crypt;
+namespace Zend2\Crypt;
 
-use Zend\Crypt\Exception;
+use Zend2\Crypt\Exception;
 
 /**
- * @uses       Zend\Crypt\Rsa\PrivateKey
- * @uses       Zend\Crypt\Rsa\PublicKey
- * @category   Zend
- * @package    Zend_Crypt
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Crypt\Rsa\PrivateKey
+ * @uses       Zend2\Crypt\Rsa\PublicKey
+ * @category   Zend2
+ * @package    Zend2_Crypt
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Rsa
@@ -58,12 +58,12 @@ class Rsa
      * Class constructor
      *
      * @param array $options
-     * @throws Zend\Crypt\Rsa\Exception
+     * @throws Zend2\Crypt\Rsa\Exception
      */
     public function __construct(array $options = null)
     {
         if (!extension_loaded('openssl')) {
-            throw new \Zend\Crypt\Rsa\Exception('Zend_Crypt_Rsa requires openssl extention to be loaded.');
+            throw new \Zend2\Crypt\Rsa\Exception('Zend2_Crypt_Rsa requires openssl extention to be loaded.');
         }
 
         // Set _hashAlgorithm property when we are sure, that openssl extension is loaded
@@ -113,7 +113,7 @@ class Rsa
 
     /**
      * @param  string $data
-     * @param  Zend\Crypt\Rsa\PrivateKey $privateKey
+     * @param  Zend2\Crypt\Rsa\PrivateKey $privateKey
      * @param  string $format
      * @return string
      */
@@ -155,7 +155,7 @@ class Rsa
 
     /**
      * @param string $data
-     * @param Zend\Crypt\Rsa\Key $key
+     * @param Zend2\Crypt\Rsa\Key $key
      * @param string $format
      * @return string
      */
@@ -175,7 +175,7 @@ class Rsa
 
     /**
      * @param string $data
-     * @param \Zend\Crypt\Rsa\Key $key
+     * @param \Zend2\Crypt\Rsa\Key $key
      * @param string $format
      * @return string
      */
@@ -258,7 +258,7 @@ class Rsa
 
     /**
      * @param string $name
-     * @throws \Zend\Crypt\Exception
+     * @throws \Zend2\Crypt\Exception
      */
     public function setHashAlgorithm($name)
     {

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,17 +13,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id:$
  */
 
-namespace Zend\GData\GApps;
+namespace Zend2\GData\GApps;
 
-use Zend\GData\GApps;
+use Zend2\GData\GApps;
 
 /**
  * Data model class for a Google Apps Owner Entry.
@@ -33,26 +33,26 @@ use Zend\GData\GApps;
  *
  * To transfer owner entries to and from the Google Apps servers, including
  * creating new entries, refer to the Google Apps service class,
- * Zend_Gdata_Gapps.
+ * Zend2_Gdata_Gapps.
  *
  * This class represents <atom:entry> in the Google Data protocol.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class OwnerEntry extends \Zend\Gdata\Entry
+class OwnerEntry extends \Zend2\Gdata\Entry
 {
 
-    protected $_entryClassName = '\Zend\Gdata\Gapps\OwnerEntry';
+    protected $_entryClassName = '\Zend2\Gdata\Gapps\OwnerEntry';
 
     /**
      * <apps:property> element containing information about other items
      * relevant to this entry.
      *
-     * @var Zend_Gdata_Gapps_Extension_Property
+     * @var Zend2_Gdata_Gapps_Extension_Property
      */
     protected $_property = array();
 
@@ -64,7 +64,7 @@ class OwnerEntry extends \Zend\Gdata\Entry
      */
     public function __construct($element = null)
     {
-        $this->registerAllNamespaces(Zend_Gdata_Gapps::$namespaces);
+        $this->registerAllNamespaces(Zend2_Gdata_Gapps::$namespaces);
         parent::__construct($element);
     }
 
@@ -100,7 +100,7 @@ class OwnerEntry extends \Zend\Gdata\Entry
         switch ($absoluteNodeName) {
 
             case $this->lookupNamespace('apps') . ':' . 'property';
-                $property = new Zend_Gdata_Gapps_Extension_Property();
+                $property = new Zend2_Gdata_Gapps_Extension_Property();
                 $property->transferFromDOM($child);
                 $this->_property[] = $property;
                 break;
@@ -115,9 +115,9 @@ class OwnerEntry extends \Zend\Gdata\Entry
      *
      * @param string $rel The rel value of the property to be found. If null,
      *          the array of properties is returned instead.
-     * @return mixed Either an array of \Zend\Gdata\Gapps\Extension\Property
+     * @return mixed Either an array of \Zend2\Gdata\Gapps\Extension\Property
      *          objects if $rel is null, a single
-     *          \Zend\Gdata\Gapps\Extension\Property object if $rel is specified
+     *          \Zend2\Gdata\Gapps\Extension\Property object if $rel is specified
      *          and a matching feed link is found, or null if $rel is
      *          specified and no matching property is found.
      */
@@ -139,8 +139,8 @@ class OwnerEntry extends \Zend\Gdata\Entry
      * Set the value of the  property property for this object.
      *
      * @param array $value A collection of
-     *          \Zend\Gdata\Gapps\Extension\Property objects.
-     * @return \Zend\Gdata\Gapps\OwnerEntry Provides a fluent interface.
+     *          \Zend2\Gdata\Gapps\Extension\Property objects.
+     * @return \Zend2\Gdata\Gapps\OwnerEntry Provides a fluent interface.
      */
     public function setProperty($value)
     {

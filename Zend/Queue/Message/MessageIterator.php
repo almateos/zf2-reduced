@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Queue
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Message
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Queue\Message;
+namespace Zend2\Queue\Message;
 
-use Zend\Queue\Queue;
+use Zend2\Queue\Queue;
 
 /**
  * @uses       \Countable
  * @uses       \Iterator
- * @uses       \Zend\Queue\Exception
- * @category   Zend
- * @package    Zend_Queue
+ * @uses       \Zend2\Queue\Exception
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Message
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class MessageIterator implements \Iterator, \Countable
@@ -44,7 +44,7 @@ class MessageIterator implements \Iterator, \Countable
 
      /**
      * Connected is true if we have a reference to a live
-     * \Zend\Queue\Adapter object.
+     * \Zend2\Queue\Adapter object.
      * This is false after the Message has been deserialized.
      *
      * @var boolean
@@ -52,25 +52,25 @@ class MessageIterator implements \Iterator, \Countable
     protected $_connected = true;
 
     /**
-     * \Zend\Queue\Adapter parent class or instance
+     * \Zend2\Queue\Adapter parent class or instance
      *
-     * @var \Zend\Queue\Adapter
+     * @var \Zend2\Queue\Adapter
      */
     protected $_queue = null;
 
     /**
-     * Name of the class of the \Zend\Queue\Adapter object.
+     * Name of the class of the \Zend2\Queue\Adapter object.
      *
      * @var string
      */
     protected $_queueClass = null;
 
     /**
-     * \Zend\Queue\Message\Message class name
+     * \Zend2\Queue\Message\Message class name
      *
      * @var string
      */
-    protected $_messageClass = '\Zend\Queue\Message\Message';
+    protected $_messageClass = '\Zend2\Queue\Message\Message';
 
      /**
      * MessageIterator pointer.
@@ -99,7 +99,7 @@ class MessageIterator implements \Iterator, \Countable
         }
 
         if (!is_array($options['data'])) {
-            throw new \Zend\Queue\Exception('array optionsuration must have $options[\'data\'] = array');
+            throw new \Zend2\Queue\Exception('array optionsuration must have $options[\'data\'] = array');
         }
 
         // set the message class
@@ -162,7 +162,7 @@ class MessageIterator implements \Iterator, \Countable
     /**
      * Returns the queue object, or null if this is disconnected message set
      *
-     * @return \Zend\Queue\Queue|null
+     * @return \Zend2\Queue\Queue|null
      */
     public function getQueue()
     {
@@ -173,9 +173,9 @@ class MessageIterator implements \Iterator, \Countable
      * Set the queue object, to re-establish a live connection
      * to the queue for a Message that has been de-serialized.
      *
-     * @param  \Zend\Queue\Adapter $queue
+     * @param  \Zend2\Queue\Adapter $queue
      * @return boolean
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function setQueue(Queue $queue)
     {
@@ -223,7 +223,7 @@ class MessageIterator implements \Iterator, \Countable
      * Similar to the current() function for arrays in PHP
      * Required by interface MessageIterator.
      *
-     * @return \Zend\Queue\Message current element from the collection
+     * @return \Zend2\Queue\Message current element from the collection
      */
     public function current()
     {

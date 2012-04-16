@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,37 +12,37 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Calendar;
+namespace Zend2\GData\Calendar;
 
-use Zend\GData\Calendar;
+use Zend2\GData\Calendar;
 
 /**
  * Data model class for a Google Calendar Event Entry
  *
- * @uses       \Zend\GData\Calendar
- * @uses       \Zend\GData\Calendar\Extension\Link
- * @uses       \Zend\GData\Calendar\Extension\SendEventNotifications
- * @uses       \Zend\GData\Calendar\Extension\QuickAdd
- * @uses       \Zend\GData\Calendar\Extension\Timezone
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\Kind\EventEntry
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Calendar
+ * @uses       \Zend2\GData\Calendar\Extension\Link
+ * @uses       \Zend2\GData\Calendar\Extension\SendEventNotifications
+ * @uses       \Zend2\GData\Calendar\Extension\QuickAdd
+ * @uses       \Zend2\GData\Calendar\Extension\Timezone
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\Kind\EventEntry
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class EventEntry extends \Zend\GData\Kind\EventEntry
+class EventEntry extends \Zend2\GData\Kind\EventEntry
 {
 
-    protected $_entryClassName = 'Zend\GData\Calendar\EventEntry';
+    protected $_entryClassName = 'Zend2\GData\Calendar\EventEntry';
     protected $_sendEventNotifications = null;
     protected $_timezone = null;
     protected $_quickadd = null;
@@ -116,8 +116,8 @@ class EventEntry extends \Zend\GData\Kind\EventEntry
     }
 
     /**
-     * @param \Zend\GData\Calendar\Extension\Timezone $value
-     * @return Zend_Gdata_Extension_EventEntry Provides a fluent interface
+     * @param \Zend2\GData\Calendar\Extension\Timezone $value
+     * @return Zend2_Gdata_Extension_EventEntry Provides a fluent interface
      */
     public function setTimezone($value)
     {
@@ -131,8 +131,8 @@ class EventEntry extends \Zend\GData\Kind\EventEntry
     }
 
     /**
-     * @param \Zend\GData\Calendar\Extension\QuickAdd $value
-     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
+     * @param \Zend2\GData\Calendar\Extension\QuickAdd $value
+     * @return Zend2_Gdata_Extension_ListEntry Provides a fluent interface
      */
     public function setQuickAdd($value)
     {

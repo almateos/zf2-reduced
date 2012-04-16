@@ -1,11 +1,11 @@
 <?php
 // @todo refactor to use new Definition interface
-namespace Zend\Di\ServiceLocator;
+namespace Zend2\Di\ServiceLocator;
 
-use Zend\Di\Di,
-    Zend\CodeGenerator\Php as CodeGen,
-    Zend\Di\DependencyInjection,
-    Zend\Di\Exception;
+use Zend2\Di\Di,
+    Zend2\CodeGenerator\Php as CodeGen,
+    Zend2\Di\DependencyInjection,
+    Zend2\Di\Exception;
 
 class Generator
 {
@@ -55,7 +55,7 @@ class Generator
     /**
      * Construct, configure, and return a PHP classfile code generation object
      *
-     * Creates a Zend\CodeGenerator\Php\PhpFile object that has 
+     * Creates a Zend2\CodeGenerator\Php\PhpFile object that has 
      * created the specified class and service locator methods.
      * 
      * @param  null|string $filename 
@@ -247,7 +247,7 @@ class Generator
 
         // Create PHP file code generation object
         $classFile = new CodeGen\PhpFile();
-        $classFile->setUse('Zend\Di\ServiceLocator')
+        $classFile->setUse('Zend2\Di\ServiceLocator')
                   ->setClass($container);
 
         if (null !== $this->namespace) {

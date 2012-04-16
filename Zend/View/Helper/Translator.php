@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper;
+namespace Zend2\View\Helper;
 
-use Zend\Locale\Locale,
-    Zend\Registry,
-    Zend\Translator\Adapter\AbstractAdapter as TranslationAdapter,
-    Zend\Translator\Translator as Translation,
-    Zend\View,
-    Zend\View\Exception;
+use Zend2\Locale\Locale,
+    Zend2\Registry,
+    Zend2\Translator\Adapter\AbstractAdapter as TranslationAdapter,
+    Zend2\Translator\Translator as Translation,
+    Zend2\View,
+    Zend2\View\Exception;
 
 /**
  * Translation view helper
  *
- * @uses      \Zend\Locale\Locale
- * @uses      \Zend\Registry
- * @uses      \Zend\View\Exception
- * @uses      \Zend\View\Helper\AbstractHelper
- * @category  Zend
- * @package   Zend_View
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Locale\Locale
+ * @uses      \Zend2\Registry
+ * @uses      \Zend2\View\Exception
+ * @uses      \Zend2\View\Helper\AbstractHelper
+ * @category  Zend2
+ * @package   Zend2_View
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Translator extends AbstractHelper
@@ -45,7 +45,7 @@ class Translator extends AbstractHelper
     /**
      * Translation object
      *
-     * @var \Zend\Translator\Adapter\Adapter
+     * @var \Zend2\Translator\Adapter\Adapter
      */
     protected $translator;
 
@@ -66,7 +66,7 @@ class Translator extends AbstractHelper
      *
      * @see __invoke
      * @param  string $messageid Id of the message to be translated
-     * @return string|\Zend\View\Helper\Translator Translated message
+     * @return string|\Zend2\View\Helper\Translator Translated message
      */
     public function translate($messageid = null)
     {
@@ -82,7 +82,7 @@ class Translator extends AbstractHelper
      * Example 2: translate('%1\$s + %2\$s', array($value1, $value2), $locale);
      *
      * @param  string $messageid Id of the message to be translated
-     * @return string|\Zend\View\Helper\Translator Translated message
+     * @return string|\Zend2\View\Helper\Translator Translated message
      */
     public function __invoke($messageid = null)
     {
@@ -135,7 +135,7 @@ class Translator extends AbstractHelper
             $this->translator = $translator->getAdapter();
         } else {
             throw new Exception\InvalidArgumentException(
-                'You must set an instance of Zend\Translator\Translator or Zend\Translator\Adapter'
+                'You must set an instance of Zend2\Translator\Translator or Zend2\Translator\Adapter'
             );
         }
 
@@ -150,8 +150,8 @@ class Translator extends AbstractHelper
     public function getTranslator()
     {
         if ($this->translator === null) {
-            if (Registry::isRegistered('Zend_Translator')) {
-                $this->setTranslator(Registry::get('Zend_Translator'));
+            if (Registry::isRegistered('Zend2_Translator')) {
+                $this->setTranslator(Registry::get('Zend2_Translator'));
             }
         }
 
@@ -170,7 +170,7 @@ class Translator extends AbstractHelper
         $translator = $this->getTranslator();
         if ($translator === null) {
             throw new Exception\RuntimeException(
-                'You must set an instance of Zend\Translator\Translator or Zend\Translator\Adapter'
+                'You must set an instance of Zend2\Translator\Translator or Zend2\Translator\Adapter'
             );
         }
 
@@ -190,7 +190,7 @@ class Translator extends AbstractHelper
         $translator = $this->getTranslator();
         if ($translator === null) {
             throw new Exception\RuntimeException(
-                'You must set an instance of Zend\Translator\Translator or Zend\Translator\Adapter'
+                'You must set an instance of Zend2\Translator\Translator or Zend2\Translator\Adapter'
             );
         }
 

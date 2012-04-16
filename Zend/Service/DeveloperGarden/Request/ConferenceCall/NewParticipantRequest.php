@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_Request_AbstractRequest
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Request_AbstractRequest
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_Request_ConferenceCall_NewParticipantRequest
-    extends Zend_Service_DeveloperGarden_Request_AbstractRequest
+class Zend2_Service_DeveloperGarden_Request_ConferenceCall_NewParticipantRequest
+    extends Zend2_Service_DeveloperGarden_Request_AbstractRequest
 {
     /**
      * the conference id
@@ -41,7 +41,7 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_NewParticipantRequest
     /**
      * conference participant
      *
-     * @var Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
+     * @var Zend2_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
      */
     public $participant = null;
 
@@ -50,10 +50,10 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_NewParticipantRequest
      *
      * @param integer $environment
      * @param string $conferenceId
-     * @param Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail $participant
+     * @param Zend2_Service_DeveloperGarden_ConferenceCall_ParticipantDetail $participant
      */
     public function __construct($environment, $conferenceId,
-        Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail $participant)
+        Zend2_Service_DeveloperGarden_ConferenceCall_ParticipantDetail $participant)
     {
         parent::__construct($environment);
         $this->setConferenceId($conferenceId)
@@ -64,7 +64,7 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_NewParticipantRequest
      * set the conference id
      *
      * @param string $conferenceId
-     * @return Zend_Service_DeveloperGarden_Request_ConferenceCall_NewParticipantRequest
+     * @return Zend2_Service_DeveloperGarden_Request_ConferenceCall_NewParticipantRequest
      */
     public function setConferenceId($conferenceId)
     {
@@ -75,10 +75,10 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_NewParticipantRequest
     /**
      * sets new participant
      *
-     * @param Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail $participant
-     * @return Zend_Service_DeveloperGarden_Request_ConferenceCall_NewParticipantRequest
+     * @param Zend2_Service_DeveloperGarden_ConferenceCall_ParticipantDetail $participant
+     * @return Zend2_Service_DeveloperGarden_Request_ConferenceCall_NewParticipantRequest
      */
-    public function setParticipant(Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail $participant)
+    public function setParticipant(Zend2_Service_DeveloperGarden_ConferenceCall_ParticipantDetail $participant)
     {
         $this->participant = $participant;
         return $this;

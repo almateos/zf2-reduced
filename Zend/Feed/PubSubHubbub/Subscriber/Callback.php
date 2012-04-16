@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Pubsubhubbub
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Pubsubhubbub
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\PubSubHubbub\Subscriber;
+namespace Zend2\Feed\PubSubHubbub\Subscriber;
 
-use Zend\Feed\PubSubHubbub,
-    Zend\Uri;
+use Zend2\Feed\PubSubHubbub,
+    Zend2\Uri;
 
 /**
- * @category   Zend
- * @package    Zend_Feed_Pubsubhubbub
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Pubsubhubbub
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Callback extends PubSubHubbub\AbstractCallback
@@ -42,7 +42,7 @@ class Callback extends PubSubHubbub\AbstractCallback
      * Holds a manually set subscription key (i.e. identifies a unique
      * subscription) which is typical when it is not passed in the query string
      * but is part of the Callback URL path, requiring manual retrieval e.g.
-     * using a route and the Zend_Controller_Action::_getParam() method.
+     * using a route and the Zend2_Controller_Action::_getParam() method.
      *
      * @var string
      */
@@ -60,7 +60,7 @@ class Callback extends PubSubHubbub\AbstractCallback
      * Required if usePathParameter is enabled for the Subscriber.
      *
      * @param  string $key
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Callback
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Callback
      */
     public function setSubscriptionKey($key)
     {
@@ -181,7 +181,7 @@ class Callback extends PubSubHubbub\AbstractCallback
      * Topic we've subscribed to.
      *
      * @param  string $feed
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Callback
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Callback
      */
     public function setFeedUpdate($feed)
     {

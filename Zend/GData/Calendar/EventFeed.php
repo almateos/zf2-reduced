@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Calendar;
+namespace Zend2\GData\Calendar;
 
-use Zend\GData\Calendar;
+use Zend2\GData\Calendar;
 
 /**
  * Data model for a Google Calendar feed of events
  *
- * @uses       \Zend\GData\Calendar
- * @uses       Zend_Gdata_Extension_Timezone
- * @uses       \Zend\GData\Feed
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Calendar
+ * @uses       Zend2_Gdata_Extension_Timezone
+ * @uses       \Zend2\GData\Feed
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class EventFeed extends \Zend\GData\Feed
+class EventFeed extends \Zend2\GData\Feed
 {
 
     protected $_timezone = null;
@@ -45,14 +45,14 @@ class EventFeed extends \Zend\GData\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\Calendar\EventEntry';
+    protected $_entryClassName = 'Zend2\GData\Calendar\EventEntry';
 
     /**
      * The classname for the feed.
      *
      * @var string
      */
-    protected $_feedClassName = 'Zend\GData\Calendar\EventFeed';
+    protected $_feedClassName = 'Zend2\GData\Calendar\EventFeed';
 
     public function __construct($element = null)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Index
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Index;
+namespace Zend2\Search\Lucene\Index;
 
 /**
- * A Zend_Search_Lucene_Index_DocsFilter is used to filter documents while searching.
+ * A Zend2_Search_Lucene_Index_DocsFilter is used to filter documents while searching.
  *
  * It may or _may_not_ be used for actual filtering, so it's just a hint that upper query limits
  * search result by specified list.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Index
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DocsFilter

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Ldap
+ * @category   Zend2
+ * @package    Zend2_Ldap
  * @subpackage Node
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Ldap;
+namespace Zend2\Ldap;
 
 /**
- * Zend\Ldap\Node provides an object oriented view into a LDAP node.
+ * Zend2\Ldap\Node provides an object oriented view into a LDAP node.
  *
- * @category   Zend
- * @package    Zend_Ldap
+ * @category   Zend2
+ * @package    Zend2_Ldap
  * @subpackage Node
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Node extends Node\AbstractNode implements \Iterator, \RecursiveIterator
@@ -221,7 +221,7 @@ class Node extends Node\AbstractNode implements \Iterator, \RecursiveIterator
     }
 
     /**
-     * Factory method to create a new detached Zend\Ldap\Node for a given DN.
+     * Factory method to create a new detached Zend2\Ldap\Node for a given DN.
      *
      * @param  string|array|Dn $dn
      * @param  array           $objectClass
@@ -245,7 +245,7 @@ class Node extends Node\AbstractNode implements \Iterator, \RecursiveIterator
     }
 
     /**
-     * Factory method to create an attached Zend\Ldap\Node for a given DN.
+     * Factory method to create an attached Zend2\Ldap\Node for a given DN.
      *
      * @param  string|array|Dn $dn
      * @param  Ldap            $ldap
@@ -271,7 +271,7 @@ class Node extends Node\AbstractNode implements \Iterator, \RecursiveIterator
     }
 
     /**
-     * Factory method to create a detached Zend\Ldap\Node from array data.
+     * Factory method to create a detached Zend2\Ldap\Node from array data.
      *
      * @param  array   $data
      * @param  boolean $fromDataSource
@@ -439,7 +439,7 @@ class Node extends Node\AbstractNode implements \Iterator, \RecursiveIterator
     }
 
     /**
-     * Gets the DN of the current node as a Zend\Ldap\Dn.
+     * Gets the DN of the current node as a Zend2\Ldap\Dn.
      *
      * This is an offline method.
      *
@@ -451,7 +451,7 @@ class Node extends Node\AbstractNode implements \Iterator, \RecursiveIterator
     }
 
     /**
-     * Gets the current DN of the current node as a Zend\Ldap\Dn.
+     * Gets the current DN of the current node as a Zend2\Ldap\Dn.
      * The method returns a clone of the node's DN to prohibit modification.
      *
      * This is an offline method.
@@ -563,7 +563,7 @@ class Node extends Node\AbstractNode implements \Iterator, \RecursiveIterator
      * Gets changed node data.
      *
      * The array contains all changed attributes.
-     * This format can be used in {@link Zend\Ldap\Ldap::add()} and {@link Zend\Ldap\Ldap::update()}.
+     * This format can be used in {@link Zend2\Ldap\Ldap::add()} and {@link Zend2\Ldap\Ldap::update()}.
      *
      * This is an offline method.
      *
@@ -910,7 +910,7 @@ class Node extends Node\AbstractNode implements \Iterator, \RecursiveIterator
     {
         return $this->getLdap()->search(
             $filter, $this->_getDn(), $scope, array('*', '+'), $sort,
-            'Zend\Ldap\Node\Collection'
+            'Zend2\Ldap\Node\Collection'
         );
     }
 

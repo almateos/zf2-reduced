@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,33 +12,33 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Document
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Document;
+namespace Zend2\Search\Lucene\Document;
 
-use Zend\Search\Lucene,
-	Zend\Search\Lucene\Exception\ExtensionNotLoadedException,
-	Zend\Search\Lucene\Exception\RuntimeException,
-	Zend\Search\Lucene\Document\Exception\InvalidArgumentException;
+use Zend2\Search\Lucene,
+	Zend2\Search\Lucene\Exception\ExtensionNotLoadedException,
+	Zend2\Search\Lucene\Exception\RuntimeException,
+	Zend2\Search\Lucene\Document\Exception\InvalidArgumentException;
 
 /**
  * Docx document.
  *
- * @uses       \Zend\Search\Lucene\Exception\ExtensionNotLoadedException
- * @uses	   \Zend\Search\Lucene\Exception\RuntimeException
- * @uses	   \Zend\Search\Lucene\Document\Exception\InvalidArgumentException
- * @uses       \Zend\Search\Lucene\Document\AbstractOpenXML
- * @uses       \Zend\Search\Lucene\Document\Field
+ * @uses       \Zend2\Search\Lucene\Exception\ExtensionNotLoadedException
+ * @uses	   \Zend2\Search\Lucene\Exception\RuntimeException
+ * @uses	   \Zend2\Search\Lucene\Document\Exception\InvalidArgumentException
+ * @uses       \Zend2\Search\Lucene\Document\AbstractOpenXML
+ * @uses       \Zend2\Search\Lucene\Document\Field
  * @uses       ZipArchive
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Document
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Docx extends AbstractOpenXML {
@@ -54,8 +54,8 @@ class Docx extends AbstractOpenXML {
      *
      * @param string  $fileName
      * @param boolean $storeContent
-     * @throws \Zend\Search\Lucene\Exception\ExtensionNotLoadedException
-     * @throws \Zend\Search\Lucene\Exception\RuntimeException
+     * @throws \Zend2\Search\Lucene\Exception\ExtensionNotLoadedException
+     * @throws \Zend2\Search\Lucene\Exception\RuntimeException
      */
     private function __construct($fileName, $storeContent)
     {
@@ -148,8 +148,8 @@ class Docx extends AbstractOpenXML {
      *
      * @param string  $fileName
      * @param boolean $storeContent
-     * @throws \Zend\Search\Lucene\Document\Exception\InvalidArgumentException
-     * @return \Zend\Search\Lucene\Document\Docx
+     * @throws \Zend2\Search\Lucene\Document\Exception\InvalidArgumentException
+     * @return \Zend2\Search\Lucene\Document\Docx
      */
     public static function loadDocxFile($fileName, $storeContent = false)
     {

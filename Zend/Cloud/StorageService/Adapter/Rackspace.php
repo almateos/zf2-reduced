@@ -10,32 +10,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Cloud_StorageService
+ * @category   Zend2
+ * @package    Zend2_Cloud_StorageService
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * namespace
  */
-namespace Zend\Cloud\StorageService\Adapter;
+namespace Zend2\Cloud\StorageService\Adapter;
 
 use Traversable,
-    Zend\Cloud\StorageService\Adapter,
-    Zend\Cloud\StorageService\Exception,
-    Zend\Service\Rackspace\Exception as RackspaceException,
-    Zend\Service\Rackspace\Files as RackspaceFile,
-    Zend\Stdlib\ArrayUtils;
+    Zend2\Cloud\StorageService\Adapter,
+    Zend2\Cloud\StorageService\Exception,
+    Zend2\Service\Rackspace\Exception as RackspaceException,
+    Zend2\Service\Rackspace\Files as RackspaceFile,
+    Zend2\Stdlib\ArrayUtils;
 
 /**
  * Adapter for Rackspace cloud storage
  *
- * @category   Zend
- * @package    Zend_Cloud_StorageService
+ * @category   Zend2
+ * @package    Zend2_Cloud_StorageService
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Rackspace implements Adapter

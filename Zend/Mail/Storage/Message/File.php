@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail\Storage\Message;
+namespace Zend2\Mail\Storage\Message;
 
-use Zend\Mail\Storage\MailMessage,
-    Zend\Mail\Storage\Part\File as FilePart;
+use Zend2\Mail\Storage\MailMessage,
+    Zend2\Mail\Storage\Part\File as FilePart;
 
 /**
- * @category   Zend
- * @package    Zend_Mail
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Mail
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class File extends FilePart implements MailMessage
@@ -41,11 +41,11 @@ class File extends FilePart implements MailMessage
     /**
      * Public constructor
      *
-     * In addition to the parameters of Zend_Mail_Part::__construct() this constructor supports:
-     * - flags array with flags for message, keys are ignored, use constants defined in Zend_Mail_Storage
+     * In addition to the parameters of Zend2_Mail_Part::__construct() this constructor supports:
+     * - flags array with flags for message, keys are ignored, use constants defined in Zend2_Mail_Storage
      *
      * @param  string $rawMessage  full message with or without headers
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function __construct(array $params)
     {
@@ -70,7 +70,7 @@ class File extends FilePart implements MailMessage
     /**
      * check if flag is set
      *
-     * @param mixed $flag a flag name, use constants defined in \Zend\Mail\Storage
+     * @param mixed $flag a flag name, use constants defined in \Zend2\Mail\Storage
      * @return bool true if set, otherwise false
      */
     public function hasFlag($flag)

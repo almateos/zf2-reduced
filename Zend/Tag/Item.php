@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Tag
+ * @category   Zend2
+ * @package    Zend2_Tag
  * @subpackage Item
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Tag;
+namespace Zend2\Tag;
 
 /**
- * @uses       \Zend\Tag\Exception\InvalidArgumentException
- * @uses       \Zend\Tag\Taggable
- * @category   Zend
- * @package    Zend_Tag
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Tag\Exception\InvalidArgumentException
+ * @uses       \Zend2\Tag\Taggable
+ * @category   Zend2
+ * @package    Zend2_Tag
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Item implements Taggable
@@ -65,15 +65,15 @@ class Item implements Taggable
     /**
      * Create a new tag according to the options
      *
-     * @param  array|\Zend\Config\Config $options
-     * @throws \Zend\Tag\Exception\InvalidArgumentException When invalid options are provided
-     * @throws \Zend\Tag\Exception\InvalidArgumentException When title was not set
-     * @throws \Zend\Tag\Exception\InvalidArgumentException When weight was not set
+     * @param  array|\Zend2\Config\Config $options
+     * @throws \Zend2\Tag\Exception\InvalidArgumentException When invalid options are provided
+     * @throws \Zend2\Tag\Exception\InvalidArgumentException When title was not set
+     * @throws \Zend2\Tag\Exception\InvalidArgumentException When weight was not set
      * @return void
      */
     public function __construct($options)
     {
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         }
 
@@ -96,7 +96,7 @@ class Item implements Taggable
      * Set options of the tag
      *
      * @param  array $options
-     * @return \Zend\Tag\Item
+     * @return \Zend2\Tag\Item
      */
     public function setOptions(array $options)
     {
@@ -115,7 +115,7 @@ class Item implements Taggable
     }
 
     /**
-     * Defined by Zend\Tag\Taggable
+     * Defined by Zend2\Tag\Taggable
      *
      * @return string
      */
@@ -128,8 +128,8 @@ class Item implements Taggable
      * Set the title
      *
      * @param  string $title
-     * @throws \Zend\Tag\Exception\InvalidArgumentException When title is no string
-     * @return \Zend\Tag\Item
+     * @throws \Zend2\Tag\Exception\InvalidArgumentException When title is no string
+     * @return \Zend2\Tag\Item
      */
     public function setTitle($title)
     {
@@ -142,7 +142,7 @@ class Item implements Taggable
     }
 
     /**
-     * Defined by Zend\Tag\Taggable
+     * Defined by Zend2\Tag\Taggable
      *
      * @return float
      */
@@ -155,8 +155,8 @@ class Item implements Taggable
      * Set the weight
      *
      * @param  float $weight
-     * @throws \Zend\Tag\Exception\InvalidArgumentException When weight is not numeric
-     * @return \Zend\Tag\Item
+     * @throws \Zend2\Tag\Exception\InvalidArgumentException When weight is not numeric
+     * @return \Zend2\Tag\Item
      */
     public function setWeight($weight)
     {
@@ -172,7 +172,7 @@ class Item implements Taggable
      * Set multiple params at once
      *
      * @param  array $params
-     * @return \Zend\Tag\Item
+     * @return \Zend2\Tag\Item
      */
     public function setParams(array $params)
     {
@@ -184,11 +184,11 @@ class Item implements Taggable
     }
 
     /**
-     * Defined by Zend\Tag\Taggable
+     * Defined by Zend2\Tag\Taggable
      *
      * @param  string $name
      * @param  mixed  $value
-     * @return \Zend\Tag\Item
+     * @return \Zend2\Tag\Item
      */
     public function setParam($name, $value)
     {
@@ -197,7 +197,7 @@ class Item implements Taggable
     }
 
     /**
-     * Defined by Zend\Tag\Taggable
+     * Defined by Zend2\Tag\Taggable
      *
      * @param  string $name
      * @return mixed

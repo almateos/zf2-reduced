@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Barcode
+ * @category   Zend2
+ * @package    Zend2_Barcode
  * @subpackage Renderer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Barcode\Renderer;
+namespace Zend2\Barcode\Renderer;
 
 use Traversable,
-    Zend\Barcode\Barcode,
-    Zend\Barcode\Exception as BarcodeException,
-    Zend\Barcode\Object,
-    Zend\Barcode\Renderer,
-    Zend\Stdlib\ArrayUtils;
+    Zend2\Barcode\Barcode,
+    Zend2\Barcode\Exception as BarcodeException,
+    Zend2\Barcode\Object,
+    Zend2\Barcode\Renderer,
+    Zend2\Stdlib\ArrayUtils;
 
 /**
  * Class for rendering the barcode
  *
- * @category   Zend
- * @package    Zend_Barcode
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Barcode
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractRenderer implements Renderer
@@ -42,7 +42,7 @@ abstract class AbstractRenderer implements Renderer
      * Namespace of the renderer for autoloading
      * @var string
      */
-    protected $rendererNamespace = 'Zend\Barcode\Renderer';
+    protected $rendererNamespace = 'Zend2\Barcode\Renderer';
 
     /**
      * Renderer type

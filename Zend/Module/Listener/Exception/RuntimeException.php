@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Module\Listener\Exception;
+namespace Zend2\Module\Listener\Exception;
 
 class RuntimeException
     extends \RuntimeException
-    implements \Zend\Module\Listener\Exception
+    implements \Zend2\Module\Listener\Exception
 {}

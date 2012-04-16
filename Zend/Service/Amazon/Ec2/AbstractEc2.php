@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_Amazon
+ * @category   Zend2
+ * @package    Zend2_Service_Amazon
  * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Amazon\Ec2;
-use Zend\Service\Amazon,
-    Zend\Service\Amazon\Ec2\Exception,
-    Zend\Crypt;
+namespace Zend2\Service\Amazon\Ec2;
+use Zend2\Service\Amazon,
+    Zend2\Service\Amazon\Ec2\Exception,
+    Zend2\Crypt;
 
 /**
  * Provides the basic functionality to send a request to the Amazon Ec2 Query API
  *
  * @uses       DOMXPath
- * @uses       Zend_Crypt_Hmac
- * @uses       Zend_Http_Client
- * @uses       Zend_Service_Amazon_Abstract
- * @uses       Zend\Service\Amazon\Exception
- * @uses       Zend\Service\Amazon\Ec2\Exception
- * @uses       Zend_Service_Amazon_Ec2_Response
- * @category   Zend
- * @package    Zend_Service_Amazon
+ * @uses       Zend2_Crypt_Hmac
+ * @uses       Zend2_Http_Client
+ * @uses       Zend2_Service_Amazon_Abstract
+ * @uses       Zend2\Service\Amazon\Exception
+ * @uses       Zend2\Service\Amazon\Ec2\Exception
+ * @uses       Zend2_Service_Amazon_Ec2_Response
+ * @category   Zend2
+ * @package    Zend2_Service_Amazon
  * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractEc2 extends Amazon\AbstractAmazon
@@ -134,11 +134,11 @@ abstract class AbstractEc2 extends Amazon\AbstractAmazon
     }
 
     /**
-     * Sends a HTTP request to the queue service using Zend_Http_Client
+     * Sends a HTTP request to the queue service using Zend2_Http_Client
      *
      * @param array $params         List of parameters to send with the request
-     * @return Zend_Service_Amazon_Ec2_Response
-     * @throws Zend\Service\Amazon\Ec2\Exception
+     * @return Zend2_Service_Amazon_Ec2_Response
+     * @throws Zend2\Service\Amazon\Ec2\Exception
      */
     protected function sendRequest(array $params = array())
     {
@@ -147,7 +147,7 @@ abstract class AbstractEc2 extends Amazon\AbstractAmazon
         $params = $this->addRequiredParameters($params);
 
         try {
-            /* @var $request Zend_Http_Client */
+            /* @var $request Zend2_Http_Client */
             $request = $this->getHttpClient();
             $request->resetParameters();
 
@@ -162,7 +162,7 @@ abstract class AbstractEc2 extends Amazon\AbstractAmazon
             $httpResponse = $request->send();
 
 
-        } catch (\Zend\Http\Client\Exception $zhce) {
+        } catch (\Zend2\Http\Client\Exception $zhce) {
             $message = 'Error in request to AWS service: ' . $zhce->getMessage();
             throw new Exception\RuntimeException($message, $zhce->getCode(), $zhce);
         }
@@ -247,12 +247,12 @@ abstract class AbstractEc2 extends Amazon\AbstractAmazon
     /**
      * Checks for errors responses from Amazon
      *
-     * @param Zend_Service_Amazon_Ec2_Response $response the response object to
+     * @param Zend2_Service_Amazon_Ec2_Response $response the response object to
      *                                                   check.
      *
      * @return void
      *
-     * @throws Zend\Service\Amazon\Ec2\Exception if one or more errors are
+     * @throws Zend2\Service\Amazon\Ec2\Exception if one or more errors are
      *         returned from Amazon.
      */
     private function checkForErrors(Response $response)

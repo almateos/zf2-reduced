@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,34 +12,34 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\InternalType;
-use Zend\Pdf\Exception;
-use Zend\Pdf\InternalType\StreamFilter\Compression as CompressionFilter;
-use Zend\Pdf\ObjectFactory;
-use Zend\Pdf;
+namespace Zend2\Pdf\InternalType;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf\InternalType\StreamFilter\Compression as CompressionFilter;
+use Zend2\Pdf\ObjectFactory;
+use Zend2\Pdf;
 
 /**
  * PDF file 'stream object' element implementation
  *
- * @uses       \Zend\Pdf\InternalType\AbstractTypeObject
- * @uses       \Zend\Pdf\InternalType\DictionaryObject
- * @uses       \Zend\Pdf\InternalType\NumericObject
- * @uses       \Zend\Pdf\InternalType\IndirectObject
- * @uses       \Zend\Pdf\InternalType\StreamContent
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\InternalType\StreamFilter
- * @uses       \Zend\Pdf\InternalType\StreamFilter\Compression;
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\InternalType\AbstractTypeObject
+ * @uses       \Zend2\Pdf\InternalType\DictionaryObject
+ * @uses       \Zend2\Pdf\InternalType\NumericObject
+ * @uses       \Zend2\Pdf\InternalType\IndirectObject
+ * @uses       \Zend2\Pdf\InternalType\StreamContent
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\InternalType\StreamFilter
+ * @uses       \Zend2\Pdf\InternalType\StreamFilter\Compression;
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class StreamObject extends IndirectObject
@@ -49,7 +49,7 @@ class StreamObject extends IndirectObject
      * Required enries:
      * Length
      *
-     * @var \Zend\Pdf\InternalType\DictionaryObject
+     * @var \Zend2\Pdf\InternalType\DictionaryObject
      */
     private $_dictionary;
 
@@ -76,9 +76,9 @@ class StreamObject extends IndirectObject
      * @param mixed $val
      * @param integer $objNum
      * @param integer $genNum
-     * @param \Zend\Pdf\ObjectFactory $factory
-     * @param \Zend\Pdf\InternalType\DictionaryObject|null $dictionary
-     * @throws \Zend\Pdf\Exception
+     * @param \Zend2\Pdf\ObjectFactory $factory
+     * @param \Zend2\Pdf\InternalType\DictionaryObject|null $dictionary
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct($val, $objNum, $genNum, ObjectFactory $factory, $dictionary = null)
     {
@@ -175,7 +175,7 @@ class StreamObject extends IndirectObject
     /**
      * Decode stream
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     private function _decodeStream()
     {
@@ -229,7 +229,7 @@ class StreamObject extends IndirectObject
     /**
      * Encode stream
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     private function _encodeStream()
     {
@@ -283,7 +283,7 @@ class StreamObject extends IndirectObject
      *
      * @param string $property
      * @return mixed
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function __get($property)
     {
@@ -360,10 +360,10 @@ class StreamObject extends IndirectObject
     /**
      * Detach PDF object from the factory (if applicable), clone it and attach to new factory.
      *
-     * @param \Zend\Pdf\ObjectFactory $factory  The factory to attach
+     * @param \Zend2\Pdf\ObjectFactory $factory  The factory to attach
      * @param array &$processed  List of already processed indirect objects, used to avoid objects duplication
      * @param integer $mode  Cloning mode (defines filter for objects cloning)
-     * @returns \Zend\Pdf\InternalType\AbstractTypeObject
+     * @returns \Zend2\Pdf\InternalType\AbstractTypeObject
      */
     public function makeClone(ObjectFactory $factory, array &$processed, $mode)
     {
@@ -394,7 +394,7 @@ class StreamObject extends IndirectObject
      *
      * $factory parameter defines operation context.
      *
-     * @param \Zend\Pdf\ObjectFactory $factory
+     * @param \Zend2\Pdf\ObjectFactory $factory
      * @return string
      */
     public function dump(ObjectFactory $factory)

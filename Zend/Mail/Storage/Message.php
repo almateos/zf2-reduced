@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,19 +12,19 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail\Storage;
+namespace Zend2\Mail\Storage;
 
 /**
- * @category   Zend
- * @package    Zend_Mail
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Mail
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Message extends Part implements MailMessage
@@ -40,7 +40,7 @@ class Message extends Part implements MailMessage
      *
      * In addition to the parameters of Part::__construct() this constructor supports:
      * - file  filename or file handle of a file with raw message content
-     * - flags array with flags for message, keys are ignored, use constants defined in \Zend\Mail\Storage
+     * - flags array with flags for message, keys are ignored, use constants defined in \Zend2\Mail\Storage
      *
      * @param  string $rawMessage  full message with or without headers
      * @throws Exception
@@ -79,7 +79,7 @@ class Message extends Part implements MailMessage
     /**
      * check if flag is set
      *
-     * @param mixed $flag a flag name, use constants defined in \Zend\Mail\Storage
+     * @param mixed $flag a flag name, use constants defined in \Zend2\Mail\Storage
      * @return bool true if set, otherwise false
      */
     public function hasFlag($flag)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,33 +12,33 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mvc
+ * @category   Zend2
+ * @package    Zend2_Mvc
  * @subpackage View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mvc\View;
+namespace Zend2\Mvc\View;
 
-use Zend\EventManager\EventCollection,
-    Zend\EventManager\ListenerAggregate,
-    Zend\Mvc\MvcEvent,
-    Zend\Stdlib\ResponseDescription as Response,
-    Zend\View\Model as ViewModel,
-    Zend\View\View;
+use Zend2\EventManager\EventCollection,
+    Zend2\EventManager\ListenerAggregate,
+    Zend2\Mvc\MvcEvent,
+    Zend2\Stdlib\ResponseDescription as Response,
+    Zend2\View\Model as ViewModel,
+    Zend2\View\View;
 
 /**
- * @category   Zend
- * @package    Zend_Mvc
+ * @category   Zend2
+ * @package    Zend2_Mvc
  * @subpackage View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DefaultRenderingStrategy implements ListenerAggregate
 {
     /**
-     * @var \Zend\Stdlib\CallbackHandler[]
+     * @var \Zend2\Stdlib\CallbackHandler[]
      */
     protected $listeners = array();
 

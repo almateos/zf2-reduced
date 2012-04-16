@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Resource;
-use Zend\Pdf\InternalType;
-use Zend\Pdf\ObjectFactory;
-use Zend\Pdf;
+namespace Zend2\Pdf\Resource;
+use Zend2\Pdf\InternalType;
+use Zend2\Pdf\ObjectFactory;
+use Zend2\Pdf;
 
 
 /**
@@ -37,8 +37,8 @@ use Zend\Pdf;
  * extractors may be used for constracting one target document, but extractor
  * must not be shared between target documents.
  *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @package    Zend2_Pdf
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Extractor
@@ -46,7 +46,7 @@ class Extractor
     /**
      * PDF objects factory.
      *
-     * @var \Zend\Pdf\ObjectFactory
+     * @var \Zend2\Pdf\ObjectFactory
      */
     protected $_factory;
 
@@ -70,7 +70,7 @@ class Extractor
      * Clone page, extract it and dependent objects from the current document,
      * so it can be used within other docs
      *
-     * return \Zend\Pdf\Page
+     * return \Zend2\Pdf\Page
      */
     public function clonePage(Pdf\Page $page)
     {

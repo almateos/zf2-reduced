@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Json
+ * @category   Zend2
+ * @package    Zend2_Json
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Json\Server;
-use Zend\Json;
+namespace Zend2\Json\Server;
+use Zend2\Json;
 
 /**
  * @todo       Revised method regex to allow NS; however, should SMD be revised to strip PHP NS instead when attaching functions?
- * @uses       Zend\Json\Json
- * @category   Zend
- * @package    Zend_Json
+ * @uses       Zend2\Json\Json
+ * @category   Zend2
+ * @package    Zend2_Json
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Request
@@ -73,7 +73,7 @@ class Request
      * Set request state
      *
      * @param  array $options
-     * @return \Zend\Json\Server\Request
+     * @return \Zend2\Json\Server\Request
      */
     public function setOptions(array $options)
     {
@@ -94,7 +94,7 @@ class Request
      *
      * @param  mixed $value
      * @param  string $key
-     * @return \Zend\Json\Server\Request
+     * @return \Zend2\Json\Server\Request
      */
     public function addParam($value, $key = null)
     {
@@ -112,7 +112,7 @@ class Request
      * Add many params
      *
      * @param  array $params
-     * @return \Zend\Json\Server\Request
+     * @return \Zend2\Json\Server\Request
      */
     public function addParams(array $params)
     {
@@ -126,7 +126,7 @@ class Request
      * Overwrite params
      *
      * @param  array $params
-     * @return \Zend\Json\Server\Request
+     * @return \Zend2\Json\Server\Request
      */
     public function setParams(array $params)
     {
@@ -163,7 +163,7 @@ class Request
      * Set request method
      *
      * @param  string $name
-     * @return \Zend\Json\Server\Request
+     * @return \Zend2\Json\Server\Request
      */
     public function setMethod($name)
     {
@@ -199,7 +199,7 @@ class Request
      * Set request identifier
      *
      * @param  mixed $name
-     * @return \Zend\Json\Server\Request
+     * @return \Zend2\Json\Server\Request
      */
     public function setId($name)
     {
@@ -221,7 +221,7 @@ class Request
      * Set JSON-RPC version
      *
      * @param  string $version
-     * @return \Zend\Json\Server\Request
+     * @return \Zend2\Json\Server\Request
      */
     public function setVersion($version)
     {

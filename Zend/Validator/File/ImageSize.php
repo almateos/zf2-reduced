@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator\File;
+namespace Zend2\Validator\File;
 
-use Zend\Loader,
-    Zend\Validator,
-    Zend\Validator\Exception;
+use Zend2\Loader,
+    Zend2\Validator,
+    Zend2\Validator\Exception;
 
 /**
  * Validator for the image size of a image file
  *
- * @uses      \Zend\Loader
- * @uses      \Zend\Validator\AbstractValidator
- * @uses      \Zend\Validator\Exception
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Loader
+ * @uses      \Zend2\Validator\AbstractValidator
+ * @uses      \Zend2\Validator\Exception
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ImageSize extends Validator\AbstractValidator
@@ -106,7 +106,7 @@ class ImageSize extends Validator\AbstractValidator
      * - maxheight
      * - maxwidth
      *
-     * @param  \Zend\Config\Config|array $options
+     * @param  \Zend2\Config\Config|array $options
      * @return void
      */
     public function __construct($options = null)
@@ -144,8 +144,8 @@ class ImageSize extends Validator\AbstractValidator
      * Sets the minimum allowed width
      *
      * @param  integer $minWidth
-     * @throws \Zend\Validator\Exception      When minwidth is greater than maxwidth
-     * @return \Zend\Validator\File\ImageSize Provides a fluid interface
+     * @throws \Zend2\Validator\Exception      When minwidth is greater than maxwidth
+     * @return \Zend2\Validator\File\ImageSize Provides a fluid interface
      */
     public function setMinWidth($minWidth)
     {
@@ -172,8 +172,8 @@ class ImageSize extends Validator\AbstractValidator
      * Sets the maximum allowed width
      *
      * @param  integer $maxWidth
-     * @throws \Zend\Validator\Exception      When maxwidth is less than minwidth
-     * @return \Zend\Validator\File\ImageSize Provides a fluid interface
+     * @throws \Zend2\Validator\Exception      When maxwidth is less than minwidth
+     * @return \Zend2\Validator\File\ImageSize Provides a fluid interface
      */
     public function setMaxWidth($maxWidth)
     {
@@ -200,8 +200,8 @@ class ImageSize extends Validator\AbstractValidator
      * Sets the minimum allowed height
      *
      * @param  integer $minHeight
-     * @throws \Zend\Validator\Exception      When minheight is greater than maxheight
-     * @return \Zend\Validator\File\ImageSize Provides a fluid interface
+     * @throws \Zend2\Validator\Exception      When minheight is greater than maxheight
+     * @return \Zend2\Validator\File\ImageSize Provides a fluid interface
      */
     public function setMinHeight($minHeight)
     {
@@ -228,8 +228,8 @@ class ImageSize extends Validator\AbstractValidator
      * Sets the maximum allowed height
      *
      * @param  integer $maxHeight
-     * @throws \Zend\Validator\Exception      When maxheight is less than minheight
-     * @return \Zend\Validator\File\ImageSize Provides a fluid interface
+     * @throws \Zend2\Validator\Exception      When maxheight is less than minheight
+     * @return \Zend2\Validator\File\ImageSize Provides a fluid interface
      */
     public function setMaxHeight($maxHeight)
     {
@@ -286,9 +286,9 @@ class ImageSize extends Validator\AbstractValidator
      * Sets the minimum image size
      *
      * @param  array $options                 The minimum image dimensions
-     * @throws \Zend\Validator\Exception      When minwidth is greater than maxwidth
-     * @throws \Zend\Validator\Exception      When minheight is greater than maxheight
-     * @return \Zend\Validator\File\ImageSize Provides a fluent interface
+     * @throws \Zend2\Validator\Exception      When minwidth is greater than maxwidth
+     * @throws \Zend2\Validator\Exception      When minheight is greater than maxheight
+     * @return \Zend2\Validator\File\ImageSize Provides a fluent interface
      */
     public function setImageMin($options)
     {
@@ -322,9 +322,9 @@ class ImageSize extends Validator\AbstractValidator
      * Sets the maximum image size
      *
      * @param  array $options          The maximum image dimensions
-     * @throws \Zend\Validator\Exception When maxwidth is smaller than minwidth
-     * @throws \Zend\Validator\Exception When maxheight is smaller than minheight
-     * @return \Zend\Validator\StringLength Provides a fluent interface
+     * @throws \Zend2\Validator\Exception When maxwidth is smaller than minwidth
+     * @throws \Zend2\Validator\Exception When maxheight is smaller than minheight
+     * @return \Zend2\Validator\StringLength Provides a fluent interface
      */
     public function setImageMax($options)
     {
@@ -358,7 +358,7 @@ class ImageSize extends Validator\AbstractValidator
      * Sets the mimimum and maximum image width
      *
      * @param  array $options               The image width dimensions
-     * @return \Zend\Validator\File\ImageSize Provides a fluent interface
+     * @return \Zend2\Validator\File\ImageSize Provides a fluent interface
      */
     public function setImageWidth($options)
     {
@@ -372,7 +372,7 @@ class ImageSize extends Validator\AbstractValidator
      * Sets the mimimum and maximum image height
      *
      * @param  array $options               The image height dimensions
-     * @return \Zend\Validator\File\ImageSize Provides a fluent interface
+     * @return \Zend2\Validator\File\ImageSize Provides a fluent interface
      */
     public function setImageHeight($options)
     {
@@ -387,7 +387,7 @@ class ImageSize extends Validator\AbstractValidator
      * not bigger than max
      *
      * @param  string $value Real file to check for image size
-     * @param  array  $file  File data from \Zend\File\Transfer\Transfer
+     * @param  array  $file  File data from \Zend2\File\Transfer\Transfer
      * @return boolean
      */
     public function isValid($value, $file = null)

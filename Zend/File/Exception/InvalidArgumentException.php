@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_File
+ * @category   Zend2
+ * @package    Zend2_File
  * @subpackage Exception
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\File\Exception;
+namespace Zend2\File\Exception;
 
-use Zend\File\Exception;
+use Zend2\File\Exception;
 
 /**
  * Exception class raised when invalid arguments are discovered
  * 
- * @package    Zend_File
+ * @package    Zend2_File
  * @license    New BSD {@link http://framework.zend.com/license/new-bsd}
  */
 class InvalidArgumentException 

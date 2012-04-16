@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Pubsubhubbub
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Pubsubhubbub
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\PubSubHubbub;
+namespace Zend2\Feed\PubSubHubbub;
 
 /**
- * @uses       \Zend\Feed\PubSubHubbub\PubSubHubbub
- * @uses       \Zend\Feed\PubSubHubbub\Exception
- * @category   Zend
- * @package    Zend_Feed_Pubsubhubbub
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Feed\PubSubHubbub\PubSubHubbub
+ * @uses       \Zend2\Feed\PubSubHubbub\Exception
+ * @category   Zend2
+ * @package    Zend2_Feed_Pubsubhubbub
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class HttpResponse
@@ -101,7 +101,7 @@ class HttpResponse
      * @param  string $name
      * @param  string $value
      * @param  boolean $replace
-     * @return \Zend\Feed\PubSubHubbub\HttpResponse
+     * @return \Zend2\Feed\PubSubHubbub\HttpResponse
      */
     public function setHeader($name, $value, $replace = false)
     {
@@ -154,7 +154,7 @@ class HttpResponse
      *
      * @param  boolean $throw Whether or not to throw an exception if headers have been sent; defaults to false
      * @return boolean
-     * @throws \Zend\Feed\PubSubHubbub\Exception
+     * @throws \Zend2\Feed\PubSubHubbub\Exception
      */
     public function canSendHeaders($throw = false)
     {
@@ -169,7 +169,7 @@ class HttpResponse
      * Set HTTP response code to use with headers
      *
      * @param  int $code
-     * @return \Zend\Feed\PubSubHubbub\HttpResponse
+     * @return \Zend2\Feed\PubSubHubbub\HttpResponse
      */
     public function setHttpResponseCode($code)
     {
@@ -195,7 +195,7 @@ class HttpResponse
      * Set body content
      *
      * @param  string $content
-     * @return \Zend\Feed\PubSubHubbub\HttpResponse
+     * @return \Zend2\Feed\PubSubHubbub\HttpResponse
      */
     public function setBody($content)
     {

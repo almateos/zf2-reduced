@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\YouTube;
+namespace Zend2\GData\YouTube;
 
-use Zend\GData\YouTube;
+use Zend2\GData\YouTube;
 
 /**
  * A feed of user activity entries for YouTube
  *
- * @uses       \Zend\GData\Feed
- * @uses       \Zend\GData\YouTube
- * @uses       \Zend\GData\YouTube\ActivityEntry
+ * @uses       \Zend2\GData\Feed
+ * @uses       \Zend2\GData\YouTube
+ * @uses       \Zend2\GData\YouTube\ActivityEntry
  * @link http://code.google.com/apis/youtube/
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class ActivityFeed extends \Zend\GData\Feed
+class ActivityFeed extends \Zend2\GData\Feed
 {
 
     /**
@@ -44,7 +44,7 @@ class ActivityFeed extends \Zend\GData\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\YouTube\ActivityEntry';
+    protected $_entryClassName = 'Zend2\GData\YouTube\ActivityEntry';
 
     /**
      * Creates an Activity feed, representing a list of activity entries

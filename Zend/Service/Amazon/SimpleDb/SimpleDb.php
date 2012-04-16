@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_Amazon
+ * @category   Zend2
+ * @package    Zend2_Service_Amazon
  * @subpackage SimpleDb
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Amazon\SimpleDb;
+namespace Zend2\Service\Amazon\SimpleDb;
 
-use Zend\Crypt,
-    Zend\Http,
-    Zend\Uri;
+use Zend2\Crypt,
+    Zend2\Http,
+    Zend2\Uri;
 
 /**
- * @category   Zend
- * @package    Zend_Service_Amazon
+ * @category   Zend2
+ * @package    Zend2_Service_Amazon
  * @subpackage SimpleDb
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class SimpleDb extends \Zend\Service\Amazon\AbstractAmazon
+class SimpleDb extends \Zend2\Service\Amazon\AbstractAmazon
 {
     /* Notes */
     // TODO SSL is required
@@ -80,7 +80,7 @@ class SimpleDb extends \Zend\Service\Amazon\AbstractAmazon
      * Set SimpleDB endpoint to use
      *
      * @param string|Uri\Uri $endpoint
-     * @return Zend\Service\Amazon\SimpleDb\SimpleDb
+     * @return Zend2\Service\Amazon\SimpleDb\SimpleDb
      */
     public function setEndpoint($endpoint)
     {
@@ -347,7 +347,7 @@ class SimpleDb extends \Zend\Service\Amazon\AbstractAmazon
      *
      * @param  string $selectExpression
      * @param  null|string $nextToken
-     * @return Zend\Service\Amazon\SimpleDb\Page
+     * @return Zend2\Service\Amazon\SimpleDb\Page
      */
 	public function select($selectExpression, $nextToken = null) 
 	{
@@ -412,11 +412,11 @@ class SimpleDb extends \Zend\Service\Amazon\AbstractAmazon
     }
     
    /**
-     * Sends a HTTP request to the SimpleDB service using Zend\Http\Client
+     * Sends a HTTP request to the SimpleDB service using Zend2\Http\Client
      *
      * @param array $params         List of parameters to send with the request
-     * @return Zend\Service\Amazon\SimpleDb\Response
-     * @throws Zend\Service\Amazon\SimpleDb\Exception
+     * @return Zend2\Service\Amazon\SimpleDb\Response
+     * @throws Zend2\Service\Amazon\SimpleDb\Exception
      */
     protected function _sendRequest(array $params = array())
     {
@@ -535,12 +535,12 @@ class SimpleDb extends \Zend\Service\Amazon\AbstractAmazon
     /**
      * Checks for errors responses from Amazon
      *
-     * @param Zend\Service\Amazon\SimpleDb\Response $response the response object to
+     * @param Zend2\Service\Amazon\SimpleDb\Response $response the response object to
      *                                                   check.
      *
      * @return void
      *
-     * @throws Zend\Service\Amazon\SimpleDb\Exception if one or more errors are
+     * @throws Zend2\Service\Amazon\SimpleDb\Exception if one or more errors are
      *         returned from Amazon.
      */
     private function _checkForErrors(Response $response)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Markup
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Renderer_Markup
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Markup\Renderer;
+namespace Zend2\Markup\Renderer;
 
-use Zend\Markup\Token,
-    Zend\Filter\Filter;
+use Zend2\Markup\Token,
+    Zend2\Filter\Filter;
 
 /**
  * Interface for a markup
  *
- * @uses       \Zend\Markup\Renderer\AbstractRenderer
- * @category   Zend
- * @package    Zend_Markup
+ * @uses       \Zend2\Markup\Renderer\AbstractRenderer
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Renderer_Markup
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface Markup extends Filter
@@ -42,23 +42,23 @@ interface Markup extends Filter
      *
      * @param string $encoding
      *
-     * @return \Zend\Markup\Renderer\Markup
+     * @return \Zend2\Markup\Renderer\Markup
      */
     public function setEncoding($encoding = 'UTF-8');
 
     /**
      * Set the renderer on this markup
      *
-     * @param \Zend\Markup\Renderer\AbstractRenderer $renderer
+     * @param \Zend2\Markup\Renderer\AbstractRenderer $renderer
      *
-     * @return \Zend\Markup\Renderer\Markup
+     * @return \Zend2\Markup\Renderer\Markup
      */
     public function setRenderer(AbstractRenderer $renderer);
 
     /**
      * Invoke the markup
      *
-     * @param \Zend\Markup\Token $token
+     * @param \Zend2\Markup\Token $token
      * @param string $text
      *
      * @return string

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\App;
+namespace Zend2\GData\App;
 
 /**
  * Atom feed class
  *
- * @uses       \Zend\GData\App\Entry
- * @uses       \Zend\GData\App\FeedSourceParent
- * @uses       \Zend\GData\App\HttpException
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Entry
+ * @uses       \Zend2\GData\App\FeedSourceParent
+ * @uses       \Zend2\GData\App\HttpException
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Feed extends FeedSourceParent
@@ -181,7 +181,7 @@ class Feed extends FeedSourceParent
      * Gets the array of atom:entry elements contained within this
      * atom:feed representation
      *
-     * @return array \Zend\GData\App\Entry array
+     * @return array \Zend2\GData\App\Entry array
      */
     public function getEntry()
     {
@@ -192,8 +192,8 @@ class Feed extends FeedSourceParent
      * Sets the array of atom:entry elements contained within this
      * atom:feed representation
      *
-     * @param array $value The array of \Zend\GData\App\Entry elements
-     * @return \Zend\GData\App\Feed Provides a fluent interface
+     * @param array $value The array of \Zend2\GData\App\Entry elements
+     * @return \Zend2\GData\App\Feed Provides a fluent interface
      */
     public function setEntry($value)
     {
@@ -205,8 +205,8 @@ class Feed extends FeedSourceParent
      * Adds an entry representation to the array of entries
      * contained within this feed
      *
-     * @param \Zend\GData\App\Entry An individual entry to add.
-     * @return \Zend\GData\App\Feed Provides a fluent interface
+     * @param \Zend2\GData\App\Entry An individual entry to add.
+     * @return \Zend2\GData\App\Feed Provides a fluent interface
      */
     public function addEntry($value)
     {
@@ -218,7 +218,7 @@ class Feed extends FeedSourceParent
      * Required by the ArrayAccess interface
      *
      * @param int $key The index to set
-     * @param \Zend\GData\App\Entry $value The value to set
+     * @param \Zend2\GData\App\Entry $value The value to set
      * @return void
      */
     public function offsetSet($key, $value)
@@ -230,7 +230,7 @@ class Feed extends FeedSourceParent
      * Required by the ArrayAccess interface
      *
      * @param int $key The index to get
-     * @param \Zend\GData\App\Entry $value The value to set
+     * @param \Zend2\GData\App\Entry $value The value to set
      */
     public function offsetGet($key)
     {
@@ -243,7 +243,7 @@ class Feed extends FeedSourceParent
      * Required by the ArrayAccess interface
      *
      * @param int $key The index to set
-     * @param \Zend\GData\App\Entry $value The value to set
+     * @param \Zend2\GData\App\Entry $value The value to set
      */
     public function offsetUnset($key)
     {
@@ -266,7 +266,7 @@ class Feed extends FeedSourceParent
    /**
      * Retrieve the next set of results from this feed.
      *
-     * @throws \Zend\GData\App\Exception
+     * @throws \Zend2\GData\App\Exception
      * @return mixed|null Returns the next set of results as a feed of the same
      *          class as this feed, or null if no results exist.
      */
@@ -286,7 +286,7 @@ class Feed extends FeedSourceParent
    /**
      * Retrieve the previous set of results from this feed.
      *
-     * @throws \Zend\GData\App\Exception
+     * @throws \Zend2\GData\App\Exception
      * @return mixed|null Returns the previous set of results as a feed of
      *          the same class as this feed, or null if no results exist.
      */
@@ -305,13 +305,13 @@ class Feed extends FeedSourceParent
 
     /**
      * Set the major protocol version that should be used. Values < 1 will
-     * cause a \Zend_Gdata\App\InvalidArgumentException to be thrown.
+     * cause a \Zend2_Gdata\App\InvalidArgumentException to be thrown.
      *
      * This value will be propogated to all child entries.
      *
      * @see _majorProtocolVersion
      * @param (int|NULL) $value The major protocol version to use.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function setMajorProtocolVersion($value)
     {
@@ -324,13 +324,13 @@ class Feed extends FeedSourceParent
     /**
      * Set the minor protocol version that should be used. If set to NULL, no
      * minor protocol version will be sent to the server. Values < 0 will
-     * cause a \Zend\Gdata\App\InvalidArgumentException to be thrown.
+     * cause a \Zend2\Gdata\App\InvalidArgumentException to be thrown.
      *
      * This value will be propogated to all child entries.
      *
      * @see _minorProtocolVersion
      * @param (int|NULL) $value The minor protocol version to use.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function setMinorProtocolVersion($value)
     {

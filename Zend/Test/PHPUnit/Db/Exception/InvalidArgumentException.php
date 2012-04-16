@@ -1,7 +1,7 @@
 <?php
-namespace Zend\Test\PHPUnit\Db\Exception;
+namespace Zend2\Test\PHPUnit\Db\Exception;
 
 class InvalidArgumentException
     extends \InvalidArgumentException
-    implements \Zend\Test\PHPUnit\Db\Exception
+    implements \Zend2\Test\PHPUnit\Db\Exception
 {}

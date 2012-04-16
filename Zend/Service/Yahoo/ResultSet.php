@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,10 +12,10 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Yahoo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
@@ -23,14 +23,14 @@
  * @uses       DOMXPath
  * @uses       OutOfBoundsException
  * @uses       SeekableIterator
- * @uses       Zend\Service\Exception
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2\Service\Exception
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Yahoo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_Yahoo_ResultSet implements SeekableIterator
+class Zend2_Service_Yahoo_ResultSet implements SeekableIterator
 {
     /**
      * Total number of results available
@@ -119,12 +119,12 @@ class Zend_Service_Yahoo_ResultSet implements SeekableIterator
      *
      * Must be implemented by child classes
      *
-     * @throws Zend\Service\Exception
-     * @return Zend_Service_Yahoo_Result
+     * @throws Zend2\Service\Exception
+     * @return Zend2_Service_Yahoo_Result
      */
     public function current()
     {
-        throw new Zend\Service\Exception('Zend_Service_Yahoo_ResultSet::current() must be implemented by child '
+        throw new Zend2\Service\Exception('Zend2_Service_Yahoo_ResultSet::current() must be implemented by child '
                                        . 'classes');
     }
 

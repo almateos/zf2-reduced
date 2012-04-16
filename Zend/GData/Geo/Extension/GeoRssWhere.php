@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Geo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Geo\Extension;
+namespace Zend2\GData\Geo\Extension;
 
 /**
  * Represents the georss:where element used by the Gdata Geo extensions.
  *
- * @uses       \Zend\GData\Extension
- * @uses       \Zend\GData\Geo
- * @uses       \Zend\GData\Geo\Extension\GmlPoint
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Extension
+ * @uses       \Zend2\GData\Geo
+ * @uses       \Zend2\GData\Geo\Extension\GmlPoint
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Geo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class GeoRssWhere extends \Zend\GData\Extension
+class GeoRssWhere extends \Zend2\GData\Extension
 {
 
     protected $_rootNamespace = 'georss';
@@ -42,19 +42,19 @@ class GeoRssWhere extends \Zend\GData\Extension
     /**
      * The point location for this geo element
      *
-     * @var \Zend\GData\Geo\Extension\GmlPoint
+     * @var \Zend2\GData\Geo\Extension\GmlPoint
      */
     protected $_point = null;
 
     /**
      * Create a new instance.
      *
-     * @param \Zend\GData\Geo\Extension\GmlPoint $point (optional) Point to which
+     * @param \Zend2\GData\Geo\Extension\GmlPoint $point (optional) Point to which
      *          object should be initialized.
      */
     public function __construct($point = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Geo::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\Geo::$namespaces);
         parent::__construct();
         $this->setPoint($point);
     }
@@ -100,7 +100,7 @@ class GeoRssWhere extends \Zend\GData\Extension
      * Get the value for this element's point attribute.
      *
      * @see setPoint
-     * @return \Zend\GData\Geo\Extension\GmlPoint The requested attribute.
+     * @return \Zend2\GData\Geo\Extension\GmlPoint The requested attribute.
      */
     public function getPoint()
     {
@@ -110,8 +110,8 @@ class GeoRssWhere extends \Zend\GData\Extension
     /**
      * Set the value for this element's point attribute.
      *
-     * @param \Zend\GData\Geo\Extension\GmlPoint $value The desired value for this attribute.
-     * @return \Zend\GData\Geo\Extension\GeoRssWhere Provides a fluent interface
+     * @param \Zend2\GData\Geo\Extension\GmlPoint $value The desired value for this attribute.
+     * @return \Zend2\GData\Geo\Extension\GeoRssWhere Provides a fluent interface
      */
     public function setPoint($value)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Writer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
  
-namespace Zend\Feed\Writer\Extension\ITunes;
-use Zend\Feed\Writer\Extension;
-use Zend\Feed\Writer;
+namespace Zend2\Feed\Writer\Extension\ITunes;
+use Zend2\Feed\Writer\Extension;
+use Zend2\Feed\Writer;
 
 
 /**
-* @uses \Zend\Feed\Exception
-* @uses \Zend\Feed\Writer\Writer
-* @uses \Zend\Feed\Writer\Exception\InvalidMethodException
-* @category Zend
-* @package Zend_Feed_Writer
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @uses \Zend2\Feed\Exception
+* @uses \Zend2\Feed\Writer\Writer
+* @uses \Zend2\Feed\Writer\Exception\InvalidMethodException
+* @category Zend2
+* @package Zend2_Feed_Writer
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 class Entry
@@ -52,7 +52,7 @@ class Entry
      * Set feed encoding
      * 
      * @param  string $enc 
-     * @return Zend_Feed_Writer_Extension_ITunes_Entry
+     * @return Zend2_Feed_Writer_Extension_ITunes_Entry
      */
     public function setEncoding($enc)
     {
@@ -74,7 +74,7 @@ class Entry
      * Set a block value of "yes" or "no". You may also set an empty string.
      *
      * @param  string
-     * @return Zend_Feed_Writer_Extension_ITunes_Entry
+     * @return Zend2_Feed_Writer_Extension_ITunes_Entry
      */
     public function setItunesBlock($value)
     {
@@ -93,7 +93,7 @@ class Entry
      * Add authors to itunes entry
      * 
      * @param  array $values 
-     * @return Zend_Feed_Writer_Extension_ITunes_Entry
+     * @return Zend2_Feed_Writer_Extension_ITunes_Entry
      */
     public function addItunesAuthors(array $values)
     {
@@ -107,7 +107,7 @@ class Entry
      * Add author to itunes entry
      * 
      * @param  string $value 
-     * @return Zend_Feed_Writer_Extension_ITunes_Entry
+     * @return Zend2_Feed_Writer_Extension_ITunes_Entry
      */
     public function addItunesAuthor($value)
     {
@@ -126,7 +126,7 @@ class Entry
      * Set duration
      * 
      * @param  int $value 
-     * @return Zend_Feed_Writer_Extension_ITunes_Entry
+     * @return Zend2_Feed_Writer_Extension_ITunes_Entry
      */
     public function setItunesDuration($value)
     {
@@ -146,7 +146,7 @@ class Entry
      * Set "explicit" flag
      * 
      * @param  bool $value 
-     * @return Zend_Feed_Writer_Extension_ITunes_Entry
+     * @return Zend2_Feed_Writer_Extension_ITunes_Entry
      */
     public function setItunesExplicit($value)
     {
@@ -162,7 +162,7 @@ class Entry
      * Set keywords
      * 
      * @param  array $value 
-     * @return Zend_Feed_Writer_Extension_ITunes_Entry
+     * @return Zend2_Feed_Writer_Extension_ITunes_Entry
      */
     public function setItunesKeywords(array $value)
     {
@@ -184,7 +184,7 @@ class Entry
      * Set subtitle
      * 
      * @param  string $value 
-     * @return Zend_Feed_Writer_Extension_ITunes_Entry
+     * @return Zend2_Feed_Writer_Extension_ITunes_Entry
      */
     public function setItunesSubtitle($value)
     {
@@ -200,7 +200,7 @@ class Entry
      * Set summary
      * 
      * @param  string $value 
-     * @return Zend_Feed_Writer_Extension_ITunes_Entry
+     * @return Zend2_Feed_Writer_Extension_ITunes_Entry
      */
     public function setItunesSummary($value)
     {

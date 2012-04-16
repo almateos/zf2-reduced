@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,39 +12,39 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search\Query;
+namespace Zend2\Search\Lucene\Search\Query;
 
-use Zend\Search\Lucene\Index,
-	Zend\Search\Lucene,
-	Zend\Search\Lucene\Search\Highlighter,
-	Zend\Search\Lucene\Exception\InvalidArgumentException,
-	Zend\Search\Lucene\Exception\OutOfBoundsException,
-	Zend\Search\Lucene\Exception\UnsupportedMethodCallException,
-	Zend\Search\Lucene\Exception\RuntimeException;
+use Zend2\Search\Lucene\Index,
+	Zend2\Search\Lucene,
+	Zend2\Search\Lucene\Search\Highlighter,
+	Zend2\Search\Lucene\Exception\InvalidArgumentException,
+	Zend2\Search\Lucene\Exception\OutOfBoundsException,
+	Zend2\Search\Lucene\Exception\UnsupportedMethodCallException,
+	Zend2\Search\Lucene\Exception\RuntimeException;
 
 /**
- * @uses       \Zend\Search\Lucene\Index
- * @uses       \Zend\Search\Lucene\Analysis\Analyzer\Analyzer
- * @uses       \Zend\Search\Lucene\Exception\InvalidArgumentException
- * @uses	   \Zend\Search\Lucene\Exception\OutOfBoundsException
- * @uses   	   \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
- * @uses   	   \Zend\Search\Lucene\Exception\RuntimeException
- * @uses       \Zend\Search\Lucene\Index\Term
- * @uses       \Zend\Search\Lucene\Search\Query\AbstractQuery
- * @uses       \Zend\Search\Lucene\Search\Query\Boolean
- * @uses       \Zend\Search\Lucene\Search\Query\EmptyResult
- * @uses       \Zend\Search\Lucene\Search\Query\Term
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Index
+ * @uses       \Zend2\Search\Lucene\Analysis\Analyzer\Analyzer
+ * @uses       \Zend2\Search\Lucene\Exception\InvalidArgumentException
+ * @uses	   \Zend2\Search\Lucene\Exception\OutOfBoundsException
+ * @uses   	   \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
+ * @uses   	   \Zend2\Search\Lucene\Exception\RuntimeException
+ * @uses       \Zend2\Search\Lucene\Index\Term
+ * @uses       \Zend2\Search\Lucene\Search\Query\AbstractQuery
+ * @uses       \Zend2\Search\Lucene\Search\Query\Boolean
+ * @uses       \Zend2\Search\Lucene\Search\Query\EmptyResult
+ * @uses       \Zend2\Search\Lucene\Search\Query\Term
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Fuzzy extends AbstractQuery
@@ -69,7 +69,7 @@ class Fuzzy extends AbstractQuery
     /**
      * Base searching term.
      *
-     * @var \Zend\Search\Lucene\Index\Term
+     * @var \Zend2\Search\Lucene\Index\Term
      */
     private $_term;
 
@@ -98,7 +98,7 @@ class Fuzzy extends AbstractQuery
      * It's filled during the search (rewrite operation) and may be used for search result
      * post-processing
      *
-     * Array of Zend_Search_Lucene_Index_Term objects
+     * Array of Zend2_Search_Lucene_Index_Term objects
      *
      * @var array
      */
@@ -127,12 +127,12 @@ class Fuzzy extends AbstractQuery
     private static $_defaultPrefixLength = 3;
 
     /**
-     * Zend_Search_Lucene_Search_Query_Wildcard constructor.
+     * Zend2_Search_Lucene_Search_Query_Wildcard constructor.
      *
-     * @param \Zend\Search\Lucene\Index\Term $term
+     * @param \Zend2\Search\Lucene\Index\Term $term
      * @param float   $minimumSimilarity
      * @param integer $prefixLength
-     * @throws \Zend\Search\Lucene\Exception\InvalidArgumentException
+     * @throws \Zend2\Search\Lucene\Exception\InvalidArgumentException
      */
     public function __construct(Index\Term $term, $minimumSimilarity = self::DEFAULT_MIN_SIMILARITY, $prefixLength = null)
     {
@@ -188,9 +188,9 @@ class Fuzzy extends AbstractQuery
     /**
      * Re-write query into primitive queries in the context of specified index
      *
-     * @param \Zend\Search\Lucene\SearchIndex $index
-     * @throws \Zend\Search\Lucene\Exception\OutOfBoundsException
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @param \Zend2\Search\Lucene\SearchIndex $index
+     * @throws \Zend2\Search\Lucene\Exception\OutOfBoundsException
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     public function rewrite(Lucene\SearchIndex $index)
     {
@@ -335,9 +335,9 @@ class Fuzzy extends AbstractQuery
     /**
      * Optimize query in the context of specified index
      *
-     * @param \Zend\Search\Lucene\SearchIndex $index
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @param \Zend2\Search\Lucene\SearchIndex $index
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     public function optimize(Lucene\SearchIndex $index)
     {
@@ -347,7 +347,7 @@ class Fuzzy extends AbstractQuery
     /**
      * Return query terms
      *
-     * @throws \Zend\Search\Lucene\Exception\RuntimeException
+     * @throws \Zend2\Search\Lucene\Exception\RuntimeException
      * @return array
      */
     public function getQueryTerms()
@@ -362,9 +362,9 @@ class Fuzzy extends AbstractQuery
     /**
      * Constructs an appropriate Weight implementation for this query.
      *
-     * @param \Zend\Search\Lucene\SearchIndex $reader
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
-     * @return \Zend\Search\Lucene\Search\Weight\Weight
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @return \Zend2\Search\Lucene\Search\Weight\Weight
      */
     public function createWeight(Lucene\SearchIndex $reader)
     {
@@ -378,9 +378,9 @@ class Fuzzy extends AbstractQuery
      * Execute query in context of index reader
      * It also initializes necessary internal structures
      *
-     * @param \Zend\Search\Lucene\SearchIndex $reader
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
-     * @param \Zend\Search\Lucene\Index\DocsFilter|null $docsFilter
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @param \Zend2\Search\Lucene\Index\DocsFilter|null $docsFilter
      */
     public function execute(Lucene\SearchIndex $reader, $docsFilter = null)
     {
@@ -394,7 +394,7 @@ class Fuzzy extends AbstractQuery
      *
      * It's an array with document ids as keys (performance considerations)
      *
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
      * @return array
      */
     public function matchedDocs()
@@ -408,8 +408,8 @@ class Fuzzy extends AbstractQuery
      * Score specified document
      *
      * @param integer $docId
-     * @param \Zend\Search\Lucene\SearchIndex $reader
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
      * @return float
      */
     public function score($docId, Lucene\SearchIndex $reader)
@@ -422,7 +422,7 @@ class Fuzzy extends AbstractQuery
     /**
      * Query specific matches highlighting
      *
-     * @param \Zend\Search\Lucene\Search\Highlighter $highlighter  Highlighter object (also contains doc for highlighting)
+     * @param \Zend2\Search\Lucene\Search\Highlighter $highlighter  Highlighter object (also contains doc for highlighting)
      */
     protected function _highlightMatches(Highlighter $highlighter)
     {

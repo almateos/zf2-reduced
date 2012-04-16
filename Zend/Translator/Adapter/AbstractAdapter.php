@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,33 +12,33 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Translator
- * @subpackage Zend_Translator_Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Translator
+ * @subpackage Zend2_Translator_Adapter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Translator\Adapter;
+namespace Zend2\Translator\Adapter;
 
 use RecursiveDirectoryIterator,
     RecursiveIteratorIterator,
     RecursiveRegexIterator,
-    Zend\Cache\Storage\Adapter as CacheAdapter,
-    Zend\Config\Config,
-    Zend\Log,
-    Zend\Locale,
-    Zend\Translator,
-    Zend\Translator\Plural,
-    Zend\Translator\Exception;
+    Zend2\Cache\Storage\Adapter as CacheAdapter,
+    Zend2\Config\Config,
+    Zend2\Log,
+    Zend2\Locale,
+    Zend2\Translator,
+    Zend2\Translator\Plural,
+    Zend2\Translator\Exception;
 
 /**
  * Abstract adapter class for each translation source adapter
  *
- * @category   Zend
- * @package    Zend_Translator
- * @subpackage Zend_Translator_Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Translator
+ * @subpackage Zend2_Translator_Adapter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractAdapter
@@ -87,7 +87,7 @@ abstract class AbstractAdapter
      *   'disableNotices'  => when true, omits notices from being displayed
      *   'ignore'          => a prefix for files and directories which are not being added
      *   'locale'          => the actual set locale to use
-     *   'log'             => a instance of Zend_Log where logs are written to
+     *   'log'             => a instance of Zend2_Log where logs are written to
      *   'logMessage'      => message to be logged
      *   'logPriority'     => priority which is used to write the log message
      *   'logUntranslated' => when true, untranslated messages are not logged
@@ -113,7 +113,7 @@ abstract class AbstractAdapter
         'route'           => null,
         'routeHttp'       => true,
         'scan'            => null,
-        'tag'             => 'Zend_Translator'
+        'tag'             => 'Zend2_Translator'
     );
 
     /**
@@ -125,8 +125,8 @@ abstract class AbstractAdapter
     /**
      * Generates the adapter
      *
-     * @param  array|Zend_Config $options Translation options for this adapter
-     * @throws \Zend\Translator\Exception\InvalidArgumentException
+     * @param  array|Zend2_Config $options Translation options for this adapter
+     * @throws \Zend2\Translator\Exception\InvalidArgumentException
      * @return void
      */
     public function __construct($options = array())
@@ -156,7 +156,7 @@ abstract class AbstractAdapter
         }
 
         if (isset(self::$_cache)) {
-            $id = 'Zend_Translator_' . $this->toString() . '_Options';
+            $id = 'Zend2_Translator_' . $this->toString() . '_Options';
             $result = self::$_cache->getItem($id);
             if ($result) {
                 $this->_options = $result;
@@ -215,9 +215,9 @@ abstract class AbstractAdapter
      * If the key 'clear' is true, then translations for the specified
      * language will be replaced and added otherwise
      *
-     * @param  array|Zend_Config $options Options and translations to be added
-     * @throws \Zend\Translator\Exception\InvalidArgumentException
-     * @return \Zend\Translator\Adapter\AbstractAdapter Provides fluent interface
+     * @param  array|Zend2_Config $options Options and translations to be added
+     * @throws \Zend2\Translator\Exception\InvalidArgumentException
+     * @return \Zend2\Translator\Adapter\AbstractAdapter Provides fluent interface
      */
     public function addTranslation($options = array())
     {
@@ -250,7 +250,7 @@ abstract class AbstractAdapter
         }
 
         if ((array_key_exists('log', $options)) && !($options['log'] instanceof Log\Logger)) {
-            throw new Exception\InvalidArgumentException('Instance of Zend_Log_Logger expected for option log');
+            throw new Exception\InvalidArgumentException('Instance of Zend2_Log_Logger expected for option log');
         }
 
         try {
@@ -391,8 +391,8 @@ abstract class AbstractAdapter
      * Sets new adapter options
      *
      * @param  array $options Adapter options
-     * @throws \Zend\Translator\Exception\InvalidArgumentException
-     * @return \Zend\Translator\Adapter\AbstractAdapter Provides fluent interface
+     * @throws \Zend2\Translator\Exception\InvalidArgumentException
+     * @return \Zend2\Translator\Adapter\AbstractAdapter Provides fluent interface
      */
     public function setOptions(array $options = array())
     {
@@ -428,7 +428,7 @@ abstract class AbstractAdapter
             } else if ((isset($this->_options[$key]) and ($this->_options[$key] !== $option)) or
                     !isset($this->_options[$key])) {
                 if (($key == 'log') && !($option instanceof Log\Logger)) {
-                    throw new Exception\InvalidArgumentException('Instance of Zend_Log expected for option log');
+                    throw new Exception\InvalidArgumentException('Instance of Zend2_Log expected for option log');
                 }
 
                 if ($key == 'cache') {
@@ -448,7 +448,7 @@ abstract class AbstractAdapter
         }
 
         if (isset(self::$_cache) and ($change == true)) {
-            $id = 'Zend_Translator_' . $this->toString() . '_Options';
+            $id = 'Zend2_Translator_' . $this->toString() . '_Options';
             $this->saveCache($this->_options, $id);
         }
 
@@ -478,7 +478,7 @@ abstract class AbstractAdapter
     /**
      * Gets locale
      *
-     * @return \Zend\Locale\Locale|string|null
+     * @return \Zend2\Locale\Locale|string|null
      */
     public function getLocale()
     {
@@ -488,9 +488,9 @@ abstract class AbstractAdapter
     /**
      * Sets locale
      *
-     * @param  string|\Zend\Locale\Locale $locale Locale to set
-     * @throws \Zend\Translator\Exception\InvalidArgumentException
-     * @return \Zend\Translator\Adapter\AbstractAdapter Provides fluent interface
+     * @param  string|\Zend2\Locale\Locale $locale Locale to set
+     * @throws \Zend2\Translator\Exception\InvalidArgumentException
+     * @return \Zend2\Translator\Adapter\AbstractAdapter Provides fluent interface
      */
     public function setLocale($locale)
     {
@@ -569,7 +569,7 @@ abstract class AbstractAdapter
      * If no locale is given, the actual language will be used
      *
      * @param  string             $message Message to get the key for
-     * @param  string|\Zend\Locale\Locale $locale (optional) Language to return the message ids from
+     * @param  string|\Zend2\Locale\Locale $locale (optional) Language to return the message ids from
      * @return string|array|false
      */
     public function getMessageId($message, $locale = null)
@@ -585,7 +585,7 @@ abstract class AbstractAdapter
      * Returns all available message ids from this adapter
      * If no locale is given, the actual language will be used
      *
-     * @param  string|\Zend\Locale\Locale $locale (optional) Language to return the message ids from
+     * @param  string|\Zend2\Locale\Locale $locale (optional) Language to return the message ids from
      * @return array
      */
     public function getMessageIds($locale = null)
@@ -602,7 +602,7 @@ abstract class AbstractAdapter
      * If no locale is given, the actual language will be used
      * If 'all' is given the complete translation dictionary will be returned
      *
-     * @param  string|\Zend\Locale\Locale $locale (optional) Language to return the messages from
+     * @param  string|\Zend2\Locale\Locale $locale (optional) Language to return the messages from
      * @return array
      */
     public function getMessages($locale = null)
@@ -621,9 +621,9 @@ abstract class AbstractAdapter
     /**
      * Is the wished language available ?
      *
-     * @see    Zend_Locale
-     * @param  string|\Zend\Locale\Locale $locale Language to search for, identical with locale identifier,
-     *                                    @see Zend_Locale for more information
+     * @see    Zend2_Locale
+     * @param  string|\Zend2\Locale\Locale $locale Language to search for, identical with locale identifier,
+     *                                    @see Zend2_Locale for more information
      * @return boolean
      */
     public function isAvailable($locale)
@@ -636,7 +636,7 @@ abstract class AbstractAdapter
      * Load translation data
      *
      * @param  mixed              $data
-     * @param  string|\Zend\Locale\Locale $locale
+     * @param  string|\Zend2\Locale\Locale $locale
      * @param  array              $options (optional)
      * @return array
      */
@@ -649,10 +649,10 @@ abstract class AbstractAdapter
      * If the options 'clear' is true, then the translation data for the specified
      * language is replaced and added otherwise
      *
-     * @see    Zend_Locale
-     * @param  array|\Zend\Config $content Translation data to add
-     * @throws \Zend\Translator\Exception\InvalidArgumentException
-     * @return \Zend\Translator\Adapter\AbstractAdapter Provides fluent interface
+     * @see    Zend2_Locale
+     * @param  array|\Zend2\Config $content Translation data to add
+     * @throws \Zend2\Translator\Exception\InvalidArgumentException
+     * @return \Zend2\Translator\Adapter\AbstractAdapter Provides fluent interface
      */
     private function _addTranslationData($options = array())
     {
@@ -701,7 +701,7 @@ abstract class AbstractAdapter
 
         $read = true;
         if (isset(self::$_cache)) {
-            $id = 'Zend_Translator_' . md5(serialize($options['content'])) . '_' . $this->toString();
+            $id = 'Zend2_Translator_' . md5(serialize($options['content'])) . '_' . $this->toString();
             $temp = self::$_cache->getItem($id);
             if ($temp) {
                 $read = false;
@@ -748,7 +748,7 @@ abstract class AbstractAdapter
         }
 
         if (($read) and (isset(self::$_cache))) {
-            $id = 'Zend_Translator_' . md5(serialize($options['content'])) . '_' . $this->toString();
+            $id = 'Zend2_Translator_' . md5(serialize($options['content'])) . '_' . $this->toString();
             $this->saveCache($temp, $id);
         }
 
@@ -759,10 +759,10 @@ abstract class AbstractAdapter
      * Translates the given string
      * returns the translation
      *
-     * @see Zend_Locale
+     * @see Zend2_Locale
      * @param  string|array       $messageId Translation string, or Array for plural translations
-     * @param  string|\Zend\Locale\Locale $locale    (optional) Locale/Language to use, identical with
-     *                                       locale identifier, @see Zend_Locale for more information
+     * @param  string|\Zend2\Locale\Locale $locale    (optional) Locale/Language to use, identical with
+     *                                       locale identifier, @see Zend2_Locale for more information
      * @return string
      */
     public function translate($messageId, $locale = null)
@@ -891,12 +891,12 @@ abstract class AbstractAdapter
      * Translates the given string using plural notations
      * Returns the translated string
      *
-     * @see Zend_Locale
+     * @see Zend2_Locale
      * @param  string             $singular Singular translation string
      * @param  string             $plural   Plural translation string
      * @param  integer            $number   Number for detecting the correct plural
-     * @param  string|\Zend\Locale\Locale $locale   (Optional) Locale/Language to use, identical with
-     *                                      locale identifier, @see Zend_Locale for more information
+     * @param  string|\Zend2\Locale\Locale $locale   (Optional) Locale/Language to use, identical with
+     *                                      locale identifier, @see Zend2_Locale for more information
      * @return string
      */
     public function plural($singular, $plural, $number, $locale = null)
@@ -927,8 +927,8 @@ abstract class AbstractAdapter
      * returns the translation
      *
      * @param  string             $messageId Translation string
-     * @param  string|\Zend\Locale\Locale $locale    (optional) Locale/Language to use, identical with locale
-     *                                       identifier, @see Zend_Locale for more information
+     * @param  string|\Zend2\Locale\Locale $locale    (optional) Locale/Language to use, identical with locale
+     *                                       identifier, @see Zend2_Locale for more information
      * @return string
      */
     public function _($messageId, $locale = null)
@@ -944,8 +944,8 @@ abstract class AbstractAdapter
      * @param  boolean            $original  (optional) Allow translation only for original language
      *                                       when true, a translation for 'en_US' would give false when it can
      *                                       be translated with 'en' only
-     * @param  string|\Zend\Locale\Locale $locale    (optional) Locale/Language to use, identical with locale identifier,
-     *                                       see Zend_Locale for more information
+     * @param  string|\Zend2\Locale\Locale $locale    (optional) Locale/Language to use, identical with locale identifier,
+     *                                       see Zend2_Locale for more information
      * @return boolean
      */
     public function isTranslated($messageId, $original = false, $locale = null)
@@ -997,7 +997,7 @@ abstract class AbstractAdapter
     }
 
     /**
-     * Sets a cache for all Zend_Translator_Adapter's
+     * Sets a cache for all Zend2_Translator_Adapter's
      *
      * @param CacheAdapter $cache Cache to store to
      */
@@ -1041,7 +1041,7 @@ abstract class AbstractAdapter
     {
         if (self::$_cacheTags) {
             if ($tag == null) {
-                $tag = 'Zend_Translator';
+                $tag = 'Zend2_Translator';
             }
 
             self::$_cache->clear(CacheAdapter::MATCH_TAGS_OR, array('tags' => array($tag)));

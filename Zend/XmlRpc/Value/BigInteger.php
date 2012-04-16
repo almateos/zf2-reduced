@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Value
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\XmlRpc\Value;
+namespace Zend2\XmlRpc\Value;
 
 /**
- * @uses       \Zend\Crypt\Math\BigInteger
- * @uses       \Zend\XmlRpc\Value\Integer
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @uses       \Zend2\Crypt\Math\BigInteger
+ * @uses       \Zend2\XmlRpc\Value\Integer
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Value
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class BigInteger extends Integer
 {
     /**
-     * @var \Zend\Crypt\Math\BigInteger
+     * @var \Zend2\Crypt\Math\BigInteger
      */
     protected $_integer;
 
@@ -42,7 +42,7 @@ class BigInteger extends Integer
      */
     public function __construct($value)
     {
-        $this->_integer = new \Zend\Crypt\Math\BigInteger();
+        $this->_integer = new \Zend2\Crypt\Math\BigInteger();
         $this->_value   = $this->_integer->init($this->_value);
         $this->_type    = self::XMLRPC_TYPE_I8;
     }
@@ -50,7 +50,7 @@ class BigInteger extends Integer
     /**
      * Return bigint value object
      *
-     * @return \Zend\Crypt\Math\BigInteger
+     * @return \Zend2\Crypt\Math\BigInteger
      */
     public function getValue()
     {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Zend\Http;
+namespace Zend2\Http;
 
-use Zend\Stdlib\RequestDescription,
-    Zend\Stdlib\Message,
-    Zend\Stdlib\ParametersDescription,
-    Zend\Stdlib\Parameters,
-    Zend\Uri\Http as HttpUri;
+use Zend2\Stdlib\RequestDescription,
+    Zend2\Stdlib\Message,
+    Zend2\Stdlib\ParametersDescription,
+    Zend2\Stdlib\Parameters,
+    Zend2\Uri\Http as HttpUri;
 
 class Request extends Message implements RequestDescription
 {
@@ -48,32 +48,32 @@ class Request extends Message implements RequestDescription
     protected $version = self::VERSION_11;
 
     /**
-     * @var \Zend\Stdlib\ParametersDescription
+     * @var \Zend2\Stdlib\ParametersDescription
      */
     protected $queryParams = null;
 
     /**
-     * @var \Zend\Stdlib\ParametersDescription
+     * @var \Zend2\Stdlib\ParametersDescription
      */
     protected $postParams = null;
 
     /**
-     * @var \Zend\Stdlib\ParametersDescription
+     * @var \Zend2\Stdlib\ParametersDescription
      */
     protected $fileParams = null;
 
     /**
-     * @var \Zend\Stdlib\ParametersDescription
+     * @var \Zend2\Stdlib\ParametersDescription
      */
     protected $serverParams = null;
 
     /**
-     * @var \Zend\Stdlib\ParametersDescription
+     * @var \Zend2\Stdlib\ParametersDescription
      */
     protected $envParams = null;
 
     /**
-     * @var string|\Zend\Http\Headers
+     * @var string|\Zend2\Http\Headers
      */
     protected $headers = null;
 
@@ -81,7 +81,7 @@ class Request extends Message implements RequestDescription
      * A factory that produces a Request object from a well-formed Http Request string
      *
      * @param string $string
-     * @return \Zend\Http\Request
+     * @return \Zend2\Http\Request
      */
     public static function fromString($string)
     {
@@ -166,7 +166,7 @@ class Request extends Message implements RequestDescription
     }
 
     /**
-     * Set the URI/URL for this request, this can be a string or an instance of Zend\Uri\Http
+     * Set the URI/URL for this request, this can be a string or an instance of Zend2\Uri\Http
      *
      * @throws Exception\InvalidArgumentException
      * @param string|HttpUri $uri
@@ -175,11 +175,11 @@ class Request extends Message implements RequestDescription
     public function setUri($uri)
     {
         if (is_string($uri)) {
-            if (!\Zend\Uri\Uri::validateHost($uri)) {
+            if (!\Zend2\Uri\Uri::validateHost($uri)) {
                 throw new Exception\InvalidArgumentException('Invalid URI passed as string');
             }
-        } elseif (!($uri instanceof \Zend\Uri\Http)) {
-            throw new Exception\InvalidArgumentException('URI must be an instance of Zend\Uri\Http or a string');
+        } elseif (!($uri instanceof \Zend2\Uri\Http)) {
+            throw new Exception\InvalidArgumentException('URI must be an instance of Zend2\Uri\Http or a string');
         }
         $this->uri = $uri;
 
@@ -200,14 +200,14 @@ class Request extends Message implements RequestDescription
     }
 
     /**
-     * Return the URI for this request object as an instance of Zend\Uri\Http
+     * Return the URI for this request object as an instance of Zend2\Uri\Http
      *
      * @return HttpUri
      */
     public function uri()
     {
         if ($this->uri === null || is_string($this->uri)) {
-            $this->uri = new \Zend\Uri\Http($this->uri);
+            $this->uri = new \Zend2\Uri\Http($this->uri);
         }
         return $this->uri;
     }
@@ -242,7 +242,7 @@ class Request extends Message implements RequestDescription
      * Provide an alternate Parameter Container implementation for query parameters in this object, (this is NOT the
      * primary API for value setting, for that see query())
      *
-     * @param \Zend\Stdlib\ParametersDescription $query
+     * @param \Zend2\Stdlib\ParametersDescription $query
      * @return Request
      */
     public function setQuery(ParametersDescription $query)
@@ -254,7 +254,7 @@ class Request extends Message implements RequestDescription
     /**
      * Return the parameter container responsible for query parameters
      *
-     * @return \Zend\Stdlib\ParametersDescription
+     * @return \Zend2\Stdlib\ParametersDescription
      */
     public function query()
     {
@@ -269,7 +269,7 @@ class Request extends Message implements RequestDescription
      * Provide an alternate Parameter Container implementation for post parameters in this object, (this is NOT the
      * primary API for value setting, for that see post())
      *
-     * @param \Zend\Stdlib\ParametersDescription $post
+     * @param \Zend2\Stdlib\ParametersDescription $post
      * @return Request
      */
     public function setPost(ParametersDescription $post)
@@ -281,7 +281,7 @@ class Request extends Message implements RequestDescription
     /**
      * Return the parameter container responsible for post parameters
      *
-     * @return \Zend\Stdlib\ParametersDescription
+     * @return \Zend2\Stdlib\ParametersDescription
      */
     public function post()
     {
@@ -307,7 +307,7 @@ class Request extends Message implements RequestDescription
      * Provide an alternate Parameter Container implementation for file parameters in this object, (this is NOT the
      * primary API for value setting, for that see file())
      *
-     * @param \Zend\Stdlib\ParametersDescription $files
+     * @param \Zend2\Stdlib\ParametersDescription $files
      * @return Request
      */
     public function setFile(ParametersDescription $files)
@@ -334,7 +334,7 @@ class Request extends Message implements RequestDescription
      * Provide an alternate Parameter Container implementation for server parameters in this object, (this is NOT the
      * primary API for value setting, for that see server())
      *
-     * @param \Zend\Stdlib\ParametersDescription $server
+     * @param \Zend2\Stdlib\ParametersDescription $server
      * @return Request
      */
     public function setServer(ParametersDescription $server)
@@ -347,7 +347,7 @@ class Request extends Message implements RequestDescription
      * Return the parameter container responsible for server parameters
      *
      * @see http://www.faqs.org/rfcs/rfc3875.html
-     * @return \Zend\Stdlib\ParametersDescription
+     * @return \Zend2\Stdlib\ParametersDescription
      */
     public function server()
     {
@@ -362,8 +362,8 @@ class Request extends Message implements RequestDescription
      * Provide an alternate Parameter Container implementation for env parameters in this object, (this is NOT the
      * primary API for value setting, for that see env())
      *
-     * @param \Zend\Stdlib\ParametersDescription $env
-     * @return \Zend\Http\Request
+     * @param \Zend2\Stdlib\ParametersDescription $env
+     * @return \Zend2\Http\Request
      */
     public function setEnv(ParametersDescription $env)
     {
@@ -374,7 +374,7 @@ class Request extends Message implements RequestDescription
     /**
      * Return the parameter container responsible for env parameters
      *
-     * @return \Zend\Stdlib\ParametersDescription
+     * @return \Zend2\Stdlib\ParametersDescription
      */
     public function env()
     {
@@ -389,8 +389,8 @@ class Request extends Message implements RequestDescription
      * Provide an alternate Parameter Container implementation for headers in this object, (this is NOT the
      * primary API for value setting, for that see headers())
      *
-     * @param \Zend\Http\Headers $headers
-     * @return \Zend\Http\Request
+     * @param \Zend2\Http\Headers $headers
+     * @return \Zend2\Http\Request
      */
     public function setHeaders(Headers $headers)
     {
@@ -401,7 +401,7 @@ class Request extends Message implements RequestDescription
     /**
      * Return the header container responsible for headers
      *
-     * @return \Zend\Http\Headers
+     * @return \Zend2\Http\Headers
      */
     public function headers()
     {

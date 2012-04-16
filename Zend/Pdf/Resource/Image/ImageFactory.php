@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Image
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Image
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Resource\Image;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
+namespace Zend2\Pdf\Resource\Image;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
 
 /**
- * \Zend\Pdf\Resource\Image\ImageFactory
+ * \Zend2\Pdf\Resource\Image\ImageFactory
  *
  * Helps manage the diverse set of supported image file types.
  *
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\Resource\Image\Jpeg
- * @uses       \Zend\Pdf\Resource\Image\Png
- * @uses       \Zend\Pdf\Resource\Image\Tiff
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Image
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\Resource\Image\Jpeg
+ * @uses       \Zend2\Pdf\Resource\Image\Png
+ * @uses       \Zend2\Pdf\Resource\Image\Tiff
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Image
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @todo       Use Zend_Mime not file extension for type determination.
+ * @todo       Use Zend2_Mime not file extension for type determination.
  */
 class ImageFactory
 {
@@ -46,7 +46,7 @@ class ImageFactory
         }
         $extension = pathinfo($filename, PATHINFO_EXTENSION);
         /*
-         * There are plans to use Zend_Mime and not file extension. In the mean time, if you need to
+         * There are plans to use Zend2_Mime and not file extension. In the mean time, if you need to
          * use an alternate file extension just spin up the right processor directly.
          */
         switch (strtolower($extension)) {

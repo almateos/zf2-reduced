@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\GApps;
+namespace Zend2\GData\GApps;
 
-use Zend\GData\GApps;
+use Zend2\GData\GApps;
 
 /**
  * Data model class for a Google Apps Email List Recipient Entry.
@@ -29,35 +29,35 @@ use Zend\GData\GApps;
  * Each instance of this class represents a recipient of an email list
  * hosted on a Google Apps domain. Each email list may contain multiple
  * recipients. Email lists themselves are described by
- * Zend_Gdata_EmailListEntry. Multiple recipient entries are contained within
- * instances of Zend_Gdata_GApps_EmailListRecipientFeed.
+ * Zend2_Gdata_EmailListEntry. Multiple recipient entries are contained within
+ * instances of Zend2_Gdata_GApps_EmailListRecipientFeed.
  *
  * To transfer email list recipients to and from the Google Apps servers,
  * including creating new recipients, refer to the Google Apps service class,
- * Zend_Gdata_GApps.
+ * Zend2_Gdata_GApps.
  *
  * This class represents <atom:entry> in the Google Data protocol.
  *
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\Extension\Who
- * @uses       \Zend\GData\GApps
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\Extension\Who
+ * @uses       \Zend2\GData\GApps
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class EmailListRecipientEntry extends \Zend\GData\Entry
+class EmailListRecipientEntry extends \Zend2\GData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\GApps\EmailListRecipientEntry';
+    protected $_entryClassName = 'Zend2\GData\GApps\EmailListRecipientEntry';
 
     /**
      * <gd:who> element used to store the email address of the current
      * recipient. Only the email property of this element should be
      * populated.
      *
-     * @var \Zend\GData\Extension\Who
+     * @var \Zend2\GData\Extension\Who
      */
     protected $_who = null;
 
@@ -103,7 +103,7 @@ class EmailListRecipientEntry extends \Zend\GData\Entry
 
         switch ($absoluteNodeName) {
             case $this->lookupNamespace('gd') . ':' . 'who';
-                $who = new \Zend\GData\Extension\Who();
+                $who = new \Zend2\GData\Extension\Who();
                 $who->transferFromDOM($child);
                 $this->_who = $who;
                 break;
@@ -117,7 +117,7 @@ class EmailListRecipientEntry extends \Zend\GData\Entry
      * Get the value of the who property for this object.
      *
      * @see setWho
-     * @return \Zend\GData\Extension\Who The requested object.
+     * @return \Zend2\GData\Extension\Who The requested object.
      */
     public function getWho()
     {
@@ -128,9 +128,9 @@ class EmailListRecipientEntry extends \Zend\GData\Entry
      * Set the value of the who property for this object. This property
      * is used to store the email address of the current recipient.
      *
-     * @param \Zend\GData\Extension\Who $value The desired value for this
+     * @param \Zend2\GData\Extension\Who $value The desired value for this
      *          instance's who property.
-     * @return Zend_Gdata_GApps_EventEntry Provides a fluent interface.
+     * @return Zend2_Gdata_GApps_EventEntry Provides a fluent interface.
      */
     public function setWho($value)
     {

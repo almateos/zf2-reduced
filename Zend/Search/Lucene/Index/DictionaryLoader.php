@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Index
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Index;
+namespace Zend2\Search\Lucene\Index;
 
-use Zend\Search\Lucene,
-	Zend\Search\Lucene\Exception\InvalidFileFormatException;
+use Zend2\Search\Lucene,
+	Zend2\Search\Lucene\Exception\InvalidFileFormatException;
 
 /**
  * Dictionary loader
@@ -31,11 +31,11 @@ use Zend\Search\Lucene,
  * Manual "method inlining" is performed to increase dictionary index loading operation
  * which is major bottelneck for search performance.
  *
- * @uses       \Zend\Search\Lucene\Exception\InvalidFileFormatException
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Exception\InvalidFileFormatException
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Index
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DictionaryLoader
@@ -46,11 +46,11 @@ class DictionaryLoader
      * It takes a string which is actually <segment_name>.tii index file data and
      * returns two arrays - term and tremInfo lists.
      *
-     * See Zend_Search_Lucene_Index_SegmintInfo class for details
+     * See Zend2_Search_Lucene_Index_SegmintInfo class for details
      *
      * @param string $data
      * @return array
-     * @throws \Zend\Search\Lucene\Exception\InvalidFileFormatException
+     * @throws \Zend2\Search\Lucene\Exception\InvalidFileFormatException
      */
     public static function load($data)
     {

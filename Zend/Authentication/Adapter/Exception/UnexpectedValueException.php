@@ -1,9 +1,9 @@
 <?php
 
-namespace Zend\Authentication\Adapter\Exception;
+namespace Zend2\Authentication\Adapter\Exception;
 
 class UnexpectedValueException
     extends \UnexpectedValueException
-    implements \Zend\Authentication\Adapter\Exception
+    implements \Zend2\Authentication\Adapter\Exception
 {
 }

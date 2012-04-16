@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\App;
+namespace Zend2\GData\App;
 
-use Zend\Http\Header\Etag;
+use Zend2\Http\Header\Etag;
 
 /**
  * Concrete class for working with Atom entries.
  *
- * @uses       \Zend\GData\App\Extension\Content
- * @uses       \Zend\GData\App\Extension\Control
- * @uses       \Zend\GData\App\Extension\Edited
- * @uses       \Zend\GData\App\Extension\Published
- * @uses       \Zend\GData\App\Extension\Source
- * @uses       \Zend\GData\App\Extension\Summary
- * @uses       \Zend\GData\App\FeedEntryParent
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Extension\Content
+ * @uses       \Zend2\GData\App\Extension\Control
+ * @uses       \Zend2\GData\App\Extension\Edited
+ * @uses       \Zend2\GData\App\Extension\Published
+ * @uses       \Zend2\GData\App\Extension\Source
+ * @uses       \Zend2\GData\App\Extension\Summary
+ * @uses       \Zend2\GData\App\FeedEntryParent
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Entry extends FeedEntryParent
@@ -54,47 +54,47 @@ class Entry extends FeedEntryParent
      *
      * @var string
      */
-    protected $_entryClassName = '\Zend\GData\App\Entry';
+    protected $_entryClassName = '\Zend2\GData\App\Entry';
 
     /**
      * atom:content element
      *
-     * @var \Zend\GData\App\Extension\Content
+     * @var \Zend2\GData\App\Extension\Content
      */
     protected $_content = null;
 
     /**
      * atom:published element
      *
-     * @var \Zend\GData\App\Extension\Published
+     * @var \Zend2\GData\App\Extension\Published
      */
     protected $_published = null;
 
     /**
      * atom:source element
      *
-     * @var \Zend\GData\App\Extension\Source
+     * @var \Zend2\GData\App\Extension\Source
      */
     protected $_source = null;
 
     /**
      * atom:summary element
      *
-     * @var \Zend\GData\App\Extension\Summary
+     * @var \Zend2\GData\App\Extension\Summary
      */
     protected $_summary = null;
 
     /**
      * app:control element
      *
-     * @var \Zend\GData\App\Extension\Control
+     * @var \Zend2\GData\App\Extension\Control
      */
     protected $_control = null;
 
     /**
      * app:edited element
      *
-     * @var \Zend\GData\App\Extension\Edited
+     * @var \Zend2\GData\App\Extension\Edited
      */
     protected $_edited = null;
 
@@ -163,17 +163,17 @@ class Entry extends FeedEntryParent
     }
 
     /**
-     * Uploads changes in this entry to the server using \Zend\Gdata\App
+     * Uploads changes in this entry to the server using \Zend2\Gdata\App
      *
      * @param string|null $uri The URI to send requests to, or null if $data
      *        contains the URI.
      * @param string|null $className The name of the class that should we
      *        deserializing the server response. If null, then
-     *        '\Zend\Gdata\App\Entry' will be used.
+     *        '\Zend2\Gdata\App\Entry' will be used.
      * @param array $extraHeaders Extra headers to add to the request, as an
      *        array of string-based key/value pairs.
-     * @return \Zend\GData\App\Entry The updated entry.
-     * @throws \Zend\GData\App\Exception
+     * @return \Zend2\GData\App\Entry The updated entry.
+     * @throws \Zend2\GData\App\Exception
      */
     public function save($uri = null, $className = null, $extraHeaders = array())
     {
@@ -185,11 +185,11 @@ class Entry extends FeedEntryParent
 
     /**
      * Deletes this entry to the server using the referenced
-     * Zend_Http_Client to do a HTTP DELETE to the edit link stored in this
+     * Zend2_Http_Client to do a HTTP DELETE to the edit link stored in this
      * entry's link collection.
      *
      * @return void
-     * @throws \Zend\GData\App\Exception
+     * @throws \Zend2\GData\App\Exception
      */
     public function delete()
     {
@@ -204,13 +204,13 @@ class Entry extends FeedEntryParent
      * @param string|null The URI to send requests to, or null if $data
      *        contains the URI.
      * @param string|null The name of the class that should we deserializing
-     *        the server response. If null, then '\Zend\Gdata\App\Entry' will
+     *        the server response. If null, then '\Zend2\Gdata\App\Entry' will
      *        be used.
      * @param array $extraHeaders Extra headers to add to the request, as an
      *        array of string-based key/value pairs.
      * @return mixed A new instance of the current entry with updated data, or
      *         null if the server reports that no changes have been made.
-     * @throws \Zend\GData\App\Exception
+     * @throws \Zend2\GData\App\Exception
      */
     public function reload($uri = null, $className = null, $extraHeaders = array())
     {
@@ -249,7 +249,7 @@ class Entry extends FeedEntryParent
     /**
      * Gets the value of the atom:content element
      *
-     * @return \Zend\GData\App\Extension\Content
+     * @return \Zend2\GData\App\Extension\Content
      */
     public function getContent()
     {
@@ -259,8 +259,8 @@ class Entry extends FeedEntryParent
     /**
      * Sets the value of the atom:content element
      *
-     * @param \Zend\GData\App\Extension\Content $value
-     * @return \Zend\GData\App\Entry Provides a fluent interface
+     * @param \Zend2\GData\App\Extension\Content $value
+     * @return \Zend2\GData\App\Entry Provides a fluent interface
      */
     public function setContent($value)
     {
@@ -272,7 +272,7 @@ class Entry extends FeedEntryParent
      * Sets the value of the atom:published element
      * This represents the publishing date for an entry
      *
-     * @return \Zend\GData\App\Extension\Published
+     * @return \Zend2\GData\App\Extension\Published
      */
     public function getPublished()
     {
@@ -283,8 +283,8 @@ class Entry extends FeedEntryParent
      * Sets the value of the atom:published element
      * This represents the publishing date for an entry
      *
-     * @param \Zend\GData\App\Extension\Published $value
-     * @return \Zend\GData\App\Entry Provides a fluent interface
+     * @param \Zend2\GData\App\Extension\Published $value
+     * @return \Zend2\GData\App\Entry Provides a fluent interface
      */
     public function setPublished($value)
     {
@@ -295,7 +295,7 @@ class Entry extends FeedEntryParent
     /**
      * Gets the value of the atom:source element
      *
-     * @return \Zend\GData\App\Extension\Source
+     * @return \Zend2\GData\App\Extension\Source
      */
     public function getSource()
     {
@@ -305,8 +305,8 @@ class Entry extends FeedEntryParent
     /**
      * Sets the value of the atom:source element
      *
-     * @param \Zend\GData\App\Extension\Source $value
-     * @return \Zend\GData\App\Entry Provides a fluent interface
+     * @param \Zend2\GData\App\Extension\Source $value
+     * @return \Zend2\GData\App\Entry Provides a fluent interface
      */
     public function setSource($value)
     {
@@ -318,7 +318,7 @@ class Entry extends FeedEntryParent
      * Gets the value of the atom:summary element
      * This represents a textual summary of this entry's content
      *
-     * @return \Zend\GData\App\Extension\Summary
+     * @return \Zend2\GData\App\Extension\Summary
      */
     public function getSummary()
     {
@@ -329,8 +329,8 @@ class Entry extends FeedEntryParent
      * Sets the value of the atom:summary element
      * This represents a textual summary of this entry's content
      *
-     * @param \Zend\GData\App\Extension\Summary $value
-     * @return \Zend\GData\App\Entry Provides a fluent interface
+     * @param \Zend2\GData\App\Extension\Summary $value
+     * @return \Zend2\GData\App\Entry Provides a fluent interface
      */
     public function setSummary($value)
     {
@@ -341,7 +341,7 @@ class Entry extends FeedEntryParent
     /**
      * Gets the value of the app:control element
      *
-     * @return \Zend\GData\App\Extension\Control
+     * @return \Zend2\GData\App\Extension\Control
      */
     public function getControl()
     {
@@ -351,8 +351,8 @@ class Entry extends FeedEntryParent
     /**
      * Sets the value of the app:control element
      *
-     * @param \Zend\GData\App\Extension\Control $value
-     * @return \Zend\GData\App\Entry Provides a fluent interface
+     * @param \Zend2\GData\App\Extension\Control $value
+     * @return \Zend2\GData\App\Entry Provides a fluent interface
      */
     public function setControl($value)
     {

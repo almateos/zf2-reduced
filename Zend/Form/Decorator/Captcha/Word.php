@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form\Decorator\Captcha;
+namespace Zend2\Form\Decorator\Captcha;
 
-use Zend\Form\Decorator\AbstractDecorator;
+use Zend2\Form\Decorator\AbstractDecorator;
 
 /**
  * Word-based captcha decorator
  *
  * Adds hidden field for ID and text input field for captcha text
  *
- * @uses       \Zend\Form\Decorator\AbstractDecorator
- * @category   Zend
- * @package    Zend_Form
+ * @uses       \Zend2\Form\Decorator\AbstractDecorator
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Word extends AbstractDecorator

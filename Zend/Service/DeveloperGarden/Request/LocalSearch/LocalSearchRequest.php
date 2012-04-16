@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_Request_AbstractRequest
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Request_AbstractRequest
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_Request_LocalSearch_LocalSearchRequest
-    extends Zend_Service_DeveloperGarden_Request_AbstractRequest
+class Zend2_Service_DeveloperGarden_Request_LocalSearch_LocalSearchRequest
+    extends Zend2_Service_DeveloperGarden_Request_AbstractRequest
 {
     /**
      * array of search parameters
@@ -41,7 +41,7 @@ class Zend_Service_DeveloperGarden_Request_LocalSearch_LocalSearchRequest
     /**
      * original object
      *
-     * @var Zend_Service_DeveloperGarden_LocalSearch_SearchParameters
+     * @var Zend2_Service_DeveloperGarden_LocalSearch_SearchParameters
      */
     private $_searchParameters = null;
 
@@ -56,12 +56,12 @@ class Zend_Service_DeveloperGarden_Request_LocalSearch_LocalSearchRequest
      * constructor give them the environment and the sessionId
      *
      * @param integer $environment
-     * @param Zend_Service_DeveloperGarden_LocalSearch_SearchParameters $searchParameters
+     * @param Zend2_Service_DeveloperGarden_LocalSearch_SearchParameters $searchParameters
      * @param integer $account
-     * @return Zend_Service_DeveloperGarden_Request_AbstractRequest
+     * @return Zend2_Service_DeveloperGarden_Request_AbstractRequest
      */
     public function __construct($environment, 
-        Zend_Service_DeveloperGarden_LocalSearch_SearchParameters $searchParameters, 
+        Zend2_Service_DeveloperGarden_LocalSearch_SearchParameters $searchParameters, 
         $account = null
     ) {
         parent::__construct($environment);
@@ -87,10 +87,10 @@ class Zend_Service_DeveloperGarden_Request_LocalSearch_LocalSearchRequest
     }
 
     /**
-     * @param Zend_Service_DeveloperGarden_LocalSearch_SearchParameters $searchParameters
+     * @param Zend2_Service_DeveloperGarden_LocalSearch_SearchParameters $searchParameters
      */
     public function setSearchParameters(
-        Zend_Service_DeveloperGarden_LocalSearch_SearchParameters $searchParameters
+        Zend2_Service_DeveloperGarden_LocalSearch_SearchParameters $searchParameters
     ) {
         $this->searchParameters  = $searchParameters->getSearchParameters();
         $this->_searchParameters = $searchParameters;
@@ -98,7 +98,7 @@ class Zend_Service_DeveloperGarden_Request_LocalSearch_LocalSearchRequest
     }
 
     /**
-     * @return Zend_Service_DeveloperGarden_LocalSearch_SearchParameters
+     * @return Zend2_Service_DeveloperGarden_LocalSearch_SearchParameters
      */
     public function getSearchParameters()
     {

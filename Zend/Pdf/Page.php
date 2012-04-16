@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf;
+namespace Zend2\Pdf;
 
 /**
  * PDF Page
  *
- * @uses       \Zend\Pdf\PdfDocument
- * @uses       \Zend\Pdf\ObjectFactory
- * @uses       \Zend\Pdf\InternalType
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\Resource\Font
- * @package    Zend_PDF
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\PdfDocument
+ * @uses       \Zend2\Pdf\ObjectFactory
+ * @uses       \Zend2\Pdf\InternalType
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\Resource\Font
+ * @package    Zend2_PDF
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-use Zend\Pdf\Exception;
+use Zend2\Pdf\Exception;
 
-use Zend\Pdf\InternalType;
+use Zend2\Pdf\InternalType;
 
 class Page
 {
@@ -106,18 +106,18 @@ class Page
 
 
     /**
-     * Page dictionary (refers to an inderect \Zend\Pdf\InternalType\DictionaryObject object).
+     * Page dictionary (refers to an inderect \Zend2\Pdf\InternalType\DictionaryObject object).
      *
-     * @var  \Zend\Pdf\InternalType\DictionaryObject
-     *     | \Zend\Pdf\InternalType\IndirectObject
-     *     | \Zend\Pdf\InternalType\IndirectObjectReference
+     * @var  \Zend2\Pdf\InternalType\DictionaryObject
+     *     | \Zend2\Pdf\InternalType\IndirectObject
+     *     | \Zend2\Pdf\InternalType\IndirectObjectReference
      */
     protected $_pageDictionary;
 
     /**
      * PDF objects factory.
      *
-     * @var \Zend\Pdf\ObjectFactory
+     * @var \Zend2\Pdf\ObjectFactory
      */
     protected $_objFactory = null;
 
@@ -139,7 +139,7 @@ class Page
     /**
      * Current style
      *
-     * @var \Zend\Pdf\Style
+     * @var \Zend2\Pdf\Style
      */
     protected $_style = null;
 
@@ -164,7 +164,7 @@ class Page
     /**
      * Current font
      *
-     * @var \Zend\Pdf\Resource\Font\AbstractFont
+     * @var \Zend2\Pdf\Resource\Font\AbstractFont
      */
     protected $_font = null;
 
@@ -182,38 +182,38 @@ class Page
      * 1. Load PDF page from a parsed PDF file.
      *    Object factory is created by PDF parser.
      * ---------------------------------------------------------
-     * new \Zend\Pdf\Page(\Zend\Pdf\InternalType\DictionaryObject $pageDict,
-     *                    \Zend\Pdf\ObjectFactory $factory);
+     * new \Zend2\Pdf\Page(\Zend2\Pdf\InternalType\DictionaryObject $pageDict,
+     *                    \Zend2\Pdf\ObjectFactory $factory);
      * ---------------------------------------------------------
      *
      * 2. Make a copy of the PDF page.
      *    New page is created in the same context as source page. Object factory is shared.
-     *    Thus it will be attached to the document, but need to be placed into Zend_Pdf::$pages array
+     *    Thus it will be attached to the document, but need to be placed into Zend2_Pdf::$pages array
      *    to be included into output.
      * ---------------------------------------------------------
-     * new \Zend\Pdf\Page(\Zend\Pdf\Page $page);
+     * new \Zend2\Pdf\Page(\Zend2\Pdf\Page $page);
      * ---------------------------------------------------------
      *
      * 3. Create new page with a specified pagesize.
      *    If $factory is null then it will be created and page must be attached to the document to be
      *    included into output.
      * ---------------------------------------------------------
-     * new \Zend\Pdf\Page(string $pagesize, \Zend\Pdf\ObjectFactory $factory = null);
+     * new \Zend2\Pdf\Page(string $pagesize, \Zend2\Pdf\ObjectFactory $factory = null);
      * ---------------------------------------------------------
      *
      * 4. Create new page with a specified pagesize (in default user space units).
      *    If $factory is null then it will be created and page must be attached to the document to be
      *    included into output.
      * ---------------------------------------------------------
-     * new \Zend\Pdf\Page(numeric $width, numeric $height,
-     *                    \Zend\Pdf\ObjectFactory $factory = null);
+     * new \Zend2\Pdf\Page(numeric $width, numeric $height,
+     *                    \Zend2\Pdf\ObjectFactory $factory = null);
      * ---------------------------------------------------------
      *
      *
      * @param mixed $param1
      * @param mixed $param2
      * @param mixed $param3
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct($param1, $param2 = null, $param3 = null)
     {
@@ -351,7 +351,7 @@ class Page
      * Attach resource to the page
      *
      * @param string $type
-     * @param \Zend\Pdf\Resource\AbstractResource $resource
+     * @param \Zend2\Pdf\Resource\AbstractResource $resource
      * @return string
      */
     protected function _attachResource($type, Resource\AbstractResource $resource)
@@ -439,9 +439,9 @@ class Page
      * so it can be used within other docs.
      *
      * @internal
-     * @param \Zend\Pdf\ObjectFactory $factory
+     * @param \Zend2\Pdf\ObjectFactory $factory
      * @param array $processed
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function clonePage(ObjectFactory $factory, &$processed)
     {
@@ -465,7 +465,7 @@ class Page
      * Retrive PDF file reference to the page
      *
      * @internal
-     * @return \Zend\Pdf\InternalType\DictionaryObject
+     * @return \Zend2\Pdf\InternalType\DictionaryObject
      */
     public function getPageDictionary()
     {
@@ -477,7 +477,7 @@ class Page
      *
      * @todo Don't forget to close all current graphics operations (like path drawing)
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function flush()
     {
@@ -535,8 +535,8 @@ class Page
      *
      * @todo Don't forget to close all current graphics operations (like path drawing)
      *
-     * @param \Zend\Pdf\ObjectFactory $objFactory
-     * @throws \Zend\Pdf\Exception
+     * @param \Zend2\Pdf\ObjectFactory $objFactory
+     * @throws \Zend2\Pdf\Exception
      */
     public function render(ObjectFactory $objFactory)
     {
@@ -559,8 +559,8 @@ class Page
     /**
      * Set fill color.
      *
-     * @param \Zend\Pdf\Color $color
-     * @return \Zend\Pdf\Page
+     * @param \Zend2\Pdf\Color $color
+     * @return \Zend2\Pdf\Page
      */
     public function setFillColor(Color $color)
     {
@@ -573,8 +573,8 @@ class Page
     /**
      * Set line color.
      *
-     * @param \Zend\Pdf\Color $color
-     * @return \Zend\Pdf\Page
+     * @param \Zend2\Pdf\Color $color
+     * @return \Zend2\Pdf\Page
      */
     public function setLineColor(Color $color)
     {
@@ -588,7 +588,7 @@ class Page
      * Set line width.
      *
      * @param float $width
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function setLineWidth($width)
     {
@@ -607,7 +607,7 @@ class Page
      *
      * @param array $pattern
      * @param array $phase
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function setLineDashingPattern($pattern, $phase = 0)
     {
@@ -635,9 +635,9 @@ class Page
     /**
      * Set current font.
      *
-     * @param \Zend\Pdf\Resource\Font\AbstractFont $font
+     * @param \Zend2\Pdf\Resource\Font\AbstractFont $font
      * @param float $fontSize
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function setFont(Resource\Font\AbstractFont $font, $fontSize)
     {
@@ -657,8 +657,8 @@ class Page
     /**
      * Set the style to use for future drawing operations on this page
      *
-     * @param \Zend\Pdf\Style $style
-     * @return \Zend\Pdf\Page
+     * @param \Zend2\Pdf\Style $style
+     * @return \Zend2\Pdf\Page
      */
     public function setStyle(Style $style)
     {
@@ -686,8 +686,8 @@ class Page
      *
      * @param float $alpha
      * @param string $mode
-     * @throws \Zend\Pdf\Exception
-     * @return \Zend\Pdf\Page
+     * @throws \Zend2\Pdf\Exception
+     * @return \Zend2\Pdf\Page
      */
     public function setAlpha($alpha, $mode = 'Normal')
     {
@@ -736,7 +736,7 @@ class Page
     /**
      * Get current font.
      *
-     * @return \Zend\Pdf\Resource\Font\AbstractFont $font
+     * @return \Zend2\Pdf\Resource\Font\AbstractFont $font
      */
     public function getFont()
     {
@@ -748,7 +748,7 @@ class Page
      *
      * This method is not intended to be used in userland, but helps to optimize some document wide operations
      *
-     * returns array of \Zend\Pdf\InternalType\DictionaryObject objects
+     * returns array of \Zend2\Pdf\InternalType\DictionaryObject objects
      *
      * @internal
      * @return array
@@ -761,10 +761,10 @@ class Page
     /**
      * Extract fonts attached to the page
      *
-     * returns array of \Zend\Pdf\Resource\Font\Extracted objects
+     * returns array of \Zend2\Pdf\Resource\Font\Extracted objects
      *
      * @return array
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function extractFonts()
     {
@@ -811,8 +811,8 @@ class Page
      *
      * $fontName should be specified in UTF-8 encoding
      *
-     * @return \Zend\Pdf\Resource\Font\Extracted|null
-     * @throws \Zend\Pdf\Exception
+     * @return \Zend2\Pdf\Resource\Font\Extracted|null
+     * @throws \Zend2\Pdf\Exception
      */
     public function extractFont($fontName)
     {
@@ -874,7 +874,7 @@ class Page
     /**
      * Return the style, applied to the page.
      *
-     * @return \Zend\Pdf\Style|null
+     * @return \Zend2\Pdf\Style|null
      */
     public function getStyle()
     {
@@ -888,8 +888,8 @@ class Page
      * any rotation/translation/scaling that has been applied.
      *
      * @todo check for the open paths
-     * @throws \Zend\Pdf\Exception
-     * @return \Zend\Pdf\Page
+     * @throws \Zend2\Pdf\Exception
+     * @return \Zend2\Pdf\Page
      */
     public function saveGS()
     {
@@ -904,8 +904,8 @@ class Page
     /**
      * Restore the graphics state that was saved with the last call to saveGS().
      *
-     * @throws \Zend\Pdf\Exception
-     * @return \Zend\Pdf\Page
+     * @throws \Zend2\Pdf\Exception
+     * @return \Zend2\Pdf\Page
      */
     public function restoreGS()
     {
@@ -926,7 +926,7 @@ class Page
      * @param float $radius      Radius of the circle
      * @param float $startAngle  Starting angle of the circle in radians
      * @param float $endAngle    Ending angle of the circle in radians
-     * @return \Zend\Pdf\Page    Fluid interface
+     * @return \Zend2\Pdf\Page    Fluid interface
      */
     public function clipCircle($x, $y, $radius, $startAngle = null, $endAngle = null)
     {
@@ -952,7 +952,7 @@ class Page
      * @param float $y2          Y-coordinate of right lower corner of the ellipse
      * @param float $startAngle  Starting angle of the ellipse in radians
      * @param float $endAngle    Ending angle of the ellipse in radians
-     * @return \Zend\Pdf\Page    Fluid interface
+     * @return \Zend2\Pdf\Page    Fluid interface
      */
     public function clipEllipse($x1, $y1, $x2, $y2, $startAngle = null, $endAngle = null)
     {
@@ -1035,7 +1035,7 @@ class Page
      * @param array $x  - array of float (the X co-ordinates of the vertices)
      * @param array $y  - array of float (the Y co-ordinates of the vertices)
      * @param integer $fillMethod
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function clipPolygon($x, $y, $fillMethod = self::FILL_METHOD_NON_ZERO_WINDING)
     {
@@ -1073,7 +1073,7 @@ class Page
      * @param float $y1
      * @param float $x2
      * @param float $y2
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function clipRectangle($x1, $y1, $x2, $y2)
     {
@@ -1092,14 +1092,14 @@ class Page
     }
 
     /**
-     * Draw a \Zend\Pdf\ContentStream at the specified position on the page
+     * Draw a \Zend2\Pdf\ContentStream at the specified position on the page
      *
      * @param ZPDFContentStream $cs
      * @param float $x1
      * @param float $y1
      * @param float $x2
      * @param float $y2
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function drawContentStream($cs, $x1, $y1, $x2, $y2)
     {
@@ -1129,7 +1129,7 @@ class Page
      * @param mixed $param4
      * @param mixed $param5
      * @param mixed $param6
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function  drawCircle($x, $y, $radius, $param4 = null, $param5 = null, $param6 = null)
     {
@@ -1158,7 +1158,7 @@ class Page
      * @param mixed $param5
      * @param mixed $param6
      * @param mixed $param7
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function drawEllipse($x1, $y1, $x2, $y2, $param5 = null, $param6 = null, $param7 = null)
     {
@@ -1273,12 +1273,12 @@ class Page
     /**
      * Draw an image at the specified position on the page.
      *
-     * @param \Zend\Pdf\Image $image
+     * @param \Zend2\Pdf\Image $image
      * @param float $x1
      * @param float $y1
      * @param float $x2
      * @param float $y2
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function drawImage(Resource\Image\AbstractImage $image, $x1, $y1, $x2, $y2)
     {
@@ -1304,10 +1304,10 @@ class Page
     /**
      * Draw a LayoutBox at the specified position on the page.
      *
-     * @param \Zend\Pdf\InternalType\LayoutBox $box
+     * @param \Zend2\Pdf\InternalType\LayoutBox $box
      * @param float $x
      * @param float $y
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function drawLayoutBox($box, $x, $y)
     {
@@ -1322,7 +1322,7 @@ class Page
      * @param float $y1
      * @param float $x2
      * @param float $y2
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function drawLine($x1, $y1, $x2, $y2)
     {
@@ -1342,8 +1342,8 @@ class Page
     /**
      * Draw a polygon.
      *
-     * If $fillType is \Zend\Pdf\Page::SHAPE_DRAW_FILL_AND_STROKE or
-     * \Zend\Pdf\Page::SHAPE_DRAW_FILL, then polygon is automatically closed.
+     * If $fillType is \Zend2\Pdf\Page::SHAPE_DRAW_FILL_AND_STROKE or
+     * \Zend2\Pdf\Page::SHAPE_DRAW_FILL, then polygon is automatically closed.
      * See detailed description of these methods in a PDF documentation
      * (section 4.4.2 Path painting Operators, Filling)
      *
@@ -1351,7 +1351,7 @@ class Page
      * @param array $y  - array of float (the Y co-ordinates of the vertices)
      * @param integer $fillType
      * @param integer $fillMethod
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function drawPolygon($x, $y,
                                 $fillType = self::SHAPE_DRAW_FILL_AND_STROKE,
@@ -1403,16 +1403,16 @@ class Page
      * Draw a rectangle.
      *
      * Fill types:
-     * \Zend\Pdf\Page::SHAPE_DRAW_FILL_AND_STROKE - fill rectangle and stroke (default)
-     * \Zend\Pdf\Page::SHAPE_DRAW_STROKE      - stroke rectangle
-     * \Zend\Pdf\Page::SHAPE_DRAW_FILL        - fill rectangle
+     * \Zend2\Pdf\Page::SHAPE_DRAW_FILL_AND_STROKE - fill rectangle and stroke (default)
+     * \Zend2\Pdf\Page::SHAPE_DRAW_STROKE      - stroke rectangle
+     * \Zend2\Pdf\Page::SHAPE_DRAW_FILL        - fill rectangle
      *
      * @param float $x1
      * @param float $y1
      * @param float $x2
      * @param float $y2
      * @param integer $fillType
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function drawRectangle($x1, $y1, $x2, $y2, $fillType = self::SHAPE_DRAW_FILL_AND_STROKE)
     {
@@ -1445,9 +1445,9 @@ class Page
      * Draw a rounded rectangle.
      *
      * Fill types:
-     * \Zend\Pdf\Page::SHAPE_DRAW_FILL_AND_STROKE - fill rectangle and stroke (default)
-     * \Zend\Pdf\Page::SHAPE_DRAW_STROKE      - stroke rectangle
-     * \Zend\Pdf\Page::SHAPE_DRAW_FILL        - fill rectangle
+     * \Zend2\Pdf\Page::SHAPE_DRAW_FILL_AND_STROKE - fill rectangle and stroke (default)
+     * \Zend2\Pdf\Page::SHAPE_DRAW_STROKE      - stroke rectangle
+     * \Zend2\Pdf\Page::SHAPE_DRAW_FILL        - fill rectangle
      *
      * radius is an integer representing radius of the four corners, or an array
      * of four integers representing the radius starting at top left, going
@@ -1459,7 +1459,7 @@ class Page
      * @param float $y2
      * @param integer|array $radius
      * @param integer $fillType
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function drawRoundedRectangle($x1, $y1, $x2, $y2, $radius,
                                          $fillType = self::SHAPE_DRAW_FILL_AND_STROKE)
@@ -1588,8 +1588,8 @@ class Page
      * @param float $y
      * @param string $charEncoding (optional) Character encoding of source text.
      *   Defaults to current locale.
-     * @throws \Zend\Pdf\Exception
-     * @return \Zend\Pdf\Page
+     * @throws \Zend2\Pdf\Exception
+     * @return \Zend2\Pdf\Page
      */
     public function drawText($text, $x, $y, $charEncoding = '')
     {
@@ -1613,8 +1613,8 @@ class Page
 
     /**
      *
-     * @param \Zend\Pdf\Annotation\AbstractAnnotation $annotation
-     * @return \Zend\Pdf\Page
+     * @param \Zend2\Pdf\Annotation\AbstractAnnotation $annotation
+     * @return \Zend2\Pdf\Page
      */
     public function attachAnnotation(Annotation\AbstractAnnotation $annotation)
     {
@@ -1664,8 +1664,8 @@ class Page
      /**
      * Close the path by drawing a straight line back to it's beginning.
      *
-     * @throws \Zend\Pdf\Exception
-     * @return \Zend\Pdf\Page
+     * @throws \Zend2\Pdf\Exception
+     * @return \Zend2\Pdf\Page
      */
     public function pathClose()
     {
@@ -1678,7 +1678,7 @@ class Page
      *
      * @param float $x  - the X co-ordinate to move to
      * @param float $y  - the Y co-ordinate to move to
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function pathLine($x, $y)
     {
@@ -1692,7 +1692,7 @@ class Page
      *
      * @param float $x  - the X co-ordinate to move to
      * @param float $y  - the Y co-ordinate to move to
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function pathMove($x, $y)
     {
@@ -1708,7 +1708,7 @@ class Page
      *
      * @param string $data
      * @param string $procSet (optional) Name of ProcSet to add.
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function rawWrite($data, $procSet = null)
     {
@@ -1726,7 +1726,7 @@ class Page
      * @param float $x        X coordinate of the rotation point
      * @param float $y        Y coordinate of the rotation point
      * @param float $angle    Angle of rotation in radians
-     * @return \Zend\Pdf\Page Fluid Interface
+     * @return \Zend2\Pdf\Page Fluid Interface
      */
     public function rotate($x, $y, $angle)
     {
@@ -1754,7 +1754,7 @@ class Page
      *
      * @param float $xScale - X dimention scale factor
      * @param float $yScale - Y dimention scale factor
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function scale($xScale, $yScale)
     {
@@ -1772,7 +1772,7 @@ class Page
      *
      * @param float $xShift - X coordinate shift
      * @param float $yShift - Y coordinate shift
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function translate($xShift, $yShift)
     {
@@ -1792,7 +1792,7 @@ class Page
      * @param float $y  - the Y co-ordinate of axis skew point
      * @param float $xAngle - X axis skew angle
      * @param float $yAngle - Y axis skew angle
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function skew($x, $y, $xAngle, $yAngle)
     {

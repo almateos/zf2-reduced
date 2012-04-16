@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Zend_Server_Method
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @subpackage Zend2_Server_Method
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Server\Method;
-use Zend\Server;
+namespace Zend2\Server\Method;
+use Zend2\Server;
 
 /**
  * Method callback metadata
  *
- * @uses       \Zend\Server\Exception
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Zend_Server_Method
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Server\Exception
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @subpackage Zend2_Server_Method
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Callback
@@ -76,7 +76,7 @@ class Callback
      * Set object state from array of options
      *
      * @param  array $options
-     * @return \Zend\Server\Method\Callback
+     * @return \Zend2\Server\Method\Callback
      */
     public function setOptions(array $options)
     {
@@ -93,7 +93,7 @@ class Callback
      * Set callback class
      *
      * @param  string $class
-     * @return \Zend\Server\Method\Callback
+     * @return \Zend2\Server\Method\Callback
      */
     public function setClass($class)
     {
@@ -118,7 +118,7 @@ class Callback
      * Set callback function
      *
      * @param  string $function
-     * @return \Zend\Server\Method\Callback
+     * @return \Zend2\Server\Method\Callback
      */
     public function setFunction($function)
     {
@@ -141,7 +141,7 @@ class Callback
      * Set callback class method
      *
      * @param  string $method
-     * @return \Zend\Server\Method\Callback
+     * @return \Zend2\Server\Method\Callback
      */
     public function setMethod($method)
     {
@@ -163,8 +163,8 @@ class Callback
      * Set callback type
      *
      * @param  string $type
-     * @return \Zend\Server\Method\Callback
-     * @throws \Zend\Server\Exception
+     * @return \Zend2\Server\Method\Callback
+     * @throws \Zend2\Server\Exception
      */
     public function setType($type)
     {

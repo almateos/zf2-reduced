@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\GApps;
+namespace Zend2\GData\GApps;
 
-use Zend\GData\GApps;
+use Zend2\GData\GApps;
 
 /**
  * Assists in constructing queries for Google Apps email list recipient
@@ -29,15 +29,15 @@ use Zend\GData\GApps;
  * URL is required.
  *
  * For information on submitting queries to a server, see the Google Apps
- * service class, Zend_Gdata_GApps.
+ * service class, Zend2_Gdata_GApps.
  *
- * @uses       \Zend\GData\App\InvalidArgumentException
- * @uses       \Zend\GData\GApps
- * @uses       \Zend\GData\GApps\Query
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\InvalidArgumentException
+ * @uses       \Zend2\GData\GApps
+ * @uses       \Zend2\GData\GApps\Query
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class EmailListRecipientQuery extends Query
@@ -131,7 +131,7 @@ class EmailListRecipientQuery extends Query
      * parameters.
      *
      * @return string A URL generated based on the state of this query.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function getQueryUrl()
     {
@@ -141,7 +141,7 @@ class EmailListRecipientQuery extends Query
         if ($this->_emailListName !== null) {
             $uri .= '/' . $this->_emailListName;
         } else {
-            throw new \Zend\GData\App\InvalidArgumentException(
+            throw new \Zend2\GData\App\InvalidArgumentException(
                     'EmailListName must not be null');
         }
         $uri .= GApps::APPS_EMAIL_LIST_RECIPIENT_POSTFIX . '/';

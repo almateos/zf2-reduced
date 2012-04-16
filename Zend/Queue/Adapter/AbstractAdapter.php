@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Queue
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Queue\Adapter;
+namespace Zend2\Queue\Adapter;
 
-use Zend\Queue\Adapter,
-    Zend\Queue\Queue,
-    Zend\Queue\Exception as QueueException,
-    Zend\Config\Config;
+use Zend2\Queue\Adapter,
+    Zend2\Queue\Queue,
+    Zend2\Queue\Exception as QueueException,
+    Zend2\Config\Config;
 
 /**
  * Class for connecting to queues performing common operations.
  *
- * @uses       \Zend\Queue\Queue
- * @uses       \Zend\Queue\Adapter
- * @uses       \Zend\Queue\Message
- * @uses       \Zend\Queue\Exception
- * @category   Zend
- * @package    Zend_Queue
+ * @uses       \Zend2\Queue\Queue
+ * @uses       \Zend2\Queue\Adapter
+ * @uses       \Zend2\Queue\Message
+ * @uses       \Zend2\Queue\Exception
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractAdapter implements Adapter
@@ -66,19 +66,19 @@ abstract class AbstractAdapter implements Adapter
     protected $_queues = array();
 
     /**
-     * Contains the \Zend\Queue\Queue that this object
+     * Contains the \Zend2\Queue\Queue that this object
      *
-     * @var \Zend\Queue\Queue
+     * @var \Zend2\Queue\Queue
      */
     protected $_queue = null;
 
     /**
      * Constructor.
      *
-     * $options is an array of key/value pairs or an instance of Zend_Config
+     * $options is an array of key/value pairs or an instance of Zend2_Config
      * containing configuration options.  These options are common to most adapters:
      *
-     * See the Zend_Queue Adapter Notes documentation for example configurations.
+     * See the Zend2_Queue Adapter Notes documentation for example configurations.
      *
      * Some options are used on a case-by-case basis by adapters:
      *
@@ -90,10 +90,10 @@ abstract class AbstractAdapter implements Adapter
      * host           => (string) What host to connect to, defaults to localhost
      * port           => (string) The port of the database
      *
-     * @param  array|\Zend\Config\Config $config An array having configuration data
-     * @param  \Zend\Queue\Queue The \Zend\Queue\Queue object that created this class
+     * @param  array|\Zend2\Config\Config $config An array having configuration data
+     * @param  \Zend2\Queue\Queue The \Zend2\Queue\Queue object that created this class
      * @return void
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function __construct($options, Queue $queue = null)
     {
@@ -105,7 +105,7 @@ abstract class AbstractAdapter implements Adapter
          * Verify that adapter parameters are in an array.
          */
         if (!is_array($options)) {
-            throw new QueueException('Adapter options must be an array or Zend_Config object');
+            throw new QueueException('Adapter options must be an array or Zend2_Config object');
         }
 
         // set the queue
@@ -142,9 +142,9 @@ abstract class AbstractAdapter implements Adapter
     * Queue management functions
      *********************************************************************/
     /**
-     * get the Zend_Queue class that is attached to this object
+     * get the Zend2_Queue class that is attached to this object
      *
-     * @return \Zend\Queue\Queue|null
+     * @return \Zend2\Queue\Queue|null
      */
     public function getQueue()
     {
@@ -152,10 +152,10 @@ abstract class AbstractAdapter implements Adapter
     }
 
     /**
-     * set the Zend_Queue class for this object
+     * set the Zend2_Queue class for this object
      *
-     * @param  \Zend\Queue\Queue $queue
-     * @return \Zend\Queue\Adapter
+     * @param  \Zend2\Queue\Queue $queue
+     * @return \Zend2\Queue\Adapter
      */
     public function setQueue(Queue $queue)
     {

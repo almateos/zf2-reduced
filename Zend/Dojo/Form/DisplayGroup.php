@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,41 +12,41 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage Form
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\Form;
+namespace Zend2\Dojo\Form;
 
-use Zend\Loader\PrefixPathMapper as PluginLoader,
-    Zend\View\Renderer as View;
+use Zend2\Loader\PrefixPathMapper as PluginLoader,
+    Zend2\View\Renderer as View;
 
 /**
  * Dijit-enabled DisplayGroup
  *
- * @uses       \Zend\Form\DisplayGroup
- * @package    Zend_Dojo
+ * @uses       \Zend2\Form\DisplayGroup
+ * @package    Zend2_Dojo
  * @subpackage Form
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class DisplayGroup extends \Zend\Form\DisplayGroup
+class DisplayGroup extends \Zend2\Form\DisplayGroup
 {
     /**
      * Constructor
      *
      * @param  string $name
-     * @param  \Zend\Loader\PrefixPathMapper $loader
-     * @param  array|\Zend\Config\Config|null $options
+     * @param  \Zend2\Loader\PrefixPathMapper $loader
+     * @param  array|\Zend2\Config\Config|null $options
      * @return void
      */
     public function __construct($name, PluginLoader $loader, $options = null)
     {
         parent::__construct($name, $loader, $options);
-        $this->addPrefixPath('Zend\Dojo\Form\Decorator', 'Zend/Dojo/Form/Decorator');
+        $this->addPrefixPath('Zend2\Dojo\Form\Decorator', 'Zend2/Dojo/Form/Decorator');
     }
 
     /**
@@ -54,14 +54,14 @@ class DisplayGroup extends \Zend\Form\DisplayGroup
      *
      * Ensures that the view object has the dojo view helper path set.
      *
-     * @param  \Zend\View\Renderer $view
-     * @return \Zend\Dojo\Form\Element\Dijit
+     * @param  \Zend2\View\Renderer $view
+     * @return \Zend2\Dojo\Form\Element\Dijit
      */
     public function setView(View $view = null)
     {
         if (null !== $view) {
             if(false === $view->getBroker()->isLoaded('dojo')) {
-                $loader = new \Zend\Dojo\View\HelperLoader();
+                $loader = new \Zend2\Dojo\View\HelperLoader();
                 $view->getBroker()->getClassLoader()->registerPlugins($loader);
             }
         }

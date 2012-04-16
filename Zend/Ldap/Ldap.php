@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Ldap
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Ldap
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Ldap;
+namespace Zend2\Ldap;
 
 use Traversable;
-use Zend\Stdlib\ArrayUtils;
+use Zend2\Stdlib\ArrayUtils;
 
 /**
- * @category   Zend
- * @package    Zend_Ldap
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Ldap
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Ldap
@@ -255,7 +255,7 @@ class Ldap
             if (array_key_exists($key, $options)) {
                 $val = $options[$key];
                 unset($options[$key]);
-                /* Enforce typing. This eliminates issues like Zend\Config\Reader\Ini
+                /* Enforce typing. This eliminates issues like Zend2\Config\Reader\Ini
                  * returning '1' as a string (ZF-3163).
                  */
                 switch ($key) {
@@ -282,7 +282,7 @@ class Ldap
         }
         if (count($options) > 0) {
             $key = key($options);
-            throw new Exception\LdapException(null, "Unknown Zend\\Ldap\\Ldap option: $key");
+            throw new Exception\LdapException(null, "Unknown Zend2\\Ldap\\Ldap option: $key");
         }
         $this->options = $permittedOptions;
 
@@ -939,9 +939,9 @@ class Ldap
                 throw new Exception\LdapException(null,
                     "Class '$collectionClass' can not be found");
             }
-            if (!is_subclass_of($collectionClass, 'Zend\Ldap\Collection')) {
+            if (!is_subclass_of($collectionClass, 'Zend2\Ldap\Collection')) {
                 throw new Exception\LdapException(null,
-                    "Class '$collectionClass' must subclass 'Zend\\Ldap\\Collection'");
+                    "Class '$collectionClass' must subclass 'Zend2\\Ldap\\Collection'");
             }
 
             return new $collectionClass($iterator);
@@ -1444,7 +1444,7 @@ class Ldap
     }
 
     /**
-     * Returns the specified DN as a Zend\Ldap\Node
+     * Returns the specified DN as a Zend2\Ldap\Node
      *
      * @param  string|Dn $dn
      * @return Node|null
@@ -1456,7 +1456,7 @@ class Ldap
     }
 
     /**
-     * Returns the base node as a Zend\Ldap\Node
+     * Returns the base node as a Zend2\Ldap\Node
      *
      * @return Node
      * @throws Exception\LdapException

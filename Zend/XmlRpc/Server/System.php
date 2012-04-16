@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,40 +12,40 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\XmlRpc\Server;
+namespace Zend2\XmlRpc\Server;
 
 /**
  * XML-RPC system.* methods
  *
- * @uses       Zend\XmlRpc\Request
- * @uses       Zend\XmlRpc\Server\Exception
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @uses       Zend2\XmlRpc\Request
+ * @uses       Zend2\XmlRpc\Server\Exception
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class System
 {
     /**
-     * @var \Zend\XmlRpc\Server
+     * @var \Zend2\XmlRpc\Server
      */
     protected $_server;
 
     /**
      * Constructor
      *
-     * @param  \Zend\XmlRpc\Server\Server $server
+     * @param  \Zend2\XmlRpc\Server\Server $server
      * @return void
      */
-    public function __construct(\Zend\XmlRpc\Server $server)
+    public function __construct(\Zend2\XmlRpc\Server $server)
     {
         $this->_server = $server;
     }
@@ -134,11 +134,11 @@ class System
 
             if (!$fault) {
                 try {
-                    $request = new \Zend\XmlRpc\Request();
+                    $request = new \Zend2\XmlRpc\Request();
                     $request->setMethod($method['methodName']);
                     $request->setParams($method['params']);
                     $response = $this->_server->handle($request);
-                    if ($response instanceof \Zend\XmlRpc\Fault
+                    if ($response instanceof \Zend2\XmlRpc\Fault
                         || $response->isFault()
                     ) {
                         $fault = $response;

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Uri
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Uri
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  * @version   $Id$
  */
 
-namespace Zend\Uri;
+namespace Zend2\Uri;
 
-use Zend\Validator;
+use Zend2\Validator;
 
 /**
  * Generic URI handler
  *
- * @category  Zend
- * @package   Zend_Uri
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Uri
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Uri
@@ -134,7 +134,7 @@ class Uri
     /**
      * Create a new URI object
      *
-     * @param  \Zend\Uri\Uri|string|null $uri
+     * @param  \Zend2\Uri\Uri|string|null $uri
      * @throws Exception\InvalidArgumentException
      */
     public function __construct($uri = null)
@@ -605,7 +605,7 @@ class Uri
      *
      * If the scheme is not valid according to the generic scheme syntax or
      * is not acceptable by the specific URI class (e.g. 'http' or 'https' are
-     * the only acceptable schemes for the Zend\Uri\Http class) an exception
+     * the only acceptable schemes for the Zend2\Uri\Http class) an exception
      * will be thrown.
      *
      * You can check if a scheme is valid before setting it using the

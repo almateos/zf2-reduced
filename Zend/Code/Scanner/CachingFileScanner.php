@@ -1,9 +1,9 @@
 <?php
 
-namespace Zend\Code\Scanner;
+namespace Zend2\Code\Scanner;
 
-use Zend\Code\Exception,
-    Zend\Code\Annotation\AnnotationManager;
+use Zend2\Code\Exception,
+    Zend2\Code\Annotation\AnnotationManager;
 
 class CachingFileScanner extends FileScanner
 {

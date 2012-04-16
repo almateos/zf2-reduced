@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Service\Rackspace\
+ * @category   Zend2
+ * @package    Zend2\Service\Rackspace\
  * @subpackage Files
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Rackspace\Files;
+namespace Zend2\Service\Rackspace\Files;
 
-use Zend\Service\Rackspace\Files\Object,
-        Zend\Service\Rackspace\Files as RackspaceFiles;
+use Zend2\Service\Rackspace\Files\Object,
+        Zend2\Service\Rackspace\Files as RackspaceFiles;
 
 /**
  * List of servers retrived from the GoGrid web service
@@ -31,17 +31,17 @@ use Zend\Service\Rackspace\Files\Object,
  * @uses       Countable
  * @uses       Iterator
  * @uses       OutOfBoundsException
- * @uses       Zend\Service\Rackspace\Files\Container
- * @category   Zend
- * @package    Zend\Service\Rackspace
+ * @uses       Zend2\Service\Rackspace\Files\Container
+ * @category   Zend2
+ * @package    Zend2\Service\Rackspace
  * @subpackage Files
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ObjectList implements \Countable, \Iterator, \ArrayAccess
 {
     /**
-     * @var array of Zend\Service\GoGrid\Object
+     * @var array of Zend2\Service\GoGrid\Object
      */
     protected $objects = array();
     /**
@@ -95,8 +95,8 @@ class ObjectList implements \Countable, \Iterator, \ArrayAccess
     /**
      * Add an object
      *
-     * @param  Zend\Service\Rackspace\Files\Object $obj
-     * @return Zend\Service\Rackspace\Files\ObjectList
+     * @param  Zend2\Service\Rackspace\Files\Object $obj
+     * @return Zend2\Service\Rackspace\Files\ObjectList
      */
     protected function _addObject (Object $obj)
     {
@@ -119,7 +119,7 @@ class ObjectList implements \Countable, \Iterator, \ArrayAccess
      *
      * Implement Iterator::current()
      *
-     * @return Zend\Service\Rackspace\Files\Object
+     * @return Zend2\Service\Rackspace\Files\Object
      */
     public function current()
     {
@@ -193,7 +193,7 @@ class ObjectList implements \Countable, \Iterator, \ArrayAccess
      *
      * @param   int     $offset
      * @throws  OutOfBoundsException
-     * @return  Zend\Service\Rackspace\Files\Object
+     * @return  Zend2\Service\Rackspace\Files\Object
      */
     public function offsetGet($offset)
     {
@@ -211,7 +211,7 @@ class ObjectList implements \Countable, \Iterator, \ArrayAccess
      *
      * @param   int     $offset
      * @param   string  $value
-     * @throws  Zend\Service\Rackspace\Exception
+     * @throws  Zend2\Service\Rackspace\Exception
      */
     public function offsetSet($offset, $value)
     {
@@ -224,7 +224,7 @@ class ObjectList implements \Countable, \Iterator, \ArrayAccess
      * Implement ArrayAccess::offsetUnset()
      *
      * @param   int     $offset
-     * @throws  Zend\Service\Rackspace\Exception
+     * @throws  Zend2\Service\Rackspace\Exception
      */
     public function offsetUnset($offset)
     {

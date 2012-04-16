@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\GApps;
+namespace Zend2\GData\GApps;
 
-use Zend\GData\GApps;
+use Zend2\GData\GApps;
 
 /**
  * Data model class for a Google Apps User Entry.
@@ -31,39 +31,39 @@ use Zend\GData\GApps;
  *
  * To transfer user entries to and from the Google Apps servers, including
  * creating new entries, refer to the Google Apps service class,
- * Zend_Gdata_GApps.
+ * Zend2_Gdata_GApps.
  *
  * This class represents <atom:entry> in the Google Data protocol.
  *
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\Extension\FeedLink
- * @uses       \Zend\GData\GApps
- * @uses       \Zend\GData\GApps\Extension\Login
- * @uses       \Zend\GData\GApps\Extension\Name
- * @uses       \Zend\GData\GApps\Extension\Quota
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\Extension\FeedLink
+ * @uses       \Zend2\GData\GApps
+ * @uses       \Zend2\GData\GApps\Extension\Login
+ * @uses       \Zend2\GData\GApps\Extension\Name
+ * @uses       \Zend2\GData\GApps\Extension\Quota
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class UserEntry extends \Zend\GData\Entry
+class UserEntry extends \Zend2\GData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\GApps\UserEntry';
+    protected $_entryClassName = 'Zend2\GData\GApps\UserEntry';
 
     /**
      * <apps:login> element containing information about this user's
      * account, including their username and permissions.
      *
-     * @var \Zend\GData\GApps\Extension\Login
+     * @var \Zend2\GData\GApps\Extension\Login
      */
     protected $_login = null;
 
     /**
      * <apps:name> element containing the user's actual name.
      *
-     * @var \Zend\GData\GApps\Extension\Name
+     * @var \Zend2\GData\GApps\Extension\Name
      */
     protected $_name = null;
 
@@ -71,7 +71,7 @@ class UserEntry extends \Zend\GData\Entry
      * <apps:quotq> element describing any storage quotas in place for
      * this user.
      *
-     * @var \Zend\GData\GApps\Extension\Quota
+     * @var \Zend2\GData\GApps\Extension\Quota
      */
     protected $_quota = null;
 
@@ -79,7 +79,7 @@ class UserEntry extends \Zend\GData\Entry
      * <gd:feedLink> element containing information about other feeds
      * relevant to this entry.
      *
-     * @var \Zend\GData\Extension\FeedLink
+     * @var \Zend2\GData\Extension\FeedLink
      */
     protected $_feedLink = array();
 
@@ -149,7 +149,7 @@ class UserEntry extends \Zend\GData\Entry
                 $this->_quota = $quota;
                 break;
             case $this->lookupNamespace('gd') . ':' . 'feedLink';
-                $feedLink = new \Zend\GData\Extension\FeedLink();
+                $feedLink = new \Zend2\GData\Extension\FeedLink();
                 $feedLink->transferFromDOM($child);
                 $this->_feedLink[] = $feedLink;
                 break;
@@ -163,7 +163,7 @@ class UserEntry extends \Zend\GData\Entry
      * Get the value of the login property for this object.
      *
      * @see setLogin
-     * @return \Zend\GData\GApps\Extension\Login The requested object.
+     * @return \Zend2\GData\GApps\Extension\Login The requested object.
      */
     public function getLogin()
     {
@@ -174,9 +174,9 @@ class UserEntry extends \Zend\GData\Entry
      * Set the value of the login property for this object. This property
      * is used to store the username address of the current user.
      *
-     * @param \Zend\GData\GApps\Extension\Login $value The desired value for
+     * @param \Zend2\GData\GApps\Extension\Login $value The desired value for
      *          this instance's login property.
-     * @return \Zend\GData\GApps\UserEntry Provides a fluent interface.
+     * @return \Zend2\GData\GApps\UserEntry Provides a fluent interface.
      */
     public function setLogin($value)
     {
@@ -188,7 +188,7 @@ class UserEntry extends \Zend\GData\Entry
      * Get the value of the name property for this object.
      *
      * @see setName
-     * @return \Zend\GData\GApps\Extension\Name The requested object.
+     * @return \Zend2\GData\GApps\Extension\Name The requested object.
      */
     public function getName()
     {
@@ -199,9 +199,9 @@ class UserEntry extends \Zend\GData\Entry
      * Set the value of the name property for this object. This property
      * is used to store the full name of the current user.
      *
-     * @param \Zend\GData\GApps\Extension\Name $value The desired value for
+     * @param \Zend2\GData\GApps\Extension\Name $value The desired value for
      *          this instance's name property.
-     * @return \Zend\GData\GApps\UserEntry Provides a fluent interface.
+     * @return \Zend2\GData\GApps\UserEntry Provides a fluent interface.
      */
     public function setName($value)
     {
@@ -213,7 +213,7 @@ class UserEntry extends \Zend\GData\Entry
      * Get the value of the quota property for this object.
      *
      * @see setQuota
-     * @return \Zend\GData\GApps\Extension\Quota The requested object.
+     * @return \Zend2\GData\GApps\Extension\Quota The requested object.
      */
     public function getQuota()
     {
@@ -225,9 +225,9 @@ class UserEntry extends \Zend\GData\Entry
      * is used to store the amount of storage available for the current
      * user. Quotas may not be modifiable depending on the domain used.
      *
-     * @param \Zend\GData\GApps\Extension\Quota $value The desired value for
+     * @param \Zend2\GData\GApps\Extension\Quota $value The desired value for
      *          this instance's quota property.
-     * @return \Zend\GData\GApps\UserEntry Provides a fluent interface.
+     * @return \Zend2\GData\GApps\UserEntry Provides a fluent interface.
      */
     public function setQuota($value)
     {
@@ -241,9 +241,9 @@ class UserEntry extends \Zend\GData\Entry
      *
      * @param string $rel The rel value of the link to be found. If null,
      *          the array of links is returned instead.
-     * @return mixed Either an array of \Zend\GData\Extension\FeedLink
+     * @return mixed Either an array of \Zend2\GData\Extension\FeedLink
      *          objects if $rel is null, a single
-     *          Zend_Gdata_Extension_FeedLink object if $rel is specified
+     *          Zend2_Gdata_Extension_FeedLink object if $rel is specified
      *          and a matching feed link is found, or null if $rel is
      *          specified and no matching feed link is found.
      */
@@ -266,8 +266,8 @@ class UserEntry extends \Zend\GData\Entry
      * is used to provide links to alternative feeds relevant to this entry.
      *
      * @param array $value A collection of
-     *          Zend_Gdata_GApps_Extension_FeedLink objects.
-     * @return Zend_Gdata_GApps_EventEntry Provides a fluent interface.
+     *          Zend2_Gdata_GApps_Extension_FeedLink objects.
+     * @return Zend2_Gdata_GApps_EventEntry Provides a fluent interface.
      */
     public function setFeedLink($value)
     {

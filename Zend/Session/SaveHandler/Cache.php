@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Session
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Session
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Session\SaveHandler;
+namespace Zend2\Session\SaveHandler;
 
-use Zend\Session\SaveHandler as Savable,
-    Zend\Cache\Storage\Adapter as StorageAdapter,
-    Zend\Session\Exception;
+use Zend2\Session\SaveHandler as Savable,
+    Zend2\Cache\Storage\Adapter as StorageAdapter,
+    Zend2\Session\Exception;
 
 /**
  * Cache session save handler
  *
- * @uses       Zend\Config
- * @uses       Zend\Cache\Storage\Adapter
- * @uses       Zend\Session\SaveHandler\Exception
- * @category   Zend
- * @package    Zend_Session
+ * @uses       Zend2\Config
+ * @uses       Zend2\Cache\Storage\Adapter
+ * @uses       Zend2\Session\SaveHandler\Exception
+ * @category   Zend2
+ * @package    Zend2_Session
  * @subpackage SaveHandler
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Cache implements Savable
@@ -61,9 +61,9 @@ class Cache implements Savable
     /**
      * Constructor
      *
-     * @param  Zend\Cache\Storage\Adapter $storageAdapter
+     * @param  Zend2\Cache\Storage\Adapter $storageAdapter
      * @return void
-     * @throws Zend\Session\Exception
+     * @throws Zend2\Session\Exception
      */
     public function __construct(StorageAdapter $storageAdapter)
     {
@@ -146,7 +146,7 @@ class Cache implements Savable
      *
      * Allows passing a string class name or StorageAdapter object.
      *
-     * @param Zend\Cache\Storage\Adapter
+     * @param Zend2\Cache\Storage\Adapter
      * @return void
      */
     public function setStorageAdapter(StorageAdapter $storageAdapter)
@@ -157,7 +157,7 @@ class Cache implements Savable
     /**
      * Get Cache Storage Adapter Object
      *
-     * @return Zend\Cache\Storage\Adapter
+     * @return Zend2\Cache\Storage\Adapter
      */
     public function getStorageAdapter()
     {

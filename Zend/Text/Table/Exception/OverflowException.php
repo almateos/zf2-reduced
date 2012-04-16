@@ -1,8 +1,8 @@
 <?php
-namespace Zend\Text\Table\Exception;
+namespace Zend2\Text\Table\Exception;
 
 class OverflowException
     extends \OverflowException
-    implements \Zend\Text\Exception
+    implements \Zend2\Text\Exception
 {
 }

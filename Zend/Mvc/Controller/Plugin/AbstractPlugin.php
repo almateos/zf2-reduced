@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Mvc\Controller\Plugin;
+namespace Zend2\Mvc\Controller\Plugin;
 
-use Zend\Stdlib\Dispatchable;
+use Zend2\Stdlib\Dispatchable;
 
 abstract class AbstractPlugin
 {

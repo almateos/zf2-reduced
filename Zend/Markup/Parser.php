@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Markup
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Parser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Markup;
+namespace Zend2\Markup;
 
 /**
- * @category   Zend
- * @package    Zend_Markup
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Parser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface Parser
@@ -34,7 +34,7 @@ interface Parser
     /**
      * Constructor
      *
-     * @param \Zend\Config\Config|array $options
+     * @param \Zend2\Config\Config|array $options
      *
      * @return array
      */
@@ -55,7 +55,7 @@ interface Parser
      * @param array $tokens
      * @param string $strategy
      *
-     * @return \Zend\Markup\TokenList
+     * @return \Zend2\Markup\TokenList
      */
     public function buildTree(array $tokens, $strategy = 'default');
 

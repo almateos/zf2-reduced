@@ -1,9 +1,9 @@
 <?php
 
-namespace Zend\Db\Sql;
+namespace Zend2\Db\Sql;
 
-use Zend\Db\Adapter\Platform\PlatformInterface,
-    Zend\Db\Adapter\Driver\DriverInterface;
+use Zend2\Db\Adapter\Platform\PlatformInterface,
+    Zend2\Db\Adapter\Driver\DriverInterface;
 
 abstract class AbstractSql
 {

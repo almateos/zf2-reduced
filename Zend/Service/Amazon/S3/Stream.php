@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Amazon_S3
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Amazon\S3;
-use Zend\Service\Amazon,
-    Zend\Service\Amazon\S3\Exception;
+namespace Zend2\Service\Amazon\S3;
+use Zend2\Service\Amazon,
+    Zend2\Service\Amazon\S3\Exception;
 
 /**
  * Amazon S3 PHP stream wrapper
  *
- * @uses       Zend_Service_Amazon_S3
- * @uses       Zend\Service\Amazon\S3\Exception
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_Amazon_S3
+ * @uses       Zend2\Service\Amazon\S3\Exception
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Amazon_S3
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Stream
@@ -67,7 +67,7 @@ class Stream
     private $_bucketList = array();
 
     /**
-     * @var Zend_Service_Amazon_S3
+     * @var Zend2_Service_Amazon_S3
      */
     private $_s3 = null;
 
@@ -75,7 +75,7 @@ class Stream
      * Retrieve client for this stream type
      *
      * @param  string $path
-     * @return Zend_Service_Amazon_S3
+     * @return Zend2_Service_Amazon_S3
      */
     protected function _getS3Client($path)
     {

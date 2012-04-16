@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,27 +13,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Http
+ * @category   Zend2
+ * @package    Zend2_Http
  * @subpackage Client_Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Http\Client\Adapter;
-use Zend\Http\Client\Adapter as HttpAdapter,
-    Zend\Http\Client\Adapter\Exception as AdapterException,
-    Zend\Http\Client,
-    Zend\Http\Request;
+namespace Zend2\Http\Client\Adapter;
+use Zend2\Http\Client\Adapter as HttpAdapter,
+    Zend2\Http\Client\Adapter\Exception as AdapterException,
+    Zend2\Http\Client,
+    Zend2\Http\Request;
 
 /**
- * An adapter class for Zend\Http\Client based on the curl extension.
+ * An adapter class for Zend2\Http\Client based on the curl extension.
  * Curl requires libcurl. See for full requirements the PHP manual: http://php.net/curl
  *
- * @category   Zend
- * @package    Zend_Http
+ * @category   Zend2
+ * @package    Zend2_Http
  * @subpackage Client_Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Curl implements HttpAdapter, Stream
@@ -86,12 +86,12 @@ class Curl implements HttpAdapter, Stream
      * Config is set using setConfig()
      *
      * @return void
-     * @throws \Zend\Http\Client\Adapter\Exception
+     * @throws \Zend2\Http\Client\Adapter\Exception
      */
     public function __construct()
     {
         if (!extension_loaded('curl')) {
-            throw new AdapterException\InitializationException('cURL extension has to be loaded to use this Zend\Http\Client adapter');
+            throw new AdapterException\InitializationException('cURL extension has to be loaded to use this Zend2\Http\Client adapter');
         }
         $this->invalidOverwritableCurlOptions = array(
             CURLOPT_HTTPGET,
@@ -115,17 +115,17 @@ class Curl implements HttpAdapter, Stream
     /**
      * Set the configuration array for the adapter
      *
-     * @throws \Zend\Http\Client\Adapter\Exception
-     * @param  \Zend\Config\Config | array $config
-     * @return \Zend\Http\Client\Adapter\Curl
+     * @throws \Zend2\Http\Client\Adapter\Exception
+     * @param  \Zend2\Config\Config | array $config
+     * @return \Zend2\Http\Client\Adapter\Curl
      */
     public function setConfig($config = array())
     {
-        if ($config instanceof \Zend\Config\Config) {
+        if ($config instanceof \Zend2\Config\Config) {
             $config = $config->toArray();
         } elseif (!is_array($config)) {
             throw new AdapterException\InvalidArgumentException(
-                'Array or Zend\Config\Config object expected, got ' . gettype($config)
+                'Array or Zend2\Config\Config object expected, got ' . gettype($config)
             );
         }
 
@@ -173,7 +173,7 @@ class Curl implements HttpAdapter, Stream
      *
      * @param  string|int $option
      * @param  mixed $value
-     * @return Zend\Http\Adapter\Curl
+     * @return Zend2\Http\Adapter\Curl
      */
     public function setCurlOption($option, $value)
     {
@@ -191,7 +191,7 @@ class Curl implements HttpAdapter, Stream
      * @param  int     $port
      * @param  boolean $secure
      * @return void
-     * @throws \Zend\Http\Client\Adapter\Exception if unable to connect
+     * @throws \Zend2\Http\Client\Adapter\Exception if unable to connect
      */
     public function connect($host, $port = 80, $secure = false)
     {
@@ -228,7 +228,7 @@ class Curl implements HttpAdapter, Stream
         }
 
         if ($secure !== false) {
-            // Behave the same like Zend\Http\Adapter\Socket on SSL options.
+            // Behave the same like Zend2\Http\Adapter\Socket on SSL options.
             if (isset($this->config['sslcert'])) {
                 curl_setopt($this->curl, CURLOPT_SSLCERT, $this->config['sslcert']);
             }
@@ -245,12 +245,12 @@ class Curl implements HttpAdapter, Stream
      * Send request to the remote server
      *
      * @param  string        $method
-     * @param  \Zend\Uri\Uri $uri
+     * @param  \Zend2\Uri\Uri $uri
      * @param  float         $httpVersion
      * @param  array         $headers
      * @param  string        $body
      * @return string        $request
-     * @throws \Zend\Http\Client\Adapter\Exception If connection fails, connected to wrong host, no PUT file defined, unsupported method, or unsupported cURL option
+     * @throws \Zend2\Http\Client\Adapter\Exception If connection fails, connected to wrong host, no PUT file defined, unsupported method, or unsupported cURL option
      */
     public function write($method, $uri, $httpVersion = 1.1, $headers = array(), $body = '')
     {
@@ -413,7 +413,7 @@ class Curl implements HttpAdapter, Stream
             throw new AdapterException\RuntimeException("Error in cURL request: " . curl_error($this->curl));
         }
 
-        // cURL automatically decodes chunked-messages, this means we have to disallow the Zend\Http\Response to do it again
+        // cURL automatically decodes chunked-messages, this means we have to disallow the Zend2\Http\Response to do it again
         if (stripos($this->response, "Transfer-Encoding: chunked\r\n")) {
             $this->response = str_ireplace("Transfer-Encoding: chunked\r\n", '', $this->response);
         }
@@ -474,7 +474,7 @@ class Curl implements HttpAdapter, Stream
      * Set output stream for the response
      *
      * @param resource $stream
-     * @return \Zend\Http\Client\Adapter\Socket
+     * @return \Zend2\Http\Client\Adapter\Socket
      */
     public function setOutputStream($stream)
     {

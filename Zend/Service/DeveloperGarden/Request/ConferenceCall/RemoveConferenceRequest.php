@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_Request_AbstractRequest
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Request_AbstractRequest
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_Request_ConferenceCall_RemoveConferenceRequest
-    extends Zend_Service_DeveloperGarden_Request_AbstractRequest
+class Zend2_Service_DeveloperGarden_Request_ConferenceCall_RemoveConferenceRequest
+    extends Zend2_Service_DeveloperGarden_Request_AbstractRequest
 {
     /**
      * the conference id
@@ -54,7 +54,7 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_RemoveConferenceReques
      * set the conference id
      *
      * @param string $conferenceId
-     * @return Zend_Service_DeveloperGarden_Request_ConferenceCall_RemoveConferenceRequest
+     * @return Zend2_Service_DeveloperGarden_Request_ConferenceCall_RemoveConferenceRequest
      */
     public function setConferenceId($conferenceId)
     {

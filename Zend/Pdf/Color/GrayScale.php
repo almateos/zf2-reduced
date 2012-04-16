@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Color
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Color
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Color;
+namespace Zend2\Pdf\Color;
 
-use Zend\Pdf\Color,
-    Zend\Pdf\InternalType;
+use Zend2\Pdf\Color,
+    Zend2\Pdf\InternalType;
 
 /**
  * GrayScale color implementation
  *
- * @uses       \Zend\Pdf\Color
- * @uses       \Zend\Pdf\InternalType\NumericObject
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Color
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Color
+ * @uses       \Zend2\Pdf\InternalType\NumericObject
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Color
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class GrayScale implements Color
@@ -41,7 +41,7 @@ class GrayScale implements Color
      * GrayLevel.
      * 0.0 (black) - 1.0 (white)
      *
-     * @var \Zend\Pdf\InternalType\NumericObject
+     * @var \Zend2\Pdf\InternalType\NumericObject
      */
     private $_grayLevel;
 

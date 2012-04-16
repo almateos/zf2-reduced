@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Queue
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Stomp
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Queue\Stomp;
+namespace Zend2\Queue\Stomp;
 
 /**
  * The Stomp client interacts with a Stomp server.
  *
- * @category   Zend
- * @package    Zend_Queue
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Stomp
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface StompConnection
@@ -36,7 +36,7 @@ interface StompConnection
      * @param  string  $scheme ['tcp', 'udp']
      * @param  string  host
      * @param  integer port
-     * @param  string  class - create a connection with this class; class must support \Zend\Queue\Stomp\StompConnection
+     * @param  string  class - create a connection with this class; class must support \Zend2\Queue\Stomp\StompConnection
      * @return boolean
      */
     public function open($scheme, $host, $port);
@@ -51,7 +51,7 @@ interface StompConnection
      * Check whether we are connected to the server
      *
      * @return true
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function ping();
 
@@ -60,7 +60,7 @@ interface StompConnection
      *
      * example: $response = $client->write($frame)->read();
      *
-     * @param  \Zend\Queue\Stomp\StompFrame $frame
+     * @param  \Zend2\Queue\Stomp\StompFrame $frame
      * @return $this
      */
     public function write(StompFrame $frame);
@@ -73,18 +73,18 @@ interface StompConnection
     /**
      * reads in a frame from the socket or returns false.
      *
-     * @return \Zend\Queue\Stomp\Frame|false
-     * @throws \Zend\Queue\Exception
+     * @return \Zend2\Queue\Stomp\Frame|false
+     * @throws \Zend2\Queue\Exception
      */
     public function read();
 
     /**
      * Set the frame class to be used
      *
-     * This must be a \Zend\Queue\Stomp\StompFrame.
+     * This must be a \Zend2\Queue\Stomp\StompFrame.
      *
      * @param  string $class
-     * @return \Zend\Queue\Stomp\StompConnection
+     * @return \Zend2\Queue\Stomp\StompConnection
      */
     public function setFrameClass($class);
 
@@ -98,7 +98,7 @@ interface StompConnection
     /**
      * create an empty frame
      *
-     * @return \Zend\Queue\Stomp\StompFrame class
+     * @return \Zend2\Queue\Stomp\StompFrame class
      */
     public function createFrame();
 }

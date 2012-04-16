@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,14 +12,14 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Amf
+ * @category   Zend2
+ * @package    Zend2_Amf
  * @subpackage Parser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Amf\Parser;
+namespace Zend2\Amf\Parser;
 
 /**
  * Abstract class from which deserializers may descend.
@@ -29,9 +29,9 @@ namespace Zend\Amf\Parser;
  * source tree.
  *
  * @see        http://opensource.adobe.com/svn/opensource/blazeds/trunk/modules/core/src/java/flex/messaging/io/amf/
- * @package    Zend_Amf
+ * @package    Zend2_Amf
  * @subpackage Parser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractDeserializer implements Deserializer
@@ -39,14 +39,14 @@ abstract class AbstractDeserializer implements Deserializer
     /**
      * The raw string that represents the AMF request.
      *
-     * @var Zend\Amf\Parser\InputStream
+     * @var Zend2\Amf\Parser\InputStream
      */
     protected $_stream;
 
     /**
      * Constructor
      *
-     * @param  Zend\Amf\Parser\InputStream $stream
+     * @param  Zend2\Amf\Parser\InputStream $stream
      * @return void
      */
     public function __construct(InputStream $stream)

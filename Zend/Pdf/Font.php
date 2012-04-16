@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,36 +12,36 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Fonts
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Fonts
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf;
-use Zend\Pdf\Exception;
+namespace Zend2\Pdf;
+use Zend2\Pdf\Exception;
 
 /**
- * Abstract factory class which vends {@link \Zend\Pdf\Resource\Font\AbstractFont} objects.
+ * Abstract factory class which vends {@link \Zend2\Pdf\Resource\Font\AbstractFont} objects.
  *
  * Font objects themselves are normally instantiated through the factory methods
  * {@link fontWithName()} or {@link fontWithPath()}.
  *
  * This class is also the home for font-related constants because the name of
- * the true base class ({@link \Zend\Pdf\Resource\Font\AbstractFont}) is not intuitive
+ * the true base class ({@link \Zend2\Pdf\Resource\Font\AbstractFont}) is not intuitive
  * for the end user.
  *
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\BinaryParser\DataSource\File
- * @uses       \Zend\Pdf\Resource\Font\CidFont\TrueType
- * @uses       \Zend\Pdf\Resource\Font\OpenType\TrueType
- * @uses       \Zend\Pdf\Resource\Font\Simple\Parsed\TrueType
- * @uses       \Zend\Pdf\Resource\Font\Simple\Standard
- * @uses       \Zend\Pdf\Resource\Font\Type0
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Fonts
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\BinaryParser\DataSource\File
+ * @uses       \Zend2\Pdf\Resource\Font\CidFont\TrueType
+ * @uses       \Zend2\Pdf\Resource\Font\OpenType\TrueType
+ * @uses       \Zend2\Pdf\Resource\Font\Simple\Parsed\TrueType
+ * @uses       \Zend2\Pdf\Resource\Font\Simple\Standard
+ * @uses       \Zend2\Pdf\Resource\Font\Type0
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Fonts
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Font
@@ -442,7 +442,7 @@ abstract class Font
     /* Factory Methods */
 
     /**
-     * Returns a {@link \Zend\Pdf\Resource\Font\AbstractFont} object by full name.
+     * Returns a {@link \Zend2\Pdf\Resource\Font\AbstractFont} object by full name.
      *
      * This is the preferred method to obtain one of the standard 14 PDF fonts.
      *
@@ -452,7 +452,7 @@ abstract class Font
      *
      * The $embeddingOptions parameter allows you to set certain flags related
      * to font embedding. You may combine options by OR-ing them together. See
-     * the EMBED_ constants defined in {@link \Zend\Pdf\Font} for the list of
+     * the EMBED_ constants defined in {@link \Zend2\Pdf\Font} for the list of
      * available options and their descriptions. Note that this value is only
      * used when creating a font for the first time. If a font with the same
      * name already exists, you will get that object and the options you specify
@@ -465,8 +465,8 @@ abstract class Font
      *
      * @param string $name Full PostScript name of font.
      * @param integer $embeddingOptions (optional) Options for font embedding.
-     * @return \Zend\Pdf\Resource\Font\AbstractFont
-     * @throws \Zend\Pdf\Exception
+     * @return \Zend2\Pdf\Resource\Font\AbstractFont
+     * @throws \Zend2\Pdf\Exception
      */
     public static function fontWithName($name, $embeddingOptions = 0)
         {
@@ -481,7 +481,7 @@ abstract class Font
          *   file paths in a configuration file for frequently used custom
          *   fonts. This would allow a user to use custom fonts without having
          *   to hard-code file paths all over the place. Table this idea until
-         *   {@link \Zend\Config} is ready.
+         *   {@link \Zend2\Config} is ready.
          */
 
         /* Not an existing font and no mapping in the config file. Check to see
@@ -555,7 +555,7 @@ abstract class Font
     }
 
     /**
-     * Returns a {@link \Zend\Pdf\Resource\Font\AbstractFont} object by file path.
+     * Returns a {@link \Zend2\Pdf\Resource\Font\AbstractFont} object by file path.
      *
      * The result of this method is cached, preventing unnecessary duplication
      * of font objects. Repetitive calls for the font with the same path will
@@ -563,7 +563,7 @@ abstract class Font
      *
      * The $embeddingOptions parameter allows you to set certain flags related
      * to font embedding. You may combine options by OR-ing them together. See
-     * the EMBED_ constants defined in {@link \Zend\Pdf\Font} for the list of
+     * the EMBED_ constants defined in {@link \Zend2\Pdf\Font} for the list of
      * available options and their descriptions. Note that this value is only
      * used when creating a font for the first time. If a font with the same
      * name already exists, you will get that object and the options you specify
@@ -576,8 +576,8 @@ abstract class Font
      *
      * @param string $filePath Full path to the font file.
      * @param integer $embeddingOptions (optional) Options for font embedding.
-     * @return \Zend\Pdf\Resource\Font\AbstractFont
-     * @throws \Zend\Pdf\Exception
+     * @return \Zend2\Pdf\Resource\Font\AbstractFont
+     * @throws \Zend2\Pdf\Exception
      */
     public static function fontWithPath($filePath, $embeddingOptions = 0)
     {
@@ -675,11 +675,11 @@ abstract class Font
      * otherwise unusable, throws that exception. If successful, returns the
      * font object.
      *
-     * @param \Zend\Pdf\BinaryParser\DataSource\AbstractDataSource $dataSource
+     * @param \Zend2\Pdf\BinaryParser\DataSource\AbstractDataSource $dataSource
      * @param integer $embeddingOptions Options for font embedding.
-     * @return \Zend\Pdf\Resource\Font\OpenType\TrueType May also return null if
+     * @return \Zend2\Pdf\Resource\Font\OpenType\TrueType May also return null if
      *   the data source does not appear to contain a TrueType font.
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected static function _extractTrueTypeFont($dataSource, $embeddingOptions)
     {

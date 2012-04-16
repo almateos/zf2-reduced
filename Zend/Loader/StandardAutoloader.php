@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,14 +12,14 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Loader
+ * @category   Zend2
+ * @package    Zend2_Loader
  * @subpackage Exception
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Loader;
+namespace Zend2\Loader;
 
 // Grab SplAutoloader interface
 require_once __DIR__ . '/SplAutoloader.php';
@@ -31,7 +31,7 @@ require_once __DIR__ . '/SplAutoloader.php';
  * lookups are performed on the filesystem. If a class file for the referenced
  * class is not found, a PHP warning will be raised by include().
  *
- * @package    Zend_Loader
+ * @package    Zend2_Loader
  * @license New BSD {@link http://framework.zend.com/license/new-bsd}
  */
 class StandardAutoloader implements SplAutoloader
@@ -65,7 +65,7 @@ class StandardAutoloader implements SplAutoloader
      */
     public function __construct($options = null)
     {
-        $this->registerNamespace('Zend', dirname(__DIR__));
+        $this->registerNamespace('Zend2', dirname(__DIR__));
 
         if (null !== $options) {
             $this->setOptions($options);
@@ -80,7 +80,7 @@ class StandardAutoloader implements SplAutoloader
      * <code>
      * array(
      *     'namespaces' => array(
-     *         'Zend'     => '/path/to/Zend/library',
+     *         'Zend2'     => '/path/to/Zend2/library',
      *         'Doctrine' => '/path/to/Doctrine/library',
      *     ),
      *     'prefixes' => array(

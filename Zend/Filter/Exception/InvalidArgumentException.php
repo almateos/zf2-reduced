@@ -1,9 +1,9 @@
 <?php
 
-namespace Zend\Filter\Exception;
+namespace Zend2\Filter\Exception;
 
 class InvalidArgumentException
     extends \InvalidArgumentException
-    implements \Zend\Filter\Exception
+    implements \Zend2\Filter\Exception
 {
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Locale
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Locale
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Locale;
+namespace Zend2\Locale;
 
-use Zend\Cache\Storage\Adapter as CacheAdapter,
-    Zend\Registry;
+use Zend2\Cache\Storage\Adapter as CacheAdapter,
+    Zend2\Registry;
 
 /**
  * Base class for localization
  *
- * @category  Zend
- * @package   Zend_Locale
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Locale
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Locale
@@ -377,8 +377,8 @@ class Locale
      *  3. Server Environment
      *  4. Framework Standard
      *
-     * @param  string|\Zend\Locale\Locale $locale (Optional) Locale for parsing input
-     * @throws \Zend\Locale\Exception\UnexpectedValueException When autodetection has been failed
+     * @param  string|\Zend2\Locale\Locale $locale (Optional) Locale for parsing input
+     * @throws \Zend2\Locale\Exception\UnexpectedValueException When autodetection has been failed
      */
     public function __construct($locale = null)
     {
@@ -432,10 +432,10 @@ class Locale
      * which represents the percent of quality the browser
      * requested within HTTP
      *
-     * @param  string|\Zend\Locale\Locale $locale  Locale to set
+     * @param  string|\Zend2\Locale\Locale $locale  Locale to set
      * @param  float              $quality The quality to set from 0 to 1
-     * @throws \Zend\Locale\Exception\InvalidArgumentException When a autolocale was given
-     * @throws \Zend\Locale\Exception\InvalidArgumentException When a unknown locale was given
+     * @throws \Zend2\Locale\Exception\InvalidArgumentException When a autolocale was given
+     * @throws \Zend2\Locale\Exception\InvalidArgumentException When a unknown locale was given
      * @return void
      */
     public static function setFallback($locale, $quality = 1)
@@ -483,9 +483,9 @@ class Locale
     /**
      * Sets a fixed locale which will be used independently from the user or environments settings
      *
-     * @param  string|\Zend\Locale\Locale $locale  Locale to set
-     * @throws \Zend\Locale\Exception\InvalidArgumentException When a autolocale was given
-     * @throws \Zend\Locale\Exception\InvalidArgumentException When a unknown locale was given
+     * @param  string|\Zend2\Locale\Locale $locale  Locale to set
+     * @throws \Zend2\Locale\Exception\InvalidArgumentException When a autolocale was given
+     * @throws \Zend2\Locale\Exception\InvalidArgumentException When a unknown locale was given
      * @return void
      */
     public static function setFixed($locale)
@@ -640,7 +640,7 @@ class Locale
     /**
      * Sets a new locale
      *
-     * @param  string|\Zend\Locale\Locale $locale (Optional) New locale to set
+     * @param  string|\Zend2\Locale\Locale $locale (Optional) New locale to set
      * @return void
      */
     public function setLocale($locale = null)
@@ -727,7 +727,7 @@ class Locale
     /**
      * Returns true if both locales are equal
      *
-     * @param  \Zend\Locale\Locale $object Locale to check for equality
+     * @param  \Zend2\Locale\Locale $object Locale to check for equality
      * @return boolean
      */
     public function equals(Locale $object)
@@ -745,7 +745,7 @@ class Locale
      * For detailed information about the types look into the documentation
      *
      * @param  string             $path   (Optional) Type of information to return
-     * @param  string|\Zend\Locale\Locale $locale (Optional) Locale|Language for which this informations should be returned
+     * @param  string|\Zend2\Locale\Locale $locale (Optional) Locale|Language for which this informations should be returned
      * @param  string             $value  (Optional) Value for detail list
      * @return array Array with the wished information in the given language
      */
@@ -766,7 +766,7 @@ class Locale
      *
      * @param  string             $value  Name to get detailed information about
      * @param  string             $path   (Optional) Type of information to return
-     * @param  string|\Zend\Locale\Locale $locale (Optional) Locale|Language for which this informations should be returned
+     * @param  string|\Zend2\Locale\Locale $locale (Optional) Locale|Language for which this informations should be returned
      * @return string|false The wished information in the given language
      */
     public static function getTranslation($value = null, $path = null, $locale = null)
@@ -783,7 +783,7 @@ class Locale
     /**
      * Returns an array with translated yes strings
      *
-     * @param  string|\Zend\Locale\Locale $locale (Optional) Locale for language translation
+     * @param  string|\Zend2\Locale\Locale $locale (Optional) Locale for language translation
      * @return array
      */
     public static function getQuestion($locale = null)
@@ -852,7 +852,7 @@ class Locale
      * "en_XX" refers to "en", which returns true
      * "XX_yy" refers to "root", which returns false
      *
-     * @param  string|\Zend\Locale\Locale $locale     Locale to check for
+     * @param  string|\Zend2\Locale\Locale $locale     Locale to check for
      * @param  boolean            $strict     (Optional) If true, no rerouting will be done when checking
      * @return boolean If the locale is known dependend on the settings
      */
@@ -893,14 +893,14 @@ class Locale
      * Returns the found locale as string
      *
      * @param string $locale
-     * @throws \Zend\Locale\Exception\InvalidArgumentException When the given locale is no locale or the autodetection fails
+     * @throws \Zend2\Locale\Exception\InvalidArgumentException When the given locale is no locale or the autodetection fails
      * @return string
      */
     public static function findLocale($locale = null)
     {
         if ($locale === null) {
-            if (Registry::isRegistered('Zend_Locale')) {
-                $locale = Registry::get('Zend_Locale');
+            if (Registry::isRegistered('Zend2_Locale')) {
+                $locale = Registry::get('Zend2_Locale');
             }
         }
 
@@ -1020,9 +1020,9 @@ class Locale
     /**
      * Internal function, returns a locale fallback list on detection
      *
-     * @param  string|\Zend\Locale\Locale $locale (Optional) Locale to work on
+     * @param  string|\Zend2\Locale\Locale $locale (Optional) Locale to work on
      * @param  boolean            $strict (Optional) Strict preparation
-     * @throws \Zend\Locale\Exception\UnexpectedValueException When no locale is set which is only possible when the class was wrong extended
+     * @throws \Zend2\Locale\Exception\UnexpectedValueException When no locale is set which is only possible when the class was wrong extended
      * @return array
      */
     private static function _prepareLocale($locale, $strict = false)
@@ -1063,7 +1063,7 @@ class Locale
             }
         }
 
-        // This can only happen when someone extends Zend\Locale and erases the fallback
+        // This can only happen when someone extends Zend2\Locale and erases the fallback
         if ($locale === null) {
             throw new Exception\UnexpectedValueException('Autodetection of Locale has been failed!');
         }

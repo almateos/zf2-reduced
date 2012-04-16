@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData;
+namespace Zend2\GData;
 
-use Zend\Http,
-    Zend\Http\Client;
+use Zend2\Http,
+    Zend2\Http\Client;
 
 /**
- * Wrapper around Zend\Http\Client to facilitate Google's "Account Authentication
+ * Wrapper around Zend2\Http\Client to facilitate Google's "Account Authentication
  * Proxy for Web-Based Applications".
  *
  * @see http://code.google.com/apis/accounts/AuthForWebApps.html
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class AuthSub
@@ -84,13 +84,13 @@ class AuthSub
      * Upgrades a single use token to a session token
      *
      * @param string $token The single use token which is to be upgraded
-     * @param \Zend\Http\Client $client (optional) HTTP client to use to
+     * @param \Zend2\Http\Client $client (optional) HTTP client to use to
      *                                 make the request
      * @param string $request_uri (optional) URI to which to direct
      *                            the session token upgrade
      * @return string The upgraded token value
-     * @throws \Zend\GData\App\AuthException
-     * @throws \Zend\GData\App\HttpException
+     * @throws \Zend2\GData\App\AuthException
+     * @throws \Zend2\GData\App\HttpException
      */
     public static function getAuthSubSessionToken(
             $token, $client = null,
@@ -136,10 +136,10 @@ class AuthSub
      * Revoke a token
      *
      * @param string $token The token to revoke
-     * @param \Zend\Http\Client $client (optional) HTTP client to use to make the request
+     * @param \Zend2\Http\Client $client (optional) HTTP client to use to make the request
      * @param string $request_uri (optional) URI to which to direct the revokation request
      * @return boolean Whether the revokation was successful
-     * @throws \Zend\GData\App\HttpException
+     * @throws \Zend2\GData\App\HttpException
      */
     public static function AuthSubRevokeToken($token, $client = null,
                                               $request_uri = self::AUTHSUB_REVOKE_TOKEN_URI)
@@ -178,7 +178,7 @@ class AuthSub
      * get token information
      *
      * @param string $token The token to retrieve information about
-     * @param \Zend\Http\Client $client (optional) HTTP client to use to
+     * @param \Zend2\Http\Client $client (optional) HTTP client to use to
      *                                 make the request
      * @param string $request_uri (optional) URI to which to direct
      *                            the information request
@@ -214,7 +214,7 @@ class AuthSub
      * as the Authorization header
      *
      * @param string $token The token to retrieve information about
-     * @param \Zend\GData\HttpClient $client (optional) HTTP client to use to make the request
+     * @param \Zend2\GData\HttpClient $client (optional) HTTP client to use to make the request
      */
     public static function getHttpClient($token, $client = null)
     {
@@ -222,9 +222,9 @@ class AuthSub
             $client = new HttpClient();
         }
         if (!$client instanceof Client) {
-            throw new App\HttpException('Client is not an instance of Zend_Http_Client.');
+            throw new App\HttpException('Client is not an instance of Zend2_Http_Client.');
         }
-        $useragent = 'Zend_Framework_Gdata/' . \Zend\Version::VERSION;
+        $useragent = 'Zend2_Framework_Gdata/' . \Zend2\Version::VERSION;
         $client->setConfig(array(
                 'strictredirects' => true,
                 'useragent' => $useragent

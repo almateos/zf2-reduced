@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\Form\Element;
+namespace Zend2\Dojo\Form\Element;
 
 /**
  * HorizontalSlider dijit
  *
- * @uses       \Zend\Dojo\Form\Element\Slider
- * @package    Zend_Dojo
+ * @uses       \Zend2\Dojo\Form\Element\Slider
+ * @package    Zend2_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class HorizontalSlider extends Slider
@@ -55,7 +55,7 @@ class HorizontalSlider extends Slider
      * Set dijit to use with top decoration
      *
      * @param mixed $dijit
-     * @return \Zend\Dojo\Form\Element\HorizontalSlider
+     * @return \Zend2\Dojo\Form\Element\HorizontalSlider
      */
     public function setTopDecorationDijit($dijit)
     {
@@ -69,7 +69,7 @@ class HorizontalSlider extends Slider
      * Set container to use with top decoration
      *
      * @param mixed $container
-     * @return \Zend\Dojo\Form\Element\HorizontalSlider
+     * @return \Zend2\Dojo\Form\Element\HorizontalSlider
      */
     public function setTopDecorationContainer($container)
     {
@@ -83,7 +83,7 @@ class HorizontalSlider extends Slider
      * Set labels to use with top decoration
      *
      * @param  array $labels
-     * @return \Zend\Dojo\Form\Element\HorizontalSlider
+     * @return \Zend2\Dojo\Form\Element\HorizontalSlider
      */
     public function setTopDecorationLabels(array $labels)
     {
@@ -97,7 +97,7 @@ class HorizontalSlider extends Slider
      * Set params to use with top decoration
      *
      * @param  array $params
-     * @return \Zend\Dojo\Form\Element\HorizontalSlider
+     * @return \Zend2\Dojo\Form\Element\HorizontalSlider
      */
     public function setTopDecorationParams(array $params)
     {
@@ -111,7 +111,7 @@ class HorizontalSlider extends Slider
      * Set attribs to use with top decoration
      *
      * @param  array $attribs
-     * @return \Zend\Dojo\Form\Element\HorizontalSlider
+     * @return \Zend2\Dojo\Form\Element\HorizontalSlider
      */
     public function setTopDecorationAttribs(array $attribs)
     {
@@ -138,7 +138,7 @@ class HorizontalSlider extends Slider
      * Set dijit to use with bottom decoration
      *
      * @param mixed $dijit
-     * @return \Zend\Dojo\Form\Element\HorizontalSlider
+     * @return \Zend2\Dojo\Form\Element\HorizontalSlider
      */
     public function setBottomDecorationDijit($dijit)
     {
@@ -152,7 +152,7 @@ class HorizontalSlider extends Slider
      * Set container to use with bottom decoration
      *
      * @param mixed $container
-     * @return \Zend\Dojo\Form\Element\HorizontalSlider
+     * @return \Zend2\Dojo\Form\Element\HorizontalSlider
      */
     public function setBottomDecorationContainer($container)
     {
@@ -166,7 +166,7 @@ class HorizontalSlider extends Slider
      * Set labels to use with bottom decoration
      *
      * @param  array $labels
-     * @return \Zend\Dojo\Form\Element\HorizontalSlider
+     * @return \Zend2\Dojo\Form\Element\HorizontalSlider
      */
     public function setBottomDecorationLabels(array $labels)
     {
@@ -180,7 +180,7 @@ class HorizontalSlider extends Slider
      * Set params to use with bottom decoration
      *
      * @param  array $params
-     * @return \Zend\Dojo\Form\Element\HorizontalSlider
+     * @return \Zend2\Dojo\Form\Element\HorizontalSlider
      */
     public function setBottomDecorationParams(array $params)
     {
@@ -194,7 +194,7 @@ class HorizontalSlider extends Slider
      * Set attribs to use with bottom decoration
      *
      * @param  array $attribs
-     * @return \Zend\Dojo\Form\Element\HorizontalSlider
+     * @return \Zend2\Dojo\Form\Element\HorizontalSlider
      */
     public function setBottomDecorationAttribs(array $attribs)
     {

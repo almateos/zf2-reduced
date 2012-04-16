@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Http_Client
- * @uses       Zend_Service_WindowsAzure_Credentials_AbstractCredentials
- * @uses       Zend_Service_WindowsAzure_Exception
- * @uses       Zend_Service_WindowsAzure_Storage
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2_Http_Client
+ * @uses       Zend2_Service_WindowsAzure_Credentials_AbstractCredentials
+ * @uses       Zend2_Service_WindowsAzure_Exception
+ * @uses       Zend2_Service_WindowsAzure_Storage
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */ 
-class Zend_Service_WindowsAzure_Credentials_SharedAccessSignature
-    extends Zend_Service_WindowsAzure_Credentials_AbstractCredentials
+class Zend2_Service_WindowsAzure_Credentials_SharedAccessSignature
+    extends Zend2_Service_WindowsAzure_Credentials_AbstractCredentials
 {
     /**
      * Permission set
@@ -39,7 +39,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignature
     protected $_permissionSet = array();
     
 	/**
-	 * Creates a new Zend_Service_WindowsAzure_Credentials_SharedAccessSignature instance
+	 * Creates a new Zend2_Service_WindowsAzure_Credentials_SharedAccessSignature instance
 	 *
 	 * @param string $accountName Account name for Windows Azure
 	 * @param string $accountKey Account key for Windows Azure
@@ -47,8 +47,8 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignature
 	 * @param array $permissionSet Permission set
 	 */
 	public function __construct(
-		$accountName = Zend_Service_WindowsAzure_Credentials_AbstractCredentials::DEVSTORE_ACCOUNT,
-		$accountKey  = Zend_Service_WindowsAzure_Credentials_AbstractCredentials::DEVSTORE_KEY,
+		$accountName = Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::DEVSTORE_ACCOUNT,
+		$accountKey  = Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::DEVSTORE_KEY,
 		$usePathStyleUri = false, $permissionSet = array()
 	) {
 	    parent::__construct($accountName, $accountKey, $usePathStyleUri);
@@ -72,7 +72,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignature
 	 * For example: first add blob permissions, end with container-wide permissions.
 	 * 
 	 * Warning: the signed access signature URL must match the account name of the
-	 * Zend_Service_WindowsAzure_Credentials_Zend_Service_WindowsAzure_Credentials_SharedAccessSignature instance
+	 * Zend2_Service_WindowsAzure_Credentials_Zend2_Service_WindowsAzure_Credentials_SharedAccessSignature instance
 	 * 
 	 * @param  array $value Permission set
 	 * @return void
@@ -81,7 +81,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignature
 	{
 		foreach ($value as $url) {
 			if (strpos($url, $this->_accountName) === false) {
-				throw new Zend_Service_WindowsAzure_Exception('The permission set can only contain URLs for the account name specified in the Zend_Service_WindowsAzure_Credentials_SharedAccessSignature instance.');
+				throw new Zend2_Service_WindowsAzure_Exception('The permission set can only contain URLs for the account name specified in the Zend2_Service_WindowsAzure_Credentials_SharedAccessSignature instance.');
 			}
 		}
 	    $this->_permissionSet = $value;
@@ -192,13 +192,13 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignature
     public function permissionMatchesRequest(
     	$permissionUrl = '',
     	$requestUrl = '',
-    	$resourceType = Zend_Service_WindowsAzure_Storage::RESOURCE_UNKNOWN,
-    	$requiredPermission = Zend_Service_WindowsAzure_Credentials_AbstractCredentials::PERMISSION_READ
+    	$resourceType = Zend2_Service_WindowsAzure_Storage::RESOURCE_UNKNOWN,
+    	$requiredPermission = Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::PERMISSION_READ
     ) {
         // Build requirements
         $requiredResourceType = $resourceType;
-        if ($requiredResourceType == Zend_Service_WindowsAzure_Storage::RESOURCE_BLOB) {
-            $requiredResourceType .= Zend_Service_WindowsAzure_Storage::RESOURCE_CONTAINER;
+        if ($requiredResourceType == Zend2_Service_WindowsAzure_Storage::RESOURCE_BLOB) {
+            $requiredResourceType .= Zend2_Service_WindowsAzure_Storage::RESOURCE_CONTAINER;
         }
 
         // Parse permission url
@@ -241,8 +241,8 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignature
 	 */
 	public function signRequestUrl(
 		$requestUrl = '',
-		$resourceType = Zend_Service_WindowsAzure_Storage::RESOURCE_UNKNOWN,
-		$requiredPermission = Zend_Service_WindowsAzure_Credentials_AbstractCredentials::PERMISSION_READ
+		$resourceType = Zend2_Service_WindowsAzure_Storage::RESOURCE_UNKNOWN,
+		$requiredPermission = Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::PERMISSION_READ
 	) {
 	    // Look for a matching permission
 	    foreach ($this->getPermissionSet() as $permittedUrl) {
@@ -280,13 +280,13 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignature
 	 * @return array Array of headers
 	 */
 	public function signRequestHeaders(
-		$httpVerb = Zend_Http_Client::GET,
+		$httpVerb = Zend2_Http_Client::GET,
 		$path = '/',
 		$queryString = '',
 		$headers = null,
 		$forTableStorage = false,
-		$resourceType = Zend_Service_WindowsAzure_Storage::RESOURCE_UNKNOWN,
-		$requiredPermission = Zend_Service_WindowsAzure_Credentials_AbstractCredentials::PERMISSION_READ
+		$resourceType = Zend2_Service_WindowsAzure_Storage::RESOURCE_UNKNOWN,
+		$requiredPermission = Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::PERMISSION_READ
 	) {
 	    return $headers;
 	}

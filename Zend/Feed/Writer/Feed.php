@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Writer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Writer;
+namespace Zend2\Feed\Writer;
 
 use Countable,
     Iterator,
-    Zend\Date,
-    Zend\Feed\Writer\Renderer;
+    Zend2\Date,
+    Zend2\Feed\Writer\Renderer;
 
 /**
-* @category Zend
-* @package Zend_Feed_Writer
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @category Zend2
+* @package Zend2_Feed_Writer
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 class Feed extends AbstractFeed implements Iterator, Countable
@@ -49,11 +49,11 @@ class Feed extends AbstractFeed implements Iterator, Countable
     protected $_entriesKey = 0;
 
     /**
-     * Creates a new Zend_Feed_Writer_Entry data container for use. This is NOT
+     * Creates a new Zend2_Feed_Writer_Entry data container for use. This is NOT
      * added to the current feed automatically, but is necessary to create a
      * container with some initial values preset based on the current feed data.
      *
-     * @return Zend_Feed_Writer_Entry
+     * @return Zend2_Feed_Writer_Entry
      */
     public function createEntry()
     {
@@ -66,10 +66,10 @@ class Feed extends AbstractFeed implements Iterator, Countable
     }
 
     /**
-     * Appends a Zend_Feed_Writer_Deleted object representing a new entry tombstone
+     * Appends a Zend2_Feed_Writer_Deleted object representing a new entry tombstone
      * to the feed data container's internal group of entries.
      *
-     * @param Zend_Feed_Writer_Deleted $entry
+     * @param Zend2_Feed_Writer_Deleted $entry
      */
     public function addTombstone(Deleted $deleted)
     {
@@ -77,11 +77,11 @@ class Feed extends AbstractFeed implements Iterator, Countable
     }
     
     /**
-     * Creates a new Zend_Feed_Writer_Deleted data container for use. This is NOT
+     * Creates a new Zend2_Feed_Writer_Deleted data container for use. This is NOT
      * added to the current feed automatically, but is necessary to create a
      * container with some initial values preset based on the current feed data.
      *
-     * @return Zend_Feed_Writer_Deleted
+     * @return Zend2_Feed_Writer_Deleted
      */
     public function createTombstone()
     {
@@ -94,10 +94,10 @@ class Feed extends AbstractFeed implements Iterator, Countable
     }
 
     /**
-     * Appends a Zend_Feed_Writer_Entry object representing a new entry/item
+     * Appends a Zend2_Feed_Writer_Entry object representing a new entry/item
      * the feed data container's internal group of entries.
      *
-     * @param Zend_Feed_Writer_Entry $entry
+     * @param Zend2_Feed_Writer_Entry $entry
      */
     public function addEntry(Entry $entry)
     {
@@ -174,7 +174,7 @@ class Feed extends AbstractFeed implements Iterator, Countable
 	/**
      * Return the current entry
      *
-     * @return Zend_Feed_Reader_Entry_Interface
+     * @return Zend2_Feed_Reader_Entry_Interface
      */
     public function current()
     {
@@ -235,7 +235,7 @@ class Feed extends AbstractFeed implements Iterator, Countable
             throw new Exception('Invalid feed type specified: ' . $type . '.'
             . ' Should be one of "rss" or "atom".');
         }
-        $renderClass = 'Zend\\Feed\\Writer\\Renderer\\Feed\\' . $type;
+        $renderClass = 'Zend2\\Feed\\Writer\\Renderer\\Feed\\' . $type;
         $renderer = new $renderClass($this);
         if ($ignoreExceptions) {
             $renderer->ignoreExceptions();

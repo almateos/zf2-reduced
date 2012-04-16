@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mvc_Router
+ * @category   Zend2
+ * @package    Zend2_Mvc_Router
  * @subpackage Http
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mvc\Router\Http;
+namespace Zend2\Mvc\Router\Http;
 
 use Traversable,
-    Zend\Stdlib\ArrayUtils,
-    Zend\Stdlib\RequestDescription as Request,
-    Zend\Mvc\Router\Exception;
+    Zend2\Stdlib\ArrayUtils,
+    Zend2\Stdlib\RequestDescription as Request,
+    Zend2\Mvc\Router\Exception;
 
 /**
  * Scheme route.
  *
- * @package    Zend_Mvc_Router
+ * @package    Zend2_Mvc_Router
  * @subpackage Http
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @see        http://manuals.rubyonrails.com/read/chapter/65
  */
@@ -68,7 +68,7 @@ class Scheme implements Route
      *
      * @see    Route::factory()
      * @param  array|\Traversable $options
-     * @throws \Zend\Mvc\Router\Exception\InvalidArgumentException
+     * @throws \Zend2\Mvc\Router\Exception\InvalidArgumentException
      * @return Scheme
      */
     public static function factory($options = array())

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Zend_Server_Method
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @subpackage Zend2_Server_Method
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Server\Method;
-use Zend\Server;
+namespace Zend2\Server\Method;
+use Zend2\Server;
 
 /**
  * Method definition metadata
  *
- * @uses       \Zend\Server\Exception
- * @uses       \Zend\Server\Method\Callback
- * @uses       \Zend\Server\Method\Prototype
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Zend_Server_Method
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Server\Exception
+ * @uses       \Zend2\Server\Method\Callback
+ * @uses       \Zend2\Server\Method\Prototype
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @subpackage Zend2_Server_Method
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Definition
 {
     /**
-     * @var \Zend\Server\Method\Callback
+     * @var \Zend2\Server\Method\Callback
      */
     protected $_callback;
 
@@ -62,7 +62,7 @@ class Definition
     protected $_object;
 
     /**
-     * @var array Array of \Zend\Server\Method\Prototype objects
+     * @var array Array of \Zend2\Server\Method\Prototype objects
      */
     protected $_prototypes = array();
 
@@ -83,7 +83,7 @@ class Definition
      * Set object state from options
      *
      * @param  array $options
-     * @return \Zend\Server\Method\Definition
+     * @return \Zend2\Server\Method\Definition
      */
     public function setOptions(array $options)
     {
@@ -100,7 +100,7 @@ class Definition
      * Set method name
      *
      * @param  string $name
-     * @return \Zend\Server\Method\Definition
+     * @return \Zend2\Server\Method\Definition
      */
     public function setName($name)
     {
@@ -121,8 +121,8 @@ class Definition
     /**
      * Set method callback
      *
-     * @param  array|\Zend\Server\Method\Callback $callback
-     * @return \Zend\Server\Method\Definition
+     * @param  array|\Zend2\Server\Method\Callback $callback
+     * @return \Zend2\Server\Method\Definition
      */
     public function setCallback($callback)
     {
@@ -138,7 +138,7 @@ class Definition
     /**
      * Get method callback
      *
-     * @return \Zend\Server\Method\Callback
+     * @return \Zend2\Server\Method\Callback
      */
     public function getCallback()
     {
@@ -148,8 +148,8 @@ class Definition
     /**
      * Add prototype to method definition
      *
-     * @param  array|\Zend\Server\Method\Prototype $prototype
-     * @return \Zend\Server\Method\Definition
+     * @param  array|\Zend2\Server\Method\Prototype $prototype
+     * @return \Zend2\Server\Method\Definition
      */
     public function addPrototype($prototype)
     {
@@ -165,8 +165,8 @@ class Definition
     /**
      * Add multiple prototypes at once
      *
-     * @param  array $prototypes Array of \Zend\Server\Method\Prototype objects or arrays
-     * @return \Zend\Server\Method\Definition
+     * @param  array $prototypes Array of \Zend2\Server\Method\Prototype objects or arrays
+     * @return \Zend2\Server\Method\Definition
      */
     public function addPrototypes(array $prototypes)
     {
@@ -179,8 +179,8 @@ class Definition
     /**
      * Set all prototypes at once (overwrites)
      *
-     * @param  array $prototypes Array of \Zend\Server\Method\Prototype objects or arrays
-     * @return \Zend\Server\Method\Definition
+     * @param  array $prototypes Array of \Zend2\Server\Method\Prototype objects or arrays
+     * @return \Zend2\Server\Method\Definition
      */
     public function setPrototypes(array $prototypes)
     {
@@ -192,7 +192,7 @@ class Definition
     /**
      * Get all prototypes
      *
-     * @return array $prototypes Array of \Zend\Server\Method\Prototype objects or arrays
+     * @return array $prototypes Array of \Zend2\Server\Method\Prototype objects or arrays
      */
     public function getPrototypes()
     {
@@ -203,7 +203,7 @@ class Definition
      * Set method help
      *
      * @param  string $methodHelp
-     * @return \Zend\Server\Method\Definition
+     * @return \Zend2\Server\Method\Definition
      */
     public function setMethodHelp($methodHelp)
     {
@@ -225,7 +225,7 @@ class Definition
      * Set object to use with method calls
      *
      * @param  object $object
-     * @return \Zend\Server\Method\Definition
+     * @return \Zend2\Server\Method\Definition
      */
     public function setObject($object)
     {
@@ -250,7 +250,7 @@ class Definition
      * Set invoke arguments
      *
      * @param  array $invokeArguments
-     * @return \Zend\Server\Method\Definition
+     * @return \Zend2\Server\Method\Definition
      */
     public function setInvokeArguments(array $invokeArguments)
     {

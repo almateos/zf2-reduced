@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Validator
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Validator
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator\File;
+namespace Zend2\Validator\File;
 
-use Zend\Loader,
-    Zend\Validator,
-    Zend\Validator\Exception;
+use Zend2\Loader,
+    Zend2\Validator,
+    Zend2\Validator\Exception;
 
 /**
  * Validator for the maximum size of a file up to a max of 2GB
  *
- * @uses      \Zend\Loader
- * @uses      \Zend\Validator\AbstractValidator
- * @uses      \Zend\Validator\Exception
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Loader
+ * @uses      \Zend2\Validator\AbstractValidator
+ * @uses      \Zend2\Validator\Exception
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Size extends Validator\AbstractValidator
@@ -155,8 +155,8 @@ class Size extends Validator\AbstractValidator
      * For example: 2000, 2MB, 0.2GB
      *
      * @param  integer|string $min The minimum filesize
-     * @throws \Zend\Validator\Exception When min is greater than max
-     * @return \Zend\Validator\File\Size Provides a fluent interface
+     * @throws \Zend2\Validator\Exception When min is greater than max
+     * @return \Zend2\Validator\File\Size Provides a fluent interface
      */
     public function setMin($min)
     {
@@ -199,8 +199,8 @@ class Size extends Validator\AbstractValidator
      * For example: 2000, 2MB, 0.2GB
      *
      * @param  integer|string $max The maximum filesize
-     * @throws \Zend\Validator\Exception When max is smaller than min
-     * @return \Zend\Validator\File\Size Provides a fluent interface
+     * @throws \Zend2\Validator\Exception When max is smaller than min
+     * @return \Zend2\Validator\File\Size Provides a fluent interface
      */
     public function setMax($max)
     {
@@ -233,7 +233,7 @@ class Size extends Validator\AbstractValidator
      * Set current size
      *
      * @param  int $size
-     * @return \Zend\Validator\File\Size
+     * @return \Zend2\Validator\File\Size
      */
     protected function _setSize($size)
     {
@@ -246,7 +246,7 @@ class Size extends Validator\AbstractValidator
      * not bigger than max (when max is not null).
      *
      * @param  string $value Real file to check for size
-     * @param  array  $file  File data from \Zend\File\Transfer\Transfer
+     * @param  array  $file  File data from \Zend2\File\Transfer\Transfer
      * @return boolean
      */
     public function isValid($value, $file = null)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Rest
+ * @category   Zend2
+ * @package    Zend2_Rest
  * @subpackage Client
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Rest\Client;
+namespace Zend2\Rest\Client;
 
-use Zend\Http\Client as HttpClient,
-    Zend\Uri;
+use Zend2\Http\Client as HttpClient,
+    Zend2\Uri;
 
 /**
- * @category   Zend
- * @package    Zend_Rest
+ * @category   Zend2
+ * @package    Zend2_Rest
  * @subpackage Client
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class RestClient extends \Zend\Service\AbstractService
+class RestClient extends \Zend2\Service\AbstractService
 {
     /**
      * Data for the query
@@ -118,7 +118,7 @@ class RestClient extends \Zend\Service\AbstractService
     }
 
     /**
-     * Call a remote REST web service URI and return the Zend_Http_Response object
+     * Call a remote REST web service URI and return the Zend2_Http_Response object
      *
      * @param  string $path            The path to append to the URI
      * @throws Exception\UnexpectedValueException
@@ -141,8 +141,8 @@ class RestClient extends \Zend\Service\AbstractService
 
         /**
          * Get the HTTP client and configure it for the endpoint URI.  Do this 
-         * each time as the Zend\Http\Client instance may be shared with other 
-         * Zend\Service\AbstractService subclasses.
+         * each time as the Zend2\Http\Client instance may be shared with other 
+         * Zend2\Service\AbstractService subclasses.
          */
         $client = $this->getHttpClient();
         $client->resetParameters();
@@ -154,8 +154,8 @@ class RestClient extends \Zend\Service\AbstractService
      *
      * @param string $path
      * @param array  $query Array of GET parameters
-     * @throws Zend\Http\Client\Exception
-     * @return Zend\Http\Response
+     * @throws Zend2\Http\Client\Exception
+     * @return Zend2\Http\Response
      */
     public function restGet($path, array $query = null)
     {
@@ -176,7 +176,7 @@ class RestClient extends \Zend\Service\AbstractService
      *
      * @param mixed $method
      * @param mixed $data
-     * @return \Zend\Http\Response
+     * @return \Zend2\Http\Response
      */
     protected function performPost($method, $data = null)
     {
@@ -197,8 +197,8 @@ class RestClient extends \Zend\Service\AbstractService
      *
      * @param string $path
      * @param mixed $data Raw data to send
-     * @throws \Zend\Http\Client\Exception
-     * @return \Zend\Http\Response
+     * @throws \Zend2\Http\Client\Exception
+     * @return \Zend2\Http\Response
      */
     public function restPost($path, $data = null)
     {
@@ -211,8 +211,8 @@ class RestClient extends \Zend\Service\AbstractService
      *
      * @param string $path
      * @param mixed $data Raw data to send in request
-     * @throws \Zend\Http\Client\Exception
-     * @return \Zend\Http\Response
+     * @throws \Zend2\Http\Client\Exception
+     * @return \Zend2\Http\Response
      */
     public function restPut($path, $data = null)
     {
@@ -224,8 +224,8 @@ class RestClient extends \Zend\Service\AbstractService
      * Performs an HTTP DELETE request to $path.
      *
      * @param string $path
-     * @throws \Zend\Http\Client\Exception
-     * @return \Zend\Http\Response
+     * @throws \Zend2\Http\Client\Exception
+     * @return \Zend2\Http\Response
      */
     public function restDelete($path)
     {
@@ -251,8 +251,8 @@ class RestClient extends \Zend\Service\AbstractService
      *
      * @param string $method Method name
      * @param array $args Method args
-     * @return \Zend\Rest\Client\RestClient_Result|\Zend\Rest\Client\RestClient \Zend\Rest\Client\RestClient if using
-     * a remote method, Zend_Rest_Client_Result if using an HTTP request method
+     * @return \Zend2\Rest\Client\RestClient_Result|\Zend2\Rest\Client\RestClient \Zend2\Rest\Client\RestClient if using
+     * a remote method, Zend2_Rest_Client_Result if using an HTTP request method
      */
     public function __call($method, $args)
     {
@@ -268,7 +268,7 @@ class RestClient extends \Zend\Service\AbstractService
             $this->data         = array(); //Initializes for next Rest method.
             return new Result($response->getBody());
         } else {
-            // More than one arg means it's definitely a Zend_Rest_Server
+            // More than one arg means it's definitely a Zend2_Rest_Server
             if (count($args) == 1) {
                 // Uses first called function name as method name
                 if (!isset($this->data['method'])) {

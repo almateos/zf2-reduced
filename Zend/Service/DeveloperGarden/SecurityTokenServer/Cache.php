@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_Exception
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Exception
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_SecurityTokenServer_Cache
+class Zend2_Service_DeveloperGarden_SecurityTokenServer_Cache
 {
     /**
      * array with stored tokens
@@ -43,7 +43,7 @@ class Zend_Service_DeveloperGarden_SecurityTokenServer_Cache
     /**
      * Internal cache for token values
      *
-     * @var Zend_Cache_Core
+     * @var Zend2_Cache_Core
      * @access private
      */
     private static $_cache = null;
@@ -68,13 +68,13 @@ class Zend_Service_DeveloperGarden_SecurityTokenServer_Cache
      * returns stored token from cache or null
      *
      * @param string $tokenId
-     * @throws Zend_Service_DeveloperGarden_Exception
-     * @return Zend_Service_DeveloperGarden_Response_SecurityTokenServer_Interface|null
+     * @throws Zend2_Service_DeveloperGarden_Exception
+     * @return Zend2_Service_DeveloperGarden_Response_SecurityTokenServer_Interface|null
      */
     public static function getTokenFromCache($tokenId)
     {
         if (!array_key_exists($tokenId, self::$_storedToken)) {
-            throw new Zend_Service_DeveloperGarden_Exception(
+            throw new Zend2_Service_DeveloperGarden_Exception(
                 'tokenID ' . $tokenId . ' unknown.'
             );
         }
@@ -94,15 +94,15 @@ class Zend_Service_DeveloperGarden_SecurityTokenServer_Cache
      * set new value for the given tokenId
      *
      * @param string $tokenId
-     * @throws Zend_Service_DeveloperGarden_Exception
-     * @param Zend_Service_DeveloperGarden_Response_SecurityTokenServer_Interface $tokenValue
+     * @throws Zend2_Service_DeveloperGarden_Exception
+     * @param Zend2_Service_DeveloperGarden_Response_SecurityTokenServer_Interface $tokenValue
      * @return void
      */
     public static function setTokenToCache($tokenId,
-        Zend_Service_DeveloperGarden_Response_SecurityTokenServer_Interface $tokenValue
+        Zend2_Service_DeveloperGarden_Response_SecurityTokenServer_Interface $tokenValue
     ) {
         if (!array_key_exists($tokenId, self::$_storedToken)) {
-            throw new Zend_Service_DeveloperGarden_Exception(
+            throw new Zend2_Service_DeveloperGarden_Exception(
                 'tokenID ' . $tokenId . ' unknown.'
             );
         }
@@ -131,7 +131,7 @@ class Zend_Service_DeveloperGarden_SecurityTokenServer_Cache
     /**
      * Returns the cache
      *
-     * @return Zend_Cache_Core
+     * @return Zend2_Cache_Core
      */
     public static function getCache()
     {
@@ -141,9 +141,9 @@ class Zend_Service_DeveloperGarden_SecurityTokenServer_Cache
     /**
      * Set a cache for token
      *
-     * @param Zend_Cache_Core $cache A cache frontend
+     * @param Zend2_Cache_Core $cache A cache frontend
      */
-    public static function setCache(Zend_Cache_Core $cache)
+    public static function setCache(Zend2_Cache_Core $cache)
     {
         self::$_cache = $cache;
     }

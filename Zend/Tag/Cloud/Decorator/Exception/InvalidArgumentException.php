@@ -1,7 +1,7 @@
 <?php
-namespace Zend\Tag\Cloud\Decorator\Exception;
+namespace Zend2\Tag\Cloud\Decorator\Exception;
 
 class InvalidArgumentException
     extends \InvalidArgumentException
-    implements \Zend\Tag\Cloud\Decorator\Exception
+    implements \Zend2\Tag\Cloud\Decorator\Exception
 {} 

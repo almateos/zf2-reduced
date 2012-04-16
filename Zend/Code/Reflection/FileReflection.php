@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Code\Reflection;
+namespace Zend2\Code\Reflection;
 
-use Zend\Code\Reflection,
-    Zend\Code\NameInformation,
-    Zend\Code\Scanner\CachingFileScanner;
+use Zend2\Code\Reflection,
+    Zend2\Code\NameInformation,
+    Zend2\Code\Scanner\CachingFileScanner;
 
 /**
  * @uses       Reflector
- * @uses       \Zend\Loader
- * @uses       \Zend\Code\Reflection\ReflectionClass
- * @uses       \Zend\Code\Reflection\Exception
- * @uses       \Zend\Code\Reflection\ReflectionFunction
- * @category   Zend
- * @package    Zend_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Loader
+ * @uses       \Zend2\Code\Reflection\ReflectionClass
+ * @uses       \Zend2\Code\Reflection\Exception
+ * @uses       \Zend2\Code\Reflection\ReflectionFunction
+ * @category   Zend2
+ * @package    Zend2_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class FileReflection implements Reflection
@@ -208,7 +208,7 @@ class FileReflection implements Reflection
     /**
      * Return the reflection classes of the classes found inside this file
      *
-     * @return array Array of \Zend\Code\Reflection\ReflectionClass instances
+     * @return array Array of \Zend2\Code\Reflection\ReflectionClass instances
      */
     public function getClasses()
     {
@@ -223,7 +223,7 @@ class FileReflection implements Reflection
     /**
      * Return the reflection functions of the functions found inside this file
      *
-     * @return array Array of Zend_Reflection_Functions
+     * @return array Array of Zend2_Reflection_Functions
      */
     public function getFunctions()
     {
@@ -239,8 +239,8 @@ class FileReflection implements Reflection
      * Retrieve the reflection class of a given class found in this file
      *
      * @param  null|string $name
-     * @return \Zend\Code\Reflection\ReflectionClass
-     * @throws \Zend\Code\Reflection\Exception for invalid class name or invalid reflection class
+     * @return \Zend2\Code\Reflection\ReflectionClass
+     * @throws \Zend2\Code\Reflection\Exception for invalid class name or invalid reflection class
      */
     public function getClass($name = null)
     {
@@ -290,7 +290,7 @@ class FileReflection implements Reflection
     /**
      * This method does the work of "reflecting" the file
      *
-     * Uses Zend\Code\Scanner\FileScanner to gather file information
+     * Uses Zend2\Code\Scanner\FileScanner to gather file information
      *
      * @return void
      */

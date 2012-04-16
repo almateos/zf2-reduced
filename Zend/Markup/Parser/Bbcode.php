@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Markup
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Parser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Markup\Parser;
-use Zend\Markup\Parser,
-    Zend\Markup\Token,
-    Zend\Markup\TokenList,
-    Zend\Config\Config;
+namespace Zend2\Markup\Parser;
+use Zend2\Markup\Parser,
+    Zend2\Markup\Token,
+    Zend2\Markup\TokenList,
+    Zend2\Config\Config;
 
 /**
- * @uses       \Zend\Markup\Parser\Exception
- * @uses       \Zend\Markup\Parser\ParserInterface
- * @uses       \Zend\Markup\Token
- * @uses       \Zend\Markup\TokenList
- * @category   Zend
- * @package    Zend_Markup
+ * @uses       \Zend2\Markup\Parser\Exception
+ * @uses       \Zend2\Markup\Parser\ParserInterface
+ * @uses       \Zend2\Markup\Token
+ * @uses       \Zend2\Markup\TokenList
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Parser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Bbcode implements Parser
@@ -79,7 +79,7 @@ class Bbcode implements Parser
      * @var array
      */
     protected $_tags = array(
-        'Zend_Markup_Root' => array(
+        'Zend2_Markup_Root' => array(
             'type'     => self::TYPE_DEFAULT,
             'stoppers' => array()
         )
@@ -131,7 +131,7 @@ class Bbcode implements Parser
     /**
      * Constructor
      *
-     * @param \Zend\Config\Config|array $config
+     * @param \Zend2\Config\Config|array $config
      *
      * @return array
      */
@@ -388,7 +388,7 @@ class Bbcode implements Parser
     public function clearTags()
     {
         $this->_tags = array(
-            'Zend_Markup_Root' => array(
+            'Zend2_Markup_Root' => array(
                 'type'     => self::TYPE_DEFAULT,
                 'stoppers' => array()
             )
@@ -419,7 +419,7 @@ class Bbcode implements Parser
      * {@link buildTree()} method.
      *
      * @param  string $value
-     * @return \Zend\Markup\TokenList
+     * @return \Zend2\Markup\TokenList
      */
     public function parse($value)
     {
@@ -583,7 +583,7 @@ class Bbcode implements Parser
      * @throws Exception\RuntimeException If there is no initial group defined
      * @throws Exception\RuntimeException If there is no default group defined
      *
-     * @return \Zend\Markup\TokenList/
+     * @return \Zend2\Markup\TokenList/
      */
     public function buildTree(array $tokens, $strategy = 'default')
     {
@@ -612,7 +612,7 @@ class Bbcode implements Parser
      *
      * @param array $tokens
      *
-     * @return \Zend\Markup\TokenList
+     * @return \Zend2\Markup\TokenList
      */
     protected function _createTree($tokens)
     {
@@ -623,7 +623,7 @@ class Bbcode implements Parser
         $this->_current          = new Token(
             '',
             Token::TYPE_NONE,
-            'Zend_Markup_Root'
+            'Zend2_Markup_Root'
         );
 
         $this->_tree->addChild($this->_current);
@@ -651,7 +651,7 @@ class Bbcode implements Parser
                 // add the old items again if there are any
                 if (!empty($oldItems)) {
                     foreach (array_reverse($oldItems) as $item) {
-                        /* @var $token \Zend\Markup\Token */
+                        /* @var $token \Zend2\Markup\Token */
                         $this->_current->addChild($item);
                         $item->setParent($this->_current);
                         $this->_current = $item;
@@ -815,7 +815,7 @@ class Bbcode implements Parser
     /**
      * Add to searched stoppers
      *
-     * @param  \Zend\Markup\Token $token
+     * @param  \Zend2\Markup\Token $token
      * @return void
      */
     protected function _addToSearchedStoppers(Token $token)
@@ -833,7 +833,7 @@ class Bbcode implements Parser
     /**
      * Remove from searched stoppers
      *
-     * @param  \Zend\Markup\Token $token
+     * @param  \Zend2\Markup\Token $token
      * @return void
      */
     protected function _removeFromSearchedStoppers(Token $token)

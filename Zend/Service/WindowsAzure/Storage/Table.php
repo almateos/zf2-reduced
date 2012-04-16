@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,51 +12,51 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Http_Client
- * @uses       Zend_Http_Response
- * @uses       Zend_Service_WindowsAzure_Credentials_AbstractCredentials
- * @uses       Zend_Service_WindowsAzure_Credentials_SharedKey
- * @uses       Zend_Service_WindowsAzure_Credentials_SharedKeyLite
- * @uses       Zend_Service_WindowsAzure_Exception
- * @uses       Zend_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy
- * @uses       Zend_Service_WindowsAzure_Storage
- * @uses       Zend_Service_WindowsAzure_Storage_AbstractBatchStorage
- * @uses       Zend_Service_WindowsAzure_Storage_DynamicTableEntity
- * @uses       Zend_Service_WindowsAzure_Storage_TableEntity
- * @uses       Zend_Service_WindowsAzure_Storage_TableEntityQuery
- * @uses       Zend_Service_WindowsAzure_Storage_TableInstance
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @uses       Zend2_Http_Client
+ * @uses       Zend2_Http_Response
+ * @uses       Zend2_Service_WindowsAzure_Credentials_AbstractCredentials
+ * @uses       Zend2_Service_WindowsAzure_Credentials_SharedKey
+ * @uses       Zend2_Service_WindowsAzure_Credentials_SharedKeyLite
+ * @uses       Zend2_Service_WindowsAzure_Exception
+ * @uses       Zend2_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy
+ * @uses       Zend2_Service_WindowsAzure_Storage
+ * @uses       Zend2_Service_WindowsAzure_Storage_AbstractBatchStorage
+ * @uses       Zend2_Service_WindowsAzure_Storage_DynamicTableEntity
+ * @uses       Zend2_Service_WindowsAzure_Storage_TableEntity
+ * @uses       Zend2_Service_WindowsAzure_Storage_TableEntityQuery
+ * @uses       Zend2_Service_WindowsAzure_Storage_TableInstance
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_WindowsAzure_Storage_Table
-    extends Zend_Service_WindowsAzure_Storage_AbstractBatchStorage
+class Zend2_Service_WindowsAzure_Storage_Table
+    extends Zend2_Service_WindowsAzure_Storage_AbstractBatchStorage
 {
 	/**
-	 * Creates a new Zend_Service_WindowsAzure_Storage_Table instance
+	 * Creates a new Zend2_Service_WindowsAzure_Storage_Table instance
 	 *
 	 * @param string $host Storage host name
 	 * @param string $accountName Account name for Windows Azure
 	 * @param string $accountKey Account key for Windows Azure
 	 * @param boolean $usePathStyleUri Use path-style URI's
-	 * @param Zend_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy $retryPolicy Retry policy to use when making requests
+	 * @param Zend2_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy $retryPolicy Retry policy to use when making requests
 	 */
-	public function __construct($host = Zend_Service_WindowsAzure_Storage::URL_DEV_TABLE, $accountName = Zend_Service_WindowsAzure_Credentials_AbstractCredentials::DEVSTORE_ACCOUNT, $accountKey = Zend_Service_WindowsAzure_Credentials_AbstractCredentials::DEVSTORE_KEY, $usePathStyleUri = false, Zend_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy $retryPolicy = null)
+	public function __construct($host = Zend2_Service_WindowsAzure_Storage::URL_DEV_TABLE, $accountName = Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::DEVSTORE_ACCOUNT, $accountKey = Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::DEVSTORE_KEY, $usePathStyleUri = false, Zend2_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy $retryPolicy = null)
 	{
 		parent::__construct($host, $accountName, $accountKey, $usePathStyleUri, $retryPolicy);
 
 	    // Always use SharedKeyLite authentication
-	    $this->_credentials = new Zend_Service_WindowsAzure_Credentials_SharedKeyLite($accountName, $accountKey, $this->_usePathStyleUri);
+	    $this->_credentials = new Zend2_Service_WindowsAzure_Credentials_SharedKeyLite($accountName, $accountKey, $this->_usePathStyleUri);
 	    
 	    // API version
 		$this->_apiVersion = '2009-04-14';
@@ -71,7 +71,7 @@ class Zend_Service_WindowsAzure_Storage_Table
 	public function tableExists($tableName = '')
 	{
 		if ($tableName === '') {
-			throw new Zend_Service_WindowsAzure_Exception('Table name is not specified.');
+			throw new Zend2_Service_WindowsAzure_Exception('Table name is not specified.');
 		}
 			
 		// List tables
@@ -90,7 +90,7 @@ class Zend_Service_WindowsAzure_Storage_Table
 	 *
 	 * @param  string $nextTableName Next table name, used for listing tables when total amount of tables is > 1000.
 	 * @return array
-	 * @throws Zend_Service_WindowsAzure_Exception
+	 * @throws Zend2_Service_WindowsAzure_Exception
 	 */
 	public function listTables($nextTableName = '')
 	{
@@ -101,7 +101,7 @@ class Zend_Service_WindowsAzure_Storage_Table
 	    }
 	    
 		// Perform request
-		$response = $this->_performRequest('Tables', $queryString, Zend_Http_Client::GET, null, true);
+		$response = $this->_performRequest('Tables', $queryString, Zend2_Http_Client::GET, null, true);
 		if ($response->isSuccessful()) {	    
 		    // Parse result
 		    $result = $this->_parseResponse($response);	
@@ -123,7 +123,7 @@ class Zend_Service_WindowsAzure_Storage_Table
 		        $tableName = $entry->xpath('.//m:properties/d:TableName');
 		        $tableName = (string)$tableName[0];
 		        
-		        $returnValue[] = new Zend_Service_WindowsAzure_Storage_TableInstance(
+		        $returnValue[] = new Zend2_Service_WindowsAzure_Storage_TableInstance(
 		            (string)$entry->id,
 		            $tableName,
 		            (string)$entry->link['href'],
@@ -138,7 +138,7 @@ class Zend_Service_WindowsAzure_Storage_Table
 
 		    return $returnValue;
 		} else {
-			throw new Zend_Service_WindowsAzure_Exception($this->_getErrorMessage($response, 'Resource could not be accessed.'));
+			throw new Zend2_Service_WindowsAzure_Exception($this->_getErrorMessage($response, 'Resource could not be accessed.'));
 		}
 	}
 	
@@ -146,13 +146,13 @@ class Zend_Service_WindowsAzure_Storage_Table
 	 * Create table
 	 *
 	 * @param string $tableName Table name
-	 * @return Zend_Service_WindowsAzure_Storage_TableInstance
-	 * @throws Zend_Service_WindowsAzure_Exception
+	 * @return Zend2_Service_WindowsAzure_Storage_TableInstance
+	 * @throws Zend2_Service_WindowsAzure_Exception
 	 */
 	public function createTable($tableName = '')
 	{
 		if ($tableName === '') {
-			throw new Zend_Service_WindowsAzure_Exception('Table name is not specified.');
+			throw new Zend2_Service_WindowsAzure_Exception('Table name is not specified.');
 		}
 			
 		// Generate request body
@@ -188,7 +188,7 @@ class Zend_Service_WindowsAzure_Storage_Table
         $headers['MaxDataServiceVersion'] = '1.0;NetFx';        
 
 		// Perform request
-		$response = $this->_performRequest('Tables', '', Zend_Http_Client::POST, $headers, true, $requestBody);
+		$response = $this->_performRequest('Tables', '', Zend2_Http_Client::POST, $headers, true, $requestBody);
 		if ($response->isSuccessful()) {
 		    // Parse response
 		    $entry = $this->_parseResponse($response);
@@ -196,14 +196,14 @@ class Zend_Service_WindowsAzure_Storage_Table
 		    $tableName = $entry->xpath('.//m:properties/d:TableName');
 		    $tableName = (string)$tableName[0];
 		        
-		    return new Zend_Service_WindowsAzure_Storage_TableInstance(
+		    return new Zend2_Service_WindowsAzure_Storage_TableInstance(
 		        (string)$entry->id,
 		        $tableName,
 		        (string)$entry->link['href'],
 		        (string)$entry->updated
 		    );
 		} else {
-			throw new Zend_Service_WindowsAzure_Exception($this->_getErrorMessage($response, 'Resource could not be accessed.'));
+			throw new Zend2_Service_WindowsAzure_Exception($this->_getErrorMessage($response, 'Resource could not be accessed.'));
 		}
 	}
 	
@@ -211,12 +211,12 @@ class Zend_Service_WindowsAzure_Storage_Table
 	 * Delete table
 	 *
 	 * @param string $tableName Table name
-	 * @throws Zend_Service_WindowsAzure_Exception
+	 * @throws Zend2_Service_WindowsAzure_Exception
 	 */
 	public function deleteTable($tableName = '')
 	{
 		if ($tableName === '') {
-			throw new Zend_Service_WindowsAzure_Exception('Table name is not specified.');
+			throw new Zend2_Service_WindowsAzure_Exception('Table name is not specified.');
 		}
 
         // Add header information
@@ -224,9 +224,9 @@ class Zend_Service_WindowsAzure_Storage_Table
         $headers['Content-Type'] = 'application/atom+xml';
 
 		// Perform request
-		$response = $this->_performRequest('Tables(\'' . $tableName . '\')', '', Zend_Http_Client::DELETE, $headers, true, null);
+		$response = $this->_performRequest('Tables(\'' . $tableName . '\')', '', Zend2_Http_Client::DELETE, $headers, true, null);
 		if (!$response->isSuccessful()) {
-			throw new Zend_Service_WindowsAzure_Exception($this->_getErrorMessage($response, 'Resource could not be accessed.'));
+			throw new Zend2_Service_WindowsAzure_Exception($this->_getErrorMessage($response, 'Resource could not be accessed.'));
 		}
 	}
 	
@@ -234,17 +234,17 @@ class Zend_Service_WindowsAzure_Storage_Table
 	 * Insert entity into table
 	 * 
 	 * @param string                              $tableName   Table name
-	 * @param Zend_Service_WindowsAzure_Storage_TableEntity $entity      Entity to insert
-	 * @return Zend_Service_WindowsAzure_Storage_TableEntity
-	 * @throws Zend_Service_WindowsAzure_Exception
+	 * @param Zend2_Service_WindowsAzure_Storage_TableEntity $entity      Entity to insert
+	 * @return Zend2_Service_WindowsAzure_Storage_TableEntity
+	 * @throws Zend2_Service_WindowsAzure_Exception
 	 */
-	public function insertEntity($tableName = '', Zend_Service_WindowsAzure_Storage_TableEntity $entity = null)
+	public function insertEntity($tableName = '', Zend2_Service_WindowsAzure_Storage_TableEntity $entity = null)
 	{
 		if ($tableName === '') {
-			throw new Zend_Service_WindowsAzure_Exception('Table name is not specified.');
+			throw new Zend2_Service_WindowsAzure_Exception('Table name is not specified.');
 		}
 		if ($entity === null) {
-			throw new Zend_Service_WindowsAzure_Exception('Entity is not specified.');
+			throw new Zend2_Service_WindowsAzure_Exception('Entity is not specified.');
 		}
 		                     
 		// Generate request body
@@ -275,10 +275,10 @@ class Zend_Service_WindowsAzure_Storage_Table
 		// Perform request
 	    $response = null;
 	    if ($this->isInBatch()) {
-		    $this->getCurrentBatch()->enlistOperation($tableName, '', Zend_Http_Client::POST, $headers, true, $requestBody);
+		    $this->getCurrentBatch()->enlistOperation($tableName, '', Zend2_Http_Client::POST, $headers, true, $requestBody);
 		    return null;
 		} else {
-		    $response = $this->_performRequest($tableName, '', Zend_Http_Client::POST, $headers, true, $requestBody);
+		    $response = $this->_performRequest($tableName, '', Zend2_Http_Client::POST, $headers, true, $requestBody);
 		}
 		if ($response->isSuccessful()) {
 		    // Parse result
@@ -296,7 +296,7 @@ class Zend_Service_WindowsAzure_Storage_Table
 
 		    return $entity;
 		} else {
-			throw new Zend_Service_WindowsAzure_Exception($this->_getErrorMessage($response, 'Resource could not be accessed.'));
+			throw new Zend2_Service_WindowsAzure_Exception($this->_getErrorMessage($response, 'Resource could not be accessed.'));
 		}
 	}
 	
@@ -304,17 +304,17 @@ class Zend_Service_WindowsAzure_Storage_Table
 	 * Delete entity from table
 	 * 
 	 * @param string                              $tableName   Table name
-	 * @param Zend_Service_WindowsAzure_Storage_TableEntity $entity      Entity to delete
+	 * @param Zend2_Service_WindowsAzure_Storage_TableEntity $entity      Entity to delete
 	 * @param boolean                             $verifyEtag  Verify etag of the entity (used for concurrency)
-	 * @throws Zend_Service_WindowsAzure_Exception
+	 * @throws Zend2_Service_WindowsAzure_Exception
 	 */
-	public function deleteEntity($tableName = '', Zend_Service_WindowsAzure_Storage_TableEntity $entity = null, $verifyEtag = false)
+	public function deleteEntity($tableName = '', Zend2_Service_WindowsAzure_Storage_TableEntity $entity = null, $verifyEtag = false)
 	{
 		if ($tableName === '') {
-			throw new Zend_Service_WindowsAzure_Exception('Table name is not specified.');
+			throw new Zend2_Service_WindowsAzure_Exception('Table name is not specified.');
 		}
 		if ($entity === null) {
-			throw new Zend_Service_WindowsAzure_Exception('Entity is not specified.');
+			throw new Zend2_Service_WindowsAzure_Exception('Entity is not specified.');
 		}
 		                     
         // Add header information
@@ -333,13 +333,13 @@ class Zend_Service_WindowsAzure_Storage_Table
 		// Perform request
 	    $response = null;
 	    if ($this->isInBatch()) {
-		    $this->getCurrentBatch()->enlistOperation($tableName . '(PartitionKey=\'' . $entity->getPartitionKey() . '\', RowKey=\'' . $entity->getRowKey() . '\')', '', Zend_Http_Client::DELETE, $headers, true, null);
+		    $this->getCurrentBatch()->enlistOperation($tableName . '(PartitionKey=\'' . $entity->getPartitionKey() . '\', RowKey=\'' . $entity->getRowKey() . '\')', '', Zend2_Http_Client::DELETE, $headers, true, null);
 		    return null;
 		} else {
-		    $response = $this->_performRequest($tableName . '(PartitionKey=\'' . $entity->getPartitionKey() . '\', RowKey=\'' . $entity->getRowKey() . '\')', '', Zend_Http_Client::DELETE, $headers, true, null);
+		    $response = $this->_performRequest($tableName . '(PartitionKey=\'' . $entity->getPartitionKey() . '\', RowKey=\'' . $entity->getRowKey() . '\')', '', Zend2_Http_Client::DELETE, $headers, true, null);
 		}
 		if (!$response->isSuccessful()) {
-		    throw new Zend_Service_WindowsAzure_Exception($this->_getErrorMessage($response, 'Resource could not be accessed.'));
+		    throw new Zend2_Service_WindowsAzure_Exception($this->_getErrorMessage($response, 'Resource could not be accessed.'));
 		}
 	}
 	
@@ -350,22 +350,22 @@ class Zend_Service_WindowsAzure_Storage_Table
 	 * @param string $partitionKey Partition key
 	 * @param string $rowKey       Row key
 	 * @param string $entityClass  Entity class name* 
-	 * @return Zend_Service_WindowsAzure_Storage_TableEntity
-	 * @throws Zend_Service_WindowsAzure_Exception
+	 * @return Zend2_Service_WindowsAzure_Storage_TableEntity
+	 * @throws Zend2_Service_WindowsAzure_Exception
 	 */
-	public function retrieveEntityById($tableName = '', $partitionKey = '', $rowKey = '', $entityClass = 'Zend_Service_WindowsAzure_Storage_DynamicTableEntity')
+	public function retrieveEntityById($tableName = '', $partitionKey = '', $rowKey = '', $entityClass = 'Zend2_Service_WindowsAzure_Storage_DynamicTableEntity')
 	{
 		if ($tableName === '') {
-			throw new Zend_Service_WindowsAzure_Exception('Table name is not specified.');
+			throw new Zend2_Service_WindowsAzure_Exception('Table name is not specified.');
 		}
 		if ($partitionKey === '') {
-			throw new Zend_Service_WindowsAzure_Exception('Partition key is not specified.');
+			throw new Zend2_Service_WindowsAzure_Exception('Partition key is not specified.');
 		}
 		if ($rowKey === '') {
-			throw new Zend_Service_WindowsAzure_Exception('Row key is not specified.');
+			throw new Zend2_Service_WindowsAzure_Exception('Row key is not specified.');
 		}
 		if ($entityClass === '') {
-			throw new Zend_Service_WindowsAzure_Exception('Entity class is not specified.');
+			throw new Zend2_Service_WindowsAzure_Exception('Entity class is not specified.');
 		}
 
 			
@@ -374,7 +374,7 @@ class Zend_Service_WindowsAzure_Storage_Table
 		if (strlen($partitionKey . $rowKey) >= 256) {
 		    // Start a batch if possible
 		    if ($this->isInBatch()) {
-		        throw new Zend_Service_WindowsAzure_Exception('Entity cannot be retrieved. A transaction is required to retrieve the entity, but another transaction is already active.');
+		        throw new Zend2_Service_WindowsAzure_Exception('Entity cannot be retrieved. A transaction is required to retrieve the entity, but another transaction is already active.');
 		    }
 		        
 		    $this->startBatch();
@@ -399,33 +399,33 @@ class Zend_Service_WindowsAzure_Storage_Table
 	}
 	
 	/**
-	 * Create a new Zend_Service_WindowsAzure_Storage_TableEntityQuery
+	 * Create a new Zend2_Service_WindowsAzure_Storage_TableEntityQuery
 	 * 
-	 * @return Zend_Service_WindowsAzure_Storage_TableEntityQuery
+	 * @return Zend2_Service_WindowsAzure_Storage_TableEntityQuery
 	 */
 	public function select()
 	{
-	    return new Zend_Service_WindowsAzure_Storage_TableEntityQuery();
+	    return new Zend2_Service_WindowsAzure_Storage_TableEntityQuery();
 	}
 	
 	/**
 	 * Retrieve entities from table
 	 * 
-	 * @param string $tableName|Zend_Service_WindowsAzure_Storage_TableEntityQuery    Table name -or- Zend_Service_WindowsAzure_Storage_TableEntityQuery instance
-	 * @param string $filter                                                Filter condition (not applied when $tableName is a Zend_Service_WindowsAzure_Storage_TableEntityQuery instance)
+	 * @param string $tableName|Zend2_Service_WindowsAzure_Storage_TableEntityQuery    Table name -or- Zend2_Service_WindowsAzure_Storage_TableEntityQuery instance
+	 * @param string $filter                                                Filter condition (not applied when $tableName is a Zend2_Service_WindowsAzure_Storage_TableEntityQuery instance)
 	 * @param string $entityClass                                           Entity class name
 	 * @param string $nextPartitionKey                                      Next partition key, used for listing entities when total amount of entities is > 1000.
 	 * @param string $nextRowKey                                            Next row key, used for listing entities when total amount of entities is > 1000.
-	 * @return array Array of Zend_Service_WindowsAzure_Storage_TableEntity
-	 * @throws Zend_Service_WindowsAzure_Exception
+	 * @return array Array of Zend2_Service_WindowsAzure_Storage_TableEntity
+	 * @throws Zend2_Service_WindowsAzure_Exception
 	 */
-	public function retrieveEntities($tableName = '', $filter = '', $entityClass = 'Zend_Service_WindowsAzure_Storage_DynamicTableEntity', $nextPartitionKey = null, $nextRowKey = null)
+	public function retrieveEntities($tableName = '', $filter = '', $entityClass = 'Zend2_Service_WindowsAzure_Storage_DynamicTableEntity', $nextPartitionKey = null, $nextRowKey = null)
 	{
 		if ($tableName === '') {
-			throw new Zend_Service_WindowsAzure_Exception('Table name is not specified.');
+			throw new Zend2_Service_WindowsAzure_Exception('Table name is not specified.');
 		}
 		if ($entityClass === '') {
-			throw new Zend_Service_WindowsAzure_Exception('Entity class is not specified.');
+			throw new Zend2_Service_WindowsAzure_Exception('Entity class is not specified.');
 		}
 
 		// Convenience...
@@ -456,8 +456,8 @@ class Zend_Service_WindowsAzure_Storage_Table
     	    if (count($query) > 0)  {
     	        $queryString = '?' . implode('&', $query);
     	    }
-		} else if (get_class($tableName) == 'Zend_Service_WindowsAzure_Storage_TableEntityQuery') {
-		    // Option 2: $tableName is a Zend_Service_WindowsAzure_Storage_TableEntityQuery instance
+		} else if (get_class($tableName) == 'Zend2_Service_WindowsAzure_Storage_TableEntityQuery') {
+		    // Option 2: $tableName is a Zend2_Service_WindowsAzure_Storage_TableEntityQuery instance
 
 		    // Build queryString
 		    $queryString = $tableName->assembleQueryString(true);
@@ -465,7 +465,7 @@ class Zend_Service_WindowsAzure_Storage_Table
 		    // Change $tableName
 		    $tableName = $tableName->assembleFrom(true);
 		} else {
-		    throw new Zend_Service_WindowsAzure_Exception('Invalid argument: $tableName');
+		    throw new Zend2_Service_WindowsAzure_Exception('Invalid argument: $tableName');
 		}
 		
 		// Add continuation querystring parameters?
@@ -480,16 +480,16 @@ class Zend_Service_WindowsAzure_Storage_Table
 		// Perform request
 	    $response = null;
 	    if ($this->isInBatch() && $this->getCurrentBatch()->getOperationCount() == 0) {
-		    $this->getCurrentBatch()->enlistOperation($tableName, $queryString, Zend_Http_Client::GET, array(), true, null);
+		    $this->getCurrentBatch()->enlistOperation($tableName, $queryString, Zend2_Http_Client::GET, array(), true, null);
 		    $response = $this->getCurrentBatch()->commit();
 		    
 		    // Get inner response (multipart)
 		    $innerResponse = $response->getBody();
 		    $innerResponse = substr($innerResponse, strpos($innerResponse, 'HTTP/1.1 200 OK'));
 		    $innerResponse = substr($innerResponse, 0, strpos($innerResponse, '--batchresponse'));
-		    $response = Zend_Http_Response::fromString($innerResponse);
+		    $response = Zend2_Http_Response::fromString($innerResponse);
 		} else {
-		    $response = $this->_performRequest($tableName, $queryString, Zend_Http_Client::GET, array(), true, null);
+		    $response = $this->_performRequest($tableName, $queryString, Zend2_Http_Client::GET, array(), true, null);
 		}
 		
 		if ($response->isSuccessful()) {
@@ -527,8 +527,8 @@ class Zend_Service_WindowsAzure_Storage_Table
     		    $entity = new $entityClass('', '');
     		    $entity->setAzureValues((array)$properties, true);
     		    
-    		    // If we have a Zend_Service_WindowsAzure_Storage_DynamicTableEntity, make sure all property types are OK
-    		    if ($entity instanceof Zend_Service_WindowsAzure_Storage_DynamicTableEntity) {
+    		    // If we have a Zend2_Service_WindowsAzure_Storage_DynamicTableEntity, make sure all property types are OK
+    		    if ($entity instanceof Zend2_Service_WindowsAzure_Storage_DynamicTableEntity) {
     		        foreach ($properties as $key => $value) {  
     		            $attributes = $value->attributes('http://schemas.microsoft.com/ado/2007/08/dataservices/metadata');
     		            $type = (string)$attributes['type'];
@@ -557,7 +557,7 @@ class Zend_Service_WindowsAzure_Storage_Table
 		    // Return
 		    return $returnValue;
 		} else {
-		    throw new Zend_Service_WindowsAzure_Exception($this->_getErrorMessage($response, 'Resource could not be accessed.'));
+		    throw new Zend2_Service_WindowsAzure_Exception($this->_getErrorMessage($response, 'Resource could not be accessed.'));
 		}
 	}
 	
@@ -565,30 +565,30 @@ class Zend_Service_WindowsAzure_Storage_Table
 	 * Update entity by replacing it
 	 * 
 	 * @param string                              $tableName   Table name
-	 * @param Zend_Service_WindowsAzure_Storage_TableEntity $entity      Entity to update
+	 * @param Zend2_Service_WindowsAzure_Storage_TableEntity $entity      Entity to update
 	 * @param boolean                             $verifyEtag  Verify etag of the entity (used for concurrency)
-	 * @throws Zend_Service_WindowsAzure_Exception
+	 * @throws Zend2_Service_WindowsAzure_Exception
 	 */
-	public function updateEntity($tableName = '', Zend_Service_WindowsAzure_Storage_TableEntity $entity = null, $verifyEtag = false)
+	public function updateEntity($tableName = '', Zend2_Service_WindowsAzure_Storage_TableEntity $entity = null, $verifyEtag = false)
 	{
-	    return $this->_changeEntity(Zend_Http_Client::PUT, $tableName, $entity, $verifyEtag);
+	    return $this->_changeEntity(Zend2_Http_Client::PUT, $tableName, $entity, $verifyEtag);
 	}
 	
 	/**
 	 * Update entity by adding or updating properties
 	 * 
 	 * @param string                              $tableName   Table name
-	 * @param Zend_Service_WindowsAzure_Storage_TableEntity $entity      Entity to update
+	 * @param Zend2_Service_WindowsAzure_Storage_TableEntity $entity      Entity to update
 	 * @param boolean                             $verifyEtag  Verify etag of the entity (used for concurrency)
 	 * @param array                               $properties  Properties to merge. All properties will be used when omitted.
-	 * @throws Zend_Service_WindowsAzure_Exception
+	 * @throws Zend2_Service_WindowsAzure_Exception
 	 */
-	public function mergeEntity($tableName = '', Zend_Service_WindowsAzure_Storage_TableEntity $entity = null, $verifyEtag = false, $properties = array())
+	public function mergeEntity($tableName = '', Zend2_Service_WindowsAzure_Storage_TableEntity $entity = null, $verifyEtag = false, $properties = array())
 	{
 		$mergeEntity = null;
 		if (is_array($properties) && count($properties) > 0) {
 			// Build a new object
-			$mergeEntity = new Zend_Service_WindowsAzure_Storage_DynamicTableEntity($entity->getPartitionKey(), $entity->getRowKey());
+			$mergeEntity = new Zend2_Service_WindowsAzure_Storage_DynamicTableEntity($entity->getPartitionKey(), $entity->getRowKey());
 			
 			// Keep only values mentioned in $properties
 			$azureValues = $entity->getAzureValues();
@@ -601,17 +601,17 @@ class Zend_Service_WindowsAzure_Storage_Table
 			$mergeEntity = $entity;
 		}
 		
-	    return $this->_changeEntity(Zend_Http_Client::MERGE, $tableName, $mergeEntity, $verifyEtag);
+	    return $this->_changeEntity(Zend2_Http_Client::MERGE, $tableName, $mergeEntity, $verifyEtag);
 	}
 	
 	/**
-	 * Get error message from Zend_Http_Response
+	 * Get error message from Zend2_Http_Response
 	 * 
-	 * @param Zend_Http_Response $response Repsonse
+	 * @param Zend2_Http_Response $response Repsonse
 	 * @param string $alternativeError Alternative error message
 	 * @return string
 	 */
-	protected function _getErrorMessage(Zend_Http_Response $response, $alternativeError = 'Unknown error.')
+	protected function _getErrorMessage(Zend2_Http_Response $response, $alternativeError = 'Unknown error.')
 	{
 		$response = $this->_parseResponse($response);
 		if ($response && $response->message) {
@@ -626,17 +626,17 @@ class Zend_Service_WindowsAzure_Storage_Table
 	 * 
 	 * @param string                              $httpVerb    HTTP verb to use (PUT = update, MERGE = merge)
 	 * @param string                              $tableName   Table name
-	 * @param Zend_Service_WindowsAzure_Storage_TableEntity $entity      Entity to update
+	 * @param Zend2_Service_WindowsAzure_Storage_TableEntity $entity      Entity to update
 	 * @param boolean                             $verifyEtag  Verify etag of the entity (used for concurrency)
-	 * @throws Zend_Service_WindowsAzure_Exception
+	 * @throws Zend2_Service_WindowsAzure_Exception
 	 */
-	protected function _changeEntity($httpVerb = Zend_Http_Client::PUT, $tableName = '', Zend_Service_WindowsAzure_Storage_TableEntity $entity = null, $verifyEtag = false)
+	protected function _changeEntity($httpVerb = Zend2_Http_Client::PUT, $tableName = '', Zend2_Service_WindowsAzure_Storage_TableEntity $entity = null, $verifyEtag = false)
 	{
 		if ($tableName === '') {
-			throw new Zend_Service_WindowsAzure_Exception('Table name is not specified.');
+			throw new Zend2_Service_WindowsAzure_Exception('Table name is not specified.');
 		}
 		if ($entity === null) {
-			throw new Zend_Service_WindowsAzure_Exception('Entity is not specified.');
+			throw new Zend2_Service_WindowsAzure_Exception('Entity is not specified.');
 		}
 		                     
         // Add header information
@@ -694,7 +694,7 @@ class Zend_Service_WindowsAzure_Storage_Table
 
 		    return $entity;
 		} else {
-			throw new Zend_Service_WindowsAzure_Exception($this->_getErrorMessage($response, 'Resource could not be accessed.'));
+			throw new Zend2_Service_WindowsAzure_Exception($this->_getErrorMessage($response, 'Resource could not be accessed.'));
 		}
 	}
 	
@@ -726,10 +726,10 @@ class Zend_Service_WindowsAzure_Storage_Table
 	/**
 	 * Generate Azure representation from entity (creates atompub markup from properties)
 	 * 
-	 * @param Zend_Service_WindowsAzure_Storage_TableEntity $entity
+	 * @param Zend2_Service_WindowsAzure_Storage_TableEntity $entity
 	 * @return string
 	 */
-	protected function _generateAzureRepresentation(Zend_Service_WindowsAzure_Storage_TableEntity $entity = null)
+	protected function _generateAzureRepresentation(Zend2_Service_WindowsAzure_Storage_TableEntity $entity = null)
 	{
 		// Generate Azure representation from entity
 		$azureRepresentation = array();

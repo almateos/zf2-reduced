@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage StrikeIron
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\StrikeIron;
+namespace Zend2\Service\StrikeIron;
 
 /**
  * This class allows StrikeIron authentication credentials to be specified
  * in one place and provides a factory for returning instances of different
  * StrikeIron service classes.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage StrikeIron
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class StrikeIron
 {
     /**
-     * Options to pass to Zend_Service_StrikeIron_Base constructor
+     * Options to pass to Zend2_Service_StrikeIron_Base constructor
      * @param array
      */
     protected $options;
@@ -51,11 +51,11 @@ class StrikeIron
     }
 
     /**
-     * Factory method to return a preconfigured Zend_Service_StrikeIron_*
+     * Factory method to return a preconfigured Zend2_Service_StrikeIron_*
      * instance.
      *
      * @param  null|string  $options  Service options
-     * @return object       Zend\Service\StrikeIron\* instance
+     * @return object       Zend2\Service\StrikeIron\* instance
      * @throws Exception\RuntimeException if service class not found
      */
     public function getService($options = array())
@@ -64,7 +64,7 @@ class StrikeIron
         unset($options['class']);
 
         if (strpos($class, '\\') === false) {
-            $class = "Zend\\Service\\StrikeIron\\{$class}";
+            $class = "Zend2\\Service\\StrikeIron\\{$class}";
         }
 
         if (!class_exists($class)) {

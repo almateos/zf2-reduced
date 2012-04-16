@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper;
+namespace Zend2\View\Helper;
 
 /**
- * @uses       \Zend\Json\Json
- * @uses       \Zend\View\Helper\AbstractHelper
- * @category   Zend
- * @package    Zend_View
+ * @uses       \Zend2\Json\Json
+ * @uses       \Zend2\View\Helper\AbstractHelper
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class HtmlElement extends AbstractHelper
@@ -94,7 +94,7 @@ abstract class HtmlElement extends AbstractHelper
                 // Don't escape event attributes; _do_ substitute double quotes with singles
                 if (!is_scalar($val)) {
                     // non-scalar data should be cast to JSON first
-                    $val = \Zend\Json\Json::encode($val);
+                    $val = \Zend2\Json\Json::encode($val);
                 }
                 // Escape single quotes inside event attribute values.
                 // This will create html, where the attribute value has

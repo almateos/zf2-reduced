@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Soap
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage Client
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Soap\Client;
+namespace Zend2\Soap\Client;
 
-use Zend\Soap\Client as SOAPClient,
-    Zend\Soap\Exception;
+use Zend2\Soap\Client as SOAPClient,
+    Zend2\Soap\Exception;
 
 /**
  * .NET SOAP client
@@ -33,10 +33,10 @@ use Zend\Soap\Client as SOAPClient,
  * Please leave your notes, compatiblity issues reports or
  * suggestions in fw-webservices@lists.zend.com or fw-general@lists.com
  *
- * @uses       \Zend\Soap\Client
- * @uses       \Zend\Soap\ClientException
- * @category   Zend
- * @package    Zend_Soap
+ * @uses       \Zend2\Soap\Client
+ * @uses       \Zend2\Soap\ClientException
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage Client
  */
 class DotNet extends SOAPClient
@@ -62,7 +62,7 @@ class DotNet extends SOAPClient
      * My be overridden in descendant classes
      *
      * @param array $arguments
-     * @throws \Zend\Soap\ClientException
+     * @throws \Zend2\Soap\ClientException
      */
     protected function _preProcessArguments($arguments)
     {

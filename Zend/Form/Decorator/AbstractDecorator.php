@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Form
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form\Decorator;
+namespace Zend2\Form\Decorator;
 
-use Zend\Form\Decorator,
-    Zend\Config\Config,
-    Zend\Form;
+use Zend2\Form\Decorator,
+    Zend2\Config\Config,
+    Zend2\Form;
 
 /**
- * Zend_Form_Decorator_Abstract
+ * Zend2_Form_Decorator_Abstract
  *
- * @uses       \Zend\Form\Decorator\Exception
- * @uses       \Zend\Form\Decorator
- * @category   Zend
- * @package    Zend_Form
+ * @uses       \Zend2\Form\Decorator\Exception
+ * @uses       \Zend2\Form\Decorator
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractDecorator implements Decorator
@@ -50,7 +50,7 @@ abstract class AbstractDecorator implements Decorator
     protected $_placement = 'APPEND';
 
     /**
-     * @var \Zend\Form\Element|\Zend\Form\Form
+     * @var \Zend2\Form\Element|\Zend2\Form\Form
      */
     protected $_element;
 
@@ -69,7 +69,7 @@ abstract class AbstractDecorator implements Decorator
     /**
      * Constructor
      *
-     * @param  array|\Zend\Config\Config $options
+     * @param  array|\Zend2\Config\Config $options
      * @return void
      */
     public function __construct($options = null)
@@ -85,7 +85,7 @@ abstract class AbstractDecorator implements Decorator
      * Set options
      *
      * @param  array $options
-     * @return \Zend\Form\Decorator\AbstractDecorator
+     * @return \Zend2\Form\Decorator\AbstractDecorator
      */
     public function setOptions(array $options)
     {
@@ -96,8 +96,8 @@ abstract class AbstractDecorator implements Decorator
     /**
      * Set options from config object
      *
-     * @param  \Zend\Config\Config $config
-     * @return \Zend\Form\Decorator\AbstractDecorator
+     * @param  \Zend2\Config\Config $config
+     * @return \Zend2\Form\Decorator\AbstractDecorator
      */
     public function setConfig(Config $config)
     {
@@ -109,7 +109,7 @@ abstract class AbstractDecorator implements Decorator
      *
      * @param  string $key
      * @param  mixed $value
-     * @return \Zend\Form\Decorator\AbstractDecorator
+     * @return \Zend2\Form\Decorator\AbstractDecorator
      */
     public function setOption($key, $value)
     {
@@ -162,7 +162,7 @@ abstract class AbstractDecorator implements Decorator
     /**
      * Clear all options
      *
-     * @return \Zend\Form\Decorator\AbstractDecorator
+     * @return \Zend2\Form\Decorator\AbstractDecorator
      */
     public function clearOptions()
     {
@@ -173,9 +173,9 @@ abstract class AbstractDecorator implements Decorator
     /**
      * Set current form element
      *
-     * @param  \Zend\Form\Form_Element|\Zend\Form\Form $element
-     * @return \Zend\Form\Decorator\AbstractDecorator
-     * @throws \Zend\Form\Decorator\Exception on invalid element type
+     * @param  \Zend2\Form\Form_Element|\Zend2\Form\Form $element
+     * @return \Zend2\Form\Decorator\AbstractDecorator
+     * @throws \Zend2\Form\Decorator\Exception on invalid element type
      */
     public function setElement($element)
     {
@@ -193,7 +193,7 @@ abstract class AbstractDecorator implements Decorator
     /**
      * Retrieve current element
      *
-     * @return \Zend\Form\Form_Element|\Zend\Form\Form
+     * @return \Zend2\Form\Form_Element|\Zend2\Form\Form
      */
     public function getElement()
     {
@@ -247,7 +247,7 @@ abstract class AbstractDecorator implements Decorator
      *
      * @param  string $content
      * @return string
-     * @throws \Zend\Form\Decorator\Exception when unimplemented
+     * @throws \Zend2\Form\Decorator\Exception when unimplemented
      */
     public function render($content)
     {

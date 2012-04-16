@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,40 +12,40 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Index
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Index;
+namespace Zend2\Search\Lucene\Index;
 
-use Zend\Search\Lucene\Storage\Directory,
-	Zend\Search\Lucene\Document,
-	Zend\Search\Lucene,
-	Zend\Search\Lucene\Exception\RuntimeException,
-	Zend\Search\Lucene\Exception\InvalidFileFormatException;
+use Zend2\Search\Lucene\Storage\Directory,
+	Zend2\Search\Lucene\Document,
+	Zend2\Search\Lucene,
+	Zend2\Search\Lucene\Exception\RuntimeException,
+	Zend2\Search\Lucene\Exception\InvalidFileFormatException;
 
 /**
- * @uses       \Zend\Search\Lucene\Index
- * @uses       \Zend\Search\Lucene\Exception\RuntimeException
- * @uses	   \Zend\Search\Lucene\Exception\InvalidFileFormatException
- * @uses       \Zend\Search\Lucene\LockManager
- * @uses       \Zend\Search\Lucene\Index\SegmentInfo
- * @uses       \Zend\Search\Lucene\Index\SegmentMerger
- * @uses       \Zend\Search\Lucene\Index\SegmentWriter\DocumentWriter
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Index
+ * @uses       \Zend2\Search\Lucene\Exception\RuntimeException
+ * @uses	   \Zend2\Search\Lucene\Exception\InvalidFileFormatException
+ * @uses       \Zend2\Search\Lucene\LockManager
+ * @uses       \Zend2\Search\Lucene\Index\SegmentInfo
+ * @uses       \Zend2\Search\Lucene\Index\SegmentMerger
+ * @uses       \Zend2\Search\Lucene\Index\SegmentWriter\DocumentWriter
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Index
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Writer
 {
     /**
      * @todo Implement Analyzer substitution
-     * @todo Implement Zend_Search_Lucene_Storage_DirectoryRAM and Zend_Search_Lucene_Storage_FileRAM to use it for
+     * @todo Implement Zend2_Search_Lucene_Storage_DirectoryRAM and Zend2_Search_Lucene_Storage_FileRAM to use it for
      *       temporary index files
      * @todo Directory lock processing
      */
@@ -95,7 +95,7 @@ class Writer
     /**
      * File system adapter.
      *
-     * @var \Zend\Search\Lucene\Storage\Directory
+     * @var \Zend2\Search\Lucene\Storage\Directory
      */
     private $_directory = null;
 
@@ -109,7 +109,7 @@ class Writer
 
     /**
      * List of the segments, created by index writer
-     * Array of Zend_Search_Lucene_Index_SegmentInfo objects
+     * Array of Zend2_Search_Lucene_Index_SegmentInfo objects
      *
      * @var array
      */
@@ -125,16 +125,16 @@ class Writer
     /**
      * Current segment to add documents
      *
-     * @var \Zend\Search\Lucene\Index\SegmentWriter\DocumentWriter
+     * @var \Zend2\Search\Lucene\Index\SegmentWriter\DocumentWriter
      */
     private $_currentSegment = null;
 
     /**
-     * Array of Zend_Search_Lucene_Index_SegmentInfo objects for this index.
+     * Array of Zend2_Search_Lucene_Index_SegmentInfo objects for this index.
      *
-     * It's a reference to the corresponding Zend_Search_Lucene::$_segmentInfos array
+     * It's a reference to the corresponding Zend2_Search_Lucene::$_segmentInfos array
      *
-     * @var array \Zend\Search\Lucene\Index\SegmentInfo
+     * @var array \Zend2\Search\Lucene\Index\SegmentInfo
      */
     private $_segmentInfos;
 
@@ -169,7 +169,7 @@ class Writer
     /**
      * Create empty index
      *
-     * @param \Zend\Search\Lucene\Storage\Directory $directory
+     * @param \Zend2\Search\Lucene\Storage\Directory $directory
      * @param integer $generation
      * @param integer $nameCount
      */
@@ -224,10 +224,10 @@ class Writer
     /**
      * Open the index for writing
      *
-     * @param \Zend\Search\Lucene\Storage\Directory $directory
+     * @param \Zend2\Search\Lucene\Storage\Directory $directory
      * @param array $segmentInfos
      * @param integer $targetFormatVersion
-     * @param \Zend\Search\Lucene\Storage\File $cleanUpLock
+     * @param \Zend2\Search\Lucene\Storage\File $cleanUpLock
      */
     public function __construct(Directory $directory, &$segmentInfos, $targetFormatVersion)
     {
@@ -239,7 +239,7 @@ class Writer
     /**
      * Adds a document to this index.
      *
-     * @param \Zend\Search\Lucene\Document $document
+     * @param \Zend2\Search\Lucene\Document $document
      */
     public function addDocument(Document $document)
     {
@@ -397,8 +397,8 @@ class Writer
     /**
      * Update segments file by adding current segment to a list
      *
-     * @throws \Zend\Search\Lucene\Exception\RuntimeException
-     * @throws \Zend\Search\Lucene\Exception\InvalidFileFormatException
+     * @throws \Zend2\Search\Lucene\Exception\RuntimeException
+     * @throws \Zend2\Search\Lucene\Exception\InvalidFileFormatException
      */
     private function _updateSegments()
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\OAuth\Http;
+namespace Zend2\OAuth\Http;
 
-use Zend\OAuth\Http as HTTPClient,
-    Zend\Uri;
+use Zend2\OAuth\Http as HTTPClient,
+    Zend2\Uri;
 
 /**
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class UserAuthorization extends HTTPClient
@@ -60,7 +60,7 @@ class UserAuthorization extends HTTPClient
             'oauth_token' => $this->_consumer->getLastRequestToken()->getToken(),
         );
 
-        if (!\Zend\OAuth\Client::$supportsRevisionA) {
+        if (!\Zend2\OAuth\Client::$supportsRevisionA) {
             $callback = $this->_consumer->getCallbackUrl();
             if (!empty($callback)) {
                 $params['oauth_callback'] = $callback;

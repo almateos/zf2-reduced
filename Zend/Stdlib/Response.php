@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Stdlib;
+namespace Zend2\Stdlib;
 
 class Response extends Message implements ResponseDescription
 {

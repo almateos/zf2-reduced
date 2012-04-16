@@ -1,9 +1,9 @@
 <?php
 
-namespace Zend\Validator\Exception;
+namespace Zend2\Validator\Exception;
 
 class RuntimeException
     extends \RuntimeException
-    implements \Zend\Validator\Exception
+    implements \Zend2\Validator\Exception
 {
 }

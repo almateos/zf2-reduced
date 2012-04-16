@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Geo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Geo\Extension;
+namespace Zend2\GData\Geo\Extension;
 
 /**
  * Represents the gml:point element used by the Gdata Geo extensions.
  *
- * @uses       \Zend\GData\Extension
- * @uses       \Zend\GData\Geo
- * @uses       \Zend\GData\Geo\Extension\GmlPos
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Extension
+ * @uses       \Zend2\GData\Geo
+ * @uses       \Zend2\GData\Geo\Extension\GmlPos
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Geo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class GmlPoint extends \Zend\GData\Extension
+class GmlPoint extends \Zend2\GData\Extension
 {
 
     protected $_rootNamespace = 'gml';
@@ -42,19 +42,19 @@ class GmlPoint extends \Zend\GData\Extension
     /**
      * The position represented by this GmlPoint
      *
-     * @var \Zend\GData\Geo\Extension\GmlPos
+     * @var \Zend2\GData\Geo\Extension\GmlPos
      */
     protected $_pos = null;
 
     /**
      * Create a new instance.
      *
-     * @param \Zend\GData\Geo\Extension\GmlPos $pos (optional) Pos to which this
+     * @param \Zend2\GData\Geo\Extension\GmlPos $pos (optional) Pos to which this
      *          object should be initialized.
      */
     public function __construct($pos = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Geo::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\Geo::$namespaces);
         parent::__construct();
         $this->setPos($pos);
     }
@@ -100,7 +100,7 @@ class GmlPoint extends \Zend\GData\Extension
      * Get the value for this element's pos attribute.
      *
      * @see setPos
-     * @return \Zend\GData\Geo\Extension\GmlPos The requested attribute.
+     * @return \Zend2\GData\Geo\Extension\GmlPos The requested attribute.
      */
     public function getPos()
     {
@@ -110,8 +110,8 @@ class GmlPoint extends \Zend\GData\Extension
     /**
      * Set the value for this element's distance attribute.
      *
-     * @param \Zend\GData\Geo\Extension\GmlPos $value The desired value for this attribute
-     * @return \Zend\GData\Geo\Extension\GmlPoint Provides a fluent interface
+     * @param \Zend2\GData\Geo\Extension\GmlPos $value The desired value for this attribute
+     * @return \Zend2\GData\Geo\Extension\GmlPoint Provides a fluent interface
      */
     public function setPos($value)
     {

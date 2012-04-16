@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Pubsubhubbub
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Pubsubhubbub
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\PubSubHubbub;
+namespace Zend2\Feed\PubSubHubbub;
 
-use Zend\Feed\Reader,
-    Zend\Http;
+use Zend2\Feed\Reader,
+    Zend2\Http;
 
 /**
- * @category   Zend
- * @package    Zend_Feed_Pubsubhubbub
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Pubsubhubbub
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PubSubHubbub
@@ -47,17 +47,17 @@ class PubSubHubbub
     /**
      * Singleton instance if required of the HTTP client
      *
-     * @var \Zend\Http\Client
+     * @var \Zend2\Http\Client
      */
     protected static $httpClient = null;
 
     /**
      * Simple utility function which imports any feed URL and
      * determines the existence of Hub Server endpoints. This works
-     * best if directly given an instance of Zend_Feed_Reader_Atom|Rss
+     * best if directly given an instance of Zend2_Feed_Reader_Atom|Rss
      * to leverage off.
      *
-     * @param  \Zend\Feed\Reader\AbstractFeed|string $source
+     * @param  \Zend2\Feed\Reader\AbstractFeed|string $source
      * @return array
      */
     public static function detectHubs($source)
@@ -69,16 +69,16 @@ class PubSubHubbub
         } else {
             throw new Exception('The source parameter was'
             . ' invalid, i.e. not a URL string or an instance of type'
-            . ' Zend\Feed\Reader\FeedAbstract or Zend\Feed\Abstract');
+            . ' Zend2\Feed\Reader\FeedAbstract or Zend2\Feed\Abstract');
         }
         return $feed->getHubs();
     }
 
     /**
-     * Allows the external environment to make Zend_Oauth use a specific
+     * Allows the external environment to make Zend2_Oauth use a specific
      * Client instance.
      *
-     * @param  \Zend\Http\Client $httpClient
+     * @param  \Zend2\Http\Client $httpClient
      * @return void
      */
     public static function setHttpClient(Http\Client $httpClient)
@@ -91,7 +91,7 @@ class PubSubHubbub
      * the instance is reset and cleared of previous parameters GET/POST.
      * Headers are NOT reset but handled by this component if applicable.
      *
-     * @return \Zend\Http\Client
+     * @return \Zend2\Http\Client
      */
     public static function getHttpClient()
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Db\Sql\Predicate;
+namespace Zend2\Db\Sql\Predicate;
 
 class Like implements PredicateInterface
 {

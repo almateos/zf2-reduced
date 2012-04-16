@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Writer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Writer;
+namespace Zend2\Feed\Writer;
 
-use Zend\Loader\ShortNameLocator,
-    Zend\Loader\PrefixPathLoader,
-    Zend\Loader\PrefixPathMapper,
-    Zend\Loader\Exception\PluginLoaderException;
+use Zend2\Loader\ShortNameLocator,
+    Zend2\Loader\PrefixPathLoader,
+    Zend2\Loader\PrefixPathMapper,
+    Zend2\Loader\Exception\PluginLoaderException;
 
 /**
-* @uses \Zend\Feed\Exception
-* @uses \Zend\Loader\PluginLoader
-* @category Zend
-* @package Zend_Feed_Writer
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @uses \Zend2\Feed\Exception
+* @uses \Zend2\Loader\PluginLoader
+* @category Zend2
+* @package Zend2_Feed_Writer
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 class Writer
@@ -65,7 +65,7 @@ class Writer
     /**
      * PluginLoader instance used by component
      *
-     * @var \Zend\Loader\ShortNameLocator
+     * @var \Zend2\Loader\ShortNameLocator
      */
     protected static $_pluginLoader = null;
 
@@ -93,7 +93,7 @@ class Writer
     /**
      * Set plugin loader for use with Extensions
      *
-     * @param  \Zend\Loader\ShortNameLocator
+     * @param  \Zend2\Loader\ShortNameLocator
      */
     public static function setPluginLoader(ShortNameLocator $loader)
     {
@@ -103,13 +103,13 @@ class Writer
     /**
      * Get plugin loader for use with Extensions
      *
-     * @return  \Zend\Loader\ShortNameLocator
+     * @return  \Zend2\Loader\ShortNameLocator
      */
     public static function getPluginLoader()
     {
         if (!isset(self::$_pluginLoader)) {
             self::$_pluginLoader = new PrefixPathLoader(array(
-                'Zend\\Feed\\Writer\\Extension\\' => 'Zend/Feed/Writer/Extension/',
+                'Zend2\\Feed\\Writer\\Extension\\' => 'Zend2/Feed/Writer/Extension/',
             ));
         }
         return self::$_pluginLoader;
@@ -160,7 +160,7 @@ class Writer
      *
      * @param  string $name
      * @return void
-     * @throws Zend_Feed_Exception if unable to resolve Extension class
+     * @throws Zend2_Feed_Exception if unable to resolve Extension class
      */
     public static function registerExtension($name)
     {

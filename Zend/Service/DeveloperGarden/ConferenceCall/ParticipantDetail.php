@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend\Validator\EmailAddress
- * @uses       Zend_Service_DeveloperGarden_Exception
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2\Validator\EmailAddress
+ * @uses       Zend2_Service_DeveloperGarden_Exception
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
+class Zend2_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
 {
     /**
      * @var string
@@ -88,7 +88,7 @@ class Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
      * sets $firstName
      *
      * @param string $firstName
-     * @return Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
+     * @return Zend2_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
      */
     public function setFirstName($firstName)
     {
@@ -110,7 +110,7 @@ class Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
      * sets $lastName
      *
      * @param string $lastName
-     * @return Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
+     * @return Zend2_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
      */
     public function setLastName($lastName)
     {
@@ -132,7 +132,7 @@ class Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
      * sets $number
      *
      * @param string $number
-     * @return Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
+     * @return Zend2_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
      */
     public function setNumber($number)
     {
@@ -154,14 +154,14 @@ class Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
      * sets $email
      *
      * @param string email
-     * @return Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
+     * @return Zend2_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
      */
     public function setEmail($email)
     {
-        $validator = new Zend\Validator\EmailAddress();
+        $validator = new Zend2\Validator\EmailAddress();
 
         if (!$validator->isValid($email)) {
-            throw new Zend_Service_DeveloperGarden_Exception('Not a valid e-mail address.');
+            throw new Zend2_Service_DeveloperGarden_Exception('Not a valid e-mail address.');
         }
         $this->email = $email;
         return $this;
@@ -181,7 +181,7 @@ class Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
      * sets $flags (ie, initiator flag)
      *
      * @param integer $flags
-     * @return Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
+     * @return Zend2_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
      */
     public function setFlags($flags)
     {

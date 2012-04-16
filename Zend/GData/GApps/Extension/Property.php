@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,26 +13,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id: EmailList.php 20096 2010-01-06 02:05:09Z bkarwin $
  */
 
-namespace Zend\GData\GApps\Extension;
+namespace Zend2\GData\GApps\Extension;
 
 /**
  * Represents the apps:Property element used by the Apps data API.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Property extends \Zend\GData\Extension
+class Property extends \Zend2\GData\Extension
 {
 
     protected $_rootNamespace = 'apps';
@@ -52,14 +52,14 @@ class Property extends \Zend\GData\Extension
     protected $_value = null;
 
     /**
-     * Constructs a new Zend_Gdata_Gapps_Extension_Property object.
+     * Constructs a new Zend2_Gdata_Gapps_Extension_Property object.
      *
      * @param string $name The name of the property
      * @param string $value The value of the property
      */
     public function __construct($name = null, $value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\GApps::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\GApps::$namespaces);
         parent::__construct();
         $this->_name = $name;
         $this->_value = $value;
@@ -126,7 +126,7 @@ class Property extends \Zend\GData\Extension
     /**
      * Set the value for this element's name attribute.
      * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Gapps_Extension_Property The element being modified.
+     * @return Zend2_Gdata_Gapps_Extension_Property The element being modified.
      */
     public function setName($value)
     {
@@ -149,7 +149,7 @@ class Property extends \Zend\GData\Extension
      * Set the value for this element's value attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Gapps_Extension_Property The element being modified.
+     * @return Zend2_Gdata_Gapps_Extension_Property The element being modified.
      */
     public function setValue($value)
     {

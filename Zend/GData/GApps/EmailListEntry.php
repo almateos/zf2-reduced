@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,51 +12,51 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\GApps;
+namespace Zend2\GData\GApps;
 
-use Zend\GData\GApps;
+use Zend2\GData\GApps;
 
 /**
  * Data model class for a Google Apps Email List Entry.
  *
  * Each email list entry describes a single email list within a Google Apps
  * hosted domain. Email lists may contain multiple recipients, as
- * described by instances of Zend_Gdata_GApps_EmailListRecipient. Multiple
- * entries are contained within instances of Zend_Gdata_GApps_EmailListFeed.
+ * described by instances of Zend2_Gdata_GApps_EmailListRecipient. Multiple
+ * entries are contained within instances of Zend2_Gdata_GApps_EmailListFeed.
  *
  * To transfer email list entries to and from the Google Apps servers,
  * including creating new entries, refer to the Google Apps service class,
- * Zend_Gdata_GApps.
+ * Zend2_Gdata_GApps.
  *
  * This class represents <atom:entry> in the Google Data protocol.
  *
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\Extension\FeedLink
- * @uses       \Zend\GData\GApps
- * @uses       \Zend\GData\GApps\Extension\EmailList
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\Extension\FeedLink
+ * @uses       \Zend2\GData\GApps
+ * @uses       \Zend2\GData\GApps\Extension\EmailList
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class EmailListEntry extends \Zend\GData\Entry
+class EmailListEntry extends \Zend2\GData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\GApps\EmailListEntry';
+    protected $_entryClassName = 'Zend2\GData\GApps\EmailListEntry';
 
     /**
      * <apps:emailList> child element containing general information about
      * this email list.
      *
-     * @var \Zend\GData\GApps\Extension\EmailList
+     * @var \Zend2\GData\GApps\Extension\EmailList
      */
     protected $_emailList = null;
 
@@ -64,7 +64,7 @@ class EmailListEntry extends \Zend\GData\Entry
      * <gd:feedLink> element containing information about other feeds
      * relevant to this entry.
      *
-     * @var \Zend\GData\Extension\FeedLink
+     * @var \Zend2\GData\Extension\FeedLink
      */
     protected $_feedLink = array();
 
@@ -118,7 +118,7 @@ class EmailListEntry extends \Zend\GData\Entry
                 $this->_emailList = $emailList;
                 break;
             case $this->lookupNamespace('gd') . ':' . 'feedLink';
-                $feedLink = new \Zend\GData\Extension\FeedLink();
+                $feedLink = new \Zend2\GData\Extension\FeedLink();
                 $feedLink->transferFromDOM($child);
                 $this->_feedLink[] = $feedLink;
                 break;
@@ -132,7 +132,7 @@ class EmailListEntry extends \Zend\GData\Entry
      * Retrieve the email list property for this entry.
      *
      * @see setEmailList
-     * @return \Zend\GData\GApps\Extension\EmailList The requested object
+     * @return \Zend2\GData\GApps\Extension\EmailList The requested object
      *              or null if not set.
      */
     public function getEmailList()
@@ -147,9 +147,9 @@ class EmailListEntry extends \Zend\GData\Entry
      * This corresponds to the <apps:emailList> property in the Google Data
      * protocol.
      *
-     * @param \Zend\GData\GApps\Extension\EmailList $value The desired value
+     * @param \Zend2\GData\GApps\Extension\EmailList $value The desired value
      *              this element, or null to unset.
-     * @return Zend_Gdata_GApps_EventEntry Provides a fluent interface
+     * @return Zend2_Gdata_GApps_EventEntry Provides a fluent interface
      */
     public function setEmailList($value)
     {
@@ -163,7 +163,7 @@ class EmailListEntry extends \Zend\GData\Entry
      * @see setFeedLink
      * @param string $rel (optional) The rel value of the link to be found.
      *          If null, the array of links is returned.
-     * @return mixed If $rel is specified, a \Zend\GData\Extension\FeedLink
+     * @return mixed If $rel is specified, a \Zend2\GData\Extension\FeedLink
      *          object corresponding to the requested rel value is returned
      *          if found, or null if the requested value is not found. If
      *          $rel is null or not specified, an array of all available
@@ -191,10 +191,10 @@ class EmailListEntry extends \Zend\GData\Entry
      * This corresponds to the <gd:feedLink> property in the Google Data
      * protocol.
      *
-     * @param array $value A collection of Zend_Gdata_GApps_Extension_FeedLink
+     * @param array $value A collection of Zend2_Gdata_GApps_Extension_FeedLink
      *          instances representing all feed links for this entry, or
      *          null to unset.
-     * @return Zend_Gdata_GApps_EventEntry Provides a fluent interface
+     * @return Zend2_Gdata_GApps_EventEntry Provides a fluent interface
      */
     public function setFeedLink($value)
     {

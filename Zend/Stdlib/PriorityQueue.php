@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,13 +12,13 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Stdlib
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Stdlib
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Stdlib;
+namespace Zend2\Stdlib;
 
 use Countable,
     IteratorAggregate,
@@ -36,9 +36,9 @@ use Countable,
  * "inner" iterator in the form of an SplPriorityQueue object for performing
  * the actual iteration.
  *
- * @category   Zend
- * @package    Zend_Stdlib
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Stdlib
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PriorityQueue implements Countable, IteratorAggregate, Serializable
@@ -51,7 +51,7 @@ class PriorityQueue implements Countable, IteratorAggregate, Serializable
      * Inner queue class to use for iteration
      * @var string
      */
-    protected $queueClass = 'Zend\Stdlib\SplPriorityQueue';
+    protected $queueClass = 'Zend2\Stdlib\SplPriorityQueue';
 
     /**
      * Actual items aggregated in the priority queue. Each item is an array
@@ -194,7 +194,7 @@ class PriorityQueue implements Countable, IteratorAggregate, Serializable
     /**
      * Unserialize a string into a PriorityQueue object
      *
-     * Serialization format is compatible with {@link Zend\Stdlib\SplPriorityQueue}
+     * Serialization format is compatible with {@link Zend2\Stdlib\SplPriorityQueue}
      *
      * @param  string $data
      * @return void

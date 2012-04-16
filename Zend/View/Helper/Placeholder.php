@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper;
+namespace Zend2\View\Helper;
 
-use Zend\View\Exception\InvalidArgumentException;
+use Zend2\View\Exception\InvalidArgumentException;
 
 /**
  * Helper for passing data between otherwise segregated Views. It's called
@@ -29,11 +29,11 @@ use Zend\View\Exception\InvalidArgumentException;
  * for non-Placeholder things. That said, the support for this is only
  * guaranteed to effect subsequently rendered templates, and of course Layouts.
  *
- * @uses       \Zend\View\Helper\AbstractHelper.php
- * @uses       \Zend\View\Helper\Placeholder\Registry
- * @package    Zend_View
+ * @uses       \Zend2\View\Helper\AbstractHelper.php
+ * @uses       \Zend2\View\Helper\Placeholder\Registry
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Placeholder extends AbstractHelper
@@ -45,14 +45,14 @@ class Placeholder extends AbstractHelper
     protected $_items = array();
 
     /**
-     * @var \Zend\View\Helper\Placeholder\Registry
+     * @var \Zend2\View\Helper\Placeholder\Registry
      */
     protected $_registry;
 
     /**
      * Constructor
      *
-     * Retrieve container registry from Zend_Registry, or create new one and register it.
+     * Retrieve container registry from Zend2_Registry, or create new one and register it.
      *
      * @return void
      */
@@ -65,7 +65,7 @@ class Placeholder extends AbstractHelper
      * Placeholder helper
      *
      * @param  string $name
-     * @return \Zend\View\Helper\Placeholder\Container\AbstractContainer
+     * @return \Zend2\View\Helper\Placeholder\Container\AbstractContainer
      * @throws InvalidArgumentException
      */
     public function __invoke($name = null)
@@ -81,7 +81,7 @@ class Placeholder extends AbstractHelper
     /**
      * Retrieve the registry
      *
-     * @return \Zend\View\Helper\Placeholder\Registry
+     * @return \Zend2\View\Helper\Placeholder\Registry
      */
     public function getRegistry()
     {

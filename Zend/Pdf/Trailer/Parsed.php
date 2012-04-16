@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Trailer;
-use Zend\Pdf\InternalType;
-use Zend\Pdf\Exception;
+namespace Zend2\Pdf\Trailer;
+use Zend2\Pdf\InternalType;
+use Zend2\Pdf\Exception;
 
 /**
  * PDF file trailer.
  * Stores and provides access to the trailer parced from a PDF file
  *
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\Trailer\AbstractTrailer
- * @uses       \Zend\Pdf\InternalType\DirctionaryObject
- * @uses       \Zend\Pdf\InternalType\IndirectObjectReference\Context
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\Trailer\AbstractTrailer
+ * @uses       \Zend2\Pdf\InternalType\DirctionaryObject
+ * @uses       \Zend2\Pdf\InternalType\IndirectObjectReference\Context
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Parsed extends AbstractTrailer
@@ -41,14 +41,14 @@ class Parsed extends AbstractTrailer
     /**
      * Reference context
      *
-     * @var \Zend\Pdf\InternalType\IndirectObjectReference\Context
+     * @var \Zend2\Pdf\InternalType\IndirectObjectReference\Context
      */
     private $_context;
 
     /**
      * Previous trailer
      *
-     * @var \Zend\Pdf\Trailer\AbstractTrailer
+     * @var \Zend2\Pdf\Trailer\AbstractTrailer
      */
     private $_prev;
 
@@ -56,9 +56,9 @@ class Parsed extends AbstractTrailer
     /**
      * Object constructor
      *
-     * @param \Zend\Pdf\InternalType\DictionaryObject $dict
-     * @param \Zend\Pdf\InternalType\IndirectObjectReference\Context $context
-     * @param \Zend\Pdf\Trailer\AbstractTrailer $prev
+     * @param \Zend2\Pdf\InternalType\DictionaryObject $dict
+     * @param \Zend2\Pdf\InternalType\IndirectObjectReference\Context $context
+     * @param \Zend2\Pdf\Trailer\AbstractTrailer $prev
      */
     public function __construct(InternalType\DictionaryObject $dict,
                                 InternalType\IndirectObjectReference\Context $context,
@@ -73,7 +73,7 @@ class Parsed extends AbstractTrailer
     /**
      * Setter for $this->_prev
      *
-     * @param \Zend\Pdf\Trailer\Parsed $prev
+     * @param \Zend2\Pdf\Trailer\Parsed $prev
      */
     public function setPrev(Parsed $prev)
     {
@@ -83,7 +83,7 @@ class Parsed extends AbstractTrailer
     /**
      * Getter for $this->_prev
      *
-     * @return \Zend\Pdf\Trailer\AbstractTrailer
+     * @return \Zend2\Pdf\Trailer\AbstractTrailer
      */
     public function getPrev()
     {
@@ -114,7 +114,7 @@ class Parsed extends AbstractTrailer
      * Get reference table, which corresponds to the trailer.
      * Proxy to the $_context member methad call
      *
-     * @return \Zend\Pdf\InternalType\IndirectObjectReference\Context
+     * @return \Zend2\Pdf\InternalType\IndirectObjectReference\Context
      */
     public function getRefTable()
     {
@@ -125,7 +125,7 @@ class Parsed extends AbstractTrailer
      * Get header of free objects list
      * Returns object number of last free object
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      * @return integer
      */
     public function getLastFreeObject()

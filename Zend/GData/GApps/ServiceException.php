@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,15 +12,15 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\GApps;
-use Zend\GData\App;
+namespace Zend2\GData\GApps;
+use Zend2\GData\App;
 
 /**
  * Gdata GApps Exception class. This is thrown when an
@@ -31,12 +31,12 @@ use Zend\GData\App;
  * of error codes available, see getErrorCode.
  *
  * @uses       \Exception
- * @uses       \Zend\GData\App\Exception
- * @uses       \Zend\GData\GApps\Error
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Exception
+ * @uses       \Zend2\GData\GApps\Error
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ServiceException extends \Exception
@@ -45,7 +45,7 @@ class ServiceException extends \Exception
     protected $_rootElement = "AppsForYourDomainErrors";
 
     /**
-     * Array of Zend_Gdata_Error objects indexed by error code.
+     * Array of Zend2_Gdata_Error objects indexed by error code.
      *
      * @var array
      */
@@ -55,7 +55,7 @@ class ServiceException extends \Exception
      * Create a new ServiceException.
      *
      * @return array An array containing a collection of
-     *          Zend_Gdata_GApps_Error objects.
+     *          Zend2_Gdata_GApps_Error objects.
      */
     public function __construct($errors = null) {
         parent::__construct("Server errors encountered");
@@ -68,9 +68,9 @@ class ServiceException extends \Exception
      * Add a single Error object to the list of errors received by the
      * server.
      *
-     * @param \Zend\GData\GApps\Error $error An instance of an error returned
+     * @param \Zend2\GData\GApps\Error $error An instance of an error returned
      *          by the server. The error's errorCode must be set.
-     * @throws \Zend\GData\App\Exception
+     * @throws \Zend2\GData\App\Exception
      */
     public function addError($error) {
         // Make sure that we don't try to index an error that doesn't
@@ -87,9 +87,9 @@ class ServiceException extends \Exception
      * AppsForYourDomainErrors tag.
      *
      * @param array $array An associative array containing a collection of
-     *          Zend_Gdata_GApps_Error objects. All errors must have their
+     *          Zend2_Gdata_GApps_Error objects. All errors must have their
      *          errorCode value set.
-     * @throws \Zend\GData\App\Exception
+     * @throws \Zend2\GData\App\Exception
      */
     public function setErrors($array) {
         $this->_errors = array();
@@ -103,7 +103,7 @@ class ServiceException extends \Exception
      * AppsForYourDomainErrors tag.
      *
      * @return array An associative array containing a collection of
-     *          Zend_Gdata_GApps_Error objects, indexed by error code.
+     *          Zend2_Gdata_GApps_Error objects, indexed by error code.
      */
     public function getErrors() {
         return $this->_errors;
@@ -112,7 +112,7 @@ class ServiceException extends \Exception
     /**
      * Return the Error object associated with a specific error code.
      *
-     * @return \Zend\GData\GApps\Error The Error object requested, or null
+     * @return \Zend2\GData\GApps\Error The Error object requested, or null
      *              if not found.
      */
     public function getError($errorCode) {
@@ -140,8 +140,8 @@ class ServiceException extends \Exception
      * Import an AppsForYourDomain error from XML.
      *
      * @param string $string The XML data to be imported
-     * @return \Zend\GData\GApps\ServiceException Provides a fluent interface.
-     * @throws \Zend\GData\App\Exception
+     * @return \Zend2\GData\GApps\ServiceException Provides a fluent interface.
+     * @throws \Zend2\GData\App\Exception
      */
     public function importFromString($string) {
         if ($string) {

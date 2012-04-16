@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator\Db;
+namespace Zend2\Validator\Db;
 
 use Traversable,
-    Zend\Config\Config,
-    Zend\Db\Adapter\AbstractAdapter as AbstractDBAdapter,
-    Zend\Db\Db,
-    Zend\Db\Select as DBSelect,
-    Zend\Db\Table\AbstractTable as AbstractTable,
-    Zend\Validator\AbstractValidator,
-    Zend\Validator\Exception;
+    Zend2\Config\Config,
+    Zend2\Db\Adapter\AbstractAdapter as AbstractDBAdapter,
+    Zend2\Db\Db,
+    Zend2\Db\Select as DBSelect,
+    Zend2\Db\Table\AbstractTable as AbstractTable,
+    Zend2\Validator\AbstractValidator,
+    Zend2\Validator\Exception;
 
 /**
  * Class for Database record validation
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractDb extends AbstractValidator
@@ -80,14 +80,14 @@ abstract class AbstractDb extends AbstractValidator
     protected $_exclude = null;
 
     /**
-     * Database adapter to use. If null isValid() will use Zend_Db::getInstance instead
+     * Database adapter to use. If null isValid() will use Zend2_Db::getInstance instead
      *
      * @var unknown_type
      */
     protected $_adapter = null;
 
     /**
-     * Provides basic configuration for use with Zend\Validator\Db Validators
+     * Provides basic configuration for use with Zend2\Validator\Db Validators
      * Setting $exclude allows a single record to be excluded from matching.
      * Exclude can either be a String containing a where clause, or an array with `field` and `value` keys
      * to define the where clause added to the sql.

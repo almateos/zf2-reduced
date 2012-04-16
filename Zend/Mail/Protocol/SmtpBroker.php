@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail\Protocol;
+namespace Zend2\Mail\Protocol;
 
-use Zend\Loader\PluginBroker;
+use Zend2\Loader\PluginBroker;
 
 /**
  * Plugin Broker for SMTP protocol authentication extensions.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class SmtpBroker extends PluginBroker
@@ -37,7 +37,7 @@ class SmtpBroker extends PluginBroker
     /**
      * @var string Default plugin loading strategy
      */
-    protected $defaultClassLoader = 'Zend\Mail\Protocol\SmtpLoader';
+    protected $defaultClassLoader = 'Zend2\Mail\Protocol\SmtpLoader';
 
     /**
      * Determine if we have a valid extension

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\App;
+namespace Zend2\GData\App;
 
 /**
  * Atom feed class
  *
- * @uses       \Zend\GData\App\Entry
- * @uses       \Zend\GData\App\Extension\Generator
- * @uses       \Zend\GData\App\Extension\Icon
- * @uses       \Zend\GData\App\Extension\Logo
- * @uses       \Zend\GData\App\Extension\Subtitle
- * @uses       \Zend\GData\App\FeedSourceParent
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Entry
+ * @uses       \Zend2\GData\App\Extension\Generator
+ * @uses       \Zend2\GData\App\Extension\Icon
+ * @uses       \Zend2\GData\App\Extension\Logo
+ * @uses       \Zend2\GData\App\Extension\Subtitle
+ * @uses       \Zend2\GData\App\FeedSourceParent
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class FeedSourceParent extends FeedEntryParent
@@ -44,7 +44,7 @@ abstract class FeedSourceParent extends FeedEntryParent
      *
      * @var string
      */
-    protected $_entryClassName = '\Zend\GData\App\Entry';
+    protected $_entryClassName = '\Zend2\GData\App\Entry';
 
     /**
      * Root XML element for Atom entries.
@@ -63,12 +63,12 @@ abstract class FeedSourceParent extends FeedEntryParent
      *
      * Sets the HTTP client object to use for retrieving the feed.
      *
-     * @deprecated Deprecated as of Zend Framework 1.7. Use
+     * @deprecated Deprecated as of Zend2 Framework 1.7. Use
      *             setService() instead.
-     * @param  \Zend\Http\Client $httpClient
-     * @return \Zend\GData\App\FeedSourceParent Provides a fluent interface
+     * @param  \Zend2\Http\Client $httpClient
+     * @return \Zend2\GData\App\FeedSourceParent Provides a fluent interface
      */
-    public function setHttpClient(\Zend\Http\Client $httpClient)
+    public function setHttpClient(\Zend2\Http\Client $httpClient)
     {
         parent::setHttpClient($httpClient);
         foreach ($this->_entry as $entry) {
@@ -82,8 +82,8 @@ abstract class FeedSourceParent extends FeedEntryParent
      * This will be used to perform network requests, such as when calling
      * save() and delete().
      *
-     * @param \Zend\GData\App $instance The new service instance.
-     * @return \Zend\GData\App\FeedEntryParent Provides a fluent interface.
+     * @param \Zend2\GData\App $instance The new service instance.
+     * @return \Zend2\GData\App\FeedEntryParent Provides a fluent interface.
      */
     public function setService($instance)
     {
@@ -169,7 +169,7 @@ abstract class FeedSourceParent extends FeedEntryParent
     }
 
     /**
-     * @return \Zend\Gdata\AppExtension\Generator
+     * @return \Zend2\Gdata\AppExtension\Generator
      */
     public function getGenerator()
     {
@@ -177,8 +177,8 @@ abstract class FeedSourceParent extends FeedEntryParent
     }
 
     /**
-     * @param \Zend\GData\App\Extension\Generator $value
-     * @return \Zend\GData\App\FeedSourceParent Provides a fluent interface
+     * @param \Zend2\GData\App\Extension\Generator $value
+     * @return \Zend2\GData\App\FeedSourceParent Provides a fluent interface
      */
     public function setGenerator($value)
     {
@@ -187,7 +187,7 @@ abstract class FeedSourceParent extends FeedEntryParent
     }
 
     /**
-     * @return \Zend\Gdata\AppExtension\Icon
+     * @return \Zend2\Gdata\AppExtension\Icon
      */
     public function getIcon()
     {
@@ -195,8 +195,8 @@ abstract class FeedSourceParent extends FeedEntryParent
     }
 
     /**
-     * @param \Zend\GData\App\Extension\Icon $value
-     * @return \Zend\GData\App\FeedSourceParent Provides a fluent interface
+     * @param \Zend2\GData\App\Extension\Icon $value
+     * @return \Zend2\GData\App\FeedSourceParent Provides a fluent interface
      */
     public function setIcon($value)
     {
@@ -205,7 +205,7 @@ abstract class FeedSourceParent extends FeedEntryParent
     }
 
     /**
-     * @return \Zend\Gdata\AppExtension\logo
+     * @return \Zend2\Gdata\AppExtension\logo
      */
     public function getlogo()
     {
@@ -213,8 +213,8 @@ abstract class FeedSourceParent extends FeedEntryParent
     }
 
     /**
-     * @param \Zend\Gdata\AppExtension\logo $value
-     * @return \Zend\GData\App\FeedSourceParent Provides a fluent interface
+     * @param \Zend2\Gdata\AppExtension\logo $value
+     * @return \Zend2\GData\App\FeedSourceParent Provides a fluent interface
      */
     public function setlogo($value)
     {
@@ -223,7 +223,7 @@ abstract class FeedSourceParent extends FeedEntryParent
     }
 
     /**
-     * @return \Zend\Gdata\AppExtension\Subtitle
+     * @return \Zend2\Gdata\AppExtension\Subtitle
      */
     public function getSubtitle()
     {
@@ -231,8 +231,8 @@ abstract class FeedSourceParent extends FeedEntryParent
     }
 
     /**
-     * @param \Zend\GData\App\Extension\Subtitle $value
-     * @return \Zend\GData\App\FeedSourceParent Provides a fluent interface
+     * @param \Zend2\GData\App\Extension\Subtitle $value
+     * @return \Zend2\GData\App\FeedSourceParent Provides a fluent interface
      */
     public function setSubtitle($value)
     {

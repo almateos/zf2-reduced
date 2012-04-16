@@ -1,21 +1,21 @@
 <?php
 
-namespace Zend\Mvc;
+namespace Zend2\Mvc;
 
 use ArrayObject,
-    Zend\Di\Exception\ClassNotFoundException,
-    Zend\Di\Locator,
-    Zend\EventManager\EventCollection,
-    Zend\EventManager\EventManager,
-    Zend\Http\Header\Cookie,
-    Zend\Http\PhpEnvironment\Request as PhpHttpRequest,
-    Zend\Http\PhpEnvironment\Response as PhpHttpResponse,
-    Zend\Uri\Http as HttpUri,
-    Zend\Stdlib\Dispatchable,
-    Zend\Stdlib\ArrayUtils,
-    Zend\Stdlib\Parameters,
-    Zend\Stdlib\RequestDescription as Request,
-    Zend\Stdlib\ResponseDescription as Response;
+    Zend2\Di\Exception\ClassNotFoundException,
+    Zend2\Di\Locator,
+    Zend2\EventManager\EventCollection,
+    Zend2\EventManager\EventManager,
+    Zend2\Http\Header\Cookie,
+    Zend2\Http\PhpEnvironment\Request as PhpHttpRequest,
+    Zend2\Http\PhpEnvironment\Response as PhpHttpResponse,
+    Zend2\Uri\Http as HttpUri,
+    Zend2\Stdlib\Dispatchable,
+    Zend2\Stdlib\ArrayUtils,
+    Zend2\Stdlib\Parameters,
+    Zend2\Stdlib\RequestDescription as Request,
+    Zend2\Stdlib\ResponseDescription as Response;
 
 /**
  * Main application class for invoking applications

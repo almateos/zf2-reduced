@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Amazon\Ec2;
-use Zend\Service\Amazon,
-    Zend\Service\Amazon\Ec2\Exception;
+namespace Zend2\Service\Amazon\Ec2;
+use Zend2\Service\Amazon,
+    Zend2\Service\Amazon\Ec2\Exception;
 
 /**
  * Amazon Ec2 Interface to allow easy creation of the Ec2 Components
  *
- * @uses       Zend_Loader
- * @uses       Zend\Service\Amazon\Ec2\Exception
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Loader
+ * @uses       Zend2\Service\Amazon\Ec2\Exception
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Ec2
@@ -42,40 +42,40 @@ class Ec2
      * @param string $section           Create the method that you want to work with
      * @param string $key               Override the default aws key
      * @param string $secret_key        Override the default aws secretkey
-     * @throws Zend\Service\Amazon\Ec2\Exception
+     * @throws Zend2\Service\Amazon\Ec2\Exception
      * @return object
      */
     public static function factory($section, $key = null, $secret_key = null)
     {
         switch(strtolower($section)) {
             case 'keypair':
-                $class = '\Zend\Service\Amazon\Ec2\Keypair';
+                $class = '\Zend2\Service\Amazon\Ec2\Keypair';
                 break;
             case 'eip':
                 // break left out
             case 'elasticip':
-                $class = '\Zend\Service\Amazon\Ec2\ElasticIp';
+                $class = '\Zend2\Service\Amazon\Ec2\ElasticIp';
                 break;
             case 'ebs':
-                $class = '\Zend\Service\Amazon\Ec2\Ebs';
+                $class = '\Zend2\Service\Amazon\Ec2\Ebs';
                 break;
             case 'availabilityzones':
                 // break left out
             case 'zones':
-                $class = '\Zend\Service\Amazon\Ec2\AvailabilityZones';
+                $class = '\Zend2\Service\Amazon\Ec2\AvailabilityZones';
                 break;
             case 'ami':
                 // break left out
             case 'image':
-                $class = '\Zend\Service\Amazon\Ec2\Image';
+                $class = '\Zend2\Service\Amazon\Ec2\Image';
                 break;
             case 'instance':
-                $class = '\Zend\Service\Amazon\Ec2\Instance';
+                $class = '\Zend2\Service\Amazon\Ec2\Instance';
                 break;
             case 'security':
                 // break left out
             case 'securitygroups':
-                $class = '\Zend\Service\Amazon\Ec2\SecurityGroups';
+                $class = '\Zend2\Service\Amazon\Ec2\SecurityGroups';
                 break;
             default:
                 throw new Exception\RuntimeException('Invalid Section: ' . $section);

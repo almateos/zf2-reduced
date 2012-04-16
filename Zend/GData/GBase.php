@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,24 +13,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GBase
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData;
+namespace Zend2\GData;
 
 /**
  * Service class for interacting with the Google Base data API
  *
  * @link http://code.google.com/apis/base
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GBase
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class GBase extends GData
@@ -59,7 +59,7 @@ class GBase extends GData
     protected $_defaultPostUri = self::GBASE_ITEM_FEED_URI;
 
     /**
-     * Namespaces used for Zend_Gdata_GBase
+     * Namespaces used for Zend2_Gdata_GBase
      *
      * @var array
      */
@@ -69,16 +69,16 @@ class GBase extends GData
     );
 
     /**
-     * Create Zend_Gdata_GBase object
+     * Create Zend2_Gdata_GBase object
      *
-     * @param \Zend\Http\Client $client (optional) The HTTP client to use when
+     * @param \Zend2\Http\Client $client (optional) The HTTP client to use when
      *          when communicating with the Google Apps servers.
      * @param string $applicationId The identity of the app in the form of Company-AppName-Version
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('Zend\GData\GBase');
-        $this->registerPackage('Zend\GData\GBase\Extension');
+        $this->registerPackage('Zend2\GData\GBase');
+        $this->registerPackage('Zend2\GData\GBase\Extension');
         parent::__construct($client, $applicationId);
         $this->_httpClient->setParameterPost('service', self::AUTH_SERVICE_NAME);
     }
@@ -87,7 +87,7 @@ class GBase extends GData
      * Retreive feed object
      *
      * @param mixed $location The location for the feed, as a URL or Query
-     * @return \Zend\GData\GBase\ItemFeed
+     * @return \Zend2\GData\GBase\ItemFeed
      */
     public function getGBaseItemFeed($location = null)
     {
@@ -98,14 +98,14 @@ class GBase extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\GBase\ItemFeed');
+        return parent::getFeed($uri, 'Zend2\GData\GBase\ItemFeed');
     }
 
     /**
      * Retreive entry object
      *
      * @param mixed $location The location for the feed, as a URL or Query
-     * @return \Zend\GData\GBase\ItemEntry
+     * @return \Zend2\GData\GBase\ItemEntry
      */
     public function getGBaseItemEntry($location = null)
     {
@@ -117,15 +117,15 @@ class GBase extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\GBase\ItemEntry');
+        return parent::getEntry($uri, 'Zend2\GData\GBase\ItemEntry');
     }
 
     /**
      * Insert an entry
      *
-     * @param \Zend\GData\GBase\ItemEntry $entry The Base entry to upload
+     * @param \Zend2\GData\GBase\ItemEntry $entry The Base entry to upload
      * @param boolean $dryRun Flag for the 'dry-run' parameter
-     * @return \Zend\GData\GBase\ItemFeed
+     * @return \Zend2\GData\GBase\ItemFeed
      */
     public function insertGBaseItem($entry, $dryRun = false)
     {
@@ -134,16 +134,16 @@ class GBase extends GData
         } else {
             $uri = $this->_defaultPostUri . '?dry-run=true';
         }
-        $newitem = $this->insertEntry($entry, $uri, 'Zend\GData\GBase\ItemEntry');
+        $newitem = $this->insertEntry($entry, $uri, 'Zend2\GData\GBase\ItemEntry');
         return $newitem;
     }
 
     /**
      * Update an entry
      *
-     * @param \Zend\GData\GBase\ItemEntry $entry The Base entry to be updated
+     * @param \Zend2\GData\GBase\ItemEntry $entry The Base entry to be updated
      * @param boolean $dryRun Flag for the 'dry-run' parameter
-     * @return \Zend\GData\GBase\ItemEntry
+     * @return \Zend2\GData\GBase\ItemEntry
      */
     public function updateGBaseItem($entry, $dryRun = false)
     {
@@ -154,9 +154,9 @@ class GBase extends GData
     /**
      * Delete an entry
      *
-     * @param \Zend\GData\GBase\ItemEntry $entry The Base entry to remove
+     * @param \Zend2\GData\GBase\ItemEntry $entry The Base entry to remove
      * @param boolean $dryRun Flag for the 'dry-run' parameter
-     * @return \Zend\GData\GBase\ItemFeed
+     * @return \Zend2\GData\GBase\ItemFeed
      */
     public function deleteGBaseItem($entry, $dryRun = false)
     {
@@ -168,7 +168,7 @@ class GBase extends GData
      * Retrieve feed object
      *
      * @param mixed $location The location for the feed, as a URL or Query
-     * @return \Zend\GData\GBase\SnippetFeed
+     * @return \Zend2\GData\GBase\SnippetFeed
      */
     public function getGBaseSnippetFeed($location = null)
     {
@@ -179,6 +179,6 @@ class GBase extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\GBase\SnippetFeed');
+        return parent::getFeed($uri, 'Zend2\GData\GBase\SnippetFeed');
     }
 }

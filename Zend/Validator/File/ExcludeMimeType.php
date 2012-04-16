@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator\File;
+namespace Zend2\Validator\File;
 
 use finfo,
-    Zend\Loader;
+    Zend2\Loader;
 
 /**
  * Validator for the mime type of a file
  *
  * @uses      finfo
- * @uses      \Zend\Loader
- * @uses      \Zend\Validator\File\MimeType
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Loader
+ * @uses      \Zend2\Validator\File\MimeType
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ExcludeMimeType extends MimeType
@@ -46,7 +46,7 @@ class ExcludeMimeType extends MimeType
      * mime types will not be accepted like "image/gif", "image/jpeg" and so on.
      *
      * @param  string $value Real file to check for mimetype
-     * @param  array  $file  File data from \Zend\File\Transfer\Transfer
+     * @param  array  $file  File data from \Zend2\File\Transfer\Transfer
      * @return boolean
      */
     public function isValid($value, $file = null)

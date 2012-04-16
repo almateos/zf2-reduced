@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Soap
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage WSDL
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Soap\Wsdl\ComplexTypeStrategy;
+namespace Zend2\Soap\Wsdl\ComplexTypeStrategy;
 
-use Zend\Soap\Wsdl\ComplexTypeStrategy;
+use Zend2\Soap\Wsdl\ComplexTypeStrategy;
 
 /**
- * Abstract class for Zend_Soap_Wsdl_Strategy.
+ * Abstract class for Zend2_Soap_Wsdl_Strategy.
  *
- * @uses       \Zend\Soap\Wsdl\Strategy
- * @category   Zend
- * @package    Zend_Soap
+ * @uses       \Zend2\Soap\Wsdl\Strategy
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage WSDL
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractComplexTypeStrategy implements ComplexTypeStrategy
@@ -38,25 +38,25 @@ abstract class AbstractComplexTypeStrategy implements ComplexTypeStrategy
     /**
      * Context object
      *
-     * @var \Zend\Soap\Wsdl
+     * @var \Zend2\Soap\Wsdl
      */
     protected $_context;
 
     /**
-     * Set the Zend_Soap_Wsdl Context object this strategy resides in.
+     * Set the Zend2_Soap_Wsdl Context object this strategy resides in.
      *
-     * @param \Zend\Soap\Wsdl $context
+     * @param \Zend2\Soap\Wsdl $context
      * @return void
      */
-    public function setContext(\Zend\Soap\Wsdl $context)
+    public function setContext(\Zend2\Soap\Wsdl $context)
     {
         $this->_context = $context;
     }
 
     /**
-     * Return the current Zend_Soap_Wsdl context object
+     * Return the current Zend2_Soap_Wsdl context object
      *
-     * @return \Zend\Soap\Wsdl
+     * @return \Zend2\Soap\Wsdl
      */
     public function getContext()
     {

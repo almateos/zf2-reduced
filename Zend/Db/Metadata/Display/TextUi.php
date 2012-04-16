@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Db
+ * @category   Zend2
+ * @package    Zend2_Db
  * @subpackage Metadata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Db\Metadata\Display;
+namespace Zend2\Db\Metadata\Display;
 
 /**
- * @category   Zend
- * @package    Zend_Db
+ * @category   Zend2
+ * @package    Zend2_Db
  * @subpackage Metadata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class TextUi
@@ -39,10 +39,10 @@ class TextUi
     /**
      * Render
      * 
-     * @param  \Zend\Db\Metadata\Metadata $metadata
+     * @param  \Zend2\Db\Metadata\Metadata $metadata
      * @return string 
      */
-    public function render(\Zend\Db\Metadata\Metadata $metadata)
+    public function render(\Zend2\Db\Metadata\Metadata $metadata)
     {
         $output = '';
         $output .= $this->renderTables($metadata->getTables());
@@ -65,10 +65,10 @@ class TextUi
     /**
      * Render table
      * 
-     * @param  \Zend\Db\Metadata\Table $table
+     * @param  \Zend2\Db\Metadata\Table $table
      * @return string 
      */
-    public function renderTable(\Zend\Db\Metadata\Table $table)
+    public function renderTable(\Zend2\Db\Metadata\Table $table)
     {
         $output = '';
         $output .= 'The \'' . $table->getName() . "' Table\n";
@@ -79,10 +79,10 @@ class TextUi
     /**
      * Render columns
      * 
-     * @param  \Zend\Db\Metadata\ColumnCollection $columnCollection
+     * @param  \Zend2\Db\Metadata\ColumnCollection $columnCollection
      * @return string 
      */
-    public function renderColumns(\Zend\Db\Metadata\ColumnCollection $columnCollection)
+    public function renderColumns(\Zend2\Db\Metadata\ColumnCollection $columnCollection)
     {
         $columnAttributes = array(
             array('name', 'Name', 12),
@@ -121,7 +121,7 @@ class TextUi
             $rows[] = $row;
         }
         
-        $table = new \Zend\Text\Table\Table(array(
+        $table = new \Zend2\Text\Table\Table(array(
             'columnWidths' => $rowWidths,
             'decorator' => 'ascii'
             ));
@@ -134,10 +134,10 @@ class TextUi
     /**
      * Render constraints
      * 
-     * @param  \Zend\Db\Metadata\ConstraintCollection $constraints
+     * @param  \Zend2\Db\Metadata\ConstraintCollection $constraints
      * @return string 
      */
-    public function renderConstraints(\Zend\Db\Metadata\ConstraintCollection $constraints)
+    public function renderConstraints(\Zend2\Db\Metadata\ConstraintCollection $constraints)
     {
         $rows = array();
         foreach ($constraints as $constraint) {
@@ -147,7 +147,7 @@ class TextUi
             $rows[] = $row;
         }
         
-        $table = new \Zend\Text\Table\Table(array(
+        $table = new \Zend2\Text\Table\Table(array(
             'columnWidths' => array(25, 25),
             'decorator' => 'ascii'
             ));

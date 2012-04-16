@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\App\Extension;
+namespace Zend2\GData\App\Extension;
 
-use Zend\GData\App\Extension;
+use Zend2\GData\App\Extension;
 
 /**
  * Abstract class for data models that require only text and type-- such as:
  * title, summary, etc.
  *
- * @uses       \Zend\GData\App\Extension
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Extension
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Text extends Extension
@@ -68,7 +68,7 @@ abstract class Text extends Extension
     }
 
     /*
-     * @return Zend\GData\App\Extension\Type
+     * @return Zend2\GData\App\Extension\Type
      */
     public function getType()
     {
@@ -77,7 +77,7 @@ abstract class Text extends Extension
 
     /*
      * @param string $value
-     * @return Zend\GData\App\Extension\Text Provides a fluent interface
+     * @return Zend2\GData\App\Extension\Text Provides a fluent interface
      */
     public function setType($value)
     {

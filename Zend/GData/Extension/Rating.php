@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Extension;
+namespace Zend2\GData\Extension;
 
-use Zend\GData\Extension;
+use Zend2\GData\Extension;
 
 /**
  * Implements the gd:rating element
  *
- * @uses       \Zend\GData\Extension
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Extension
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Rating extends Extension
@@ -44,7 +44,7 @@ class Rating extends Extension
     protected $_value = null;
 
     /**
-     * Constructs a new Zend_Gdata_Extension_Rating object.
+     * Constructs a new Zend2_Gdata_Extension_Rating object.
      *
      * @param integer $average (optional) Average rating.
      * @param integer $min (optional) Minimum rating.
@@ -138,7 +138,7 @@ class Rating extends Extension
      * Set the value for this element's min attribute.
      *
      * @param bool $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Rating The element being modified.
+     * @return \Zend2\GData\Extension\Rating The element being modified.
      */
     public function setMin($value)
     {
@@ -160,7 +160,7 @@ class Rating extends Extension
      * Set the value for this element's numRaters attribute.
      *
      * @param bool $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Rating The element being modified.
+     * @return \Zend2\GData\Extension\Rating The element being modified.
      */
     public function setNumRaters($value)
     {
@@ -182,7 +182,7 @@ class Rating extends Extension
      * Set the value for this element's average attribute.
      *
      * @param bool $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Rating The element being modified.
+     * @return \Zend2\GData\Extension\Rating The element being modified.
      */
     public function setAverage($value)
     {
@@ -204,7 +204,7 @@ class Rating extends Extension
      * Set the value for this element's max attribute.
      *
      * @param bool $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Rating The element being modified.
+     * @return \Zend2\GData\Extension\Rating The element being modified.
      */
     public function setMax($value)
     {
@@ -226,7 +226,7 @@ class Rating extends Extension
      * Set the value for this element's value attribute.
      *
      * @param bool $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Rating The element being modified.
+     * @return \Zend2\GData\Extension\Rating The element being modified.
      */
     public function setValue($value)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Queue
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Queue\Adapter;
-use Zend\Queue;
-use Zend\Queue\Message;
-use Zend\Queue\Stomp\Client;
+namespace Zend2\Queue\Adapter;
+use Zend2\Queue;
+use Zend2\Queue\Message;
+use Zend2\Queue\Stomp\Client;
 
 /**
  * Class for using Stomp to talk to an Stomp compliant server
  *
- * @uses       \Zend\Queue\Adapter\AdapterAbstract
- * @uses       \Zend\Queue\Queue
- * @uses       \Zend\Queue\Exception
- * @uses       \Zend\Queue\Message\Message
- * @uses       \Zend\Queue\Stomp\Client
- * @category   Zend
- * @package    Zend_Queue
+ * @uses       \Zend2\Queue\Adapter\AdapterAbstract
+ * @uses       \Zend2\Queue\Queue
+ * @uses       \Zend2\Queue\Exception
+ * @uses       \Zend2\Queue\Message\Message
+ * @uses       \Zend2\Queue\Stomp\Client
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Activemq extends AbstractAdapter
@@ -45,7 +45,7 @@ class Activemq extends AbstractAdapter
     const DEFAULT_PORT   = 61613;
 
     /**
-     * @var \Zend\Queue\Stomp\Client
+     * @var \Zend2\Queue\Stomp\Client
      */
     private $_client = null;
 
@@ -57,8 +57,8 @@ class Activemq extends AbstractAdapter
     /**
      * Constructor
      *
-     * @param  array|\Zend\Config\Config $config An array having configuration data
-     * @param  \Zend\Queue\Queue The \Zend\Queue\Queue object that created this class
+     * @param  array|\Zend2\Config\Config $config An array having configuration data
+     * @param  \Zend2\Queue\Queue The \Zend2\Queue\Queue object that created this class
      * @return void
      */
     public function __construct($options, Queue\Queue $queue = null)
@@ -123,7 +123,7 @@ class Activemq extends AbstractAdapter
      * @param  string  $name    queue name
      * @param  integer $timeout default visibility timeout
      * @return void
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function create($name, $timeout=null)
     {
@@ -135,7 +135,7 @@ class Activemq extends AbstractAdapter
      *
      * @param  string $name queue name
      * @return void
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function delete($name)
     {
@@ -148,7 +148,7 @@ class Activemq extends AbstractAdapter
      * Returns true if the message is deleted, false if the deletion is
      * unsuccessful.
      *
-     * @param  \Zend\Queue\Message\Message $message
+     * @param  \Zend2\Queue\Message\Message $message
      * @return boolean
      */
     public function deleteMessage(Message\Message $message)
@@ -166,7 +166,7 @@ class Activemq extends AbstractAdapter
      * Get an array of all available queues
      *
      * @return void
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function getQueues()
     {
@@ -176,7 +176,7 @@ class Activemq extends AbstractAdapter
     /**
      * Checks if the client is subscribed to the queue
      *
-     * @param  \Zend\Queue\Queue $queue
+     * @param  \Zend2\Queue\Queue $queue
      * @return boolean
      */
     protected function isSubscribed(Queue\Queue $queue)
@@ -187,7 +187,7 @@ class Activemq extends AbstractAdapter
     /**
      * Subscribes the client to the queue.
      *
-     * @param  \Zend\Queue\Queue $queue
+     * @param  \Zend2\Queue\Queue $queue
      * @return void
      */
     protected function subscribe(Queue\Queue $queue)
@@ -205,8 +205,8 @@ class Activemq extends AbstractAdapter
      *
      * @param  integer    $maxMessages
      * @param  integer    $timeout
-     * @param  \Zend\Queue\Queue $queue
-     * @return \Zend\Queue\Message\MessageIterator
+     * @param  \Zend2\Queue\Queue $queue
+     * @return \Zend2\Queue\Message\MessageIterator
      */
     public function receive($maxMessages=null, $timeout=null, Queue\Queue $queue=null)
     {
@@ -264,8 +264,8 @@ class Activemq extends AbstractAdapter
      * Push an element onto the end of the queue
      *
      * @param  string     $message message to send to the queue
-     * @param  \Zend\Queue\Queue $queue
-     * @return \Zend\Queue\Message\Message
+     * @param  \Zend2\Queue\Queue $queue
+     * @return \Zend2\Queue\Message\Message
      */
     public function send($message, Queue\Queue $queue=null)
     {
@@ -298,9 +298,9 @@ class Activemq extends AbstractAdapter
     /**
      * Returns the length of the queue
      *
-     * @param  \Zend\Queue\Queue $queue
+     * @param  \Zend2\Queue\Queue $queue
      * @return integer
-     * @throws \Zend\Queue\Exception (not supported)
+     * @throws \Zend2\Queue\Exception (not supported)
      */
     public function count(Queue\Queue $queue=null)
     {
@@ -312,7 +312,7 @@ class Activemq extends AbstractAdapter
      *
      * @param  string $name
      * @return boolean
-     * @throws \Zend\Queue\Exception (not supported)
+     * @throws \Zend2\Queue\Exception (not supported)
      */
     public function isExists($name)
     {

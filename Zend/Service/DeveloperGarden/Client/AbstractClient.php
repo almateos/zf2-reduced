@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * @uses       ReflectionClass
- * @uses       Zend_Service_DeveloperGarden_Client_Exception
- * @uses       Zend_Service_DeveloperGarden_Client_Soap
- * @uses       Zend_Service_DeveloperGarden_Credential
- * @uses       Zend_Service_DeveloperGarden_Exception
- * @uses       Zend_Service_DeveloperGarden_SecurityTokenServer
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Client_Exception
+ * @uses       Zend2_Service_DeveloperGarden_Client_Soap
+ * @uses       Zend2_Service_DeveloperGarden_Credential
+ * @uses       Zend2_Service_DeveloperGarden_Exception
+ * @uses       Zend2_Service_DeveloperGarden_SecurityTokenServer
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
+abstract class Zend2_Service_DeveloperGarden_Client_AbstractClient
 {
     /**
      * constants for using with the odg api
@@ -68,7 +68,7 @@ abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
     protected $_serviceAuthId = 'https://odg.t-online.de';
 
     /**
-     * Variable that holds the Zend_Service_DeveloperGarden env value
+     * Variable that holds the Zend2_Service_DeveloperGarden env value
      *
      * @var int
      */
@@ -98,14 +98,14 @@ abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
     /**
      * class with credentials
      *
-     * @var Zend_Service_DeveloperGarden_Credential
+     * @var Zend2_Service_DeveloperGarden_Credential
      */
     protected $_credential = null;
 
     /**
      * The internal Soap Client
      *
-     * @var Zend_Soap_Client
+     * @var Zend2_Soap_Client
      */
     protected $_soapClient = null;
 
@@ -123,7 +123,7 @@ abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
      */
     public function __construct(array $options = array())
     {
-        $this->_credential = new Zend_Service_DeveloperGarden_Credential();
+        $this->_credential = new Zend2_Service_DeveloperGarden_Credential();
 
         while (list($name, $value) = each($options)) {
             switch (ucfirst($name)) {
@@ -142,7 +142,7 @@ abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
         }
 
         if (empty($this->_wsdlFile)) {
-            throw new Zend_Service_DeveloperGarden_Exception('_wsdlFile not set for this service.');
+            throw new Zend2_Service_DeveloperGarden_Exception('_wsdlFile not set for this service.');
         }
 
         if (!empty($this->_wsdlFileLocal)) {
@@ -150,7 +150,7 @@ abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
         }
 
         if (empty($this->_wsdlFileLocal) || $this->_wsdlFileLocal === false) {
-            throw new Zend_Service_DeveloperGarden_Exception('_wsdlFileLocal not set for this service.');
+            throw new Zend2_Service_DeveloperGarden_Exception('_wsdlFileLocal not set for this service.');
         }
     }
 
@@ -159,13 +159,13 @@ abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
      *
      * @param  string $name
      * @param  mixed $value
-     * @throws Zend_Service_DeveloperGarden_Client_Exception
-     * @return Zend_Service_DeveloperGarden_Client_AbstractClient
+     * @throws Zend2_Service_DeveloperGarden_Client_Exception
+     * @return Zend2_Service_DeveloperGarden_Client_AbstractClient
      */
     public function setOption($name, $value)
     {
         if (!is_string($name)) {
-            throw new Zend_Service_DeveloperGarden_Client_Exception('Incorrect option name: ' . $name);
+            throw new Zend2_Service_DeveloperGarden_Client_Exception('Incorrect option name: ' . $name);
         }
         $name = strtolower($name);
         if (array_key_exists($name, $this->_options)) {
@@ -194,10 +194,10 @@ abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
     /**
      * returns the internal soap client
      * if not allready exists we create an instance of
-     * Zend_Soap_Client
+     * Zend2_Soap_Client
      *
      * @final
-     * @return Zend_Service_DeveloperGarden_Client_Soap
+     * @return Zend2_Service_DeveloperGarden_Client_Soap
      */
     final public function getSoapClient()
     {
@@ -205,12 +205,12 @@ abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
             /**
              * init the soapClient
              */
-            $this->_soapClient = new Zend_Service_DeveloperGarden_Client_Soap(
+            $this->_soapClient = new Zend2_Service_DeveloperGarden_Client_Soap(
                 $this->getWsdl(),
                 $this->getClientOptions()
             );
             $this->_soapClient->setCredential($this->_credential);
-            $tokenService = new Zend_Service_DeveloperGarden_SecurityTokenServer(
+            $tokenService = new Zend2_Service_DeveloperGarden_SecurityTokenServer(
                 array(
                     'username'    => $this->_credential->getUsername(),
                     'password'    => $this->_credential->getPassword(),
@@ -228,7 +228,7 @@ abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
      * sets new environment
      *
      * @param int $environment
-     * @return Zend_Service_DeveloperGarden_Client_AbstractClient
+     * @return Zend2_Service_DeveloperGarden_Client_AbstractClient
      */
     public function setEnvironment($environment)
     {
@@ -267,7 +267,7 @@ abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
      * switch to the local wsdl file usage
      *
      * @param boolen $use
-     * @return Zend_Service_DeveloperGarden_Client_AbstractClient
+     * @return Zend2_Service_DeveloperGarden_Client_AbstractClient
      */
     public function setUseLocalWsdl($use = true)
     {
@@ -279,12 +279,12 @@ abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
      * sets a new wsdl file
      *
      * @param string $wsdlFile
-     * @return Zend_Service_DeveloperGarden_Client_AbstractClient
+     * @return Zend2_Service_DeveloperGarden_Client_AbstractClient
      */
     public function setWsdl($wsdlFile = null)
     {
         if (empty($wsdlFile)) {
-            throw new Zend_Service_DeveloperGarden_Exception('_wsdlFile not set for this service.');
+            throw new Zend2_Service_DeveloperGarden_Exception('_wsdlFile not set for this service.');
         }
         $this->_wsdlFile = $wsdlFile;
         return $this;
@@ -294,12 +294,12 @@ abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
      * sets a new local wsdl file
      *
      * @param string $wsdlFile
-     * @return Zend_Service_DeveloperGarden_Client_AbstractClient
+     * @return Zend2_Service_DeveloperGarden_Client_AbstractClient
      */
     public function setLocalWsdl($wsdlFile = null)
     {
         if (empty($wsdlFile)) {
-            throw new Zend_Service_DeveloperGarden_Exception('_wsdlFileLocal not set for this service.');
+            throw new Zend2_Service_DeveloperGarden_Exception('_wsdlFileLocal not set for this service.');
         }
         $this->_wsdlFileLocal = $wsdlFile;
         return $this;
@@ -318,7 +318,7 @@ abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
         if (!empty($this->_classMap)) {
             $options['classmap'] = $this->_classMap;
         }
-        $wsdlCache = Zend_Service_DeveloperGarden_SecurityTokenServer_Cache::getWsdlCache();
+        $wsdlCache = Zend2_Service_DeveloperGarden_SecurityTokenServer_Cache::getWsdlCache();
         if ($wsdlCache !== null) {
             $options['cache_wsdl'] = $wsdlCache;
         }
@@ -328,7 +328,7 @@ abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
     /**
      * returns the internal credential object
      *
-     * @return Zend_Service_DeveloperGarden_Credential
+     * @return Zend2_Service_DeveloperGarden_Credential
      */
     public function getCredential()
     {
@@ -366,16 +366,16 @@ abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
 
     /**
      * checks if the given action is valid
-     * otherwise it @throws Zend_Service_DeveloperGarden_Exception
+     * otherwise it @throws Zend2_Service_DeveloperGarden_Exception
      *
      * @param int $action
-     * @throws Zend_Service_DeveloperGarden_Client_Exception
+     * @throws Zend2_Service_DeveloperGarden_Client_Exception
      * @return void
      */
     static public function checkParticipantAction($action)
     {
         if (!array_key_exists($action, self::getParticipantActions())) {
-            throw new Zend_Service_DeveloperGarden_Client_Exception(
+            throw new Zend2_Service_DeveloperGarden_Client_Exception(
                 'Wrong Participant Action ' . $action . ' supplied.'
             );
         }
@@ -396,16 +396,16 @@ abstract class Zend_Service_DeveloperGarden_Client_AbstractClient
 
     /**
      * checks if the given environemnt is valid
-     * otherwise it @throws Zend_Service_DeveloperGarden_Client_Exception
+     * otherwise it @throws Zend2_Service_DeveloperGarden_Client_Exception
      *
      * @param int $environment
-     * @throws Zend_Service_DeveloperGarden_Client_Exception
+     * @throws Zend2_Service_DeveloperGarden_Client_Exception
      * @return void
      */
     static public function checkEnvironment($environment)
     {
         if (!array_key_exists($environment, self::getEnvironments())) {
-            throw new Zend_Service_DeveloperGarden_Client_Exception(
+            throw new Zend2_Service_DeveloperGarden_Client_Exception(
                 'Wrong environment ' . $environment . ' supplied.'
             );
         }

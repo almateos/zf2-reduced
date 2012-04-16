@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper;
+namespace Zend2\View\Helper;
 
-use Zend\View\Exception;
+use Zend2\View\Exception;
 
 /**
  * Helper for setting and retrieving title element for HTML head
  *
- * @uses       \Zend\Registry
- * @uses       \Zend\View\Exception
- * @uses       \Zend\View\Helper\Placeholder\Container\AbstractContainer
- * @uses       \Zend\View\Helper\Placeholder\Container\Standalone
- * @package    Zend_View
+ * @uses       \Zend2\Registry
+ * @uses       \Zend2\View\Exception
+ * @uses       \Zend2\View\Helper\Placeholder\Container\AbstractContainer
+ * @uses       \Zend2\View\Helper\Placeholder\Container\Standalone
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class HeadTitle extends Placeholder\Container\Standalone
@@ -41,7 +41,7 @@ class HeadTitle extends Placeholder\Container\Standalone
      * Registry key for placeholder
      * @var string
      */
-    protected $_regKey = 'Zend_View_Helper_HeadTitle';
+    protected $_regKey = 'Zend2_View_Helper_HeadTitle';
 
     /**
      * Whether or not auto-translation is enabled
@@ -52,7 +52,7 @@ class HeadTitle extends Placeholder\Container\Standalone
     /**
      * Translation object
      *
-     * @var \Zend\Translator\Adapter\Adapter
+     * @var \Zend2\Translator\Adapter\Adapter
      */
     protected $_translator;
 
@@ -69,7 +69,7 @@ class HeadTitle extends Placeholder\Container\Standalone
      * @param  string $title
      * @param  string $setType
      * @param  string $separator
-     * @return \Zend\View\Helper\HeadTitle
+     * @return \Zend2\View\Helper\HeadTitle
      */
     public function __invoke($title = null, $setType = null)
     {
@@ -126,19 +126,19 @@ class HeadTitle extends Placeholder\Container\Standalone
     /**
      * Sets a translation Adapter for translation
      *
-     * @param  Zend_Translator|\Zend\Translator\Adapter\Adapter $translate
-     * @return \Zend\View\Helper\HeadTitle
+     * @param  Zend2_Translator|\Zend2\Translator\Adapter\Adapter $translate
+     * @return \Zend2\View\Helper\HeadTitle
      * @throws Exception\InvalidArgumentException
      */
     public function setTranslator($translate)
     {
-        if ($translate instanceof \Zend\Translator\Adapter\AbstractAdapter) {
+        if ($translate instanceof \Zend2\Translator\Adapter\AbstractAdapter) {
             $this->_translator = $translate;
-        } elseif ($translate instanceof \Zend\Translator\Translator) {
+        } elseif ($translate instanceof \Zend2\Translator\Translator) {
             $this->_translator = $translate->getAdapter();
         } else {
             throw new Exception\InvalidArgumentException(
-                "You must set an instance of Zend_Translator or Zend_Translator_Adapter"
+                "You must set an instance of Zend2_Translator or Zend2_Translator_Adapter"
             );
         }
         return $this;
@@ -148,15 +148,15 @@ class HeadTitle extends Placeholder\Container\Standalone
      * Retrieve translation object
      *
      * If none is currently registered, attempts to pull it from the registry
-     * using the key 'Zend_Translator'.
+     * using the key 'Zend2_Translator'.
      *
-     * @return Zend_Translator_Adapter|null
+     * @return Zend2_Translator_Adapter|null
      */
     public function getTranslator()
     {
         if (null === $this->_translator) {
-            if (\Zend\Registry::isRegistered('Zend_Translator')) {
-                $this->setTranslator(\Zend\Registry::get('Zend_Translator'));
+            if (\Zend2\Registry::isRegistered('Zend2_Translator')) {
+                $this->setTranslator(\Zend2\Registry::get('Zend2_Translator'));
             }
         }
         return $this->_translator;
@@ -165,7 +165,7 @@ class HeadTitle extends Placeholder\Container\Standalone
     /**
      * Enables translation
      *
-     * @return \Zend\View\Helper\HeadTitle
+     * @return \Zend2\View\Helper\HeadTitle
      */
     public function enableTranslation()
     {
@@ -176,7 +176,7 @@ class HeadTitle extends Placeholder\Container\Standalone
     /**
      * Disables translation
      *
-     * @return \Zend\View\Helper\HeadTitle
+     * @return \Zend2\View\Helper\HeadTitle
      */
     public function disableTranslation()
     {

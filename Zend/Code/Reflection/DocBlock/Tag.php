@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Code\Reflection\DocBlock;
+namespace Zend2\Code\Reflection\DocBlock;
 
 interface Tag
 {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_TimeSync
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_TimeSync
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\TimeSync;
-use Zend\TimeSync\Exception;
+namespace Zend2\TimeSync;
+use Zend2\TimeSync\Exception;
 
 /**
  * NTP Protocol handling class
  *
- * @uses      \Zend\TimeSync\TimeSync
- * @uses      \Zend\TimeSync\Exception
- * @uses      \Zend\TimeSync\Protocol
- * @category  Zend
- * @package   Zend_TimeSync
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\TimeSync\TimeSync
+ * @uses      \Zend2\TimeSync\Exception
+ * @uses      \Zend2\TimeSync\Protocol
+ * @category  Zend2
+ * @package   Zend2_TimeSync
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Ntp extends Protocol
@@ -199,7 +199,7 @@ class Ntp extends Protocol
      * This will return an array with binary data listing:
      *
      * @return array
-     * @throws \Zend\TimeSync\Exception When timeserver can not be connected
+     * @throws \Zend2\TimeSync\Exception When timeserver can not be connected
      */
     protected function _read()
     {

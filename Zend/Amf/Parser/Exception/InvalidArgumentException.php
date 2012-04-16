@@ -1,9 +1,9 @@
 <?php
 
-namespace Zend\Amf\Parser\Exception;
+namespace Zend2\Amf\Parser\Exception;
 
 class InvalidArgumentException
     extends \InvalidArgumentException
-    implements \Zend\Amf\Parser\Exception
+    implements \Zend2\Amf\Parser\Exception
 {
 }

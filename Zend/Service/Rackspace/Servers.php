@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Service
+ * @category   Zend2
+ * @package    Zend2\Service
  * @subpackage Rackspace
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Rackspace;
+namespace Zend2\Service\Rackspace;
 
-use Zend\Http\Client as HttpClient,
-    Zend\Validator\Ip as IpValidator;
+use Zend2\Http\Client as HttpClient,
+    Zend2\Validator\Ip as IpValidator;
 
 class Servers extends Rackspace
 {
@@ -50,7 +50,7 @@ class Servers extends Rackspace
      * If $details is true returns detail info
      * 
      * @param  boolean $details
-     * @return Zend\Service\Rackspace\Servers\ServerList|boolean
+     * @return Zend2\Service\Rackspace\Servers\ServerList|boolean
      */
     public function listServers($details=false)
     {
@@ -85,7 +85,7 @@ class Servers extends Rackspace
      * Get the specified server
      * 
      * @param  string $id 
-     * @return Zend\Service\Rackspace\Servers\Server
+     * @return Zend2\Service\Rackspace\Servers\Server
      */
     public function getServer($id) 
     {
@@ -127,7 +127,7 @@ class Servers extends Rackspace
      * @param  array $data 
      * @param  array $metadata
      * @param  array $files
-     * @return Zend\Service\Rackspace\Servers\Server|boolean
+     * @return Zend2\Service\Rackspace\Servers\Server|boolean
      */
     public function createServer(array $data, $metadata=array(),$files=array())
     {
@@ -803,7 +803,7 @@ class Servers extends Rackspace
      * Get the list of the images
      * 
      * @param  boolean $details
-     * @return Zend\Service\Rackspace\Servers\ImageList|boolean 
+     * @return Zend2\Service\Rackspace\Servers\ImageList|boolean 
      */
     public function listImages($details=false)
     {
@@ -838,7 +838,7 @@ class Servers extends Rackspace
      * Get detail about an image
      * 
      * @param  string $id
-     * @return Zend\Service\Rackspace\Servers\Image|boolean
+     * @return Zend2\Service\Rackspace\Servers\Image|boolean
      */
     public function getImage($id)
     {
@@ -876,7 +876,7 @@ class Servers extends Rackspace
      * 
      * @param  string $serverId
      * @param  string $name 
-     * @return Zend\Service\Rackspace\Servers\Image
+     * @return Zend2\Service\Rackspace\Servers\Image
      */
     public function createImage($serverId,$name)
     {
@@ -1097,7 +1097,7 @@ class Servers extends Rackspace
      * Get the list of shared IP groups
      * 
      * @param  boolean $details
-     * @return Zend\Service\Rackspace\Servers\SharedIpGroupList|boolean 
+     * @return Zend2\Service\Rackspace\Servers\SharedIpGroupList|boolean 
      */
     public function listSharedIpGroups($details=false)
     {
@@ -1132,7 +1132,7 @@ class Servers extends Rackspace
      * Get the shared IP group
      * 
      * @param  integer $id
-     * @return Zend\Service\Rackspace\Servers\SharedIpGroup|boolean 
+     * @return Zend2\Service\Rackspace\Servers\SharedIpGroup|boolean 
      */
     public function getSharedIpGroup($id)
     {

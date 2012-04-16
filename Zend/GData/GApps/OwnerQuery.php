@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,17 +13,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id:$
  */
 
-namespace Zend\GData\GApps;
+namespace Zend2\GData\GApps;
 
-use Zend\GData\GApps;
+use Zend2\GData\GApps;
 
 /**
  * Assists in constructing queries for Google Apps owner entries.
@@ -31,15 +31,15 @@ use Zend\GData\GApps;
  * required.
  *
  * For information on submitting queries to a server, see the Google Apps
- * service class, \Zend\Gdata\Gapps.
+ * service class, \Zend2\Gdata\Gapps.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class OwnerQuery extends Zend\Gdata\Gapps\Query
+class OwnerQuery extends Zend2\Gdata\Gapps\Query
 {
 
     /**
@@ -122,13 +122,13 @@ class OwnerQuery extends Zend\Gdata\Gapps\Query
      */
     public function getQueryUrl()
     {
-        $uri = \Zend\Gdata\Gapps::APPS_BASE_FEED_URI;
-        $uri .= \Zend\Gdata\Gapps::APPS_GROUP_PATH;
+        $uri = \Zend2\Gdata\Gapps::APPS_BASE_FEED_URI;
+        $uri .= \Zend2\Gdata\Gapps::APPS_GROUP_PATH;
         $uri .= '/' . $this->_domain;
         if ($this->_groupId !== null) {
             $uri .= '/' . $this->_groupId;
         } else {
-            throw new \Zend\Gdata\App\InvalidArgumentException(
+            throw new \Zend2\Gdata\App\InvalidArgumentException(
                     'groupId must not be null');
         }
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_Response_Exception
- * @uses       Zend_Service_DeveloperGarden_Response_AbstractResponse
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Response_Exception
+ * @uses       Zend2_Service_DeveloperGarden_Response_AbstractResponse
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class Zend_Service_DeveloperGarden_Response_SendSms_AbstractSendSms
-    extends Zend_Service_DeveloperGarden_Response_AbstractResponse
+abstract class Zend2_Service_DeveloperGarden_Response_SendSms_AbstractSendSms
+    extends Zend2_Service_DeveloperGarden_Response_AbstractResponse
 {
     /**
      * the return from the sms request
@@ -42,13 +42,13 @@ abstract class Zend_Service_DeveloperGarden_Response_SendSms_AbstractSendSms
     /**
      * parse the response data and throws exceptions
      *
-     * @throws Zend_Service_DeveloperGarden_Response_Exception
-     * @return Zend_Service_DeveloperGarden_Response_AbstractResponse
+     * @throws Zend2_Service_DeveloperGarden_Response_Exception
+     * @return Zend2_Service_DeveloperGarden_Response_AbstractResponse
      */
     public function parse()
     {
         if ($this->hasError()) {
-            throw new Zend_Service_DeveloperGarden_Response_Exception(
+            throw new Zend2_Service_DeveloperGarden_Response_Exception(
                 $this->getErrorMessage(),
                 $this->getErrorCode()
             );

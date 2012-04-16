@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,44 +12,44 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper\Placeholder;
+namespace Zend2\View\Helper\Placeholder;
 
-use Zend\View\Exception;
+use Zend2\View\Exception;
 
 /**
  * Registry for placeholder containers
  *
  * @uses       ReflectionClass
- * @uses       \Zend\Loader
- * @uses       \Zend\Registry
- * @uses       \Zend\View\Helper\Placeholder\Container
- * @uses       \Zend\View\Helper\Placeholder\Container\AbstractContainer
- * @uses       \Zend\View\Helper\Placeholder\Registry\Exception
- * @package    Zend_View
+ * @uses       \Zend2\Loader
+ * @uses       \Zend2\Registry
+ * @uses       \Zend2\View\Helper\Placeholder\Container
+ * @uses       \Zend2\View\Helper\Placeholder\Container\AbstractContainer
+ * @uses       \Zend2\View\Helper\Placeholder\Registry\Exception
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Registry
 {
     /**
-     * Zend_Registry key under which placeholder registry exists
+     * Zend2_Registry key under which placeholder registry exists
      * @const string
      */
-    const REGISTRY_KEY = 'Zend\View\Helper\Placeholder\Registry';
+    const REGISTRY_KEY = 'Zend2\View\Helper\Placeholder\Registry';
 
     /**
      * Default container class
      * @var string
      */
-    protected $_containerClass = 'Zend\View\Helper\Placeholder\Container';
+    protected $_containerClass = 'Zend2\View\Helper\Placeholder\Container';
 
     /**
      * Placeholder containers
@@ -64,11 +64,11 @@ class Registry
      */
     public static function getRegistry()
     {
-        if (\Zend\Registry::isRegistered(self::REGISTRY_KEY)) {
-            $registry = \Zend\Registry::get(self::REGISTRY_KEY);
+        if (\Zend2\Registry::isRegistered(self::REGISTRY_KEY)) {
+            $registry = \Zend2\Registry::get(self::REGISTRY_KEY);
         } else {
             $registry = new self();
-            \Zend\Registry::set(self::REGISTRY_KEY, $registry);
+            \Zend2\Registry::set(self::REGISTRY_KEY, $registry);
         }
 
         return $registry;
@@ -79,7 +79,7 @@ class Registry
      *
      * @param  string $key
      * @param  array $value
-     * @return \Zend\View\Helper\Placeholder\Container\AbstractContainer
+     * @return \Zend2\View\Helper\Placeholder\Container\AbstractContainer
      */
     public function createContainer($key, array $value = array())
     {
@@ -93,7 +93,7 @@ class Registry
      * Retrieve a placeholder container
      *
      * @param  string $key
-     * @return \Zend\View\Helper\Placeholder\Container\AbstractContainer
+     * @return \Zend2\View\Helper\Placeholder\Container\AbstractContainer
      */
     public function getContainer($key)
     {
@@ -124,10 +124,10 @@ class Registry
      * Set the container for an item in the registry
      *
      * @param  string $key
-     * @param  Zend\View\Placeholder\Container\AbstractContainer $container
-     * @return Zend\View\Placeholder\Registry
+     * @param  Zend2\View\Placeholder\Container\AbstractContainer $container
+     * @return Zend2\View\Placeholder\Registry
      */
-    public function setContainer($key, \Zend\View\Helper\Placeholder\Container\AbstractContainer $container)
+    public function setContainer($key, \Zend2\View\Helper\Placeholder\Container\AbstractContainer $container)
     {
         $key = (string) $key;
         $this->_items[$key] = $container;
@@ -155,17 +155,17 @@ class Registry
      * Set the container class to use
      *
      * @param  string $name
-     * @return \Zend\View\Helper\Placeholder\Registry
+     * @return \Zend2\View\Helper\Placeholder\Registry
      * @throws Exception\InvalidArgumentException
      */
     public function setContainerClass($name)
     {
         if (!class_exists($name)) {
-            \Zend\Loader::loadClass($name);
+            \Zend2\Loader::loadClass($name);
         }
 
 
-        if (!in_array('Zend\View\Helper\Placeholder\Container\AbstractContainer', class_parents($name))) {
+        if (!in_array('Zend2\View\Helper\Placeholder\Container\AbstractContainer', class_parents($name))) {
             throw new Exception\InvalidArgumentException('Invalid Container class specified');
         }
 

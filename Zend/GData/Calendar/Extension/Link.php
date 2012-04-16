@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,41 +12,41 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Calendar\Extension;
+namespace Zend2\GData\Calendar\Extension;
 
 /**
  * Specialized Link class for use with Calendar. Enables use of gCal extension elements.
  *
- * @uses       \Zend\GData\App\Extension\Link
- * @uses       \Zend\GData\Calendar
- * @uses       \Zend\GData\Calendar\Extension\WebContent
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Extension\Link
+ * @uses       \Zend2\GData\Calendar
+ * @uses       \Zend2\GData\Calendar\Extension\WebContent
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Link extends \Zend\GData\App\Extension\Link
+class Link extends \Zend2\GData\App\Extension\Link
 {
 
     protected $_webContent = null;
 
     /**
-     * Constructs a new Zend_Gdata_Calendar_Extension_Link object.
-     * @see Zend_Gdata_App_Extension_Link#__construct
-     * @param Zend_Gdata_Calendar_Extension_Webcontent $webContent
+     * Constructs a new Zend2_Gdata_Calendar_Extension_Link object.
+     * @see Zend2_Gdata_App_Extension_Link#__construct
+     * @param Zend2_Gdata_Calendar_Extension_Webcontent $webContent
      */
     public function __construct($href = null, $rel = null, $type = null,
             $hrefLang = null, $title = null, $length = null, $webContent = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Calendar::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\Calendar::$namespaces);
         parent::__construct($href, $rel, $type, $hrefLang, $title, $length);
         $this->_webContent = $webContent;
     }
@@ -94,7 +94,7 @@ class Link extends \Zend\GData\App\Extension\Link
     /**
      * Get the value for this element's WebContent attribute.
      *
-     * @return Zend_Gdata_Calendar_Extension_Webcontent The WebContent value
+     * @return Zend2_Gdata_Calendar_Extension_Webcontent The WebContent value
      */
     public function getWebContent()
     {
@@ -104,8 +104,8 @@ class Link extends \Zend\GData\App\Extension\Link
     /**
      * Set the value for this element's WebContent attribute.
      *
-     * @param \Zend\GData\Calendar\Extension\WebContent $value The desired value for this attribute.
-     * @return Zend_Calendar_Extension_Link The element being modified.  Provides a fluent interface.
+     * @param \Zend2\GData\Calendar\Extension\WebContent $value The desired value for this attribute.
+     * @return Zend2_Calendar_Extension_Link The element being modified.  Provides a fluent interface.
      */
     public function setWebContent($value)
     {

@@ -10,42 +10,42 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Cloud\QueueService
+ * @category   Zend2
+ * @package    Zend2\Cloud\QueueService
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * namespace
  */
-namespace Zend\Cloud\QueueService\Adapter;
+namespace Zend2\Cloud\QueueService\Adapter;
 
-use Zend\Cloud\QueueService\Exception,
-    Zend\Queue\Queue,
-    Zend\Config\Config;
+use Zend2\Cloud\QueueService\Exception,
+    Zend2\Queue\Queue,
+    Zend2\Config\Config;
 
 /**
  * WindowsAzure adapter for simple queue service.
  *
- * @category   Zend
- * @package    Zend\Cloud\QueueService
+ * @category   Zend2
+ * @package    Zend2\Cloud\QueueService
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class ZendQueue extends AbstractAdapter
+class Zend2Queue extends AbstractAdapter
 {
     /**
-     * Options array keys for the Zend\Queue adapter.
+     * Options array keys for the Zend2\Queue adapter.
      */
     const ADAPTER = 'adapter';
 
     /**
      * Storage client
      *
-     * @var Zend\Queue
+     * @var Zend2\Queue
      */
     protected $_queue = null;
 
@@ -57,7 +57,7 @@ class ZendQueue extends AbstractAdapter
     /**
      * Constructor
      *
-     * @param  array|Zend\Config\Config $options
+     * @param  array|Zend2\Config\Config $options
      * @return void
      */
     public function __construct ($options = array())
@@ -78,16 +78,16 @@ class ZendQueue extends AbstractAdapter
             $this->setMessageSetClass($options[self::MESSAGESET_CLASS]);
         }
 
-        // Build Zend\Service\WindowsAzure\Storage\Blob instance
+        // Build Zend2\Service\WindowsAzure\Storage\Blob instance
         if (!isset($options[self::ADAPTER])) {
-            throw new Exception\InvalidArgumentException('No Zend\Queue adapter provided');
+            throw new Exception\InvalidArgumentException('No Zend2\Queue adapter provided');
         } else {
             $adapter = $options[self::ADAPTER];
             unset($options[self::ADAPTER]);
         }
         try {
             $this->_queue = new Queue($adapter, $options);
-        } catch (Zend\Queue\Exception $e) {
+        } catch (Zend2\Queue\Exception $e) {
             throw new Exception\RunTimeException('Error on create: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -106,7 +106,7 @@ class ZendQueue extends AbstractAdapter
         try {
             $this->_queues[$name] = $this->_queue->createQueue($name, isset($options[Queue::TIMEOUT])?$options[Queue::TIMEOUT]:null);
             return $name;
-        } catch (Zend\Queue\Exception $e) {
+        } catch (Zend2\Queue\Exception $e) {
             throw new Exception\RuntimeException('Error on queue creation: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -128,7 +128,7 @@ class ZendQueue extends AbstractAdapter
                 unset($this->_queues[$queueId]);
                 return true;
             }
-        } catch (Zend\Queue\Exception $e) {
+        } catch (Zend2\Queue\Exception $e) {
             throw new Exception\RuntimeException('Error on queue deletion: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -143,7 +143,7 @@ class ZendQueue extends AbstractAdapter
     {
         try {
             return $this->_queue->getQueues();
-        } catch (Zend\Queue\Exception $e) {
+        } catch (Zend2\Queue\Exception $e) {
             throw new Exception\RuntimeException('Error on listing queues: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -162,7 +162,7 @@ class ZendQueue extends AbstractAdapter
         }
         try {
             return $this->_queues[$queueId]->getOptions();
-        } catch (Zend\Queue\Exception $e) {
+        } catch (Zend2\Queue\Exception $e) {
             throw new Exception\RuntimeException('Error on fetching queue metadata: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -184,7 +184,7 @@ class ZendQueue extends AbstractAdapter
         }
         try {
             return $this->_queues[$queueId]->setOptions($metadata);
-        } catch (Zend\Queue\Exception $e) {
+        } catch (Zend2\Queue\Exception $e) {
             throw new Exception\RuntimeException('Error on setting queue metadata: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -204,7 +204,7 @@ class ZendQueue extends AbstractAdapter
         }
         try {
             return $this->_queues[$queueId]->send($message);
-        } catch (Zend\Queue\Exception $e) {
+        } catch (Zend2\Queue\Exception $e) {
             throw new Exception\RunTimeException('Error on sending message: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -230,17 +230,17 @@ class ZendQueue extends AbstractAdapter
             } else {
                 return $this->_makeMessages(array($res));
             }
-        } catch (Zend\Queue\Exception $e) {
+        } catch (Zend2\Queue\Exception $e) {
             throw new Exception\RuntimeException('Error on recieving messages: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
 
     /**
-     * Create Zend\Cloud\QueueService\Message array for
+     * Create Zend2\Cloud\QueueService\Message array for
      * Azure messages.
      *
      * @param array $messages
-     * @return Zend\Cloud\QueueService\Message[]
+     * @return Zend2\Cloud\QueueService\Message[]
      */
     protected function _makeMessages($messages)
     {
@@ -257,7 +257,7 @@ class ZendQueue extends AbstractAdapter
      * Delete the specified message from the specified queue.
      *
      * @param  string $queueId
-     * @param  Zend\Cloud\QueueService\Message $message Message ID or message
+     * @param  Zend2\Cloud\QueueService\Message $message Message ID or message
      * @param  array  $options
      * @return void
      */
@@ -267,14 +267,14 @@ class ZendQueue extends AbstractAdapter
             throw new Exception\InvalidArgumentException("No such queue: $queueId");
         }
         try {
-            if ($message instanceof \Zend\Cloud\QueueService\Message) {
+            if ($message instanceof \Zend2\Cloud\QueueService\Message) {
                 $message = $message->getMessage();
             } else {
-                throw new Exception\InvalidArgumentException('Cannot delete the message: Zend\Queue\Message object required');
+                throw new Exception\InvalidArgumentException('Cannot delete the message: Zend2\Queue\Message object required');
             }
 
             return $this->_queues[$queueId]->deleteMessage($message);
-        } catch (Zend\Queue\Exception $e) {
+        } catch (Zend2\Queue\Exception $e) {
             throw new Exception\RuntimeException('Error on deleting a message: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -285,16 +285,16 @@ class ZendQueue extends AbstractAdapter
      * @param  string $queueId
      * @param  int $num How many messages
      * @param  array  $options
-     * @return Zend\Cloud\QueueService\Message[]
+     * @return Zend2\Cloud\QueueService\Message[]
      */
     public function peekMessages($queueId, $num = 1, $options = null)
     {
-        throw new Exception\OperationNotAvailableException('ZendQueue doesn\'t currently support message peeking');
+        throw new Exception\OperationNotAvailableException('Zend2Queue doesn\'t currently support message peeking');
     }
 
     /**
      * Get Azure implementation
-     * @return Zend\Queue
+     * @return Zend2\Queue
      */
     public function getClient()
     {

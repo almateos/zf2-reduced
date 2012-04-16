@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License;
  */
 
-namespace Zend\Filter;
+namespace Zend2\Filter;
 
 /**
- * @uses       Zend\Filter\Exception
- * @uses       Zend\Filter\AbstractFilter
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Filter\Exception
+ * @uses       Zend2\Filter\AbstractFilter
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Null extends AbstractFilter
@@ -58,11 +58,11 @@ class Null extends AbstractFilter
     /**
      * Constructor
      *
-     * @param string|array|\Zend\Config\Config $options OPTIONAL
+     * @param string|array|\Zend2\Config\Config $options OPTIONAL
      */
     public function __construct($options = null)
     {
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         } elseif (!is_array($options)) {
             $options = func_get_args();
@@ -94,8 +94,8 @@ class Null extends AbstractFilter
      * Set the null types
      *
      * @param  integer|array $type
-     * @throws \Zend\Filter\Exception
-     * @return \Zend\Filter\Null
+     * @throws \Zend2\Filter\Exception
+     * @return \Zend2\Filter\Null
      */
     public function setType($type = null)
     {
@@ -125,7 +125,7 @@ class Null extends AbstractFilter
     }
 
     /**
-     * Defined by Zend_Filter_Interface
+     * Defined by Zend2_Filter_Interface
      *
      * Returns null representation of $value, if value is empty and matches
      * types that should be considered null.

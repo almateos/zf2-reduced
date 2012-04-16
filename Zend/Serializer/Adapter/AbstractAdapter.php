@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Serializer
+ * @category   Zend2
+ * @package    Zend2_Serializer
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Serializer\Adapter;
+namespace Zend2\Serializer\Adapter;
 
-use Zend\Serializer\Adapter as SerializationAdapter,
-    Zend\Serializer\Exception\InvalidArgumentException;
+use Zend2\Serializer\Adapter as SerializationAdapter,
+    Zend2\Serializer\Exception\InvalidArgumentException;
 
 /**
- * @uses       \Zend\Serializer\Adapter
- * @uses       \Zend\Serializer\Exception\InvalidArgumentException
- * @category   Zend
- * @package    Zend_Serializer
+ * @uses       \Zend2\Serializer\Adapter
+ * @uses       \Zend2\Serializer\Exception\InvalidArgumentException
+ * @category   Zend2
+ * @package    Zend2_Serializer
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractAdapter implements SerializationAdapter
@@ -45,7 +45,7 @@ abstract class AbstractAdapter implements SerializationAdapter
     /**
      * Constructor
      *
-     * @param array|Zend\Config\Config $opts Serializer options
+     * @param array|Zend2\Config\Config $opts Serializer options
      */
     public function __construct($opts = array()) 
     {
@@ -55,12 +55,12 @@ abstract class AbstractAdapter implements SerializationAdapter
     /**
      * Set serializer options
      *
-     * @param  array|Zend\Config\Config $opts Serializer options
-     * @return Zend\Serializer\Adapter\AbstractAdapter
+     * @param  array|Zend2\Config\Config $opts Serializer options
+     * @return Zend2\Serializer\Adapter\AbstractAdapter
      */
     public function setOptions($opts) 
     {
-        if ($opts instanceof \Zend\Config\Config) {
+        if ($opts instanceof \Zend2\Config\Config) {
             $opts = $opts->toArray();
         } else {
             $opts = (array) $opts;
@@ -77,7 +77,7 @@ abstract class AbstractAdapter implements SerializationAdapter
      *
      * @param  string $name Option name
      * @param  mixed $value Option value
-     * @return Zend\Serializer\Adapter\AbstractAdapter
+     * @return Zend2\Serializer\Adapter\AbstractAdapter
      */
     public function setOption($name, $value) 
     {
@@ -100,7 +100,7 @@ abstract class AbstractAdapter implements SerializationAdapter
      *
      * @param  string $name
      * @return mixed
-     * @throws Zend\Serializer\Exception
+     * @throws Zend2\Serializer\Exception
      */
     public function getOption($name) 
     {

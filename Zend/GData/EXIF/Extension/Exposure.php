@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,40 +12,40 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Exif
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\EXIF\Extension;
+namespace Zend2\GData\EXIF\Extension;
 
 /**
  * Represents the exif:exposure element used by the Gdata Exif extensions.
  *
- * @uses       \Zend\GData\EXIF
- * @uses       \Zend\GData\Extension
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\EXIF
+ * @uses       \Zend2\GData\Extension
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Exif
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Exposure extends \Zend\GData\Extension
+class Exposure extends \Zend2\GData\Extension
 {
 
     protected $_rootNamespace = 'exif';
     protected $_rootElement = 'exposure';
 
     /**
-     * Constructs a new Zend_Gdata_Exif_Extension_Exposure object.
+     * Constructs a new Zend2_Gdata_Exif_Extension_Exposure object.
      *
      * @param string $text (optional) The value to use for this element.
      */
     public function __construct($text = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\EXIF::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\EXIF::$namespaces);
         parent::__construct();
         $this->setText($text);
     }

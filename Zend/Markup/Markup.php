@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Markup
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Markup
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Markup;
+namespace Zend2\Markup;
 
-use Zend\Loader\Broker;
+use Zend2\Loader\Broker;
 
 /**
- * @category   Zend
- * @package    Zend_Markup
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Markup
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Markup
@@ -37,27 +37,27 @@ class Markup
     /**
      * The parser broker
      *
-     * @var \Zend\Loader\Broker
+     * @var \Zend2\Loader\Broker
      */
     protected static $parserBroker;
 
     /**
      * The renderer broker
      *
-     * @var \Zend\Loader\Broker
+     * @var \Zend2\Loader\Broker
      */
     protected static $rendererBroker;
 
 
     /**
-     * Disable instantiation of \Zend\Markup\Markup
+     * Disable instantiation of \Zend2\Markup\Markup
      */
     private function __construct() { }
 
     /**
      * Get the parser broker
      *
-     * @return \Zend\Loader\Broker
+     * @return \Zend2\Loader\Broker
      */
     public static function getParserBroker()
     {
@@ -71,7 +71,7 @@ class Markup
     /**
      * Get the renderer broker
      *
-     * @return \Zend\Loader\Broker
+     * @return \Zend2\Loader\Broker
      */
     public static function getRendererBroker()
     {
@@ -89,7 +89,7 @@ class Markup
      * @param  string $renderer
      * @param  array $parserOptions
      * @param  array $rendererOptions
-     * @return \Zend\Markup\Renderer\AbstractRenderer
+     * @return \Zend2\Markup\Renderer\AbstractRenderer
      */
     public static function factory($parser, $renderer = 'Html', array $parserOptions = array(), array $rendererOptions = array())
     {

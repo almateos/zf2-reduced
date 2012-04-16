@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_Request_AbstractRequest
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Request_AbstractRequest
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceTemplateRequest
-    extends Zend_Service_DeveloperGarden_Request_AbstractRequest
+class Zend2_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceTemplateRequest
+    extends Zend2_Service_DeveloperGarden_Request_AbstractRequest
 {
     /**
      * unique owner id
@@ -41,12 +41,12 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceTempla
     /**
      * object with details for this conference
      *
-     * @var Zend_Service_DeveloperGarden_ConferenceCall_ConferenceDetail
+     * @var Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceDetail
      */
     public $detail = null;
 
     /**
-     * array with Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail elements
+     * array with Zend2_Service_DeveloperGarden_ConferenceCall_ParticipantDetail elements
      *
      * @var array
      */
@@ -57,11 +57,11 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceTempla
      *
      * @param integer $environment
      * @param string $ownerId
-     * @param Zend_Service_DeveloperGarden_ConferenceCall_ConferenceDetail $conferenceDetails
+     * @param Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceDetail $conferenceDetails
      * @param array $conferenceParticipants
      */
     public function __construct($environment, $ownerId,
-        Zend_Service_DeveloperGarden_ConferenceCall_ConferenceDetail $conferenceDetails,
+        Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceDetail $conferenceDetails,
         array $conferenceParticipants = null
     ) {
         parent::__construct($environment);
@@ -74,7 +74,7 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceTempla
      * sets $participants
      *
      * @param array $participants
-     * @return Zend_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceTemplateRequest
+     * @return Zend2_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceTemplateRequest
      */
     public function setParticipants(array $participants = null)
     {
@@ -85,10 +85,10 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceTempla
     /**
      * sets $detail
      *
-     * @param Zend_Service_DeveloperGarden_ConferenceCall_ConferenceDetail $detail
-     * @return Zend_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceTemplateRequest
+     * @param Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceDetail $detail
+     * @return Zend2_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceTemplateRequest
      */
-    public function setDetail(Zend_Service_DeveloperGarden_ConferenceCall_ConferenceDetail $detail)
+    public function setDetail(Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceDetail $detail)
     {
         $this->detail = $detail;
         return $this;
@@ -98,7 +98,7 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceTempla
      * sets $ownerId
      *
      * @param string $ownerId
-     * @return Zend_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceTemplateRequest
+     * @return Zend2_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceTemplateRequest
      */
     public function setOwnerId($ownerId)
     {

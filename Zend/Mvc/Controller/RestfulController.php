@@ -1,22 +1,22 @@
 <?php
 
-namespace Zend\Mvc\Controller;
+namespace Zend2\Mvc\Controller;
 
-use Zend\Di\Locator,
-    Zend\EventManager\EventCollection,
-    Zend\EventManager\EventDescription as Event,
-    Zend\EventManager\EventManager,
-    Zend\Http\Request as HttpRequest,
-    Zend\Http\PhpEnvironment\Response as HttpResponse,
-    Zend\Loader\Broker,
-    Zend\Loader\Pluggable,
-    Zend\Stdlib\Dispatchable,
-    Zend\Stdlib\RequestDescription as Request,
-    Zend\Stdlib\ResponseDescription as Response,
-    Zend\Mvc\Exception,
-    Zend\Mvc\InjectApplicationEvent,
-    Zend\Mvc\LocatorAware,
-    Zend\Mvc\MvcEvent;
+use Zend2\Di\Locator,
+    Zend2\EventManager\EventCollection,
+    Zend2\EventManager\EventDescription as Event,
+    Zend2\EventManager\EventManager,
+    Zend2\Http\Request as HttpRequest,
+    Zend2\Http\PhpEnvironment\Response as HttpResponse,
+    Zend2\Loader\Broker,
+    Zend2\Loader\Pluggable,
+    Zend2\Stdlib\Dispatchable,
+    Zend2\Stdlib\RequestDescription as Request,
+    Zend2\Stdlib\ResponseDescription as Response,
+    Zend2\Mvc\Exception,
+    Zend2\Mvc\InjectApplicationEvent,
+    Zend2\Mvc\LocatorAware,
+    Zend2\Mvc\MvcEvent;
 
 /**
  * Abstract RESTful controller
@@ -234,7 +234,7 @@ abstract class RestfulController implements Dispatchable, InjectApplicationEvent
     {
         if (!$this->events) {
             $this->setEventManager(new EventManager(array(
-                'Zend\Stdlib\Dispatchable',
+                'Zend2\Stdlib\Dispatchable',
                 __CLASS__,
                 get_called_class(),
             )));
@@ -301,7 +301,7 @@ abstract class RestfulController implements Dispatchable, InjectApplicationEvent
     /**
      * Get plugin broker instance
      *
-     * @return Zend\Loader\Broker
+     * @return Zend2\Loader\Broker
      */
     public function getBroker()
     {
@@ -315,12 +315,12 @@ abstract class RestfulController implements Dispatchable, InjectApplicationEvent
      * Set plugin broker instance
      *
      * @param  string|Broker $broker Plugin broker to load plugins
-     * @return Zend\Loader\Pluggable
+     * @return Zend2\Loader\Pluggable
      */
     public function setBroker($broker)
     {
         if (!$broker instanceof Broker) {
-            throw new Exception\InvalidArgumentException('Broker must implement Zend\Loader\Broker');
+            throw new Exception\InvalidArgumentException('Broker must implement Zend2\Loader\Broker');
         }
         $this->broker = $broker;
         if (method_exists($broker, 'setController')) {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Module;
+namespace Zend2\Module;
 
-use Zend\EventManager\EventCollection;
+use Zend2\EventManager\EventCollection;
 
 interface ModuleHandler
 {

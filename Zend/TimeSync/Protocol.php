@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_TimeSync
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_TimeSync
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\TimeSync;
-use Zend\TimeSync\Exception;
+namespace Zend2\TimeSync;
+use Zend2\TimeSync\Exception;
 
 /**
  * Abstract class definition for all timeserver protocols
  *
- * @uses      \Zend\Date\Date
- * @uses      \Zend\TimeSync\TimeSync
- * @uses      \Zend\TimeSync\Exception
- * @category  Zend
- * @package   Zend_TimeSync
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Date\Date
+ * @uses      \Zend2\TimeSync\TimeSync
+ * @uses      \Zend2\TimeSync\Exception
+ * @category  Zend2
+ * @package   Zend2_TimeSync
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Protocol
@@ -96,7 +96,7 @@ abstract class Protocol
      * Connect to the specified timeserver.
      *
      * @return void
-     * @throws \Zend\TimeSync\Exception When the connection failed
+     * @throws \Zend2\TimeSync\Exception When the connection failed
      */
     protected function _connect()
     {
@@ -139,15 +139,15 @@ abstract class Protocol
     /**
      * Query this timeserver without using the fallback mechanism
      *
-     * @param  string|\Zend\Locale\Locale $locale (Optional) Locale
-     * @return \Zend\Date\Date
+     * @param  string|\Zend2\Locale\Locale $locale (Optional) Locale
+     * @return \Zend2\Date\Date
      */
     public function getDate($locale = null)
     {
         $this->_write($this->_prepare());
         $timestamp = $this->_extract($this->_read());
 
-        $date = new \Zend\Date\Date($this, null, $locale);
+        $date = new \Zend2\Date\Date($this, null, $locale);
         return $date;
     }
 }

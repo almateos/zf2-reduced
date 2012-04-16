@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_WindowsAzure_Exception
- * @uses       Zend_Service_WindowsAzure_Storage_TableEntity
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @uses       Zend2_Service_WindowsAzure_Exception
+ * @uses       Zend2_Service_WindowsAzure_Storage_TableEntity
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_WindowsAzure_Storage_DynamicTableEntity extends Zend_Service_WindowsAzure_Storage_TableEntity
+class Zend2_Service_WindowsAzure_Storage_DynamicTableEntity extends Zend2_Service_WindowsAzure_Storage_TableEntity
 {   
     /**
      * Dynamic properties
@@ -62,7 +62,7 @@ class Zend_Service_WindowsAzure_Storage_DynamicTableEntity extends Zend_Service_
      * @param string $name Property name
      * @param mixed $value Property value
      * @param string $type Property type (Edm.xxxx)
-     * @return Zend_Service_WindowsAzure_Storage_DynamicTableEntity
+     * @return Zend2_Service_WindowsAzure_Storage_DynamicTableEntity
      */
     public function setAzureProperty($name, $value = '', $type = null)
     {
@@ -104,7 +104,7 @@ class Zend_Service_WindowsAzure_Storage_DynamicTableEntity extends Zend_Service_
      * 
      * @param string $name Property name
      * @param string $type Property type (Edm.xxxx)
-     * @return Zend_Service_WindowsAzure_Storage_DynamicTableEntity
+     * @return Zend2_Service_WindowsAzure_Storage_DynamicTableEntity
      */
     public function setAzurePropertyType($name, $type = 'Edm.String')
     {
@@ -122,7 +122,7 @@ class Zend_Service_WindowsAzure_Storage_DynamicTableEntity extends Zend_Service_
      * @param string $name Property name
      * @param mixed $value Property value
      * @param string $type Property type (Edm.xxxx)
-     * @return Zend_Service_WindowsAzure_Storage_DynamicTableEntity
+     * @return Zend2_Service_WindowsAzure_Storage_DynamicTableEntity
      */
     public function getAzureProperty($name)
     {
@@ -172,8 +172,8 @@ class Zend_Service_WindowsAzure_Storage_DynamicTableEntity extends Zend_Service_
      * Set Azure values
      * 
      * @param array $values
-     * @param boolean $throwOnError Throw Zend_Service_WindowsAzure_Exception when a property is not specified in $values?
-     * @throws Zend_Service_WindowsAzure_Exception
+     * @param boolean $throwOnError Throw Zend2_Service_WindowsAzure_Exception when a property is not specified in $values?
+     * @throws Zend2_Service_WindowsAzure_Exception
      */
     public function setAzureValues($values = array(), $throwOnError = false)
     {

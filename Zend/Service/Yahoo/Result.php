@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Yahoo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * @uses       DOMXPath
- * @uses       Zend_Service_Yahoo_Image
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_Yahoo_Image
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Yahoo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_Yahoo_Result
+class Zend2_Service_Yahoo_Result
 {
     /**
      * The title of the search entry
@@ -113,7 +113,7 @@ class Zend_Service_Yahoo_Result
     {
         $node = $this->_xpath->query('./yh:Thumbnail', $this->_result);
         if ($node->length == 1) {
-            $this->Thumbnail = new Zend_Service_Yahoo_Image($node->item(0), $this->_namespace);
+            $this->Thumbnail = new Zend2_Service_Yahoo_Image($node->item(0), $this->_namespace);
         } else {
             $this->Thumbnail = null;
         }

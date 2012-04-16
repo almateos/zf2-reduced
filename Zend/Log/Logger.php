@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Log
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Log
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Log;
+namespace Zend2\Log;
 
 use DateTime,
-    Zend\Stdlib\SplPriorityQueue,
+    Zend2\Stdlib\SplPriorityQueue,
     Traversable,
-    Zend\Loader\Broker,
-    Zend\Loader\Pluggable,
-    Zend\Stdlib\ArrayUtils;
+    Zend2\Loader\Broker,
+    Zend2\Loader\Pluggable,
+    Zend2\Stdlib\ArrayUtils;
 
 /**
  * Logging messages with a stack of backends
  *
- * @category   Zend
- * @package    Zend_Log
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Log
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Logger implements Loggable, Pluggable
@@ -178,7 +178,7 @@ class Logger implements Loggable, Pluggable
         }
         if (!$broker instanceof Broker) {
             throw new Exception\InvalidArgumentException(sprintf(
-                'Writer broker must implement Zend\Loader\Broker; received %s',
+                'Writer broker must implement Zend2\Loader\Broker; received %s',
                 is_object($broker) ? get_class($broker) : gettype($broker)
             ));
         }
@@ -213,7 +213,7 @@ class Logger implements Loggable, Pluggable
             $writer = $this->plugin($writer);
         } elseif (!$writer instanceof Writer) {
             throw new Exception\InvalidArgumentException(sprintf(
-                'Writer must implement Zend\Log\Writer; received "%s"',
+                'Writer must implement Zend2\Log\Writer; received "%s"',
                 is_object($writer) ? get_class($writer) : gettype($writer)
             ));
         }
@@ -242,11 +242,11 @@ class Logger implements Loggable, Pluggable
     public function setWriters($writers)
     {
         if (!$writers instanceof SplPriorityQueue) {
-            throw new Exception\InvalidArgumentException('Writers must be a SplPriorityQueue of Zend\Log\Writer');
+            throw new Exception\InvalidArgumentException('Writers must be a SplPriorityQueue of Zend2\Log\Writer');
         }
         foreach ($writers->toArray() as $writer) {
             if (!$writer instanceof Writer) {
-                throw new Exception\InvalidArgumentException('Writers must be a SplPriorityQueue of Zend\Log\Writer');
+                throw new Exception\InvalidArgumentException('Writers must be a SplPriorityQueue of Zend2\Log\Writer');
             }
         }
         $this->writers = $writers;

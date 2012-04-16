@@ -1,10 +1,10 @@
 <?php
 
-namespace Zend\Date\Exception;
+namespace Zend2\Date\Exception;
 
 class RuntimeException
     extends \RuntimeException
-    implements \Zend\Date\Exception
+    implements \Zend2\Date\Exception
 {
     
 }

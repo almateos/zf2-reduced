@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @uses       Zend\Cloud\Infrastructure\Adapter\Exception
- * @category   Zend
- * @package    Zend\Cloud\Infrastructure\Adapter
+ * @uses       Zend2\Cloud\Infrastructure\Adapter\Exception
+ * @category   Zend2
+ * @package    Zend2\Cloud\Infrastructure\Adapter
  * @subpackage Exception
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Cloud\Infrastructure\Adapter\Exception;
+namespace Zend2\Cloud\Infrastructure\Adapter\Exception;
 
-use \Zend\Cloud\Infrastructure\Adapter\Exception;
+use \Zend2\Cloud\Infrastructure\Adapter\Exception;
 
 /**
- * @category   Zend
- * @package    Zend\Cloud\Infrastructure\Adapter
+ * @category   Zend2
+ * @package    Zend2\Cloud\Infrastructure\Adapter
  * @subpackage Exception
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class RuntimeException extends \RuntimeException implements Exception

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Filter\File;
-use Zend\Filter,
-    Zend\Filter\Exception;
+namespace Zend2\Filter\File;
+use Zend2\Filter,
+    Zend2\Filter\Exception;
 
 /**
  * Encrypts a given file and stores the encrypted file content
  *
- * @uses       \Zend\Filter\Encrypt\Encrypt
- * @uses       \Zend\Filter\Exception
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Filter\Encrypt\Encrypt
+ * @uses       \Zend2\Filter\Exception
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Encrypt extends Filter\Encrypt
@@ -55,7 +55,7 @@ class Encrypt extends Filter\Encrypt
      * Sets the new filename where the content will be stored
      *
      * @param  string $filename (Optional) New filename to set
-     * @return Zend_Filter_File_Encryt
+     * @return Zend2_Filter_File_Encryt
      */
     public function setFilename($filename = null)
     {
@@ -64,7 +64,7 @@ class Encrypt extends Filter\Encrypt
     }
 
     /**
-     * Defined by Zend\Filter\Filter
+     * Defined by Zend2\Filter\Filter
      *
      * Encrypts the file $value with the defined settings
      *

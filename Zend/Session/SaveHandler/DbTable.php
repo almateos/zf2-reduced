@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Session
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Session
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Session\SaveHandler;
+namespace Zend2\Session\SaveHandler;
 
-use Zend\Config\Config as Configuration,
-    Zend\Session\SaveHandler as Savable,
-    Zend\Session\Container,
-    Zend\Session\Exception,
-    Zend\Db\Table\AbstractTable,
-    Zend\Db\Table\AbstractRow;
+use Zend2\Config\Config as Configuration,
+    Zend2\Session\SaveHandler as Savable,
+    Zend2\Session\Container,
+    Zend2\Session\Exception,
+    Zend2\Db\Table\AbstractTable,
+    Zend2\Db\Table\AbstractRow;
 
 /**
  * DB Table session save handler
  *
- * @category   Zend
- * @package    Zend_Session
+ * @category   Zend2
+ * @package    Zend2_Session
  * @subpackage SaveHandler
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DbTable
@@ -125,8 +125,8 @@ class DbTable
     /**
      * Constructor
      *
-     * $config is an instance of Zend\Config\Config. These are the configuration options for
-     * Zend\Session\SaveHandler\DbTable:
+     * $config is an instance of Zend2\Config\Config. These are the configuration options for
+     * Zend2\Session\SaveHandler\DbTable:
      *
      * name              => (string) Session table name
      *
@@ -155,7 +155,7 @@ class DbTable
      *
      * @param  Configuration      User-provided configuration
      * @return void
-     * @throws Zend_Session_SaveHandler_Exception
+     * @throws Zend2_Session_SaveHandler_Exception
      */
     public function __construct(Configuration $config)
     {
@@ -505,7 +505,7 @@ class DbTable
     /**
      * Retrieve session lifetime considering DbTable::OVERRIDE_LIFETIME
      *
-     * @param Zend\Db\Table\Row\Abstract $row
+     * @param Zend2\Db\Table\Row\Abstract $row
      * @return int
      */
     protected function _getLifetime(AbstractRow $row)
@@ -522,7 +522,7 @@ class DbTable
     /**
      * Retrieve session expiration time
      *
-     * @param Zend\Db\Table\Row\Abstract $row
+     * @param Zend2\Db\Table\Row\Abstract $row
      * @return int
      */
     protected function _getExpirationTime(AbstractRow $row)

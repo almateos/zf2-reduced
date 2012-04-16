@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,44 +12,44 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Queue
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Queue\Adapter;
-use Zend\Queue;
-use Zend\Queue\Message;
+namespace Zend2\Queue\Adapter;
+use Zend2\Queue;
+use Zend2\Queue\Message;
 
 /**
- * Zend Platform JobQueue adapter
+ * Zend2 Platform JobQueue adapter
  *
- * @uses       \ZendAPI_Queue
- * @uses       \ZendAPI_Job
- * @uses       \Zend\Queue\Adapter\AdapterAbstract
- * @uses       \Zend\Queue\Queue
- * @uses       \Zend\Queue\Exception
- * @uses       \Zend\Queue\Message\Message
- * @category   Zend
- * @package    Zend_Queue
+ * @uses       \Zend2API_Queue
+ * @uses       \Zend2API_Job
+ * @uses       \Zend2\Queue\Adapter\AdapterAbstract
+ * @uses       \Zend2\Queue\Queue
+ * @uses       \Zend2\Queue\Exception
+ * @uses       \Zend2\Queue\Message\Message
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PlatformJobQueue extends AbstractAdapter
 {
     /**
-     * @var \ZendAPI_Queue
+     * @var \Zend2API_Queue
      */
     protected $_zendQueue;
 
     /**
      * Constructor
      *
-     * @param  array|\Zend\Config\Config $options
-     * @param  \Zend\Queue\Queue|null $queue
+     * @param  array|\Zend2\Config\Config $options
+     * @param  \Zend2\Queue\Queue|null $queue
      * @return void
      */
     public function __construct($options, Queue\Queue $queue = null)
@@ -73,7 +73,7 @@ class PlatformJobQueue extends AbstractAdapter
             throw new Queue\Exception('Platform Job Queue password should be provided');
         }
 
-        $this->_zendQueue = new \ZendAPI_Queue($options['host']);
+        $this->_zendQueue = new \Zend2API_Queue($options['host']);
 
         if (!$this->_zendQueue) {
             throw new Queue\Exception('Platform Job Queue connection failed');
@@ -83,7 +83,7 @@ class PlatformJobQueue extends AbstractAdapter
         }
 
         if ($this->_queue) {
-            $this->_queue->setMessageClass('\Zend\Queue\Message\PlatformJob');
+            $this->_queue->setMessageClass('\Zend2\Queue\Message\PlatformJob');
         }
     }
 
@@ -96,7 +96,7 @@ class PlatformJobQueue extends AbstractAdapter
      *
      * @param  string $name
      * @return boolean
-     * @throws \Zend\Queue\Exception (not supported)
+     * @throws \Zend2\Queue\Exception (not supported)
      */
     public function isExists($name)
     {
@@ -109,7 +109,7 @@ class PlatformJobQueue extends AbstractAdapter
      * @param  string  $name    queue name
      * @param  integer $timeout default visibility timeout
      * @return void
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function create($name, $timeout=null)
     {
@@ -121,7 +121,7 @@ class PlatformJobQueue extends AbstractAdapter
      *
      * @param  string $name queue name
      * @return void
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function delete($name)
     {
@@ -132,7 +132,7 @@ class PlatformJobQueue extends AbstractAdapter
      * Get an array of all available queues
      *
      * @return void
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function getQueues()
     {
@@ -142,7 +142,7 @@ class PlatformJobQueue extends AbstractAdapter
     /**
      * Return the approximate number of messages in the queue
      *
-     * @param  \Zend\Queue\Queue|null $queue
+     * @param  \Zend2\Queue\Queue|null $queue
      * @return integer
      */
     public function count(Queue\Queue $queue = null)
@@ -161,10 +161,10 @@ class PlatformJobQueue extends AbstractAdapter
     /**
      * Send a message to the queue
      *
-     * @param  array|\ZendAPI_Job $message Message to send to the active queue
-     * @param  \Zend\Queue\Queue $queue     Not supported
-     * @return \Zend\Queue\Message\Message
-     * @throws \Zend\Queue\Exception
+     * @param  array|\Zend2API_Job $message Message to send to the active queue
+     * @param  \Zend2\Queue\Queue $queue     Not supported
+     * @return \Zend2\Queue\Message\Message
+     * @throws \Zend2\Queue\Exception
      */
     public function send($message, Queue\Queue $queue = null)
     {
@@ -175,7 +175,7 @@ class PlatformJobQueue extends AbstractAdapter
         // This adapter can work only for this message type
         $classname = $this->_queue->getMessageClass();
 
-        if ($message instanceof \ZendAPI_Job) {
+        if ($message instanceof \Zend2API_Job) {
             $message = array('data' => $message);
         }
 
@@ -200,8 +200,8 @@ class PlatformJobQueue extends AbstractAdapter
      *
      * @param  integer    $maxMessages    Maximum number of messages to return
      * @param  integer    $timeout        Ignored
-     * @param  \Zend\Queue\Queue $queue   Not supported
-     * @throws \Zend\Queue\Exception
+     * @param  \Zend2\Queue\Queue $queue   Not supported
+     * @throws \Zend2\Queue\Exception
      * @return ArrayIterator
      */
     public function receive($maxMessages = null, $timeout = null, Queue\Queue $queue = null)
@@ -231,16 +231,16 @@ class PlatformJobQueue extends AbstractAdapter
      * Returns true if the message is deleted, false if the deletion is
      * unsuccessful.
      *
-     * @param  \Zend\Queue\Message\Message $message
+     * @param  \Zend2\Queue\Message\Message $message
      * @return boolean
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function deleteMessage(Message\Message $message)
     {
         if (get_class($message) != $this->_queue->getMessageClass()) {
             throw new Queue\Exception(
                 'Failed to remove job from the queue; only messages of type '
-                . '\Zend\Queue\Message\PlatformJob may be used'
+                . '\Zend2\Queue\Message\PlatformJob may be used'
             );
         }
 
@@ -280,7 +280,7 @@ class PlatformJobQueue extends AbstractAdapter
     }
 
     /********************************************************************
-     * Functions that are not part of the \Zend\Queue\Adapter\AdapterAbstract
+     * Functions that are not part of the \Zend2\Queue\Adapter\AdapterAbstract
      ********************************************************************/
 
     /**
@@ -302,7 +302,7 @@ class PlatformJobQueue extends AbstractAdapter
     {
         $options = $this->_options['daemonOptions'];
 
-        $this->_zendQueue = new \ZendAPI_Queue($options['host']);
+        $this->_zendQueue = new \Zend2API_Queue($options['host']);
 
         if (!$this->_zendQueue) {
             throw new Queue\Exception('Platform Job Queue connection failed');

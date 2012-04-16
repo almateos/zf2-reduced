@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Module;
+namespace Zend2\Module;
 
 interface Exception
 {}

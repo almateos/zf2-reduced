@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage LiveDocx
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\LiveDocx;
+namespace Zend2\Service\LiveDocx;
 
-use Zend\Date\Date;
+use Zend2\Date\Date;
 
 /**
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage LiveDocx
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class MailMerge extends AbstractLiveDocx
@@ -62,7 +62,7 @@ class MailMerge extends AbstractLiveDocx
      * This component implements the LiveDocx.MailMerge SOAP Service
      * by Text Control GmbH).
      *
-     * Optionally, pass an array of options (or \Zend\Config\Config object).
+     * Optionally, pass an array of options (or \Zend2\Config\Config object).
      *
      * If an option with the key 'soapClient' is provided, that value will be
      * used to set the internal SOAP client used to connect to the LiveDocx
@@ -72,21 +72,21 @@ class MailMerge extends AbstractLiveDocx
      * installed) licensed LiveDocx server. For example:
      *
      * {code}
-     * $mailMerge = new \Zend\Service\LiveDocx\MailMerge(array (
+     * $mailMerge = new \Zend2\Service\LiveDocx\MailMerge(array (
      *     'username'   => 'myUsername',
      *     'password'   => 'myPassword',
-     *     'soapClient' => new \Zend\Soap\Client('https://api.example.com/path/mailmerge.asmx?WSDL'),
+     *     'soapClient' => new \Zend2\Soap\Client('https://api.example.com/path/mailmerge.asmx?WSDL'),
      * ));
      * {code}
      *
-     * Replace the URI of the WSDL in the constructor of \Zend\Config\Config with
+     * Replace the URI of the WSDL in the constructor of \Zend2\Config\Config with
      * that of your dedicated or licensed LiveDocx server.
      *
      * If you are using the public LiveDocx service, simply pass 'username' and
      * 'password'. For example:
      *
      * {code}
-     * $mailMerge = new \Zend\Service\LiveDocx\MailMerge(array (
+     * $mailMerge = new \Zend2\Service\LiveDocx\MailMerge(array (
      *     'username' => 'myUsername',
      *     'password' => 'myPassword',
      * ));
@@ -96,7 +96,7 @@ class MailMerge extends AbstractLiveDocx
      * constructor, you can also call the following methods:
      *
      * {code}
-     * $mailMerge = new \Zend\Service\LiveDocx\MailMerge();
+     * $mailMerge = new \Zend2\Service\LiveDocx\MailMerge();
      *
      * $mailMerge->setUsername('myUsername')
      *           ->setPassword('myPassword');
@@ -105,17 +105,17 @@ class MailMerge extends AbstractLiveDocx
      * Or, if you want to specify your own SoapClient:
      *
      * {code}
-     * $mailMerge = new \Zend\Service\LiveDocx\MailMerge();
+     * $mailMerge = new \Zend2\Service\LiveDocx\MailMerge();
      *
      * $mailMerge->setUsername('myUsername')
      *           ->setPassword('myPassword');
      *
      * $mailMerge->setSoapClient(
-     *     new \Zend\Soap\Client('https://api.example.com/path/mailmerge.asmx?WSDL')
+     *     new \Zend2\Soap\Client('https://api.example.com/path/mailmerge.asmx?WSDL')
      * );
      * {/code}
      *
-     * @param  array|\Zend\Config\Config $options
+     * @param  array|\Zend2\Config\Config $options
      * @return void
      * @since  LiveDocx 1.0
      */
@@ -1211,7 +1211,7 @@ class MailMerge extends AbstractLiveDocx
      * Return supported image formats (lowercase).
      *
      * Note, this method is DEPRECATED and will be removed in the next major
-     * release of the Zend Framework implementation of the LiveDocx service.
+     * release of the Zend2 Framework implementation of the LiveDocx service.
      *
      * @return array
      * @since  LiveDocx 1.2

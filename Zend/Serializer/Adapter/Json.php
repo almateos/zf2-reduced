@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Serializer
+ * @category   Zend2
+ * @package    Zend2_Serializer
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Serializer\Adapter;
+namespace Zend2\Serializer\Adapter;
 
-use Zend\Serializer\Exception\InvalidArgumentException,
-    Zend\Serializer\Exception\RuntimeException,
-    Zend\Json\Json as ZendJson;
+use Zend2\Serializer\Exception\InvalidArgumentException,
+    Zend2\Serializer\Exception\RuntimeException,
+    Zend2\Json\Json as Zend2Json;
 
 /**
- * @uses       Zend\Serializer\Adapter\AbstractAdapter
- * @uses       Zend\Serializer\Exception\InvalidArgumentException
- * @uses       Zend\Serializer\Exception\RuntimeException
- * @uses       Zend\Json\Json
- * @category   Zend
- * @package    Zend_Serializer
+ * @uses       Zend2\Serializer\Adapter\AbstractAdapter
+ * @uses       Zend2\Serializer\Exception\InvalidArgumentException
+ * @uses       Zend2\Serializer\Exception\RuntimeException
+ * @uses       Zend2\Json\Json
+ * @category   Zend2
+ * @package    Zend2_Serializer
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Json extends AbstractAdapter
@@ -44,7 +44,7 @@ class Json extends AbstractAdapter
     protected $_options = array(
         'cycleCheck'           => false,
         'enableJsonExprFinder' => false,
-        'objectDecodeType'     => ZendJson::TYPE_ARRAY,
+        'objectDecodeType'     => Zend2Json::TYPE_ARRAY,
     );
 
     /**
@@ -53,14 +53,14 @@ class Json extends AbstractAdapter
      * @param  mixed $value 
      * @param  array $opts 
      * @return string
-     * @throws Zend\Serializer\Exception on JSON encoding exception
+     * @throws Zend2\Serializer\Exception on JSON encoding exception
      */
     public function serialize($value, array $opts = array())
     {
         $opts = $opts + $this->_options;
 
         try  {
-            return ZendJson::encode($value, $opts['cycleCheck'], $opts);
+            return Zend2Json::encode($value, $opts['cycleCheck'], $opts);
         } catch (\InvalidArgumentException $e) {
             throw new InvalidArgumentException('Serialization failed: ' . $e->getMessage(), 0, $e);
         } catch (\Exception $e) {
@@ -80,7 +80,7 @@ class Json extends AbstractAdapter
         $opts = $opts + $this->_options;
 
         try {
-            $ret = ZendJson::decode($json, $opts['objectDecodeType']);
+            $ret = Zend2Json::decode($json, $opts['objectDecodeType']);
         } catch (\InvalidArgumentException $e) {
             throw new InvalidArgumentException('Unserialization failed: ' . $e->getMessage(), 0, $e);
         } catch (\Exception $e) {

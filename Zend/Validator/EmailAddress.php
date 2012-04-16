@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
+namespace Zend2\Validator;
 
 /**
- * @uses       \Zend\Validator\AbstractValidator
- * @uses       \Zend\Validator\Exception
- * @uses       \Zend\Validator\Hostname
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Validator\AbstractValidator
+ * @uses       \Zend2\Validator\Exception
+ * @uses       \Zend2\Validator\Hostname
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class EmailAddress extends AbstractValidator
@@ -96,12 +96,12 @@ class EmailAddress extends AbstractValidator
      * Instantiates hostname validator for local use
      *
      * The following additional option keys are supported:
-     * 'hostnameValidator' => A hostname validator, see Zend\Validator\Hostname
-     * 'allow'             => Options for the hostname validator, see Zend\Validator\Hostname::ALLOW_*
+     * 'hostnameValidator' => A hostname validator, see Zend2\Validator\Hostname
+     * 'allow'             => Options for the hostname validator, see Zend2\Validator\Hostname::ALLOW_*
      * 'useMxCheck'        => If MX check should be enabled, boolean
      * 'useDeepMxCheck'    => If a deep MX check should be done, boolean
      *
-     * @param array|\Zend\Config\Config $options OPTIONAL
+     * @param array|\Zend2\Config\Config $options OPTIONAL
      * @return void
      */
     public function __construct($options = array())
@@ -133,8 +133,8 @@ class EmailAddress extends AbstractValidator
      *
      * @param  string $messageString
      * @param  string $messageKey     OPTIONAL
-     * @return \Zend\Validator\AbstractValidator Provides a fluent interface
-     * @throws \Zend\Validator\Exception
+     * @return \Zend2\Validator\AbstractValidator Provides a fluent interface
+     * @throws \Zend2\Validator\Exception
      */
     public function setMessage($messageString, $messageKey = null)
     {
@@ -156,7 +156,7 @@ class EmailAddress extends AbstractValidator
     /**
      * Returns the set hostname validator
      *
-     * @return \Zend\Validator\Hostname
+     * @return \Zend2\Validator\Hostname
      */
     public function getHostnameValidator()
     {
@@ -164,8 +164,8 @@ class EmailAddress extends AbstractValidator
     }
 
     /**
-     * @param \Zend\Validator\Hostname $hostnameValidator OPTIONAL
-     * @return \Zend\Validator\EmailAddress Provides a fluent interface
+     * @param \Zend2\Validator\Hostname $hostnameValidator OPTIONAL
+     * @return \Zend2\Validator\EmailAddress Provides a fluent interface
      */
     public function setHostnameValidator(Hostname $hostnameValidator = null)
     {
@@ -191,7 +191,7 @@ class EmailAddress extends AbstractValidator
      * Sets the allow option of the hostname validator to use
      *
      * @param integer $allow
-     * @return \Zend\Validator\EmailAddress Provides a fluent interface
+     * @return \Zend2\Validator\EmailAddress Provides a fluent interface
      */
     public function setAllow($allow)
     {
@@ -229,7 +229,7 @@ class EmailAddress extends AbstractValidator
      * This only applies when DNS hostnames are validated
      *
      * @param boolean $mx Set allowed to true to validate for MX records, and false to not validate them
-     * @return \Zend\Validator\EmailAddress Fluid Interface
+     * @return \Zend2\Validator\EmailAddress Fluid Interface
      */
     public function useMxCheck($mx)
     {
@@ -251,7 +251,7 @@ class EmailAddress extends AbstractValidator
      * Use deep validation for MX records
      *
      * @param boolean $deep Set deep to true to perform a deep validation process for MX records
-     * @return \Zend\Validator\EmailAddress Fluid Interface
+     * @return \Zend2\Validator\EmailAddress Fluid Interface
      */
     public function useDeepMxCheck($deep)
     {
@@ -274,7 +274,7 @@ class EmailAddress extends AbstractValidator
      * or only the local part of the email address
      *
      * @param boolean $domain
-     * @return \Zend\Validator\EmailAddress Fluid Interface
+     * @return \Zend2\Validator\EmailAddress Fluid Interface
      */
     public function useDomainCheck($domain = true)
     {
@@ -466,7 +466,7 @@ class EmailAddress extends AbstractValidator
     }
 
     /**
-     * Defined by Zend_Validate_Interface
+     * Defined by Zend2_Validate_Interface
      *
      * Returns true if and only if $value is a valid email address
      * according to RFC2822

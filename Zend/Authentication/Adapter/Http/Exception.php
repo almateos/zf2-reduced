@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Authentication
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Adapter_HTTP
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Authentication\Adapter\Http;
+namespace Zend2\Authentication\Adapter\Http;
 
 /**
  * HTTP Auth Resolver Exception
  *
- * @uses       Zend\Authentication\Exception
- * @category   Zend
- * @package    Zend_Authentication
+ * @uses       Zend2\Authentication\Exception
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Adapter_Http
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-interface Exception extends \Zend\Authentication\Adapter\Exception
+interface Exception extends \Zend2\Authentication\Adapter\Exception
 {}

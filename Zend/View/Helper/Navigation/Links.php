@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper\Navigation;
+namespace Zend2\View\Helper\Navigation;
 
 use RecursiveIteratorIterator,
-    Zend\Navigation,
-    Zend\Navigation\Page\AbstractPage,
-    Zend\View,
-    Zend\View\Exception;
+    Zend2\Navigation,
+    Zend2\Navigation\Page\AbstractPage,
+    Zend2\View,
+    Zend2\View\Exception;
 
 /**
  * Helper for printing <link> elements
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Links extends AbstractHelper
@@ -201,7 +201,7 @@ class Links extends AbstractHelper
      *
      * The form of the returned array:
      * <code>
-     * // $page denotes an instance of Zend_Navigation_Page
+     * // $page denotes an instance of Zend2_Navigation_Page
      * $returned = array(
      *     'rel' => array(
      *         'alternate' => array($page, $page, $page),
@@ -654,7 +654,7 @@ class Links extends AbstractHelper
                     $pages[] = $page;
                 }
                 return $pages;
-            } elseif ($mixed instanceof \Zend\Config\Config) {
+            } elseif ($mixed instanceof \Zend2\Config\Config) {
                 // convert config object to array and extract
                 return $this->convertToPages($mixed->toArray(), $recursive);
             }
@@ -732,7 +732,7 @@ class Links extends AbstractHelper
                $this->getClosingBracket();
     }
 
-    // Zend\View\Helper\Navigation\Helper:
+    // Zend2\View\Helper\Navigation\Helper:
 
     /**
      * Renders helper

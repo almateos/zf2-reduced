@@ -10,28 +10,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Cloud
+ * @category   Zend2
+ * @package    Zend2\Cloud
  * @subpackage DocumentService
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * namespace
  */
-namespace Zend\Cloud\Infrastructure\Adapter;
+namespace Zend2\Cloud\Infrastructure\Adapter;
 
-use Zend\Cloud\Infrastructure\Adapter,
-    Zend\Cloud\Infrastructure\Instance;
+use Zend2\Cloud\Infrastructure\Adapter,
+    Zend2\Cloud\Infrastructure\Instance;
 
 /**
  * Abstract infrastructure service adapter
  *
- * @category   Zend
- * @package    Zend\Cloud
+ * @category   Zend2
+ * @package    Zend2\Cloud
  * @subpackage Infrastructure
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractAdapter implements Adapter

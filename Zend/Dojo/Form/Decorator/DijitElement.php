@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,19 +12,19 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Form
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\Form\Decorator;
+namespace Zend2\Dojo\Form\Decorator;
 
-use Zend\Form\Decorator\ViewHelper as ViewHelperDecorator,
-    Zend\Form\Decorator\Exception\RunTimeException as DecoratorException;
+use Zend2\Form\Decorator\ViewHelper as ViewHelperDecorator,
+    Zend2\Form\Decorator\Exception\RunTimeException as DecoratorException;
 
 /**
- * Zend_Dojo_Form_Decorator_DijitElement
+ * Zend2_Dojo_Form_Decorator_DijitElement
  *
  * Render a dojo dijit element via a view helper
  *
@@ -36,11 +36,11 @@ use Zend\Form\Decorator\ViewHelper as ViewHelperDecorator,
  * Assumes the view helper accepts three parameters, the name, value, and
  * optional attributes; these will be provided by the element.
  *
- * @uses       \Zend\Form\Decorator\Exception
- * @uses       \Zend\Form\Decorator\ViewHelper
- * @package    Zend_Dojo
+ * @uses       \Zend2\Form\Decorator\Exception
+ * @uses       \Zend2\Form\Decorator\ViewHelper
+ * @package    Zend2_Dojo
  * @subpackage Form_Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DijitElement extends ViewHelperDecorator
@@ -56,10 +56,10 @@ class DijitElement extends ViewHelperDecorator
      * @var array
      */
     protected $_buttonTypes = array(
-        'Zend\Dojo\Form\Element\Button',
-        'Zend\Form\Element\Button',
-        'Zend\Form\Element\Reset',
-        'Zend\Form\Element\Submit',
+        'Zend2\Dojo\Form\Element\Button',
+        'Zend2\Form\Element\Button',
+        'Zend2\Form\Element\Reset',
+        'Zend2\Form\Element\Submit',
     );
 
     /**
@@ -91,7 +91,7 @@ class DijitElement extends ViewHelperDecorator
      *
      * @param  string $key
      * @param  mixed $value
-     * @return \Zend\Dojo\Form\Decorator\DijitContainer
+     * @return \Zend2\Dojo\Form\Decorator\DijitContainer
      */
     public function setDijitParam($key, $value)
     {
@@ -103,7 +103,7 @@ class DijitElement extends ViewHelperDecorator
      * Set dijit option parameters
      *
      * @param  array $params
-     * @return \Zend\Dojo\Form\Decorator\DijitContainer
+     * @return \Zend2\Dojo\Form\Decorator\DijitContainer
      */
     public function setDijitParams(array $params)
     {
@@ -148,7 +148,7 @@ class DijitElement extends ViewHelperDecorator
      *
      * @param  string $content
      * @return string
-     * @throws \Zend\Form\Decorator\Exception if element or view are not registered
+     * @throws \Zend2\Form\Decorator\Exception if element or view are not registered
      */
     public function render($content)
     {

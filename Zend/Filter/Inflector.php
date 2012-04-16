@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Filter;
+namespace Zend2\Filter;
 
-use Zend\Config,
-    Zend\Loader\Broker;
+use Zend2\Config,
+    Zend2\Loader\Broker;
 
 /**
  * Filter chain for string inflection
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Inflector extends AbstractFilter
 {
     /**
-     * @var \Zend\Loader\Broker
+     * @var \Zend2\Loader\Broker
      */
     protected $_pluginBroker = null;
 
@@ -96,7 +96,7 @@ class Inflector extends AbstractFilter
     /**
      * Retreive plugin broker
      *
-     * @return \Zend\Loader\Broker
+     * @return \Zend2\Loader\Broker
      */
     public function getPluginBroker()
     {
@@ -110,8 +110,8 @@ class Inflector extends AbstractFilter
     /**
      * Set plugin broker
      *
-     * @param \Zend\Loader\Broker $broker
-     * @return \Zend\Filter\Inflector
+     * @param \Zend2\Loader\Broker $broker
+     * @return \Zend2\Filter\Inflector
      */
     public function setPluginBroker(Broker $broker)
     {
@@ -120,11 +120,11 @@ class Inflector extends AbstractFilter
     }
 
     /**
-     * Use Zend_Config object to set object state
+     * Use Zend2_Config object to set object state
      *
      * @deprecated Use setOptions() instead
-     * @param  \Zend\Config\Config $config
-     * @return \Zend\Filter\Inflector
+     * @param  \Zend2\Config\Config $config
+     * @return \Zend2\Filter\Inflector
      */
     public function setConfig(Config\Config $config)
     {
@@ -135,7 +135,7 @@ class Inflector extends AbstractFilter
      * Set options
      *
      * @param  array $options
-     * @return \Zend\Filter\Inflector
+     * @return \Zend2\Filter\Inflector
      */
     public function setOptions($options)
     {
@@ -175,7 +175,7 @@ class Inflector extends AbstractFilter
      * identifier is still found within an inflected target.
      *
      * @param bool $throwTargetExceptions
-     * @return \Zend\Filter\Inflector
+     * @return \Zend2\Filter\Inflector
      */
     public function setThrowTargetExceptionsOn($throwTargetExceptionsOn)
     {
@@ -197,7 +197,7 @@ class Inflector extends AbstractFilter
      * Set the Target Replacement Identifier, by default ':'
      *
      * @param string $targetReplacementIdentifier
-     * @return \Zend\Filter\Inflector
+     * @return \Zend2\Filter\Inflector
      */
     public function setTargetReplacementIdentifier($targetReplacementIdentifier)
     {
@@ -223,7 +223,7 @@ class Inflector extends AbstractFilter
      * ex: 'scripts/:controller/:action.:suffix'
      *
      * @param string
-     * @return \Zend\Filter\Inflector
+     * @return \Zend2\Filter\Inflector
      */
     public function setTarget($target)
     {
@@ -245,7 +245,7 @@ class Inflector extends AbstractFilter
      * Set Target Reference
      *
      * @param reference $target
-     * @return \Zend\Filter\Inflector
+     * @return \Zend2\Filter\Inflector
      */
     public function setTargetReference(&$target)
     {
@@ -258,7 +258,7 @@ class Inflector extends AbstractFilter
      * clears the rules before adding them.
      *
      * @param array $rules
-     * @return \Zend\Filter\Inflector
+     * @return \Zend2\Filter\Inflector
      */
     public function setRules(Array $rules)
     {
@@ -281,7 +281,7 @@ class Inflector extends AbstractFilter
      *     );
      *
      * @param array
-     * @return \Zend\Filter\Inflector
+     * @return \Zend2\Filter\Inflector
      */
     public function addRules(Array $rules)
     {
@@ -324,7 +324,7 @@ class Inflector extends AbstractFilter
      *
      * @param string $spec
      * @param int $index
-     * @return \Zend\Filter\Filter|false
+     * @return \Zend2\Filter\Filter|false
      */
     public function getRule($spec, $index)
     {
@@ -340,7 +340,7 @@ class Inflector extends AbstractFilter
     /**
      * ClearRules() clears the rules currently in the inflector
      *
-     * @return \Zend\Filter\Inflector
+     * @return \Zend2\Filter\Inflector
      */
     public function clearRules()
     {
@@ -353,8 +353,8 @@ class Inflector extends AbstractFilter
      * or an array of strings or filter objects.
      *
      * @param string $spec
-     * @param array|string|\Zend\Filter\Filter $ruleSet
-     * @return \Zend\Filter\Inflector
+     * @param array|string|\Zend2\Filter\Filter $ruleSet
+     * @return \Zend2\Filter\Inflector
      */
     public function setFilterRule($spec, $ruleSet)
     {
@@ -399,7 +399,7 @@ class Inflector extends AbstractFilter
      *
      * @param string $name
      * @param string $value
-     * @return \Zend\Filter\Inflector
+     * @return \Zend2\Filter\Inflector
      */
     public function setStaticRule($name, $value)
     {
@@ -417,7 +417,7 @@ class Inflector extends AbstractFilter
      *
      * @param string $name
      * @param mixed $reference
-     * @return \Zend\Filter\Inflector
+     * @return \Zend2\Filter\Inflector
      */
     public function setStaticRuleReference($name, &$reference)
     {
@@ -484,7 +484,7 @@ class Inflector extends AbstractFilter
      * Resolve named filters and convert them to filter objects.
      *
      * @param  string $rule
-     * @return \Zend\Filter\Filter
+     * @return \Zend2\Filter\Filter
      */
     protected function _getRule($rule)
     {

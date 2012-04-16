@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_CodeGenerator
+ * @category   Zend2
+ * @package    Zend2_CodeGenerator
  * @subpackage PHP
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Code\Generator;
+namespace Zend2\Code\Generator;
 
-use Zend\Code\Reflection\ClassReflection;
+use Zend2\Code\Reflection\ClassReflection;
 
 /**
- * @uses       \Zend\Code\Generator\AbstractPhp
- * @uses       \Zend\Code\GeneratorDocblock
- * @uses       \Zend\Code\Generator\Exception
- * @uses       \Zend\Code\Generator\PhpMember\MemberContainer
- * @uses       \Zend\Code\Generator\PhpMethod
- * @uses       \Zend\Code\Generator\PhpProperty
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Code\Generator\AbstractPhp
+ * @uses       \Zend2\Code\GeneratorDocblock
+ * @uses       \Zend2\Code\Generator\Exception
+ * @uses       \Zend2\Code\Generator\PhpMember\MemberContainer
+ * @uses       \Zend2\Code\Generator\PhpMethod
+ * @uses       \Zend2\Code\Generator\PhpProperty
+ * @category   Zend2
+ * @package    Zend2_CodeGenerator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ClassGenerator extends AbstractGenerator
@@ -111,7 +111,7 @@ class ClassGenerator extends AbstractGenerator
             $cg->setNamespaceName($classReflection->getNamespaceName());
         }
 
-        /* @var $parentClass \Zend\Code\Reflection\ReflectionClass */
+        /* @var $parentClass \Zend2\Code\Reflection\ReflectionClass */
         if ($parentClass = $classReflection->getParentClass()) {
             $cg->setExtendedClass($parentClass->getName());
             $interfaces = array_diff($classReflection->getInterfaces(), $parentClass->getInterfaces());
@@ -121,7 +121,7 @@ class ClassGenerator extends AbstractGenerator
 
         $interfaceNames = array();
         foreach ($interfaces AS $interface) {
-            /* @var $interface \Zend\Code\Reflection\ReflectionClass */
+            /* @var $interface \Zend2\Code\Reflection\ReflectionClass */
             $interfaceNames[] = $interface->getName();
         }
 
@@ -273,7 +273,7 @@ class ClassGenerator extends AbstractGenerator
      * setNamespaceName()
      *
      * @param $namespaceName
-     * @return Zend\Code\Generator\PhpClass
+     * @return Zend2\Code\Generator\PhpClass
      */
     public function setNamespaceName($namespaceName)
     {
@@ -295,7 +295,7 @@ class ClassGenerator extends AbstractGenerator
     /**
      * getPhpFile()
      *
-     * @return Zend\Code\Generator\PhpFile
+     * @return Zend2\Code\Generator\PhpFile
      */
     public function getContainingFileGenerator()
     {
@@ -305,7 +305,7 @@ class ClassGenerator extends AbstractGenerator
     /**
      * setDocblock() Set the docblock
      *
-     * @param \Zend\Code\GeneratorDocblock|array|string $docblock
+     * @param \Zend2\Code\GeneratorDocblock|array|string $docblock
      * @return \FileGenerator\Code\Generator\PhpFile
      */
     public function setDocblock(DocblockGenerator $docblock)
@@ -318,7 +318,7 @@ class ClassGenerator extends AbstractGenerator
         if (is_array($docblock)) {
             $docblock = new DocblockGenerator($docblock);
         } elseif (!$docblock instanceof DocblockGenerator) {
-            throw new Exception\InvalidArgumentException('setDocblock() is expecting either a string, array or an instance of Zend_CodeGenerator_Php_Docblock');
+            throw new Exception\InvalidArgumentException('setDocblock() is expecting either a string, array or an instance of Zend2_CodeGenerator_Php_Docblock');
         }
         */
 
@@ -475,7 +475,7 @@ class ClassGenerator extends AbstractGenerator
         //if (is_string($property)) {
         //    $property = new PropertyGenerator($property);
         //} elseif (!$property instanceof PropertyGenerator) {
-        //    throw new Exception\InvalidArgumentException('setProperty() expects either a string or an instance of Zend\Code\Generator\PropertyGenerator');
+        //    throw new Exception\InvalidArgumentException('setProperty() expects either a string or an instance of Zend2\Code\Generator\PropertyGenerator');
         //}
         
         $propertyName = $property->getName();
@@ -550,7 +550,7 @@ class ClassGenerator extends AbstractGenerator
         //if (is_string($method)) {
         //    $method = new MethodGenerator($method);
         //} elseif (!$method instanceof MethodGenerator) {
-        //    throw new Exception\InvalidArgumentException('setMethod() expects either a string method name or an instance of Zend\Code\Generator\MethodGenerator');
+        //    throw new Exception\InvalidArgumentException('setMethod() expects either a string method name or an instance of Zend2\Code\Generator\MethodGenerator');
         //}
         $methodName = $method->getName();
 

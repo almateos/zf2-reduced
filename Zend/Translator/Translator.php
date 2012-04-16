@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Translator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Translator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Translator;
+namespace Zend2\Translator;
 
 use Traversable,
-    Zend\Cache\Storage\Adapter as CacheAdapter,
-    Zend\Stdlib\ArrayUtils;
+    Zend2\Cache\Storage\Adapter as CacheAdapter,
+    Zend2\Stdlib\ArrayUtils;
 
 /**
- * @category   Zend
- * @package    Zend_Translator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Translator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Translator
@@ -123,8 +123,8 @@ class Translator
             throw new Exception\InvalidArgumentException("No adapter given");
         }
 
-        if (class_exists('Zend\Translator\Adapter\\' . ucfirst($options['adapter']))) {
-            $options['adapter'] = 'Zend\Translator\Adapter\\' . ucfirst($options['adapter']);
+        if (class_exists('Zend2\Translator\Adapter\\' . ucfirst($options['adapter']))) {
+            $options['adapter'] = 'Zend2\Translator\Adapter\\' . ucfirst($options['adapter']);
         } elseif (!class_exists($options['adapter'])) {
             throw new Exception\InvalidArgumentException("Adapter " . $options['adapter'] . " does not exist and cannot be loaded");
         }
@@ -137,7 +137,7 @@ class Translator
         unset($options['adapter']);
         $this->_adapter = new $adapter($options);
         if (!$this->_adapter instanceof Adapter\AbstractAdapter) {
-            throw new Exception\InvalidArgumentException("Adapter " . $adapter . " does not extend Zend\Translator\Adapter\AbstractAdapter");
+            throw new Exception\InvalidArgumentException("Adapter " . $adapter . " does not extend Zend2\Translator\Adapter\AbstractAdapter");
         }
     }
 
@@ -162,7 +162,7 @@ class Translator
     }
 
     /**
-     * Sets a cache for all instances of Zend_Translator
+     * Sets a cache for all instances of Zend2_Translator
      *
      * @param  CacheAdapter $cache Cache to store to
      * @return void

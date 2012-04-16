@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,33 +12,33 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Books
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Books;
+namespace Zend2\GData\Books;
 
-use Zend\GData\Books;
+use Zend2\GData\Books;
 
 /**
  * Describes a Book Search volume feed
  *
- * @uses       \Zend\GData\Books\Books
- * @uses       \Zend\GData\Feed
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Books\Books
+ * @uses       \Zend2\GData\Feed
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Books
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class VolumeFeed extends \Zend\GData\Feed
+class VolumeFeed extends \Zend2\GData\Feed
 {
 
     /**
-     * Constructor for Zend_Gdata_Books_VolumeFeed which
+     * Constructor for Zend2_Gdata_Books_VolumeFeed which
      * Describes a Book Search volume feed
      *
      * @param DOMElement $element (optional) DOMElement from which this
@@ -55,7 +55,7 @@ class VolumeFeed extends \Zend\GData\Feed
       *
       * @var string
       */
-     protected $_entryClassName = 'Zend\GData\Books\VolumeEntry';
+     protected $_entryClassName = 'Zend2\GData\Books\VolumeEntry';
 
 }
 

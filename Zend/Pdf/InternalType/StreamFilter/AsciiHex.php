@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\InternalType\StreamFilter;
-use Zend\Pdf\Exception;
+namespace Zend2\Pdf\InternalType\StreamFilter;
+use Zend2\Pdf\Exception;
 
-use Zend\Pdf\InternalType\StreamFilter,
-    Zend\Pdf;
+use Zend2\Pdf\InternalType\StreamFilter,
+    Zend2\Pdf;
 
 /**
  * AsciiHex stream filter
  *
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\InternalType\StreamFilter
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\InternalType\StreamFilter
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class AsciiHex implements StreamFilter
@@ -43,7 +43,7 @@ class AsciiHex implements StreamFilter
      * @param string $data
      * @param array $params
      * @return string
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public static function encode($data, $params = null)
     {
@@ -56,7 +56,7 @@ class AsciiHex implements StreamFilter
      * @param string $data
      * @param array $params
      * @return string
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public static function decode($data, $params = null)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Form
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form;
+namespace Zend2\Form;
 
 use Traversable,
-    Zend\Loader\PluginLoader,
-    Zend\Loader\PrefixPathMapper,
-    Zend\Config\Config,
-    Zend\Stdlib\ArrayUtils,
-    Zend\Translator,
-    Zend\View\Renderer\PhpRenderer,
-    Zend\View\Renderer as View;
+    Zend2\Loader\PluginLoader,
+    Zend2\Loader\PrefixPathMapper,
+    Zend2\Config\Config,
+    Zend2\Stdlib\ArrayUtils,
+    Zend2\Translator,
+    Zend2\View\Renderer\PhpRenderer,
+    Zend2\View\Renderer as View;
 
 /**
- * Zend_Form_DisplayGroup
+ * Zend2_Form_DisplayGroup
  *
- * @category   Zend
- * @package    Zend_Form
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Form
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DisplayGroup implements \Iterator,\Countable
@@ -450,13 +450,13 @@ class DisplayGroup implements \Iterator,\Countable
      *
      * @param  array $elements
      * @return DisplayGroup
-     * @throws Zend\Form\InvalidArgumentException if any element is not a Element
+     * @throws Zend2\Form\InvalidArgumentException if any element is not a Element
      */
     public function addElements(array $elements)
     {
         foreach ($elements as $element) {
             if (!$element instanceof Element) {
-                throw new Exception\InvalidArgumentException('elements passed via array to addElements() must be Zend\Form\Elements only');
+                throw new Exception\InvalidArgumentException('elements passed via array to addElements() must be Zend2\Form\Elements only');
             }
             $this->addElement($element);
         }
@@ -694,7 +694,7 @@ class DisplayGroup implements \Iterator,\Countable
                 $decorator = $spec;
             }
         } else {
-            throw new Exception\InvalidArgumentException('Invalid decorator provided to addDecorator; must be string or Zend_Form_Decorator_Interface');
+            throw new Exception\InvalidArgumentException('Invalid decorator provided to addDecorator; must be string or Zend2_Form_Decorator_Interface');
         }
 
         $this->_decorators[$name] = $decorator;

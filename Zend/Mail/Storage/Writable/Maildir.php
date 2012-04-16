@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,35 +12,35 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail\Storage\Writable;
+namespace Zend2\Mail\Storage\Writable;
 
-use Zend\Mail\Storage,
-    Zend\Mail\Storage\Exception,
-    Zend\Mail\Exception as MailException,
-    Zend\Mail\Storage\Folder,
-    Zend\Mail\Storage\Folder\Maildir as MaildirFolder,
-    Zend\Mail\Storage\Maildir as MaildirStorage,
-    Zend\Mail\Storage\Writable;
+use Zend2\Mail\Storage,
+    Zend2\Mail\Storage\Exception,
+    Zend2\Mail\Exception as MailException,
+    Zend2\Mail\Storage\Folder,
+    Zend2\Mail\Storage\Folder\Maildir as MaildirFolder,
+    Zend2\Mail\Storage\Maildir as MaildirStorage,
+    Zend2\Mail\Storage\Writable;
 
 /**
  * @uses       RecursiveIteratorIterator
- * @uses       \Zend\Mail\Storage\Storage
- * @uses       \Zend\Mail\Storage\Exception
- * @uses       \Zend\Mail\Storage\Folder
- * @uses       \Zend\Mail\Storage\Folder\Maildir
- * @uses       \Zend\Mail\Storage\Maildir
- * @uses       \Zend\Mail\Storage\Writable\WritableInterface
- * @category   Zend
- * @package    Zend_Mail
+ * @uses       \Zend2\Mail\Storage\Storage
+ * @uses       \Zend2\Mail\Storage\Exception
+ * @uses       \Zend2\Mail\Storage\Folder
+ * @uses       \Zend2\Mail\Storage\Folder\Maildir
+ * @uses       \Zend2\Mail\Storage\Maildir
+ * @uses       \Zend2\Mail\Storage\Writable\WritableInterface
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Maildir extends MaildirFolder implements Writable
@@ -60,7 +60,7 @@ class Maildir extends MaildirFolder implements Writable
      *
      * @param string $dir directory for the new maildir (may already exist)
      * @return null
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public static function initMaildir($dir)
     {
@@ -97,7 +97,7 @@ class Maildir extends MaildirFolder implements Writable
      *   - create if true a new maildir is create if none exists
      *
      * @param  $params array mail reader specific parameters
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function __construct($params) 
     {
@@ -119,9 +119,9 @@ class Maildir extends MaildirFolder implements Writable
      * may be used as parent or which chars may be used in the folder name
      *
      * @param   string                          $name         global name of folder, local name if $parentFolder is set
-     * @param   string|\Zend\Mail\Storage\Folder\Folder $parentFolder parent folder for new folder, else root folder is parent
+     * @param   string|\Zend2\Mail\Storage\Folder\Folder $parentFolder parent folder for new folder, else root folder is parent
      * @return  string only used internally (new created maildir)
-     * @throws  \Zend\Mail\Storage\Exception
+     * @throws  \Zend2\Mail\Storage\Exception
      */
     public function createFolder($name, $parentFolder = null)
     {
@@ -191,9 +191,9 @@ class Maildir extends MaildirFolder implements Writable
     /**
      * remove a folder
      *
-     * @param   string|\Zend\Mail\Storage\Folder\Folder $name      name or instance of folder
+     * @param   string|\Zend2\Mail\Storage\Folder\Folder $name      name or instance of folder
      * @return  null
-     * @throws  \Zend\Mail\Storage\Exception
+     * @throws  \Zend2\Mail\Storage\Exception
      */
     public function removeFolder($name)
     {
@@ -266,10 +266,10 @@ class Maildir extends MaildirFolder implements Writable
      *
      * The new name has the same restrictions as in createFolder()
      *
-     * @param   string|\Zend\Mail\Storage\Folder $oldName name or instance of folder
+     * @param   string|\Zend2\Mail\Storage\Folder $oldName name or instance of folder
      * @param   string                          $newName new global name of folder
      * @return  null
-     * @throws  \Zend\Mail\Storage\Exception
+     * @throws  \Zend2\Mail\Storage\Exception
      */
     public function renameFolder($oldName, $newName)
     {
@@ -360,7 +360,7 @@ class Maildir extends MaildirFolder implements Writable
      * @param   string $folder name of current folder without leading .
      * @return  array array('dirname' => dir of maildir folder, 'uniq' => unique id, 'filename' => name of create file
      *                     'handle'  => file opened for writing)
-     * @throws  \Zend\Mail\Storage\Exception
+     * @throws  \Zend2\Mail\Storage\Exception
      */
     protected function _createTmpFile($folder = 'INBOX')
     {
@@ -410,7 +410,7 @@ class Maildir extends MaildirFolder implements Writable
      *
      * @param   array $flags wanted flags, with the reference you'll get the set flags with correct key (= char for flag)
      * @return  string info string for version 2 filenames including the leading colon
-     * @throws  \Zend\Mail\Storage\Exception
+     * @throws  \Zend2\Mail\Storage\Exception
      */
     protected function _getInfoString(&$flags)
     {
@@ -443,13 +443,13 @@ class Maildir extends MaildirFolder implements Writable
      * append a new message to mail storage
      *
      * @param   string|stream                              $message message as string or stream resource
-     * @param   null|string|\Zend\Mail\Storage\Folder       $folder  folder for new message, else current folder is taken
+     * @param   null|string|\Zend2\Mail\Storage\Folder       $folder  folder for new message, else current folder is taken
      * @param   null|array                                 $flags   set flags for new message, else a default set is used
      * @param   bool                                       $recent  handle this mail as if recent flag has been set,
      *                                                              should only be used in delivery
-     * @throws  \Zend\Mail\Storage\Exception
+     * @throws  \Zend2\Mail\Storage\Exception
      */
-     // not yet * @param string|\Zend\Mail\Message|\Zend\Mime\Message $message message as string or instance of message class
+     // not yet * @param string|\Zend2\Mail\Message|\Zend2\Mime\Message $message message as string or instance of message class
     public function appendMessage($message, $folder = null, $flags = null, $recent = false)
     {
         if ($this->_quota && $this->checkQuota()) {
@@ -511,9 +511,9 @@ class Maildir extends MaildirFolder implements Writable
      * copy an existing message
      *
      * @param   int                             $id     number of message
-     * @param   string|\Zend\Mail\Storage\Folder $folder name or instance of targer folder
+     * @param   string|\Zend2\Mail\Storage\Folder $folder name or instance of targer folder
      * @return  null
-     * @throws  \Zend\Mail\Storage\Exception
+     * @throws  \Zend2\Mail\Storage\Exception
      */
     public function copyMessage($id, $folder)
     {
@@ -578,9 +578,9 @@ class Maildir extends MaildirFolder implements Writable
      * move an existing message
      *
      * @param  int                             $id     number of message
-     * @param  string|\Zend\Mail\Storage\Folder\Folder $folder name or instance of targer folder
+     * @param  string|\Zend2\Mail\Storage\Folder\Folder $folder name or instance of targer folder
      * @return null
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function moveMessage($id, $folder) 
     {
@@ -640,7 +640,7 @@ class Maildir extends MaildirFolder implements Writable
      *
      * @param   int   $id    number of message
      * @param   array $flags new flags for message
-     * @throws  \Zend\Mail\Storage\Exception
+     * @throws  \Zend2\Mail\Storage\Exception
      */
     public function setFlags($id, $flags)
     {
@@ -665,7 +665,7 @@ class Maildir extends MaildirFolder implements Writable
      * stub for not supported message deletion
      *
      * @return  null
-     * @throws  \Zend\Mail\Storage\Exception
+     * @throws  \Zend2\Mail\Storage\Exception
      */
     public function removeMessage($id)
     {
@@ -705,7 +705,7 @@ class Maildir extends MaildirFolder implements Writable
     /**
      * get currently set quota
      *
-     * @see \Zend\Mail\Storage\Writable\Maildir::setQuota()
+     * @see \Zend2\Mail\Storage\Writable\Maildir::setQuota()
      *
      * @return bool|array
      */

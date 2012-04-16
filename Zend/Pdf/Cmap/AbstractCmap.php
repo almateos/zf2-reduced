@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,19 +12,19 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Font
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Font
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Cmap;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
+namespace Zend2\Pdf\Cmap;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
 
 /**
- * Abstract helper class for {@link \Zend\Pdf\Resource\Font\AbstractFont}
+ * Abstract helper class for {@link \Zend2\Pdf\Resource\Font\AbstractFont}
  * which manages font character maps.
  *
  * Defines the public interface for concrete subclasses which are responsible
@@ -42,19 +42,19 @@ use Zend\Pdf;
  *  <li>{@link http://partners.adobe.com/public/developer/opentype/index_cmap.html}
  * </ul>
  *
- * @todo Write code for \Zend\Pdf\Cmap\HighByteMapping class.
- * @todo Write code for \Zend\Pdf\Cmap\MixedCoverage class.
- * @todo Write code for \Zend\Pdf\Cmap\TrimmedArray class.
- * @todo Write code for \Zend\Pdf\Cmap\SegmentedCoverage class.
+ * @todo Write code for \Zend2\Pdf\Cmap\HighByteMapping class.
+ * @todo Write code for \Zend2\Pdf\Cmap\MixedCoverage class.
+ * @todo Write code for \Zend2\Pdf\Cmap\TrimmedArray class.
+ * @todo Write code for \Zend2\Pdf\Cmap\SegmentedCoverage class.
  *
- * @uses       \Zend\Pdf\Cmap\ByteEncoding
- * @uses       \Zend\Pdf\Cmap\StaticByteEncoding
- * @uses       \Zend\Pdf\Cmap\SegmentToDelta
- * @uses       \Zend\Pdf\Cmap\TrimmedTable
- * @uses       \Zend\Pdf\Exception
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Font
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Cmap\ByteEncoding
+ * @uses       \Zend2\Pdf\Cmap\StaticByteEncoding
+ * @uses       \Zend2\Pdf\Cmap\SegmentToDelta
+ * @uses       \Zend2\Pdf\Cmap\TrimmedTable
+ * @uses       \Zend2\Pdf\Exception
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Font
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractCmap
@@ -131,14 +131,14 @@ abstract class AbstractCmap
      *
      * The cmap type must be one of the following values:
      * <ul>
-     *  <li>{@link \Zend\Pdf\Cmap\AbstractCmap::TYPE_BYTE_ENCODING}
-     *  <li>{@link \Zend\Pdf\Cmap\AbstractCmap::TYPE_BYTE_ENCODING_STATIC}
-     *  <li>{@link \Zend\Pdf\Cmap\AbstractCmap::TYPE_HIGH_BYTE_MAPPING}
-     *  <li>{@link \Zend\Pdf\Cmap\AbstractCmap::TYPE_SEGMENT_TO_DELTA}
-     *  <li>{@link \Zend\Pdf\Cmap\AbstractCmap::TYPE_TRIMMED_TABLE}
-     *  <li>{@link \Zend\Pdf\Cmap\AbstractCmap::TYPE_MIXED_COVERAGE}
-     *  <li>{@link \Zend\Pdf\Cmap\AbstractCmap::TYPE_TRIMMED_ARRAY}
-     *  <li>{@link \Zend\Pdf\Cmap\AbstractCmap::TYPE_SEGMENTED_COVERAGE}
+     *  <li>{@link \Zend2\Pdf\Cmap\AbstractCmap::TYPE_BYTE_ENCODING}
+     *  <li>{@link \Zend2\Pdf\Cmap\AbstractCmap::TYPE_BYTE_ENCODING_STATIC}
+     *  <li>{@link \Zend2\Pdf\Cmap\AbstractCmap::TYPE_HIGH_BYTE_MAPPING}
+     *  <li>{@link \Zend2\Pdf\Cmap\AbstractCmap::TYPE_SEGMENT_TO_DELTA}
+     *  <li>{@link \Zend2\Pdf\Cmap\AbstractCmap::TYPE_TRIMMED_TABLE}
+     *  <li>{@link \Zend2\Pdf\Cmap\AbstractCmap::TYPE_MIXED_COVERAGE}
+     *  <li>{@link \Zend2\Pdf\Cmap\AbstractCmap::TYPE_TRIMMED_ARRAY}
+     *  <li>{@link \Zend2\Pdf\Cmap\AbstractCmap::TYPE_SEGMENTED_COVERAGE}
      * </ul>
      *
      * Throws an exception if the table type is invalid or the cmap table data
@@ -146,8 +146,8 @@ abstract class AbstractCmap
      *
      * @param integer $cmapType Type of cmap.
      * @param mixed $cmapData CMap table data. Usually a string or array.
-     * @return \Zend\Pdf\Cmap\AbstractCmap
-     * @throws \Zend\Pdf\Exception
+     * @return \Zend2\Pdf\Cmap\AbstractCmap
+     * @throws \Zend2\Pdf\Exception
      */
     public static function cmapWithTypeData($cmapType, $cmapData)
     {
@@ -191,7 +191,7 @@ abstract class AbstractCmap
      * malformed.
      *
      * @param string $cmapData Raw binary cmap table data.
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     abstract public function __construct($cmapData);
 
@@ -258,7 +258,7 @@ abstract class AbstractCmap
      * @param string &$data
      * @param integer $index Position in string of integer.
      * @return integer
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function _extractInt2(&$data, $index)
     {
@@ -283,7 +283,7 @@ abstract class AbstractCmap
      * @param string &$data
      * @param integer $index Position in string of integer.
      * @return integer
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function _extractUInt2(&$data, $index)
     {
@@ -308,7 +308,7 @@ abstract class AbstractCmap
      * @param string &$data
      * @param integer $index Position in string of integer.
      * @return integer
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function _extractUInt4(&$data, $index)
     {

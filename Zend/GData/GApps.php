@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,14 +12,14 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData;
+namespace Zend2\GData;
 
 /**
  * Service class for interacting with the Google Apps Provisioning API.
@@ -32,10 +32,10 @@ namespace Zend\GData;
  *
  * @link http://code.google.com/apis/apps/gdata_provisioning_api_v2.0_reference.html
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class GApps extends GData
@@ -77,7 +77,7 @@ class GApps extends GData
     protected $_domain = null;
 
     /**
-     * Namespaces used for \Zend\Gdata\GApps
+     * Namespaces used for \Zend2\Gdata\GApps
      *
      * @var array
      */
@@ -88,7 +88,7 @@ class GApps extends GData
     /**
      * Create \Gdata\GApps object
      *
-     * @param \Zend\Http\Client $client (optional) The HTTP client to use when
+     * @param \Zend2\Http\Client $client (optional) The HTTP client to use when
      *          when communicating with the Google Apps servers.
      * @param string $domain (optional) The Google Apps domain which is to be
      *          accessed.
@@ -96,8 +96,8 @@ class GApps extends GData
      */
     public function __construct($client = null, $domain = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('Zend\GData\GApps');
-        $this->registerPackage('Zend\GData\GApps\Extension');
+        $this->registerPackage('Zend2\GData\GApps');
+        $this->registerPackage('Zend2\GData\GApps\Extension');
         parent::__construct($client, $applicationId);
         $this->_httpClient->setParameterPost(array('service' => self::AUTH_SERVICE_NAME));
         $this->_domain = $domain;
@@ -108,8 +108,8 @@ class GApps extends GData
      * XML document is contained within the original exception's HTTP
      * response. If conversion fails, throw the original error.
      *
-     * @param \Zend\Gdata\Exception $e The exception to convert.
-     * @throws \Zend\GData\GApps\ServiceException
+     * @param \Zend2\Gdata\Exception $e The exception to convert.
+     * @throws \Zend2\GData\GApps\ServiceException
      * @throws mixed
      */
     public static function throwServiceExceptionIfDetected($e)
@@ -140,20 +140,20 @@ class GApps extends GData
 
     /**
      * Imports a feed located at $uri.
-     * This method overrides the default behavior of \Zend\Gdata\App,
-     * providing support for \Zend\Gdata\GApps\ServiceException.
+     * This method overrides the default behavior of \Zend2\Gdata\App,
+     * providing support for \Zend2\Gdata\GApps\ServiceException.
      *
      * @param  string $uri
-     * @param  \Zend\Http\Client $client (optional) The client used for
+     * @param  \Zend2\Http\Client $client (optional) The client used for
      *          communication
      * @param  string $className (optional) The class which is used as the
      *          return type
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
-     * @return \Zend\GData\App\Feed
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
+     * @return \Zend2\GData\App\Feed
      */
-    public static function import($uri, $client = null, $className='Zend\GData\App\Feed')
+    public static function import($uri, $client = null, $className='Zend2\GData\App\Feed')
     {
         try {
             return parent::import($uri, $client, $className);
@@ -164,15 +164,15 @@ class GApps extends GData
 
     /**
      * GET a URI using client object.
-     * This method overrides the default behavior of \Zend\Gdata\App,
-     * providing support for \Zend\Gdata\GApps\ServiceException.
+     * This method overrides the default behavior of \Zend2\Gdata\App,
+     * providing support for \Zend2\Gdata\GApps\ServiceException.
      *
      * @param string $uri GET URI
      * @param array $extraHeaders Extra headers to add to the request, as an
      *        array of string-based key/value pairs.
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
-     * @return \Zend\Http\Response
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
+     * @return \Zend2\Http\Response
      */
     public function get($uri, $extraHeaders = array())
     {
@@ -185,18 +185,18 @@ class GApps extends GData
 
     /**
      * POST data with client object.
-     * This method overrides the default behavior of \Zend\Gdata\App,
-     * providing support for \Zend\Gdata\GApps\ServiceException.
+     * This method overrides the default behavior of \Zend2\Gdata\App,
+     * providing support for \Zend2\Gdata\GApps\ServiceException.
      *
-     * @param mixed $data The \Zend\GData\App\Entry or XML to post
+     * @param mixed $data The \Zend2\GData\App\Entry or XML to post
      * @param string $uri (optional) POST URI
      * @param integer $remainingRedirects (optional)
      * @param string $contentType Content-type of the data
      * @param array $extraHaders Extra headers to add tot he request
-     * @return \Zend\Http\Response
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\App\InvalidArgumentException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @return \Zend2\Http\Response
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function post($data, $uri = null, $remainingRedirects = null,
             $contentType = null, $extraHeaders = null)
@@ -210,18 +210,18 @@ class GApps extends GData
 
     /**
      * PUT data with client object
-     * This method overrides the default behavior of \Zend\Gdata\App,
-     * providing support for \Zend\Gdata\GApps\ServiceException.
+     * This method overrides the default behavior of \Zend2\Gdata\App,
+     * providing support for \Zend2\Gdata\GApps\ServiceException.
      *
-     * @param mixed $data The \Zend\GData\App\Entry or XML to post
+     * @param mixed $data The \Zend2\GData\App\Entry or XML to post
      * @param string $uri (optional) PUT URI
      * @param integer $remainingRedirects (optional)
      * @param string $contentType Content-type of the data
      * @param array $extraHaders Extra headers to add tot he request
-     * @return \Zend\Http\Response
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\App\InvalidArgumentException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @return \Zend2\Http\Response
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function put($data, $uri = null, $remainingRedirects = null,
             $contentType = null, $extraHeaders = null)
@@ -235,15 +235,15 @@ class GApps extends GData
 
     /**
      * DELETE entry with client object
-     * This method overrides the default behavior of \Zend\Gdata\App,
-     * providing support for \Zend\Gdata\GApps\ServiceException.
+     * This method overrides the default behavior of \Zend2\Gdata\App,
+     * providing support for \Zend2\Gdata\GApps\ServiceException.
      *
-     * @param mixed $data The \Zend\GData\App\Entry or URL to delete
+     * @param mixed $data The \Zend2\GData\App\Entry or URL to delete
      * @param integer $remainingRedirects (optional)
      * @return void
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\App\InvalidArgumentException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function delete($data, $remainingRedirects = null)
     {
@@ -290,7 +290,7 @@ class GApps extends GData
      *
      * @param string $domain (optional) A fully-qualified domain to use
      *          instead of the default domain for this service instance.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
      public function getBaseUrl($domain = null)
      {
@@ -309,10 +309,10 @@ class GApps extends GData
      *
      * @param mixed $location (optional) The location for the feed, as a URL
      *          or Query.
-     * @return \Zend\GData\GApps\UserFeed
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @return \Zend2\GData\GApps\UserFeed
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function getUserFeed($location = null)
     {
@@ -323,7 +323,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\GApps\UserFeed');
+        return parent::getFeed($uri, 'Zend2\GData\GApps\UserFeed');
     }
 
     /**
@@ -331,10 +331,10 @@ class GApps extends GData
      *
      * @param mixed $location (optional) The location for the feed, as a URL
      *          or Query.
-     * @return \Zend\GData\GApps\NicknameFeed
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @return \Zend2\GData\GApps\NicknameFeed
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function getNicknameFeed($location = null)
     {
@@ -345,7 +345,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\GApps\NicknameFeed');
+        return parent::getFeed($uri, 'Zend2\GData\GApps\NicknameFeed');
     }
 
     /**
@@ -354,10 +354,10 @@ class GApps extends GData
      *
      * @param mixed $location (optional) The location for the feed, as a URL
      *          or Query.
-     * @return Zend\GData\GApps\GroupFeed
-     * @throws Zend\GData\App\Exception
-     * @throws Zend\GData\App\HttpException
-     * @throws Zend\GData\GApps\ServiceException
+     * @return Zend2\GData\GApps\GroupFeed
+     * @throws Zend2\GData\App\Exception
+     * @throws Zend2\GData\App\HttpException
+     * @throws Zend2\GData\GApps\ServiceException
      */
     public function getGroupFeed($location = null)
     {
@@ -369,7 +369,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\GApps\GroupFeed');
+        return parent::getFeed($uri, 'Zend2\GData\GApps\GroupFeed');
     }
 
     /**
@@ -378,10 +378,10 @@ class GApps extends GData
      *
      * @param mixed $location (optional) The location for the feed, as a URL
      *          or Query.
-     * @return Zend\GData\GApps\MemberFeed
-     * @throws Zend\GData\App\Exception
-     * @throws Zend\GData\App\HttpException
-     * @throws Zend\GData\GApps\ServiceException
+     * @return Zend2\GData\GApps\MemberFeed
+     * @throws Zend2\GData\App\Exception
+     * @throws Zend2\GData\App\HttpException
+     * @throws Zend2\GData\GApps\ServiceException
      */
     public function getMemberFeed($location = null)
     {
@@ -393,7 +393,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\GApps\MemberFeed');
+        return parent::getFeed($uri, 'Zend2\GData\GApps\MemberFeed');
     }
 
     /**
@@ -402,10 +402,10 @@ class GApps extends GData
      *
      * @param mixed $location (optional) The location for the feed, as a URL
      *          or Query.
-     * @return Zend\GData\GApps\OwnerFeed
-     * @throws Zend\GData\App\Exception
-     * @throws Zend\GData\App\HttpException
-     * @throws Zend\GData\GApps\ServiceException
+     * @return Zend2\GData\GApps\OwnerFeed
+     * @throws Zend2\GData\App\Exception
+     * @throws Zend2\GData\App\HttpException
+     * @throws Zend2\GData\GApps\ServiceException
      */
     public function getOwnerFeed($location = null)
     {
@@ -418,7 +418,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\GApps\OwnerFeed');
+        return parent::getFeed($uri, 'Zend2\GData\GApps\OwnerFeed');
     }
 
     /**
@@ -427,10 +427,10 @@ class GApps extends GData
      *
      * @param mixed $location (optional) The location for the feed, as a URL
      *          or Query.
-     * @return \Zend\GData\GApps\EmailListFeed
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @return \Zend2\GData\GApps\EmailListFeed
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function getEmailListFeed($location = null)
     {
@@ -441,7 +441,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\GApps\EmailListFeed');
+        return parent::getFeed($uri, 'Zend2\GData\GApps\EmailListFeed');
     }
 
     /**
@@ -449,10 +449,10 @@ class GApps extends GData
      * EmailListRecipientEntry objects.
      *
      * @param mixed $location The location for the feed, as a URL or Query.
-     * @return \Zend\GData\GApps\EmailListRecipientFeed
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @return \Zend2\GData\GApps\EmailListRecipientFeed
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function getEmailListRecipientFeed($location)
     {
@@ -464,17 +464,17 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\GApps\EmailListRecipientFeed');
+        return parent::getFeed($uri, 'Zend2\GData\GApps\EmailListRecipientFeed');
     }
 
     /**
      * Retreive a single UserEntry object.
      *
      * @param mixed $location The location for the feed, as a URL or Query.
-     * @return \Zend\GData\GApps\UserEntry
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @return \Zend2\GData\GApps\UserEntry
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function getUserEntry($location)
     {
@@ -486,17 +486,17 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\GApps\UserEntry');
+        return parent::getEntry($uri, 'Zend2\GData\GApps\UserEntry');
     }
 
     /**
      * Retreive a single NicknameEntry object.
      *
      * @param mixed $location The location for the feed, as a URL or Query.
-     * @return \Zend\GData\GApps\NicknameEntry
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @return \Zend2\GData\GApps\NicknameEntry
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function getNicknameEntry($location)
     {
@@ -508,17 +508,17 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\GApps\NicknameEntry');
+        return parent::getEntry($uri, 'Zend2\GData\GApps\NicknameEntry');
     }
 
     /**
      * Retreive a single GroupEntry object.
      *
      * @param mixed $location The location for the feed, as a URL or Query.
-     * @return Zend\GData\GApps\GroupEntry
-     * @throws Zend\GData\App\Exception
-     * @throws Zend\GData\App\HttpException
-     * @throws Zend\GData\GApps\ServiceException
+     * @return Zend2\GData\GApps\GroupEntry
+     * @throws Zend2\GData\App\Exception
+     * @throws Zend2\GData\App\HttpException
+     * @throws Zend2\GData\GApps\ServiceException
      */
     public function getGroupEntry($location = null)
     {
@@ -530,17 +530,17 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\GApps\GroupEntry');
+        return parent::getEntry($uri, 'Zend2\GData\GApps\GroupEntry');
     }
 
     /**
      * Retreive a single MemberEntry object.
      *
      * @param mixed $location The location for the feed, as a URL or Query.
-     * @return Zend\GData\GApps\MemberEntry
-     * @throws Zend\GData\App\Exception
-     * @throws Zend\GData\App\HttpException
-     * @throws Zend\GData\GApps\ServiceException
+     * @return Zend2\GData\GApps\MemberEntry
+     * @throws Zend2\GData\App\Exception
+     * @throws Zend2\GData\App\HttpException
+     * @throws Zend2\GData\GApps\ServiceException
      */
     public function getMemberEntry($location = null)
     {
@@ -552,17 +552,17 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\GApps\MemberEntry');
+        return parent::getEntry($uri, 'Zend2\GData\GApps\MemberEntry');
     }
 
     /**
      * Retreive a single OwnerEntry object.
      *
      * @param mixed $location The location for the feed, as a URL or Query.
-     * @return Zend\GData\GApps\OwnerEntry
-     * @throws Zend\GData\App\Exception
-     * @throws Zend\GData\App\HttpException
-     * @throws Zend\GData\GApps\ServiceException
+     * @return Zend2\GData\GApps\OwnerEntry
+     * @throws Zend2\GData\App\Exception
+     * @throws Zend2\GData\App\HttpException
+     * @throws Zend2\GData\GApps\ServiceException
      */
     public function getOwnerEntry($location = null)
     {
@@ -574,17 +574,17 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\GApps\OwnerEntry');
+        return parent::getEntry($uri, 'Zend2\GData\GApps\OwnerEntry');
     }
 
     /**
      * Retreive a single EmailListEntry object.
      *
      * @param mixed $location The location for the feed, as a URL or Query.
-     * @return \Zend\GData\GApps\EmailListEntry
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @return \Zend2\GData\GApps\EmailListEntry
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function getEmailListEntry($location)
     {
@@ -596,17 +596,17 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\GApps\EmailListEntry');
+        return parent::getEntry($uri, 'Zend2\GData\GApps\EmailListEntry');
     }
 
     /**
      * Retreive a single EmailListRecipientEntry object.
      *
      * @param mixed $location The location for the feed, as a URL or Query.
-     * @return \Zend\GData\GApps\EmailListRecipientEntry
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @return \Zend2\GData\GApps\EmailListRecipientEntry
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function getEmailListRecipientEntry($location)
     {
@@ -618,66 +618,66 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\GApps\EmailListRecipientEntry');
+        return parent::getEntry($uri, 'Zend2\GData\GApps\EmailListRecipientEntry');
     }
 
     /**
      * Create a new user from a UserEntry.
      *
-     * @param \Zend\GData\GApps\UserEntry $user The user entry to insert.
+     * @param \Zend2\GData\GApps\UserEntry $user The user entry to insert.
      * @param string $uri (optional) The URI where the user should be
      *          uploaded to. If null, the default user creation URI for
      *          this domain will be used.
-     * @return \Zend\GData\GApps\UserEntry The inserted user entry as
+     * @return \Zend2\GData\GApps\UserEntry The inserted user entry as
      *          returned by the server.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function insertUser($user, $uri = null)
     {
         if ($uri === null) {
             $uri = $this->getBaseUrl() . self::APPS_USER_PATH;
         }
-        $newEntry = $this->insertEntry($user, $uri, 'Zend\GData\GApps\UserEntry');
+        $newEntry = $this->insertEntry($user, $uri, 'Zend2\GData\GApps\UserEntry');
         return $newEntry;
     }
 
     /**
      * Create a new nickname from a NicknameEntry.
      *
-     * @param \Zend\GData\GApps\NicknameEntry $nickname The nickname entry to
+     * @param \Zend2\GData\GApps\NicknameEntry $nickname The nickname entry to
      *          insert.
      * @param string $uri (optional) The URI where the nickname should be
      *          uploaded to. If null, the default nickname creation URI for
      *          this domain will be used.
-     * @return \Zend\GData\GApps\NicknameEntry The inserted nickname entry as
+     * @return \Zend2\GData\GApps\NicknameEntry The inserted nickname entry as
      *          returned by the server.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function insertNickname($nickname, $uri = null)
     {
         if ($uri === null) {
             $uri = $this->getBaseUrl() . self::APPS_NICKNAME_PATH;
         }
-        $newEntry = $this->insertEntry($nickname, $uri, 'Zend\GData\GApps\NicknameEntry');
+        $newEntry = $this->insertEntry($nickname, $uri, 'Zend2\GData\GApps\NicknameEntry');
         return $newEntry;
     }
 
     /**
      * Create a new group from a GroupEntry.
      *
-     * @param Zend\GData\GApps\GroupEntry $group The group entry to insert.
+     * @param Zend2\GData\GApps\GroupEntry $group The group entry to insert.
      * @param string $uri (optional) The URI where the group should be
      *          uploaded to. If null, the default user creation URI for
      *          this domain will be used.
-     * @return Zend\GData\GApps\GroupEntry The inserted group entry as
+     * @return Zend2\GData\GApps\GroupEntry The inserted group entry as
      *          returned by the server.
-     * @throws Zend\GData\App\Exception
-     * @throws Zend\GData\App\HttpException
-     * @throws Zend\GData\GApps\ServiceException
+     * @throws Zend2\GData\App\Exception
+     * @throws Zend2\GData\App\HttpException
+     * @throws Zend2\GData\GApps\ServiceException
      */
     public function insertGroup($group, $uri = null)
     {
@@ -685,22 +685,22 @@ class GApps extends GData
             $uri  = self::APPS_BASE_FEED_URI . self::APPS_GROUP_PATH . '/';
             $uri .= $this->getDomain();
         }
-        $newEntry = $this->insertEntry($group, $uri, 'Zend\GData\GApps\GroupEntry');
+        $newEntry = $this->insertEntry($group, $uri, 'Zend2\GData\GApps\GroupEntry');
         return $newEntry;
     }
 
     /**
      * Create a new member from a MemberEntry.
      *
-     * @param Zend\GData\GApps\MemberEntry $member The member entry to insert.
+     * @param Zend2\GData\GApps\MemberEntry $member The member entry to insert.
      * @param string $uri (optional) The URI where the group should be
      *          uploaded to. If null, the default user creation URI for
      *          this domain will be used.
-     * @return Zend\GData\GApps\MemberEntry The inserted member entry as
+     * @return Zend2\GData\GApps\MemberEntry The inserted member entry as
      *          returned by the server.
-     * @throws Zend\GData\App\Exception
-     * @throws Zend\GData\App\HttpException
-     * @throws Zend\GData\GApps\ServiceException
+     * @throws Zend2\GData\App\Exception
+     * @throws Zend2\GData\App\HttpException
+     * @throws Zend2\GData\GApps\ServiceException
      */
     public function insertMember($member, $uri = null)
     {
@@ -708,22 +708,22 @@ class GApps extends GData
             throw new App\InvalidArgumentException(
                     'URI must not be null');
         }
-        $newEntry = $this->insertEntry($member, $uri, 'Zend\GData\GApps\MemberEntry');
+        $newEntry = $this->insertEntry($member, $uri, 'Zend2\GData\GApps\MemberEntry');
         return $newEntry;
     }
 
     /**
      * Create a new group from a OwnerEntry.
      *
-     * @param Zend\GData\GApps\OwnerEntry $owner The owner entry to insert.
+     * @param Zend2\GData\GApps\OwnerEntry $owner The owner entry to insert.
      * @param string $uri (optional) The URI where the owner should be
      *          uploaded to. If null, the default user creation URI for
      *          this domain will be used.
-     * @return Zend\GData\GApps\OwnerEntry The inserted owner entry as
+     * @return Zend2\GData\GApps\OwnerEntry The inserted owner entry as
      *          returned by the server.
-     * @throws Zend\GData\App\Exception
-     * @throws Zend\GData\App\HttpException
-     * @throws Zend\GData\GApps\ServiceException
+     * @throws Zend2\GData\App\Exception
+     * @throws Zend2\GData\App\HttpException
+     * @throws Zend2\GData\GApps\ServiceException
      */
     public function insertOwner($owner, $uri = null)
     {
@@ -731,46 +731,46 @@ class GApps extends GData
             throw new App\InvalidArgumentException(
                     'URI must not be null');
         }
-        $newEntry = $this->insertEntry($owner, $uri, 'Zend\GData\GApps\OwnerEntry');
+        $newEntry = $this->insertEntry($owner, $uri, 'Zend2\GData\GApps\OwnerEntry');
         return $newEntry;
     }
 
     /**
      * Create a new email list from an EmailListEntry.
      *
-     * @param \Zend\GData\GApps\EmailListEntry $emailList The email list entry
+     * @param \Zend2\GData\GApps\EmailListEntry $emailList The email list entry
      *          to insert.
      * @param string $uri (optional) The URI where the email list should be
      *          uploaded to. If null, the default email list creation URI for
      *          this domain will be used.
-     * @return \Zend\GData\GApps\EmailListEntry The inserted email list entry
+     * @return \Zend2\GData\GApps\EmailListEntry The inserted email list entry
      *          as returned by the server.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function insertEmailList($emailList, $uri = null)
     {
         if ($uri === null) {
             $uri = $this->getBaseUrl() . self::APPS_EMAIL_LIST_PATH;
         }
-        $newEntry = $this->insertEntry($emailList, $uri, 'Zend\GData\GApps\EmailListEntry');
+        $newEntry = $this->insertEntry($emailList, $uri, 'Zend2\GData\GApps\EmailListEntry');
         return $newEntry;
     }
 
     /**
      * Create a new email list recipient from an EmailListRecipientEntry.
      *
-     * @param \Zend\GData\GApps\EmailListRecipientEntry $recipient The recipient
+     * @param \Zend2\GData\GApps\EmailListRecipientEntry $recipient The recipient
      *          entry to insert.
      * @param string $uri (optional) The URI where the recipient should be
      *          uploaded to. If null, the default recipient creation URI for
      *          this domain will be used.
-     * @return \Zend\GData\GApps\EmailListRecipientEntry The inserted
+     * @return \Zend2\GData\GApps\EmailListRecipientEntry The inserted
      *          recipient entry as returned by the server.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function insertEmailListRecipient($recipient, $uri = null)
     {
@@ -780,23 +780,23 @@ class GApps extends GData
         } elseif ($uri instanceof EmailListEntry) {
             $uri = $uri->getLink('edit')->href;
         }
-        $newEntry = $this->insertEntry($recipient, $uri, 'Zend\GData\GApps\EmailListRecipientEntry');
+        $newEntry = $this->insertEntry($recipient, $uri, 'Zend2\GData\GApps\EmailListRecipientEntry');
         return $newEntry;
     }
 
     /**
      * Provides a magic factory method to instantiate new objects with
-     * shorter syntax than would otherwise be required by the Zend Framework
-     * naming conventions. For more information, see \Zend\Gdata\App::__call().
+     * shorter syntax than would otherwise be required by the Zend2 Framework
+     * naming conventions. For more information, see \Zend2\Gdata\App::__call().
      *
      * This overrides the default behavior of __call() so that query classes
      * do not need to have their domain manually set when created with
      * a magic factory method.
      *
-     * @see \Zend\Gdata\App::__call()
+     * @see \Zend2\Gdata\App::__call()
      * @param string $method The method name being called
      * @param array $args The arguments passed to the call
-     * @throws \Zend\GData\App\Exception
+     * @throws \Zend2\GData\App\Exception
      */
     public function __call($method, $args) {
         if (preg_match('/^new(\w+Query)/', $method, $matches)) {
@@ -842,11 +842,11 @@ class GApps extends GData
      *                 (if $passwordHashFunction is null) or a SHA-1 hashed
      *                 value (if $passwordHashFunction = 'SHA-1').
      * @param string $quotaLimitInMB (optional) The quota limit for the new user in MB.
-     * @return \Zend\GData\GApps\UserEntry (optional) The new user entry as returned by
+     * @return \Zend2\GData\GApps\UserEntry (optional) The new user entry as returned by
      *                 server.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function createUser ($username, $givenName, $familyName, $password,
             $passwordHashFunction = null, $quotaLimitInMB = null) {
@@ -869,10 +869,10 @@ class GApps extends GData
      * Retrieve a user based on their username.
      *
      * @param string $username The username to search for.
-     * @return \Zend\GData\GApps\UserEntry The username to search for, or null
+     * @return \Zend2\GData\GApps\UserEntry The username to search for, or null
      *              if no match found.
-     * @throws \Zend\GData\App\InvalidArgumentException
-     * @throws \Zend\GData\App\HttpException
+     * @throws \Zend2\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\App\HttpException
      */
     public function retrieveUser ($username)
     {
@@ -897,11 +897,11 @@ class GApps extends GData
      * @param string $startUsername (optional) The first username to retrieve.
      *          If null or not declared, the page will begin with the first
      *          user in the domain.
-     * @return Zend_Gdata_GApps_UserFeed Collection of Zend_Gdata_UserEntry
+     * @return Zend2_Gdata_GApps_UserFeed Collection of Zend2_Gdata_UserEntry
      *              objects representing all users in the domain.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function retrievePageOfUsers ($startUsername = null) {
         $query = $this->newUserQuery();
@@ -915,11 +915,11 @@ class GApps extends GData
      * signifigant amount of time to complete. On larger domains this may
      * may cause execution to timeout without proper precautions in place.
      *
-     * @return Zend_Gdata_GApps_UserFeed Collection of Zend_Gdata_UserEntry
+     * @return Zend2_Gdata_GApps_UserFeed Collection of Zend2_Gdata_UserEntry
      *              objects representing all users in the domain.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function retrieveAllUsers () {
         return $this->retrieveAllEntriesForFeed($this->retrievePageOfUsers());
@@ -933,15 +933,15 @@ class GApps extends GData
      * Provisioning API specification. Normally users will instead want to
      * call UserEntry::save() instead.
      *
-     * @see Zend_Gdata_App_Entry::save
+     * @see Zend2_Gdata_App_Entry::save
      * @param string $username The username whose data will be overwritten.
-     * @param \Zend\GData\GApps\UserEntry $userEntry The user entry which
+     * @param \Zend2\GData\GApps\UserEntry $userEntry The user entry which
      *          will be overwritten.
-     * @return \Zend\GData\GApps\UserEntry The UserEntry returned by the
+     * @return \Zend2\GData\GApps\UserEntry The UserEntry returned by the
      *          server.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function updateUser($username, $userEntry) {
         return $this->updateEntry($userEntry, $this->getBaseUrl() .
@@ -953,11 +953,11 @@ class GApps extends GData
      *
      * @param string $username The username associated with the user who
      *          should be suspended.
-     * @return \Zend\GData\GApps\UserEntry The UserEntry for the modified
+     * @return \Zend2\GData\GApps\UserEntry The UserEntry for the modified
      *          user.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function suspendUser($username) {
         $user = $this->retrieveUser($username);
@@ -970,11 +970,11 @@ class GApps extends GData
      *
      * @param string $username The username associated with the user who
      *          should be restored.
-     * @return \Zend\GData\GApps\UserEntry The UserEntry for the modified
+     * @return \Zend2\GData\GApps\UserEntry The UserEntry for the modified
      *          user.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function restoreUser($username) {
         $user = $this->retrieveUser($username);
@@ -987,9 +987,9 @@ class GApps extends GData
      *
      * @param string $username The username associated with the user who
      *          should be deleted.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function deleteUser($username) {
         $this->delete($this->getBaseUrl() . self::APPS_USER_PATH . '/' .
@@ -1002,11 +1002,11 @@ class GApps extends GData
      * @param string $username The username to which the new nickname should
      *          be associated.
      * @param string $nickname The new nickname to be created.
-     * @return \Zend\GData\GApps\NicknameEntry The nickname entry which was
+     * @return \Zend2\GData\GApps\NicknameEntry The nickname entry which was
      *          created by the server.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function createNickname($username, $nickname) {
         $entry = $this->newNicknameEntry();
@@ -1021,10 +1021,10 @@ class GApps extends GData
      * Retrieve the entry for a specified nickname.
      *
      * @param string $nickname The nickname to be retrieved.
-     * @return \Zend\GData\GApps\NicknameEntry The requested nickname entry.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @return \Zend2\GData\GApps\NicknameEntry The requested nickname entry.
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function retrieveNickname($nickname) {
         $query = $this->newNicknameQuery();
@@ -1047,11 +1047,11 @@ class GApps extends GData
      *
      * @param string $username The username whose nicknames should be
      *          returned.
-     * @return \Zend\GData\GApps\NicknameFeed A feed containing all nicknames
+     * @return \Zend2\GData\GApps\NicknameFeed A feed containing all nicknames
      *          for the given user, or null if
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function retrieveNicknames($username) {
         $query = $this->newNicknameQuery();
@@ -1068,11 +1068,11 @@ class GApps extends GData
      * @param string $startNickname (optional) The first nickname to
      *          retrieve. If null or not declared, the page will begin with
      *          the first nickname in the domain.
-     * @return Zend_Gdata_GApps_NicknameFeed Collection of Zend_Gdata_NicknameEntry
+     * @return Zend2_Gdata_GApps_NicknameFeed Collection of Zend2_Gdata_NicknameEntry
      *              objects representing all nicknames in the domain.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function retrievePageOfNicknames ($startNickname = null) {
         $query = $this->newNicknameQuery();
@@ -1086,11 +1086,11 @@ class GApps extends GData
      * signifigant amount of time to complete. On larger domains this may
      * may cause execution to timeout without proper precautions in place.
      *
-     * @return Zend_Gdata_GApps_NicknameFeed Collection of Zend_Gdata_NicknameEntry
+     * @return Zend2_Gdata_GApps_NicknameFeed Collection of Zend2_Gdata_NicknameEntry
      *              objects representing all nicknames in the domain.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function retrieveAllNicknames () {
         return $this->retrieveAllEntriesForFeed($this->retrievePageOfNicknames());
@@ -1100,9 +1100,9 @@ class GApps extends GData
      * Delete a specified nickname.
      *
      * @param string $nickname The name of the nickname to be deleted.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function deleteNickname($nickname) {
         $this->delete($this->getBaseUrl() . self::APPS_NICKNAME_PATH . '/' . $nickname);
@@ -1115,7 +1115,7 @@ class GApps extends GData
      * @param string $groupName The name of the group
      * @param string $description A description of the group
      * @param string $emailPermission The subscription permission of the group
-     * @return Zend\GData\GApps\GroupEntry The group entry as created on the server.
+     * @return Zend2\GData\GApps\GroupEntry The group entry as created on the server.
      */
     public function createGroup($groupId, $groupName, $description = null, $emailPermission = null)
     {
@@ -1154,7 +1154,7 @@ class GApps extends GData
      * Retrieves a group based on group id
      *
      * @param string $groupId The unique identifier for the group
-     * @return Zend\GData\GApps\GroupEntry The group entry as returned by the server.
+     * @return Zend2\GData\GApps\GroupEntry The group entry as returned by the server.
      */
     public function retrieveGroup($groupId)
     {
@@ -1180,7 +1180,7 @@ class GApps extends GData
      * signifigant amount of time to complete. On larger domains this may
      * may cause execution to timeout without proper precautions in place.
      *
-     * @return Zend\GData\GApps\GroupFeed Collection of Zend\GData\GroupEntry objects
+     * @return Zend2\GData\GApps\GroupFeed Collection of Zend2\GData\GroupEntry objects
      *              representing all groups apart of the domain.
      */
     public function retrieveAllGroups()
@@ -1232,7 +1232,7 @@ class GApps extends GData
      *
      * @param string $recipientAddress Email address, member id, or group id
      * @param string $groupId The unique id of the group
-     * @return Zend\GData\GApps\MemberEntry The member entry returned by the server
+     * @return Zend2\GData\GApps\MemberEntry The member entry returned by the server
      */
     public function addMemberToGroup($recipientAddress, $groupId)
     {
@@ -1268,7 +1268,7 @@ class GApps extends GData
      * Retrieves all the members of a group
      *
      * @param string $groupId The unique id of the group
-     * @return Zend\GData\GApps\MemberFeed Collection of MemberEntry objects
+     * @return Zend2\GData\GApps\MemberFeed Collection of MemberEntry objects
      *              representing all members apart of the group.
      */
     public function retrieveAllMembers($groupId)
@@ -1282,7 +1282,7 @@ class GApps extends GData
      *
      * @param string $email Owner's email
      * @param string $groupId Group ownership to be checked for
-     * @return Zend\GData\GApps\OwnerEntry The OwnerEntry returned by the server
+     * @return Zend2\GData\GApps\OwnerEntry The OwnerEntry returned by the server
      */
     public function addOwnerToGroup($email, $groupId)
     {
@@ -1304,7 +1304,7 @@ class GApps extends GData
      * Retrieves all the owners of a group
      *
      * @param string $groupId The unique identifier for the group
-     * @return Zend\GData\GApps\OwnerFeed Collection of Zend\GData\OwnerEntry
+     * @return Zend2\GData\GApps\OwnerFeed Collection of Zend2\GData\OwnerEntry
      *              objects representing all owners apart of the group.
      */
     public function retrieveGroupOwners($groupId)
@@ -1363,7 +1363,7 @@ class GApps extends GData
      * @param string $groupName The name of the group
      * @param string $description A description of the group
      * @param string $emailPermission The subscription permission of the group
-     * @return Zend\GData\GApps\GroupEntry The group entry as updated on the server.
+     * @return Zend2\GData\GApps\GroupEntry The group entry as updated on the server.
      */
     public function updateGroup($groupId, $groupName = null, $description = null,
             $emailPermission = null)
@@ -1402,7 +1402,7 @@ class GApps extends GData
         $uri  = self::APPS_BASE_FEED_URI . self::APPS_GROUP_PATH . '/';
         $uri .= $this->getDomain() . '/' . $groupId;
 
-        return $this->updateEntry($group, $uri, 'Zend\GData\GApps\GroupEntry');
+        return $this->updateEntry($group, $uri, 'Zend2\GData\GApps\GroupEntry');
     }
 
     /**
@@ -1411,7 +1411,7 @@ class GApps extends GData
      * @param string $memberId Member username
      * @param bool $directOnly (Optional) If true, members with direct association
      *             only will be considered
-     * @return Zend\GData\GApps\GroupFeed Collection of Zend\GData\GroupEntry
+     * @return Zend2\GData\GApps\GroupFeed Collection of Zend2\GData\GroupEntry
      *              objects representing all groups member is apart of in the domain.
      */
     public function retrieveGroups($memberId, $directOnly = null)
@@ -1431,11 +1431,11 @@ class GApps extends GData
      * @param string $startGroup (optional) The first group to
      *              retrieve. If null or not defined, the page will begin
      *              with the first group in the domain.
-     * @return Zend\GData\GApps\GroupFeed Collection of Zend\GData\GroupEntry
+     * @return Zend2\GData\GApps\GroupFeed Collection of Zend2\GData\GroupEntry
      *              objects representing the groups in the domain.
-     * @throws Zend\GData\App\Exception
-     * @throws Zend\GData\App\HttpException
-     * @throws Zend\GData\GApps\ServiceException
+     * @throws Zend2\GData\App\Exception
+     * @throws Zend2\GData\App\HttpException
+     * @throws Zend2\GData\GApps\ServiceException
      */
     public function retrievePageOfGroups ($startGroup = null)
     {
@@ -1450,7 +1450,7 @@ class GApps extends GData
      * @param string $groupId The group id which should be searched.
      * @param string $startMember (optinal) The address of the first member,
      *              or null to start with the first member in the list.
-     * @return Zend\GData\GApps\MemberFeed Collection of Zend\GData\MemberEntry
+     * @return Zend2\GData\GApps\MemberFeed Collection of Zend2\GData\MemberEntry
      *              objects
      */
     public function retrievePageOfMembers($groupId, $startMember = null)
@@ -1464,11 +1464,11 @@ class GApps extends GData
      * Create a new email list.
      *
      * @param string $emailList The name of the email list to be created.
-     * @return \Zend\GData\GApps\EmailListEntry The email list entry
+     * @return \Zend2\GData\GApps\EmailListEntry The email list entry
      *          as created on the server.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function createEmailList($emailList) {
         $entry = $this->newEmailListEntry();
@@ -1483,11 +1483,11 @@ class GApps extends GData
      *
      * @param string $username The recipient whose associated email lists
      *          should be returned.
-     * @return \Zend\GData\GApps\EmailListFeed The list of email lists found as
-     *          Zend_Gdata_EmailListEntry objects.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @return \Zend2\GData\GApps\EmailListFeed The list of email lists found as
+     *          Zend2_Gdata_EmailListEntry objects.
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function retrieveEmailLists($recipient) {
         $query = $this->newEmailListQuery();
@@ -1502,11 +1502,11 @@ class GApps extends GData
      * @param string $startEmailListName (optional) The first list to
      *              retrieve. If null or not defined, the page will begin
      *              with the first email list in the domain.
-     * @return Zend_Gdata_GApps_EmailListFeed Collection of Zend_Gdata_EmailListEntry
+     * @return Zend2_Gdata_GApps_EmailListFeed Collection of Zend2_Gdata_EmailListEntry
      *              objects representing all nicknames in the domain.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function retrievePageOfEmailLists ($startNickname = null) {
         $query = $this->newEmailListQuery();
@@ -1520,11 +1520,11 @@ class GApps extends GData
      * signifigant amount of time to complete. On larger domains this may
      * may cause execution to timeout without proper precautions in place.
      *
-     * @return \Zend\GData\GApps\EmailListFeed The list of email lists found
-     *              as Zend_Gdata_GApps_EmailListEntry objects.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @return \Zend2\GData\GApps\EmailListFeed The list of email lists found
+     *              as Zend2_Gdata_GApps_EmailListEntry objects.
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function retrieveAllEmailLists() {
         return $this->retrieveAllEntriesForFeed($this->retrievePageOfEmailLists());
@@ -1534,9 +1534,9 @@ class GApps extends GData
      * Delete a specified email list.
      *
      * @param string $emailList The name of the emailList to be deleted.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function deleteEmailList($emailList) {
         $this->delete($this->getBaseUrl() . self::APPS_EMAIL_LIST_PATH . '/'
@@ -1550,11 +1550,11 @@ class GApps extends GData
      *              added to the email list.
      * @param string $emailList The name of the email address to which the
      *              recipient should be added.
-     * @return \Zend\GData\GApps\EmailListRecipientEntry The recipient entry
+     * @return \Zend2\GData\GApps\EmailListRecipientEntry The recipient entry
      *              created by the server.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function addRecipientToEmailList($recipientAddress, $emailList) {
         $entry = $this->newEmailListRecipientEntry();
@@ -1574,12 +1574,12 @@ class GApps extends GData
      * @param string $startRecipient (optinal) The address of the first
      *              recipient, or null to start with the first recipient in
      *              the list.
-     * @return \Zend\GData\GApps\EmailListRecipientFeed Collection of
-     *              Zend_Gdata_EmailListRecipientEntry objects representing all
+     * @return \Zend2\GData\GApps\EmailListRecipientFeed Collection of
+     *              Zend2_Gdata_EmailListRecipientEntry objects representing all
      *              recpients in the specified list.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function retrievePageOfRecipients ($emailList,
             $startRecipient = null) {
@@ -1596,11 +1596,11 @@ class GApps extends GData
      * may cause execution to timeout without proper precautions in place.
      *
      * @param string $emaiList The email list which should be searched.
-     * @return \Zend\GData\GApps\EmailListRecipientFeed The list of email lists
-     *              found as Zend_Gdata_GApps_EmailListRecipientEntry objects.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @return \Zend2\GData\GApps\EmailListRecipientFeed The list of email lists
+     *              found as Zend2_Gdata_GApps_EmailListRecipientEntry objects.
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function retrieveAllRecipients($emailList) {
         return $this->retrieveAllEntriesForFeed(
@@ -1613,9 +1613,9 @@ class GApps extends GData
      * @param string $recipientAddress The recipient to be removed.
      * @param string $emailList The list from which the recipient should
      *              be removed.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\GApps\ServiceException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\GApps\ServiceException
      */
     public function removeRecipientFromEmailList($recipientAddress, $emailList) {
         $this->delete($this->getBaseUrl() . self::APPS_EMAIL_LIST_PATH . '/'

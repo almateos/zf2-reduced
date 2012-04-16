@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Server;
+namespace Zend2\Server;
 
-use Zend\Server\Reflection\ReflectionClass,
-    Zend\Server\Reflection\ReflectionFunction;
+use Zend2\Server\Reflection\ReflectionClass,
+    Zend2\Server\Reflection\ReflectionFunction;
 
 /**
  * Reflection for determining method signatures to use with server classes
  *
  * @uses       ReflectionClass
  * @uses       ReflectionObject
- * @uses       \Zend\Server\Reflection\ReflectionClass
- * @uses       \Zend\Server\Reflection\Exception
- * @uses       \Zend\Server\Reflection\ReflectionFunction
- * @category   Zend
- * @package    Zend_Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Server\Reflection\ReflectionClass
+ * @uses       \Zend2\Server\Reflection\Exception
+ * @uses       \Zend2\Server\Reflection\ReflectionFunction
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Reflection
@@ -41,7 +41,7 @@ class Reflection
     /**
      * Perform class reflection to create dispatch signatures
      *
-     * Creates a {@link \Zend\Server\Reflection\ClassReflection} object for the class or
+     * Creates a {@link \Zend2\Server\Reflection\ClassReflection} object for the class or
      * object provided.
      *
      * If extra arguments should be passed to dispatchable methods, these may
@@ -52,8 +52,8 @@ class Reflection
      * @param string $namespace Optional namespace with which to prefix the
      * method name (used for the signature key). Primarily to avoid collisions,
      * also for XmlRpc namespacing
-     * @return \Zend\Server\Reflection\ClassReflection
-     * @throws \Zend\Server\Reflection\Exception
+     * @return \Zend2\Server\Reflection\ClassReflection
+     * @throws \Zend2\Server\Reflection\Exception
      */
     public static function reflectClass($class, $argv = false, $namespace = '')
     {
@@ -76,7 +76,7 @@ class Reflection
      * Perform function reflection to create dispatch signatures
      *
      * Creates dispatch prototypes for a function. It returns a
-     * {@link Zend\Server\Reflection\FunctionReflection} object.
+     * {@link Zend2\Server\Reflection\FunctionReflection} object.
      *
      * If extra arguments should be passed to the dispatchable function, these
      * may be provided as an array to $argv.
@@ -86,8 +86,8 @@ class Reflection
      * @param string $namespace Optional namespace with which to prefix the
      * function name (used for the signature key). Primarily to avoid
      * collisions, also for XmlRpc namespacing
-     * @return \Zend\Server\Reflection\FunctionReflection
-     * @throws \Zend\Server\Reflection\Exception
+     * @return \Zend2\Server\Reflection\FunctionReflection
+     * @throws \Zend2\Server\Reflection\Exception
      */
     public static function reflectFunction($function, $argv = false, $namespace = '')
     {

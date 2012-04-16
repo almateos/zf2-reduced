@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Acl
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Acl
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Acl\Role;
+namespace Zend2\Acl\Role;
 
-use Zend\Acl,
-    Zend\Acl\Exception,
-    Zend\Acl\Role;
+use Zend2\Acl,
+    Zend2\Acl\Exception,
+    Zend2\Acl\Role;
 
 
 /**
- * @category   Zend
- * @package    Zend_Acl
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Acl
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Registry
@@ -54,9 +54,9 @@ class Registry
      * will have the least priority, and the last parent added will have the
      * highest priority.
      *
-     * @param  \Zend\Acl\Role\RoleInterface              $role
-     * @param  \Zend\Acl\Role\RoleInterface|string|array $parents
-     * @throws \Zend\Acl\Exception\InvalidArgumentException
+     * @param  \Zend2\Acl\Role\RoleInterface              $role
+     * @param  \Zend2\Acl\Role\RoleInterface|string|array $parents
+     * @throws \Zend2\Acl\Exception\InvalidArgumentException
      * @return Registry Provides a fluent interface
      */
     public function add(Role\RoleInterface $role, $parents = null)
@@ -103,9 +103,9 @@ class Registry
      *
      * The $role parameter can either be a Role or a Role identifier.
      *
-     * @param  \Zend\Acl\Role|string $role
-     * @throws \Zend\Acl\Exception\InvalidArgumentException
-     * @return \Zend\Acl\Role
+     * @param  \Zend2\Acl\Role|string $role
+     * @throws \Zend2\Acl\Exception\InvalidArgumentException
+     * @return \Zend2\Acl\Role
      */
     public function get($role)
     {
@@ -127,7 +127,7 @@ class Registry
      *
      * The $role parameter can either be a Role or a Role identifier.
      *
-     * @param  \Zend\Acl\Role|string $role
+     * @param  \Zend2\Acl\Role|string $role
      * @return boolean
      */
     public function has($role)
@@ -151,8 +151,8 @@ class Registry
      *
      * If the Role does not have any parents, then an empty array is returned.
      *
-     * @uses   Zend\Acl\Role\Registry::get()
-     * @param  \Zend\Acl\Role\RoleInterface|string $role
+     * @uses   Zend2\Acl\Role\Registry::get()
+     * @param  \Zend2\Acl\Role\RoleInterface|string $role
      * @return array
      */
     public function getParents($role)
@@ -171,10 +171,10 @@ class Registry
      * through the entire inheritance DAG to determine whether $role
      * inherits from $inherit through its ancestor Roles.
      *
-     * @param  \Zend\Acl\Role\RoleInterface|string  $role
-     * @param  \Zend\Acl\Role\RoleInterface|string  $inherit
+     * @param  \Zend2\Acl\Role\RoleInterface|string  $role
+     * @param  \Zend2\Acl\Role\RoleInterface|string  $inherit
      * @param  boolean                              $onlyParents
-     * @throws \Zend\Acl\Exception\InvalidArgumentException
+     * @throws \Zend2\Acl\Exception\InvalidArgumentException
      * @return boolean
      */
     public function inherits($role, $inherit, $onlyParents = false)
@@ -206,8 +206,8 @@ class Registry
      *
      * The $role parameter can either be a Role or a Role identifier.
      *
-     * @param  \Zend\Acl\Role\RoleInterface|string $role
-     * @throws \Zend\Acl\Exception\InvalidArgumentException
+     * @param  \Zend2\Acl\Role\RoleInterface|string $role
+     * @throws \Zend2\Acl\Exception\InvalidArgumentException
      * @return Registry Provides a fluent interface
      */
     public function remove($role)

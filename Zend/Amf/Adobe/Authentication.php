@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Amf
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Amf
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Amf\Adobe;
+namespace Zend2\Amf\Adobe;
 
 use stdClass,
-    Zend\Acl\Acl,
-    Zend\Acl\Role,
-    Zend\Amf\AbstractAuthentication,
-    Zend\Authentication\Adapter as AuthenticationAdapter,
-    Zend\Authentication\Result as AuthenticationResult;
+    Zend2\Acl\Acl,
+    Zend2\Acl\Role,
+    Zend2\Amf\AbstractAuthentication,
+    Zend2\Authentication\Adapter as AuthenticationAdapter,
+    Zend2\Authentication\Result as AuthenticationResult;
 
 /**
  * This class implements authentication against XML file with roles for Flex Builder.
  *
- * @package    Zend_Amf
+ * @package    Zend2_Amf
  * @subpackage Adobe
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Authentication extends AbstractAuthentication
@@ -96,7 +96,7 @@ Roles file format:
     /**
      * Perform authentication
      *
-     * @see Zend_Auth_Adapter_Interface#authenticate()
+     * @see Zend2_Auth_Adapter_Interface#authenticate()
      * @return AuthenticationResult
      * @throws AuthenticationAdapter\Exception
      */

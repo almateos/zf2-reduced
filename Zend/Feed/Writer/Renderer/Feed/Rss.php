@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Writer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Writer\Renderer\Feed;
+namespace Zend2\Feed\Writer\Renderer\Feed;
 
 use DOMDocument,
     DOMElement,
-    Zend\Date,
-    Zend\Feed\Writer,
-    Zend\Feed\Writer\Renderer,
-    Zend\Uri;
+    Zend2\Date,
+    Zend2\Feed\Writer,
+    Zend2\Feed\Writer\Renderer,
+    Zend2\Uri;
 
 /**
-* @category Zend
-* @package Zend_Feed_Writer
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @category Zend2
+* @package Zend2_Feed_Writer
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 class Rss extends Renderer\AbstractRenderer implements Renderer\Renderer
@@ -38,7 +38,7 @@ class Rss extends Renderer\AbstractRenderer implements Renderer\Renderer
     /**
      * Constructor
      * 
-     * @param  Zend_Feed_Writer_Feed $container 
+     * @param  Zend2_Feed_Writer_Feed $container 
      * @return void
      */
     public function __construct (Writer\Feed $container)
@@ -49,7 +49,7 @@ class Rss extends Renderer\AbstractRenderer implements Renderer\Renderer
     /**
      * Render RSS feed
      * 
-     * @return Zend_Feed_Writer_Renderer_Feed_Rss
+     * @return Zend2_Feed_Writer_Renderer_Feed_Rss
      */
     public function render()
     {
@@ -211,8 +211,8 @@ class Rss extends Renderer\AbstractRenderer implements Renderer\Renderer
     protected function _setGenerator(DOMDocument $dom, DOMElement $root)
     {
         if(!$this->getDataContainer()->getGenerator()) {
-            $this->getDataContainer()->setGenerator('Zend_Feed_Writer',
-                \Zend\Version::VERSION, 'http://framework.zend.com');
+            $this->getDataContainer()->setGenerator('Zend2_Feed_Writer',
+                \Zend2\Version::VERSION, 'http://framework.zend.com');
         }
 
         $gdata = $this->getDataContainer()->getGenerator();

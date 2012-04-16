@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Trailer;
-use Zend\Pdf;
-use Zend\Pdf\InternalType;
+namespace Zend2\Pdf\Trailer;
+use Zend2\Pdf;
+use Zend2\Pdf\InternalType;
 
 /**
  * PDF file trailer generator (used for just created PDF)
  *
- * @uses       \Zend\Pdf\PdfDocument
- * @uses       \Zend\Pdf\Trailer\AbstractTrailer
- * @uses       \Zend\Pdf\InternalType\DirctionaryObject
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\PdfDocument
+ * @uses       \Zend2\Pdf\Trailer\AbstractTrailer
+ * @uses       \Zend2\Pdf\InternalType\DirctionaryObject
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Generated extends AbstractTrailer
@@ -39,7 +39,7 @@ class Generated extends AbstractTrailer
     /**
      * Object constructor
      *
-     * @param \Zend\Pdf\InternalType\DictionaryObject $dict
+     * @param \Zend2\Pdf\InternalType\DictionaryObject $dict
      */
     public function __construct(InternalType\DictionaryObject $dict)
     {

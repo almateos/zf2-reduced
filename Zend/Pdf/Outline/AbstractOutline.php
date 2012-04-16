@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,18 +12,18 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Outline
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Outline
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Outline;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
-use Zend\Pdf\InternalType;
-use Zend\Pdf\ObjectFactory;
+namespace Zend2\Pdf\Outline;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
+use Zend2\Pdf\InternalType;
+use Zend2\Pdf\ObjectFactory;
 
 /**
  * Abstract PDF outline representation class
@@ -32,12 +32,12 @@ use Zend\Pdf\ObjectFactory;
  *
  * @uses       Countable
  * @uses       RecursiveIterator
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\Outline\Created
- * @uses       \Zend\Pdf\ObjectFactory;
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Outline
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\Outline\Created
+ * @uses       \Zend2\Pdf\ObjectFactory;
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Outline
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractOutline implements \RecursiveIterator, \Countable
@@ -50,7 +50,7 @@ abstract class AbstractOutline implements \RecursiveIterator, \Countable
     protected $_open = false;
 
     /**
-     * Array of child outlines (array of \Zend\Pdf\Outline\AbstractOutline objects)
+     * Array of child outlines (array of \Zend2\Pdf\Outline\AbstractOutline objects)
      *
      * @var array
      */
@@ -68,7 +68,7 @@ abstract class AbstractOutline implements \RecursiveIterator, \Countable
      * Set outline title
      *
      * @param string $title
-     * @return \Zend\Pdf\Outline\AbstractOutline
+     * @return \Zend2\Pdf\Outline\AbstractOutline
      */
     abstract public function setTitle($title);
 
@@ -86,7 +86,7 @@ abstract class AbstractOutline implements \RecursiveIterator, \Countable
      * Sets 'isOpen' outline flag
      *
      * @param boolean $isOpen
-     * @return \Zend\Pdf\Outline\AbstractOutline
+     * @return \Zend2\Pdf\Outline\AbstractOutline
      */
     public function setIsOpen($isOpen)
     {
@@ -105,7 +105,7 @@ abstract class AbstractOutline implements \RecursiveIterator, \Countable
      * Sets 'isItalic' outline flag
      *
      * @param boolean $isItalic
-     * @return \Zend\Pdf\Outline\AbstractOutline
+     * @return \Zend2\Pdf\Outline\AbstractOutline
      */
     abstract public function setIsItalic($isItalic);
 
@@ -120,7 +120,7 @@ abstract class AbstractOutline implements \RecursiveIterator, \Countable
      * Sets 'isBold' outline flag
      *
      * @param boolean $isBold
-     * @return \Zend\Pdf\Outline\AbstractOutline
+     * @return \Zend2\Pdf\Outline\AbstractOutline
      */
     abstract public function setIsBold($isBold);
 
@@ -128,7 +128,7 @@ abstract class AbstractOutline implements \RecursiveIterator, \Countable
     /**
      * Get outline text color.
      *
-     * @return \Zend\Pdf\Color\Rgb
+     * @return \Zend2\Pdf\Color\Rgb
      */
     abstract public function getColor();
 
@@ -136,15 +136,15 @@ abstract class AbstractOutline implements \RecursiveIterator, \Countable
      * Set outline text color.
      * (null means default color which is black)
      *
-     * @param \Zend\Pdf\Color\Rgb $color
-     * @return \Zend\Pdf\Outline\AbstractOutline
+     * @param \Zend2\Pdf\Color\Rgb $color
+     * @return \Zend2\Pdf\Outline\AbstractOutline
      */
     abstract public function setColor(Pdf\Color\Rgb $color);
 
     /**
      * Get outline target.
      *
-     * @return \Zend\Pdf\InternalStructure\NavigationTarget
+     * @return \Zend2\Pdf\InternalStructure\NavigationTarget
      */
     abstract public function getTarget();
 
@@ -152,8 +152,8 @@ abstract class AbstractOutline implements \RecursiveIterator, \Countable
      * Set outline target.
      * Null means no target
      *
-     * @param \Zend\Pdf\InternalStructure\NavigationTarget|string $target
-     * @return \Zend\Pdf\Outline\AbstractOutline
+     * @param \Zend2\Pdf\InternalStructure\NavigationTarget|string $target
+     * @return \Zend2\Pdf\Outline\AbstractOutline
      */
     abstract public function setTarget($target = null);
 
@@ -176,8 +176,8 @@ abstract class AbstractOutline implements \RecursiveIterator, \Countable
      * Set outline options
      *
      * @param array $options
-     * @return \Zend\Pdf\Action\AbstractAction
-     * @throws \Zend\Pdf\Exception
+     * @return \Zend2\Pdf\Action\AbstractAction
+     * @throws \Zend2\Pdf\Exception
      */
     public function setOptions(array $options)
     {
@@ -220,33 +220,33 @@ abstract class AbstractOutline implements \RecursiveIterator, \Countable
      *
      * It provides two forms of input parameters:
      *
-     * 1. \Zend\Pdf\Outline\AbstractOutline::create(string $title[, \Zend\Pdf\InternalStructure\NavigationTarget $target])
-     * 2. \Zend\Pdf\Outline\AbstractOutline::create(array $options)
+     * 1. \Zend2\Pdf\Outline\AbstractOutline::create(string $title[, \Zend2\Pdf\InternalStructure\NavigationTarget $target])
+     * 2. \Zend2\Pdf\Outline\AbstractOutline::create(array $options)
      *
      * Second form allows to provide outline options as an array.
      * The followed options are supported:
      *   'title'  - string, outline title, required
      *   'open'   - boolean, true if outline entry is open (default value is false)
-     *   'color'  - \Zend\Pdf\Color\Rgb object, true if outline entry is open (default value is null - black)
+     *   'color'  - \Zend2\Pdf\Color\Rgb object, true if outline entry is open (default value is null - black)
      *   'italic' - boolean, true if outline entry is displayed in italic (default value is false)
      *   'bold'   - boolean, true if outline entry is displayed in bold (default value is false)
-     *   'target' - \Zend\Pdf\InternalStructure\NavigationTarget object or string, outline item destination
+     *   'target' - \Zend2\Pdf\InternalStructure\NavigationTarget object or string, outline item destination
      *
-     * @return \Zend\Pdf\Outline\AbstractOutline
-     * @throws \Zend\Pdf\Exception
+     * @return \Zend2\Pdf\Outline\AbstractOutline
+     * @throws \Zend2\Pdf\Exception
      */
     public static function create($param1, $param2 = null)
     {
         if (is_string($param1)) {
             if ($param2 !== null  &&  !($param2 instanceof Pdf\InternalStructure\NavigationTarget  ||  is_string($param2))) {
-                throw new Exception\InvalidArgumentException('Outline create method takes $title (string) and $target (\Zend\Pdf\InternalStructure\NavigationTarget or string) or an array as an input');
+                throw new Exception\InvalidArgumentException('Outline create method takes $title (string) and $target (\Zend2\Pdf\InternalStructure\NavigationTarget or string) or an array as an input');
             }
 
             return new Created(array('title'  => $param1,
                                      'target' => $param2));
         } else {
             if (!is_array($param1)  ||  $param2 !== null) {
-                throw new Exception\InvalidArgumentException('Outline create method takes $title (string) and $destination (\Zend\Pdf\InternalStructure\NavigationTarget) or an array as an input');
+                throw new Exception\InvalidArgumentException('Outline create method takes $title (string) and $destination (\Zend2\Pdf\InternalStructure\NavigationTarget) or an array as an input');
             }
 
             return new Created($param1);
@@ -277,12 +277,12 @@ abstract class AbstractOutline implements \RecursiveIterator, \Countable
      *
      * Returns dictionary indirect object or reference
      *
-     * @param \Zend\Pdf\ObjectFactory    $factory object factory for newly created indirect objects
+     * @param \Zend2\Pdf\ObjectFactory    $factory object factory for newly created indirect objects
      * @param boolean $updateNavigation  Update navigation flag
-     * @param \Zend\Pdf\InternalType\AbstractTypeObject $parent   Parent outline dictionary reference
-     * @param \Zend\Pdf\InternalType\AbstractTypeObject $prev     Previous outline dictionary reference
+     * @param \Zend2\Pdf\InternalType\AbstractTypeObject $parent   Parent outline dictionary reference
+     * @param \Zend2\Pdf\InternalType\AbstractTypeObject $prev     Previous outline dictionary reference
      * @param SplObjectStorage $processedOutlines  List of already processed outlines
-     * @return \Zend\Pdf\InternalType\AbstractTypeObject
+     * @return \Zend2\Pdf\InternalType\AbstractTypeObject
      */
     abstract public function dumpOutline(ObjectFactory $factory,
                                                        $updateNavigation,
@@ -298,7 +298,7 @@ abstract class AbstractOutline implements \RecursiveIterator, \Countable
     /**
      * Returns the child outline.
      *
-     * @return \Zend\Pdf\Outline\AbstractOutline
+     * @return \Zend2\Pdf\Outline\AbstractOutline
      */
     public function current()
     {
@@ -344,7 +344,7 @@ abstract class AbstractOutline implements \RecursiveIterator, \Countable
     /**
      * Returns the child outline.
      *
-     * @return \Zend\Pdf\Outline\AbstractOutline|null
+     * @return \Zend2\Pdf\Outline\AbstractOutline|null
      */
     public function getChildren()
     {

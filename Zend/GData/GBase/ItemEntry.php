@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GBase
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\GBase;
-use Zend\GData\App;
+namespace Zend2\GData\GBase;
+use Zend2\GData\App;
 
 /**
  * Concrete class for working with Item entries.
  *
  * @link http://code.google.com/apis/base/
  *
- * @uses       \Zend\GData\App\InvalidArgumentException
- * @uses       \Zend\GData\GBase\Entry
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\InvalidArgumentException
+ * @uses       \Zend2\GData\GBase\Entry
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GBase
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ItemEntry extends Entry
@@ -42,13 +42,13 @@ class ItemEntry extends Entry
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\GBase\ItemEntry';
+    protected $_entryClassName = 'Zend2\GData\GBase\ItemEntry';
 
     /**
      * Set the value of the itme_type
      *
-     * @param Zend_Gdata_GBase_Extension_ItemType $value The desired value for the item_type
-     * @return \Zend\GData\GBase\ItemEntry Provides a fluent interface
+     * @param Zend2_Gdata_GBase_Extension_ItemType $value The desired value for the item_type
+     * @return \Zend2\GData\GBase\ItemEntry Provides a fluent interface
      */
     public function setItemType($value)
     {
@@ -64,7 +64,7 @@ class ItemEntry extends Entry
      * @param string $value The text value of the attribute
      * @param string $type (optional) The type of the attribute.
      *          e.g.: 'text', 'number', 'floatUnit'
-     * @return \Zend\GData\GBase\ItemEntry Provides a fluent interface
+     * @return \Zend2\GData\GBase\ItemEntry Provides a fluent interface
      */
     public function addGBaseAttribute($name, $text, $type = null) {
         $newBaseAttribute =  new Extension\BaseAttribute($name, $text, $type);
@@ -75,8 +75,8 @@ class ItemEntry extends Entry
     /**
      * Removes a Base attribute from the current list of Base attributes
      *
-     * @param \Zend\GData\GBase\Extension\BaseAttribute $baseAttribute The attribute to be removed
-     * @return \Zend\GData\GBase\ItemEntry Provides a fluent interface
+     * @param \Zend2\GData\GBase\Extension\BaseAttribute $baseAttribute The attribute to be removed
+     * @return \Zend2\GData\GBase\ItemEntry Provides a fluent interface
      */
     public function removeGBaseAttribute($baseAttribute) {
         $baseAttributes = $this->_baseAttributes;
@@ -91,18 +91,18 @@ class ItemEntry extends Entry
     }
 
     /**
-     * Uploads changes in this entry to the server using Zend_Gdata_App
+     * Uploads changes in this entry to the server using Zend2_Gdata_App
      *
      * @param boolean $dryRun Whether the transaction is dry run or not.
      * @param string|null $uri The URI to send requests to, or null if $data
      *        contains the URI.
      * @param string|null $className The name of the class that should we
      *        deserializing the server response. If null, then
-     *        'Zend_Gdata_App_Entry' will be used.
+     *        'Zend2_Gdata_App_Entry' will be used.
      * @param array $extraHeaders Extra headers to add to the request, as an
      *        array of string-based key/value pairs.
-     * @return \Zend\GData\App\Entry The updated entry
-     * @throws \Zend\GData\App\Exception
+     * @return \Zend2\GData\App\Entry The updated entry
+     * @throws \Zend2\GData\App\Exception
      */
     public function save($dryRun = false,
                          $uri = null,
@@ -129,12 +129,12 @@ class ItemEntry extends Entry
 
     /**
      * Deletes this entry to the server using the referenced
-     * Zend_Http_Client to do a HTTP DELETE to the edit link stored in this
+     * Zend2_Http_Client to do a HTTP DELETE to the edit link stored in this
      * entry's link collection.
      *
      * @param boolean $dyrRun Whether the transaction is dry run or not
      * @return void
-     * @throws \Zend\GData\App\Exception
+     * @throws \Zend2\GData\App\Exception
      */
     public function delete($dryRun = false)
     {

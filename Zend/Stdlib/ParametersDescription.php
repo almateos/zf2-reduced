@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Stdlib;
+namespace Zend2\Stdlib;
 
 use ArrayAccess,
     Countable,

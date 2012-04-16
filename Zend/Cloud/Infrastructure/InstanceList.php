@@ -1,13 +1,13 @@
 <?php
 /**
- * @category   Zend
- * @package    Zend\Cloud
+ * @category   Zend2
+ * @package    Zend2\Cloud
  * @subpackage Infrastructure
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Cloud\Infrastructure;
+namespace Zend2\Cloud\Infrastructure;
 
 use Countable,
     Iterator,
@@ -16,15 +16,15 @@ use Countable,
 /**
  * List of instances
  *
- * @package    Zend\Cloud
+ * @package    Zend2\Cloud
  * @subpackage Infrastructure
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class InstanceList implements Countable, Iterator, ArrayAccess
 {
     /**
-     * @var array Array of Zend\Cloud\Infrastructure\Instance
+     * @var array Array of Zend2\Cloud\Infrastructure\Instance
      */
     protected $instances = array();
 
@@ -34,7 +34,7 @@ class InstanceList implements Countable, Iterator, ArrayAccess
     protected $iteratorKey = 0;
 
     /**
-     * @var Zend\Cloud\Infrastructure\Adapter
+     * @var Zend2\Cloud\Infrastructure\Adapter
      */
     protected $adapter;
 
@@ -48,7 +48,7 @@ class InstanceList implements Countable, Iterator, ArrayAccess
     public function __construct(Adapter $adapter, array $instances = null)
     {
         if (!($adapter instanceof Adapter)) {
-            throw new Exception\InvalidArgumentException('You must pass a Zend\Cloud\Infrastructure\Adapter');
+            throw new Exception\InvalidArgumentException('You must pass a Zend2\Cloud\Infrastructure\Adapter');
         }
         if (empty($instances)) {
             throw new Exception\InvalidArgumentException('You must pass an array of Instances');

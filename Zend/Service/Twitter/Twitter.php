@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Twitter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Twitter;
+namespace Zend2\Service\Twitter;
 
-use Zend\Http,
-    Zend\OAuth,
-    Zend\Rest,
-    Zend\Uri,
-    Zend\Config,
-    Zend\Rest\Client;
+use Zend2\Http,
+    Zend2\OAuth,
+    Zend2\Rest,
+    Zend2\Uri,
+    Zend2\Config,
+    Zend2\Rest\Client;
 
 /**
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Twitter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Twitter extends Client\RestClient
@@ -80,9 +80,9 @@ class Twitter extends Client\RestClient
     protected $methodType;
 
     /**
-     * Zend\Oauth Consumer
+     * Zend2\Oauth Consumer
      *
-     * @var \Zend\OAuth\Consumer
+     * @var \Zend2\OAuth\Consumer
      */
     protected $oauthConsumer = null;
 
@@ -111,7 +111,7 @@ class Twitter extends Client\RestClient
     /**
      * Local HTTP Client cloned from statically set client
      *
-     * @var \Zend\Http\Client
+     * @var \Zend2\Http\Client
      */
     protected $localHttpClient = null;
 
@@ -148,9 +148,9 @@ class Twitter extends Client\RestClient
 
     /**
      * Set local HTTP client as distinct from the static HTTP client
-     * as inherited from Zend_Rest_Client.
+     * as inherited from Zend2_Rest_Client.
      *
-     * @param Zend\Http\Client $client
+     * @param Zend2\Http\Client $client
      * @return self
      */
     public function setLocalHttpClient(Http\Client $client)
@@ -162,9 +162,9 @@ class Twitter extends Client\RestClient
 
     /**
      * Get the local HTTP client as distinct from the static HTTP client
-     * inherited from \Zend\Rest\Client
+     * inherited from \Zend2\Rest\Client
      *
-     * @return \Zend\Http\Client
+     * @return \Zend2\Http\Client
      */
     public function getLocalHttpClient()
     {
@@ -950,7 +950,7 @@ class Twitter extends Client\RestClient
     }
 
     /**
-     * Call a remote REST web service URI and return the Zend_Http_Response object
+     * Call a remote REST web service URI and return the Zend2_Http_Response object
      *
      * @param  string $path            The path to append to the URI
      * @throws Client\Exception
@@ -975,8 +975,8 @@ class Twitter extends Client\RestClient
 
         /**
          * Get the HTTP client and configure it for the endpoint URI.
-         * Do this each time because the Zend\Http\Client instance is shared
-         * among all Zend_Service_Abstract subclasses.
+         * Do this each time because the Zend2\Http\Client instance is shared
+         * among all Zend2_Service_Abstract subclasses.
          */
         $this->localHttpClient->resetParameters()->setUri((string) $this->uri);
     }

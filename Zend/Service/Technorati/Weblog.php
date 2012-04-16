@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Technorati;
+namespace Zend2\Service\Technorati;
 
 use DomElement;
 
 /**
  * Represents a Weblog object successful recognized by Technorati.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Weblog
@@ -45,7 +45,7 @@ class Weblog
     /**
      * Base blog URL.
      *
-     * @var     \Zend\\Zend\Uri\Http
+     * @var     \Zend2\\Zend2\Uri\Http
      * @access  protected
      */
     protected $url;
@@ -53,7 +53,7 @@ class Weblog
     /**
      * RSS feed URL, if any.
      *
-     * @var     null|\Zend\Uri\Http
+     * @var     null|\Zend2\Uri\Http
      * @access  protected
      */
     protected $rssUrl;
@@ -61,7 +61,7 @@ class Weblog
     /**
      * Atom feed URL, if any.
      *
-     * @var     null|\Zend\Uri\Http
+     * @var     null|\Zend2\Uri\Http
      * @access  protected
      */
     protected $atomUrl;
@@ -85,7 +85,7 @@ class Weblog
     /**
      * Last blog update UNIX timestamp.
      *
-     * @var     null|ZendDate
+     * @var     null|Zend2Date
      * @access  protected
      */
     protected $lastUpdate;
@@ -213,7 +213,7 @@ class Weblog
     /**
      * Returns weblog URL.
      *
-     * @return  null|\Zend\Uri\Http object representing weblog base URL
+     * @return  null|\Zend2\Uri\Http object representing weblog base URL
      */
     public function getUrl()
     {
@@ -243,7 +243,7 @@ class Weblog
     /**
      * Returns weblog Rss URL.
      *
-     * @return  null|\Zend\Uri\Http object representing the URL
+     * @return  null|\Zend2\Uri\Http object representing the URL
      *          of the RSS feed for given blog
      */
     public function getRssUrl()
@@ -254,7 +254,7 @@ class Weblog
     /**
      * Returns weblog Atom URL.
      *
-     * @return  null|\Zend\Uri\Http object representing the URL
+     * @return  null|\Zend2\Uri\Http object representing the URL
      *          of the Atom feed for given blog
      */
     public function getAtomUrl()
@@ -346,7 +346,7 @@ class Weblog
     /**
      * Sets weblog URL.
      *
-     * @param   string|\Zend\Uri\Http $url
+     * @param   string|\Zend2\Uri\Http $url
      * @return  void
      * @throws  Exception\RuntimeException if $input is an invalid URI
      *          (via Utils::normalizeUriHttp)
@@ -384,7 +384,7 @@ class Weblog
     /**
      * Sets weblog Rss URL.
      *
-     * @param   string|\Zend\Uri\Http $url
+     * @param   string|\Zend2\Uri\Http $url
      * @return  Weblog $this instance
      * @throws  Exception\RuntimeException if $input is an invalid URI
      *          (via Utils::normalizeUriHttp)
@@ -398,7 +398,7 @@ class Weblog
     /**
      * Sets weblog Atom URL.
      *
-     * @param   string|\Zend\Uri\Http $url
+     * @param   string|\Zend2\Uri\Http $url
      * @return  Weblog $this instance
      * @throws  Exception\RuntimeException if $input is an invalid URI
      *          (via Utils::normalizeUriHttp)

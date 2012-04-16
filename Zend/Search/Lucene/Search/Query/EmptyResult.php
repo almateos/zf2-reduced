@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search\Query;
-use Zend\Search\Lucene;
-use Zend\Search\Lucene\Search\Weight;
-use Zend\Search\Lucene\Search\Highlighter;
+namespace Zend2\Search\Lucene\Search\Query;
+use Zend2\Search\Lucene;
+use Zend2\Search\Lucene\Search\Weight;
+use Zend2\Search\Lucene\Search\Highlighter;
 
 /**
- * @uses       \Zend\Search\Lucene\Search\Query\AbstractQuery
- * @uses       \Zend\Search\Lucene\Search\Weight\EmptyResultWeight
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Search\Query\AbstractQuery
+ * @uses       \Zend2\Search\Lucene\Search\Weight\EmptyResultWeight
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class EmptyResult extends AbstractQuery
@@ -38,8 +38,8 @@ class EmptyResult extends AbstractQuery
     /**
      * Re-write query into primitive queries in the context of specified index
      *
-     * @param \Zend\Search\Lucene\SearchIndex $index
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @param \Zend2\Search\Lucene\SearchIndex $index
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     public function rewrite(Lucene\SearchIndex $index)
     {
@@ -49,8 +49,8 @@ class EmptyResult extends AbstractQuery
     /**
      * Optimize query in the context of specified index
      *
-     * @param \Zend\Search\Lucene\SearchIndex $index
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @param \Zend2\Search\Lucene\SearchIndex $index
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     public function optimize(Lucene\SearchIndex $index)
     {
@@ -61,8 +61,8 @@ class EmptyResult extends AbstractQuery
     /**
      * Constructs an appropriate Weight implementation for this query.
      *
-     * @param \Zend\Search\Lucene\SearchIndex $reader
-     * @return \Zend\Search\Lucene\Search\Weight\Weight
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
+     * @return \Zend2\Search\Lucene\Search\Weight\Weight
      */
     public function createWeight(Lucene\SearchIndex $reader)
     {
@@ -73,8 +73,8 @@ class EmptyResult extends AbstractQuery
      * Execute query in context of index reader
      * It also initializes necessary internal structures
      *
-     * @param \Zend\Search\Lucene\SearchIndex $reader
-     * @param \Zend\Search\Lucene\Index\DocsFilter|null $docsFilter
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
+     * @param \Zend2\Search\Lucene\Index\DocsFilter|null $docsFilter
      */
     public function execute(Lucene\SearchIndex $reader, $docsFilter = null)
     {
@@ -97,7 +97,7 @@ class EmptyResult extends AbstractQuery
      * Score specified document
      *
      * @param integer $docId
-     * @param \Zend\Search\Lucene\SearchIndex $reader
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
      * @return float
      */
     public function score($docId, Lucene\SearchIndex $reader)
@@ -118,7 +118,7 @@ class EmptyResult extends AbstractQuery
     /**
      * Query specific matches highlighting
      *
-     * @param \Zend\Search\Lucene\Search\Highlighter $highlighter  Highlighter object (also contains doc for highlighting)
+     * @param \Zend2\Search\Lucene\Search\Highlighter $highlighter  Highlighter object (also contains doc for highlighting)
      */
     protected function _highlightMatches(Highlighter $highlighter)
     {

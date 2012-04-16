@@ -10,17 +10,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Cloud
+ * @category   Zend2
+ * @package    Zend2\Cloud
  * @subpackage QueueService
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * namespace
  */
-namespace Zend\Cloud\QueueService;
+namespace Zend2\Cloud\QueueService;
 
 /**
  * Common interface for queue services in the cloud. This interface supports
@@ -33,10 +33,10 @@ namespace Zend\Cloud\QueueService;
  * supported in this interface, although we are considering access control
  * support in future versions of the interface.
  *
- * @category   Zend
- * @package    Zend\Cloud
+ * @category   Zend2
+ * @package    Zend2\Cloud
  * @subpackage QueueService
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface Adapter
@@ -119,7 +119,7 @@ interface Adapter
      * @param  string $queueId
      * @param  int    $max
      * @param  array  $options
-     * @return array[Zend\Cloud\QueueService\Message]  Array of messages
+     * @return array[Zend2\Cloud\QueueService\Message]  Array of messages
      */
     public function receiveMessages($queueId, $max = 1, $options = null);
 
@@ -129,7 +129,7 @@ interface Adapter
      * @param  string $queueId
      * @param  int $num How many messages
      * @param  array  $options
-     * @return array[Zend\Cloud\QueueService\Message]
+     * @return array[Zend2\Cloud\QueueService\Message]
      */
     public function peekMessages($queueId, $num = 1, $options = null);
 
@@ -137,7 +137,7 @@ interface Adapter
      * Delete the specified message from the specified queue.
      *
      * @param  string $queueId
-     * @param  Zend\Cloud\QueueService\Message $message Message to delete
+     * @param  Zend2\Cloud\QueueService\Message $message Message to delete
      * @param  array  $options
      * @return void
      *

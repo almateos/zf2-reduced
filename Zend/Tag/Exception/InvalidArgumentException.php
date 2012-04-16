@@ -1,7 +1,7 @@
 <?php
-namespace Zend\Tag\Exception;
+namespace Zend2\Tag\Exception;
 
 class InvalidArgumentException
     extends \InvalidArgumentException
-    implements \Zend\Tag\Exception
+    implements \Zend2\Tag\Exception
 {}

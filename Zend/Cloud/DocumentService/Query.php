@@ -10,19 +10,19 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Cloud
+ * @category   Zend2
+ * @package    Zend2\Cloud
  * @subpackage DocumentService
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * namespace
  */
-namespace Zend\Cloud\DocumentService;
+namespace Zend2\Cloud\DocumentService;
 
-use Zend\Cloud\DocumentService\QueryAdapter;
+use Zend2\Cloud\DocumentService\QueryAdapter;
 
 /**
  * Generic query object
@@ -30,10 +30,10 @@ use Zend\Cloud\DocumentService\QueryAdapter;
  * Aggregates operations in an array of clauses, where the first element
  * describes the clause type, and the next element describes the criteria.
  *
- * @category   Zend
- * @package    Zend\Cloud
+ * @category   Zend2
+ * @package    Zend2\Cloud
  * @subpackage DocumentService
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Query implements QueryAdapter
@@ -65,7 +65,7 @@ class Query implements QueryAdapter
      *
      * @param  string $name Clause/method name
      * @param  mixed $args
-     * @return Zend\Cloud\DocumentService\Query
+     * @return Zend2\Cloud\DocumentService\Query
      */
     public function __call($name, $args)
     {
@@ -77,7 +77,7 @@ class Query implements QueryAdapter
      * SELECT clause (fields to be selected)
      *
      * @param  null|string|array $select
-     * @return Zend\Cloud\DocumentService\Query
+     * @return Zend2\Cloud\DocumentService\Query
      */
     public function select($select)
     {
@@ -95,7 +95,7 @@ class Query implements QueryAdapter
      * FROM clause
      *
      * @param string $name Field names
-     * @return Zend\Cloud\DocumentService\Query
+     * @return Zend2\Cloud\DocumentService\Query
      */
     public function from($name)
     {
@@ -112,7 +112,7 @@ class Query implements QueryAdapter
      * @param string $cond Condition
      * @param array $args Arguments to substitute instead of ?'s in condition
      * @param string $op relation to other clauses - and/or
-     * @return Zend\Cloud\DocumentService\Query
+     * @return Zend2\Cloud\DocumentService\Query
      */
     public function where($cond, $value = null, $op = 'and')
     {
@@ -127,7 +127,7 @@ class Query implements QueryAdapter
      * Select record or fields by ID
      *
      * @param  string|int $value Identifier to select by
-     * @return Zend\Cloud\DocumentService\Query
+     * @return Zend2\Cloud\DocumentService\Query
      */
     public function whereId($value)
     {
@@ -142,7 +142,7 @@ class Query implements QueryAdapter
      * LIMIT clause (how many items to return)
      *
      * @param  int $limit
-     * @return Zend\Cloud\DocumentService\Query
+     * @return Zend2\Cloud\DocumentService\Query
      */
     public function limit($limit)
     {
@@ -158,7 +158,7 @@ class Query implements QueryAdapter
      *
      * @param  string|int|array $sort
      * @param  string $direction
-     * @return Zend\Cloud\DocumentService\Query
+     * @return Zend2\Cloud\DocumentService\Query
      */
     public function order($sort, $direction = 'asc')
     {

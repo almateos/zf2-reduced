@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_File_Transfer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_File_Transfer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\File\Transfer\Adapter;
+namespace Zend2\File\Transfer\Adapter;
 
-use Zend\File\Transfer,
-    Zend\File\Transfer\Exception,
-    Zend\ProgressBar,
-    Zend\ProgressBar\Adapter;
+use Zend2\File\Transfer,
+    Zend2\File\Transfer\Exception,
+    Zend2\ProgressBar,
+    Zend2\ProgressBar\Adapter;
 
 /**
  * File transfer adapter class for the HTTP protocol
  *
- * @category  Zend
- * @package   Zend_File_Transfer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_File_Transfer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Http extends AbstractAdapter
@@ -132,7 +132,7 @@ class Http extends AbstractAdapter
             $temp = array($files => array(
                 'name'  => $files,
                 'error' => 1));
-            $validator = $this->validators['Zend\Validator\File\Upload'];
+            $validator = $this->validators['Zend2\Validator\File\Upload'];
             $validator->setTranslator($this->getTranslator())
                       ->setFiles($temp)
                       ->isValid($files, null);
@@ -305,7 +305,7 @@ class Http extends AbstractAdapter
             throw new Exception\PhpEnvironmentException('Neither APC nor UploadProgress extension installed');
         }
 
-        $session = 'Zend\File\Transfer\Adapter\Http\ProgressBar';
+        $session = 'Zend2\File\Transfer\Adapter\Http\ProgressBar';
         $status  = array(
             'total'    => 0,
             'current'  => 0,

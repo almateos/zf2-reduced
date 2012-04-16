@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Storage\File;
-use Zend\Search\Lucene;
+namespace Zend2\Search\Lucene\Storage\File;
+use Zend2\Search\Lucene;
 
 /**
- * @uses       \Zend\Search\Lucene\Exception\RuntimeException
- * @uses       \Zend\Search\Lucene\Exception\InvalidArgumentException
- * @uses       \Zend\Search\Lucene\Storage\File
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Exception\RuntimeException
+ * @uses       \Zend2\Search\Lucene\Exception\InvalidArgumentException
+ * @uses       \Zend2\Search\Lucene\Storage\File
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Filesystem extends AbstractFile
@@ -47,8 +47,8 @@ class Filesystem extends AbstractFile
      *
      * @param string $filename
      * @param string $mode
-     * @throws \Zend\Search\Lucene\Exception\InvalidArgumentException
-     * @throws \Zend\Search\Lucene\Exception\RuntimeException
+     * @throws \Zend2\Search\Lucene\Exception\InvalidArgumentException
+     * @throws \Zend2\Search\Lucene\Exception\RuntimeException
      */
     public function __construct($filename, $mode='r+b')
     {

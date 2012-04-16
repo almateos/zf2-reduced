@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Http
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2\Http
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Http;
+namespace Zend2\Http;
 
 use ArrayIterator,
-    Zend\Config\Config,
-    Zend\Uri\Http,
-    Zend\Http\Header\Cookie,
-    Zend\Http\Header\SetCookie,
-    Zend\Stdlib\Parameters,
-    Zend\Stdlib\ParametersDescription,
-    Zend\Stdlib\Dispatchable,
-    Zend\Stdlib\RequestDescription,
-    Zend\Stdlib\ResponseDescription;
+    Zend2\Config\Config,
+    Zend2\Uri\Http,
+    Zend2\Http\Header\Cookie,
+    Zend2\Http\Header\SetCookie,
+    Zend2\Stdlib\Parameters,
+    Zend2\Stdlib\ParametersDescription,
+    Zend2\Stdlib\Dispatchable,
+    Zend2\Stdlib\RequestDescription,
+    Zend2\Stdlib\ResponseDescription;
 
 /**
  * Http client
  *
- * @category   Zend
- * @package    Zend\Http
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2\Http
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Client implements Dispatchable
@@ -121,9 +121,9 @@ class Client implements Dispatchable
     protected $config = array(
         'maxredirects'    => 5,
         'strictredirects' => false,
-        'useragent'       => 'Zend\Http\Client',
+        'useragent'       => 'Zend2\Http\Client',
         'timeout'         => 10,
-        'adapter'         => 'Zend\Http\Client\Adapter\Socket',
+        'adapter'         => 'Zend2\Http\Client\Adapter\Socket',
         'httpversion'     => Request::VERSION_11,
         'storeresponse'   => true,
         'keepalive'       => false,
@@ -195,7 +195,7 @@ class Client implements Dispatchable
      *
      * @param  Client\Adapter|string $adapter
      * @return Client
-     * @throws \Zend\Http\Client\Exception
+     * @throws \Zend2\Http\Client\Exception
      */
     public function setAdapter($adapter)
     {
@@ -220,7 +220,7 @@ class Client implements Dispatchable
     /**
      * Load the connection adapter
      *
-     * @return \Zend\Http\Client\Adapter $adapter
+     * @return \Zend2\Http\Client\Adapter $adapter
      */
     public function getAdapter()
     {
@@ -311,7 +311,7 @@ class Client implements Dispatchable
     /**
      * Set Uri (to the request)
      *
-     * @param string|\Zend\Uri\Http $uri
+     * @param string|\Zend2\Uri\Http $uri
      * @return Client
      */
     public function setUri($uri)
@@ -335,7 +335,7 @@ class Client implements Dispatchable
     /**
      * Get uri (from the request)
      *
-     * @return Zend\Uri\Http
+     * @return Zend2\Uri\Http
      */
     public function getUri()
     {
@@ -579,7 +579,7 @@ class Client implements Dispatchable
      * Set streaming for received data
      *
      * @param string|boolean $streamfile Stream file, true for temp file, false/null for no streaming
-     * @return \Zend\Http\Client
+     * @return \Zend2\Http\Client
      */
     public function setStream($streamfile = true)
     {
@@ -609,7 +609,7 @@ class Client implements Dispatchable
             // If name is not given, create temp name
             $this->streamName = tempnam(
                 isset($this->config['streamtmpdir']) ? $this->config['streamtmpdir'] : sys_get_temp_dir(),
-                'Zend\Http\Client'
+                'Zend2\Http\Client'
             );
         }
 
@@ -787,7 +787,7 @@ class Client implements Dispatchable
                         $newUri .= '?' . $queryString;
                     }
 
-                    $uri = new \Zend\Uri\Http($newUri);
+                    $uri = new \Zend2\Uri\Http($newUri);
                 }
             }
             // If we have no ports, set the defaults
@@ -1084,7 +1084,7 @@ class Client implements Dispatchable
      * Prepare the request body (for PATCH, POST and PUT requests)
      *
      * @return string
-     * @throws \Zend\Http\Client\Exception
+     * @throws \Zend2\Http\Client\Exception
      */
     protected function prepareBody()
     {

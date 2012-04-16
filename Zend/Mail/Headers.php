@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Header
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail;
+namespace Zend2\Mail;
 
 use ArrayIterator,
     Iterator,
     Countable,
     Traversable,
-    Zend\Loader\PluginClassLoader,
-    Zend\Loader\PluginClassLocator;
+    Zend2\Loader\PluginClassLoader,
+    Zend2\Loader\PluginClassLocator;
 
 /**
  * Basic mail headers collection functionality
  *
  * Handles aggregation of headers
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Header
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Headers implements Iterator, Countable
@@ -134,23 +134,23 @@ class Headers implements Iterator, Countable
     {
         if ($this->pluginClassLoader === null) {
             $this->pluginClassLoader = new PluginClassLoader(array(
-                'bcc'          => 'Zend\Mail\Header\Bcc',
-                'cc'           => 'Zend\Mail\Header\Cc',
-                'contenttype'  => 'Zend\Mail\Header\ContentType',
-                'content_type' => 'Zend\Mail\Header\ContentType',
-                'content-type' => 'Zend\Mail\Header\ContentType',
-                'date'         => 'Zend\Mail\Header\Date',
-                'from'         => 'Zend\Mail\Header\From',
-                'mimeversion'  => 'Zend\Mail\Header\MimeVersion',
-                'mime_version' => 'Zend\Mail\Header\MimeVersion',
-                'mime-version' => 'Zend\Mail\Header\MimeVersion',
-                'received'     => 'Zend\Mail\Header\Received',
-                'replyto'      => 'Zend\Mail\Header\ReplyTo',
-                'reply_to'     => 'Zend\Mail\Header\ReplyTo',
-                'reply-to'     => 'Zend\Mail\Header\ReplyTo',
-                'sender'       => 'Zend\Mail\Header\Sender',
-                'subject'      => 'Zend\Mail\Header\Subject',
-                'to'           => 'Zend\Mail\Header\To',
+                'bcc'          => 'Zend2\Mail\Header\Bcc',
+                'cc'           => 'Zend2\Mail\Header\Cc',
+                'contenttype'  => 'Zend2\Mail\Header\ContentType',
+                'content_type' => 'Zend2\Mail\Header\ContentType',
+                'content-type' => 'Zend2\Mail\Header\ContentType',
+                'date'         => 'Zend2\Mail\Header\Date',
+                'from'         => 'Zend2\Mail\Header\From',
+                'mimeversion'  => 'Zend2\Mail\Header\MimeVersion',
+                'mime_version' => 'Zend2\Mail\Header\MimeVersion',
+                'mime-version' => 'Zend2\Mail\Header\MimeVersion',
+                'received'     => 'Zend2\Mail\Header\Received',
+                'replyto'      => 'Zend2\Mail\Header\ReplyTo',
+                'reply_to'     => 'Zend2\Mail\Header\ReplyTo',
+                'reply-to'     => 'Zend2\Mail\Header\ReplyTo',
+                'sender'       => 'Zend2\Mail\Header\Sender',
+                'subject'      => 'Zend2\Mail\Header\Subject',
+                'to'           => 'Zend2\Mail\Header\To',
             ));
         }
         return $this->pluginClassLoader;
@@ -318,9 +318,9 @@ class Headers implements Iterator, Countable
             return false;
         }
 
-        $class = ($this->getPluginClassLoader()->load($key)) ?: 'Zend\Mail\Header\GenericHeader';
+        $class = ($this->getPluginClassLoader()->load($key)) ?: 'Zend2\Mail\Header\GenericHeader';
 
-        if (in_array('Zend\Mail\Header\MultipleHeaderDescription', class_implements($class, true))) {
+        if (in_array('Zend2\Mail\Header\MultipleHeaderDescription', class_implements($class, true))) {
             $headers = array();
             foreach (array_keys($this->headersKeys, $key) as $index) {
                 if (is_array($this->headers[$index])) {
@@ -499,7 +499,7 @@ class Headers implements Iterator, Countable
 
         $key = $this->headersKeys[$index];
         /* @var $class Header */
-        $class = ($this->getPluginClassLoader()->load($key)) ?: 'Zend\Mail\Header\GenericHeader';
+        $class = ($this->getPluginClassLoader()->load($key)) ?: 'Zend2\Mail\Header\GenericHeader';
 
         $encoding = $this->getEncoding();
         $headers  = $class::fromString($current['line']);

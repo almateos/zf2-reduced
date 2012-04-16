@@ -30,7 +30,7 @@ Currently Implemented
         * zip (.zip)
 * **Configuration merging:**
     The module manager goes through each enabled module, loads its
-    `Zend\Config\Config` object via the `getConfig()` method of the respective
+    `Zend2\Config\Config` object via the `getConfig()` method of the respective
     `Module` class; merging them into a single configuration object to be passed
     along to the bootstrap class, which can be defined inthe config of course!
 * **Caching merged configuration:**

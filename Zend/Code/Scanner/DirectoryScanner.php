@@ -1,9 +1,9 @@
 <?php
 
-namespace Zend\Code\Scanner;
+namespace Zend2\Code\Scanner;
 
-use Zend\Code\Scanner,
-    Zend\Code\Exception,
+use Zend2\Code\Scanner,
+    Zend2\Code\Exception,
     RecursiveDirectoryIterator,
     RecursiveIteratorIterator;
 

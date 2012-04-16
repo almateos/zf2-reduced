@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,18 +12,18 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\OAuth;
+namespace Zend2\OAuth;
 
 /**
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Consumer extends OAuth
@@ -33,34 +33,34 @@ class Consumer extends OAuth
     /**
      * Request Token retrieved from OAuth Provider
      *
-     * @var \Zend\OAuth\Token\Request
+     * @var \Zend2\OAuth\Token\Request
      */
     protected $_requestToken = null;
 
     /**
      * Access token retrieved from OAuth Provider
      *
-     * @var \Zend\OAuth\Token\Access
+     * @var \Zend2\OAuth\Token\Access
      */
     protected $_accessToken = null;
 
     /**
-     * @var \Zend\OAuth\Config\Config
+     * @var \Zend2\OAuth\Config\Config
      */
     protected $_config = null;
 
     /**
-     * Constructor; create a new object with an optional array|Zend_Config
+     * Constructor; create a new object with an optional array|Zend2_Config
      * instance containing initialising options.
      *
-     * @param  array|\Zend\Config\Config $options
+     * @param  array|\Zend2\Config\Config $options
      * @return void
      */
     public function __construct($options = null)
     {
         $this->_config = new Config\StandardConfig;
         if ($options !== null) {
-            if ($options instanceof \Zend\Config\Config) {
+            if ($options instanceof \Zend2\Config\Config) {
                 $options = $options->toArray();
             }
             $this->_config->setOptions($options);
@@ -74,8 +74,8 @@ class Consumer extends OAuth
      *
      * @param  null|array $customServiceParameters Non-OAuth Provider-specified parameters
      * @param  null|string $httpMethod
-     * @param  null|Zend\OAuth\Http\RequestToken $request
-     * @return Zend\OAuth\Token\Request
+     * @param  null|Zend2\OAuth\Http\RequestToken $request
+     * @return Zend2\OAuth\Token\Request
      */
     public function getRequestToken(
         array $customServiceParameters = null,
@@ -105,8 +105,8 @@ class Consumer extends OAuth
      * Request Token for a fully authorized Access Token.
      *
      * @param  null|array $customServiceParameters
-     * @param  null|Zend\OAuth\Token\Request $token
-     * @param  null|Zend\OAuth\HTTP\UserAuthorization $redirect
+     * @param  null|Zend2\OAuth\Token\Request $token
+     * @param  null|Zend2\OAuth\HTTP\UserAuthorization $redirect
      * @return string
      */
     public function getRedirectUrl(
@@ -132,7 +132,7 @@ class Consumer extends OAuth
      * Sends headers and exit()s on completion.
      *
      * @param  null|array $customServiceParameters
-     * @param  null|Zend\OAuth\Http\UserAuthorization $request
+     * @param  null|Zend2\OAuth\Http\UserAuthorization $request
      * @return void
      */
     public function redirect(
@@ -149,11 +149,11 @@ class Consumer extends OAuth
      * Request Token.
      *
      * @param  array $queryData GET data returned in user's redirect from Provider
-     * @param  Zend\OAuth\Token\Request Request Token information
+     * @param  Zend2\OAuth\Token\Request Request Token information
      * @param  string $httpMethod
-     * @param  Zend\OAuth\Http\AccessToken $request
-     * @return Zend\OAuth\Token\Access
-     * @throws Zend\OAuth\Exception on invalid authorization token, non-matching response authorization token, or unprovided authorization token
+     * @param  Zend2\OAuth\Http\AccessToken $request
+     * @return Zend2\OAuth\Token\Access
+     * @throws Zend2\OAuth\Exception on invalid authorization token, non-matching response authorization token, or unprovided authorization token
      */
     public function getAccessToken(
         $queryData, 
@@ -201,7 +201,7 @@ class Consumer extends OAuth
      * Return whatever the last Request Token retrieved was while using the
      * current Consumer instance.
      *
-     * @return Zend\OAuth\Token\Request
+     * @return Zend2\OAuth\Token\Request
      */
     public function getLastRequestToken()
     {
@@ -212,7 +212,7 @@ class Consumer extends OAuth
      * Return whatever the last Access Token retrieved was while using the
      * current Consumer instance.
      *
-     * @return Zend\OAuth\Token\Access
+     * @return Zend2\OAuth\Token\Access
      */
     public function getLastAccessToken()
     {
@@ -222,7 +222,7 @@ class Consumer extends OAuth
     /**
      * Alias to self::getLastAccessToken()
      *
-     * @return Zend\OAuth\Token\Access
+     * @return Zend2\OAuth\Token\Access
      */
     public function getToken()
     {
@@ -230,14 +230,14 @@ class Consumer extends OAuth
     }
 
     /**
-     * Simple Proxy to the current Zend_OAuth_Config method. It's that instance
+     * Simple Proxy to the current Zend2_OAuth_Config method. It's that instance
      * which holds all configuration methods and values this object also presents
      * as it's API.
      *
      * @param  string $method
      * @param  array $args
      * @return mixed
-     * @throws \Zend\OAuth\Exception if method does not exist in config object
+     * @throws \Zend2\OAuth\Exception if method does not exist in config object
      */
     public function __call($method, array $args)
     {

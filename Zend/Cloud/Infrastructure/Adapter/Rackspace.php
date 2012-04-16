@@ -1,26 +1,26 @@
 <?php
 /**
- * @category   Zend
- * @package    Zend\Cloud\Infrastructure
+ * @category   Zend2
+ * @package    Zend2\Cloud\Infrastructure
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Cloud\Infrastructure\Adapter;
+namespace Zend2\Cloud\Infrastructure\Adapter;
 
-use Zend\Service\Rackspace\Servers as RackspaceServers,
-    Zend\Cloud\Infrastructure\Instance,    
-    Zend\Cloud\Infrastructure\InstanceList,
-    Zend\Cloud\Infrastructure\Image,
-    Zend\Cloud\Infrastructure\ImageList;
+use Zend2\Service\Rackspace\Servers as RackspaceServers,
+    Zend2\Cloud\Infrastructure\Instance,    
+    Zend2\Cloud\Infrastructure\InstanceList,
+    Zend2\Cloud\Infrastructure\Image,
+    Zend2\Cloud\Infrastructure\ImageList;
 
 /**
  * Rackspace servers adapter for infrastructure service
  *
- * @package    Zend\Cloud\Infrastructure
+ * @package    Zend2\Cloud\Infrastructure
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Rackspace extends AbstractAdapter
@@ -91,7 +91,7 @@ class Rackspace extends AbstractAdapter
     /**
      * Constructor
      *
-     * @param  array|Zend\Config\Config $options
+     * @param  array|Zend2\Config\Config $options
      * @return void
      */
     public function __construct($options = array())
@@ -136,7 +136,7 @@ class Rackspace extends AbstractAdapter
 
         try {
             $this->rackspace = new RackspaceServers($this->accessUser,$this->accessKey, $this->region);
-        } catch (\Zend\Service\Rackspace\Exception  $e) {
+        } catch (\Zend2\Service\Rackspace\Exception  $e) {
             throw new Exception\RuntimeException('Error on create: ' . $e->getMessage(), $e->getCode(), $e);
         }
 
@@ -477,7 +477,7 @@ class Rackspace extends AbstractAdapter
     /**
      * Get the adapter 
      * 
-     * @return Zend\Service\Rackspace\Servers
+     * @return Zend2\Service\Rackspace\Servers
      */
     public function getAdapter()
     {
@@ -495,7 +495,7 @@ class Rackspace extends AbstractAdapter
     /**
      * Get the last HTTP response
      * 
-     * @return Zend\Http\Response 
+     * @return Zend2\Http\Response 
      */
     public function getLastHttpResponse()
     {

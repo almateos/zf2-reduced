@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GBase
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\GBase;
+namespace Zend2\GData\GBase;
 
 /**
  * Assists in constructing queries for Google Base
  *
  * @link http://code.google.com/apis/base
  *
- * @uses       \Zend\GData\Query
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Query
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GBase
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Query extends \Zend\GData\Query
+class Query extends \Zend2\GData\Query
 {
 
     /**
@@ -55,7 +55,7 @@ class Query extends \Zend\GData\Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\GBase\Query Provides a fluent interface
+     * @return \Zend2\GData\GBase\Query Provides a fluent interface
      */
     public function setKey($value)
     {
@@ -69,7 +69,7 @@ class Query extends \Zend\GData\Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\GBase\ItemQuery Provides a fluent interface
+     * @return \Zend2\GData\GBase\ItemQuery Provides a fluent interface
      */
     public function setBq($value)
     {
@@ -83,7 +83,7 @@ class Query extends \Zend\GData\Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\GBase\ItemQuery Provides a fluent interface
+     * @return \Zend2\GData\GBase\ItemQuery Provides a fluent interface
      */
     public function setRefine($value)
     {
@@ -97,7 +97,7 @@ class Query extends \Zend\GData\Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\GBase\ItemQuery Provides a fluent interface
+     * @return \Zend2\GData\GBase\ItemQuery Provides a fluent interface
      */
     public function setContent($value)
     {
@@ -111,7 +111,7 @@ class Query extends \Zend\GData\Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\GBase\ItemQuery Provides a fluent interface
+     * @return \Zend2\GData\GBase\ItemQuery Provides a fluent interface
      */
     public function setOrderBy($value)
     {
@@ -125,7 +125,7 @@ class Query extends \Zend\GData\Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\GBase\ItemQuery Provides a fluent interface
+     * @return \Zend2\GData\GBase\ItemQuery Provides a fluent interface
      */
     public function setSortOrder($value)
     {
@@ -139,7 +139,7 @@ class Query extends \Zend\GData\Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\GBase\ItemQuery Provides a fluent interface
+     * @return \Zend2\GData\GBase\ItemQuery Provides a fluent interface
      */
     public function setCrowdBy($value)
     {
@@ -153,7 +153,7 @@ class Query extends \Zend\GData\Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\GBase\ItemQuery Provides a fluent interface
+     * @return \Zend2\GData\GBase\ItemQuery Provides a fluent interface
      */
     public function setAdjust($value)
     {

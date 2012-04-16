@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Code\Scanner;
+namespace Zend2\Code\Scanner;
 
 class VariableScanner
 {

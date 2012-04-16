@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
-use Zend;
-use Zend\Locale;
+namespace Zend2\Validator;
+use Zend2;
+use Zend2\Locale;
 
 /**
- * @see        Zend_Locale
- * @see        Zend_Locale_Format
- * @see        Zend_Registry
- * @uses       \Zend\Validator\AbstractValidator
- * @uses       \Zend\Validator\Exception
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @see        Zend2_Locale
+ * @see        Zend2_Locale_Format
+ * @see        Zend2_Registry
+ * @uses       \Zend2\Validator\AbstractValidator
+ * @uses       \Zend2\Validator\Exception
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PostCode extends AbstractValidator
@@ -64,17 +64,17 @@ class PostCode extends AbstractValidator
     /**
      * Constructor for the integer validator
      *
-     * Accepts either a string locale, a Zend_Locale object, or an array or
-     * Zend_Config object containing the keys "locale" and/or "format".
+     * Accepts either a string locale, a Zend2_Locale object, or an array or
+     * Zend2_Config object containing the keys "locale" and/or "format".
      *
-     * @param string|Zend_Locale|array|\Zend\Config\Config $options
-     * @throws \Zend\Validator\Exception On empty format
+     * @param string|Zend2_Locale|array|\Zend2\Config\Config $options
+     * @throws \Zend2\Validator\Exception On empty format
      */
     public function __construct($options = null)
     {
         if (empty($options)) {
-            if (\Zend\Registry::isRegistered('Zend_Locale')) {
-                $this->setLocale(\Zend\Registry::get('Zend_Locale'));
+            if (\Zend2\Registry::isRegistered('Zend2_Locale')) {
+                $this->setLocale(\Zend2\Registry::get('Zend2_Locale'));
             }
         } elseif ($options instanceof Locale\Locale || is_string($options)) {
             // Received Locale object or string locale
@@ -91,7 +91,7 @@ class PostCode extends AbstractValidator
     /**
      * Returns the set locale
      *
-     * @return string|\Zend\Locale\Locale The set locale
+     * @return string|\Zend2\Locale\Locale The set locale
      */
     public function getLocale()
     {
@@ -101,10 +101,10 @@ class PostCode extends AbstractValidator
     /**
      * Sets the locale to use
      *
-     * @param string|\Zend\Locale\Locale $locale
-     * @throws \Zend\Validator\Exception On unrecognised region
-     * @throws \Zend\Validator\Exception On not detected format
-     * @return \Zend\Validator\PostCode  Provides fluid interface
+     * @param string|\Zend2\Locale\Locale $locale
+     * @throws \Zend2\Validator\Exception On unrecognised region
+     * @throws \Zend2\Validator\Exception On not detected format
+     * @return \Zend2\Validator\PostCode  Provides fluid interface
      */
     public function setLocale($locale = null)
     {
@@ -143,8 +143,8 @@ class PostCode extends AbstractValidator
      * Sets a self defined postal format as regex
      *
      * @param string $format
-     * @throws \Zend\Validator\Exception On empty format
-     * @return \Zend\Validator\PostCode  Provides fluid interface
+     * @throws \Zend2\Validator\Exception On empty format
+     * @return \Zend2\Validator\PostCode  Provides fluid interface
      */
     public function setFormat($format)
     {

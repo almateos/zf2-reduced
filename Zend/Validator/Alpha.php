@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
+namespace Zend2\Validator;
 
-use Zend\Filter\Alpha as AlphaFilter;
+use Zend2\Filter\Alpha as AlphaFilter;
 
 /**
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Alpha extends AbstractValidator
@@ -62,7 +62,7 @@ class Alpha extends AbstractValidator
     /**
      * Sets default option values for this instance
      *
-     * @param  boolean|\Zend\Config\Config $allowWhiteSpace
+     * @param  boolean|\Zend2\Config\Config $allowWhiteSpace
      * @return void
      */
     public function __construct($allowWhiteSpace = false)
@@ -88,7 +88,7 @@ class Alpha extends AbstractValidator
      * Sets the allowWhiteSpace option
      *
      * @param boolean $allowWhiteSpace
-     * @return \Zend\Filter\Alpha Provides a fluent interface
+     * @return \Zend2\Filter\Alpha Provides a fluent interface
      */
     public function setAllowWhiteSpace($allowWhiteSpace)
     {

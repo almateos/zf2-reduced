@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,38 +12,38 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\YouTube;
+namespace Zend2\GData\YouTube;
 
-use Zend\GData\YouTube;
+use Zend2\GData\YouTube;
 
 /**
  * Represents the YouTube video playlist flavor of an Atom entry
  *
- * @uses       \Zend\GData\YouTube\Extension\Position
- * @uses       \Zend\GData\YouTube
- * @uses       \Zend\GData\YouTube\VideoEntry
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\YouTube\Extension\Position
+ * @uses       \Zend2\GData\YouTube
+ * @uses       \Zend2\GData\YouTube\VideoEntry
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PlaylistVideoEntry extends VideoEntry
 {
 
-    protected $_entryClassName = 'Zend\GData\YouTube\PlaylistVideoEntry';
+    protected $_entryClassName = 'Zend2\GData\YouTube\PlaylistVideoEntry';
 
     /**
      * Position of the entry in the feed, as specified by the user
      *
-     * @var \Zend\GData\YouTube\Extension\Position
+     * @var \Zend2\GData\YouTube\Extension\Position
      */
     protected $_position = null;
 
@@ -104,9 +104,9 @@ class PlaylistVideoEntry extends VideoEntry
     /**
      * Sets the array of embedded feeds related to the video
      *
-     * @param \Zend\GData\YouTube\Extension\Position $position
+     * @param \Zend2\GData\YouTube\Extension\Position $position
      *     The position of the entry in the feed, as specified by the user.
-     * @return \Zend\GData\YouTube\PlaylistVideoEntry Provides a fluent interface
+     * @return \Zend2\GData\YouTube\PlaylistVideoEntry Provides a fluent interface
      */
     public function setPosition($position = null)
     {
@@ -117,7 +117,7 @@ class PlaylistVideoEntry extends VideoEntry
     /**
      * Returns the position of the entry in the feed, as specified by the user
      *
-     * @return \Zend\GData\YouTube\Extension\Position The position
+     * @return \Zend2\GData\YouTube\Extension\Position The position
      */
     public function getPosition()
     {

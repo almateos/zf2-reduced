@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Amf
+ * @category   Zend2
+ * @package    Zend2_Amf
  * @subpackage Parse_Amf3
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Amf\Parser\Amf3;
-use Zend\Amf\Parser\AbstractSerializer,
-    Zend\Amf,
-    Zend\Amf\Parser,
-    Zend\Amf\Value,
-    Zend\Date;
+namespace Zend2\Amf\Parser\Amf3;
+use Zend2\Amf\Parser\AbstractSerializer,
+    Zend2\Amf,
+    Zend2\Amf\Parser,
+    Zend2\Amf\Value,
+    Zend2\Date;
 
 /**
  * Detect PHP object type and convert it to a corresponding AMF3 object type
  *
- * @uses       Zend\Amf\Constants
- * @uses       Zend\Amf\Exception
- * @uses       Zend\Amf\Parser\Serializer
- * @uses       Zend\Amf\Parser\TypeLoader
- * @package    Zend_Amf
+ * @uses       Zend2\Amf\Constants
+ * @uses       Zend2\Amf\Exception
+ * @uses       Zend2\Amf\Parser\Serializer
+ * @uses       Zend2\Amf\Parser\TypeLoader
+ * @package    Zend2_Amf
  * @subpackage Parse_Amf3
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Serializer extends AbstractSerializer
@@ -170,7 +170,7 @@ class Serializer extends AbstractSerializer
      * Write an AMF3 integer
      *
      * @param int|float $data
-     * @return Zend\Amf\Parser\Amf3\Serializer
+     * @return Zend2\Amf\Parser\Amf3\Serializer
      */
     public function writeInteger($int)
     {
@@ -204,7 +204,7 @@ class Serializer extends AbstractSerializer
      * The string is prepended with strlen($string) << 1 | 0x01
      *
      * @param  string $string
-     * @return Zend\Amf\Parser\Amf3\Serializer
+     * @return Zend2\Amf\Parser\Amf3\Serializer
      */
     protected function writeBinaryString(&$string)
     {
@@ -219,7 +219,7 @@ class Serializer extends AbstractSerializer
      * Send string to output stream
      *
      * @param  string $string
-     * @return \Zend\Amf\Parser\Amf3\Serializer
+     * @return \Zend2\Amf\Parser\Amf3\Serializer
      */
     public function writeString(&$string)
     {
@@ -244,8 +244,8 @@ class Serializer extends AbstractSerializer
     /**
      * Send ByteArray to output stream
      *
-     * @param  string|\Zend\Amf\Value\ByteArray  $data
-     * @return Zend\Amf\Parser\Amf3\Serializer
+     * @param  string|\Zend2\Amf\Value\ByteArray  $data
+     * @return Zend2\Amf\Parser\Amf3\Serializer
      */
     public function writeByteArray(&$data)
     {
@@ -258,7 +258,7 @@ class Serializer extends AbstractSerializer
         } elseif ($data instanceof Value\ByteArray) {
             $data = $data->getData();
         } else {
-            throw new Parser\Exception\OutOfBoundsException('Invalid ByteArray specified; must be a string or Zend_Amf_Value_ByteArray');
+            throw new Parser\Exception\OutOfBoundsException('Invalid ByteArray specified; must be a string or Zend2_Amf_Value_ByteArray');
         }
 
         $this->writeBinaryString($data);
@@ -270,7 +270,7 @@ class Serializer extends AbstractSerializer
      * Send xml to output stream
      *
      * @param  DOMDocument|SimpleXMLElement  $xml
-     * @return Zend\Amf\Parser\Amf3\Serializer
+     * @return Zend2\Amf\Parser\Amf3\Serializer
      */
     public function writeXml($xml)
     {
@@ -294,10 +294,10 @@ class Serializer extends AbstractSerializer
     }
 
     /**
-     * Convert DateTime/Zend_Date to AMF date
+     * Convert DateTime/Zend2_Date to AMF date
      *
-     * @param  DateTime|\Zend\Date\Date $date
-     * @return Zend\Amf\Parser\Amf3\Serializer
+     * @param  DateTime|\Zend2\Date\Date $date
+     * @return Zend2\Amf\Parser\Amf3\Serializer
      */
     public function writeDate($date)
     {
@@ -310,7 +310,7 @@ class Serializer extends AbstractSerializer
         } elseif ($date instanceof Date\Date) {
             $dateString = $date->toString('U') * 1000;
         } else {
-            throw new Parser\Exception\OutOfBoundsException('Invalid date specified; must be a string DateTime or Zend_Date object');
+            throw new Parser\Exception\OutOfBoundsException('Invalid date specified; must be a string DateTime or Zend2_Date object');
         }
 
         $this->writeInteger(0x01);
@@ -323,7 +323,7 @@ class Serializer extends AbstractSerializer
      * Write a PHP array back to the amf output stream
      *
      * @param array $array
-     * @return Zend\Amf\Parser\Amf3\Serializer
+     * @return Zend2\Amf\Parser\Amf3\Serializer
      */
     public function writeArray(&$array)
     {
@@ -386,7 +386,7 @@ class Serializer extends AbstractSerializer
      * Write object to ouput stream
      *
      * @param  mixed $data
-     * @return Zend\Amf\Parser\Amf3\Serializer
+     * @return Zend2\Amf\Parser\Amf3\Serializer
      */
     public function writeObject($object)
     {

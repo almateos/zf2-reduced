@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Soap
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Soap;
+namespace Zend2\Soap;
 
-use Zend\Config\Config;
+use Zend2\Config\Config;
 
 /**
- * Zend_Soap_Server
+ * Zend2_Soap_Server
  *
  * @uses       DOMDocument
  * @uses       SoapFault
  * @uses       SoapServer
- * @uses       \Zend\Server
- * @uses       \Zend\Soap\ServerException
- * @category   Zend
- * @package    Zend_Soap
+ * @uses       \Zend2\Server
+ * @uses       \Zend2\Soap\ServerException
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Server implements \Zend\Server\Server
+class Server implements \Zend2\Server\Server
 {
     /**
      * Actor URI
@@ -158,7 +158,7 @@ class Server implements \Zend\Server\Server
      * @param string $wsdl
      * @param array $options
      * @return void
-     * @throws \Zend\Soap\ServerException
+     * @throws \Zend2\Soap\ServerException
      */
     public function __construct($wsdl = null, array $options = null)
     {
@@ -180,8 +180,8 @@ class Server implements \Zend\Server\Server
      *
      * Allows setting options as an associative array of option => value pairs.
      *
-     * @param  array|\Zend\Config\Config $options
-     * @return \Zend\Soap\Server
+     * @param  array|\Zend2\Config\Config $options
+     * @return \Zend2\Soap\Server
      */
     public function setOptions($options)
     {
@@ -270,8 +270,8 @@ class Server implements \Zend\Server\Server
      * Set encoding
      *
      * @param  string $encoding
-     * @return \Zend\Soap\Server
-     * @throws \Zend\Soap\ServerException with invalid encoding argument
+     * @return \Zend2\Soap\Server
+     * @throws \Zend2\Soap\ServerException with invalid encoding argument
      */
     public function setEncoding($encoding)
     {
@@ -297,8 +297,8 @@ class Server implements \Zend\Server\Server
      * Set SOAP version
      *
      * @param  int $version One of the SOAP_1_1 or SOAP_1_2 constants
-     * @return \Zend\Soap\Server
-     * @throws \Zend\Soap\ServerException with invalid soap version argument
+     * @return \Zend2\Soap\Server
+     * @throws \Zend2\Soap\ServerException with invalid soap version argument
      */
     public function setSoapVersion($version)
     {
@@ -325,7 +325,7 @@ class Server implements \Zend\Server\Server
      *
      * @param  string $urn
      * @return true
-     * @throws \Zend\Soap\ServerException on invalid URN
+     * @throws \Zend2\Soap\ServerException on invalid URN
      */
     public function validateUrn($urn)
     {
@@ -343,7 +343,7 @@ class Server implements \Zend\Server\Server
      * Actor is the actor URI for the server.
      *
      * @param  string $actor
-     * @return \Zend\Soap\Server
+     * @return \Zend2\Soap\Server
      */
     public function setActor($actor)
     {
@@ -368,8 +368,8 @@ class Server implements \Zend\Server\Server
      * URI in SoapServer is actually the target namespace, not a URI; $uri must begin with 'urn:'.
      *
      * @param  string $uri
-     * @return \Zend\Soap\Server
-     * @throws \Zend\Soap\ServerException with invalid uri argument
+     * @return \Zend2\Soap\Server
+     * @throws \Zend2\Soap\ServerException with invalid uri argument
      */
     public function setUri($uri)
     {
@@ -392,8 +392,8 @@ class Server implements \Zend\Server\Server
      * Set classmap
      *
      * @param  array $classmap
-     * @return \Zend\Soap\Server
-     * @throws \Zend\Soap\ServerException for any invalid class in the class map
+     * @return \Zend2\Soap\Server
+     * @throws \Zend2\Soap\ServerException for any invalid class in the class map
      */
     public function setClassmap($classmap)
     {
@@ -424,7 +424,7 @@ class Server implements \Zend\Server\Server
      * Set wsdl
      *
      * @param string $wsdl  URI or path to a WSDL
-     * @return \Zend\Soap\Server
+     * @return \Zend2\Soap\Server
      */
     public function setWSDL($wsdl)
     {
@@ -446,7 +446,7 @@ class Server implements \Zend\Server\Server
      * Set the SOAP Feature options.
      *
      * @param  string|int $feature
-     * @return \Zend\Soap\Server
+     * @return \Zend2\Soap\Server
      */
     public function setSoapFeatures($feature)
     {
@@ -468,7 +468,7 @@ class Server implements \Zend\Server\Server
      * Set the SOAP WSDL Caching Options
      *
      * @param string|int|boolean $caching
-     * @return \Zend\Soap\Server
+     * @return \Zend2\Soap\Server
      */
     public function setWSDLCache($options)
     {
@@ -490,8 +490,8 @@ class Server implements \Zend\Server\Server
      * @param array|string $function Function name, array of function names to attach,
      * or SOAP_FUNCTIONS_ALL to attach all functions
      * @param  string $namespace Ignored
-     * @return \Zend\Soap\Server
-     * @throws \Zend\Soap\ServerException on invalid functions
+     * @return \Zend2\Soap\Server
+     * @throws \Zend2\Soap\ServerException on invalid functions
      */
     public function addFunction($function, $namespace = '')
     {
@@ -533,8 +533,8 @@ class Server implements \Zend\Server\Server
      * See {@link setObject()} to set preconfigured object instances as request handlers.
      *
      * @param string|object $class Class name or object instance which executes SOAP Requests at endpoint.
-     * @return \Zend\Soap\Server
-     * @throws \Zend\Soap\ServerException if called more than once, or if class
+     * @return \Zend2\Soap\Server
+     * @throws \Zend2\Soap\ServerException if called more than once, or if class
      * does not exist
      */
     public function setClass($class, $namespace = '', $argv = null)
@@ -570,7 +570,7 @@ class Server implements \Zend\Server\Server
      * Accepts an instanciated object to use when handling requests.
      *
      * @param object $object
-     * @return \Zend\Soap\Server
+     * @return \Zend2\Soap\Server
      */
     public function setObject($object)
     {
@@ -614,7 +614,7 @@ class Server implements \Zend\Server\Server
      *
      * @param array $array
      * @return void
-     * @throws \Zend\Soap\ServerException Unimplemented
+     * @throws \Zend2\Soap\ServerException Unimplemented
      */
     public function loadFunctions($definition)
     {
@@ -625,7 +625,7 @@ class Server implements \Zend\Server\Server
      * Set server persistence
      *
      * @param int $mode
-     * @return \Zend\Soap\Server
+     * @return \Zend2\Soap\Server
      */
     public function setPersistence($mode)
     {
@@ -640,7 +640,7 @@ class Server implements \Zend\Server\Server
     /**
      * Get server persistence
      *
-     * @return \Zend\Soap\Server
+     * @return \Zend2\Soap\Server
      */
     public function getPersistence()
     {
@@ -658,7 +658,7 @@ class Server implements \Zend\Server\Server
      * - string; if so, verifies XML
      *
      * @param DOMDocument|DOMNode|SimpleXMLElement|stdClass|string $request
-     * @return \Zend\Soap\Server
+     * @return \Zend2\Soap\Server
      */
     protected function _setRequest($request)
     {
@@ -703,7 +703,7 @@ class Server implements \Zend\Server\Server
      * The response is always available via {@link getResponse()}.
      *
      * @param boolean $flag
-     * @return \Zend\Soap\Server
+     * @return \Zend2\Soap\Server
      */
     public function setReturnResponse($flag = true)
     {
@@ -791,7 +791,7 @@ class Server implements \Zend\Server\Server
             $request = file_get_contents('php://input');
         }
 
-        // Set \Zend\Soap\Server error handler
+        // Set \Zend2\Soap\Server error handler
         $displayErrorsOriginalState = $this->_initializeSoapErrorContext();
 
         $setRequestException = null;
@@ -846,7 +846,7 @@ class Server implements \Zend\Server\Server
      * Register a valid fault exception
      *
      * @param  string|array $class Exception class or array of exception classes
-     * @return \Zend\Soap\Server
+     * @return \Zend2\Soap\Server
      */
     public function registerFaultException($class)
     {

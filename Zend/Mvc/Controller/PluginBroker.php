@@ -1,16 +1,16 @@
 <?php
 
-namespace Zend\Mvc\Controller;
+namespace Zend2\Mvc\Controller;
 
-use Zend\Loader\PluginBroker as PluginBrokerBase,
-    Zend\Stdlib\Dispatchable;
+use Zend2\Loader\PluginBroker as PluginBrokerBase,
+    Zend2\Stdlib\Dispatchable;
 
 class PluginBroker extends PluginBrokerBase
 {
     /**
      * @var string Default plugin loading strategy
      */
-    protected $defaultClassLoader = 'Zend\Mvc\Controller\PluginLoader';
+    protected $defaultClassLoader = 'Zend2\Mvc\Controller\PluginLoader';
 
     /**
      * @var Dispatchable

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mvc_Router
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Mvc_Router
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mvc\Router;
+namespace Zend2\Mvc\Router;
 
-use Zend\Loader\Broker,
-    Zend\Loader\PluginClassLocator,
-    Zend\Loader\ShortNameLocator,
-    Zend\Mvc\Router\Exception;
+use Zend2\Loader\Broker,
+    Zend2\Loader\PluginClassLocator,
+    Zend2\Loader\ShortNameLocator,
+    Zend2\Mvc\Router\Exception;
 
 /**
  * Route broker.
  *
- * @category   Zend
- * @package    Zend_Mvc_Router
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Mvc_Router
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class RouteBroker implements Broker
@@ -40,7 +40,7 @@ class RouteBroker implements Broker
      *
      * @var string
      */
-    protected $defaultClassLoader = 'Zend\Loader\PluginClassLoader';
+    protected $defaultClassLoader = 'Zend2\Loader\PluginClassLoader';
 
     /**
      * Plugin class loader used by this instance.

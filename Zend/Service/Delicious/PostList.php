@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,14 +12,14 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Delicious
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Delicious;
+namespace Zend2\Service\Delicious;
 
 /**
  * List of posts retrived from the del.icio.us web service
@@ -28,24 +28,24 @@ namespace Zend\Service\Delicious;
  * @uses       Countable
  * @uses       Iterator
  * @uses       OutOfBoundsException
- * @uses       Zend_Service_Delicious_Exception
- * @uses       Zend_Service_Delicious_Post
- * @uses       Zend_Service_Delicious_SimplePost
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_Delicious_Exception
+ * @uses       Zend2_Service_Delicious_Post
+ * @uses       Zend2_Service_Delicious_SimplePost
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Delicious
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PostList implements \Countable, \Iterator, \ArrayAccess
 {
     /**
-     * @var array Array of Zend_Service_Delicious_Post
+     * @var array Array of Zend2_Service_Delicious_Post
      */
     protected $_posts = array();
 
     /**
-     * @var Zend_Service_Delicious Service that has downloaded the post list
+     * @var Zend2_Service_Delicious Service that has downloaded the post list
      */
     protected $_service;
 
@@ -55,7 +55,7 @@ class PostList implements \Countable, \Iterator, \ArrayAccess
     protected $_iteratorKey = 0;
 
     /**
-     * @param  Zend_Service_Delicious $service Service that has downloaded the post
+     * @param  Zend2_Service_Delicious $service Service that has downloaded the post
      * @param  DOMNodeList|array      $posts
      * @return void
      */
@@ -101,8 +101,8 @@ class PostList implements \Countable, \Iterator, \ArrayAccess
     /**
      * Add a post
      *
-     * @param  Zend_Service_Delicious_SimplePost $post
-     * @return Zend_Service_Delicious_PostList
+     * @param  Zend2_Service_Delicious_SimplePost $post
+     * @return Zend2_Service_Delicious_PostList
      */
     protected function _addPost(SimplePost $post)
     {
@@ -115,7 +115,7 @@ class PostList implements \Countable, \Iterator, \ArrayAccess
      * Filter list by list of tags
      *
      * @param  array $tags
-     * @return Zend_Service_Delicious_PostList
+     * @return Zend2_Service_Delicious_PostList
      */
     public function withTags(array $tags)
     {
@@ -134,7 +134,7 @@ class PostList implements \Countable, \Iterator, \ArrayAccess
      * Filter list by tag
      *
      * @param  string $tag
-     * @return Zend_Service_Delicious_PostList
+     * @return Zend2_Service_Delicious_PostList
      */
     public function withTag($tag)
     {
@@ -145,7 +145,7 @@ class PostList implements \Countable, \Iterator, \ArrayAccess
      * Filter list by urls matching a regular expression
      *
      * @param  string $regexp
-     * @return Zend_Service_Delicious_PostList
+     * @return Zend2_Service_Delicious_PostList
      */
     public function withUrl($regexp)
     {
@@ -177,7 +177,7 @@ class PostList implements \Countable, \Iterator, \ArrayAccess
      *
      * Implement Iterator::current()
      *
-     * @return Zend_Service_Delicious_SimplePost
+     * @return Zend2_Service_Delicious_SimplePost
      */
     public function current()
     {
@@ -258,7 +258,7 @@ class PostList implements \Countable, \Iterator, \ArrayAccess
      *
      * @param   int     $offset
      * @throws  OutOfBoundsException
-     * @return  Zend_Service_Delicious_SimplePost
+     * @return  Zend2_Service_Delicious_SimplePost
      */
     public function offsetGet($offset)
     {
@@ -276,7 +276,7 @@ class PostList implements \Countable, \Iterator, \ArrayAccess
      *
      * @param   int     $offset
      * @param   string  $value
-     * @throws  Zend_Service_Delicious_Exception
+     * @throws  Zend2_Service_Delicious_Exception
      */
     public function offsetSet($offset, $value)
     {
@@ -289,7 +289,7 @@ class PostList implements \Countable, \Iterator, \ArrayAccess
      * Implement ArrayAccess::offsetUnset()
      *
      * @param   int     $offset
-     * @throws  Zend_Service_Delicious_Exception
+     * @throws  Zend2_Service_Delicious_Exception
      */
     public function offsetUnset($offset)
     {

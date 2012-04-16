@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Translator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Translator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Translator\Adapter;
-use Zend\Translator\Adapter\AbstractAdapter,
-    Zend\Translator,
-    Zend\Locale,
-    Zend\Translator\Exception\InvalidArgumentException,
-    Zend\Translator\Exception\InvalidFileTypeException;
+namespace Zend2\Translator\Adapter;
+use Zend2\Translator\Adapter\AbstractAdapter,
+    Zend2\Translator,
+    Zend2\Locale,
+    Zend2\Translator\Exception\InvalidArgumentException,
+    Zend2\Translator\Exception\InvalidFileTypeException;
 
 /**
- * @uses       \Zend\Locale\Locale
- * @uses       \Zend\Translator\Adapter\AbstractAdapter
- * @uses       \Zend\Translator\Exception\InvalidArgumentException
- * @uses       \Zend\Translator\Exception\InvalidFileTypeException
- * @category   Zend
- * @package    Zend_Translator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Locale\Locale
+ * @uses       \Zend2\Translator\Adapter\AbstractAdapter
+ * @uses       \Zend2\Translator\Exception\InvalidArgumentException
+ * @uses       \Zend2\Translator\Exception\InvalidFileTypeException
+ * @category   Zend2
+ * @package    Zend2_Translator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Tmx extends AbstractAdapter
@@ -54,8 +54,8 @@ class Tmx extends AbstractAdapter
      * @param  string  $locale    Locale has no effect for TMX because TMX defines all languages within
      *                            the source file
      * @param  array   $option    OPTIONAL Options to use
-     * @throws \Zend\Translator\Exception\InvalidArgumentException
-     * @throws \Zend\Translator\Exception\InvalidFileTypeException
+     * @throws \Zend2\Translator\Exception\InvalidArgumentException
+     * @throws \Zend2\Translator\Exception\InvalidFileTypeException
      * @return array
      */
     protected function _loadTranslationData($filename, $locale, array $options = array())

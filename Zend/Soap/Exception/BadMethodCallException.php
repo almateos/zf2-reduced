@@ -1,9 +1,9 @@
 <?php
 
-namespace Zend\Soap\Exception;
+namespace Zend2\Soap\Exception;
 
 class BadMethodCallException
     extends \BadMethodCallException
-    implements \Zend\Soap\Exception
+    implements \Zend2\Soap\Exception
 {
 }

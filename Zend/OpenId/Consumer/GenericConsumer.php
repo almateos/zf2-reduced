@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,35 +13,35 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_OpenId
- * @subpackage Zend_OpenId_Consumer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OpenId
+ * @subpackage Zend2_OpenId_Consumer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\OpenId\Consumer;
+namespace Zend2\OpenId\Consumer;
 
-use Zend\Http\Client as HttpClient,
-    Zend\Http\Request,
-    Zend\Http\Response,
-    Zend\OpenId,
-    Zend\OpenId\Extension,
-    Zend\Session\Container as SessionContainer;
+use Zend2\Http\Client as HttpClient,
+    Zend2\Http\Request,
+    Zend2\Http\Response,
+    Zend2\OpenId,
+    Zend2\OpenId\Extension,
+    Zend2\Session\Container as SessionContainer;
 
 /**
  * OpenID consumer implementation
  *
- * @uses       Zend\Http\Client
- * @uses       Zend\OpenId\OpenId
- * @uses       Zend\OpenId\Consumer\Storage
- * @uses       Zend\OpenId\Consumer\Storage\File
- * @uses       Zend\OpenId\Extension
- * @uses       Zend\Session\Container
- * @category   Zend
- * @package    Zend_OpenId
- * @subpackage Zend_OpenId_Consumer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Http\Client
+ * @uses       Zend2\OpenId\OpenId
+ * @uses       Zend2\OpenId\Consumer\Storage
+ * @uses       Zend2\OpenId\Consumer\Storage\File
+ * @uses       Zend2\OpenId\Extension
+ * @uses       Zend2\Session\Container
+ * @category   Zend2
+ * @package    Zend2_OpenId
+ * @subpackage Zend2_OpenId_Consumer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class GenericConsumer
@@ -50,7 +50,7 @@ class GenericConsumer
     /**
      * Reference to an implementation of storage object
      *
-     * @var Zend\OpenId\Consumer\Storage $_storage
+     * @var Zend2\OpenId\Consumer\Storage $_storage
      */
     protected $_storage = null;
 
@@ -58,7 +58,7 @@ class GenericConsumer
      * Enables or disables consumer to use association with server based on
      * Diffie-Hellman key agreement
      *
-     * @var Zend\OpenId\Consumer\Storage $_dumbMode
+     * @var Zend2\OpenId\Consumer\Storage $_dumbMode
      */
     protected $_dumbMode = false;
 
@@ -91,11 +91,11 @@ class GenericConsumer
     private $_error = '';
 
     /**
-     * Constructs a Zend\OpenId\Consumer\GenericConsumer object with given $storage.
+     * Constructs a Zend2\OpenId\Consumer\GenericConsumer object with given $storage.
      * Enables or disables future association with server based on
      * Diffie-Hellman key agreement.
      *
-     * @param Zend\OpenId\Consumer\Storage $storage implementation of custom
+     * @param Zend2\OpenId\Consumer\Storage $storage implementation of custom
      *  storage object
      * @param bool $dumbMode Enables or disables consumer to use association
      *  with server based on Diffie-Hellman key agreement
@@ -477,7 +477,7 @@ class GenericConsumer
                     array(
                         'maxredirects' => 4,
                         'timeout'      => 15,
-                        'useragent'    => 'Zend_OpenId'
+                        'useragent'    => 'Zend2_OpenId'
                     )
                 );
         } else {
@@ -922,7 +922,7 @@ class GenericConsumer
     /**
      * Returns session object that is used to store climed_id
      *
-     * @return Zend\Session\Container
+     * @return Zend2\Session\Container
      */
     public function getSession() 
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,14 +12,14 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Technorati;
+namespace Zend2\Service\Technorati;
 
 use DomElement;
 
@@ -28,10 +28,10 @@ use DomElement;
  * It is never returned as a standalone object,
  * but it always belongs to a valid TagResultSet object.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class TagResult extends Result
@@ -63,7 +63,7 @@ class TagResult extends Result
     /**
      * The datetime the entry was created.
      *
-     * @var     ZendDate
+     * @var     Zend2Date
      * @access  protected
      */
     protected $created;
@@ -73,7 +73,7 @@ class TagResult extends Result
      * Called 'postupdate' in original XML response,
      * it has been renamed to provide more coherence.
      *
-     * @var     ZendDate
+     * @var     Zend2Date
      * @access  protected
      */
     protected $updated;
@@ -81,7 +81,7 @@ class TagResult extends Result
     /**
      * The permalink of the blog entry.
      *
-     * @var     \Zend\Uri\Http
+     * @var     \Zend2\Uri\Http
      * @access  protected
      */
     protected $permalink;
@@ -143,7 +143,7 @@ class TagResult extends Result
     /**
      * Returns the datetime the entry was created.
      *
-     * @return  ZendDate
+     * @return  Zend2Date
      */
     public function getCreated()
     {
@@ -153,7 +153,7 @@ class TagResult extends Result
     /**
      * Returns the datetime the entry was updated.
      *
-     * @return  ZendDate
+     * @return  Zend2Date
      */
     public function getUpdated()
     {
@@ -163,7 +163,7 @@ class TagResult extends Result
     /**
      * Returns the permalink of the blog entry.
      *
-     * @return  \Zend\Uri\Http
+     * @return  \Zend2\Uri\Http
      */
     public function getPermalink()
     {

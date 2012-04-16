@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Form
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form;
+namespace Zend2\Form;
 
 /**
- * Zend\Form\SubForm
+ * Zend2\Form\SubForm
  *
- * @uses       \Zend\Form\Form
- * @category   Zend
- * @package    Zend_Form
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Form\Form
+ * @category   Zend2
+ * @package    Zend2_Form
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class SubForm extends Form
@@ -40,7 +40,7 @@ class SubForm extends Form
     /**
      * Load the default decorators
      *
-     * @return Zend\Form\SubForm
+     * @return Zend2\Form\SubForm
      */
     public function loadDefaultDecorators()
     {

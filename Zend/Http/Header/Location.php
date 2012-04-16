@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Http\Header;
+namespace Zend2\Http\Header;
 
-use Zend\Uri\Uri;
+use Zend2\Uri\Uri;
 
 /**
  * @throws Exception\InvalidArgumentException

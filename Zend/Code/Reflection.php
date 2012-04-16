@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Code;
+namespace Zend2\Code;
 
 use Reflector;
 

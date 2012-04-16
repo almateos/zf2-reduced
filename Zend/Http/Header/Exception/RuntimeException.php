@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Http\Header\Exception;
+namespace Zend2\Http\Header\Exception;
 
-use Zend\Http\Header\Exception;
+use Zend2\Http\Header\Exception;
 
 class RuntimeException 
     extends \RuntimeException 

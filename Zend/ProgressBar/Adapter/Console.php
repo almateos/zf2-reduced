@@ -10,26 +10,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_ProgressBar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_ProgressBar
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\ProgressBar\Adapter;
-use Zend\ProgressBar\Adapter\Exception;
+namespace Zend2\ProgressBar\Adapter;
+use Zend2\ProgressBar\Adapter\Exception;
 
 /**
- * Zend_ProgressBar_Adapter_Console offers a text-based progressbar for console
+ * Zend2_ProgressBar_Adapter_Console offers a text-based progressbar for console
  * applications
  *
- * @uses      \Zend\ProgressBar\Adapter\Adapter
- * @uses      \Zend\ProgressBar\Adapter\Exception
- * @uses      \Zend\Text\MultiByte
- * @category  Zend
- * @package   Zend_ProgressBar
- * @uses      Zend_ProgressBar_Adapter_Interface
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\ProgressBar\Adapter\Adapter
+ * @uses      \Zend2\ProgressBar\Adapter\Exception
+ * @uses      \Zend2\Text\MultiByte
+ * @category  Zend2
+ * @package   Zend2_ProgressBar
+ * @uses      Zend2_ProgressBar_Adapter_Interface
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Console extends AbstractAdapter
@@ -149,9 +149,9 @@ class Console extends AbstractAdapter
     protected $_charset = 'utf-8';
 
     /**
-     * Defined by Zend_ProgressBar_Adapter
+     * Defined by Zend2_ProgressBar_Adapter
      *
-     * @param null|array|\Zend\Config\Config $options
+     * @param null|array|\Zend2\Config\Config $options
      */
     public function __construct($options = null)
     {
@@ -178,7 +178,7 @@ class Console extends AbstractAdapter
      * Set a different output-stream
      *
      * @param  string $resource
-     * @return \Zend\ProgressBar\Adapter\Console
+     * @return \Zend2\ProgressBar\Adapter\Console
      */
     public function setOutputStream($resource)
     {
@@ -217,7 +217,7 @@ class Console extends AbstractAdapter
      * Set the width of the progressbar
      *
      * @param  integer $width
-     * @return \Zend\ProgressBar\Adapter\Console
+     * @return \Zend2\ProgressBar\Adapter\Console
      */
     public function setWidth($width = null)
     {
@@ -252,8 +252,8 @@ class Console extends AbstractAdapter
      * Set the elements to display with the progressbar
      *
      * @param  array $elements
-     * @throws \Zend\ProgressBar\Adapter\Exception When an invalid element is foudn in the array
-     * @return \Zend\ProgressBar\Adapter\Console
+     * @throws \Zend2\ProgressBar\Adapter\Exception When an invalid element is foudn in the array
+     * @return \Zend2\ProgressBar\Adapter\Console
      */
     public function setElements(array $elements)
     {
@@ -277,8 +277,8 @@ class Console extends AbstractAdapter
      * Set the left-hand character for the bar
      *
      * @param  string $char
-     * @throws \Zend\ProgressBar\Adapter\Exception When character is empty
-     * @return \Zend\ProgressBar\Adapter\Console
+     * @throws \Zend2\ProgressBar\Adapter\Exception When character is empty
+     * @return \Zend2\ProgressBar\Adapter\Console
      */
     public function setBarLeftChar($char)
     {
@@ -295,8 +295,8 @@ class Console extends AbstractAdapter
      * Set the right-hand character for the bar
      *
      * @param  string $char
-     * @throws \Zend\ProgressBar\Adapter\Exception When character is empty
-     * @return \Zend\ProgressBar\Adapter\Console
+     * @throws \Zend2\ProgressBar\Adapter\Exception When character is empty
+     * @return \Zend2\ProgressBar\Adapter\Console
      */
     public function setBarRightChar($char)
     {
@@ -313,7 +313,7 @@ class Console extends AbstractAdapter
      * Set the indicator character for the bar
      *
      * @param  string $char
-     * @return \Zend\ProgressBar\Adapter\Console
+     * @return \Zend2\ProgressBar\Adapter\Console
      */
     public function setBarIndicatorChar($char)
     {
@@ -326,7 +326,7 @@ class Console extends AbstractAdapter
      * Set the width of the text element
      *
      * @param  integer $width
-     * @return \Zend\ProgressBar\Adapter\Console
+     * @return \Zend2\ProgressBar\Adapter\Console
      */
     public function setTextWidth($width)
     {
@@ -351,8 +351,8 @@ class Console extends AbstractAdapter
      * Set the finish action
      *
      * @param  string $action
-     * @throws \Zend\ProgressBar\Adapter\Exception When an invalid action is specified
-     * @return \Zend\ProgressBar\Adapter\Console
+     * @throws \Zend2\ProgressBar\Adapter\Exception When an invalid action is specified
+     * @return \Zend2\ProgressBar\Adapter\Console
      */
     public function setFinishAction($action)
     {
@@ -370,7 +370,7 @@ class Console extends AbstractAdapter
     }
 
     /**
-     * Defined by Zend_ProgressBar_Adapter_Interface
+     * Defined by Zend2_ProgressBar_Adapter_Interface
      *
      * @param  float   $current       Current progress value
      * @param  float   $max           Max progress value
@@ -445,7 +445,7 @@ class Console extends AbstractAdapter
                     break;
 
                 case self::ELEMENT_TEXT:
-                    $renderedElements[] = \Zend\Text\MultiByte::strPad(substr($text, 0, $this->_textWidth), $this->_textWidth, ' ', STR_PAD_RIGHT, $this->_charset);
+                    $renderedElements[] = \Zend2\Text\MultiByte::strPad(substr($text, 0, $this->_textWidth), $this->_textWidth, ' ', STR_PAD_RIGHT, $this->_charset);
                     break;
             }
         }
@@ -457,7 +457,7 @@ class Console extends AbstractAdapter
     }
 
     /**
-     * Defined by Zend_ProgressBar_Adapter_Interface
+     * Defined by Zend2_ProgressBar_Adapter_Interface
      *
      * @return void
      */

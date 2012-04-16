@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,35 +12,35 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Writer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Writer\Renderer\Entry\Atom;
+namespace Zend2\Feed\Writer\Renderer\Entry\Atom;
 
 /**
  * @uses       DOMDocument
- * @uses       \Zend\Date\Date
- * @uses       \Zend\Feed\Writer\Renderer\AbstractRenderer
- * @uses       \Zend\Feed\Writer\Renderer
- * @category   Zend
- * @package    Zend_Feed_Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Date\Date
+ * @uses       \Zend2\Feed\Writer\Renderer\AbstractRenderer
+ * @uses       \Zend2\Feed\Writer\Renderer
+ * @category   Zend2
+ * @package    Zend2_Feed_Writer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Deleted
-    extends \Zend\Feed\Writer\Renderer\AbstractRenderer
-    implements \Zend\Feed\Writer\Renderer
+    extends \Zend2\Feed\Writer\Renderer\AbstractRenderer
+    implements \Zend2\Feed\Writer\Renderer
 {
     /**
      * Constructor
      * 
-     * @param  \Zend\Feed\Writer\Deleted $container 
+     * @param  \Zend2\Feed\Writer\Deleted $container 
      * @return void
      */
-    public function __construct (\Zend\Feed\Writer\Deleted $container)
+    public function __construct (\Zend2\Feed\Writer\Deleted $container)
     {
         parent::__construct($container);
     }
@@ -48,7 +48,7 @@ class Deleted
     /**
      * Render atom entry
      * 
-     * @return \Zend\Feed\Writer\Renderer\Entry\Atom
+     * @return \Zend2\Feed\Writer\Renderer\Entry\Atom
      */
     public function render()
     {
@@ -58,7 +58,7 @@ class Deleted
         $this->_dom->appendChild($entry);
         
         $entry->setAttribute('ref', $this->_container->getReference());
-        $entry->setAttribute('when', $this->_container->getWhen()->get(\Zend\Date\Date::ISO_8601));
+        $entry->setAttribute('when', $this->_container->getWhen()->get(\Zend2\Date\Date::ISO_8601));
         
         $this->_setBy($this->_dom, $entry);
         $this->_setComment($this->_dom, $entry);

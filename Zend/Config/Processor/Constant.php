@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Config
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Config\Processor;
+namespace Zend2\Config\Processor;
 
-use Zend\Config\Config,
-    Zend\Config\Processor,
-    Zend\Config\Processor\Token,
-    Zend\Config\Exception\InvalidArgumentException,
+use Zend2\Config\Config,
+    Zend2\Config\Processor,
+    Zend2\Config\Processor\Token,
+    Zend2\Config\Exception\InvalidArgumentException,
     \Traversable,
     \ArrayObject;
 
 /**
- * @category   Zend
- * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Config
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Constant extends Token implements Processor
@@ -49,7 +49,7 @@ class Constant extends Token implements Processor
      * @param bool   $userOnly              True to process only user-defined constants, false to process all PHP constants
      * @param string $prefix                Optional prefix
      * @param string $suffix                Optional suffix
-     * @return \Zend\Config\Processor\Constant
+     * @return \Zend2\Config\Processor\Constant
      */
     public function __construct($userOnly = true, $prefix = '', $suffix = '')
     {

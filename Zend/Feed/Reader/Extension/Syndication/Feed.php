@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Reader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Reader
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Reader\Extension\Syndication;
-use Zend\Feed\Reader;
-use Zend\Feed\Reader\Extension;
-use Zend\Date;
+namespace Zend2\Feed\Reader\Extension\Syndication;
+use Zend2\Feed\Reader;
+use Zend2\Feed\Reader\Extension;
+use Zend2\Date;
 
 /**
- * @uses       \Zend\Date\Date
- * @uses       \Zend\Feed\Reader\Extension\AbstractFeed
- * @category   Zend
- * @package    Zend_Feed_Reader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Date\Date
+ * @uses       \Zend2\Feed\Reader\Extension\AbstractFeed
+ * @category   Zend2
+ * @package    Zend2_Feed_Reader
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Feed extends \Zend\Feed\Reader\Extension\AbstractFeed
+class Feed extends \Zend2\Feed\Reader\Extension\AbstractFeed
 {
     /**
      * Get update period

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Books
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Books\Extension;
+namespace Zend2\GData\Books\Extension;
 
 /**
  * Describes a books category
  *
- * @uses       \Zend\GData\App\Extension\Category
- * @uses       \Zend\GData\Books
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Extension\Category
+ * @uses       \Zend2\GData\Books
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Books
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class BooksCategory extends
-    \Zend\GData\App\Extension\Category
+    \Zend2\GData\App\Extension\Category
 {
 
     /**
-     * Constructor for Zend_Gdata_Books_Extension_BooksCategory which
+     * Constructor for Zend2_Gdata_Books_Extension_BooksCategory which
      * Describes a books category
      *
      * @param string|null $term An identifier representing the category within
@@ -49,7 +49,7 @@ class BooksCategory extends
      */
     public function __construct($term = null, $scheme = null, $label = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Books::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\Books::$namespaces);
         parent::__construct($term, $scheme, $label);
     }
 

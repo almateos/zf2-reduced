@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_Client_AbstractClient
- * @uses       Zend_Service_DeveloperGarden_Client_Exception
- * @uses       Zend_Service_DeveloperGarden_Request_SendSms_SendFlashSMS
- * @uses       Zend_Service_DeveloperGarden_Request_SendSms_SendSMS
- * @uses       Zend_Service_DeveloperGarden_Response_SendSms_SendFlashSMSResponse
- * @uses       Zend_Service_DeveloperGarden_Response_SendSms_SendSMSResponse
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Client_AbstractClient
+ * @uses       Zend2_Service_DeveloperGarden_Client_Exception
+ * @uses       Zend2_Service_DeveloperGarden_Request_SendSms_SendFlashSMS
+ * @uses       Zend2_Service_DeveloperGarden_Request_SendSms_SendSMS
+ * @uses       Zend2_Service_DeveloperGarden_Response_SendSms_SendFlashSMSResponse
+ * @uses       Zend2_Service_DeveloperGarden_Response_SendSms_SendSMSResponse
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_SendSms
-    extends Zend_Service_DeveloperGarden_Client_AbstractClient
+class Zend2_Service_DeveloperGarden_SendSms
+    extends Zend2_Service_DeveloperGarden_Client_AbstractClient
 {
     /**
      * wsdl file
@@ -57,8 +57,8 @@ class Zend_Service_DeveloperGarden_SendSms
      *
      */
     protected $_classMap = array(
-        'sendSMSResponse'      => 'Zend_Service_DeveloperGarden_Response_SendSms_SendSMSResponse',
-        'sendFlashSMSResponse' => 'Zend_Service_DeveloperGarden_Response_SendSms_SendFlashSMSResponse'
+        'sendSMSResponse'      => 'Zend2_Service_DeveloperGarden_Response_SendSms_SendSMSResponse',
+        'sendFlashSMSResponse' => 'Zend2_Service_DeveloperGarden_Response_SendSms_SendFlashSMSResponse'
     );
 
     /**
@@ -70,11 +70,11 @@ class Zend_Service_DeveloperGarden_SendSms
      * @param string $originator
      * @param integer $account
      *
-     * @return Zend_Service_DeveloperGarden_Request_SendSms_SendSMS
+     * @return Zend2_Service_DeveloperGarden_Request_SendSms_SendSMS
      */
     public function createSms($number = null, $message = null, $originator = null, $account = null)
     {
-        $request = new Zend_Service_DeveloperGarden_Request_SendSms_SendSMS($this->getEnvironment());
+        $request = new Zend2_Service_DeveloperGarden_Request_SendSms_SendSMS($this->getEnvironment());
         $request->setNumber($number)
                 ->setMessage($message)
                 ->setOriginator($originator)
@@ -91,11 +91,11 @@ class Zend_Service_DeveloperGarden_SendSms
      * @param string $originator
      * @param integer $account
      *
-     * @return Zend_Service_DeveloperGarden_Request_SendSms_SendFlashSMS
+     * @return Zend2_Service_DeveloperGarden_Request_SendSms_SendFlashSMS
      */
     public function createFlashSms($number = null, $message = null, $originator = null, $account = null)
     {
-        $request = new Zend_Service_DeveloperGarden_Request_SendSms_SendFlashSMS($this->getEnvironment());
+        $request = new Zend2_Service_DeveloperGarden_Request_SendSms_SendFlashSMS($this->getEnvironment());
         $request->setNumber($number)
                 ->setMessage($message)
                 ->setOriginator($originator)
@@ -106,11 +106,11 @@ class Zend_Service_DeveloperGarden_SendSms
     /**
      * sends an sms with the given parameters
      *
-     * @param Zend_Service_DeveloperGarden_Request_SendSms_AbstractSendSms $sms
+     * @param Zend2_Service_DeveloperGarden_Request_SendSms_AbstractSendSms $sms
      *
-     * @return Zend_Service_DeveloperGarden_Response_SendSms_AbstractSendSms
+     * @return Zend2_Service_DeveloperGarden_Response_SendSms_AbstractSendSms
      */
-    public function send(Zend_Service_DeveloperGarden_Request_SendSms_AbstractSendSms $sms)
+    public function send(Zend2_Service_DeveloperGarden_Request_SendSms_AbstractSendSms $sms)
     {
         $client = $this->getSoapClient();
         $request = array(
@@ -126,7 +126,7 @@ class Zend_Service_DeveloperGarden_SendSms
                 $response = $client->sendFlashSms($request);
                 break;
             default : {
-                throw new Zend_Service_DeveloperGarden_Client_Exception('Unknown SMS Type');
+                throw new Zend2_Service_DeveloperGarden_Client_Exception('Unknown SMS Type');
             }
         }
 

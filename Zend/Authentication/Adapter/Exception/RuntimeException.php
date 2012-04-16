@@ -1,10 +1,10 @@
 <?php
 
-namespace Zend\Authentication\Adapter\Exception;
+namespace Zend2\Authentication\Adapter\Exception;
 
 class RuntimeException 
     extends \RuntimeException 
-    implements \Zend\Authentication\Adapter\Exception
+    implements \Zend2\Authentication\Adapter\Exception
 {
 
 }

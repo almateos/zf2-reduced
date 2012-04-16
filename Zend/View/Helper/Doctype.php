@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper;
+namespace Zend2\View\Helper;
 
-use Zend\View\Exception,
-    Zend\Registry,
+use Zend2\View\Exception,
+    Zend2\Registry,
     ArrayObject;
 
 /**
  * Helper for setting and retrieving the doctype
  *
  * @uses       ArrayObject
- * @uses       \Zend\Registry
- * @uses       \Zend\View\Exception
- * @uses       \Zend\View\Helper\AbstractHelper
- * @package    Zend_View
+ * @uses       \Zend2\Registry
+ * @uses       \Zend2\View\Exception
+ * @uses       \Zend2\View\Helper\AbstractHelper
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Doctype extends AbstractHelper
@@ -73,7 +73,7 @@ class Doctype extends AbstractHelper
      * Registry key in which helper is stored
      * @var string
      */
-    protected $_regKey = 'Zend_View_Helper_Doctype';
+    protected $_regKey = 'Zend2_View_Helper_Doctype';
 
     /**
      * Constructor

@@ -1,9 +1,9 @@
 <?php
 
-namespace Zend\Di\ServiceLocator;
+namespace Zend2\Di\ServiceLocator;
 
-use Zend\Di\Di,
-    Zend\Di\Exception;
+use Zend2\Di\Di,
+    Zend2\Di\Exception;
 
 class DependencyInjectorProxy extends Di
 {

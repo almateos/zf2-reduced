@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search;
+namespace Zend2\Search\Lucene\Search;
 
 /**
  * @todo !!!!!!! This class is actually used as singleton. It has to be redesigned.
  */
 
 /**
- * @uses       \Zend\Search\Lucene\Search\Similarity\DefaultSimilarity
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Search\Similarity\DefaultSimilarity
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Similarity
@@ -38,7 +38,7 @@ abstract class Similarity
     /**
      * The Similarity implementation used by default.
      *
-     * @var \Zend\Search\Lucene\Search\Similarity
+     * @var \Zend2\Search\Lucene\Search\Similarity
      */
     private static $_defaultImpl;
 
@@ -310,7 +310,7 @@ abstract class Similarity
      * Set the default Similarity implementation used by indexing and search
      * code.
      *
-     * @param \Zend\Search\Lucene\Search\Similarity $similarity
+     * @param \Zend2\Search\Lucene\Search\Similarity $similarity
      */
     public static function setDefault(Similarity $similarity)
     {
@@ -322,7 +322,7 @@ abstract class Similarity
      * Return the default Similarity implementation used by indexing and search
      * code.
      *
-     * @return \Zend\Search\Lucene\Search\Similarity
+     * @return \Zend2\Search\Lucene\Search\Similarity
      */
     public static function getDefault()
     {
@@ -497,10 +497,10 @@ abstract class Similarity
      * Returns a score factor for the term
      *
      * @param mixed $input
-     * @param \Zend\Search\Lucene\SearchIndex $reader
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
      * @return a score factor for the term
      */
-    public function idf($input, \Zend\Search\Lucene\SearchIndex $reader)
+    public function idf($input, \Zend2\Search\Lucene\SearchIndex $reader)
     {
         if (!is_array($input)) {
             return $this->idfFreq($reader->docFreq($input), $reader->count());

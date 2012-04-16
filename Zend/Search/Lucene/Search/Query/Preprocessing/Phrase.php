@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,38 +12,38 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search\Query\Preprocessing;
-use Zend\Search\Lucene;
-use Zend\Search\Lucene\Index;
-use Zend\Search\Lucene\Search\Query;
-use Zend\Search\Lucene\Analysis\Analyzer;
-use Zend\Search\Lucene\Search\Highlighter;
+namespace Zend2\Search\Lucene\Search\Query\Preprocessing;
+use Zend2\Search\Lucene;
+use Zend2\Search\Lucene\Index;
+use Zend2\Search\Lucene\Search\Query;
+use Zend2\Search\Lucene\Analysis\Analyzer;
+use Zend2\Search\Lucene\Search\Highlighter;
 
 /**
  * It's an internal abstract class intended to finalize ase a query processing after query parsing.
  * This type of query is not actually involved into query execution.
  *
- * @uses       \Zend\Search\Lucene\Index
- * @uses       \Zend\Search\Lucene\Analysis\Analyzer
- * @uses       \Zend\Search\Lucene\Index\Term
- * @uses       \Zend\Search\Lucene\Search\Query\Boolean
- * @uses       \Zend\Search\Lucene\Search\Query\Insignificant
- * @uses       \Zend\Search\Lucene\Search\Query\Phrase
- * @uses       \Zend\Search\Lucene\Search\Query\Preprocessing\AbstractPreprocessing
- * @uses       \Zend\Search\Lucene\Search\Query\Preprocessing\Phrase
- * @uses       \Zend\Search\Lucene\Search\Query\Term
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Index
+ * @uses       \Zend2\Search\Lucene\Analysis\Analyzer
+ * @uses       \Zend2\Search\Lucene\Index\Term
+ * @uses       \Zend2\Search\Lucene\Search\Query\Boolean
+ * @uses       \Zend2\Search\Lucene\Search\Query\Insignificant
+ * @uses       \Zend2\Search\Lucene\Search\Query\Phrase
+ * @uses       \Zend2\Search\Lucene\Search\Query\Preprocessing\AbstractPreprocessing
+ * @uses       \Zend2\Search\Lucene\Search\Query\Preprocessing\Phrase
+ * @uses       \Zend2\Search\Lucene\Search\Query\Term
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
  * @internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Phrase extends AbstractPreprocessing
@@ -127,8 +127,8 @@ class Phrase extends AbstractPreprocessing
     /**
      * Re-write query into primitive queries in the context of specified index
      *
-     * @param \Zend\Search\Lucene\SearchIndex $index
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @param \Zend2\Search\Lucene\SearchIndex $index
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     public function rewrite(Lucene\SearchIndex $index)
     {
@@ -136,8 +136,8 @@ class Phrase extends AbstractPreprocessing
 // They are either removed by text analyzer or used as a part of keyword for keyword fields
 //
 //        if (strpos($this->_phrase, '?') !== false || strpos($this->_phrase, '*') !== false) {
-//            require_once 'Zend/Search/Lucene/Search/QueryParserException.php';
-//            throw new Zend_Search_Lucene_Search_QueryParserException('Wildcards are only allowed in a single terms.');
+//            require_once 'Zend2/Search/Lucene/Search/QueryParserException.php';
+//            throw new Zend2_Search_Lucene_Search_QueryParserException('Wildcards are only allowed in a single terms.');
 //        }
 
         // Split query into subqueries if field name is not specified
@@ -209,7 +209,7 @@ class Phrase extends AbstractPreprocessing
     /**
      * Query specific matches highlighting
      *
-     * @param \Zend\Search\Lucene\Search\Highlighter $highlighter  Highlighter object (also contains doc for highlighting)
+     * @param \Zend2\Search\Lucene\Search\Highlighter $highlighter  Highlighter object (also contains doc for highlighting)
      */
     protected function _highlightMatches(Highlighter $highlighter)
     {

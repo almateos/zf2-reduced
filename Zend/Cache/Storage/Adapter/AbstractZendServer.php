@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Cache\Storage\Adapter;
+namespace Zend2\Cache\Storage\Adapter;
 
 use ArrayObject,
     stdClass,
-    Zend\Cache\Storage\Capabilities,
-    Zend\Cache\Exception;
+    Zend2\Cache\Storage\Capabilities,
+    Zend2\Cache\Exception;
 
 /**
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class AbstractZendServer extends AbstractAdapter
+abstract class AbstractZend2Server extends AbstractAdapter
 {
     /**
-     * The namespace separator used on Zend Data Cache functions
+     * The namespace separator used on Zend2 Data Cache functions
      *
      * @var string
      */
@@ -329,7 +329,7 @@ abstract class AbstractZendServer extends AbstractAdapter
     /* internal wrapper of zend_[disk|shm]_cache_* functions */
 
     /**
-     * Store data into Zend Data Cache (zdc)
+     * Store data into Zend2 Data Cache (zdc)
      *
      * @param  string $internalKey
      * @param  mixed  $value
@@ -340,7 +340,7 @@ abstract class AbstractZendServer extends AbstractAdapter
     abstract protected function zdcStore($internalKey, $value, $ttl);
 
     /**
-     * Fetch a single item from Zend Data Cache (zdc)
+     * Fetch a single item from Zend2 Data Cache (zdc)
      *
      * @param  string $internalKey
      * @return mixed The stored value or FALSE if item wasn't found
@@ -349,7 +349,7 @@ abstract class AbstractZendServer extends AbstractAdapter
     abstract protected function zdcFetch($internalKey);
 
     /**
-     * Fetch multiple items from Zend Data Cache (zdc)
+     * Fetch multiple items from Zend2 Data Cache (zdc)
      *
      * @param  array $internalKeys
      * @return array All found items
@@ -358,7 +358,7 @@ abstract class AbstractZendServer extends AbstractAdapter
     abstract protected function zdcFetchMulti(array $internalKeys);
 
     /**
-     * Delete data from Zend Data Cache (zdc)
+     * Delete data from Zend2 Data Cache (zdc)
      *
      * @param  string $internalKey
      * @return boolean
@@ -367,7 +367,7 @@ abstract class AbstractZendServer extends AbstractAdapter
     abstract protected function zdcDelete($internalKey);
 
     /**
-     * Clear items of all namespaces from Zend Data Cache (zdc)
+     * Clear items of all namespaces from Zend2 Data Cache (zdc)
      *
      * @return void
      * @throws Exception\RuntimeException
@@ -375,7 +375,7 @@ abstract class AbstractZendServer extends AbstractAdapter
     abstract protected function zdcClear();
 
     /**
-     * Clear items of the given namespace from Zend Data Cache (zdc)
+     * Clear items of the given namespace from Zend2 Data Cache (zdc)
      *
      * @param  string $namespace
      * @return void

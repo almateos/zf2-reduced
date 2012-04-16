@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,10 +12,10 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Flickr
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
@@ -23,14 +23,14 @@
  * @uses       DOMXPath
  * @uses       OutOfBoundsException
  * @uses       SeekableIterator
- * @uses       Zend_Service_Flickr_Result
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_Flickr_Result
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Flickr
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_Flickr_ResultSet implements SeekableIterator
+class Zend2_Service_Flickr_ResultSet implements SeekableIterator
 {
     /**
      * Total number of available results
@@ -61,9 +61,9 @@ class Zend_Service_Flickr_ResultSet implements SeekableIterator
     protected $_results = null;
 
     /**
-     * Reference to Zend_Service_Flickr object with which the request was made
+     * Reference to Zend2_Service_Flickr object with which the request was made
      *
-     * @var Zend_Service_Flickr
+     * @var Zend2_Service_Flickr
      */
     private $_flickr;
 
@@ -78,10 +78,10 @@ class Zend_Service_Flickr_ResultSet implements SeekableIterator
      * Parse the Flickr Result Set
      *
      * @param  DOMDocument         $dom
-     * @param  Zend_Service_Flickr $flickr
+     * @param  Zend2_Service_Flickr $flickr
      * @return void
      */
-    public function __construct(DOMDocument $dom, Zend_Service_Flickr $flickr)
+    public function __construct(DOMDocument $dom, Zend2_Service_Flickr $flickr)
     {
         $this->_flickr = $flickr;
 
@@ -116,11 +116,11 @@ class Zend_Service_Flickr_ResultSet implements SeekableIterator
     /**
      * Implements SeekableIterator::current()
      *
-     * @return Zend_Service_Flickr_Result
+     * @return Zend2_Service_Flickr_Result
      */
     public function current()
     {
-        return new Zend_Service_Flickr_Result($this->_results->item($this->_currentIndex), $this->_flickr);
+        return new Zend2_Service_Flickr_Result($this->_results->item($this->_currentIndex), $this->_flickr);
     }
 
     /**

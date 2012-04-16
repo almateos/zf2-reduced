@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData;
+namespace Zend2\GData;
 
 /**
  * Class to facilitate Google's "Account Authentication
  * for Installed Applications" also known as "ClientLogin".
  * @see http://code.google.com/apis/accounts/AuthForInstalledApps.html
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ClientLogin
@@ -45,7 +45,7 @@ class ClientLogin
      * The default 'source' parameter to send to Google
      *
      */
-    const DEFAULT_SOURCE = 'Zend-ZendFramework';
+    const DEFAULT_SOURCE = 'Zend2-Zend2Framework';
 
     /**
      * Set Google authentication credentials.
@@ -56,17 +56,17 @@ class ClientLogin
      * @param string $email
      * @param string $password
      * @param string $service
-     * @param \Zend\GData\HttpClient $client
+     * @param \Zend2\GData\HttpClient $client
      * @param string $source
      * @param string $loginToken The token identifier as provided by the server.
      * @param string $loginCaptcha The user's response to the CAPTCHA challenge.
      * @param string $accountType An optional string to identify whether the
      * account to be authenticated is a google or a hosted account. Defaults to
      * 'HOSTED_OR_GOOGLE'. See: http://code.google.com/apis/accounts/docs/AuthForInstalledApps.html#Request
-     * @throws \Zend\GData\App\AuthException
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\App\CaptchaRequiredException
-     * @return \Zend\GData\HttpClient
+     * @throws \Zend2\GData\App\AuthException
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\App\CaptchaRequiredException
+     * @return \Zend2\GData\HttpClient
      */
     public static function getHttpClient($email, $password, $service = 'xapi',
         $client = null,
@@ -86,15 +86,15 @@ class ClientLogin
             $client = new HttpClient();
         }
         
-        if (!$client instanceof \Zend\Http\Client) {
+        if (!$client instanceof \Zend2\Http\Client) {
             throw new App\HttpException(
-                    'Client is not an instance of Zend\Http\Client.');
+                    'Client is not an instance of Zend2\Http\Client.');
         }
 
         // Build the HTTP client for authentication
         $client->setUri($loginUri);
         $client->setMethod('POST');
-        $useragent = $source . ' Zend_Framework_Gdata/' . \Zend\Version::VERSION;
+        $useragent = $source . ' Zend2_Framework_Gdata/' . \Zend2\Version::VERSION;
         $client->setConfig(array(
                 'maxredirects'    => 0,
                 'strictredirects' => true,
@@ -129,7 +129,7 @@ class ClientLogin
         ob_start();
         try {
             $response = $client->send();
-        } catch (\Zend\Http\Client\Exception $e) {
+        } catch (\Zend2\Http\Client\Exception $e) {
             throw new App\HttpException($e->getMessage(), $e);
         }
         ob_end_clean();
@@ -146,7 +146,7 @@ class ClientLogin
 
         if ($response->getStatusCode() == 200) {
             $client->setClientLoginToken($goog_resp['Auth']);
-            $useragent = $source . ' Zend_Framework_Gdata/' . \Zend\Version::VERSION;
+            $useragent = $source . ' Zend2_Framework_Gdata/' . \Zend2\Version::VERSION;
             $client->setConfig(array(
                     'strictredirects' => true,
                     'useragent' => $useragent

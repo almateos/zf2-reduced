@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Db\Sql;
+namespace Zend2\Db\Sql;
 
 interface ExpressionInterface
 {

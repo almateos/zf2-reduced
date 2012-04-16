@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Analysis
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Analysis\Analyzer;
+namespace Zend2\Search\Lucene\Analysis\Analyzer;
 
-use Zend\Search\Lucene\Analysis\Analyzer as LuceneAnalyzer;
+use Zend2\Search\Lucene\Analysis\Analyzer as LuceneAnalyzer;
 
 /**
  * Analyzer manager.
  *
- * @uses       \Zend\Search\Lucene\Analysis\Analyzer
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Analysis\Analyzer
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Analysis
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Analyzer
@@ -38,14 +38,14 @@ class Analyzer
     /**
      * The Analyzer implementation used by default.
      *
-     * @var \Zend\Search\Lucene\Analysis\Analyzer
+     * @var \Zend2\Search\Lucene\Analysis\Analyzer
      */
     private static $_defaultImpl = null;
 
     /**
      * Set the default Analyzer implementation used by indexing code.
      *
-     * @param \Zend\Search\Lucene\Analysis\Analyzer $analyzer
+     * @param \Zend2\Search\Lucene\Analysis\Analyzer $analyzer
      */
     public static function setDefault(LuceneAnalyzer $analyzer)
     {
@@ -55,7 +55,7 @@ class Analyzer
     /**
      * Return the default Analyzer implementation used by indexing code.
      *
-     * @return \Zend\Search\Lucene\Analysis\Analyzer
+     * @return \Zend2\Search\Lucene\Analysis\Analyzer
      */
     public static function getDefault()
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Writer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Writer\Renderer\Feed;
-use Zend\Feed\Writer\Renderer;
-use Zend\Feed\Writer;
+namespace Zend2\Feed\Writer\Renderer\Feed;
+use Zend2\Feed\Writer\Renderer;
+use Zend2\Feed\Writer;
 
 /**
 * @uses DOMDocument
-* @uses \Zend\Feed\Writer\Writer
-* @uses \Zend\Feed\Writer\Feed\Feed
-* @uses \Zend\Feed\Writer\Renderer\Entry\Atom\Atom
-* @uses \Zend\Feed\Writer\Renderer\Entry\Atom\Deleted
-* @uses \Zend\Feed\Writer\Renderer\Feed\Atom\AtomAbstract
-* @uses \Zend\Feed\Writer\Renderer\RendererAbstract
-* @uses \Zend\Feed\Writer\Renderer\RendererInterface
-* @uses \Zend\Version
-* @category Zend
-* @package Zend_Feed_Writer
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @uses \Zend2\Feed\Writer\Writer
+* @uses \Zend2\Feed\Writer\Feed\Feed
+* @uses \Zend2\Feed\Writer\Renderer\Entry\Atom\Atom
+* @uses \Zend2\Feed\Writer\Renderer\Entry\Atom\Deleted
+* @uses \Zend2\Feed\Writer\Renderer\Feed\Atom\AtomAbstract
+* @uses \Zend2\Feed\Writer\Renderer\RendererAbstract
+* @uses \Zend2\Feed\Writer\Renderer\RendererInterface
+* @uses \Zend2\Version
+* @category Zend2
+* @package Zend2_Feed_Writer
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 class Atom extends AbstractAtom implements Renderer\Renderer
@@ -42,7 +42,7 @@ class Atom extends AbstractAtom implements Renderer\Renderer
     /**
      * Constructor
      * 
-     * @param  Zend_Feed_Writer_Feed $container 
+     * @param  Zend2_Feed_Writer_Feed $container 
      * @return void
      */
     public function __construct (Writer\Feed $container)
@@ -53,7 +53,7 @@ class Atom extends AbstractAtom implements Renderer\Renderer
     /**
      * Render Atom feed
      * 
-     * @return Zend_Feed_Writer_Renderer_Feed_Atom
+     * @return Zend2_Feed_Writer_Renderer_Feed_Atom
      */
     public function render()
     {

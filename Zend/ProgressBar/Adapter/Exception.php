@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_ProgressBar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_ProgressBar
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\ProgressBar\Adapter;
+namespace Zend2\ProgressBar\Adapter;
 
 /**
- * Exception class for Zend_ProgressBar_Adapter
+ * Exception class for Zend2_ProgressBar_Adapter
  *
- * @uses      \Zend\ProgressBar\Exception
- * @category  Zend
- * @package   Zend_ProgressBar
- * @uses      \Zend\ProgressBar\Exception
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\ProgressBar\Exception
+ * @category  Zend2
+ * @package   Zend2_ProgressBar
+ * @uses      \Zend2\ProgressBar\Exception
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
-interface Exception extends \Zend\ProgressBar\Exception
+interface Exception extends \Zend2\ProgressBar\Exception
 {
 }

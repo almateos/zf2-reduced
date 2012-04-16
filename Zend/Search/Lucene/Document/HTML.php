@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,35 +12,35 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Document
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Document;
+namespace Zend2\Search\Lucene\Document;
 
-use Zend\Search\Lucene\Document,
-    Zend\Search\Lucene,
-    Zend\Search\Lucene\Analysis\Analyzer,
-    Zend\Search\Lucene\Exception\RuntimeException,
-    Zend\Search\Lucene\Exception\InvalidArgumentException;
+use Zend2\Search\Lucene\Document,
+    Zend2\Search\Lucene,
+    Zend2\Search\Lucene\Analysis\Analyzer,
+    Zend2\Search\Lucene\Exception\RuntimeException,
+    Zend2\Search\Lucene\Exception\InvalidArgumentException;
 
 /**
  * HTML document.
  *
  * @uses       DOMDocument
  * @uses       DOMXPath
- * @uses       \Zend\Search\Lucene\Analysis\Analyzer
- * @uses       \Zend\Search\Lucene\Document
- * @uses       \Zend\Search\Lucene\Document\Field
- * @uses       \Zend\Search\Lucene\Exception\RuntimeException
- * @uses       \Zend\Search\Lucene\Exception\InvalidArgumentException
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Analysis\Analyzer
+ * @uses       \Zend2\Search\Lucene\Document
+ * @uses       \Zend2\Search\Lucene\Document\Field
+ * @uses       \Zend2\Search\Lucene\Exception\RuntimeException
+ * @uses       \Zend2\Search\Lucene\Exception\InvalidArgumentException
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Document
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class HTML extends Document
@@ -262,7 +262,7 @@ class HTML extends Document
      * @param string  $data
      * @param boolean $storeContent
      * @param string  $defaultEncoding   HTML encoding, is used if it's not specified using Content-type HTTP-EQUIV meta tag.
-     * @return \Zend\Search\Lucene\Document\HTML
+     * @return \Zend2\Search\Lucene\Document\HTML
      */
     public static function loadHTML($data, $storeContent = false, $defaultEncoding = '')
     {
@@ -275,7 +275,7 @@ class HTML extends Document
      * @param string  $file
      * @param boolean $storeContent
      * @param string  $defaultEncoding   HTML encoding, is used if it's not specified using Content-type HTTP-EQUIV meta tag.
-     * @return \Zend\Search\Lucene\Document\HTML
+     * @return \Zend2\Search\Lucene\Document\HTML
      */
     public static function loadHTMLFile($file, $storeContent = false, $defaultEncoding = '')
     {
@@ -290,7 +290,7 @@ class HTML extends Document
      * @param array   $wordsToHighlight
      * @param callback $callback   Callback method, used to transform (highlighting) text.
      * @param array    $params     Array of additionall callback parameters (first non-optional parameter is a text to transform)
-     * @throws \Zend\Search\Lucene\Exception\RuntimeException
+     * @throws \Zend2\Search\Lucene\Exception\RuntimeException
      */
     protected function _highlightTextNode(\DOMText $node, $wordsToHighlight, $callback, $params)
     {
@@ -413,7 +413,7 @@ class HTML extends Document
      * @param callback $callback   Callback method, used to transform (highlighting) text.
      * @param array    $params     Array of additionall callback parameters passed through into it
      *                             (first non-optional parameter is an HTML fragment for highlighting)
-     * @throws \Zend\Search\Lucene\Exception\InvalidArgumentException
+     * @throws \Zend2\Search\Lucene\Exception\InvalidArgumentException
      * @return string
      */
     public function highlightExtended($words, $callback, $params = array())

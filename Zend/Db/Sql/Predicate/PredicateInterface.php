@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Db\Sql\Predicate;
+namespace Zend2\Db\Sql\Predicate;
 
-use Zend\Db\Sql\ExpressionInterface;
+use Zend2\Db\Sql\ExpressionInterface;
 
 interface PredicateInterface extends ExpressionInterface
 {

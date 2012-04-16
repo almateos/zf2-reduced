@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Destination
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Destination
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Destination;
-use Zend\Pdf\Exception;
-use Zend\Pdf\InternalType;
-use Zend\Pdf;
+namespace Zend2\Pdf\Destination;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf\InternalType;
+use Zend2\Pdf;
 
 /**
  * Destination array: [page /Fit]
@@ -33,13 +33,13 @@ use Zend\Pdf;
  * the smaller of the two, centering the page within the window in the other
  * dimension.
  *
- * @uses       \Zend\Pdf\Destination\AbstractDestination
- * @uses       \Zend\Pdf\InternalType\AbstractTypeObject
- * @uses       \Zend\Pdf\InternalType\StringObject
- * @uses       \Zend\Pdf\Exception
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Destination
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Destination\AbstractDestination
+ * @uses       \Zend2\Pdf\InternalType\AbstractTypeObject
+ * @uses       \Zend2\Pdf\InternalType\StringObject
+ * @uses       \Zend2\Pdf\Exception
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Destination
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Named extends AbstractDestination
@@ -47,7 +47,7 @@ class Named extends AbstractDestination
     /**
      * Destination name
      *
-     * @var \Zend\Pdf\InternalType\NameObject|\Zend\Pdf\InternalType\StringObject
+     * @var \Zend2\Pdf\InternalType\NameObject|\Zend2\Pdf\InternalType\StringObject
      */
     protected $_nameElement;
 
@@ -55,7 +55,7 @@ class Named extends AbstractDestination
      * Named destination object constructor
      *
      * @param $resource
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct(InternalType\AbstractTypeObject $resource)
     {
@@ -70,7 +70,7 @@ class Named extends AbstractDestination
      * Create named destination object
      *
      * @param string $name
-     * @return \Zend\Pdf\Destination\Named
+     * @return \Zend2\Pdf\Destination\Named
      */
     public static function create($name)
     {
@@ -80,7 +80,7 @@ class Named extends AbstractDestination
     /**
      * Get name
      *
-     * @return \Zend\Pdf\InternalType\AbstractTypeObject
+     * @return \Zend2\Pdf\InternalType\AbstractTypeObject
      */
     public function getName()
     {
@@ -91,7 +91,7 @@ class Named extends AbstractDestination
      * Get resource
      *
      * @internal
-     * @return \Zend\Pdf\InternalType\AbstractTypeObject
+     * @return \Zend2\Pdf\InternalType\AbstractTypeObject
      */
     public function getResource()
     {

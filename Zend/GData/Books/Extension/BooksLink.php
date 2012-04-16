@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Books
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Books\Extension;
+namespace Zend2\GData\Books\Extension;
 
 /**
  * Extends the base Link class with Books extensions
  *
- * @uses       \Zend\GData\App\Extension\Link
- * @uses       \Zend\GData\Books
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Extension\Link
+ * @uses       \Zend2\GData\Books
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Books
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class BooksLink extends \Zend\GData\App\Extension\Link
+class BooksLink extends \Zend2\GData\App\Extension\Link
 {
 
     /**
-     * Constructor for Zend_Gdata_Books_Extension_BooksLink which
+     * Constructor for Zend2_Gdata_Books_Extension_BooksLink which
      * Extends the base Link class with Books extensions
      *
      * @param string|null $href Linked resource URI
@@ -49,7 +49,7 @@ class BooksLink extends \Zend\GData\App\Extension\Link
     public function __construct($href = null, $rel = null, $type = null,
             $hrefLang = null, $title = null, $length = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Books::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\Books::$namespaces);
         parent::__construct($href, $rel, $type, $hrefLang, $title, $length);
     }
 

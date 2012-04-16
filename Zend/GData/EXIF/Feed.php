@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Exif
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\EXIF;
+namespace Zend2\GData\EXIF;
 
-use Zend\GData\EXIF;
+use Zend2\GData\EXIF;
 
 /**
  * Feed for Gdata EXIF data entries.
  *
- * @uses       \Zend\GData\EXIF
- * @uses       \Zend\GData\EXIF\Entry
- * @uses       \Zend\GData\Feed
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\EXIF
+ * @uses       \Zend2\GData\EXIF\Entry
+ * @uses       \Zend2\GData\Feed
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Exif
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Feed extends \Zend\GData\Feed
+class Feed extends \Zend2\GData\Feed
 {
 
     /**
@@ -43,7 +43,7 @@ class Feed extends \Zend\GData\Feed
      *
      * @var string
      */
-    protected $_entryClassName = '\Zend\GData\EXIF\Entry';
+    protected $_entryClassName = '\Zend2\GData\EXIF\Entry';
 
     /**
      * Create a new instance.

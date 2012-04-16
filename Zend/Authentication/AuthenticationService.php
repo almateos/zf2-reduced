@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,19 +12,19 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Authentication
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Authentication
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Authentication;
+namespace Zend2\Authentication;
 
 /**
- * @uses       Zend\Authentication\Storage\Session
- * @category   Zend
- * @package    Zend_Authentication
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Authentication\Storage\Session
+ * @category   Zend2
+ * @package    Zend2_Authentication
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class AuthenticationService
@@ -32,7 +32,7 @@ class AuthenticationService
     /**
      * Persistent storage handler
      *
-     * @var Zend\Authentication\Storage
+     * @var Zend2\Authentication\Storage
      */
     protected $_storage = null;
 
@@ -54,7 +54,7 @@ class AuthenticationService
      *
      * Session storage is used by default unless a different storage adapter has been set.
      *
-     * @return Zend\Authentication\Storage
+     * @return Zend2\Authentication\Storage
      */
     public function getStorage()
     {
@@ -68,8 +68,8 @@ class AuthenticationService
     /**
      * Sets the persistent storage handler
      *
-     * @param  Zend\Authentication\Storage $storage
-     * @return Zend\Authentication\AuthenticationService Provides a fluent interface
+     * @param  Zend2\Authentication\Storage $storage
+     * @return Zend2\Authentication\AuthenticationService Provides a fluent interface
      */
     public function setStorage(Storage $storage)
     {
@@ -80,8 +80,8 @@ class AuthenticationService
     /**
      * Authenticates against the supplied adapter
      *
-     * @param  Zend\Authentication\Adapter $adapter
-     * @return Zend\Authentication\Result
+     * @param  Zend2\Authentication\Adapter $adapter
+     * @return Zend2\Authentication\Result
      */
     public function authenticate(Adapter $adapter)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Amazon;
-use Zend\Service\Amazon\Exception;
+namespace Zend2\Service\Amazon;
+use Zend2\Service\Amazon\Exception;
 
 /**
  * @uses       DOMXPath
- * @uses       Zend_Service_Amazon_Accessories
- * @uses       Zend_Service_Amazon_CustomerReview
- * @uses       Zend_Service_Amazon_EditorialReview
- * @uses       Zend_Service_Amazon_Image
- * @uses       Zend_Service_Amazon_ListmaniaList
- * @uses       Zend_Service_Amazon_OfferSet
- * @uses       Zend_Service_Amazon_SimilarProduct
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_Amazon_Accessories
+ * @uses       Zend2_Service_Amazon_CustomerReview
+ * @uses       Zend2_Service_Amazon_EditorialReview
+ * @uses       Zend2_Service_Amazon_Image
+ * @uses       Zend2_Service_Amazon_ListmaniaList
+ * @uses       Zend2_Service_Amazon_OfferSet
+ * @uses       Zend2_Service_Amazon_SimilarProduct
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Item
@@ -85,22 +85,22 @@ class Item
     public $Subjects;
 
     /**
-     * @var Zend_Service_Amazon_OfferSet
+     * @var Zend2_Service_Amazon_OfferSet
      */
     public $Offers;
 
     /**
-     * @var Zend_Service_Amazon_CustomerReview[]
+     * @var Zend2_Service_Amazon_CustomerReview[]
      */
     public $CustomerReviews = array();
 
     /**
-     * @var Zend_Service_Amazon_SimilarProducts[]
+     * @var Zend2_Service_Amazon_SimilarProducts[]
      */
     public $SimilarProducts = array();
 
     /**
-     * @var Zend_Service_Amazon_Accessories[]
+     * @var Zend2_Service_Amazon_Accessories[]
      */
     public $Accessories = array();
 
@@ -110,7 +110,7 @@ class Item
     public $Tracks = array();
 
     /**
-     * @var Zend_Service_Amazon_ListmaniaLists[]
+     * @var Zend2_Service_Amazon_ListmaniaLists[]
      */
     public $ListmaniaLists = array();
 
@@ -122,7 +122,7 @@ class Item
      *
      * @param  null|DOMElement $dom
      * @return void
-     * @throws	\Zend\Service\Amazon\Exception
+     * @throws	\Zend2\Service\Amazon\Exception
      * 
      * @group ZF-9547
      */

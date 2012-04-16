@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\PdfParser;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
-use Zend\Pdf\InternalType;
-use Zend\Pdf\InternalType\IndirectObjectReference;
-use Zend\Pdf\Trailer;
+namespace Zend2\Pdf\PdfParser;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
+use Zend2\Pdf\InternalType;
+use Zend2\Pdf\InternalType\IndirectObjectReference;
+use Zend2\Pdf\Trailer;
 
 /**
  * PDF file parser
  *
- * @uses       \Zend\Pdf\InternalType
- * @uses       \Zend\Pdf\InternalType\IndirectObjectReference
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\PdfParser\DataParser
- * @uses       \Zend\Pdf\Trailer\Parsed
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\InternalType
+ * @uses       \Zend2\Pdf\InternalType\IndirectObjectReference
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\PdfParser\DataParser
+ * @uses       \Zend2\Pdf\Trailer\Parsed
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class StructureParser
@@ -44,14 +44,14 @@ class StructureParser
     /**
      * String parser
      *
-     * @var \Zend\Pdf\PdfParser\DataParser
+     * @var \Zend2\Pdf\PdfParser\DataParser
      */
     private $_stringParser;
 
     /**
      * Last PDF file trailer
      *
-     * @var \Zend\Pdf\Trailer\Parsed
+     * @var \Zend2\Pdf\Trailer\Parsed
      */
     private $_trailer;
 
@@ -97,8 +97,8 @@ class StructureParser
      * Load XReference table and referenced objects
      *
      * @param integer $offset
-     * @throws \Zend\Pdf\Exception
-     * @return \Zend\Pdf\Trailer\Parsed
+     * @throws \Zend2\Pdf\Exception
+     * @return \Zend2\Pdf\Trailer\Parsed
      */
     private function _loadXRefTable($offset)
     {
@@ -327,7 +327,7 @@ class StructureParser
     /**
      * Get Trailer object
      *
-     * @return \Zend\Pdf\Trailer\Parsed
+     * @return \Zend2\Pdf\Trailer\Parsed
      */
     public function getTrailer()
     {
@@ -341,9 +341,9 @@ class StructureParser
      * Thus we don't need to care about overhead
      *
      * @param mixed $source
-     * @param \Zend\Pdf\ObjectFactory $factory
+     * @param \Zend2\Pdf\ObjectFactory $factory
      * @param boolean $load
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct($source, Pdf\ObjectFactory $factory, $load)
     {
@@ -382,7 +382,7 @@ class StructureParser
              * Stream compression filter must be implemented (for compressed object streams).
              * Cross reference streams must be implemented
              */
-            throw new Exception\NotImplementedException(sprintf('Unsupported PDF version. Zend_PDF supports PDF 1.0-1.4. Current version - \'%f\'', $pdfVersion));
+            throw new Exception\NotImplementedException(sprintf('Unsupported PDF version. Zend2_PDF supports PDF 1.0-1.4. Current version - \'%f\'', $pdfVersion));
         }
         $this->_pdfVersion = $pdfVersion;
 

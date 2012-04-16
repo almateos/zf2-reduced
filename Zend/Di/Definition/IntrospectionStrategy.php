@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Di\Definition;
+namespace Zend2\Di\Definition;
 
-use Zend\Code\Annotation\AnnotationManager;
+use Zend2\Code\Annotation\AnnotationManager;
 
 class IntrospectionStrategy
 {

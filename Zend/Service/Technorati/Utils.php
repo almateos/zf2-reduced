@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Technorati;
+namespace Zend2\Service\Technorati;
 
-use Zend\Uri,
-    Zend\Date\Date as ZendDate;
+use Zend2\Uri,
+    Zend2\Date\Date as Zend2Date;
 
 /**
- * Collection of utilities for various Zend\Service\Technorati classes.
+ * Collection of utilities for various Zend2\Service\Technorati classes.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Utils
 {
     /**
-     * Parses, validates and returns a valid Zend\Uri object
+     * Parses, validates and returns a valid Zend2\Uri object
      * from given $input.
      *
      * @param   string|Uri\Http $input
@@ -63,7 +63,7 @@ class Utils
             }
         }
 
-        // allow only Zend\Uri\Http objects or child classes (not other URI formats)
+        // allow only Zend2\Uri\Http objects or child classes (not other URI formats)
         if (!$uri instanceof Uri\Http) {
             throw new Exception\RuntimeException(sprintf(
                 "%s: Invalid URL %s, only HTTP(S) protocols can be used",
@@ -96,12 +96,12 @@ class Utils
     }
 
     /**
-     * Parses, validates and returns a valid ZendDate object
+     * Parses, validates and returns a valid Zend2Date object
      * from given $input.
      *
-     * $input can be either a string, an integer or a ZendDate object.
-     * If $input is string or int, it will be provided to ZendDate as it is.
-     * If $input is a ZendDate object, the object instance will be returned.
+     * $input can be either a string, an integer or a Zend2Date object.
+     * If $input is string or int, it will be provided to Zend2Date as it is.
+     * If $input is a Zend2Date object, the object instance will be returned.
      *
      * @param   mixed|Date $input
      * @return  null|Date
@@ -110,12 +110,12 @@ class Utils
      */
     public static function normalizeDate($input)
     {
-        // allow null as value and return valid ZendDate objects
-        if (($input === null) || ($input instanceof ZendDate)) {
+        // allow null as value and return valid Zend2Date objects
+        if (($input === null) || ($input instanceof Zend2Date)) {
             return $input;
         }
 
-        // due to a BC break as of ZF 1.5 it's not safe to use ZendDate::isDate() here
+        // due to a BC break as of ZF 1.5 it's not safe to use Zend2Date::isDate() here
         // see ZF-2524, ZF-2334
         set_error_handler(function () { return true; }, E_NOTICE|E_WARNING|E_STRICT);
         if (strtotime($input) === FALSE) {
@@ -128,7 +128,7 @@ class Utils
         }
         restore_error_handler();
 
-        return new ZendDate($input);
+        return new Zend2Date($input);
     }
 
     /**

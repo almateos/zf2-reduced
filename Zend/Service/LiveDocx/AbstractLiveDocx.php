@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage LiveDocx
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\LiveDocx;
+namespace Zend2\Service\LiveDocx;
 
-use Zend\Config\Config,
-    Zend\Soap\Client as SoapClient;
+use Zend2\Config\Config,
+    Zend2\Soap\Client as SoapClient;
 
 /**
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage LiveDocx
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractLiveDocx
@@ -42,7 +42,7 @@ abstract class AbstractLiveDocx
 
     /**
      * SOAP client used to connect to LiveDocx service.
-     * @var   \Zend\Soap\Client
+     * @var   \Zend2\Soap\Client
      * @since LiveDocx 1.0
      */
     protected $soapClient = null;
@@ -74,7 +74,7 @@ abstract class AbstractLiveDocx
     /**
      * Constructor.
      *
-     * Optionally, pass an array of options (or \Zend\Config\Config object).
+     * Optionally, pass an array of options (or \Zend2\Config\Config object).
      *
      * @param  array|Config $options
      * @return void
@@ -130,7 +130,7 @@ abstract class AbstractLiveDocx
     /**
      * Set SOAP client.
      *
-     * @param  \Zend\Soap\Client $soapClient
+     * @param  \Zend2\Soap\Client $soapClient
      * @return AbstractLiveDocx
      * @since  LiveDocx 1.2
      */
@@ -144,7 +144,7 @@ abstract class AbstractLiveDocx
     /**
      * Get SOAP client.
      *
-     * @return \Zend\Soap\Client
+     * @return \Zend2\Soap\Client
      * @since  LiveDocx 1.2
      */
     public function getSoapClient()

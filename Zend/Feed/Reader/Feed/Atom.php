@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
+ * @category   Zend2
  * @package    Reader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Reader\Feed;
-use Zend\Feed\Reader;
-use Zend\Date;
+namespace Zend2\Feed\Reader\Feed;
+use Zend2\Feed\Reader;
+use Zend2\Date;
 
 /**
-* @uses \Zend\Feed\Reader\Reader
-* @uses \Zend\Feed\Reader\Extension\Atom\Feed
-* @uses \Zend\Feed\Reader\Feed\AbstractFeed
-* @category Zend
+* @uses \Zend2\Feed\Reader\Reader
+* @uses \Zend2\Feed\Reader\Extension\Atom\Feed
+* @uses \Zend2\Feed\Reader\Feed\AbstractFeed
+* @category Zend2
 * @package Reader
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 class Atom extends AbstractFeed

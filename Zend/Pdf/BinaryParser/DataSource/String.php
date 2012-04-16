@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_BinaryParser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_BinaryParser
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\BinaryParser\DataSource;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
+namespace Zend2\Pdf\BinaryParser\DataSource;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
 
 /**
- * Concrete subclass of {@link \Zend\Pdf\BinaryParser\DataSource\AbstractDataSource}
+ * Concrete subclass of {@link \Zend2\Pdf\BinaryParser\DataSource\AbstractDataSource}
  * that provides an interface to binary strings.
  *
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\BinaryParser\DataSource\AbstractDataSource
- * @package    Zend_PDF
- * @subpackage Zend_PDF_BinaryParser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\BinaryParser\DataSource\AbstractDataSource
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_BinaryParser
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class String extends AbstractDataSource
@@ -87,7 +87,7 @@ class String extends AbstractDataSource
      *
      * @param integer $byteCount Number of bytes to read.
      * @return string
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function readBytes($byteCount)
     {

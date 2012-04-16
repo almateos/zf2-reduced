@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,43 +12,43 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Form
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form;
+namespace Zend2\Form;
 
 use Countable,
     Iterator,
     Traversable,
-    Zend\Config\Config,
-    Zend\Registry,
-    Zend\Loader\PrefixPathLoader,
-    Zend\Loader\PrefixPathMapper,
-    Zend\Loader,
-    Zend\Json\Json,
-    Zend\View\Renderer\PhpRenderer,
-    Zend\View\Renderer as View,
-    Zend\Stdlib\ArrayUtils,
-    Zend\Translator,
-    Zend\Validator\Validator;
+    Zend2\Config\Config,
+    Zend2\Registry,
+    Zend2\Loader\PrefixPathLoader,
+    Zend2\Loader\PrefixPathMapper,
+    Zend2\Loader,
+    Zend2\Json\Json,
+    Zend2\View\Renderer\PhpRenderer,
+    Zend2\View\Renderer as View,
+    Zend2\Stdlib\ArrayUtils,
+    Zend2\Translator,
+    Zend2\Validator\Validator;
 
 /**
- * Zend_Form
+ * Zend2_Form
  *
  * A rewrite on this component is planned. At the bare minimum, this class
  * will be refactored to utilize the new PluginBroker implementation with
  * regards to loading elements and decorators (though decorators may be
  * either removed or pushed to a DecoratorChain). Potentially, it may be
- * modified to accept a Zend\Filter\InputFilter instance, from which it would
+ * modified to accept a Zend2\Filter\InputFilter instance, from which it would
  * inject values and error messages into attached elements.
  *
  * @todo       Convert to PluginBroker usage
- * @category   Zend
- * @package    Zend_Form
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Form
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Form implements Iterator, Countable, Validator
@@ -92,7 +92,7 @@ class Form implements Iterator, Countable, Validator
      * Default display group class
      * @var string
      */
-    protected $_defaultDisplayGroupClass = 'Zend\Form\DisplayGroup';
+    protected $_defaultDisplayGroupClass = 'Zend2\Form\DisplayGroup';
 
     /**
      * Form description
@@ -451,7 +451,7 @@ class Form implements Iterator, Countable, Validator
      * created.
      *
      * @param  string $type
-     * @return Zend\Loader\PrefixPathMapper
+     * @return Zend2\Loader\PrefixPathMapper
      */
     public function getPluginLoader($type = null)
     {
@@ -471,7 +471,7 @@ class Form implements Iterator, Countable, Validator
             }
 
             $this->_loaders[$type] = new PrefixPathLoader(
-                array('Zend\\' . $prefixSegment . '\\' => 'Zend/' . $pathSegment . '/')
+                array('Zend2\\' . $prefixSegment . '\\' => 'Zend2/' . $pathSegment . '/')
             );
         }
 
@@ -1016,11 +1016,11 @@ class Form implements Iterator, Countable, Validator
      * Add a new element
      *
      * $element may be either a string element type, or an object of type
-     * Zend_Form_Element. If a string element type is provided, $name must be
+     * Zend2_Form_Element. If a string element type is provided, $name must be
      * provided, and $options may be optionally provided for configuring the
      * element.
      *
-     * If a Zend_Form_Element is provided, $name may be optionally provided,
+     * If a Zend2_Form_Element is provided, $name may be optionally provided,
      * and any provided $options will be ignored.
      *
      * @param  string|Element $element
@@ -2670,7 +2670,7 @@ class Form implements Iterator, Countable, Validator
                 $decorator = $spec;
             }
         } else {
-            throw new Exception\InvalidArgumentException('Invalid decorator provided to addDecorator; must be string or Zend\Form\Decorator');
+            throw new Exception\InvalidArgumentException('Invalid decorator provided to addDecorator; must be string or Zend2\Form\Decorator');
         }
 
         $this->_decorators[$name] = $decorator;
@@ -3009,8 +3009,8 @@ class Form implements Iterator, Countable, Validator
     public static function getDefaultTranslator()
     {
         if (null === self::$_translatorDefault) {
-            if (Registry::isRegistered('Zend_Translator')) {
-                $translator = Registry::get('Zend_Translator');
+            if (Registry::isRegistered('Zend2_Translator')) {
+                $translator = Registry::get('Zend2_Translator');
                 if ($translator instanceof Translator\Adapter\AbstractAdapter) {
                     return $translator;
                 } elseif ($translator instanceof Translator\Translator) {

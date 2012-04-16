@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_EventManager
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_EventManager
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\EventManager;
+namespace Zend2\EventManager;
 
-use Zend\Stdlib\CallbackHandler;
+use Zend2\Stdlib\CallbackHandler;
 
 /**
  * Static version of EventManager
  *
- * @category   Zend
- * @package    Zend_EventManager
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_EventManager
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class StaticEventManager implements StaticEventCollection
@@ -158,7 +158,7 @@ class StaticEventManager implements StaticEventCollection
      * 
      * @param  string|int $id
      * @param  string|int $event 
-     * @return false|\Zend\Stdlib\PriorityQueue
+     * @return false|\Zend2\Stdlib\PriorityQueue
      */
     public function getListeners($id, $event)
     {

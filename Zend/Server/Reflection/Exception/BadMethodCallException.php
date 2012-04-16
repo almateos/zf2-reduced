@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Server\Reflection\Exception;
+namespace Zend2\Server\Reflection\Exception;
 
 class BadMethodCallException
     extends \BadMethodCallException
-    implements \Zend\Server\Reflection\Exception
+    implements \Zend2\Server\Reflection\Exception
 {}

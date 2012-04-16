@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_View
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper;
+namespace Zend2\View\Helper;
 
-use Zend\Paginator,
-    Zend\View,
-    Zend\View\Exception;
+use Zend2\Paginator,
+    Zend2\View,
+    Zend2\View\Exception;
 
 /**
- * @uses       \Zend\View\Exception
- * @category   Zend
- * @package    Zend_View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\View\Exception
+ * @category   Zend2
+ * @package    Zend2_View
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PaginationControl extends AbstractHelper
@@ -65,7 +65,7 @@ class PaginationControl extends AbstractHelper
      * if so, uses that.  Also, if no scrolling style or partial are specified,
      * the defaults will be used (if set).
      *
-     * @param  \Zend\Paginator\Paginator (Optional) $paginator
+     * @param  \Zend2\Paginator\Paginator (Optional) $paginator
      * @param  string $scrollingStyle (Optional) Scrolling style
      * @param  string $partial (Optional) View partial
      * @param  array|string $params (Optional) params to pass to the partial

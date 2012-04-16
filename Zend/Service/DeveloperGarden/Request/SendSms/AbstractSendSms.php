@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,25 +13,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_Request_Exception
- * @uses       Zend_Service_DeveloperGarden_Request_AbstractRequest
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Request_Exception
+ * @uses       Zend2_Service_DeveloperGarden_Request_AbstractRequest
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class Zend_Service_DeveloperGarden_Request_SendSms_AbstractSendSms
-    extends Zend_Service_DeveloperGarden_Request_AbstractRequest
+abstract class Zend2_Service_DeveloperGarden_Request_SendSms_AbstractSendSms
+    extends Zend2_Service_DeveloperGarden_Request_AbstractRequest
 {
     /**
      * the number or numbers to receive this sms
@@ -127,15 +127,15 @@ abstract class Zend_Service_DeveloperGarden_Request_SendSms_AbstractSendSms
      * set a new number(s)
      *
      * @param string $number
-     * @throws Zend_Service_DeveloperGarden_Request_Exception
+     * @throws Zend2_Service_DeveloperGarden_Request_Exception
      *
-     * @return Zend_Service_DeveloperGarden_Request_SendSms_AbstractSendSms
+     * @return Zend2_Service_DeveloperGarden_Request_SendSms_AbstractSendSms
      */
     public function setNumber($number)
     {
         $this->number = $number;
         if ($this->getNumberCount() > $this->_maxNumbers) {
-            throw new Zend_Service_DeveloperGarden_Request_Exception('The message is too long.');
+            throw new Zend2_Service_DeveloperGarden_Request_Exception('The message is too long.');
         }
         return $this;
     }
@@ -154,15 +154,15 @@ abstract class Zend_Service_DeveloperGarden_Request_SendSms_AbstractSendSms
      * sets a new message
      *
      * @param string $message
-     * @throws Zend_Service_DeveloperGarden_Request_Exception
+     * @throws Zend2_Service_DeveloperGarden_Request_Exception
      *
-     * @return Zend_Service_DeveloperGarden_Request_SendSms_AbstractSendSms
+     * @return Zend2_Service_DeveloperGarden_Request_SendSms_AbstractSendSms
      */
     public function setMessage($message)
     {
         $this->message = $message;
         if ($this->getMessageLength() > $this->_maxLength) {
-            throw new Zend_Service_DeveloperGarden_Request_Exception('The message is too long.');
+            throw new Zend2_Service_DeveloperGarden_Request_Exception('The message is too long.');
         }
         return $this;
     }
@@ -181,7 +181,7 @@ abstract class Zend_Service_DeveloperGarden_Request_SendSms_AbstractSendSms
      * the originator name
      *
      * @param string $originator
-     * @return Zend_Service_DeveloperGarden_Request_SendSms_AbstractSendSms
+     * @return Zend2_Service_DeveloperGarden_Request_SendSms_AbstractSendSms
      */
     public function setOriginator($originator)
     {
@@ -202,7 +202,7 @@ abstract class Zend_Service_DeveloperGarden_Request_SendSms_AbstractSendSms
      * sets a new accounts
      *
      * @param $account the $account to set
-     * @return Zend_Service_DeveloperGarden_Request_SendSms_AbstractSendSms
+     * @return Zend2_Service_DeveloperGarden_Request_SendSms_AbstractSendSms
      */
     public function setAccount($account)
     {

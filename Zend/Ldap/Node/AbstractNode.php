@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Ldap
+ * @category   Zend2
+ * @package    Zend2_Ldap
  * @subpackage Node
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Ldap\Node;
+namespace Zend2\Ldap\Node;
 
-use Zend\Ldap,
-    Zend\Ldap\Exception;
+use Zend2\Ldap,
+    Zend2\Ldap\Exception;
 
 /**
- * Zend\Ldap\Node\AbstractNode provides a bas eimplementation for LDAP nodes
+ * Zend2\Ldap\Node\AbstractNode provides a bas eimplementation for LDAP nodes
  *
- * @category   Zend
- * @package    Zend_Ldap
+ * @category   Zend2
+ * @package    Zend2_Ldap
  * @subpackage Node
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractNode implements \ArrayAccess, \Countable
@@ -103,7 +103,7 @@ abstract class AbstractNode implements \ArrayAccess, \Countable
     }
 
     /**
-     * Gets the DN of the current node as a Zend\Ldap\Dn.
+     * Gets the DN of the current node as a Zend2\Ldap\Dn.
      *
      * This is an offline method.
      *
@@ -115,7 +115,7 @@ abstract class AbstractNode implements \ArrayAccess, \Countable
     }
 
     /**
-     * Gets the DN of the current node as a Zend\Ldap\Dn.
+     * Gets the DN of the current node as a Zend2\Ldap\Dn.
      * The method returns a clone of the node's DN to prohibit modification.
      *
      * This is an offline method.

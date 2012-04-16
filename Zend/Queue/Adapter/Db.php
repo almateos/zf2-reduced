@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,62 +12,62 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Queue
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Queue\Adapter;
+namespace Zend2\Queue\Adapter;
 
-use Zend\Queue\Queue,
-    Zend\Queue\Exception as QueueException,
-    Zend\Queue\Message,
-    Zend\Db as DB_ns,
-    Zend\Db\Adapter\AbstractAdapter as AbstractDBAdapter,
-    Zend\Db\Select;
+use Zend2\Queue\Queue,
+    Zend2\Queue\Exception as QueueException,
+    Zend2\Queue\Message,
+    Zend2\Db as DB_ns,
+    Zend2\Db\Adapter\AbstractAdapter as AbstractDBAdapter,
+    Zend2\Db\Select;
 
 /**
- * Class for using connecting to a Zend_DB-based queuing system
+ * Class for using connecting to a Zend2_DB-based queuing system
  *
- * @uses       \Zend\Db\Db
- * @uses       \Zend\Db\Expr
- * @uses       \Zend\Db\Select
- * @uses       \Zend\Db\Adapter\AbstractAdapter
- * @uses       \Zend\Db\Table\AbstractRow
- * @uses       \Zend\Queue\Adapter\AdapterAbstract
- * @uses       \Zend\Queue\Adapter\Db\Message
- * @uses       \Zend\Queue\Adapter\Db\Queue
- * @uses       \Zend\Queue\Exception
- * @category   Zend
- * @package    Zend_Queue
+ * @uses       \Zend2\Db\Db
+ * @uses       \Zend2\Db\Expr
+ * @uses       \Zend2\Db\Select
+ * @uses       \Zend2\Db\Adapter\AbstractAdapter
+ * @uses       \Zend2\Db\Table\AbstractRow
+ * @uses       \Zend2\Queue\Adapter\AdapterAbstract
+ * @uses       \Zend2\Queue\Adapter\Db\Message
+ * @uses       \Zend2\Queue\Adapter\Db\Queue
+ * @uses       \Zend2\Queue\Exception
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Db extends AbstractAdapter
 {
     /**
-     * @var \Zend\Queue\Adapter\Db\Queue
+     * @var \Zend2\Queue\Adapter\Db\Queue
      */
     protected $_queueTable = null;
 
     /**
-     * @var \Zend\Queue\Adapter\Db\Message
+     * @var \Zend2\Queue\Adapter\Db\Message
      */
     protected $_messageTable = null;
 
     /**
-     * @var \Zend\Db\Table\AbstractRow
+     * @var \Zend2\Db\Table\AbstractRow
      */
     protected $_messageRow = null;
 
     /**
      * Constructor
      *
-     * @param  array|\Zend\Config\Config $options
-     * @param  \Zend\Queue\Queue|null $queue
+     * @param  array|\Zend2\Config\Config $options
+     * @param  \Zend2\Queue\Queue|null $queue
      * @return void
      */
     public function __construct($options, Queue $queue = null)
@@ -80,7 +80,7 @@ class Db extends AbstractAdapter
         }
 
         if (!is_bool($this->_options['options'][Select::FOR_UPDATE])) {
-            throw new QueueException('Options array item: \Zend\Db\Select::FOR_UPDATE must be boolean');
+            throw new QueueException('Options array item: \Zend2\Db\Select::FOR_UPDATE must be boolean');
         }
 
         if (isset($this->_options['dbAdapter'])
@@ -105,8 +105,8 @@ class Db extends AbstractAdapter
      *
      * Throws an exception if the adapter cannot connect to DB.
      *
-     * @return \Zend\Db\Adapter\AbstractAdapter
-     * @throws \Zend\Queue\Exception
+     * @return \Zend2\Db\Adapter\AbstractAdapter
+     * @throws \Zend2\Queue\Exception
      */
     protected function _initDBAdapter()
     {
@@ -156,7 +156,7 @@ class Db extends AbstractAdapter
      *
      * @param  string $name
      * @return boolean
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function isExists($name)
     {
@@ -182,7 +182,7 @@ class Db extends AbstractAdapter
      * @param  string  $name    queue name
      * @param  integer $timeout default visibility timeout
      * @return boolean
-     * @throws \Zend\Queue\Exception - database error
+     * @throws \Zend2\Queue\Exception - database error
      */
     public function create($name, $timeout = null)
     {
@@ -212,7 +212,7 @@ class Db extends AbstractAdapter
      *
      * @param  string  $name queue name
      * @return boolean
-     * @throws \Zend\Queue\Exception - database error
+     * @throws \Zend2\Queue\Exception - database error
      */
     public function delete($name)
     {
@@ -225,7 +225,7 @@ class Db extends AbstractAdapter
         }
         $queue = $list->current();
 
-        if ($queue instanceof \Zend\Db\Table\AbstractRow) {
+        if ($queue instanceof \Zend2\Db\Table\AbstractRow) {
             try {
                 $queue->delete();
             } catch (\Exception $e) {
@@ -247,7 +247,7 @@ class Db extends AbstractAdapter
      * to determine if the adapter supports this feature.
      *
      * @return array
-     * @throws \Zend\Queue\Exception - database error
+     * @throws \Zend2\Queue\Exception - database error
      */
     public function getQueues()
     {
@@ -267,9 +267,9 @@ class Db extends AbstractAdapter
     /**
      * Return the approximate number of messages in the queue
      *
-     * @param  \Zend\Queue\Queue $queue
+     * @param  \Zend2\Queue\Queue $queue
      * @return integer
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function count(Queue $queue = null)
     {
@@ -295,9 +295,9 @@ class Db extends AbstractAdapter
      * Send a message to the queue
      *
      * @param  string     $message Message to send to the active queue
-     * @param  \Zend\Queue\Queue $queue
-     * @return \Zend\Queue\Message\Message
-     * @throws \Zend\Queue\Exception - database error
+     * @param  \Zend2\Queue\Queue $queue
+     * @return \Zend2\Queue\Message\Message
+     * @throws \Zend2\Queue\Exception - database error
      */
     public function send($message, Queue $queue = null)
     {
@@ -346,9 +346,9 @@ class Db extends AbstractAdapter
      *
      * @param  integer    $maxMessages  Maximum number of messages to return
      * @param  integer    $timeout      Visibility timeout for these messages
-     * @param  \Zend\Queue\Queue $queue
-     * @return \Zend\Queue\Message\MessageIterator
-     * @throws \Zend\Queue\Exception - database error
+     * @param  \Zend2\Queue\Queue $queue
+     * @return \Zend2\Queue\Message\MessageIterator
+     * @throws \Zend2\Queue\Exception - database error
      */
     public function receive($maxMessages = null, $timeout = null, Queue $queue = null)
     {
@@ -427,7 +427,7 @@ class Db extends AbstractAdapter
      * Returns true if the message is deleted, false if the deletion is
      * unsuccessful.
      *
-     * @param  \Zend\Queue\Message\Message $message
+     * @param  \Zend2\Queue\Message\Message $message
      * @return boolean
      */
     public function deleteMessage(Message $message)
@@ -470,7 +470,7 @@ class Db extends AbstractAdapter
     }
 
     /********************************************************************
-     * Functions that are not part of the \Zend\Queue\Adapter\AdapterAbstract
+     * Functions that are not part of the \Zend2\Queue\Adapter\AdapterAbstract
      *********************************************************************/
     /**
      * Get the queue ID
@@ -479,7 +479,7 @@ class Db extends AbstractAdapter
      *
      * @param  string       $name
      * @return integer|null
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     protected function getQueueId($name)
     {

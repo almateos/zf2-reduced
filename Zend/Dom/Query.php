@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dom
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Dom
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dom;
+namespace Zend2\Dom;
 
 /**
  * Query DOM structures based on CSS selectors and/or XPath
  *
- * @uses       Zend\Dom\Exception
- * @uses       Zend\Dom\Css2Xpath
- * @uses       Zend\Dom\NodeList
- * @package    Zend_Dom
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Dom\Exception
+ * @uses       Zend2\Dom\Css2Xpath
+ * @uses       Zend2\Dom\NodeList
+ * @package    Zend2_Dom
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Query
@@ -85,7 +85,7 @@ class Query
      * Set document encoding
      *
      * @param  string $encoding
-     * @return \Zend\Dom\Query
+     * @return \Zend2\Dom\Query
      */
     public function setEncoding($encoding)
     {
@@ -108,7 +108,7 @@ class Query
      *
      * @param  string $document
      * @param  null|string $encoding Document encoding
-     * @return \Zend\Dom\Query
+     * @return \Zend2\Dom\Query
      */
     public function setDocument($document, $encoding = null)
     {
@@ -130,7 +130,7 @@ class Query
      *
      * @param  string $document
      * @param  null|string $encoding Document encoding
-     * @return \Zend\Dom\Query
+     * @return \Zend2\Dom\Query
      */
     public function setDocumentHtml($document, $encoding = null)
     {
@@ -147,7 +147,7 @@ class Query
      *
      * @param  string $document
      * @param  null|string $encoding Document encoding
-     * @return \Zend\Dom\Query
+     * @return \Zend2\Dom\Query
      */
     public function setDocumentXhtml($document, $encoding = null)
     {
@@ -164,7 +164,7 @@ class Query
      *
      * @param  string $document
      * @param  null|string $encoding Document encoding
-     * @return \Zend\Dom\Query
+     * @return \Zend2\Dom\Query
      */
     public function setDocumentXml($document, $encoding = null)
     {
@@ -210,7 +210,7 @@ class Query
      * Perform a CSS selector query
      *
      * @param  string $query
-     * @return \Zend\Dom\NodeList
+     * @return \Zend2\Dom\NodeList
      */
     public function execute($query)
     {
@@ -223,7 +223,7 @@ class Query
      *
      * @param  string|array $xpathQuery
      * @param  string|null  $query      CSS selector query
-     * @return \Zend\Dom\NodeList
+     * @return \Zend2\Dom\NodeList
      */
     public function queryXpath($xpathQuery, $query = null)
     {

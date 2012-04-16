@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Mail
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail;
+namespace Zend2\Mail;
 
 use Traversable,
-    Zend\Mime\Message as MimeMessage;
+    Zend2\Mime\Message as MimeMessage;
 
 /**
- * @category   Zend
- * @package    Zend_Mail
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Mail
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Message
@@ -387,7 +387,7 @@ class Message
             if (!$body instanceof MimeMessage) {
                 if (!method_exists($body, '__toString')) {
                     throw new Exception\InvalidArgumentException(sprintf(
-                        '%s expects object arguments of type Zend\Mime\Message or implementing __toString(); object of type "%s" received',
+                        '%s expects object arguments of type Zend2\Mime\Message or implementing __toString(); object of type "%s" received',
                         __METHOD__,
                         get_class($body)
                     ));

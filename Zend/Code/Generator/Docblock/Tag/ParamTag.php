@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_CodeGenerator
+ * @category   Zend2
+ * @package    Zend2_CodeGenerator
  * @subpackage PHP
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Code\Generator\Docblock\Tag;
+namespace Zend2\Code\Generator\Docblock\Tag;
 
 /**
- * @uses       \Zend\Code\Generator\DocBlock\Tag
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Code\Generator\DocBlock\Tag
+ * @category   Zend2
+ * @package    Zend2_CodeGenerator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class ParamTag extends \Zend\Code\Generator\Docblock\Tag
+class ParamTag extends \Zend2\Code\Generator\Docblock\Tag
 {
 
     /**
@@ -44,10 +44,10 @@ class ParamTag extends \Zend\Code\Generator\Docblock\Tag
     /**
      * fromReflection()
      *
-     * @param \Zend\Code\Reflection\ReflectionDocblockTag $reflectionTagParam
-     * @return \Zend\Code\Generator\DocBlock\Tag\ParamTag
+     * @param \Zend2\Code\Reflection\ReflectionDocblockTag $reflectionTagParam
+     * @return \Zend2\Code\Generator\DocBlock\Tag\ParamTag
      */
-    public static function fromReflection(\Zend\Code\Reflection\ReflectionDocblockTag $reflectionTagParam)
+    public static function fromReflection(\Zend2\Code\Reflection\ReflectionDocblockTag $reflectionTagParam)
     {
         $paramTag = new self();
 
@@ -63,7 +63,7 @@ class ParamTag extends \Zend\Code\Generator\Docblock\Tag
      * setDatatype()
      *
      * @param string $datatype
-     * @return \Zend\Code\Generator\DocBlock\Tag\ParamTag
+     * @return \Zend2\Code\Generator\DocBlock\Tag\ParamTag
      */
     public function setDatatype($datatype)
     {
@@ -85,7 +85,7 @@ class ParamTag extends \Zend\Code\Generator\Docblock\Tag
      * setParamName()
      *
      * @param string $paramName
-     * @return \Zend\Code\Generator\DocBlock\Tag\ParamTag
+     * @return \Zend2\Code\Generator\DocBlock\Tag\ParamTag
      */
     public function setParamName($paramName)
     {

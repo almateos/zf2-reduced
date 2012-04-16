@@ -1,11 +1,11 @@
 <?php
 
-namespace Zend\Di\Definition;
+namespace Zend2\Di\Definition;
 
-use Zend\Di\Definition\Annotation,
-    Zend\Code\Annotation\AnnotationManager,
-    Zend\Code\Annotation\AnnotationCollection,
-    Zend\Code\Reflection;
+use Zend2\Di\Definition\Annotation,
+    Zend2\Code\Annotation\AnnotationManager,
+    Zend2\Code\Annotation\AnnotationCollection,
+    Zend2\Code\Reflection;
 
 class RuntimeDefinition implements Definition
 {
@@ -200,7 +200,7 @@ class RuntimeDefinition implements Definition
     {
         $strategy = $this->introspectionStrategy; // localize for readability
 
-        /** @var $rClass \Zend\Code\Reflection\ClassReflection */
+        /** @var $rClass \Zend2\Code\Reflection\ClassReflection */
         $rClass = new Reflection\ClassReflection($class);
         $className = $rClass->getName();
         $matches = null; // used for regex below
@@ -220,7 +220,7 @@ class RuntimeDefinition implements Definition
             $annotations = $rClass->getAnnotations($strategy->getAnnotationManager());
 
             if (($annotations instanceof AnnotationCollection)
-                && $annotations->hasAnnotation('Zend\Di\Definition\Annotation\Instantiator')) {
+                && $annotations->hasAnnotation('Zend2\Di\Definition\Annotation\Instantiator')) {
                 // @todo Instnatiator support in annotations
             }
         }
@@ -262,7 +262,7 @@ class RuntimeDefinition implements Definition
                 $annotations = $rMethod->getAnnotations($strategy->getAnnotationManager());
 
                 if (($annotations instanceof AnnotationCollection)
-                    && $annotations->hasAnnotation('Zend\Di\Definition\Annotation\Inject')) {
+                    && $annotations->hasAnnotation('Zend2\Di\Definition\Annotation\Inject')) {
 
                     $def['methods'][$methodName] = true;
                     $this->processParams($def, $rClass, $rMethod);

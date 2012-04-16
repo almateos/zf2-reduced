@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage ReCaptcha
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\ReCaptcha;
+namespace Zend2\Service\ReCaptcha;
 
 /**
- * Zend_Service_ReCaptcha_MailHide
+ * Zend2_Service_ReCaptcha_MailHide
  *
- * @uses       \Zend\Service\ReCaptcha\ReCaptcha
- * @uses       \Zend\Service\ReCaptcha\MailHideException
- * @uses       \Zend\Validator\EmailAddress
- * @category   Zend
- * @package    Zend_Service
+ * @uses       \Zend2\Service\ReCaptcha\ReCaptcha
+ * @uses       \Zend2\Service\ReCaptcha\MailHideException
+ * @uses       \Zend2\Validator\EmailAddress
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage ReCaptcha
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class MailHide extends ReCaptcha
@@ -59,7 +59,7 @@ class MailHide extends ReCaptcha
     protected $_email = null;
 
     /**
-     * @var \Zend\Validator\Validator
+     * @var \Zend2\Validator\Validator
      */
     protected $_emailValidator;
 
@@ -90,15 +90,15 @@ class MailHide extends ReCaptcha
      * @param string $publicKey
      * @param string $privateKey
      * @param string $email
-     * @param array|\Zend\Config\Config $options
+     * @param array|\Zend2\Config\Config $options
      */
     public function __construct($publicKey = null, $privateKey = null, $email = null, $options = null)
     {
         /* Require the mcrypt extension to be loaded */
         $this->_requireMcrypt();
 
-        /* If options is a Zend_Config object we want to convert it to an array so we can merge it with the default options */
-        if ($options instanceof \Zend\Config\Config) {
+        /* If options is a Zend2_Config object we want to convert it to an array so we can merge it with the default options */
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         }
 
@@ -120,12 +120,12 @@ class MailHide extends ReCaptcha
     /**
      * Get emailValidator
      *
-     * @return \Zend\Validator\Validator
+     * @return \Zend2\Validator\Validator
      */
     public function getEmailValidator()
     {
         if (null === $this->_emailValidator) {
-            $this->setEmailValidator(new \Zend\Validator\EmailAddress());
+            $this->setEmailValidator(new \Zend2\Validator\EmailAddress());
         }
         return $this->_emailValidator;
     }
@@ -133,10 +133,10 @@ class MailHide extends ReCaptcha
     /**
      * Set email validator
      *
-     * @param  \Zend\Validator\Validator $validator
-     * @return \Zend\Service\ReCaptcha\MailHide
+     * @param  \Zend2\Validator\Validator $validator
+     * @return \Zend2\Service\ReCaptcha\MailHide
      */
-    public function setEmailValidator(\Zend\Validator\Validator $validator)
+    public function setEmailValidator(\Zend2\Validator\Validator $validator)
     {
         $this->_emailValidator = $validator;
         return $this;
@@ -146,12 +146,12 @@ class MailHide extends ReCaptcha
     /**
      * See if the mcrypt extension is available
      *
-     * @throws \Zend\Service\ReCaptcha\MailHideException
+     * @throws \Zend2\Service\ReCaptcha\MailHideException
      */
     protected function _requireMcrypt()
     {
         if (!extension_loaded('mcrypt')) {
-            throw new MailHideException('Use of the Zend\\Service\\ReCaptcha\\MailHide component requires the mcrypt extension to be enabled in PHP');
+            throw new MailHideException('Use of the Zend2\\Service\\ReCaptcha\\MailHide component requires the mcrypt extension to be enabled in PHP');
         }
     }
 
@@ -197,7 +197,7 @@ class MailHide extends ReCaptcha
      * Override the parent method to store a binary representation of the private key as well.
      *
      * @param string $privateKey
-     * @return \Zend\Service\ReCaptcha\MailHide
+     * @return \Zend2\Service\ReCaptcha\MailHide
      */
     public function setPrivateKey($privateKey)
     {
@@ -215,7 +215,7 @@ class MailHide extends ReCaptcha
      * This method will set the email property along with the local and domain parts
      *
      * @param string $email
-     * @return \Zend\Service\ReCaptcha\MailHide
+     * @return \Zend2\Service\ReCaptcha\MailHide
      */
     public function setEmail($email)
     {
@@ -278,7 +278,7 @@ class MailHide extends ReCaptcha
      *
      * @param string $email
      * @return string
-     * @throws \Zend\Service\ReCaptcha\MailHideException
+     * @throws \Zend2\Service\ReCaptcha\MailHideException
      */
     public function getHtml($email = null)
     {

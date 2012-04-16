@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Text_Table
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Text_Table
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Text\Table;
+namespace Zend2\Text\Table;
 
-use Zend\Config,
-    Zend\Loader\PrefixPathLoader;
+use Zend2\Config,
+    Zend2\Loader\PrefixPathLoader;
 
 /**
- * Zend_Text_Table enables developers to create tables out of characters
+ * Zend2_Text_Table enables developers to create tables out of characters
  *
- * @category  Zend
- * @package   Zend_Text_Table
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Text_Table
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Table
@@ -44,7 +44,7 @@ class Table
     /**
      * Decorator used for the table borders
      *
-     * @var \Zend\Text\Table\Decorator
+     * @var \Zend2\Text\Table\Decorator
      */
     protected $_decorator = null;
 
@@ -86,7 +86,7 @@ class Table
     /**
      * Plugin loader for decorators
      *
-     * @var Zend\Loader\ShortNameLocator
+     * @var Zend2\Loader\ShortNameLocator
      */
     protected $_pluginLoader = null;
 
@@ -119,8 +119,8 @@ class Table
      * Create a basic table object
      *
      * @param  array             $columnsWidths List of all column widths
-     * @param  \Zend\Config\Config|array $options       Configuration options
-     * @throws \Zend\Text\Table\Exception\UnexpectedValueException When no columns widths were set
+     * @param  \Zend2\Config\Config|array $options       Configuration options
+     * @throws \Zend2\Text\Table\Exception\UnexpectedValueException When no columns widths were set
      */
     public function __construct($options = null)
     {
@@ -144,8 +144,8 @@ class Table
     /**
      * Set options from array
      *
-     * @param  array $options Configuration for \Zend\Text\Table\Table
-     * @return \Zend\Text\Table\Table
+     * @param  array $options Configuration for \Zend2\Text\Table\Table
+     * @return \Zend2\Text\Table\Table
      */
     public function setOptions(array $options)
     {
@@ -166,8 +166,8 @@ class Table
     /**
      * Set options from config object
      *
-     * @param  Zend_Config $config Configuration for \Zend\Text\Table\Table
-     * @return \Zend\Text\Table\Table
+     * @param  Zend2_Config $config Configuration for \Zend2\Text\Table\Table
+     * @return \Zend2\Text\Table\Table
      */
     public function setConfig(Config\Config $config)
     {
@@ -178,9 +178,9 @@ class Table
      * Set column widths
      *
      * @param  array $columnWidths Widths of all columns
-     * @throws \Zend\Text\Table\Exception\InvalidArgumentException When no columns were supplied
-     * @throws \Zend\Text\Table\Exception\InvalidArgumentException When a column has an invalid width
-     * @return \Zend\Text\Table\Table
+     * @throws \Zend2\Text\Table\Exception\InvalidArgumentException When no columns were supplied
+     * @throws \Zend2\Text\Table\Exception\InvalidArgumentException When a column has an invalid width
+     * @return \Zend2\Text\Table\Table
      */
     public function setColumnWidths(array $columnWidths)
     {
@@ -204,7 +204,7 @@ class Table
      * Set auto separation mode
      *
      * @param  integer $autoSeparate Auto separation mode
-     * @return \Zend\Text\Table\Table
+     * @return \Zend2\Text\Table\Table
      */
     public function setAutoSeparate($autoSeparate)
     {
@@ -215,8 +215,8 @@ class Table
     /**
      * Set decorator
      *
-     * @param  \Zend\Text\Table\Decorator|string $decorator Decorator to use
-     * @return \Zend\Text\Table\Table
+     * @param  \Zend2\Text\Table\Decorator|string $decorator Decorator to use
+     * @return \Zend2\Text\Table\Table
      */
     public function setDecorator($decorator)
     {
@@ -234,7 +234,7 @@ class Table
      * Set the column padding
      *
      * @param  integer $padding The padding for the columns
-     * @return \Zend\Text\Table\Table
+     * @return \Zend2\Text\Table\Table
      */
     public function setPadding($padding)
     {
@@ -245,13 +245,13 @@ class Table
     /**
      * Get the plugin loader for decorators
      *
-     * @return \Zend\Loader\ShortNameLocator
+     * @return \Zend2\Loader\ShortNameLocator
      */
     public function getPluginLoader()
     {
         if ($this->_pluginLoader === null) {
-            $prefix     = 'Zend\Text\Table\Decorator\\';
-            $pathPrefix = 'Zend/Text/Table/Decorator/';
+            $prefix     = 'Zend2\Text\Table\Decorator\\';
+            $pathPrefix = 'Zend2/Text/Table/Decorator/';
             $this->_pluginLoader = new PrefixPathLoader(array($prefix => $pathPrefix));
         }
 
@@ -263,7 +263,7 @@ class Table
      *
      * @param  integer $columnNum
      * @param  string  $align
-     * @return \Zend\Text\Table\Table
+     * @return \Zend2\Text\Table\Table
      */
     public function setDefaultColumnAlign($columnNum, $align)
     {
@@ -315,15 +315,15 @@ class Table
     /**
      * Append a row to the table
      *
-     * @param  array|\Zend\Text\Table\Row $row The row to append to the table
-     * @throws Zend_Text_Table_Exception\InvalidArgumentException When $row is neither an array nor Zend_Zext_Table_Row
-     * @throws \Zend\Text\Table\Exception\OverflowException When a row contains too many columns
-     * @return \Zend\Text\Table\Table
+     * @param  array|\Zend2\Text\Table\Row $row The row to append to the table
+     * @throws Zend2_Text_Table_Exception\InvalidArgumentException When $row is neither an array nor Zend2_Zext_Table_Row
+     * @throws \Zend2\Text\Table\Exception\OverflowException When a row contains too many columns
+     * @return \Zend2\Text\Table\Table
      */
     public function appendRow($row)
     {
         if (!is_array($row) && !($row instanceof Row)) {
-            throw new Exception\InvalidArgumentException('$row must be an array or instance of Zend_Text_Table_Row');
+            throw new Exception\InvalidArgumentException('$row must be an array or instance of Zend2_Text_Table_Row');
         }
 
         if (is_array($row)) {
@@ -354,7 +354,7 @@ class Table
     /**
      * Render the table
      *
-     * @throws \Zend\Text\Table\Exception\UnexpectedValueException When no rows were added to the table
+     * @throws \Zend2\Text\Table\Exception\UnexpectedValueException When no rows were added to the table
      * @return string
      */
     public function render()

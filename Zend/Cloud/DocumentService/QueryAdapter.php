@@ -10,17 +10,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Cloud
+ * @category   Zend2
+ * @package    Zend2\Cloud
  * @subpackage DocumentService
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * namespace
  */
-namespace Zend\Cloud\DocumentService;
+namespace Zend2\Cloud\DocumentService;
 
 /**
  * This interface describes the API that concrete query adapter should implement
@@ -36,10 +36,10 @@ namespace Zend\Cloud\DocumentService;
  * access control support in future versions of the interface. Query
  * optimization mechanisms are also not supported in this version.
  *
- * @category   Zend
- * @package    Zend\Cloud
+ * @category   Zend2
+ * @package    Zend2\Cloud
  * @subpackage DocumentService
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface QueryAdapter
@@ -48,7 +48,7 @@ interface QueryAdapter
      * SELECT clause (fields to be selected)
      *
      * @param string $select
-     * @return Zend\Cloud\DocumentService\QueryAdapter
+     * @return Zend2\Cloud\DocumentService\QueryAdapter
      */
     public function select($select);
 
@@ -56,7 +56,7 @@ interface QueryAdapter
      * FROM clause (table name)
      *
      * @param string $from
-     * @return Zend\Cloud\DocumentService\QueryAdapter
+     * @return Zend2\Cloud\DocumentService\QueryAdapter
      */
     public function from($from);
 
@@ -66,7 +66,7 @@ interface QueryAdapter
      * @param string $where
      * @param mixed $value Value or array of values to be inserted instead of ?
      * @param string $op Operation to use to join where clauses (AND/OR)
-     * @return Zend\Cloud\DocumentService\QueryAdapter
+     * @return Zend2\Cloud\DocumentService\QueryAdapter
      */
     public function where($where, $value = null, $op = 'and');
 
@@ -77,7 +77,7 @@ interface QueryAdapter
      * have special syntax for primary keys
      *
      * @param mixed $value Row ID for the document
-     * @return Zend\Cloud\DocumentService\QueryAdapter
+     * @return Zend2\Cloud\DocumentService\QueryAdapter
      */
     public function whereId($value);
 
@@ -85,7 +85,7 @@ interface QueryAdapter
      * LIMIT clause (how many rows ot return)
      *
      * @param int $limit
-     * @return Zend\Cloud\DocumentService\QueryAdapter
+     * @return Zend2\Cloud\DocumentService\QueryAdapter
      */
     public function limit($limit);
 
@@ -94,7 +94,7 @@ interface QueryAdapter
      *
      * @param string $sort Column to sort by
      * @param string $direction Direction - asc/desc
-     * @return Zend\Cloud\DocumentService\QueryAdapter
+     * @return Zend2\Cloud\DocumentService\QueryAdapter
      */
     public function order($sort, $direction = 'asc');
 

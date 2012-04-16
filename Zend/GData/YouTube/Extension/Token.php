@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,38 +12,38 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace Zend2\GData\YouTube\Extension;
 
 /**
  * Represents the yt:token element used by the YouTube data API
  *
- * @uses       \Zend\GData\Extension
- * @uses       \Zend\GData\YouTube
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Extension
+ * @uses       \Zend2\GData\YouTube
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Token extends \Zend\GData\App\Extension
+class Token extends \Zend2\GData\App\Extension
 {
 
     protected $_rootNamespace = 'yt';
     protected $_rootElement = 'token';
 
     /**
-     * Constructs a new Zend_Gdata_YouTube_Extension_Token object.
+     * Constructs a new Zend2_Gdata_YouTube_Extension_Token object.
      */
     public function __construct($text = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\YouTube::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\YouTube::$namespaces);
         parent::__construct();
         $this->_text = $text;
     }

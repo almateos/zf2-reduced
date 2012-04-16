@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Log
+ * @category   Zend2
+ * @package    Zend2_Log
  * @subpackage Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Log\Filter;
+namespace Zend2\Log\Filter;
 
-use Zend\Log\Exception,
-    Zend\Log\Filter,
-    Zend\Validator\Validator as ZendValidator;
+use Zend2\Log\Exception,
+    Zend2\Log\Filter,
+    Zend2\Validator\Validator as Zend2Validator;
 
 /**
- * @category   Zend
- * @package    Zend_Log
+ * @category   Zend2
+ * @package    Zend2_Log
  * @subpackage Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Validator implements Filter
@@ -37,21 +37,21 @@ class Validator implements Filter
     /**
      * Regex to match
      *
-     * @var ZendValidator
+     * @var Zend2Validator
      */
     protected $validator;
 
     /**
      * Filter out any log messages not matching the validator
      *
-     * @param  ZendValidator $validator
+     * @param  Zend2Validator $validator
      * @throws Exception\InvalidArgumentException
      */
     public function __construct($validator)
     {
-        if (!$validator instanceof ZendValidator) {
+        if (!$validator instanceof Zend2Validator) {
             throw new Exception\InvalidArgumentException(sprintf(
-                'Expected Zend\Validator object'
+                'Expected Zend2\Validator object'
             ));
         }
         $this->validator = $validator;

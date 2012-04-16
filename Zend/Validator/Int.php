@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
-use Zend;
+namespace Zend2\Validator;
+use Zend2;
 
 /**
- * @uses       \Zend\Locale\Locale
- * @uses       \Zend\Locale\Format
- * @uses       \Zend\Registry
- * @uses       \Zend\Validator\AbstractValidator
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Locale\Locale
+ * @uses       \Zend2\Locale\Format
+ * @uses       \Zend2\Registry
+ * @uses       \Zend2\Validator\AbstractValidator
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Int extends AbstractValidator
@@ -49,11 +49,11 @@ class Int extends AbstractValidator
     /**
      * Constructor for the integer validator
      *
-     * @param string|Zend_Config|\Zend\Locale\Locale $locale
+     * @param string|Zend2_Config|\Zend2\Locale\Locale $locale
      */
     public function __construct($locale = null)
     {
-        if ($locale instanceof \Zend\Config\Config) {
+        if ($locale instanceof \Zend2\Config\Config) {
             $locale = $locale->toArray();
         }
 
@@ -66,8 +66,8 @@ class Int extends AbstractValidator
         }
 
         if (empty($locale)) {
-            if (\Zend\Registry::isRegistered('Zend_Locale')) {
-                $locale = \Zend\Registry::get('Zend_Locale');
+            if (\Zend2\Registry::isRegistered('Zend2_Locale')) {
+                $locale = \Zend2\Registry::get('Zend2_Locale');
             }
         }
 
@@ -89,11 +89,11 @@ class Int extends AbstractValidator
     /**
      * Sets the locale to use
      *
-     * @param string|\Zend\Locale\Locale $locale
+     * @param string|\Zend2\Locale\Locale $locale
      */
     public function setLocale($locale = null)
     {
-        $this->_locale = \Zend\Locale\Locale::findLocale($locale);
+        $this->_locale = \Zend2\Locale\Locale::findLocale($locale);
         return $this;
     }
 
@@ -127,11 +127,11 @@ class Int extends AbstractValidator
 
         } else {
             try {
-                if (!\Zend\Locale\Format::isInteger($value, array('locale' => $this->_locale))) {
+                if (!\Zend2\Locale\Format::isInteger($value, array('locale' => $this->_locale))) {
                     $this->error(self::NOT_INT);
                     return false;
                 }
-            } catch (\Zend\Locale\Exception $e) {
+            } catch (\Zend2\Locale\Exception $e) {
                 $this->error(self::NOT_INT);
                 return false;
             }

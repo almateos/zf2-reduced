@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_OpenId
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OpenId
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\OpenId;
+namespace Zend2\OpenId;
 
-use Zend\Http\Response;
+use Zend2\Http\Response;
 
 /**
  * Static class that contains common utility functions for
- * {@link Zend\OpenId\Consumer\GenericConsumer} and {@link Zend\OpenId\Provider\GenericProvider}.
+ * {@link Zend2\OpenId\Consumer\GenericConsumer} and {@link Zend2\OpenId\Provider\GenericProvider}.
  *
  * This class implements common utility functions that are used by both
  * Consumer and Provider. They include functions for Diffie-Hellman keys
  * generation and exchange, URL normalization, HTTP redirection and some others.
  *
- * @category   Zend
- * @package    Zend_OpenId
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OpenId
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class OpenId
@@ -493,7 +493,7 @@ class OpenId
      * @param string $func digest algorithm
      * @param string $data data to sign
      * @return string RAW digital signature
-     * @throws Zend\OpenId\Exception
+     * @throws Zend2\OpenId\Exception
      */
     static public function digest($func, $data)
     {
@@ -546,7 +546,7 @@ class OpenId
      *
      * @param string $bin binary representation of big number
      * @return mixed
-     * @throws Zend\OpenId\Exception
+     * @throws Zend2\OpenId\Exception
      */
     static protected function binToBigNum($bin)
     {
@@ -572,7 +572,7 @@ class OpenId
      *
      * @param mixed $bn big number
      * @return string
-     * @throws Zend\OpenId\Exception
+     * @throws Zend2\OpenId\Exception
      */
     static protected function bigNumToBin($bn)
     {
@@ -686,7 +686,7 @@ class OpenId
      * @param string $pub_key other party's public value
      * @param mixed $dh Diffie-Hellman key
      * @return string
-     * @throws Zend\OpenId\Exception
+     * @throws Zend2\OpenId\Exception
      */
     static public function computeDhSecret($pub_key, $dh)
     {

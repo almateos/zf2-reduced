@@ -1,15 +1,15 @@
 <?php
 
-namespace Zend\Module\Listener;
+namespace Zend2\Module\Listener;
 
 use ArrayAccess,
     Traversable,
-    Zend\Config\Config,
-    Zend\Config\Factory as ConfigFactory,
-    Zend\Module\ModuleEvent,
-    Zend\Stdlib\ArrayUtils,
-    Zend\EventManager\EventCollection,
-    Zend\EventManager\ListenerAggregate;
+    Zend2\Config\Config,
+    Zend2\Config\Factory as ConfigFactory,
+    Zend2\Module\ModuleEvent,
+    Zend2\Stdlib\ArrayUtils,
+    Zend2\EventManager\EventCollection,
+    Zend2\EventManager\ListenerAggregate;
 
 class ConfigListener extends AbstractListener
     implements ConfigMerger, ListenerAggregate
@@ -260,7 +260,7 @@ class ConfigListener extends AbstractListener
             throw new Exception\InvalidArgumentException(
                 sprintf('Argument passed to %::%s() must be an array, '
                 . 'implement the \Traversable interface, or be an '
-                . 'instance of Zend\Config\Config. %s given.',
+                . 'instance of Zend2\Config\Config. %s given.',
                 __CLASS__, __METHOD__, gettype($paths))
             );
         }
@@ -316,7 +316,7 @@ class ConfigListener extends AbstractListener
                 throw new Exception\InvalidArgumentException(
                     sprintf('getConfig() method of %s must be an array, '
                     . 'implement the \Traversable interface, or be an '
-                    . 'instance of Zend\Config\Config. %s given.',
+                    . 'instance of Zend2\Config\Config. %s given.',
                     get_class($module), gettype($config))
                 );
             }
@@ -341,7 +341,7 @@ class ConfigListener extends AbstractListener
             throw new Exception\InvalidArgumentException(
                 sprintf('Config being merged must be an array, '
                 . 'implement the \Traversable interface, or be an '
-                . 'instance of Zend\Config\Config. %s given.', gettype($config))
+                . 'instance of Zend2\Config\Config. %s given.', gettype($config))
             );
         }
         $this->setMergedConfig(ArrayUtils::merge($this->mergedConfig, $config));

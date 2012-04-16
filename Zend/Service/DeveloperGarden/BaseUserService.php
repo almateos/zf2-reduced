@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_BaseUserService_AccountBalance
- * @uses       Zend_Service_DeveloperGarden_Client_AbstractClient
- * @uses       Zend_Service_DeveloperGarden_Client_Exception
- * @uses       Zend_Service_DeveloperGarden_Request_BaseUserService_ChangeQuotaPool
- * @uses       Zend_Service_DeveloperGarden_Request_BaseUserService_GetAccountBalance
- * @uses       Zend_Service_DeveloperGarden_Request_BaseUserService_GetQuotaInformation
- * @uses       Zend_Service_DeveloperGarden_Response_BaseUserService_ChangeQuotaPoolResponse
- * @uses       Zend_Service_DeveloperGarden_Response_BaseUserService_GetAccountBalanceResponse
- * @uses       Zend_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_BaseUserService_AccountBalance
+ * @uses       Zend2_Service_DeveloperGarden_Client_AbstractClient
+ * @uses       Zend2_Service_DeveloperGarden_Client_Exception
+ * @uses       Zend2_Service_DeveloperGarden_Request_BaseUserService_ChangeQuotaPool
+ * @uses       Zend2_Service_DeveloperGarden_Request_BaseUserService_GetAccountBalance
+ * @uses       Zend2_Service_DeveloperGarden_Request_BaseUserService_GetQuotaInformation
+ * @uses       Zend2_Service_DeveloperGarden_Response_BaseUserService_ChangeQuotaPoolResponse
+ * @uses       Zend2_Service_DeveloperGarden_Response_BaseUserService_GetAccountBalanceResponse
+ * @uses       Zend2_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_DeveloperGarden_Client_AbstractClient
+class Zend2_Service_DeveloperGarden_BaseUserService extends Zend2_Service_DeveloperGarden_Client_AbstractClient
 {
     /**
      * wsdl file
@@ -60,13 +60,13 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
      */
     protected $_classMap = array(
         'getQuotaInformationResponse' =>
-            'Zend_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse',
+            'Zend2_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse',
         'changeQuotaPoolResponse' =>
-            'Zend_Service_DeveloperGarden_Response_BaseUserService_ChangeQuotaPoolResponse',
+            'Zend2_Service_DeveloperGarden_Response_BaseUserService_ChangeQuotaPoolResponse',
         'getAccountBalanceResponse' =>
-            'Zend_Service_DeveloperGarden_Response_BaseUserService_GetAccountBalanceResponse',
+            'Zend2_Service_DeveloperGarden_Response_BaseUserService_GetAccountBalanceResponse',
         'AccountBalance' =>
-            'Zend_Service_DeveloperGarden_BaseUserService_AccountBalance',
+            'Zend2_Service_DeveloperGarden_BaseUserService_AccountBalance',
     );
 
     /**
@@ -101,13 +101,13 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
      * checks the moduleId and throws exception if not valid
      *
      * @param string $moduleId
-     * @throws Zend_Service_DeveloperGarden_Client_Exception
+     * @throws Zend2_Service_DeveloperGarden_Client_Exception
      * @return void
      */
     protected function _checkModuleId($moduleId)
     {
         if (!in_array($moduleId, $this->_moduleIds)) {
-            throw new Zend_Service_DeveloperGarden_Client_Exception('moduleId not valid');
+            throw new Zend2_Service_DeveloperGarden_Client_Exception('moduleId not valid');
         }
     }
 
@@ -129,13 +129,13 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
                 $moduleString .= 'Sandbox';
                 break;
             default:
-                throw new Zend_Service_DeveloperGarden_Client_Exception(
+                throw new Zend2_Service_DeveloperGarden_Client_Exception(
                     'Not a valid environment supplied.'
                 );
         }
 
         if (!in_array($moduleString, $this->_moduleIds)) {
-            throw new Zend_Service_DeveloperGarden_Client_Exception(
+            throw new Zend2_Service_DeveloperGarden_Client_Exception(
                 'Not a valid module name supplied.'
             );
         }
@@ -147,11 +147,11 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
      * returns the request object with the specific moduleId
      *
      * @param string $moduleId
-     * @return Zend_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
+     * @return Zend2_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
      */
     protected function _getRequestModule($moduleId)
     {
-        return new Zend_Service_DeveloperGarden_Request_BaseUserService_GetQuotaInformation(
+        return new Zend2_Service_DeveloperGarden_Request_BaseUserService_GetQuotaInformation(
             $moduleId
         );
     }
@@ -161,11 +161,11 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
      *
      * @param string $moduleId
      * @param integer $quotaMax
-     * @return Zend_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
+     * @return Zend2_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
      */
     protected function _getChangeRequestModule($moduleId, $quotaMax)
     {
-        return new Zend_Service_DeveloperGarden_Request_BaseUserService_ChangeQuotaPool(
+        return new Zend2_Service_DeveloperGarden_Request_BaseUserService_ChangeQuotaPool(
             $moduleId,
             $quotaMax
         );
@@ -175,7 +175,7 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
      * returns the Quota Information for SMS Service
      *
      * @param int $environment
-     * @return Zend_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
+     * @return Zend2_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
      */
     public function getSmsQuotaInformation($environment = self::ENV_PRODUCTION)
     {
@@ -189,7 +189,7 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
      * returns the Quota Information for VoiceCall Service
      *
      * @param int $environment
-     * @return Zend_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
+     * @return Zend2_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
      */
     public function getVoiceCallQuotaInformation($environment = self::ENV_PRODUCTION)
     {
@@ -203,7 +203,7 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
      * returns the Quota Information for SMS ConferenceCall
      *
      * @param int $environment
-     * @return Zend_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
+     * @return Zend2_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
      */
     public function getConfernceCallQuotaInformation($environment = self::ENV_PRODUCTION)
     {
@@ -217,7 +217,7 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
      * returns the Quota Information for LocaleSearch Service
      *
      * @param int $environment
-     * @return Zend_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
+     * @return Zend2_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
      */
     public function getLocalSearchQuotaInformation($environment = self::ENV_PRODUCTION)
     {
@@ -231,7 +231,7 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
      * returns the Quota Information for IPLocation Service
      *
      * @param int $environment
-     * @return Zend_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
+     * @return Zend2_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
      */
     public function getIPLocationQuotaInformation($environment = self::ENV_PRODUCTION)
     {
@@ -244,11 +244,11 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
     /**
      * returns the quota information
      *
-     * @param Zend_Service_DeveloperGarden_Request_BaseUserService $request
-     * @return Zend_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
+     * @param Zend2_Service_DeveloperGarden_Request_BaseUserService $request
+     * @return Zend2_Service_DeveloperGarden_Response_BaseUserService_GetQuotaInformationResponse
      */
     public function getQuotaInformation(
-        Zend_Service_DeveloperGarden_Request_BaseUserService_GetQuotaInformation $request
+        Zend2_Service_DeveloperGarden_Request_BaseUserService_GetQuotaInformation $request
     ) {
         $this->_checkModuleId($request->getModuleId());
         return $this->getSoapClient()
@@ -261,7 +261,7 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
      *
      * @param integer $quotaMax
      * @param integer $environment
-     * @return Zend_Service_DeveloperGarden_Response_BaseUserService_ChangeQuotaPoolResponse
+     * @return Zend2_Service_DeveloperGarden_Response_BaseUserService_ChangeQuotaPoolResponse
      */
     public function changeSmsQuotaPool($quotaMax = 0, $environment = self::ENV_PRODUCTION)
     {
@@ -276,7 +276,7 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
      *
      * @param integer $quotaMax
      * @param integer $environment
-     * @return Zend_Service_DeveloperGarden_Response_BaseUserService_ChangeQuotaPoolResponse
+     * @return Zend2_Service_DeveloperGarden_Response_BaseUserService_ChangeQuotaPoolResponse
      */
     public function changeVoiceCallQuotaPool($quotaMax = 0, $environment = self::ENV_PRODUCTION)
     {
@@ -291,7 +291,7 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
      *
      * @param integer $quotaMax
      * @param integer $environment
-     * @return Zend_Service_DeveloperGarden_Response_BaseUserService_ChangeQuotaPoolResponse
+     * @return Zend2_Service_DeveloperGarden_Response_BaseUserService_ChangeQuotaPoolResponse
      */
     public function changeIPLocationQuotaPool($quotaMax = 0, $environment = self::ENV_PRODUCTION)
     {
@@ -306,7 +306,7 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
      *
      * @param integer $quotaMax
      * @param integer $environment
-     * @return Zend_Service_DeveloperGarden_Response_BaseUserService_ChangeQuotaPoolResponse
+     * @return Zend2_Service_DeveloperGarden_Response_BaseUserService_ChangeQuotaPoolResponse
      */
     public function changeConferenceCallQuotaPool($quotaMax = 0, $environment = self::ENV_PRODUCTION)
     {
@@ -321,7 +321,7 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
      *
      * @param integer $quotaMax
      * @param integer $environment
-     * @return Zend_Service_DeveloperGarden_Response_BaseUserService_ChangeQuotaPoolResponse
+     * @return Zend2_Service_DeveloperGarden_Response_BaseUserService_ChangeQuotaPoolResponse
      */
     public function changeLocalSearchQuotaPool($quotaMax = 0, $environment = self::ENV_PRODUCTION)
     {
@@ -334,11 +334,11 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
     /**
      * set new quota values for the defined module
      *
-     * @param Zend_Service_DeveloperGarden_Request_BaseUserService_ChangeQuotaPool $request
-     * @return Zend_Service_DeveloperGarden_Response_BaseUserService_ChangeQuotaPoolResponse
+     * @param Zend2_Service_DeveloperGarden_Request_BaseUserService_ChangeQuotaPool $request
+     * @return Zend2_Service_DeveloperGarden_Response_BaseUserService_ChangeQuotaPoolResponse
      */
     public function changeQuotaPool(
-        Zend_Service_DeveloperGarden_Request_BaseUserService_ChangeQuotaPool $request
+        Zend2_Service_DeveloperGarden_Request_BaseUserService_ChangeQuotaPool $request
     ) {
         $this->_checkModuleId($request->getModuleId());
         return $this->getSoapClient()
@@ -350,11 +350,11 @@ class Zend_Service_DeveloperGarden_BaseUserService extends Zend_Service_Develope
      * get the result for a list of accounts
      *
      * @param array $accounts
-     * @return Zend_Service_DeveloperGarden_Response_BaseUserService_GetAccountBalanceResponse
+     * @return Zend2_Service_DeveloperGarden_Response_BaseUserService_GetAccountBalanceResponse
      */
     public function getAccountBalance(array $accounts = array())
     {
-        $request = new Zend_Service_DeveloperGarden_Request_BaseUserService_GetAccountBalance(
+        $request = new Zend2_Service_DeveloperGarden_Request_BaseUserService_GetAccountBalance(
             $accounts
         );
         return $this->getSoapClient()

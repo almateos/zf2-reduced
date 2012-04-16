@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,18 +12,18 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Form
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\Form\Decorator;
+namespace Zend2\Dojo\Form\Decorator;
 
-use Zend\Form\Decorator\Exception\RunTimeException as DecoratorException;
+use Zend2\Form\Decorator\Exception\RunTimeException as DecoratorException;
 
 /**
- * Zend_Dojo_Form_Decorator_DijitContainer
+ * Zend2_Dojo_Form_Decorator_DijitContainer
  *
  * Render a dojo dijit layout container via a view helper
  *
@@ -33,14 +33,14 @@ use Zend\Form\Decorator\Exception\RunTimeException as DecoratorException;
  * Assumes the view helper accepts four parameters, the id, content, dijit
  * parameters, and (X)HTML attributes; these will be provided by the element.
  *
- * @uses       \Zend\Form\Decorator\AbstractDecorator
- * @uses       \Zend\Form\Decorator\Exception
- * @package    Zend_Dojo
+ * @uses       \Zend2\Form\Decorator\AbstractDecorator
+ * @uses       \Zend2\Form\Decorator\Exception
+ * @package    Zend2_Dojo
  * @subpackage Form_Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class DijitContainer extends \Zend\Form\Decorator\AbstractDecorator
+abstract class DijitContainer extends \Zend2\Form\Decorator\AbstractDecorator
 {
     /**
      * View helper

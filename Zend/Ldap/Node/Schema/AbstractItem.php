@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Ldap
+ * @category   Zend2
+ * @package    Zend2_Ldap
  * @subpackage Schema
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Ldap\Node\Schema;
+namespace Zend2\Ldap\Node\Schema;
 
-use Zend\Ldap\Exception;
+use Zend2\Ldap\Exception;
 
 /**
- * Zend\Ldap\Node\Schema\AbstractItem provides a base implementation for managing schema
+ * Zend2\Ldap\Node\Schema\AbstractItem provides a base implementation for managing schema
  * items like objectClass and attribute.
  *
- * @category   Zend
- * @package    Zend_Ldap
+ * @category   Zend2
+ * @package    Zend2_Ldap
  * @subpackage Schema
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractItem implements \ArrayAccess, \Countable
@@ -101,7 +101,7 @@ abstract class AbstractItem implements \ArrayAccess, \Countable
     }
 
     /**
-     * Always throws Zend\Ldap\Exception\BadMethodCallException
+     * Always throws Zend2\Ldap\Exception\BadMethodCallException
      * Implements ArrayAccess.
      *
      * This method is needed for a full implementation of ArrayAccess
@@ -128,7 +128,7 @@ abstract class AbstractItem implements \ArrayAccess, \Countable
     }
 
     /**
-     * Always throws Zend\Ldap\Exception\BadMethodCallException
+     * Always throws Zend2\Ldap\Exception\BadMethodCallException
      * Implements ArrayAccess.
      *
      * This method is needed for a full implementation of ArrayAccess

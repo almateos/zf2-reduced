@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Markup
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Renderer_Markup_HTML
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Markup\Renderer\Markup\Html;
+namespace Zend2\Markup\Renderer\Markup\Html;
 
-use Zend\Markup\Renderer\Markup\AbstractMarkup,
-    Zend\Markup,
-    Zend\Filter\HtmlEntities as HtmlEntitiesFilter,
-    Zend\Filter\Callback as CallbackFilter;
+use Zend2\Markup\Renderer\Markup\AbstractMarkup,
+    Zend2\Markup,
+    Zend2\Filter\HtmlEntities as HtmlEntitiesFilter,
+    Zend2\Filter\Callback as CallbackFilter;
 
 /**
  * Abstract markup
  *
- * @uses       \Zend\Markup\Renderer\Markup\AbstractMarkup
- * @uses       \Zend\Markup\Renderer\AbstractRenderer
- * @category   Zend
- * @package    Zend_Markup
+ * @uses       \Zend2\Markup\Renderer\Markup\AbstractMarkup
+ * @uses       \Zend2\Markup\Renderer\AbstractRenderer
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Renderer_Markup_Html
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractHtml extends AbstractMarkup
@@ -67,7 +67,7 @@ abstract class AbstractHtml extends AbstractMarkup
      *
      * @param array $attributes
      *
-     * @return \Zend\Markup\Renderer\Markup\Html\AbstractHtml
+     * @return \Zend2\Markup\Renderer\Markup\Html\AbstractHtml
      */
     public function setAttributes(array $attributes)
     {
@@ -82,7 +82,7 @@ abstract class AbstractHtml extends AbstractMarkup
      * @param string $name
      * @param string $value
      *
-     * @return \Zend\Markup\Renderer\Markup\Html\AbstractHtml
+     * @return \Zend2\Markup\Renderer\Markup\Html\AbstractHtml
      */
     public function addAttribute($name, $value)
     {
@@ -96,7 +96,7 @@ abstract class AbstractHtml extends AbstractMarkup
      *
      * @param string $name
      *
-     * @return \Zend\Markup\Renderer\Markup\Html\AbstractHtml
+     * @return \Zend2\Markup\Renderer\Markup\Html\AbstractHtml
      */
     public function removeAttribute($name)
     {
@@ -108,7 +108,7 @@ abstract class AbstractHtml extends AbstractMarkup
     /**
      * Render some attributes
      *
-     * @param  \Zend\Markup\Token $token
+     * @param  \Zend2\Markup\Token $token
      * @return string
      */
     public function renderAttributes(Markup\Token $token)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,38 +12,38 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Media
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Media;
+namespace Zend2\GData\Media;
 
-use Zend\GData\Media;
+use Zend2\GData\Media;
 
 /**
  * Represents the Gdata flavor of an Atom entry
  *
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\Media
- * @uses       \Zend\GData\Media\Extension\MediaGroup
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\Media
+ * @uses       \Zend2\GData\Media\Extension\MediaGroup
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Media
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Entry extends \Zend\GData\Entry
+class Entry extends \Zend2\GData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\Media\Entry';
+    protected $_entryClassName = 'Zend2\GData\Media\Entry';
 
     /**
      * media:group element
      *
-     * @var \Zend\GData\Media\Extension\MediaGroup
+     * @var \Zend2\GData\Media\Extension\MediaGroup
      */
     protected $_mediaGroup = null;
 
@@ -101,7 +101,7 @@ class Entry extends \Zend\GData\Entry
     /**
      * Returns the entry's mediaGroup object.
      *
-     * @return \Zend\GData\Media\Extension\MediaGroup
+     * @return \Zend2\GData\Media\Extension\MediaGroup
     */
     public function getMediaGroup()
     {
@@ -111,8 +111,8 @@ class Entry extends \Zend\GData\Entry
     /**
      * Sets the entry's mediaGroup object.
      *
-     * @param \Zend\GData\Media\Extension\MediaGroup $mediaGroup
-     * @return \Zend\GData\Media\Entry Provides a fluent interface
+     * @param \Zend2\GData\Media\Extension\MediaGroup $mediaGroup
+     * @return \Zend2\GData\Media\Entry Provides a fluent interface
      */
     public function setMediaGroup($mediaGroup)
     {

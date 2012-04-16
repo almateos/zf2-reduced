@@ -1,9 +1,9 @@
 <?php
 
-namespace Zend\Soap\Exception;
+namespace Zend2\Soap\Exception;
 
 class InvalidArgumentException
     extends \InvalidArgumentException
-    implements \Zend\Soap\Exception
+    implements \Zend2\Soap\Exception
 {
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace Zend\Docbook;
+namespace Zend2\Docbook;
 
-use Zend\Filter\Word\CamelCaseToDash as CamelCaseToDashFilter,
-    Zend\Code\Reflection\MethodReflection,
-    Zend\Code\Reflection\DocBlockReflection;
+use Zend2\Filter\Word\CamelCaseToDash as CamelCaseToDashFilter,
+    Zend2\Code\Reflection\MethodReflection,
+    Zend2\Code\Reflection\DocBlockReflection;
 
 class ClassMethod
 {
@@ -54,7 +54,7 @@ class ClassMethod
     protected $namespace;
 
     /**
-     * @var array Array of Zend\Reflection\ReflectionDocblockTag
+     * @var array Array of Zend2\Reflection\ReflectionDocblockTag
      */
     protected $parameterAnnotations;
 
@@ -203,7 +203,7 @@ class ClassMethod
         $values = explode('|', trim($value));
         array_walk($values, 'trim');
 
-        $nameInformation = new \Zend\Code\NameInformation(
+        $nameInformation = new \Zend2\Code\NameInformation(
             $this->getNamespace(),
             $this->getUses()
         );

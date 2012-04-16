@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,13 +12,13 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Locale
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Locale
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Locale;
+namespace Zend2\Locale;
 
 /**
  * Utility class for proxying math function to bcmath functions, if present,
@@ -26,10 +26,10 @@ namespace Zend\Locale;
  * Sampling of PHP environments and platforms suggests that at least 80% to 90% support bcmath.
  * Thus, this file should be as light as possible.
  *
- * @uses       Zend\Locale\PhpMath
- * @category   Zend
- * @package    Zend_Locale
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Locale\PhpMath
+ * @category   Zend2
+ * @package    Zend2_Locale
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Math
@@ -37,14 +37,14 @@ class Math
     // support unit testing without using bcmath functions
     public static $_bcmathDisabled = false;
 
-    public static $add   = '\\Zend\\Locale\\Math::Add';
-    public static $sub   = '\\Zend\\Locale\\Math::Sub';
-    public static $pow   = '\\Zend\\Locale\\Math::Pow';
-    public static $mul   = '\\Zend\\Locale\\Math::Mul';
-    public static $div   = '\\Zend\\Locale\\Math::Div';
-    public static $comp  = '\\Zend\\Locale\\Math::Comp';
-    public static $sqrt  = '\\Zend\\Locale\\Math::Sqrt';
-    public static $mod   = '\\Zend\\Locale\\Math::Mod';
+    public static $add   = '\\Zend2\\Locale\\Math::Add';
+    public static $sub   = '\\Zend2\\Locale\\Math::Sub';
+    public static $pow   = '\\Zend2\\Locale\\Math::Pow';
+    public static $mul   = '\\Zend2\\Locale\\Math::Mul';
+    public static $div   = '\\Zend2\\Locale\\Math::Div';
+    public static $comp  = '\\Zend2\\Locale\\Math::Comp';
+    public static $sqrt  = '\\Zend2\\Locale\\Math::Sqrt';
+    public static $mod   = '\\Zend2\\Locale\\Math::Mod';
     public static $scale = 'bcscale';
 
     public static function isBcmathDisabled()
@@ -60,7 +60,7 @@ class Math
      *   round(0.302515, 5);
      *   round(0.36665, 4);
      * then try:
-     *   Zend_Locale_Math::round('639.795', 2);
+     *   Zend2_Locale_Math::round('639.795', 2);
      */
     public static function round($op1, $precision = 0)
     {

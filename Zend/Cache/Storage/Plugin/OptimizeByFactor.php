@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Cache\Storage\Plugin;
+namespace Zend2\Cache\Storage\Plugin;
 
 use Traversable,
-    Zend\Cache\Exception,
-    Zend\Cache\Storage\PostEvent,
-    Zend\EventManager\EventCollection;
+    Zend2\Cache\Exception,
+    Zend2\Cache\Storage\PostEvent,
+    Zend2\EventManager\EventCollection;
 
 /**
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class OptimizeByFactor extends AbstractPlugin

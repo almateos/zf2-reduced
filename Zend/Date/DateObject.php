@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Date
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Date
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Date;
+namespace Zend2\Date;
 
-use Zend\Cache\Storage\Adapter as CacheAdapter;
+use Zend2\Cache\Storage\Adapter as CacheAdapter;
 
 /**
- * @category   Zend
- * @package    Zend_Date
- * @subpackage Zend_Date_DateObject
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Date
+ * @subpackage Zend2_Date_DateObject
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class DateObject {
@@ -77,7 +77,7 @@ abstract class DateObject {
      *
      * @param  string|integer  $timestamp  OPTIONAL timestamp; defaults to local time using time()
      * @return string|integer  old timestamp
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     protected function setUnixTimestamp($timestamp = null)
     {
@@ -127,7 +127,7 @@ abstract class DateObject {
     }
 
     /**
-     * Internal mktime function used by Zend_Date.
+     * Internal mktime function used by Zend2_Date.
      * The timestamp returned by mktime() can exceed the precision of traditional UNIX timestamps,
      * by allowing PHP to auto-convert to using a float value.
      *
@@ -168,7 +168,7 @@ abstract class DateObject {
         }
 
         if (isset(self::$_cache)) {
-            $id = strtr('Zend_DateObject_mkTime_' . $this->_offset . '_' . $year.$month.$day.'_'.$hour.$minute.$second . '_'.(int)$gmt, '-','_');
+            $id = strtr('Zend2_DateObject_mkTime_' . $this->_offset . '_' . $year.$month.$day.'_'.$hour.$minute.$second . '_'.(int)$gmt, '-','_');
             if ($result = self::$_cache->getItem($id)) {
                 return $result;
             }
@@ -258,7 +258,7 @@ abstract class DateObject {
 
         if (isset(self::$_cache)) {
           if (self::$_cacheTags) {
-            self::$_cache->setItem($id, $date, array('tags' => array('Zend_Date')));
+            self::$_cache->setItem($id, $date, array('tags' => array('Zend2_Date')));
           } else {
                 self::$_cache->setItem($id, $date);
           }
@@ -291,7 +291,7 @@ abstract class DateObject {
     }
 
     /**
-     * Internal mktime function used by Zend_Date for handling 64bit timestamps.
+     * Internal mktime function used by Zend2_Date for handling 64bit timestamps.
      *
      * Returns a formatted date for a given timestamp.
      *
@@ -322,7 +322,7 @@ abstract class DateObject {
         $jump      = false;
         $origstamp = $timestamp;
         if (isset(self::$_cache)) {
-            $idstamp = strtr('Zend_DateObject_date_' . $this->_offset . '_'. $timestamp . '_'.(int)$gmt, '-','_');
+            $idstamp = strtr('Zend2_DateObject_date_' . $this->_offset . '_'. $timestamp . '_'.(int)$gmt, '-','_');
             if ($result2 = self::$_cache->getItem($idstamp)) {
                 $timestamp = $result2;
                 $jump = true;
@@ -348,7 +348,7 @@ abstract class DateObject {
 
             if (isset(self::$_cache)) {
               if (self::$_cacheTags) {
-                self::$_cache->setItem($idstamp, $timestamp, array('tags' => array('Zend_Date')));
+                self::$_cache->setItem($idstamp, $timestamp, array('tags' => array('Zend2_Date')));
               } else {
                     self::$_cache->setItem($idstamp, $timestamp);
               }
@@ -680,7 +680,7 @@ abstract class DateObject {
         }
 
         if (isset(self::$_cache)) {
-            $id = strtr('Zend_DateObject_getDateParts_' . $timestamp.'_'.(int)$fast, '-','_');
+            $id = strtr('Zend2_DateObject_getDateParts_' . $timestamp.'_'.(int)$fast, '-','_');
             if ($result = self::$_cache->getItem($id)) {
                 return $result;
             }
@@ -840,7 +840,7 @@ abstract class DateObject {
 
         if (isset(self::$_cache)) {
           if (self::$_cacheTags) {
-            self::$_cache->setItem($id, $array, array('tags' => array('Zend_Date')));
+            self::$_cache->setItem($id, $array, array('tags' => array('Zend2_Date')));
           } else {
                 self::$_cache->setItem($id, $array);
           }
@@ -1004,8 +1004,8 @@ abstract class DateObject {
      * If no timezone can be detected or the given timezone is wrong UTC will be set.
      *
      * @param  string  $zone      OPTIONAL timezone for date calculation; defaults to date_default_timezone_get()
-     * @return \Zend\Date\DateObject Provides fluent interface
-     * @throws \Zend\Date\Exception
+     * @return \Zend2\Date\DateObject Provides fluent interface
+     * @throws \Zend2\Date\Exception
      */
     public function setTimezone($zone = null)
     {

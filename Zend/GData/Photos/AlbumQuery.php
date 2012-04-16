@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,15 +12,15 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Photos
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Photos;
-use Zend\GData\App;
+namespace Zend2\GData\Photos;
+use Zend2\GData\App;
 
 /**
  * Assists in constructing album queries for various entries.
@@ -28,14 +28,14 @@ use Zend\GData\App;
  * required.
  *
  * For information on submitting queries to a server, see the service
- * class, Zend_Gdata_Photos.
+ * class, Zend2_Gdata_Photos.
  *
- * @uses       \Zend\GData\App\InvalidArgumentException
- * @uses       \Zend\GData\Photos\UserQuery
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\InvalidArgumentException
+ * @uses       \Zend2\GData\Photos\UserQuery
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Photos
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class AlbumQuery extends UserQuery
@@ -65,7 +65,7 @@ class AlbumQuery extends UserQuery
      *
      * @param string $value The name of the album to retrieve, or null to
      *          clear.
-     * @return \Zend\GData\Photos\AlbumQuery The query object.
+     * @return \Zend2\GData\Photos\AlbumQuery The query object.
      */
      public function setAlbumName($value)
      {
@@ -96,7 +96,7 @@ class AlbumQuery extends UserQuery
      *
      * @param string $value The ID of the album to retrieve, or null to
      *          clear.
-     * @return \Zend\GData\Photos\AlbumQuery The query object.
+     * @return \Zend2\GData\Photos\AlbumQuery The query object.
      */
      public function setAlbumId($value)
      {
@@ -122,7 +122,7 @@ class AlbumQuery extends UserQuery
      * parameters.
      *
      * @return string A URL generated based on the state of this query.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function getQueryUrl($incomingUri = '')
     {

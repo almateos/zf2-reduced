@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_CodeGenerator
+ * @category   Zend2
+ * @package    Zend2_CodeGenerator
  * @subpackage PHP
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Code\Generator;
+namespace Zend2\Code\Generator;
 
-use Zend\Code\Reflection\DocBlockReflection;
+use Zend2\Code\Reflection\DocBlockReflection;
 
 /**
- * @uses       \Zend\Code\Generator\AbstractGenerator
- * @uses       \Zend\Code\Generator\DocBlock\Tag
- * @uses       \Zend\Code\Generator\Exception
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Code\Generator\AbstractGenerator
+ * @uses       \Zend2\Code\Generator\DocBlock\Tag
+ * @uses       \Zend2\Code\Generator\Exception
+ * @category   Zend2
+ * @package    Zend2_CodeGenerator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DocblockGenerator extends AbstractGenerator
@@ -117,7 +117,7 @@ class DocblockGenerator extends AbstractGenerator
      * setLongDescription()
      *
      * @param string $longDescription
-     * @return \Zend\Code\GeneratorDocblock
+     * @return \Zend2\Code\GeneratorDocblock
      */
     public function setLongDescription($longDescription)
     {
@@ -139,7 +139,7 @@ class DocblockGenerator extends AbstractGenerator
      * setTags()
      *
      * @param array $tags
-     * @return \Zend\Code\GeneratorDocblock
+     * @return \Zend2\Code\GeneratorDocblock
      */
     public function setTags(array $tags)
     {
@@ -153,8 +153,8 @@ class DocblockGenerator extends AbstractGenerator
     /**
      * setTag()
      *
-     * @param array|\Zend\Code\Generator\DocBlock\Tag $tag
-     * @return \Zend\Code\GeneratorDocblock
+     * @param array|\Zend2\Code\Generator\DocBlock\Tag $tag
+     * @return \Zend2\Code\GeneratorDocblock
      */
     public function setTag($tag)
     {
@@ -163,7 +163,7 @@ class DocblockGenerator extends AbstractGenerator
         } elseif (!$tag instanceof Docblock\Tag) {
             throw new Exception\InvalidArgumentException(
                 'setTag() expects either an array of method options or an '
-                . 'instance of Zend\\Code\\Generator\\DocBlock\\Tag'
+                . 'instance of Zend2\\Code\\Generator\\DocBlock\\Tag'
                 );
         }
 

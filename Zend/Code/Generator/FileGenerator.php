@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_CodeGenerator
+ * @category   Zend2
+ * @package    Zend2_CodeGenerator
  * @subpackage PHP
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Code\Generator;
-use Zend\Code\Reflection\FileReflection;
+namespace Zend2\Code\Generator;
+use Zend2\Code\Reflection\FileReflection;
 
 /**
- * @uses       \Zend\Code\Generator\AbstractPhp
- * @uses       \Zend\Code\Generator\PhpClass
- * @uses       \Zend\Code\Generator\Exception
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Code\Generator\AbstractPhp
+ * @uses       \Zend2\Code\Generator\PhpClass
+ * @uses       \Zend2\Code\Generator\Exception
+ * @category   Zend2
+ * @package    Zend2_CodeGenerator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class FileGenerator extends AbstractGenerator
@@ -40,7 +40,7 @@ class FileGenerator extends AbstractGenerator
     protected $filename = null;
 
     /**
-     * @var \Zend\Code\GeneratorDocblock
+     * @var \Zend2\Code\GeneratorDocblock
      */
     protected $docblock = null;
 
@@ -112,7 +112,7 @@ class FileGenerator extends AbstractGenerator
         $body = $fileReflection->getContents();
 
         foreach ($fileReflection->getClasses() as $class) {
-            /* @var $class \Zend\Code\Reflection\ReflectionClass */
+            /* @var $class \Zend2\Code\Reflection\ReflectionClass */
             $phpClass = ClassGenerator::fromReflection($class);
             $phpClass->setContainingFileGenerator($file);
             $file->setClass($phpClass);
@@ -127,7 +127,7 @@ class FileGenerator extends AbstractGenerator
                     $bodyReturn[] = str_replace(
                         '?',
                         $class->getName(),
-                        '/* Zend_CodeGenerator_Php_File-ClassMarker: {?} */'
+                        '/* Zend2_CodeGenerator_Php_File-ClassMarker: {?} */'
                     );
 
                     $lineNum = $classEndLine;
@@ -161,7 +161,7 @@ class FileGenerator extends AbstractGenerator
                     $bodyReturn[] = str_replace(
                         '?',
                         $class->getName(),
-                        '/* Zend_CodeGenerator_Php_File-DocblockMarker */'
+                        '/* Zend2_CodeGenerator_Php_File-DocblockMarker */'
                     );
                     $lineNum = $docblock->getEndLine();
                 } else {
@@ -215,7 +215,7 @@ class FileGenerator extends AbstractGenerator
         if (is_array($docblock)) {
             $docblock = new DocblockGenerator($docblock);
         } elseif (!$docblock instanceof DocblockGenerator) {
-            throw new Exception\InvalidArgumentException('setDocblock() is expecting either a string, array or an instance of Zend_CodeGenerator_Php_Docblock');
+            throw new Exception\InvalidArgumentException('setDocblock() is expecting either a string, array or an instance of Zend2_CodeGenerator_Php_Docblock');
         }
 
         $this->docblock = $docblock;
@@ -282,7 +282,7 @@ class FileGenerator extends AbstractGenerator
      * setNamespace()
      * 
      * @param $namespace
-     * @return Zend\Code\Generator\PhpFile
+     * @return Zend2\Code\Generator\PhpFile
      */
     public function setNamespace($namespace)
     {
@@ -323,7 +323,7 @@ class FileGenerator extends AbstractGenerator
      * setUses()
      *
      * @param array $uses
-     * @return Zend\Code\Generator\PhpFile
+     * @return Zend2\Code\Generator\PhpFile
      */
     public function setUses(array $uses)
     {
@@ -338,7 +338,7 @@ class FileGenerator extends AbstractGenerator
      *
      * @param string $use
      * @param string $as
-     * @return Zend\Code\Generator\PhpFile
+     * @return Zend2\Code\Generator\PhpFile
      */
     public function setUse($use, $as = null)
     {
@@ -376,7 +376,7 @@ class FileGenerator extends AbstractGenerator
         } elseif ($class instanceof ClassGenerator) {
             $className = $class->getName();
         } else {
-            throw new Exception\InvalidArgumentException('Expecting either an array or an instance of Zend_CodeGenerator_Php_Class');
+            throw new Exception\InvalidArgumentException('Expecting either an array or an instance of Zend2_CodeGenerator_Php_Class');
         }*/
 
         // @todo check for dup here
@@ -479,7 +479,7 @@ class FileGenerator extends AbstractGenerator
         }
 
         // if there are markers, put the body into the output
-        if (preg_match('#/\* Zend_CodeGenerator_Php_File-(.*?)Marker:#', $body)) {
+        if (preg_match('#/\* Zend2_CodeGenerator_Php_File-(.*?)Marker:#', $body)) {
             $output .= $body;
             $body    = '';
         }
@@ -488,8 +488,8 @@ class FileGenerator extends AbstractGenerator
         if (null !== ($docblock = $this->getDocblock())) {
             $docblock->setIndentation('');
 
-            if (preg_match('#/* Zend_CodeGenerator_Php_File-DocblockMarker */#', $output)) {
-                $output = preg_replace('#/* Zend_CodeGenerator_Php_File-DocblockMarker */#', $docblock->generate(), $output, 1);
+            if (preg_match('#/* Zend2_CodeGenerator_Php_File-DocblockMarker */#', $output)) {
+                $output = preg_replace('#/* Zend2_CodeGenerator_Php_File-DocblockMarker */#', $docblock->generate(), $output, 1);
             } else {
                 $output .= $docblock->generate() . self::LINE_FEED;
             }
@@ -532,7 +532,7 @@ class FileGenerator extends AbstractGenerator
         $classes = $this->getClasses();
         if (!empty($classes)) {
             foreach ($classes as $class) {
-                $regex = str_replace('?', $class->getName(), '/* Zend_CodeGenerator_Php_File-ClassMarker: {?} */');
+                $regex = str_replace('?', $class->getName(), '/* Zend2_CodeGenerator_Php_File-ClassMarker: {?} */');
                 $regex = preg_quote($regex, '#');
                 if (preg_match('#'.$regex.'#', $output)) {
                     $output = preg_replace('#'.$regex.'#', $class->generate(), $output, 1);

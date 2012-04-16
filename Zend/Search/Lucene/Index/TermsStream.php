@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Index
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Index;
+namespace Zend2\Search\Lucene\Index;
 
 /**
- * @uses       \Zend\Search\Lucene\Index\Term
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Index\Term
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Index
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface TermsStream
@@ -41,21 +41,21 @@ interface TermsStream
      *
      * Prefix contains fully specified field info and portion of searched term
      *
-     * @param \Zend\Search\Lucene\Index\Term $prefix
+     * @param \Zend2\Search\Lucene\Index\Term $prefix
      */
     public function skipTo(Term $prefix);
 
     /**
      * Scans terms dictionary and returns next term
      *
-     * @return \Zend\Search\Lucene\Index\Term|null
+     * @return \Zend2\Search\Lucene\Index\Term|null
      */
     public function nextTerm();
 
     /**
      * Returns term in current position
      *
-     * @return \Zend\Search\Lucene\Index\Term|null
+     * @return \Zend2\Search\Lucene\Index\Term|null
      */
     public function currentTerm();
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend\Validator\Ip
- * @uses       Zend_Service_DeveloperGarden_Exception
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2\Validator\Ip
+ * @uses       Zend2_Service_DeveloperGarden_Exception
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_IpLocation_IpAddress
+class Zend2_Service_DeveloperGarden_IpLocation_IpAddress
 {
     /**
      * the ip version
@@ -58,7 +58,7 @@ class Zend_Service_DeveloperGarden_IpLocation_IpAddress
      * @param string $ip
      * @param integer $version
      *
-     * @return Zend_Service_Developergarde_IpLocation_IpAddress
+     * @return Zend2_Service_Developergarde_IpLocation_IpAddress
      */
     public function __construct($ip, $version = 4)
     {
@@ -70,16 +70,16 @@ class Zend_Service_DeveloperGarden_IpLocation_IpAddress
      * sets new ip address
      *
      * @param string $ip
-     * @throws Zend_Service_DeveloperGarden_Exception
-     * @return Zend_Service_DeveloperGarden_IpLocation_IpAddress
+     * @throws Zend2_Service_DeveloperGarden_Exception
+     * @return Zend2_Service_DeveloperGarden_IpLocation_IpAddress
      */
     public function setIp($ip)
     {
-        $validator = new Zend\Validator\Ip();
+        $validator = new Zend2\Validator\Ip();
 
         if (!$validator->isValid($ip)) {
             $message = $validator->getMessages();
-            throw new Zend_Service_DeveloperGarden_Exception($message['notIpAddress']);
+            throw new Zend2_Service_DeveloperGarden_Exception($message['notIpAddress']);
         }
         $this->_address = $ip;
         return $this;
@@ -99,13 +99,13 @@ class Zend_Service_DeveloperGarden_IpLocation_IpAddress
      * sets new ip version
      *
      * @param integer $version
-     * @throws Zend_Service_DeveloperGarden_Exception
-     * @return Zend_Service_DeveloperGarden_IpLocation_IpAddress
+     * @throws Zend2_Service_DeveloperGarden_Exception
+     * @return Zend2_Service_DeveloperGarden_IpLocation_IpAddress
      */
     public function setVersion($version)
     {
         if (!in_array($version, $this->_versionSupported)) {
-            throw new Zend_Service_DeveloperGarden_Exception('Ip Version ' . (int)$version . ' is not supported.');
+            throw new Zend2_Service_DeveloperGarden_Exception('Ip Version ' . (int)$version . ' is not supported.');
         }
 
         $this->_version = $version;

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Soap
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Soap
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Soap;
+namespace Zend2\Soap;
 
 use DOMDocument,
-    Zend\Uri\Uri,
-    Zend\Soap\Wsdl\ComplexTypeStrategy;
+    Zend2\Uri\Uri,
+    Zend2\Soap\Wsdl\ComplexTypeStrategy;
 
 /**
- * \Zend\Soap\Wsdl
+ * \Zend2\Soap\Wsdl
  *
- * @category   Zend
- * @package    Zend_Soap
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Soap
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Wsdl
@@ -78,7 +78,7 @@ class Wsdl
      *
      * @param string  $name Name of the Web Service being Described
      * @param string|Uri $uri URI where the WSDL will be available
-     * @param \Zend\Soap\Wsdl\ComplexTypeStrategy $strategy
+     * @param \Zend2\Soap\Wsdl\ComplexTypeStrategy $strategy
      */
     public function __construct($name, $uri, ComplexTypeStrategy $strategy = null, array $classMap = array())
     {
@@ -132,7 +132,7 @@ class Wsdl
      * Set a new uri for this WSDL
      *
      * @param  string|Uri $uri
-     * @return \Zend\Server\Wsdl
+     * @return \Zend2\Server\Wsdl
      */
     public function setUri($uri)
     {
@@ -156,8 +156,8 @@ class Wsdl
     /**
      * Set a strategy for complex type detection and handling
      *
-     * @param \Zend\Soap\Wsdl\ComplexTypeStrategy $strategy
-     * @return \Zend\Soap\Wsdl
+     * @param \Zend2\Soap\Wsdl\ComplexTypeStrategy $strategy
+     * @return \Zend2\Soap\Wsdl
      */
     public function setComplexTypeStrategy(ComplexTypeStrategy $strategy)
     {
@@ -168,7 +168,7 @@ class Wsdl
     /**
      * Get the current complex type strategy
      *
-     * @return \Zend\Soap\Wsdl\ComplexTypeStrategy
+     * @return \Zend2\Soap\Wsdl\ComplexTypeStrategy
      */
     public function getComplexTypeStrategy()
     {
@@ -456,7 +456,7 @@ class Wsdl
      *
      * @param string $type
      * @param string $wsdlType
-     * @return \Zend\Soap\Wsdl
+     * @return \Zend2\Soap\Wsdl
      */
     public function addType($type, $wsdlType)
     {
@@ -566,7 +566,7 @@ class Wsdl
     /**
      * This function makes sure a complex types section and schema additions are set.
      *
-     * @return \Zend\Soap\Wsdl
+     * @return \Zend2\Soap\Wsdl
      */
     public function addSchemaTypeSection()
     {

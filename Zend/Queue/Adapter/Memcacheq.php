@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Queue
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Queue\Adapter;
-use Zend\Queue;
-use Zend\Queue\Message;
+namespace Zend2\Queue\Adapter;
+use Zend2\Queue;
+use Zend2\Queue\Message;
 
 /**
  * Class for using connecting to a Memcache-based queuing system
  *
  * @uses       \Memcache
- * @uses       \Zend\Queue\Adapter\AdapterAbstract
- * @uses       \Zend\Queue\Queue
- * @uses       \Zend\Queue\Exception
- * @uses       \Zend\Queue\Message
- * @category   Zend
- * @package    Zend_Queue
+ * @uses       \Zend2\Queue\Adapter\AdapterAbstract
+ * @uses       \Zend2\Queue\Queue
+ * @uses       \Zend2\Queue\Exception
+ * @uses       \Zend2\Queue\Message
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Memcacheq extends AbstractAdapter
@@ -70,8 +70,8 @@ class Memcacheq extends AbstractAdapter
     /**
      * Constructor
      *
-     * @param  array|\Zend\Config\Config $options
-     * @param  null|\Zend\Queue\Queue $queue
+     * @param  array|\Zend2\Config\Config $options
+     * @param  null|\Zend2\Queue\Queue $queue
      * @return void
      */
     public function __construct($options, Queue\Queue $queue = null)
@@ -133,7 +133,7 @@ class Memcacheq extends AbstractAdapter
      *
      * @param  string $name
      * @return boolean
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function isExists($name)
     {
@@ -155,7 +155,7 @@ class Memcacheq extends AbstractAdapter
      * @param  string  $name    queue name
      * @param  integer $timeout default visibility timeout
      * @return boolean
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function create($name, $timeout=null)
     {
@@ -185,7 +185,7 @@ class Memcacheq extends AbstractAdapter
      *
      * @param  string  $name queue name
      * @return boolean
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function delete($name)
     {
@@ -210,7 +210,7 @@ class Memcacheq extends AbstractAdapter
      * to determine if the adapter supports this feature.
      *
      * @return array
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function getQueues()
     {
@@ -228,9 +228,9 @@ class Memcacheq extends AbstractAdapter
     /**
      * Return the approximate number of messages in the queue
      *
-     * @param  \Zend\Queue\Queue $queue
+     * @param  \Zend2\Queue\Queue $queue
      * @return integer
-     * @throws \Zend\Queue\Exception (not supported)
+     * @throws \Zend2\Queue\Exception (not supported)
      */
     public function count(Queue\Queue $queue=null)
     {
@@ -245,9 +245,9 @@ class Memcacheq extends AbstractAdapter
      * Send a message to the queue
      *
      * @param  string     $message Message to send to the active queue
-     * @param  \Zend\Queue\Queue $queue
-     * @return \Zend\Queue\Message
-     * @throws \Zend\Queue\Exception
+     * @param  \Zend2\Queue\Queue $queue
+     * @return \Zend2\Queue\Message
+     * @throws \Zend2\Queue\Exception
      */
     public function send($message, Queue\Queue $queue=null)
     {
@@ -285,9 +285,9 @@ class Memcacheq extends AbstractAdapter
      *
      * @param  integer    $maxMessages  Maximum number of messages to return
      * @param  integer    $timeout      Visibility timeout for these messages
-     * @param  \Zend\Queue\Queue $queue
-     * @return \Zend\Queue\Message\MessageIterator
-     * @throws \Zend\Queue\Exception
+     * @param  \Zend2\Queue\Queue $queue
+     * @return \Zend2\Queue\Message\MessageIterator
+     * @throws \Zend2\Queue\Exception
      */
     public function receive($maxMessages=null, $timeout=null, Queue\Queue $queue=null)
     {
@@ -329,9 +329,9 @@ class Memcacheq extends AbstractAdapter
      * Returns true if the message is deleted, false if the deletion is
      * unsuccessful.
      *
-     * @param  \Zend\Queue\Message $message
+     * @param  \Zend2\Queue\Message $message
      * @return boolean
-     * @throws \Zend\Queue\Exception (unsupported)
+     * @throws \Zend2\Queue\Exception (unsupported)
      */
     public function deleteMessage(Message $message)
     {
@@ -366,7 +366,7 @@ class Memcacheq extends AbstractAdapter
     }
 
     /********************************************************************
-     * Functions that are not part of the \Zend\Queue\Adapter\AdapterAbstract
+     * Functions that are not part of the \Zend2\Queue\Adapter\AdapterAbstract
      *********************************************************************/
 
     /**
@@ -380,7 +380,7 @@ class Memcacheq extends AbstractAdapter
      * @param  array   $terminator - strings to indicate end of memcacheQ response
      * @param  boolean $include_term - include terminator in response
      * @return array
-     * @throws \Zend\Queue\Exception if connection cannot be opened
+     * @throws \Zend2\Queue\Exception if connection cannot be opened
      */
     protected function _sendCommand($command, array $terminator, $include_term=false)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Loader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Loader
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend;
+namespace Zend2;
 
 /**
  * Static methods for loading classes and files.
  *
- * @category   Zend
- * @package    Zend_Loader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Loader
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Loader
@@ -36,7 +36,7 @@ class Loader
      * $filename must be the complete filename, including any
      * extension such as ".php".  Note that a security check is performed that
      * does not permit extended characters in the filename.  This method is
-     * intended for loading Zend Framework files.
+     * intended for loading Zend2 Framework files.
      *
      * If $dirs is a string or an array, it will search the directories
      * in the order supplied, and attempt to load the first matching file.
@@ -51,7 +51,7 @@ class Loader
      *                       to search.
      * @param  boolean       $once
      * @return boolean
-     * @throws Zend\Loader\Exception\SecurityException
+     * @throws Zend2\Loader\Exception\SecurityException
      */
     public static function loadFile($filename, $dirs = null, $once = false)
     {
@@ -132,7 +132,7 @@ class Loader
      *
      * @param  string $filename
      * @return void
-     * @throws Zend\Loader\Exception\SecurityException
+     * @throws Zend2\Loader\Exception\SecurityException
      */
     protected static function _securityCheck($filename)
     {

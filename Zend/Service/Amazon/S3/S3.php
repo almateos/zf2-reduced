@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Amazon_S3
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Amazon\S3;
+namespace Zend2\Service\Amazon\S3;
 
-use Zend\Crypt,
-    Zend\Service\Amazon,
-    Zend\Service\Amazon\S3\Exception,
-    Zend\Uri;
+use Zend2\Crypt,
+    Zend2\Service\Amazon,
+    Zend2\Service\Amazon\S3\Exception,
+    Zend2\Uri;
 
 /**
  * Amazon S3 PHP connection class
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Amazon_S3
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @see        http://docs.amazonwebservices.com/AmazonS3/2006-03-01/
  */
-class S3 extends \Zend\Service\Amazon\AbstractAmazon
+class S3 extends \Zend2\Service\Amazon\AbstractAmazon
 {
     /**
      * Store for stream wrapper clients
@@ -394,7 +394,7 @@ class S3 extends \Zend\Service\Amazon\AbstractAmazon
      * @param  string $object Object path
      * @param  string $streamfile File to write the stream to
      * @param  bool   $paidobject This is "requestor pays" object
-     * @return Zend_Http_Response_Stream|false
+     * @return Zend2_Http_Response_Stream|false
      */
     public function getObjectStream($object, $streamfile = null, $paidobject=false)
     {
@@ -408,7 +408,7 @@ class S3 extends \Zend\Service\Amazon\AbstractAmazon
         }
         $this->getHttpClient()->setStream(null);
 
-        if ($response->getStatus() != 200 || !($response instanceof \Zend\Http\Response\Stream)) {
+        if ($response->getStatus() != 200 || !($response instanceof \Zend2\Http\Response\Stream)) {
             return false;
         }
 
@@ -582,7 +582,7 @@ class S3 extends \Zend\Service\Amazon\AbstractAmazon
      * @param  array  $params	Request parameters
      * @param  array  $headers	HTTP headers
      * @param  string|resource $data		Request data
-     * @return Zend_Http_Response
+     * @return Zend2_Http_Response
      */
     public function _makeRequest($method, $path='', $params=null, $headers=array(), $data=null)
     {
@@ -659,7 +659,7 @@ class S3 extends \Zend\Service\Amazon\AbstractAmazon
             }
             else if ($response_code == 307) {
                 // Need to redirect, new S3 endpoint given
-                // This should never happen as Zend_Http_Client will redirect automatically
+                // This should never happen as Zend2_Http_Client will redirect automatically
             }
             else if ($response_code == 100) {
                 // echo 'OK to Continue';
@@ -908,7 +908,7 @@ class S3 extends \Zend\Service\Amazon\AbstractAmazon
      * Register this object as stream wrapper client
      *
      * @param  string $name
-     * @return Zend_Service_Amazon_S3
+     * @return Zend2_Service_Amazon_S3
      */
     public function registerAsClient($name)
     {
@@ -920,7 +920,7 @@ class S3 extends \Zend\Service\Amazon\AbstractAmazon
      * Unregister this object as stream wrapper client
      *
      * @param  string $name
-     * @return Zend_Service_Amazon_S3
+     * @return Zend2_Service_Amazon_S3
      */
     public function unregisterAsClient($name)
     {
@@ -932,7 +932,7 @@ class S3 extends \Zend\Service\Amazon\AbstractAmazon
      * Get wrapper client for stream type
      *
      * @param  string $name
-     * @return Zend_Service_Amazon_S3
+     * @return Zend2_Service_Amazon_S3
      */
     public static function getWrapperClient($name)
     {
@@ -943,11 +943,11 @@ class S3 extends \Zend\Service\Amazon\AbstractAmazon
      * Register this object as stream wrapper
      *
      * @param  string $name
-     * @return Zend_Service_Amazon_S3
+     * @return Zend2_Service_Amazon_S3
      */
     public function registerStreamWrapper($name='s3')
     {
-        stream_register_wrapper($name, 'Zend\Service\Amazon\S3\Stream');
+        stream_register_wrapper($name, 'Zend2\Service\Amazon\S3\Stream');
         $this->registerAsClient($name);
     }
 
@@ -955,7 +955,7 @@ class S3 extends \Zend\Service\Amazon\AbstractAmazon
      * Unregister this object as stream wrapper
      *
      * @param  string $name
-     * @return Zend_Service_Amazon_S3
+     * @return Zend2_Service_Amazon_S3
      */
     public function unregisterStreamWrapper($name='s3')
     {

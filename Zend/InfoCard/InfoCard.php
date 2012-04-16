@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard;
+namespace Zend2\InfoCard;
 
 /**
- * @uses       \Zend\InfoCard\Adapter\Default
- * @uses       \Zend\InfoCard\Adapter
- * @uses       \Zend\InfoCard\Claims
- * @uses       \Zend\InfoCard\Exception
- * @uses       \Zend\InfoCard\XML\Assertion\Factory
- * @uses       Zend_InfoCard_Xml_Cipher
- * @uses       \Zend\InfoCard\XML\EncryptedData\Factory
- * @uses       \Zend\InfoCard\XML\Security
- * @category   Zend
- * @package    Zend_InfoCard
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\InfoCard\Adapter\Default
+ * @uses       \Zend2\InfoCard\Adapter
+ * @uses       \Zend2\InfoCard\Claims
+ * @uses       \Zend2\InfoCard\Exception
+ * @uses       \Zend2\InfoCard\XML\Assertion\Factory
+ * @uses       Zend2_InfoCard_Xml_Cipher
+ * @uses       \Zend2\InfoCard\XML\EncryptedData\Factory
+ * @uses       \Zend2\InfoCard\XML\Security
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class InfoCard
@@ -52,14 +52,14 @@ class InfoCard
     /**
      * The instance to use to decrypt public-key encrypted data
      *
-     * @var \Zend\InfoCard\Cipher\PKI
+     * @var \Zend2\InfoCard\Cipher\PKI
      */
     protected $_pkiCipherObj;
 
     /**
      * The instance to use to decrypt symmetric encrypted data
      *
-     * @var \Zend\InfoCard\Cipher\Symmetric
+     * @var \Zend2\InfoCard\Cipher\Symmetric
      */
     protected $_symCipherObj;
 
@@ -67,7 +67,7 @@ class InfoCard
      * The InfoCard Adapter to use for callbacks into the application using the component
      * such as when storing assertions, etc.
      *
-     * @var \Zend\InfoCard\Adapter
+     * @var \Zend2\InfoCard\Adapter
      */
     protected $_adapter;
 
@@ -75,18 +75,18 @@ class InfoCard
     /**
      * InfoCard Constructor
      *
-     * @throws \Zend\InfoCard\Exception
+     * @throws \Zend2\InfoCard\Exception
      */
     public function __construct()
     {
         $this->_keyPairs = array();
 
         if(!extension_loaded('mcrypt')) {
-            throw new Exception\ExtensionNotLoadedException("Use of the Zend_InfoCard component requires the mcrypt extension to be enabled in PHP");
+            throw new Exception\ExtensionNotLoadedException("Use of the Zend2_InfoCard component requires the mcrypt extension to be enabled in PHP");
         }
 
         if(!extension_loaded('openssl')) {
-            throw new Exception\ExtensionNotLoadedException("Use of the Zend_InfoCard component requires the openssl extension to be enabled in PHP");
+            throw new Exception\ExtensionNotLoadedException("Use of the Zend2_InfoCard component requires the openssl extension to be enabled in PHP");
         }
     }
 
@@ -94,8 +94,8 @@ class InfoCard
      * Sets the adapter uesd for callbacks into the application using the component, used
      * when doing things such as storing / retrieving assertions, etc.
      *
-     * @param \Zend\InfoCard\Adapter $a The Adapter instance
-     * @return \Zend\InfoCard\InfoCard The instnace
+     * @param \Zend2\InfoCard\Adapter $a The Adapter instance
+     * @return \Zend2\InfoCard\InfoCard The instnace
      */
     public function setAdapter(Adapter $a)
     {
@@ -105,9 +105,9 @@ class InfoCard
 
     /**
      * Retrieves the adapter used for callbacks into the application using the component.
-     * If no adapter was set then an instance of Zend_InfoCard_Adapter_Default is used
+     * If no adapter was set then an instance of Zend2_InfoCard_Adapter_Default is used
      *
-     * @return \Zend\InfoCard\Adapter The Adapter instance
+     * @return \Zend2\InfoCard\Adapter The Adapter instance
      */
     public function getAdapter()
     {
@@ -121,7 +121,7 @@ class InfoCard
     /**
      * Gets the Public Key Cipher object used in this instance
      *
-     * @return \Zend\InfoCard\Cipher\PKI
+     * @return \Zend2\InfoCard\Cipher\PKI
      */
     public function getPkiCipherObject()
     {
@@ -131,8 +131,8 @@ class InfoCard
     /**
      * Sets the Public Key Cipher Object used in this instance
      *
-     * @param \Zend\InfoCard\Cipher\PKI $cipherObj
-     * @return \Zend\InfoCard\InfoCard
+     * @param \Zend2\InfoCard\Cipher\PKI $cipherObj
+     * @return \Zend2\InfoCard\InfoCard
      */
     public function setPkiCipherObject(Cipher\PKI $cipherObj)
     {
@@ -143,7 +143,7 @@ class InfoCard
     /**
      * Get the Symmetric Cipher Object used in this instance
      *
-     * @return \Zend\InfoCard\Cipher\Symmetric
+     * @return \Zend2\InfoCard\Cipher\Symmetric
      */
     public function getSymCipherObject()
     {
@@ -153,8 +153,8 @@ class InfoCard
     /**
      * Sets the Symmetric Cipher Object used in this instance
      *
-     * @param \Zend\InfoCard\Cipher\Symmetric $cipherObj
-     * @return \Zend\InfoCard\InfoCard
+     * @param \Zend2\InfoCard\Cipher\Symmetric $cipherObj
+     * @return \Zend2\InfoCard\InfoCard
      */
     public function setSymCipherObject($cipherObj)
     {
@@ -165,9 +165,9 @@ class InfoCard
     /**
      * Remove a Certificate Pair by Key ID from the search list
      *
-     * @throws \Zend\InfoCard\Exception
+     * @throws \Zend2\InfoCard\Exception
      * @param string $key_id The Certificate Key ID returned from adding the certificate pair
-     * @return \Zend\InfoCard\InfoCard
+     * @return \Zend2\InfoCard\InfoCard
      */
     public function removeCertificatePair($key_id)
     {
@@ -183,7 +183,7 @@ class InfoCard
     /**
      * Add a Certificate Pair to the list of certificates searched by the component
      *
-     * @throws \Zend\InfoCard\Exception
+     * @throws \Zend2\InfoCard\Exception
      * @param string $private_key_file The path to the private key file for the pair
      * @param string $public_key_file The path to the certificate / public key for the pair
      * @param string $type (optional) The URI for the type of key pair this is (default RSA with OAEP padding)
@@ -231,7 +231,7 @@ class InfoCard
     /**
      * Return a Certificate Pair from a key ID
      *
-     * @throws \Zend\InfoCard\Exception
+     * @throws \Zend2\InfoCard\Exception
      * @param string $key_id The Key ID of the certificate pair in the component
      * @return array An array containing the path to the private/public key files,
      *               the type URI and the password if provided
@@ -249,7 +249,7 @@ class InfoCard
      * Retrieve the digest of a given public key / certificate using the provided digest
      * method
      *
-     * @throws \Zend\InfoCard\Exception
+     * @throws \Zend2\InfoCard\Exception
      * @param string $key_id The certificate key id in the component
      * @param string $digestMethod The URI of the digest method to use (default SHA1)
      * @return string The digest value in binary format
@@ -299,7 +299,7 @@ class InfoCard
     /**
      * Extracts the Signed Token from an EncryptedData block
      *
-     * @throws \Zend\InfoCard\Exception
+     * @throws \Zend2\InfoCard\Exception
      * @param string $strXmlToken The EncryptedData XML block
      * @return string The XML of the Signed Token inside of the EncryptedData block
      */
@@ -376,7 +376,7 @@ class InfoCard
      * validate it, and return the claims contained within it on success or an error message on error
      *
      * @param string $strXmlToken The XML token sent to the server from the client
-     * @return Zend_Infocard_Claims The Claims object containing the claims, or any errors which occurred
+     * @return Zend2_Infocard_Claims The Claims object containing the claims, or any errors which occurred
      */
     public function process($strXmlToken)
     {

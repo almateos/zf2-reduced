@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,15 +12,15 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\GApps\Extension;
-use Zend\GData\App;
+namespace Zend2\GData\GApps\Extension;
+use Zend2\GData\App;
 
 /**
  * Represents the apps:login element used by the Apps data API. This
@@ -28,16 +28,16 @@ use Zend\GData\App;
  * within instances of Zene_Gdata_GApps_UserEntry or any other class
  * which is linked to a particular username.
  *
- * @uses       \Zend\GData\App\InvalidArgumentException
- * @uses       \Zend\GData\Extension
- * @uses       \Zend\GData\GApps
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\InvalidArgumentException
+ * @uses       \Zend2\GData\Extension
+ * @uses       \Zend2\GData\GApps
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Login extends \Zend\GData\Extension
+class Login extends \Zend2\GData\Extension
 {
 
     protected $_rootNamespace = 'apps';
@@ -103,7 +103,7 @@ class Login extends \Zend\GData\Extension
     protected $_changePasswordAtNextLogin = null;
 
     /**
-     * Constructs a new Zend_Gdata_GApps_Extension_Login object.
+     * Constructs a new Zend2_Gdata_GApps_Extension_Login object.
      *
      * @param string $username (optional) The username to be used for this
      *          login.
@@ -126,7 +126,7 @@ class Login extends \Zend\GData\Extension
         $hashFunctionName = null, $admin = null, $suspended = null,
         $changePasswordAtNextLogin = null, $agreedToTerms = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\GApps::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\GApps::$namespaces);
         parent::__construct();
         $this->_username = $username;
         $this->_password = $password;
@@ -181,7 +181,7 @@ class Login extends \Zend\GData\Extension
      * stored in an array.
      *
      * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     protected function takeAttributeFromDOM($attribute)
     {
@@ -261,7 +261,7 @@ class Login extends \Zend\GData\Extension
      * to form this user's email address.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\GApps\Extension\Login Provides a fluent interface.
+     * @return \Zend2\GData\GApps\Extension\Login Provides a fluent interface.
      */
     public function setUsername($value)
     {
@@ -287,7 +287,7 @@ class Login extends \Zend\GData\Extension
      * this must be indicated by calling setHashFunctionName().
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\GApps\Extension\Login Provides a fluent interface.
+     * @return \Zend2\GData\GApps\Extension\Login Provides a fluent interface.
      */
     public function setPassword($value)
     {
@@ -314,7 +314,7 @@ class Login extends \Zend\GData\Extension
      * function is 'SHA-1'.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\GApps\Extension\Login Provides a fluent interface.
+     * @return \Zend2\GData\GApps\Extension\Login Provides a fluent interface.
      */
     public function setHashFunctionName($value)
     {
@@ -327,7 +327,7 @@ class Login extends \Zend\GData\Extension
      *
      * @see setAdmin
      * @return boolean The requested attribute.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function getAdmin()
     {
@@ -342,8 +342,8 @@ class Login extends \Zend\GData\Extension
      * whether this user is an administrator for this domain.
      *
      * @param boolean $value The desired value for this attribute.
-     * @return \Zend\GData\GApps\Extension\Login Provides a fluent interface.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @return \Zend2\GData\GApps\Extension\Login Provides a fluent interface.
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function setAdmin($value)
     {
@@ -359,7 +359,7 @@ class Login extends \Zend\GData\Extension
      *
      * @see setAgreedToTerms
      * @return boolean The requested attribute.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function getAgreedToTerms()
     {
@@ -374,8 +374,8 @@ class Login extends \Zend\GData\Extension
      * indicates whether this user has agreed to the terms of service.
      *
      * @param boolean $value The desired value for this attribute.
-     * @return \Zend\GData\GApps\Extension\Login Provides a fluent interface.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @return \Zend2\GData\GApps\Extension\Login Provides a fluent interface.
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function setAgreedToTerms($value)
     {
@@ -391,7 +391,7 @@ class Login extends \Zend\GData\Extension
      *
      * @see setSuspended
      * @return boolean The requested attribute.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function getSuspended()
     {
@@ -406,8 +406,8 @@ class Login extends \Zend\GData\Extension
      * user will not be able to login to this domain until unsuspended.
      *
      * @param boolean $value The desired value for this attribute.
-     * @return \Zend\GData\GApps\Extension\Login Provides a fluent interface.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @return \Zend2\GData\GApps\Extension\Login Provides a fluent interface.
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function setSuspended($value)
     {
@@ -423,7 +423,7 @@ class Login extends \Zend\GData\Extension
      *
      * @see setChangePasswordAtNextLogin
      * @return boolean The requested attribute.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function getChangePasswordAtNextLogin()
     {
@@ -439,8 +439,8 @@ class Login extends \Zend\GData\Extension
      * time they login.
      *
      * @param boolean $value The desired value for this attribute.
-     * @return \Zend\GData\GApps\Extension\Login Provides a fluent interface.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @return \Zend2\GData\GApps\Extension\Login Provides a fluent interface.
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function setChangePasswordAtNextLogin($value)
     {

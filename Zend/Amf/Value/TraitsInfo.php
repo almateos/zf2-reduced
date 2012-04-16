@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Amf
+ * @category   Zend2
+ * @package    Zend2_Amf
  * @subpackage Value
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Amf\Value;
+namespace Zend2\Amf\Value;
 
 /**
- * Zend_Amf_Value_TraitsInfo
+ * Zend2_Amf_Value_TraitsInfo
  *
- * @package    Zend_Amf
+ * @package    Zend2_Amf
  * @subpackage Value
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class TraitsInfo
@@ -112,7 +112,7 @@ class TraitsInfo
      * Add an additional property
      *
      * @param  string $name
-     * @return \Zend\Amf\Value\TraitsInfo
+     * @return \Zend2\Amf\Value\TraitsInfo
      */
     public function addProperty($name)
     {
@@ -124,7 +124,7 @@ class TraitsInfo
      * Add all properties of the class.
      *
      * @param  array $props
-     * @return \Zend\Amf\Value\TraitsInfo
+     * @return \Zend2\Amf\Value\TraitsInfo
      */
     public function addAllProperties(array $props)
     {

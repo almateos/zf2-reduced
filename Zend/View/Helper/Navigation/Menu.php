@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper\Navigation;
+namespace Zend2\View\Helper\Navigation;
 
 use RecursiveIteratorIterator,
-    Zend\Navigation\Container,
-    Zend\Navigation\Page\AbstractPage,
-    Zend\View,
-    Zend\View\Exception;
+    Zend2\Navigation\Container,
+    Zend2\Navigation\Page\AbstractPage,
+    Zend2\View,
+    Zend2\View\Exception;
 
 /**
  * Helper for rendering menus from navigation containers
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Menu extends AbstractHelper
@@ -607,7 +607,7 @@ class Menu extends AbstractHelper
         return $partialHelper($partial, $model);
     }
 
-    // Zend\View\Helper\Navigation\Helper:
+    // Zend2\View\Helper\Navigation\Helper:
 
     /**
      * Renders menu

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Filter\File;
-use Zend\Filter,
-    Zend\Filter\Exception;
+namespace Zend2\Filter\File;
+use Zend2\Filter,
+    Zend2\Filter\Exception;
 
 /**
- * @uses       Zend\Filter\Exception
- * @uses       Zend\Filter\AbstractFilter
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Filter\Exception
+ * @uses       Zend2\Filter\AbstractFilter
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Rename extends Filter\AbstractFilter
@@ -40,8 +40,8 @@ class Rename extends Filter\AbstractFilter
     /**
      * Class constructor
      *
-     * Options argument may be either a string, a Zend_Config object, or an array.
-     * If an array or Zend_Config object, it accepts the following keys:
+     * Options argument may be either a string, a Zend2_Config object, or an array.
+     * If an array or Zend2_Config object, it accepts the following keys:
      * 'source'    => Source filename or directory which will be renamed
      * 'target'    => Target filename or directory, the new name of the sourcefile
      * 'overwrite' => Shall existing files be overwritten ?
@@ -53,7 +53,7 @@ class Rename extends Filter\AbstractFilter
      */
     public function __construct($options)
     {
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         } elseif (is_string($options)) {
             $options = array('target' => $options);
@@ -95,7 +95,7 @@ class Rename extends Filter\AbstractFilter
      * 'overwrite' => Shall existing files be overwritten ?
      *
      * @param  string|array $options Old file or directory to be rewritten
-     * @return \Zend\Filter\File\Rename
+     * @return \Zend2\Filter\File\Rename
      */
     public function setFile($options)
     {
@@ -114,7 +114,7 @@ class Rename extends Filter\AbstractFilter
      * 'overwrite' => Shall existing files be overwritten ?
      *
      * @param  string|array $options Old file or directory to be rewritten
-     * @return \Zend\Filter\File\Rename
+     * @return \Zend2\Filter\File\Rename
      */
     public function addFile($options)
     {
@@ -164,13 +164,13 @@ class Rename extends Filter\AbstractFilter
     }
 
     /**
-     * Defined by Zend\Filter\Filter
+     * Defined by Zend2\Filter\Filter
      *
      * Renames the file $value to the new name set before
      * Returns the file $value, removing all but digit characters
      *
      * @param  string $value Full path of file to change
-     * @throws \Zend\Filter\Exception
+     * @throws \Zend2\Filter\Exception
      * @return string The new filename which has been set, or false when there were errors
      */
     public function filter($value)

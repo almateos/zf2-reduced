@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Service
+ * @category   Zend2
+ * @package    Zend2\Service
  * @subpackage GoGrid
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\GoGrid;
+namespace Zend2\Service\GoGrid;
 
-use Zend\Service\GoGrid\Object;
+use Zend2\Service\GoGrid\Object;
 
 /**
  * List of servers retrived from the GoGrid web service
@@ -30,18 +30,18 @@ use Zend\Service\GoGrid\Object;
  * @uses       Countable
  * @uses       Iterator
  * @uses       OutOfBoundsException
- * @uses       Zend_Service_GoGrid_Object
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_GoGrid_Object
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage GoGrid
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ObjectList implements \Countable, \Iterator, \ArrayAccess
 {
     const SUCCESS_STATUS= 'success';
     /**
-     * @var array Array of Zend\Service\GoGrid\Object
+     * @var array Array of Zend2\Service\GoGrid\Object
      */
     protected $_objects = array();
     /**
@@ -112,8 +112,8 @@ class ObjectList implements \Countable, \Iterator, \ArrayAccess
     /**
      * Add an object
      *
-     * @param  Zend\Service\GoGrid\Object $obj
-     * @return Zend\Service\GoGrid\ObjectList
+     * @param  Zend2\Service\GoGrid\Object $obj
+     * @return Zend2\Service\GoGrid\ObjectList
      */
     protected function _addObject (Object $obj)
     {
@@ -136,7 +136,7 @@ class ObjectList implements \Countable, \Iterator, \ArrayAccess
      *
      * Implement Iterator::current()
      *
-     * @return Zend\Service\GoGrid\Object
+     * @return Zend2\Service\GoGrid\Object
      */
     public function current()
     {
@@ -210,7 +210,7 @@ class ObjectList implements \Countable, \Iterator, \ArrayAccess
      *
      * @param   int     $offset
      * @throws  OutOfBoundsException
-     * @return  Zend\Service\GoGrid\Object
+     * @return  Zend2\Service\GoGrid\Object
      */
     public function offsetGet($offset)
     {
@@ -228,7 +228,7 @@ class ObjectList implements \Countable, \Iterator, \ArrayAccess
      *
      * @param   int     $offset
      * @param   string  $value
-     * @throws  Zend\Service\GoGrid\Exception
+     * @throws  Zend2\Service\GoGrid\Exception
      */
     public function offsetSet($offset, $value)
     {
@@ -241,7 +241,7 @@ class ObjectList implements \Countable, \Iterator, \ArrayAccess
      * Implement ArrayAccess::offsetUnset()
      *
      * @param   int     $offset
-     * @throws  Zend\Service\GoGrid\Exception
+     * @throws  Zend2\Service\GoGrid\Exception
      */
     public function offsetUnset($offset)
     {

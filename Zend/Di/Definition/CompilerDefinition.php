@@ -1,15 +1,15 @@
 <?php
 
-namespace Zend\Di\Definition;
+namespace Zend2\Di\Definition;
 
-use Zend\Code\Scanner\DerivedClassScanner,
-    Zend\Code\Scanner\AggregateDirectoryScanner,
-    Zend\Code\Scanner\DirectoryScanner,
+use Zend2\Code\Scanner\DerivedClassScanner,
+    Zend2\Code\Scanner\AggregateDirectoryScanner,
+    Zend2\Code\Scanner\DirectoryScanner,
     
-    Zend\Di\Definition\Annotation,
-    Zend\Code\Annotation\AnnotationManager,
-    Zend\Code\Reflection,
-    Zend\Code\Annotation\AnnotationCollection;
+    Zend2\Di\Definition\Annotation,
+    Zend2\Code\Annotation\AnnotationManager,
+    Zend2\Code\Reflection,
+    Zend2\Code\Annotation\AnnotationCollection;
 
 class CompilerDefinition implements Definition
 {
@@ -65,7 +65,7 @@ class CompilerDefinition implements Definition
     
     public function compile()
     {
-        /* @var $classScanner \Zend\Code\Scanner\DerivedClassScanner */
+        /* @var $classScanner \Zend2\Code\Scanner\DerivedClassScanner */
         foreach ($this->directoryScanner->getClassNames() as $class) {
             $this->processClass($class);
         }
@@ -82,7 +82,7 @@ class CompilerDefinition implements Definition
     {
         $strategy = $this->introspectionStrategy; // localize for readability
 
-        /** @var $rClass \Zend\Code\Reflection\ClassReflection */
+        /** @var $rClass \Zend2\Code\Reflection\ClassReflection */
         $rClass = new Reflection\ClassReflection($class);
         $className = $rClass->getName();
         $matches = null; // used for regex below
@@ -102,7 +102,7 @@ class CompilerDefinition implements Definition
             $annotations = $rClass->getAnnotations($strategy->getAnnotationManager());
 
             if (($annotations instanceof AnnotationCollection)
-                && $annotations->hasAnnotation('Zend\Di\Definition\Annotation\Instantiator')) {
+                && $annotations->hasAnnotation('Zend2\Di\Definition\Annotation\Instantiator')) {
                 // @todo Instnatiator support in annotations
             }
         }
@@ -144,7 +144,7 @@ class CompilerDefinition implements Definition
                 $annotations = $rMethod->getAnnotations($strategy->getAnnotationManager());
 
                 if (($annotations instanceof AnnotationCollection)
-                    && $annotations->hasAnnotation('Zend\Di\Definition\Annotation\Inject')) {
+                    && $annotations->hasAnnotation('Zend2\Di\Definition\Annotation\Inject')) {
 
                     $def['methods'][$methodName] = true;
                     $this->processParams($def, $rClass, $rMethod);
@@ -283,7 +283,7 @@ class CompilerDefinition implements Definition
 //                $annotations = $mScanner->getAnnotations($strategy->getAnnotationManager());
 //
 //                if (($annotations instanceof AnnotationCollection)
-//                    && $annotations->hasAnnotation('Zend\Di\Definition\Annotation\Inject')) {
+//                    && $annotations->hasAnnotation('Zend2\Di\Definition\Annotation\Inject')) {
 //
 //                    $def['methods'][$methodName] = true;
 //                    $this->processParams($def, $sClass, $mScanner);
@@ -308,7 +308,7 @@ class CompilerDefinition implements Definition
 //        $interfaceInjectorPatterns = $this->introspectionStrategy->getInterfaceInjectionInclusionPatterns();
 //
 //        // matches the interface injection pattern
-//        /** @var $sInterface \Zend\Code\Scanner\ClassScanner */
+//        /** @var $sInterface \Zend2\Code\Scanner\ClassScanner */
 //        foreach ($sClass->getInterfaces(true) as $sInterface) {
 //            foreach ($interfaceInjectorPatterns as $interfaceInjectorPattern) {
 //                preg_match($interfaceInjectorPattern, $sInterface->getName(), $matches);
@@ -339,7 +339,7 @@ class CompilerDefinition implements Definition
 //
 //        foreach ($sMethod->getParameters(true) as $position => $p) {
 //
-//            /** @var $p \Zend\Code\Scanner\ParameterScanner  */
+//            /** @var $p \Zend2\Code\Scanner\ParameterScanner  */
 //            $actualParamName = $p->getName();
 //
 //            $paramName = $this->createDistinctParameterName($actualParamName, $sClass->getName());

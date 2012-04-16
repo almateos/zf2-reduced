@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Service
+ * @category   Zend2
+ * @package    Zend2\Service
  * @subpackage Rackspace
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Rackspace;
+namespace Zend2\Service\Rackspace;
 
-use Zend\Service\Rackspace\Exception,
-    Zend\Http\Client as HttpClient;
+use Zend2\Service\Rackspace\Exception,
+    Zend2\Http\Client as HttpClient;
 
 abstract class Rackspace
 {
@@ -30,7 +30,7 @@ abstract class Rackspace
     const US_AUTH_URL            = 'https://auth.api.rackspacecloud.com';
     const UK_AUTH_URL            = 'https://lon.auth.api.rackspacecloud.com';
     const API_FORMAT             = 'json';
-    const USER_AGENT             = 'Zend\Service\Rackspace';
+    const USER_AGENT             = 'Zend2\Service\Rackspace';
     const STORAGE_URL            = "X-Storage-Url";
     const AUTHTOKEN              = "X-Auth-Token";
     const AUTHUSER_HEADER        = "X-Auth-User";
@@ -65,7 +65,7 @@ abstract class Rackspace
      */
     protected $authUrl;
     /**
-     * @var Zend\Http\Client
+     * @var Zend2\Http\Client
      */
     protected $httpClient;
     /**
@@ -265,7 +265,7 @@ abstract class Rackspace
     /**
      * get the HttpClient instance
      *
-     * @return Zend\Http\Client
+     * @return Zend2\Http\Client
      */
     public function getHttpClient()
     {
@@ -291,7 +291,7 @@ abstract class Rackspace
      * @param array $headers
      * @param array $get
      * @param string $body
-     * @return Zend\Http\Response
+     * @return Zend2\Http\Response
      */
     protected function httpCall($url,$method,$headers=array(),$data=array(),$body=null)
     {

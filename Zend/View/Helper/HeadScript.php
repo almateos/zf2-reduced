@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper;
+namespace Zend2\View\Helper;
 
-use Zend\View,
-    Zend\View\Exception;
+use Zend2\View,
+    Zend2\View\Exception;
 
 /**
  * Helper for setting and retrieving script elements for HTML head section
  *
  * @uses       stdClass
- * @uses       \Zend\View\Exception
- * @uses       \Zend\View\Helper\Placeholder\Container\AbstractContainer
- * @uses       \Zend\View\Helper\Placeholder\Container\Exception
- * @uses       \Zend\View\Helper\Placeholder\Container\Standalone
- * @package    Zend_View
+ * @uses       \Zend2\View\Exception
+ * @uses       \Zend2\View\Helper\Placeholder\Container\AbstractContainer
+ * @uses       \Zend2\View\Helper\Placeholder\Container\Exception
+ * @uses       \Zend2\View\Helper\Placeholder\Container\Standalone
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class HeadScript extends Placeholder\Container\Standalone
@@ -51,7 +51,7 @@ class HeadScript extends Placeholder\Container\Standalone
      * Registry key for placeholder
      * @var string
      */
-    protected $_regKey = 'Zend_View_Helper_HeadScript';
+    protected $_regKey = 'Zend2_View_Helper_HeadScript';
 
     /**
      * Are arbitrary attributes allowed?
@@ -114,7 +114,7 @@ class HeadScript extends Placeholder\Container\Standalone
      * @param  string $placement Append, prepend, or set
      * @param  array  $attrs     Array of script attributes
      * @param  string $type      Script type and/or array of script attributes
-     * @return \Zend\View\Helper\HeadScript
+     * @return \Zend2\View\Helper\HeadScript
      */
     public function __invoke($mode = HeadScript::FILE, $spec = null, $placement = 'APPEND', array $attrs = array(), $type = 'text/javascript')
     {
@@ -201,7 +201,7 @@ class HeadScript extends Placeholder\Container\Standalone
      *
      * @param  string $method Method to call
      * @param  array  $args   Arguments of method
-     * @return \Zend\View\Helper\HeadScript
+     * @return \Zend2\View\Helper\HeadScript
      * @throws Exception\BadMethodCallException if too few arguments or invalid method
      */
     public function __call($method, $args)
@@ -382,7 +382,7 @@ class HeadScript extends Placeholder\Container\Standalone
      * Set flag indicating if arbitrary attributes are allowed
      *
      * @param  bool $flag Set flag
-     * @return \Zend\View\Helper\HeadScript
+     * @return \Zend2\View\Helper\HeadScript
      */
     public function setAllowArbitraryAttributes($flag)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Cache\Storage\Adapter;
+namespace Zend2\Cache\Storage\Adapter;
 
 use ArrayObject,
-    Zend\Cache\Utils,
-    Zend\Cache\Exception;
+    Zend2\Cache\Utils,
+    Zend2\Cache\Exception;
 
 /**
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class ZendServerDisk extends AbstractZendServer
+class Zend2ServerDisk extends AbstractZend2Server
 {
 
     /**
@@ -47,7 +47,7 @@ class ZendServerDisk extends AbstractZendServer
         if (!function_exists('zend_disk_cache_store')) {
             throw new Exception\ExtensionNotLoadedException("Missing 'zend_disk_cache_*' functions");
         } elseif (PHP_SAPI == 'cli') {
-            throw new Exception\ExtensionNotLoadedException("Zend server data cache isn't available on cli");
+            throw new Exception\ExtensionNotLoadedException("Zend2 server data cache isn't available on cli");
         }
 
         parent::__construct($options);
@@ -66,7 +66,7 @@ class ZendServerDisk extends AbstractZendServer
     }
 
     /**
-     * Store data into Zend Data Disk Cache
+     * Store data into Zend2 Data Disk Cache
      *
      * @param  string $internalKey
      * @param  mixed  $value
@@ -85,7 +85,7 @@ class ZendServerDisk extends AbstractZendServer
     }
 
     /**
-     * Fetch a single item from Zend Data Disk Cache
+     * Fetch a single item from Zend2 Data Disk Cache
      *
      * @param  string $internalKey
      * @return mixed The stored value or FALSE if item wasn't found
@@ -97,7 +97,7 @@ class ZendServerDisk extends AbstractZendServer
     }
 
     /**
-     * Fetch multiple items from Zend Data Disk Cache
+     * Fetch multiple items from Zend2 Data Disk Cache
      *
      * @param  array $internalKeys
      * @return array All found items
@@ -113,7 +113,7 @@ class ZendServerDisk extends AbstractZendServer
     }
 
     /**
-     * Delete data from Zend Data Disk Cache
+     * Delete data from Zend2 Data Disk Cache
      *
      * @param  string $internalKey
      * @return boolean
@@ -125,7 +125,7 @@ class ZendServerDisk extends AbstractZendServer
     }
 
     /**
-     * Clear items of all namespaces from Zend Data Disk Cache
+     * Clear items of all namespaces from Zend2 Data Disk Cache
      *
      * @return void
      * @throws Exception\RuntimeException
@@ -140,7 +140,7 @@ class ZendServerDisk extends AbstractZendServer
     }
 
     /**
-     * Clear items of the given namespace from Zend Data Disk Cache
+     * Clear items of the given namespace from Zend2 Data Disk Cache
      *
      * @param  string $namespace
      * @return void

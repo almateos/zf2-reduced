@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Filter;
+namespace Zend2\Filter;
 
 /**
  * Encrypts a given string
  *
- * @uses       Zend\Filter\Exception
- * @uses       Zend\Filter\AbstractFilter
- * @uses       Zend\Loader
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Filter\Exception
+ * @uses       Zend2\Filter\AbstractFilter
+ * @uses       Zend2\Loader
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Encrypt extends AbstractFilter
@@ -45,7 +45,7 @@ class Encrypt extends AbstractFilter
      */
     public function __construct($options = null)
     {
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         }
 
@@ -66,7 +66,7 @@ class Encrypt extends AbstractFilter
      * Sets new encryption options
      *
      * @param  string|array $options (Optional) Encryption options
-     * @return \Zend\Filter\Encrypt\Encrypt
+     * @return \Zend2\Filter\Encrypt\Encrypt
      */
     public function setAdapter($options = null)
     {
@@ -83,17 +83,17 @@ class Encrypt extends AbstractFilter
             $options = array();
         }
 
-        if (\Zend\Loader::isReadable('Zend/Filter/Encrypt/' . ucfirst($adapter). '.php')) {
-            $adapter = 'Zend\\Filter\\Encrypt\\' . ucfirst($adapter);
+        if (\Zend2\Loader::isReadable('Zend2/Filter/Encrypt/' . ucfirst($adapter). '.php')) {
+            $adapter = 'Zend2\\Filter\\Encrypt\\' . ucfirst($adapter);
         }
 
         if (!class_exists($adapter)) {
-            \Zend\Loader::loadClass($adapter);
+            \Zend2\Loader::loadClass($adapter);
         }
 
         $this->_adapter = new $adapter($options);
         if (!$this->_adapter instanceof Encrypt\EncryptionAlgorithm) {
-            throw new Exception\InvalidArgumentException("Encoding adapter '" . $adapter . "' does not implement Zend\\Filter\\Encrypt\\EncryptionAlgorithm");
+            throw new Exception\InvalidArgumentException("Encoding adapter '" . $adapter . "' does not implement Zend2\\Filter\\Encrypt\\EncryptionAlgorithm");
         }
 
         return $this;
@@ -116,7 +116,7 @@ class Encrypt extends AbstractFilter
     }
 
     /**
-     * Defined by Zend\Filter\Filter
+     * Defined by Zend2\Filter\Filter
      *
      * Encrypts the content $value with the defined settings
      *

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage AgileZen
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\AgileZen;
+namespace Zend2\Service\AgileZen;
 
 use DOMDocument,
-    Zend\Http\Client as HttpClient;
+    Zend2\Http\Client as HttpClient;
 
 /**
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage AgileZen
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class AgileZen
@@ -121,7 +121,7 @@ class AgileZen
      * @param  string $method
      * @param  array  $data
      * @param  string $body
-     * @return \Zend\Http\Response
+     * @return \Zend2\Http\Response
      */
     protected function httpCall($url, $method, $body=null)
     {
@@ -1554,7 +1554,7 @@ class AgileZen
     /**
      * Get the error message from the HTML body of the response
      * 
-     * @param  \Zend\Http\Response $response 
+     * @param  \Zend2\Http\Response $response 
      * @return string
      */
     protected function getErrorFromResponse($response) 

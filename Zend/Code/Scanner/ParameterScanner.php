@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Code\Scanner;
+namespace Zend2\Code\Scanner;
 
-use Zend\Code\NameInformation;
+use Zend2\Code\NameInformation;
 
 class ParameterScanner
 {

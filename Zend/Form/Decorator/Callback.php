@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form\Decorator;
+namespace Zend2\Form\Decorator;
 
 /**
- * Zend_Form_Decorator_Callback
+ * Zend2_Form_Decorator_Callback
  *
  * Execute an arbitrary callback to decorate an element. Callbacks should take
  * three arguments, $content, $element, and $options:
@@ -40,12 +40,12 @@ namespace Zend\Form\Decorator;
  * content. To replace the content, specify a placement of boolean false;
  * defaults to append content.
  *
- * @uses       \Zend\Form\Decorator\AbstractDecorator
- * @uses       \Zend\Form\Decorator\Exception
- * @category   Zend
- * @package    Zend_Form
+ * @uses       \Zend2\Form\Decorator\AbstractDecorator
+ * @uses       \Zend2\Form\Decorator\Exception
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Callback extends AbstractDecorator
@@ -60,8 +60,8 @@ class Callback extends AbstractDecorator
      * Set callback
      *
      * @param  callback $callback
-     * @return \Zend\Form\Decorator\Callback
-     * @throws \Zend\Form\Decorator\Exception
+     * @return \Zend2\Form\Decorator\Callback
+     * @throws \Zend2\Form\Decorator\Exception
      */
     public function setCallback($callback)
     {

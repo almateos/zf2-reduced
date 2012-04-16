@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,18 +12,18 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Form
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form\Decorator;
+namespace Zend2\Form\Decorator;
 
-use Zend\Form\Element;
+use Zend2\Form\Element;
 
 /**
- * Zend_Form_Decorator_ViewHelper
+ * Zend2_Form_Decorator_ViewHelper
  *
  * Decorate an element by using a view helper to render it.
  *
@@ -35,12 +35,12 @@ use Zend\Form\Element;
  * Assumes the view helper accepts three parameters, the name, value, and
  * optional attributes; these will be provided by the element.
  *
- * @uses       \Zend\Form\Decorator\AbstractDecorator
- * @uses       \Zend\Form\Decorator\Exception
- * @category   Zend
- * @package    Zend_Form
+ * @uses       \Zend2\Form\Decorator\AbstractDecorator
+ * @uses       \Zend2\Form\Decorator\Exception
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ViewHelper extends AbstractDecorator
@@ -50,9 +50,9 @@ class ViewHelper extends AbstractDecorator
      * @var array
      */
     protected $_buttonTypes = array(
-        'Zend\Form\Element\Button',
-        'Zend\Form\Element\Reset',
-        'Zend\Form\Element\Submit',
+        'Zend2\Form\Element\Button',
+        'Zend2\Form\Element\Reset',
+        'Zend2\Form\Element\Submit',
     );
 
     /**
@@ -65,7 +65,7 @@ class ViewHelper extends AbstractDecorator
      * Set view helper to use when rendering
      *
      * @param  string $helper
-     * @return Zend_Form_Decorator_Element_ViewHelper
+     * @return Zend2_Form_Decorator_Element_ViewHelper
      */
     public function setHelper($helper)
     {
@@ -108,7 +108,7 @@ class ViewHelper extends AbstractDecorator
     /**
      * Get name
      *
-     * If element is a Zend_Form_Element, will attempt to namespace it if the
+     * If element is a Zend2_Form_Element, will attempt to namespace it if the
      * element belongs to an array.
      *
      * @return string
@@ -186,7 +186,7 @@ class ViewHelper extends AbstractDecorator
      *
      * If element type is one of the button types, returns the label.
      *
-     * @param  \Zend\Form\Element $element
+     * @param  \Zend2\Form\Element $element
      * @return string|null
      */
     public function getValue($element)
@@ -217,7 +217,7 @@ class ViewHelper extends AbstractDecorator
      *
      * @param  string $content
      * @return string
-     * @throws \Zend\Form\Decorator\Exception if element or view are not registered
+     * @throws \Zend2\Form\Decorator\Exception if element or view are not registered
      */
     public function render($content)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Markup
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Renderer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Markup\Renderer;
+namespace Zend2\Markup\Renderer;
 
-use Zend\Loader\PluginClassLoader;
+use Zend2\Loader\PluginClassLoader;
 
 /**
  * Plugin Class Loader implementation for markup converters.
  *
- * @category   Zend
- * @package    Zend_Markup
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Renderer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class MarkupLoader extends PluginClassLoader
@@ -38,11 +38,11 @@ class MarkupLoader extends PluginClassLoader
      * @var array Pre-aliased markup converters 
      */
     protected $plugins = array(
-        'code'      => 'Zend\Markup\Renderer\Markup\Html\Code',
-        'img'       => 'Zend\Markup\Renderer\Markup\Html\Img',
-        'list_item' => 'Zend\Markup\Renderer\Markup\Html\ListItem',
-        'listitem'  => 'Zend\Markup\Renderer\Markup\Html\ListItem',
-        'replace'   => 'Zend\Markup\Renderer\Markup\Html\Replace',
-        'url'       => 'Zend\Markup\Renderer\Markup\Html\Url',
+        'code'      => 'Zend2\Markup\Renderer\Markup\Html\Code',
+        'img'       => 'Zend2\Markup\Renderer\Markup\Html\Img',
+        'list_item' => 'Zend2\Markup\Renderer\Markup\Html\ListItem',
+        'listitem'  => 'Zend2\Markup\Renderer\Markup\Html\ListItem',
+        'replace'   => 'Zend2\Markup\Renderer\Markup\Html\Replace',
+        'url'       => 'Zend2\Markup\Renderer\Markup\Html\Url',
     );
 }

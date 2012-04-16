@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,18 +12,18 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Soap
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Soap\Server;
+namespace Zend2\Soap\Server;
 
 use ReflectionClass;
-use Zend\Soap\Exception\UnexpectedValueException;
-use Zend\Soap\Exception\BadMethodCallException;
+use Zend2\Soap\Exception\UnexpectedValueException;
+use Zend2\Soap\Exception\BadMethodCallException;
 
 /**
  * Wraps WSDL Document/Literal Style service objects to hide SOAP request
@@ -31,7 +31,7 @@ use Zend\Soap\Exception\BadMethodCallException;
  *
  * When using the document/literal SOAP message pattern you end up with one
  * object passed to your service methods that contains all the parameters of
- * the method. This obviously leads to a problem since Zend\Soap\Wsdl tightly
+ * the method. This obviously leads to a problem since Zend2\Soap\Wsdl tightly
  * couples method parameters to request message parameters.
  *
  * Example:
@@ -74,15 +74,15 @@ use Zend\Soap\Exception\BadMethodCallException;
  * @example
  *
  *  $service = new MyCalculatorService();
- *  $soap = new \Zend\Soap\Server($wsdlFile);
- *  $soap->setObject(new \Zend\Soap\Server\DocumentLiteralWrapper($service));
+ *  $soap = new \Zend2\Soap\Server($wsdlFile);
+ *  $soap->setObject(new \Zend2\Soap\Server\DocumentLiteralWrapper($service));
  *  $soap->handle();
  *
  * @uses ReflectionClass
- * @category   Zend
- * @package    Zend_Soap
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DocumentLiteralWrapper

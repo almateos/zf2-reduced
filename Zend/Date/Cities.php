@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,13 +12,13 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Date
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Date
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Date;
+namespace Zend2\Date;
 
 /**
  * Additional data for sunset/sunrise calculations
@@ -26,11 +26,11 @@ namespace Zend\Date;
  * Holds the geographical data for all capital cities and many others worldwide
  * Original data from http://www.fallingrain.com/world/
  *
- * @uses       \Zend\Date\Exception
- * @category   Zend
- * @package    Zend_Date
- * @subpackage Zend_Date_Cities
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Date\Exception
+ * @category   Zend2
+ * @package    Zend2_Date
+ * @subpackage Zend2_Date_Cities
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Cities
@@ -297,7 +297,7 @@ class Cities
      *                         default: effective
      *                         others are civil, nautic, astronomic
      * @return array
-     * @throws \Zend\Date\Exception When city is unknown
+     * @throws \Zend2\Date\Exception When city is unknown
      */
     public static function City($city, $horizon = false)
     {

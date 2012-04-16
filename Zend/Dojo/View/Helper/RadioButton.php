@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\View\Helper;
+namespace Zend2\Dojo\View\Helper;
 
-use Zend\Filter\Alnum as AlnumFilter;
+use Zend2\Filter\Alnum as AlnumFilter;
 
 /**
  * Dojo RadioButton dijit
  *
- * @uses       \Zend\Dojo\View\Helper\Dijit
- * @uses       \Zend\Filter\Alnum
- * @package    Zend_Dojo
+ * @uses       \Zend2\Dojo\View\Helper\Dijit
+ * @uses       \Zend2\Filter\Alnum
+ * @package    Zend2_Dojo
  * @subpackage View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
   */
 class RadioButton extends Dijit

@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Zend\Http\PhpEnvironment;
+namespace Zend2\Http\PhpEnvironment;
 
-use Zend\Http\Header\MultipleHeaderDescription,
-    Zend\Http\Response as HttpResponse,
-    Zend\Stdlib\Parameters;
+use Zend2\Http\Header\MultipleHeaderDescription,
+    Zend2\Http\Response as HttpResponse,
+    Zend2\Stdlib\Parameters;
 
 class Response extends HttpResponse
 {

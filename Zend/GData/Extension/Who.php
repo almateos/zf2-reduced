@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Extension;
+namespace Zend2\GData\Extension;
 
-use Zend\GData\Extension;
+use Zend2\GData\Extension;
 
 /**
  * Data model class to represent a participant
  *
- * @uses       \Zend\GData\Extension
- * @uses       \Zend\GData\Extension\AttendeeStatus
- * @uses       \Zend\GData\Extension\AttendeeType
- * @uses       \Zend\GData\Extension\EntryLink
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Extension
+ * @uses       \Zend2\GData\Extension\AttendeeStatus
+ * @uses       \Zend2\GData\Extension\AttendeeType
+ * @uses       \Zend2\GData\Extension\EntryLink
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Who extends Extension
@@ -48,12 +48,12 @@ class Who extends Extension
     protected $_entryLink = null;
 
     /**
-     * Constructs a new Zend_Gdata_Extension_Who object.
+     * Constructs a new Zend2_Gdata_Extension_Who object.
      * @param string $email (optional) Email address.
      * @param string $rel (optional) Relationship description.
      * @param string $valueString (optional) Simple string describing this person.
-     * @param \Zend\GData\Extension\AttendeeStatus $attendeeStatus (optional) The status of the attendee.
-     * @param \Zend\GData\Extension\AttendeeType $attendeeType (optional) The type of the attendee.
+     * @param \Zend2\GData\Extension\AttendeeStatus $attendeeStatus (optional) The status of the attendee.
+     * @param \Zend2\GData\Extension\AttendeeType $attendeeType (optional) The type of the attendee.
      * @param string $entryLink URL pointing to an associated entry (Contact kind) describing this person.
      */
     public function __construct($email = null, $rel = null, $valueString = null,
@@ -186,7 +186,7 @@ class Who extends Extension
      * Set the value for this element's ValueString attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Who The element being modified.
+     * @return \Zend2\GData\Extension\Who The element being modified.
      */
     public function setValueString($value)
     {
@@ -208,7 +208,7 @@ class Who extends Extension
      * Set the value for this element's Email attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Who The element being modified.
+     * @return \Zend2\GData\Extension\Who The element being modified.
      */
     public function setEmail($value)
     {
@@ -230,7 +230,7 @@ class Who extends Extension
      * Set the value for this element's Rel attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Who The element being modified.
+     * @return \Zend2\GData\Extension\Who The element being modified.
      */
     public function setRel($value)
     {
@@ -241,7 +241,7 @@ class Who extends Extension
     /**
      * Get this entry's AttendeeStatus element.
      *
-     * @return \Zend\GData\Extension\AttendeeStatus The requested entry.
+     * @return \Zend2\GData\Extension\AttendeeStatus The requested entry.
      */
     public function getAttendeeStatus()
     {
@@ -251,8 +251,8 @@ class Who extends Extension
     /**
      * Set the child's AttendeeStatus element.
      *
-     * @param \Zend\GData\Extension\AttendeeStatus $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Who The element being modified.
+     * @param \Zend2\GData\Extension\AttendeeStatus $value The desired value for this attribute.
+     * @return \Zend2\GData\Extension\Who The element being modified.
      */
     public function setAttendeeStatus($value)
     {
@@ -263,7 +263,7 @@ class Who extends Extension
     /**
      * Get this entry's AttendeeType element.
      *
-     * @return \Zend\GData\Extension\AttendeeType The requested entry.
+     * @return \Zend2\GData\Extension\AttendeeType The requested entry.
      */
     public function getAttendeeType()
     {
@@ -273,8 +273,8 @@ class Who extends Extension
     /**
      * Set the child's AttendeeType element.
      *
-     * @param \Zend\GData\Extension\AttendeeType $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Who The element being modified.
+     * @param \Zend2\GData\Extension\AttendeeType $value The desired value for this attribute.
+     * @return \Zend2\GData\Extension\Who The element being modified.
      */
     public function setAttendeeType($value)
     {

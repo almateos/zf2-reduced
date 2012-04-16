@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mime
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Mime
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mime;
+namespace Zend2\Mime;
 
 /**
  * Class representing a MIME part.
  *
- * @uses       \Zend\Mime\Mime
- * @uses       \Zend\Mime\Exception
- * @category   Zend
- * @package    Zend_Mime
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Mime\Mime
+ * @uses       \Zend2\Mime\Exception
+ * @category   Zend2
+ * @package    Zend2_Mime
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Part {
@@ -85,7 +85,7 @@ class Part {
      * reading the content. very useful for large file attachments.
      *
      * @return stream
-     * @throws \Zend\Mime\Exception if not a stream or unable to append filter
+     * @throws \Zend2\Mime\Exception if not a stream or unable to append filter
      */
     public function getEncodedStream()
     {

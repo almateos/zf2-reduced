@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Tag
+ * @category   Zend2
+ * @package    Zend2_Tag
  * @subpackage Cloud
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Tag\Cloud\Decorator;
+namespace Zend2\Tag\Cloud\Decorator;
 
-use Zend\Tag\Cloud\Decorator;
+use Zend2\Tag\Cloud\Decorator;
 
 /**
  * Abstract class for tag decorators
  *
- * @category  Zend
- * @package   Zend_Tag
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Tag
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Tag implements Decorator
@@ -50,7 +50,7 @@ abstract class Tag implements Decorator
      */
     public function __construct($options = null)
     {
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         }
 
@@ -63,7 +63,7 @@ abstract class Tag implements Decorator
      * Set options from array
      *
      * @param  array $options Configuration for the decorator
-     * @return \Zend\Tag\Cloud
+     * @return \Zend2\Tag\Cloud
      */
     public function setOptions(array $options)
     {

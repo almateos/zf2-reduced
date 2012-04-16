@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,34 +12,34 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Health
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\YouTube;
+namespace Zend2\GData\YouTube;
 
-use Zend\GData\YouTube;
+use Zend2\GData\YouTube;
 
 /**
  * A concrete class for working with YouTube user activity entries.
  *
  * @link http://code.google.com/apis/youtube/
  *
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\YouTube
- * @uses       Zend_Gdata_YouTube_Extension_Rating
- * @uses       \Zend\GData\YouTube\Extension\Username
- * @uses       \Zend\GData\YouTube\Extension\VideoId
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\YouTube
+ * @uses       Zend2_Gdata_YouTube_Extension_Rating
+ * @uses       \Zend2\GData\YouTube\Extension\Username
+ * @uses       \Zend2\GData\YouTube\Extension\VideoId
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class ActivityEntry extends \Zend\GData\Entry
+class ActivityEntry extends \Zend2\GData\Entry
 {
     const ACTIVITY_CATEGORY_SCHEME =
         'http://gdata.youtube.com/schemas/2007/userevents.cat';
@@ -49,31 +49,31 @@ class ActivityEntry extends \Zend\GData\Entry
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\YouTube\ActivityEntry';
+    protected $_entryClassName = 'Zend2\GData\YouTube\ActivityEntry';
 
     /**
      * The ID of the video that was part of the activity
      *
-     * @var Zend_Gdata_YouTube_VideoId
+     * @var Zend2_Gdata_YouTube_VideoId
      */
     protected $_videoId = null;
 
     /**
      * The username for the user that was part of the activity
      *
-     * @var Zend_Gdata_YouTube_Username
+     * @var Zend2_Gdata_YouTube_Username
      */
     protected $_username = null;
 
     /**
      * The rating element that was part of the activity
      *
-     * @var \Zend\GData\Extension\Rating
+     * @var \Zend2\GData\Extension\Rating
      */
     protected $_rating = null;
 
     /**
-     * Constructs a new Zend_Gdata_YouTube_ActivityEntry object.
+     * Constructs a new Zend2_Gdata_YouTube_ActivityEntry object.
      * @param DOMElement $element (optional) The DOMElement on which to
      * base this object.
      */
@@ -131,7 +131,7 @@ class ActivityEntry extends \Zend\GData\Entry
                 $this->_username = $username;
                 break;
             case $this->lookupNamespace('gd') . ':' . 'rating':
-                $rating = new \Zend\GData\Extension\Rating();
+                $rating = new \Zend2\GData\Extension\Rating();
                 $rating->transferFromDOM($child);
                 $this->_rating = $rating;
                 break;
@@ -144,7 +144,7 @@ class ActivityEntry extends \Zend\GData\Entry
     /**
      * Returns the video ID for this activity entry.
      *
-     * @return null|\Zend\GData\YouTube\Extension\VideoId
+     * @return null|\Zend2\GData\YouTube\Extension\VideoId
      */
     public function getVideoId()
     {
@@ -154,7 +154,7 @@ class ActivityEntry extends \Zend\GData\Entry
     /**
      * Returns the username for this activity entry.
      *
-     * @return null|\Zend\GData\YouTube\Extension\Username
+     * @return null|\Zend2\GData\YouTube\Extension\Username
      */
     public function getUsername()
     {
@@ -164,7 +164,7 @@ class ActivityEntry extends \Zend\GData\Entry
     /**
      * Returns the rating for this activity entry.
      *
-     * @return null|Zend_Gdata_YouTube_Extension_Rating
+     * @return null|Zend2_Gdata_YouTube_Extension_Rating
      */
     public function getRating()
     {

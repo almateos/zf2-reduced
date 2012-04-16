@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Code\Reflection;
+namespace Zend2\Code\Reflection;
 
-use Zend\Code\Reflection,
-    Zend\Code\Scanner\DocBlockScanner,
-    Zend\Code\Annotation\AnnotationManager;
+use Zend2\Code\Reflection,
+    Zend2\Code\Scanner\DocBlockScanner,
+    Zend2\Code\Annotation\AnnotationManager;
 
 /**
  * @uses       Reflector
- * @uses       \Zend\Code\Reflection\ReflectionDocblockTag
- * @category   Zend
- * @package    Zend_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Code\Reflection\ReflectionDocblockTag
+ * @category   Zend2
+ * @package    Zend2_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DocBlockReflection implements Reflection
@@ -98,7 +98,7 @@ class DocBlockReflection implements Reflection
      * Constructor
      *
      * @param Reflector|string $commentOrReflector
-     * @return \Zend\Code\Reflection\DocBlockReflection
+     * @return \Zend2\Code\Reflection\DocBlockReflection
      */
     public function __construct($commentOrReflector, DocBlock\TagManager $tagManager = null)
     {
@@ -206,7 +206,7 @@ class DocBlockReflection implements Reflection
      * Retrieve the given docblock tag
      *
      * @param  string $name
-     * @return \Zend\Code\Reflection\ReflectionDocblockTag|false
+     * @return \Zend2\Code\Reflection\ReflectionDocblockTag|false
      */
     public function getTag($name)
     {
@@ -224,7 +224,7 @@ class DocBlockReflection implements Reflection
      * Get all docblock annotation tags
      *
      * @param string $filter
-     * @return array Array of \Zend\Code\Reflection\ReflectionDocblockTag
+     * @return array Array of \Zend2\Code\Reflection\ReflectionDocblockTag
      */
     public function getTags($filter = null)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,64 +12,64 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\YouTube;
+namespace Zend2\GData\YouTube;
 
-use Zend\GData\YouTube,
-    Zend\GData\App;
+use Zend2\GData\YouTube,
+    Zend2\GData\App;
 
 /**
  * Represents the YouTube message flavor of an Atom entry
  *
- * @uses       \Zend\GData\App\VersionException
- * @uses       \Zend\GData\Extension\Comments
- * @uses       \Zend\GData\Extension\Rating
- * @uses       \Zend\GData\Media\Entry
- * @uses       \Zend\GData\YouTube
- * @uses       \Zend\GData\YouTube\Extension\Description
- * @uses       \Zend\GData\YouTube\Extension\Statistics
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\VersionException
+ * @uses       \Zend2\GData\Extension\Comments
+ * @uses       \Zend2\GData\Extension\Rating
+ * @uses       \Zend2\GData\Media\Entry
+ * @uses       \Zend2\GData\YouTube
+ * @uses       \Zend2\GData\YouTube\Extension\Description
+ * @uses       \Zend2\GData\YouTube\Extension\Statistics
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class InboxEntry extends \Zend\GData\Media\Entry
+class InboxEntry extends \Zend2\GData\Media\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\YouTube\InboxEntry';
+    protected $_entryClassName = 'Zend2\GData\YouTube\InboxEntry';
 
     /**
      * The gd:comments element of this entry.
      *
-     * @var \Zend\GData\Extension\Comments
+     * @var \Zend2\GData\Extension\Comments
      */
     protected $_comments = null;
 
     /**
      * The gd:rating element of this entry.
      *
-     * @var \Zend\GData\Extension\Rating
+     * @var \Zend2\GData\Extension\Rating
      */
     protected $_rating = null;
 
     /**
      * The yt:statistics element of this entry.
      *
-     * @var \Zend\GData\YouTube\Extension\Statistics
+     * @var \Zend2\GData\YouTube\Extension\Statistics
      */
     protected $_statistics = null;
 
     /**
      * The yt:description element of this entry.
      *
-     * @var \Zend\GData\YouTube\Extension\Description
+     * @var \Zend2\GData\YouTube\Extension\Description
      */
     protected $_description = null;
 
@@ -129,12 +129,12 @@ class InboxEntry extends \Zend\GData\Media\Entry
         $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
         switch ($absoluteNodeName) {
             case $this->lookupNamespace('gd') . ':' . 'comments':
-                $comments = new \Zend\GData\Extension\Comments();
+                $comments = new \Zend2\GData\Extension\Comments();
                 $comments->transferFromDOM($child);
                 $this->_comments = $comments;
                 break;
             case $this->lookupNamespace('gd') . ':' . 'rating':
-                $rating = new \Zend\GData\Extension\Rating();
+                $rating = new \Zend2\GData\Extension\Rating();
                 $rating->transferFromDOM($child);
                 $this->_rating = $rating;
                 break;
@@ -157,8 +157,8 @@ class InboxEntry extends \Zend\GData\Media\Entry
     /**
      * Get the yt:description
      *
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\YouTube\Extension\Description|null
+     * @throws \Zend2\GData\App\VersionException
+     * @return \Zend2\GData\YouTube\Extension\Description|null
      */
     public function getDescription()
     {
@@ -174,10 +174,10 @@ class InboxEntry extends \Zend\GData\Media\Entry
     /**
      * Sets the yt:description element for a new inbox entry.
      *
-     * @param \Zend\GData\YouTube\Extension\Description $description The
+     * @param \Zend2\GData\YouTube\Extension\Description $description The
      *        description.
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\YouTube\InboxEntry Provides a fluent interface
+     * @throws \Zend2\GData\App\VersionException
+     * @return \Zend2\GData\YouTube\InboxEntry Provides a fluent interface
      */
     public function setDescription($description = null)
     {
@@ -194,7 +194,7 @@ class InboxEntry extends \Zend\GData\Media\Entry
     /**
      * Get the gd:rating element for the inbox entry
      *
-     * @return \Zend\GData\Extension\Rating|null
+     * @return \Zend2\GData\Extension\Rating|null
      */
     public function getRating()
     {
@@ -204,9 +204,9 @@ class InboxEntry extends \Zend\GData\Media\Entry
     /**
      * Sets the gd:rating element for the inbox entry
      *
-     * @param \Zend\GData\Extension\Rating $rating The rating for the video in
+     * @param \Zend2\GData\Extension\Rating $rating The rating for the video in
      *        the message
-     * @return \Zend\GData\YouTube\InboxEntry Provides a fluent interface
+     * @return \Zend2\GData\YouTube\InboxEntry Provides a fluent interface
      */
     public function setRating($rating = null)
     {
@@ -217,7 +217,7 @@ class InboxEntry extends \Zend\GData\Media\Entry
     /**
      * Get the gd:comments element of the inbox entry.
      *
-     * @return \Zend\GData\Extension\Comments|null
+     * @return \Zend2\GData\Extension\Comments|null
      */
     public function getComments()
     {
@@ -227,8 +227,8 @@ class InboxEntry extends \Zend\GData\Media\Entry
     /**
      * Sets the gd:comments element for the inbox entry
      *
-     * @param \Zend\GData\Extension\Comments $comments The comments feed link
-     * @return \Zend\GData\YouTube\InboxEntry Provides a fluent interface
+     * @param \Zend2\GData\Extension\Comments $comments The comments feed link
+     * @return \Zend2\GData\YouTube\InboxEntry Provides a fluent interface
      */
     public function setComments($comments = null)
     {
@@ -239,7 +239,7 @@ class InboxEntry extends \Zend\GData\Media\Entry
     /**
      * Get the yt:statistics element for the inbox entry
      *
-     * @return \Zend\GData\YouTube\Extension\Statistics|null
+     * @return \Zend2\GData\YouTube\Extension\Statistics|null
      */
     public function getStatistics()
     {
@@ -249,9 +249,9 @@ class InboxEntry extends \Zend\GData\Media\Entry
     /**
      * Sets the yt:statistics element for the inbox entry
      *
-     * @param \Zend\GData\YouTube\Extension\Statistics $statistics The
+     * @param \Zend2\GData\YouTube\Extension\Statistics $statistics The
      *        statistics element for the video in the message
-     * @return \Zend\GData\YouTube\InboxEntry Provides a fluent interface
+     * @return \Zend2\GData\YouTube\InboxEntry Provides a fluent interface
      */
     public function setStatistics($statistics = null)
     {

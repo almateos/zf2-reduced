@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
+namespace Zend2\Validator;
 
-use Zend\Loader\PluginSpecBroker;
+use Zend2\Loader\PluginSpecBroker;
 
 /**
  * Broker for validator instances
  *
- * @category   Zend
- * @package    Zend_Validator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ValidatorBroker extends PluginSpecBroker
@@ -35,7 +35,7 @@ class ValidatorBroker extends PluginSpecBroker
     /**
      * @var string Default plugin loading strategy
      */
-    protected $defaultClassLoader = 'Zend\Validator\ValidatorLoader';
+    protected $defaultClassLoader = 'Zend2\Validator\ValidatorLoader';
 
     /**
      * Determine if we have a valid validator
@@ -47,7 +47,7 @@ class ValidatorBroker extends PluginSpecBroker
     protected function validatePlugin($plugin)
     {
         if (!$plugin instanceof Validator) {
-            throw new Exception\RuntimeException('Validators must implement Zend\Validator\Validator');
+            throw new Exception\RuntimeException('Validators must implement Zend2\Validator\Validator');
         }
         return true;
     }

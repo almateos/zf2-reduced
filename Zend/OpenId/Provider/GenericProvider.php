@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,30 +13,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_OpenId
- * @subpackage Zend_OpenId_Provider
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OpenId
+ * @subpackage Zend2_OpenId_Provider
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\OpenId\Provider;
+namespace Zend2\OpenId\Provider;
 
-use Zend\Http\Response,
-    Zend\OpenId,
-    Zend\OpenId\Extension;
+use Zend2\Http\Response,
+    Zend2\OpenId,
+    Zend2\OpenId\Extension;
 
 /**
  * OpenID provider (server) implementation
  *
- * @uses       Zend\OpenId\OpenId
- * @uses       Zend\OpenId\Extension
- * @uses       Zend\OpenId\Provider\Storage\File
- * @uses       Zend\OpenId\Provider\User\Session
- * @category   Zend
- * @package    Zend_OpenId
- * @subpackage Zend_OpenId_Provider
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\OpenId\OpenId
+ * @uses       Zend2\OpenId\Extension
+ * @uses       Zend2\OpenId\Provider\Storage\File
+ * @uses       Zend2\OpenId\Provider\User\Session
+ * @category   Zend2
+ * @package    Zend2_OpenId
+ * @subpackage Zend2_OpenId_Provider
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class GenericProvider
@@ -45,14 +45,14 @@ class GenericProvider
     /**
      * Reference to an implementation of storage object
      *
-     * @var Zend\OpenId\Provider\Storage $_storage
+     * @var Zend2\OpenId\Provider\Storage $_storage
      */
     private $_storage;
 
     /**
      * Reference to an implementation of user object
      *
-     * @var Zend\OpenId\Provider\User\AbstractUser $_user
+     * @var Zend2\OpenId\Provider\User\AbstractUser $_user
      */
     private $_user;
 
@@ -85,7 +85,7 @@ class GenericProvider
     private $_opEndpoint;
 
     /**
-     * Constructs a Zend\OpenId\Provider\GenericProvider object with given parameters.
+     * Constructs a Zend2\OpenId\Provider\GenericProvider object with given parameters.
      *
      * @param string $loginUrl is an URL that provides login screen for
      *  end-user (by default it is the same URL with additional GET variable
@@ -93,11 +93,11 @@ class GenericProvider
      * @param string $trustUrl is an URL that shows a question if end-user
      *  trust to given consumer (by default it is the same URL with additional
      *  GET variable openid.action=trust)
-     * @param Zend\OpenId\Provider\User\AbstractUser $user is an object for communication
+     * @param Zend2\OpenId\Provider\User\AbstractUser $user is an object for communication
      *  with User-Agent and store information about logged-in user (it is a
-     *  Zend\OpenId\Provider\User\Session object by default)
-     * @param Zend\OpenId\Provider\Storage $storage is an object for keeping
-     *  persistent database (it is a Zend\OpenId\Provider\Storage_File object
+     *  Zend2\OpenId\Provider\User\Session object by default)
+     * @param Zend2\OpenId\Provider\Storage $storage is an object for keeping
+     *  persistent database (it is a Zend2\OpenId\Provider\Storage_File object
      *  by default)
      * @param integer $sessionTtl is a default time to live for association
      *   session in seconds (1 hour by default). Consumer must reestablish

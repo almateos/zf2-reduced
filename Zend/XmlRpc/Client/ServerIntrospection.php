@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,38 +12,38 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Client
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\XmlRpc\Client;
+namespace Zend2\XmlRpc\Client;
 
-use Zend\XmlRpc\Client as XMLRPCClient;
+use Zend2\XmlRpc\Client as XMLRPCClient;
 
 /**
  * Wraps the XML-RPC system.* introspection methods
  *
- * @uses       Zend\XmlRpc\Client\FaultException
- * @uses       Zend\XmlRpc\Client\IntrospectException
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @uses       Zend2\XmlRpc\Client\FaultException
+ * @uses       Zend2\XmlRpc\Client\IntrospectException
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Client
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ServerIntrospection
 {
     /**
-     * @var \Zend\XmlRpc\Client\ServerProxy
+     * @var \Zend2\XmlRpc\Client\ServerProxy
      */
     private $_system = null;
 
 
     /**
-     * @param Zend\XmlRpc\Client $client
+     * @param Zend2\XmlRpc\Client $client
      */
     public function __construct(XMLRPCClient $client)
     {

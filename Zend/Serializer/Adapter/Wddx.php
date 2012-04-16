@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Serializer
+ * @category   Zend2
+ * @package    Zend2_Serializer
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Serializer\Adapter;
+namespace Zend2\Serializer\Adapter;
 
-use Zend\Serializer\Exception\RuntimeException,
-    Zend\Serializer\Exception\ExtensionNotLoadedException;
+use Zend2\Serializer\Exception\RuntimeException,
+    Zend2\Serializer\Exception\ExtensionNotLoadedException;
 
 /**
  * @link       http://www.infoloom.com/gcaconfs/WEB/chicago98/simeonov.HTM
  * @link       http://en.wikipedia.org/wiki/WDDX
  * @uses       SimpleXMLElement
- * @uses       Zend\Serializer\Adapter\AbstractAdapter
- * @uses       Zend\Serializer\Exception\RuntimeException
- * @uses       Zend\Serializer\Exception\ExtensionNotLoadedException
- * @category   Zend
- * @package    Zend_Serializer
+ * @uses       Zend2\Serializer\Adapter\AbstractAdapter
+ * @uses       Zend2\Serializer\Exception\RuntimeException
+ * @uses       Zend2\Serializer\Exception\ExtensionNotLoadedException
+ * @category   Zend2
+ * @package    Zend2_Serializer
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Wddx extends AbstractAdapter
@@ -51,7 +51,7 @@ class Wddx extends AbstractAdapter
      * 
      * @param  array $opts 
      * @return void
-     * @throws Zend\Serializer\Exception if wddx extension not found
+     * @throws Zend2\Serializer\Exception if wddx extension not found
      */
     public function __construct($opts = array())
     {
@@ -68,7 +68,7 @@ class Wddx extends AbstractAdapter
      * @param  mixed $value 
      * @param  array $opts 
      * @return string
-     * @throws Zend\Serializer\Exception on wddx error
+     * @throws Zend2\Serializer\Exception on wddx error
      */
     public function serialize($value, array $opts = array())
     {
@@ -93,7 +93,7 @@ class Wddx extends AbstractAdapter
      * @param  string $wddx 
      * @param  array $opts 
      * @return mixed
-     * @throws Zend\Serializer\Exception on wddx error
+     * @throws Zend2\Serializer\Exception on wddx error
      */
     public function unserialize($wddx, array $opts = array())
     {

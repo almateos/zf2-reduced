@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form\Decorator;
+namespace Zend2\Form\Decorator;
 
 /**
- * Zend_Form_Decorator_Fieldset
+ * Zend2_Form_Decorator_Fieldset
  *
  * Any options passed will be used as HTML attributes of the fieldset tag.
  *
- * @uses       \Zend\Form\Decorator\AbstractDecorator
- * @category   Zend
- * @package    Zend_Form
+ * @uses       \Zend2\Form\Decorator\AbstractDecorator
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Fieldset extends AbstractDecorator
@@ -96,7 +96,7 @@ class Fieldset extends AbstractDecorator
      * Set legend
      *
      * @param  string $value
-     * @return \Zend\Form\Decorator\Fieldset
+     * @return \Zend2\Form\Decorator\Fieldset
      */
     public function setLegend($value)
     {

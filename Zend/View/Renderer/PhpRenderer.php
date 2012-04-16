@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,34 +12,34 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_View
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Renderer;
+namespace Zend2\View\Renderer;
 
 use ArrayAccess,
-    Zend\Filter\FilterChain,
-    Zend\Loader\Pluggable,
-    Zend\View\Exception,
-    Zend\View\HelperBroker,
-    Zend\View\Model,
-    Zend\View\Renderer,
-    Zend\View\Resolver,
-    Zend\View\Variables;
+    Zend2\Filter\FilterChain,
+    Zend2\Loader\Pluggable,
+    Zend2\View\Exception,
+    Zend2\View\HelperBroker,
+    Zend2\View\Model,
+    Zend2\View\Renderer,
+    Zend2\View\Resolver,
+    Zend2\View\Variables;
 
 /**
- * Abstract class for Zend_View to help enforce private constructs.
+ * Abstract class for Zend2_View to help enforce private constructs.
  *
  * Note: all private variables in this class are prefixed with "__". This is to
  * mark them as part of the internal implementation, and thus prevent conflict 
  * with variables injected into the renderer.
  *
- * @category   Zend
- * @package    Zend_View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_View
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PhpRenderer implements Renderer, Pluggable, TreeRendererInterface
@@ -89,7 +89,7 @@ class PhpRenderer implements Renderer, Pluggable, TreeRendererInterface
     private $__helperBroker;
 
     /**
-     * @var Zend\Filter\FilterChain
+     * @var Zend2\Filter\FilterChain
      */
     private $__filterChain;
 
@@ -131,8 +131,8 @@ class PhpRenderer implements Renderer, Pluggable, TreeRendererInterface
     }
 
     /**
-     * Allow custom object initialization when extending Zend_View_Abstract or
-     * Zend_View
+     * Allow custom object initialization when extending Zend2_View_Abstract or
+     * Zend2_View
      *
      * Triggered by {@link __construct() the constructor} as its final action.
      *
@@ -294,7 +294,7 @@ class PhpRenderer implements Renderer, Pluggable, TreeRendererInterface
      * Set plugin broker instance
      * 
      * @param  string|HelperBroker $broker 
-     * @return Zend\View\Abstract
+     * @return Zend2\View\Abstract
      * @throws Exception\InvalidArgumentException
      */
     public function setBroker($broker)
@@ -310,7 +310,7 @@ class PhpRenderer implements Renderer, Pluggable, TreeRendererInterface
         }
         if (!$broker instanceof HelperBroker) {
             throw new Exception\InvalidArgumentException(sprintf(
-                'Helper broker must extend Zend\View\HelperBroker; got type "%s" instead',
+                'Helper broker must extend Zend2\View\HelperBroker; got type "%s" instead',
                 (is_object($broker) ? get_class($broker) : gettype($broker))
             ));
         }
@@ -369,7 +369,7 @@ class PhpRenderer implements Renderer, Pluggable, TreeRendererInterface
      * Set filter chain
      * 
      * @param  FilterChain $filters 
-     * @return Zend\View\PhpRenderer
+     * @return Zend2\View\PhpRenderer
      */
     public function setFilterChain(FilterChain $filters)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Reader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Reader
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Reader;
+namespace Zend2\Feed\Reader;
 
 use ArrayObject,
-    Zend\Uri;
+    Zend2\Uri;
 
 /**
-* @category Zend
-* @package Zend_Feed_Reader
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @category Zend2
+* @package Zend2_Feed_Reader
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 class FeedSet extends ArrayObject
@@ -120,12 +120,12 @@ class FeedSet extends ArrayObject
     }
 
     /**
-     * Supports lazy loading of feeds using Zend_Feed_Reader::import() but
+     * Supports lazy loading of feeds using Zend2_Feed_Reader::import() but
      * delegates any other operations to the parent class.
      *
      * @param string $offset
      * @return mixed
-     * @uses Zend_Feed_Reader
+     * @uses Zend2_Feed_Reader
      */
     public function offsetGet($offset)
     {

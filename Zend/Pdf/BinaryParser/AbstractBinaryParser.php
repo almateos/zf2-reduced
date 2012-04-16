@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_BinaryParser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_BinaryParser
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\BinaryParser;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
+namespace Zend2\Pdf\BinaryParser;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
 
 /**
  * Abstract utility class for parsing binary files.
@@ -30,15 +30,15 @@ use Zend\Pdf;
  * types (signed and unsigned integers, floating- and fixed-point numbers,
  * strings, etc.) from the file.
  *
- * File access is managed via a {@link \Zend\Pdf\BinaryParser\DataSource\AbstractDataSource}
+ * File access is managed via a {@link \Zend2\Pdf\BinaryParser\DataSource\AbstractDataSource}
  * object.
  * This allows the same parser code to work with many different data sources:
  * in-memory objects, filesystem files, etc.
  *
- * @uses       \Zend\Pdf\Exception
- * @package    Zend_PDF
- * @subpackage Zend_PDF_BinaryParser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Exception
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_BinaryParser
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractBinaryParser
@@ -74,7 +74,7 @@ abstract class AbstractBinaryParser
 
     /**
      * Object representing the data source to be parsed.
-     * @var \Zend\Pdf\BinaryParser\DataSource\AbstractDataSource
+     * @var \Zend2\Pdf\BinaryParser\DataSource\AbstractDataSource
      */
     protected $_dataSource = null;
 
@@ -91,7 +91,7 @@ abstract class AbstractBinaryParser
      *
      * Must set $this->_isScreened to true if successful.
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     abstract public function screen();
 
@@ -100,7 +100,7 @@ abstract class AbstractBinaryParser
      *
      * Must set $this->_isParsed to true if successful.
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     abstract public function parse();
 
@@ -112,8 +112,8 @@ abstract class AbstractBinaryParser
      *
      * Verifies that the data source has been properly initialized.
      *
-     * @param \Zend\Pdf\BinaryParser\DataSource\AbstractDataSource $dataSource
-     * @throws \Zend\Pdf\Exception
+     * @param \Zend2\Pdf\BinaryParser\DataSource\AbstractDataSource $dataSource
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct(DataSource\AbstractDataSource $dataSource)
     {
@@ -159,7 +159,7 @@ abstract class AbstractBinaryParser
     /**
      * Returns the data source object representing the file being parsed.
      *
-     * @return \Zend\Pdf\BinaryParser\DataSource\AbstractDataSource
+     * @return \Zend2\Pdf\BinaryParser\DataSource\AbstractDataSource
      */
     public function getDataSource()
     {
@@ -173,7 +173,7 @@ abstract class AbstractBinaryParser
      * Convenience wrapper for the data source object's moveToOffset() method.
      *
      * @param integer $offset Destination byte offset.
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function moveToOffset($offset)
     {
@@ -193,7 +193,7 @@ abstract class AbstractBinaryParser
      *
      * @param integer $byteCount Number of bytes to read.
      * @return string
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function readBytes($byteCount)
     {
@@ -204,7 +204,7 @@ abstract class AbstractBinaryParser
      * Convenience wrapper for the data source object's skipBytes() method.
      *
      * @param integer $byteCount Number of bytes to skip.
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function skipBytes($byteCount)
     {
@@ -223,10 +223,10 @@ abstract class AbstractBinaryParser
      *
      * @param integer $size Size of integer in bytes: 1-4
      * @param integer $byteOrder (optional) Big- or little-endian byte order.
-     *   Use the BYTE_ORDER_ constants defined in {@link \Zend\Pdf\BinaryParser\AbstractBinaryParser}.
+     *   Use the BYTE_ORDER_ constants defined in {@link \Zend2\Pdf\BinaryParser\AbstractBinaryParser}.
      *   If omitted, uses big-endian.
      * @return integer
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function readInt($size, $byteOrder = self::BYTE_ORDER_BIG_ENDIAN)
     {
@@ -294,10 +294,10 @@ abstract class AbstractBinaryParser
      *
      * @param integer $size Size of integer in bytes: 1-4
      * @param integer $byteOrder (optional) Big- or little-endian byte order.
-     *   Use the BYTE_ORDER_ constants defined in {@link \Zend\Pdf\BinaryParser\AbstractBinaryParser}.
+     *   Use the BYTE_ORDER_ constants defined in {@link \Zend2\Pdf\BinaryParser\AbstractBinaryParser}.
      *   If omitted, uses big-endian.
      * @return integer
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function readUInt($size, $byteOrder = self::BYTE_ORDER_BIG_ENDIAN)
     {
@@ -350,10 +350,10 @@ abstract class AbstractBinaryParser
      * @param integer $mantissaBits Number of bits in the mantissa
      * @param integer $fractionBits Number of bits in the fraction
      * @param integer $byteOrder (optional) Big- or little-endian byte order.
-     *   Use the BYTE_ORDER_ constants defined in {@link \Zend\Pdf\BinaryParser\AbstractBinaryParser}.
+     *   Use the BYTE_ORDER_ constants defined in {@link \Zend2\Pdf\BinaryParser\AbstractBinaryParser}.
      *   If omitted, uses big-endian.
      * @return float
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function readFixed($mantissaBits, $fractionBits,
                               $byteOrder = self::BYTE_ORDER_BIG_ENDIAN)
@@ -383,13 +383,13 @@ abstract class AbstractBinaryParser
      *
      * @param integer $byteCount Number of bytes (characters * 2) to return.
      * @param integer $byteOrder (optional) Big- or little-endian byte order.
-     *   Use the BYTE_ORDER_ constants defined in {@link \Zend\Pdf\BinaryParser\AbstractBinaryParser}.
+     *   Use the BYTE_ORDER_ constants defined in {@link \Zend2\Pdf\BinaryParser\AbstractBinaryParser}.
      *   If omitted, uses big-endian.
      * @param string $characterSet (optional) Desired resulting character set.
      *   You may use any character set supported by {@link iconv()}. If omitted,
      *   uses 'current locale'.
      * @return string
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function readStringUTF16($byteCount,
                                     $byteOrder = self::BYTE_ORDER_BIG_ENDIAN,
@@ -428,7 +428,7 @@ abstract class AbstractBinaryParser
      *   You may use any character set supported by {@link iconv()}. If omitted,
      *   uses 'current locale'.
      * @return string
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function readStringMacRoman($byteCount, $characterSet = '')
     {
@@ -458,7 +458,7 @@ abstract class AbstractBinaryParser
      * @param integer $lengthBytes (optional) Number of bytes that make up the
      *   length. Default is 1.
      * @return string
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function readStringPascal($characterSet = '', $lengthBytes = 1)
     {

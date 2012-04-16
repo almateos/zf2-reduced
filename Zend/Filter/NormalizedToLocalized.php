@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Filter;
-use Zend\Locale\Format,
-    Zend\Date\Date;
+namespace Zend2\Filter;
+use Zend2\Locale\Format,
+    Zend2\Date\Date;
 
 /**
  * Localizes given normalized input
  *
- * @uses       Zend\Date\Date
- * @uses       Zend\Filter\AbstractFilter
- * @uses       Zend\Locale\Format
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Date\Date
+ * @uses       Zend2\Filter\AbstractFilter
+ * @uses       Zend2\Locale\Format
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class NormalizedToLocalized extends AbstractFilter
@@ -47,11 +47,11 @@ class NormalizedToLocalized extends AbstractFilter
     /**
      * Class constructor
      *
-     * @param string|\Zend\Locale\Locale $locale (Optional) Locale to set
+     * @param string|\Zend2\Locale\Locale $locale (Optional) Locale to set
      */
     public function __construct($options = null)
     {
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         }
 
@@ -74,7 +74,7 @@ class NormalizedToLocalized extends AbstractFilter
      * Sets options to use
      *
      * @param  array $options (Optional) Options to use
-     * @return \Zend\Filter\LocalizedToNormalized
+     * @return \Zend2\Filter\LocalizedToNormalized
      */
     public function setOptions(array $options = null)
     {
@@ -83,7 +83,7 @@ class NormalizedToLocalized extends AbstractFilter
     }
 
     /**
-     * Defined by Zend_Filter_Interface
+     * Defined by Zend2_Filter_Interface
      *
      * Normalizes the given input
      *

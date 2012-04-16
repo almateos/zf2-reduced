@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Writer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
  
-namespace Zend\Feed\Writer\Renderer\Feed;
-use Zend\Feed\Writer\Renderer;
-use Zend\Feed\Writer;
+namespace Zend2\Feed\Writer\Renderer\Feed;
+use Zend2\Feed\Writer\Renderer;
+use Zend2\Feed\Writer;
 
 /**
 * @uses DOMDocument
-* @uses \Zend\Feed\Writer\Renderer\Feed\Atom\AtomAbstract
-* @uses \Zend\Feed\Writer\Renderer\RendererInterface
-* @category Zend
-* @package Zend_Feed_Writer
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @uses \Zend2\Feed\Writer\Renderer\Feed\Atom\AtomAbstract
+* @uses \Zend2\Feed\Writer\Renderer\RendererInterface
+* @category Zend2
+* @package Zend2_Feed_Writer
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 class AtomSource extends AtomAbstract implements Renderer\Renderer
@@ -37,7 +37,7 @@ class AtomSource extends AtomAbstract implements Renderer\Renderer
     /**
      * Constructor
      * 
-     * @param  Zend_Feed_Writer_Feed_Source $container 
+     * @param  Zend2_Feed_Writer_Feed_Source $container 
      * @return void
      */
     public function __construct (Writer\Source $container)
@@ -48,7 +48,7 @@ class AtomSource extends AtomAbstract implements Renderer\Renderer
     /**
      * Render Atom Feed Metadata (Source element)
      * 
-     * @return \Zend\Feed\Writer\Renderer\Feed\Atom
+     * @return \Zend2\Feed\Writer\Renderer\Feed\Atom
      */
     public function render()
     {

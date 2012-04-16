@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
+namespace Zend2\Validator;
 
 use Traversable,
-    Zend\Stdlib\ArrayUtils,
-    Zend\Translator,
-    Zend\Validator\Exception\InvalidArgumentException;
+    Zend2\Stdlib\ArrayUtils,
+    Zend2\Translator,
+    Zend2\Validator\Exception\InvalidArgumentException;
 
 /**
- * @uses       \Zend\Registry
- * @uses       \Zend\Validator\Exception
- * @uses       \Zend\Validator\Validator
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Registry
+ * @uses       \Zend2\Validator\Exception
+ * @uses       \Zend2\Validator\Validator
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractValidator implements Validator
@@ -45,7 +45,7 @@ abstract class AbstractValidator implements Validator
 
     /**
      * Default translation object for all validate objects
-     * @var \Zend\Translator\Translator
+     * @var \Zend2\Translator\Translator
      */
     protected static $_defaultTranslator;
 
@@ -60,7 +60,7 @@ abstract class AbstractValidator implements Validator
         'messages'           => array(),  // Array of validation failure messages
         'messageTemplates'   => array(),  // Array of validation failure message templates
         'messageVariables'   => array(),  // Array of additional variables available for validation failure messages
-        'translator'         => null,     // Translation object to used -> \Zend\Translator\Translator
+        'translator'         => null,     // Translation object to used -> \Zend2\Translator\Translator
         'translatorDisabled' => false,    // Is translation disabled?
         'valueObscured'      => false,    // Flag indidcating whether or not value should be obfuscated in error messages
     );
@@ -71,7 +71,7 @@ abstract class AbstractValidator implements Validator
      *  - nothing f.e. Validator()
      *  - one or multiple scalar values f.e. Validator($first, $second, $third)
      *  - an array f.e. Validator(array($first => 'first', $second => 'second', $third => 'third'))
-     *  - an instance of Zend_Config f.e. Validator($config_instance)
+     *  - an instance of Zend2_Config f.e. Validator($config_instance)
      *
      * @param mixed $options
      */
@@ -99,7 +99,7 @@ abstract class AbstractValidator implements Validator
      * Returns an option
      *
      * @param string $option Option to be returned
-     * @throws \Zend\Validator\Exception\InvalidArgumentException
+     * @throws \Zend2\Validator\Exception\InvalidArgumentException
      * @return mixed Returned option
      */
     public function getOption($option)
@@ -133,7 +133,7 @@ abstract class AbstractValidator implements Validator
      * Sets one or multiple options
      *
      * @param  array|Traversable $options Options to set
-     * @return \Zend\Validator\AbstractValidator Provides fluid interface
+     * @return \Zend2\Validator\AbstractValidator Provides fluid interface
      */
     public function setOptions($options = array())
     {
@@ -206,8 +206,8 @@ abstract class AbstractValidator implements Validator
      *
      * @param  string $messageString
      * @param  string $messageKey     OPTIONAL
-     * @return \Zend\Validator\AbstractValidator Provides a fluent interface
-     * @throws \Zend\Validator\Exception
+     * @return \Zend2\Validator\AbstractValidator Provides a fluent interface
+     * @throws \Zend2\Validator\Exception
      */
     public function setMessage($messageString, $messageKey = null)
     {
@@ -232,7 +232,7 @@ abstract class AbstractValidator implements Validator
      * and the array values are the message template strings.
      *
      * @param  array $messages
-     * @return \Zend\Validator\AbstractValidator
+     * @return \Zend2\Validator\AbstractValidator
      */
     public function setMessages(array $messages)
     {
@@ -248,7 +248,7 @@ abstract class AbstractValidator implements Validator
      *
      * @param  string $property
      * @return mixed
-     * @throws \Zend\Validator\Exception
+     * @throws \Zend2\Validator\Exception
      */
     public function __get($property)
     {
@@ -383,7 +383,7 @@ abstract class AbstractValidator implements Validator
      * Set flag indicating whether or not value should be obfuscated in messages
      *
      * @param  bool $flag
-     * @return \Zend\Validator\AbstractValidator
+     * @return \Zend2\Validator\AbstractValidator
      */
     public function setValueObscured($flag)
     {
@@ -405,8 +405,8 @@ abstract class AbstractValidator implements Validator
     /**
      * Set translation object
      *
-     * @param  Zend_Translator|\Zend\Translator\Adapter\AbstractAdapter|null $translator
-     * @return \Zend\Validator\AbstractValidator
+     * @param  Zend2_Translator|\Zend2\Translator\Adapter\AbstractAdapter|null $translator
+     * @return \Zend2\Validator\AbstractValidator
      */
     public function setTranslator($translator = null)
     {
@@ -424,7 +424,7 @@ abstract class AbstractValidator implements Validator
     /**
      * Return translation object
      *
-     * @return \Zend\Translator\Adapter|null
+     * @return \Zend2\Translator\Adapter|null
      */
     public function getTranslator()
     {
@@ -452,7 +452,7 @@ abstract class AbstractValidator implements Validator
     /**
      * Set default translation object for all validate objects
      *
-     * @param  Zend_Translator|\Zend\Translator\Adapter|null $translator
+     * @param  Zend2_Translator|\Zend2\Translator\Adapter|null $translator
      * @return void
      */
     public static function setDefaultTranslator($translator = null)
@@ -469,13 +469,13 @@ abstract class AbstractValidator implements Validator
     /**
      * Get default translation object for all validate objects
      *
-     * @return \Zend\Translator\Adapter|null
+     * @return \Zend2\Translator\Adapter|null
      */
     public static function getDefaultTranslator()
     {
         if (null === self::$_defaultTranslator) {
-            if (\Zend\Registry::isRegistered('Zend_Translator')) {
-                $translator = \Zend\Registry::get('Zend_Translator');
+            if (\Zend2\Registry::isRegistered('Zend2_Translator')) {
+                $translator = \Zend2\Registry::get('Zend2_Translator');
                 if ($translator instanceof Translator\Adapter\AbstractAdapter) {
                     return $translator;
                 } elseif ($translator instanceof Translator\Translator) {
@@ -501,7 +501,7 @@ abstract class AbstractValidator implements Validator
      * Indicate whether or not translation should be disabled
      *
      * @param  bool $flag
-     * @return \Zend\Validator\AbstractValidator
+     * @return \Zend2\Validator\AbstractValidator
      */
     public function setTranslatorDisabled($flag)
     {

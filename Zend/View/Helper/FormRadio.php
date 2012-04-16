@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper;
+namespace Zend2\View\Helper;
 
 /**
  * Helper to generate a set of radio button elements
  *
- * @uses       \Zend\Filter\Alnum
- * @uses       \Zend\View\Helper\FormElement
- * @category   Zend
- * @package    Zend_View
+ * @uses       \Zend2\Filter\Alnum
+ * @uses       \Zend2\View\Helper\FormElement
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class FormRadio extends FormElement
@@ -120,12 +120,12 @@ class FormRadio extends FormElement
 
         // XHTML or HTML end tag?
         $endTag = ' />';
-        if ($this->view instanceof \Zend\Loader\Pluggable && !$this->view->plugin('doctype')->isXhtml()) {
+        if ($this->view instanceof \Zend2\Loader\Pluggable && !$this->view->plugin('doctype')->isXhtml()) {
             $endTag= '>';
         }
 
         // add radio buttons to the list.
-        $filter = new \Zend\Filter\Alnum();
+        $filter = new \Zend2\Filter\Alnum();
         foreach ($options as $opt_value => $opt_label) {
 
             // Should the label be escaped?

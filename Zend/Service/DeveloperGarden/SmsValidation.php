@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_Client_AbstractClient
- * @uses       Zend_Service_DeveloperGarden_Request_SmsValidation_GetValidatedNumbers
- * @uses       Zend_Service_DeveloperGarden_Request_SmsValidation_Invalidate
- * @uses       Zend_Service_DeveloperGarden_Request_SmsValidation_SendValidationKeyword
- * @uses       Zend_Service_DeveloperGarden_Request_SmsValidation_Validate
- * @uses       Zend_Service_DeveloperGarden_Response_SmsValidation_GetValidatedNumbersResponse
- * @uses       Zend_Service_DeveloperGarden_Response_SmsValidation_InvalidateResponse
- * @uses       Zend_Service_DeveloperGarden_Response_SmsValidation_SendValidationKeywordResponse
- * @uses       Zend_Service_DeveloperGarden_Response_SmsValidation_ValidatedNumber
- * @uses       Zend_Service_DeveloperGarden_Response_SmsValidation_ValidateResponse
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Client_AbstractClient
+ * @uses       Zend2_Service_DeveloperGarden_Request_SmsValidation_GetValidatedNumbers
+ * @uses       Zend2_Service_DeveloperGarden_Request_SmsValidation_Invalidate
+ * @uses       Zend2_Service_DeveloperGarden_Request_SmsValidation_SendValidationKeyword
+ * @uses       Zend2_Service_DeveloperGarden_Request_SmsValidation_Validate
+ * @uses       Zend2_Service_DeveloperGarden_Response_SmsValidation_GetValidatedNumbersResponse
+ * @uses       Zend2_Service_DeveloperGarden_Response_SmsValidation_InvalidateResponse
+ * @uses       Zend2_Service_DeveloperGarden_Response_SmsValidation_SendValidationKeywordResponse
+ * @uses       Zend2_Service_DeveloperGarden_Response_SmsValidation_ValidatedNumber
+ * @uses       Zend2_Service_DeveloperGarden_Response_SmsValidation_ValidateResponse
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_SmsValidation extends Zend_Service_DeveloperGarden_Client_AbstractClient
+class Zend2_Service_DeveloperGarden_SmsValidation extends Zend2_Service_DeveloperGarden_Client_AbstractClient
 {
 // @codeCoverageIgnoreStart
     /**
@@ -61,11 +61,11 @@ class Zend_Service_DeveloperGarden_SmsValidation extends Zend_Service_DeveloperG
      *
      */
     protected $_classMap = array(
-        'getValidatedNumbersResponse'   => 'Zend_Service_DeveloperGarden_Response_SmsValidation_GetValidatedNumbersResponse',
-        'ValidatedNumber'               => 'Zend_Service_DeveloperGarden_Response_SmsValidation_ValidatedNumber',
-        'sendValidationKeywordResponse' => 'Zend_Service_DeveloperGarden_Response_SmsValidation_SendValidationKeywordResponse',
-        'validateResponse'              => 'Zend_Service_DeveloperGarden_Response_SmsValidation_ValidateResponse',
-        'invalidateResponse'            => 'Zend_Service_DeveloperGarden_Response_SmsValidation_InvalidateResponse',
+        'getValidatedNumbersResponse'   => 'Zend2_Service_DeveloperGarden_Response_SmsValidation_GetValidatedNumbersResponse',
+        'ValidatedNumber'               => 'Zend2_Service_DeveloperGarden_Response_SmsValidation_ValidatedNumber',
+        'sendValidationKeywordResponse' => 'Zend2_Service_DeveloperGarden_Response_SmsValidation_SendValidationKeywordResponse',
+        'validateResponse'              => 'Zend2_Service_DeveloperGarden_Response_SmsValidation_ValidateResponse',
+        'invalidateResponse'            => 'Zend2_Service_DeveloperGarden_Response_SmsValidation_InvalidateResponse',
     );
 
     /**
@@ -73,11 +73,11 @@ class Zend_Service_DeveloperGarden_SmsValidation extends Zend_Service_DeveloperG
      *
      * @param string $keyword
      * @param string $number
-     * @return Zend_Service_DeveloperGarden_Response_SmsValidation_ValidateResponse
+     * @return Zend2_Service_DeveloperGarden_Response_SmsValidation_ValidateResponse
      */
     public function validate($keyword = null, $number = null)
     {
-        $request = new Zend_Service_DeveloperGarden_Request_SmsValidation_Validate(
+        $request = new Zend2_Service_DeveloperGarden_Request_SmsValidation_Validate(
             $this->getEnvironment(),
             $keyword,
             $number
@@ -92,11 +92,11 @@ class Zend_Service_DeveloperGarden_SmsValidation extends Zend_Service_DeveloperG
      * invalidate the given number
      *
      * @param string $number
-     * @return Zend_Service_DeveloperGarden_Response_SmsValidation_InvalidateResponse
+     * @return Zend2_Service_DeveloperGarden_Response_SmsValidation_InvalidateResponse
      */
     public function inValidate($number = null)
     {
-        $request = new Zend_Service_DeveloperGarden_Request_SmsValidation_Invalidate(
+        $request = new Zend2_Service_DeveloperGarden_Request_SmsValidation_Invalidate(
             $this->getEnvironment(),
             $number
         );
@@ -117,11 +117,11 @@ class Zend_Service_DeveloperGarden_SmsValidation extends Zend_Service_DeveloperG
      * @param string $originator
      * @param integer $account
      *
-     * @return Zend_Service_DeveloperGarden_Request_SmsValidation_SendValidationKeywordResponse
+     * @return Zend2_Service_DeveloperGarden_Request_SmsValidation_SendValidationKeywordResponse
      */
     public function sendValidationKeyword($number = null, $message = null, $originator = null, $account = null)
     {
-        $request = new Zend_Service_DeveloperGarden_Request_SmsValidation_SendValidationKeyword(
+        $request = new Zend2_Service_DeveloperGarden_Request_SmsValidation_SendValidationKeyword(
             $this->getEnvironment()
         );
         $request->setNumber($number)
@@ -137,11 +137,11 @@ class Zend_Service_DeveloperGarden_SmsValidation extends Zend_Service_DeveloperG
     /**
      * returns a list of validated numbers
      *
-     * @return Zend_Service_DeveloperGarden_Response_SmsValidation_GetValidatedNumbersResponse
+     * @return Zend2_Service_DeveloperGarden_Response_SmsValidation_GetValidatedNumbersResponse
      */
     public function getValidatedNumbers()
     {
-        $request = new Zend_Service_DeveloperGarden_Request_SmsValidation_GetValidatedNumbers(
+        $request = new Zend2_Service_DeveloperGarden_Request_SmsValidation_GetValidatedNumbers(
             $this->getEnvironment()
         );
         return $this->getSoapClient()

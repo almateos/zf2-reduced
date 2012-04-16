@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,37 +12,37 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Spreadsheets
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Spreadsheets;
+namespace Zend2\GData\Spreadsheets;
 
-use Zend\GData\Spreadsheets;
+use Zend2\GData\Spreadsheets;
 
 /**
  * Concrete class for working with Cell entries.
  *
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\Spreadsheets
- * @uses       \Zend\GData\Spreadsheets\Extension\Cell
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\Spreadsheets
+ * @uses       \Zend2\GData\Spreadsheets\Extension\Cell
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Spreadsheets
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class CellEntry extends \Zend\GData\Entry
+class CellEntry extends \Zend2\GData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\Spreadsheets\CellEntry';
+    protected $_entryClassName = 'Zend2\GData\Spreadsheets\CellEntry';
     protected $_cell;
 
     /**
-     * Constructs a new Zend_Gdata_Spreadsheets_CellEntry object.
+     * Constructs a new Zend2_Gdata_Spreadsheets_CellEntry object.
      * @param string $uri (optional)
      * @param DOMElement $element (optional) The DOMElement on which to base this object.
      */
@@ -78,7 +78,7 @@ class CellEntry extends \Zend\GData\Entry
 
     /**
      * Gets the Cell element of this Cell Entry.
-     * @return \Zend\GData\Spreadsheets\Extension\Cell
+     * @return \Zend2\GData\Spreadsheets\Extension\Cell
      */
     public function getCell()
     {
@@ -87,7 +87,7 @@ class CellEntry extends \Zend\GData\Entry
 
     /**
      * Sets the Cell element of this Cell Entry.
-     * @param $cell \Zend\GData\Spreadsheets\Extension\Cell $cell
+     * @param $cell \Zend2\GData\Spreadsheets\Extension\Cell $cell
      */
     public function setCell($cell)
     {

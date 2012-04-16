@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Nirvanix
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Nirvanix\Context;
+namespace Zend2\Service\Nirvanix\Context;
 
 use Traversable,
-    Zend\Http\Client as HttpClient,
-    Zend\Http\Request as HttpRequest,
-    Zend\Http\Response as HttpResponse,
-    Zend\Service\Nirvanix\Exception,
-    Zend\Service\Nirvanix\Response,
-    Zend\Stdlib\ArrayUtils;
+    Zend2\Http\Client as HttpClient,
+    Zend2\Http\Request as HttpRequest,
+    Zend2\Http\Response as HttpResponse,
+    Zend2\Service\Nirvanix\Exception,
+    Zend2\Service\Nirvanix\Response,
+    Zend2\Stdlib\ArrayUtils;
 
 /**
  * The Nirvanix web services are split into namespaces.  This is a proxy class
  * representing one namespace.  It allows calls to the namespace to be made by
  * PHP object calls rather than by having to construct HTTP client requests.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Nirvanix
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Base
@@ -170,7 +170,7 @@ class Base
 
     /**
      * All Nirvanix REST service calls return an XML payload.  This method
-     * makes a Zend_Service_Nirvanix_Response from that XML payload.
+     * makes a Zend2_Service_Nirvanix_Response from that XML payload.
      *
      * @param  HttpResponse  $httpResponse  Raw response from Nirvanix
      * @return Response     Wrapped response

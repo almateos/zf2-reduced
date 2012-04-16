@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\InfoCard\XML\Exception;
+namespace Zend2\InfoCard\XML\Exception;
 
 class RuntimeException
     extends \RuntimeException
-    implements \Zend\InfoCard\XML\Exception
+    implements \Zend2\InfoCard\XML\Exception
 {}

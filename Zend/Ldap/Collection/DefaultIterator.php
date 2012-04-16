@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Ldap
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Ldap
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Ldap\Collection;
+namespace Zend2\Ldap\Collection;
 
-use Zend\Ldap,
-    Zend\Ldap\Exception;
+use Zend2\Ldap,
+    Zend2\Ldap\Exception;
 
 /**
- * Zend\Ldap\Collection\DefaultIterator is the default collection iterator implementation
+ * Zend2\Ldap\Collection\DefaultIterator is the default collection iterator implementation
  * using ext/ldap
  *
- * @category   Zend
- * @package    Zend_Ldap
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Ldap
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DefaultIterator implements \Iterator, \Countable
@@ -126,9 +126,9 @@ class DefaultIterator implements \Iterator, \Countable
      * Sets the attribute name treatment.
      *
      * Can either be one of the following constants
-     * - Zend\Ldap\Collection\DefaultIterator::ATTRIBUTE_TO_LOWER
-     * - Zend\Ldap\Collection\DefaultIterator::ATTRIBUTE_TO_UPPER
-     * - Zend\Ldap\Collection\DefaultIterator::ATTRIBUTE_NATIVE
+     * - Zend2\Ldap\Collection\DefaultIterator::ATTRIBUTE_TO_LOWER
+     * - Zend2\Ldap\Collection\DefaultIterator::ATTRIBUTE_TO_UPPER
+     * - Zend2\Ldap\Collection\DefaultIterator::ATTRIBUTE_NATIVE
      * or a valid callback accepting the attribute's name as it's only
      * argument and returning the new attribute's name.
      *

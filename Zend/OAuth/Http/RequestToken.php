@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\OAuth\Http;
+namespace Zend2\OAuth\Http;
 
-use Zend\OAuth\Http as HTTPClient,
-    Zend\OAuth,
-    Zend\Http;
+use Zend2\OAuth\Http as HTTPClient,
+    Zend2\OAuth,
+    Zend2\Http;
 
 /**
- * @uses       Zend\Http\Client
- * @uses       Zend\OAuth\OAuth
- * @uses       Zend\OAuth\Http
- * @uses       Zend\OAuth\Token\Request
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Http\Client
+ * @uses       Zend2\OAuth\OAuth
+ * @uses       Zend2\OAuth\Http
+ * @uses       Zend2\OAuth\Token\Request
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class RequestToken extends HTTPClient
@@ -46,7 +46,7 @@ class RequestToken extends HTTPClient
     /**
      * Initiate a HTTP request to retrieve a Request Token.
      *
-     * @return Zend\OAuth\Token\Request
+     * @return Zend2\OAuth\Token\Request
      */
     public function execute()
     {

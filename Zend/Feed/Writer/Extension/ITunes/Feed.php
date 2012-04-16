@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Writer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
  
-namespace Zend\Feed\Writer\Extension\ITunes;
+namespace Zend2\Feed\Writer\Extension\ITunes;
 
-use Zend\Feed\Writer,
-    Zend\Uri;
+use Zend2\Feed\Writer,
+    Zend2\Uri;
 
 /**
-* @category Zend
-* @package Zend_Feed_Writer
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @category Zend2
+* @package Zend2_Feed_Writer
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 class Feed
@@ -49,7 +49,7 @@ class Feed
      * Set feed encoding
      * 
      * @param  string $enc 
-     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     * @return Zend2_Feed_Writer_Extension_ITunes_Feed
      */
     public function setEncoding($enc)
     {
@@ -71,7 +71,7 @@ class Feed
      * Set a block value of "yes" or "no". You may also set an empty string.
      *
      * @param  string
-     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     * @return Zend2_Feed_Writer_Extension_ITunes_Feed
      */
     public function setItunesBlock($value)
     {
@@ -91,7 +91,7 @@ class Feed
      * Add feed authors
      * 
      * @param  array $values 
-     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     * @return Zend2_Feed_Writer_Extension_ITunes_Feed
      */
     public function addItunesAuthors(array $values)
     {
@@ -105,7 +105,7 @@ class Feed
      * Add feed author
      * 
      * @param  string $value 
-     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     * @return Zend2_Feed_Writer_Extension_ITunes_Feed
      */
     public function addItunesAuthor($value)
     {
@@ -124,7 +124,7 @@ class Feed
      * Set feed categories
      * 
      * @param  array $values 
-     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     * @return Zend2_Feed_Writer_Extension_ITunes_Feed
      */
     public function setItunesCategories(array $values)
     {
@@ -160,7 +160,7 @@ class Feed
      * Set feed image (icon)
      * 
      * @param  string $value 
-     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     * @return Zend2_Feed_Writer_Extension_ITunes_Feed
      */
     public function setItunesImage($value)
     {
@@ -181,7 +181,7 @@ class Feed
      * Set feed cumulative duration
      * 
      * @param  string $value 
-     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     * @return Zend2_Feed_Writer_Extension_ITunes_Feed
      */
     public function setItunesDuration($value)
     {
@@ -201,7 +201,7 @@ class Feed
      * Set "explicit" flag
      * 
      * @param  bool $value 
-     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     * @return Zend2_Feed_Writer_Extension_ITunes_Feed
      */
     public function setItunesExplicit($value)
     {
@@ -217,7 +217,7 @@ class Feed
      * Set feed keywords
      * 
      * @param  array $value 
-     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     * @return Zend2_Feed_Writer_Extension_ITunes_Feed
      */
     public function setItunesKeywords(array $value)
     {
@@ -239,7 +239,7 @@ class Feed
      * Set new feed URL
      * 
      * @param  string $value 
-     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     * @return Zend2_Feed_Writer_Extension_ITunes_Feed
      */
     public function setItunesNewFeedUrl($value)
     {
@@ -255,7 +255,7 @@ class Feed
      * Add feed owners
      * 
      * @param  array $values 
-     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     * @return Zend2_Feed_Writer_Extension_ITunes_Feed
      */
     public function addItunesOwners(array $values)
     {
@@ -269,7 +269,7 @@ class Feed
      * Add feed owner
      * 
      * @param  string $value 
-     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     * @return Zend2_Feed_Writer_Extension_ITunes_Feed
      */
     public function addItunesOwner(array $value)
     {
@@ -294,7 +294,7 @@ class Feed
      * Set feed subtitle
      * 
      * @param  string $value 
-     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     * @return Zend2_Feed_Writer_Extension_ITunes_Feed
      */
     public function setItunesSubtitle($value)
     {
@@ -310,7 +310,7 @@ class Feed
      * Set feed summary
      * 
      * @param  string $value 
-     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     * @return Zend2_Feed_Writer_Extension_ITunes_Feed
      */
     public function setItunesSummary($value)
     {

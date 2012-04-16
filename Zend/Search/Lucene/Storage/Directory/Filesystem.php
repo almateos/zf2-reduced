@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Storage\Directory;
+namespace Zend2\Search\Lucene\Storage\Directory;
 
-use Zend\Search\Lucene\Storage\Directory,
-    Zend\Search\Lucene\Storage\File,
-    Zend\Search\Lucene;
+use Zend2\Search\Lucene\Storage\Directory,
+    Zend2\Search\Lucene\Storage\File,
+    Zend2\Search\Lucene;
 
 /**
  * FileSystem implementation of Directory abstraction.
  *
- * @uses       \Zend\Search\Lucene\Exception\InvalidArgumentException
- * @uses       \Zend\Search\Lucene\Exception\RuntimeException
- * @uses       \Zend\Search\Lucene\Storage\Directory
- * @uses       \Zend\Search\Lucene\Storage\File\Filesystem
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Exception\InvalidArgumentException
+ * @uses       \Zend2\Search\Lucene\Exception\RuntimeException
+ * @uses       \Zend2\Search\Lucene\Storage\Directory
+ * @uses       \Zend2\Search\Lucene\Storage\File\Filesystem
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Filesystem implements Directory
@@ -48,11 +48,11 @@ class Filesystem implements Directory
     protected $_dirPath = null;
 
     /**
-     * Cache for Zend_Search_Lucene_Storage_File_Filesystem objects
-     * Array: filename => Zend_Search_Lucene_Storage_File object
+     * Cache for Zend2_Search_Lucene_Storage_File_Filesystem objects
+     * Array: filename => Zend2_Search_Lucene_Storage_File object
      *
      * @var array
-     * @throws \Zend\Search\Lucene\Exception
+     * @throws \Zend2\Search\Lucene\Exception
      */
     protected $_fileHandlers;
 
@@ -114,7 +114,7 @@ class Filesystem implements Directory
      * Checks if $path is a directory or tries to create it.
      *
      * @param string $path
-     * @throws \Zend\Search\Lucene\Exception\InvalidArgumentException
+     * @throws \Zend2\Search\Lucene\Exception\InvalidArgumentException
      */
     public function __construct($path)
     {
@@ -177,7 +177,7 @@ class Filesystem implements Directory
      * Creates a new, empty file in the directory with the given $filename.
      *
      * @param string $filename
-     * @return \Zend\Search\Lucene\Storage\File
+     * @return \Zend2\Search\Lucene\Storage\File
      */
     public function createFile($filename)
     {
@@ -199,7 +199,7 @@ class Filesystem implements Directory
      * Removes an existing $filename in the directory.
      *
      * @param string $filename
-     * @throws \Zend\Search\Lucene\Exception\RuntimeException
+     * @throws \Zend2\Search\Lucene\Exception\RuntimeException
      * @return void
      */
     public function deleteFile($filename)
@@ -280,7 +280,7 @@ class Filesystem implements Directory
      *
      * @param string $from
      * @param string $to
-     * @throws \Zend\Search\Lucene\Exception\RuntimeException
+     * @throws \Zend2\Search\Lucene\Exception\RuntimeException
      * @return void
      */
     public function renameFile($from, $to)
@@ -333,7 +333,7 @@ class Filesystem implements Directory
 
 
     /**
-     * Returns a Zend_Search_Lucene_Storage_File object for a given $filename in the directory.
+     * Returns a Zend2_Search_Lucene_Storage_File object for a given $filename in the directory.
      *
      * If $shareHandler option is true, then file handler can be shared between File Object
      * requests. It speed-ups performance, but makes problems with file position.
@@ -342,7 +342,7 @@ class Filesystem implements Directory
      *
      * @param string $filename
      * @param boolean $shareHandler
-     * @return \Zend\Search\Lucene\Storage\File
+     * @return \Zend2\Search\Lucene\Storage\File
      */
     public function getFileObject($filename, $shareHandler = true)
     {

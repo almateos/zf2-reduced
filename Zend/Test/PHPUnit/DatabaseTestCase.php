@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,42 +12,42 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Test
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Test\PHPUnit;
+namespace Zend2\Test\PHPUnit;
 
 /**
- * Generic Testcase for Zend Framework related DbUnit Testing with PHPUnit
+ * Generic Testcase for Zend2 Framework related DbUnit Testing with PHPUnit
  *
  * @uses       PHPUnit_Extensions_Database_Operation_Composite
  * @uses       PHPUnit_Extensions_Database_TestCase
- * @uses       \Zend\Test\PHPUnit\Db\Connection
- * @uses       \Zend\Test\PHPUnit\Db\DataSet\DbTable
- * @uses       \Zend\Test\PHPUnit\Db\DataSet\DbTableDataSet
- * @uses       \Zend\Test\PHPUnit\Db\DataSet\DbRowset
- * @uses       \Zend\Test\PHPUnit\Db\Operation\Insert
- * @uses       \Zend\Test\PHPUnit\Db\Operation\Truncate
- * @category   Zend
- * @package    Zend_Test
+ * @uses       \Zend2\Test\PHPUnit\Db\Connection
+ * @uses       \Zend2\Test\PHPUnit\Db\DataSet\DbTable
+ * @uses       \Zend2\Test\PHPUnit\Db\DataSet\DbTableDataSet
+ * @uses       \Zend2\Test\PHPUnit\Db\DataSet\DbRowset
+ * @uses       \Zend2\Test\PHPUnit\Db\Operation\Insert
+ * @uses       \Zend2\Test\PHPUnit\Db\Operation\Truncate
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class DatabaseTestCase extends \PHPUnit_Extensions_Database_TestCase
 {
     /**
-     * Creates a new Zend Database Connection using the given Adapter and database schema name.
+     * Creates a new Zend2 Database Connection using the given Adapter and database schema name.
      *
-     * @param  \Zend\Db\Adapter\AbstractAdapter $connection
+     * @param  \Zend2\Db\Adapter\AbstractAdapter $connection
      * @param  string $schema
-     * @return \Zend\Test\PHPUnit\Db\Connection
+     * @return \Zend2\Test\PHPUnit\Db\Connection
      */
-    protected function createZendDbConnection(\Zend\Db\Adapter\AbstractAdapter $connection, $schema)
+    protected function createZend2DbConnection(\Zend2\Db\Adapter\AbstractAdapter $connection, $schema)
     {
         return new Db\Connection($connection, $schema);
     }
@@ -55,7 +55,7 @@ abstract class DatabaseTestCase extends \PHPUnit_Extensions_Database_TestCase
     /**
      * Convenience function to get access to the database connection.
      *
-     * @return \Zend\Db\Adapter\AbstractAdapter
+     * @return \Zend2\Db\Adapter\AbstractAdapter
      */
     protected function getAdapter()
     {
@@ -86,10 +86,10 @@ abstract class DatabaseTestCase extends \PHPUnit_Extensions_Database_TestCase
     }
 
     /**
-     * Create a dataset based on multiple Zend_Db_Table instances
+     * Create a dataset based on multiple Zend2_Db_Table instances
      *
      * @param  array $tables
-     * @return \Zend\Test\PHPUnit\Db\DataSet\DbTableDataSet
+     * @return \Zend2\Test\PHPUnit\Db\DataSet\DbTableDataSet
      */
     protected function createDbTableDataSet(array $tables=array())
     {
@@ -101,28 +101,28 @@ abstract class DatabaseTestCase extends \PHPUnit_Extensions_Database_TestCase
     }
 
     /**
-     * Create a table based on one Zend_Db_Table instance
+     * Create a table based on one Zend2_Db_Table instance
      *
-     * @param \Zend\Db\Table\AbstractTable $table
+     * @param \Zend2\Db\Table\AbstractTable $table
      * @param string $where
      * @param string $order
      * @param string $count
      * @param string $offset
-     * @return \Zend\Test\PHPUnit\Db\DataSet\DbTable
+     * @return \Zend2\Test\PHPUnit\Db\DataSet\DbTable
      */
-    protected function createDbTable(\Zend\Db\Table\AbstractTable $table, $where=null, $order=null, $count=null, $offset=null)
+    protected function createDbTable(\Zend2\Db\Table\AbstractTable $table, $where=null, $order=null, $count=null, $offset=null)
     {
         return new Db\DataSet\DbTable($table, $where, $order, $count, $offset);
     }
 
     /**
-     * Create a data table based on a Zend_Db_Table_Rowset instance
+     * Create a data table based on a Zend2_Db_Table_Rowset instance
      *
-     * @param  \Zend\Db\Table\AbstractRowset $rowset
+     * @param  \Zend2\Db\Table\AbstractRowset $rowset
      * @param  string
-     * @return \Zend\Test\PHPUnit\Db\DataSet\DbRowset
+     * @return \Zend2\Test\PHPUnit\Db\DataSet\DbRowset
      */
-    protected function createDbRowset(\Zend\Db\Table\AbstractRowset $rowset, $tableName = null)
+    protected function createDbRowset(\Zend2\Db\Table\AbstractRowset $rowset, $tableName = null)
     {
         return new Db\DataSet\DbRowset($rowset, $tableName);
     }

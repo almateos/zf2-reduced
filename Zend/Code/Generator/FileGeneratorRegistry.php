@@ -1,18 +1,18 @@
 <?php
 
-namespace Zend\Code\Generator;
+namespace Zend2\Code\Generator;
 
-use Zend\Code\Generator\Exception\RuntimeException;
+use Zend2\Code\Generator\Exception\RuntimeException;
 
 class FileGeneratorRegistry
 {
 	/**
-	 * @var array[string]\Zend\Code\Generator\FileGenerator $_fileCodeGenerators registry for Zend\Code\Generator\FileGenerator
+	 * @var array[string]\Zend2\Code\Generator\FileGenerator $_fileCodeGenerators registry for Zend2\Code\Generator\FileGenerator
 	 */
 	static private $_fileCodeGenerators = array();
 	
 	/**
-	 * Registry for the Zend_Code package. Zend_Tool uses this
+	 * Registry for the Zend2_Code package. Zend2_Tool uses this
 	 * 
 	 * @param FileGenerator $fileCodeGenerator
 	 * @param string $fileName

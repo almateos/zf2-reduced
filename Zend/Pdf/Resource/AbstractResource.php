@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Resource;
-use Zend\Pdf\InternalType;
-use Zend\Pdf\ObjectFactory;
-use Zend\Pdf;
+namespace Zend2\Pdf\Resource;
+use Zend2\Pdf\InternalType;
+use Zend2\Pdf\ObjectFactory;
+use Zend2\Pdf;
 
 /**
  * PDF file Resource abstraction
  *
- * @uses       \Zend\Pdf\ObjectFactory
- * @uses       \Zend\Pdf\InternalType
- * @uses       \Zend\Pdf
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\ObjectFactory
+ * @uses       \Zend2\Pdf\InternalType
+ * @uses       \Zend2\Pdf
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractResource
@@ -53,24 +53,24 @@ abstract class AbstractResource
      * doesn't duplicate resource description each time then Resource is rendered
      * (referenced).
      *
-     * @var \Zend\Pdf\ObjectFactory
+     * @var \Zend2\Pdf\ObjectFactory
      */
     protected $_objectFactory;
 
     /**
      * Main resource object
      *
-     * @var \Zend\Pdf\InternalType\IndirectObject
+     * @var \Zend2\Pdf\InternalType\IndirectObject
      */
     protected $_resource;
 
     /**
      * Object constructor.
      *
-     * If resource is not a \Zend\Pdf\InternalType\AbstractTypeObject object,
+     * If resource is not a \Zend2\Pdf\InternalType\AbstractTypeObject object,
      * then stream object with specified value is generated.
      *
-     * @param \Zend\Pdf\InternalType\AbstractTypeObject|string $resource
+     * @param \Zend2\Pdf\InternalType\AbstractTypeObject|string $resource
      */
     public function __construct($resource)
     {
@@ -88,7 +88,7 @@ abstract class AbstractResource
      */
     public function __clone()
     {
-        $factory = \Zend\Pdf\ObjectFactory::createFactory(1);
+        $factory = \Zend2\Pdf\ObjectFactory::createFactory(1);
         $processed = array();
 
         // Clone dictionary object.
@@ -113,9 +113,9 @@ abstract class AbstractResource
      * so it can be used within other docs.
      *
      * @internal
-     * @param \Zend\Pdf\ObjectFactory $factory
+     * @param \Zend2\Pdf\ObjectFactory $factory
      * @param array $processed
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function clonePage($factory, &$processed)
     {
@@ -140,7 +140,7 @@ abstract class AbstractResource
      * Used to reference resource in an internal PDF data structures (resource dictionaries)
      *
      * @internal
-     * @return \Zend\Pdf\InternalType\IndirectObject
+     * @return \Zend2\Pdf\InternalType\IndirectObject
      */
     public function getResource()
     {
@@ -151,7 +151,7 @@ abstract class AbstractResource
      * Get factory.
      *
      * @internal
-     * @return \Zend\Pdf\ObjectFactory
+     * @return \Zend2\Pdf\ObjectFactory
      */
     public function getFactory()
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search\QueryEntry;
+namespace Zend2\Search\Lucene\Search\QueryEntry;
 
 /**
- * @uses       \Zend\Search\Lucene\Search\QueryEntry\AbstractQueryEntry
- * @uses       \Zend\Search\Lucene\Search\Query\Fuzzy
- * @uses       \Zend\Search\Lucene\Search\Query\Preprocessing\Fuzzy
- * @uses       \Zend\Search\Lucene\Search\Query\Preprocessing\Term
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Search\QueryEntry\AbstractQueryEntry
+ * @uses       \Zend2\Search\Lucene\Search\Query\Fuzzy
+ * @uses       \Zend2\Search\Lucene\Search\Query\Preprocessing\Fuzzy
+ * @uses       \Zend2\Search\Lucene\Search\Query\Preprocessing\Term
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Term extends AbstractQueryEntry
@@ -88,7 +88,7 @@ class Term extends AbstractQueryEntry
         if ($parameter !== null) {
             $this->_similarity = $parameter;
         } else {
-            $this->_similarity = \Zend\Search\Lucene\Search\Query\Fuzzy::DEFAULT_MIN_SIMILARITY;
+            $this->_similarity = \Zend2\Search\Lucene\Search\Query\Fuzzy::DEFAULT_MIN_SIMILARITY;
         }
     }
 
@@ -96,13 +96,13 @@ class Term extends AbstractQueryEntry
      * Transform entry to a subquery
      *
      * @param string $encoding
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
-     * @throws \Zend\Search\Lucene\Search\Exception\QueryParserException
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
+     * @throws \Zend2\Search\Lucene\Search\Exception\QueryParserException
      */
     public function getQuery($encoding)
     {
         if ($this->_fuzzyQuery) {
-            $query = new \Zend\Search\Lucene\Search\Query\Preprocessing\Fuzzy($this->_term,
+            $query = new \Zend2\Search\Lucene\Search\Query\Preprocessing\Fuzzy($this->_term,
                                                                              $encoding,
                                                                              ($this->_field !== null)?
                                                                                   iconv($encoding, 'UTF-8', $this->_field) :
@@ -114,7 +114,7 @@ class Term extends AbstractQueryEntry
         }
 
 
-        $query = new \Zend\Search\Lucene\Search\Query\Preprocessing\Term($this->_term,
+        $query = new \Zend2\Search\Lucene\Search\Query\Preprocessing\Term($this->_term,
                                                                         $encoding,
                                                                         ($this->_field !== null)?
                                                                               iconv($encoding, 'UTF-8', $this->_field) :

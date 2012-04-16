@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,22 +13,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Books
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData;
+namespace Zend2\GData;
 
 /**
  * Service class for interacting with the Books service
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Books
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Books extends GData
@@ -39,7 +39,7 @@ class Books extends GData
     const AUTH_SERVICE_NAME = 'print';
 
     /**
-     * Namespaces used for Zend_Gdata_Books
+     * Namespaces used for Zend2_Gdata_Books
      *
      * @var array
      */
@@ -49,16 +49,16 @@ class Books extends GData
     );
 
     /**
-     * Create Zend_Gdata_Books object
+     * Create Zend2_Gdata_Books object
      *
-     * @param \Zend\Http\Client $client (optional) The HTTP client to use when
+     * @param \Zend2\Http\Client $client (optional) The HTTP client to use when
      *          when communicating with the Google servers.
      * @param string $applicationId The identity of the app in the form of Company-AppName-Version
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('Zend\GData\Books');
-        $this->registerPackage('Zend\GData\Books\Extension');
+        $this->registerPackage('Zend2\GData\Books');
+        $this->registerPackage('Zend2\GData\Books\Extension');
         parent::__construct($client, $applicationId);
         $this->_httpClient->setParameterPost(array('service' => self::AUTH_SERVICE_NAME));
      }
@@ -66,10 +66,10 @@ class Books extends GData
     /**
      * Retrieves a feed of volumes.
      *
-     * @param \Zend\GData\Query|string|null $location (optional) The URL to
-     *        query or a Zend_Gdata_Query object from which a URL can be
+     * @param \Zend2\GData\Query|string|null $location (optional) The URL to
+     *        query or a Zend2_Gdata_Query object from which a URL can be
      *        determined.
-     * @return \Zend\GData\Books\VolumeFeed The feed of volumes found at the
+     * @return \Zend2\GData\Books\VolumeFeed The feed of volumes found at the
      *         specified URL.
      */
     public function getVolumeFeed($location = null)
@@ -81,17 +81,17 @@ class Books extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\Books\VolumeFeed');
+        return parent::getFeed($uri, 'Zend2\GData\Books\VolumeFeed');
     }
 
     /**
      * Retrieves a specific volume entry.
      *
      * @param string|null $volumeId The volumeId of interest.
-     * @param \Zend\GData\Query|string|null $location (optional) The URL to
-     *        query or a Zend_Gdata_Query object from which a URL can be
+     * @param \Zend2\GData\Query|string|null $location (optional) The URL to
+     *        query or a Zend2_Gdata_Query object from which a URL can be
      *        determined.
-     * @return \Zend\GData\Books\VolumeEntry The feed of volumes found at the
+     * @return \Zend2\GData\Books\VolumeEntry The feed of volumes found at the
      *         specified URL.
      */
     public function getVolumeEntry($volumeId = null, $location = null)
@@ -103,15 +103,15 @@ class Books extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\Books\VolumeEntry');
+        return parent::getEntry($uri, 'Zend2\GData\Books\VolumeEntry');
     }
 
     /**
      * Retrieves a feed of volumes, by default the User library feed.
      *
-     * @param \Zend\GData\Query|string|null $location (optional) The URL to
+     * @param \Zend2\GData\Query|string|null $location (optional) The URL to
      *        query.
-     * @return \Zend\GData\Books\VolumeFeed The feed of volumes found at the
+     * @return \Zend2\GData\Books\VolumeFeed The feed of volumes found at the
      *         specified URL.
      */
     public function getUserLibraryFeed($location = null)
@@ -121,15 +121,15 @@ class Books extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\Books\VolumeFeed');
+        return parent::getFeed($uri, 'Zend2\GData\Books\VolumeFeed');
     }
 
     /**
      * Retrieves a feed of volumes, by default the User annotation feed
      *
-     * @param \Zend\GData\Query|string|null $location (optional) The URL to
+     * @param \Zend2\GData\Query|string|null $location (optional) The URL to
      *        query.
-     * @return \Zend\GData\Books\VolumeFeed The feed of volumes found at the
+     * @return \Zend2\GData\Books\VolumeFeed The feed of volumes found at the
      *         specified URL.
      */
     public function getUserAnnotationFeed($location = null)
@@ -139,16 +139,16 @@ class Books extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\Books\VolumeFeed');
+        return parent::getFeed($uri, 'Zend2\GData\Books\VolumeFeed');
     }
 
     /**
      * Insert a Volume / Annotation
      *
-     * @param \Zend\GData\Books\VolumeEntry $entry
-     * @param \Zend\GData\Query|string|null $location (optional) The URL to
+     * @param \Zend2\GData\Books\VolumeEntry $entry
+     * @param \Zend2\GData\Query|string|null $location (optional) The URL to
      *        query
-     * @return \Zend\GData\Books\VolumeEntry The inserted volume entry.
+     * @return \Zend2\GData\Books\VolumeEntry The inserted volume entry.
      */
     public function insertVolume($entry, $location = null)
     {
@@ -158,13 +158,13 @@ class Books extends GData
             $uri = $location;
         }
         return parent::insertEntry(
-            $entry, $uri, 'Zend\GData\Books\VolumeEntry');
+            $entry, $uri, 'Zend2\GData\Books\VolumeEntry');
     }
 
     /**
      * Delete a Volume
      *
-     * @param \Zend\GData\Books\VolumeEntry $entry
+     * @param \Zend2\GData\Books\VolumeEntry $entry
      * @return void
      */
     public function deleteVolume($entry)

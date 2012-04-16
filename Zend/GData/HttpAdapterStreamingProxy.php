@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,25 +13,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData;
+namespace Zend2\GData;
 
-use Zend\Http\Client\Adapter;
+use Zend2\Http\Client\Adapter;
 
 /**
  * Extends the proxy HTTP adapter to handle streams instead of discrete body
  * strings.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class HttpAdapterStreamingProxy extends Adapter\Proxy
@@ -47,7 +47,7 @@ class HttpAdapterStreamingProxy extends Adapter\Proxy
      * Send request to the proxy server with streaming support
      *
      * @param string        $method
-     * @param \Zend\Uri\Uri $uri
+     * @param \Zend2\Uri\Uri $uri
      * @param string        $http_ver
      * @param array         $headers
      * @param string        $body
@@ -77,7 +77,7 @@ class HttpAdapterStreamingProxy extends Adapter\Proxy
 
         // Add Proxy-Authorization header
         if ($this->config['proxy_user'] && ! isset($headers['proxy-authorization'])) {
-            $headers['proxy-authorization'] = \Zend\Http\Client::encodeAuthHeader(
+            $headers['proxy-authorization'] = \Zend2\Http\Client::encodeAuthHeader(
                 $this->config['proxy_user'], $this->config['proxy_pass'], $this->config['proxy_auth']
             );
         }

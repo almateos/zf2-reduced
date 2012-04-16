@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\Form\Element;
+namespace Zend2\Dojo\Form\Element;
 
-use Zend\Form\Element\Exception;
+use Zend2\Form\Element\Exception;
 
 /**
  * NumberTextBox dijit
  *
- * @uses       \Zend\Dojo\Form\Element\ValidationTextBox
- * @uses       \Zend\Form\Element\Exception
- * @package    Zend_Dojo
+ * @uses       \Zend2\Dojo\Form\Element\ValidationTextBox
+ * @uses       \Zend2\Form\Element\Exception
+ * @package    Zend2_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class NumberTextBox extends ValidationTextBox
@@ -56,7 +56,7 @@ class NumberTextBox extends ValidationTextBox
      * Set locale
      *
      * @param  string $locale
-     * @return \Zend\Dojo\Form\Element\NumberTextBox
+     * @return \Zend2\Dojo\Form\Element\NumberTextBox
      */
     public function setLocale($locale)
     {
@@ -78,7 +78,7 @@ class NumberTextBox extends ValidationTextBox
      * Set numeric format pattern
      *
      * @param  string $pattern
-     * @return \Zend\Dojo\Form\Element\NumberTextBox
+     * @return \Zend2\Dojo\Form\Element\NumberTextBox
      */
     public function setPattern($pattern)
     {
@@ -101,7 +101,7 @@ class NumberTextBox extends ValidationTextBox
      *
      * @see    $_allowedTypes
      * @param  string $type
-     * @return \Zend\Dojo\Form\Element\NumberTextBox
+     * @return \Zend2\Dojo\Form\Element\NumberTextBox
      */
     public function setType($type)
     {
@@ -128,7 +128,7 @@ class NumberTextBox extends ValidationTextBox
      * Set decimal places
      *
      * @param  int $places
-     * @return \Zend\Dojo\Form\Element\NumberTextBox
+     * @return \Zend2\Dojo\Form\Element\NumberTextBox
      */
     public function setPlaces($places)
     {
@@ -150,7 +150,7 @@ class NumberTextBox extends ValidationTextBox
      * Set strict flag
      *
      * @param  bool $strict
-     * @return \Zend\Dojo\Form\Element\NumberTextBox
+     * @return \Zend2\Dojo\Form\Element\NumberTextBox
      */
     public function setStrict($flag)
     {

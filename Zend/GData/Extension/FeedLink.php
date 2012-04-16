@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Extension;
+namespace Zend2\GData\Extension;
 
-use Zend\GData\Extension;
+use Zend2\GData\Extension;
 
 /**
  * Represents the gd:feedLink element
  *
- * @uses       \Zend\GData\Extension
- * @uses       \Zend\GData\Feed
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Extension
+ * @uses       \Zend2\GData\Feed
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class FeedLink extends Extension
@@ -81,7 +81,7 @@ class FeedLink extends Extension
         $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
         switch ($absoluteNodeName) {
             case $this->lookupNamespace('atom') . ':' . 'feed';
-                $feed = new \Zend\GData\Feed();
+                $feed = new \Zend2\GData\Feed();
                 $feed->transferFromDOM($child);
                 $this->_feed = $feed;
                 break;
@@ -108,7 +108,7 @@ class FeedLink extends Extension
                 $this->_readOnly = false;
             }
             else {
-                throw new \Zend\GData\App\InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
+                throw new \Zend2\GData\App\InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
             }
             break;
         case 'rel':

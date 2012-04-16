@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Amf
+ * @category   Zend2
+ * @package    Zend2_Amf
  * @subpackage Parse_Amf0
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Amf\Parser\Amf0;
-use Zend\Amf\Parser\AbstractDeserializer,
-    Zend\Amf,
-    Zend\Amf\Parser\Exception as ParserException;
+namespace Zend2\Amf\Parser\Amf0;
+use Zend2\Amf\Parser\AbstractDeserializer,
+    Zend2\Amf,
+    Zend2\Amf\Parser\Exception as ParserException;
 
 /**
  * Read an AMF0 input stream and convert it into PHP data types
  *
  * @todo       Implement Typed Object Class Mapping
  * @todo       Class could be implmented as Factory Class with each data type it's own class
- * @uses       Zend\Amf\Constants
- * @uses       Zend\Amf\Exception
- * @uses       Zend\Amf\Parser\Amf3\Deserializer
- * @uses       Zend\Amf\Parser\Deserializer
- * @uses       Zend\Amf\Parser\TypeLoader
- * @uses       Zend\Date\Date
- * @package    Zend_Amf
+ * @uses       Zend2\Amf\Constants
+ * @uses       Zend2\Amf\Exception
+ * @uses       Zend2\Amf\Parser\Amf3\Deserializer
+ * @uses       Zend2\Amf\Parser\Deserializer
+ * @uses       Zend2\Amf\Parser\TypeLoader
+ * @uses       Zend2\Date\Date
+ * @package    Zend2_Amf
  * @subpackage Parse_Amf0
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Deserializer extends AbstractDeserializer
@@ -64,7 +64,7 @@ class Deserializer extends AbstractDeserializer
      *
      * @param  integer $typeMarker
      * @return mixed whatever the data type is of the marker in php
-     * @throws Zend\Amf\Exception for invalid type
+     * @throws Zend2\Amf\Exception for invalid type
      */
     public function readTypeMarker($typeMarker = null)
     {
@@ -177,7 +177,7 @@ class Deserializer extends AbstractDeserializer
      * Called when marker type is 7.
      *
      * @return object
-     * @throws Zend\Amf\Exception for invalid reference keys
+     * @throws Zend2\Amf\Exception for invalid reference keys
      */
     public function readReference()
     {
@@ -222,9 +222,9 @@ class Deserializer extends AbstractDeserializer
     }
 
     /**
-     * Convert AS Date to Zend_Date
+     * Convert AS Date to Zend2_Date
      *
-     * @return Zend\Date\Date
+     * @return Zend2\Date\Date
      */
     public function readDate()
     {
@@ -236,7 +236,7 @@ class Deserializer extends AbstractDeserializer
         // so read and ignore.
         $offset = $this->_stream->readInt();
 
-        $date   = new \Zend\Date\Date($timestamp);
+        $date   = new \Zend2\Date\Date($timestamp);
         return $date;
     }
 
@@ -259,7 +259,7 @@ class Deserializer extends AbstractDeserializer
      *
      * @todo   implement Typed Class mapping
      * @return object|array
-     * @throws Zend\Amf\Exception if unable to load type
+     * @throws Zend2\Amf\Exception if unable to load type
      */
     public function readTypedObject()
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator\File;
-use Zend\Validator,
-    Zend\Validator\Exception;
+namespace Zend2\Validator\File;
+use Zend2\Validator,
+    Zend2\Validator\Exception;
 
 /**
  * Validator for counting all given files
  *
- * @uses      \Zend\Validator\AbstractValidator
- * @uses      \Zend\Validator\Exception
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Validator\AbstractValidator
+ * @uses      \Zend2\Validator\Exception
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Count extends Validator\AbstractValidator
@@ -92,7 +92,7 @@ class Count extends Validator\AbstractValidator
      * 'min': Minimum filecount
      * 'max': Maximum filecount
      *
-     * @param  integer|array|\Zend\Config\Config $options Options for the adapter
+     * @param  integer|array|\Zend2\Config\Config $options Options for the adapter
      * @return void
      */
     public function __construct($options = null)
@@ -123,8 +123,8 @@ class Count extends Validator\AbstractValidator
      * Sets the minimum file count
      *
      * @param  integer|array $min The minimum file count
-     * @return \Zend\Validator\File\Count Provides a fluent interface
-     * @throws \Zend\Validator\Exception When min is greater than max
+     * @return \Zend2\Validator\File\Count Provides a fluent interface
+     * @throws \Zend2\Validator\Exception When min is greater than max
      */
     public function setMin($min)
     {
@@ -160,8 +160,8 @@ class Count extends Validator\AbstractValidator
      * Sets the maximum file count
      *
      * @param  integer|array $max The maximum file count
-     * @return \Zend\Validator\StringLength Provides a fluent interface
-     * @throws \Zend\Validator\Exception When max is smaller than min
+     * @return \Zend2\Validator\StringLength Provides a fluent interface
+     * @throws \Zend2\Validator\Exception When max is smaller than min
      */
     public function setMax($max)
     {
@@ -211,7 +211,7 @@ class Count extends Validator\AbstractValidator
      * must give all files with the first call, otherwise you will get an false.
      *
      * @param  string|array $value Filenames to check for count
-     * @param  array        $file  File data from \Zend\File\Transfer\Transfer
+     * @param  array        $file  File data from \Zend2\File\Transfer\Transfer
      * @return boolean
      */
     public function isValid($value, $file = null)

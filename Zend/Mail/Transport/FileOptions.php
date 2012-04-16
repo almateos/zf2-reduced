@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Transport
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail\Transport;
+namespace Zend2\Mail\Transport;
 
-use Zend\Mail\Exception,
-    Zend\Stdlib\Options;
+use Zend2\Mail\Exception,
+    Zend2\Stdlib\Options;
 
 /**
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Transport
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class FileOptions extends Options
@@ -105,7 +105,7 @@ class FileOptions extends Options
     {
         if (null === $this->callback) {
             $this->setCallback(function($transport) {
-                return 'ZendMail_' . time() . '_' . mt_rand() . '.tmp';
+                return 'Zend2Mail_' . time() . '_' . mt_rand() . '.tmp';
             });
         }
         return $this->callback;

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Transport
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail\Transport;
+namespace Zend2\Mail\Transport;
 
-use Zend\Mail\Exception,
-    Zend\Stdlib\Options;
+use Zend2\Mail\Exception,
+    Zend2\Stdlib\Options;
 
 /**
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Transport
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class SmtpOptions extends Options
@@ -92,8 +92,8 @@ class SmtpOptions extends Options
     /**
      * Get connection class
      *
-     * This should be either the class Zend\Mail\Protocol\Smtp or a class 
-     * extending it -- typically a class in the Zend\Mail\Protocol\Smtp\Auth
+     * This should be either the class Zend2\Mail\Protocol\Smtp or a class 
+     * extending it -- typically a class in the Zend2\Mail\Protocol\Smtp\Auth
      * namespace.
      *
      * @return null|string

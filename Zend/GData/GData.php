@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,28 +13,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData;
+namespace Zend2\GData;
 
 /**
  * Provides functionality to interact with Google data APIs
  * Subclasses exist to implement service-specific features
  *
  * As the Google data API protocol is based upon the Atom Publishing Protocol
- * (APP), Gdata functionality extends the appropriate Zend_Gdata_App classes
+ * (APP), Gdata functionality extends the appropriate Zend2_Gdata_App classes
  *
  * @link http://code.google.com/apis/gdata/overview.html
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class GData extends App
@@ -60,11 +60,11 @@ class GData extends App
      * @var array
      */
     protected $_registeredPackages = array(
-        '\Zend\GData\Kind',
-        '\Zend\GData\Extension',
-        '\Zend\GData\GBase',
-        '\Zend\GData\App\Extension',
-        '\Zend\GData\App'
+        '\Zend2\GData\Kind',
+        '\Zend2\GData\Extension',
+        '\Zend2\GData\GBase',
+        '\Zend2\GData\App\Extension',
+        '\Zend2\GData\App'
         );
 
     /**
@@ -82,21 +82,21 @@ class GData extends App
     /**
      * Client object used to communicate
      *
-     * @var \Zend\GData\HttpClient
+     * @var \Zend2\GData\HttpClient
      */
     protected $_httpClient;
 
     /**
      * Client object used to communicate in static context
      *
-     * @var \Zend\GData\HttpClient
+     * @var \Zend2\GData\HttpClient
      */
     protected static $_staticHttpClient = null;
 
     /**
      * Create Gdata object
      *
-     * @param \Zend\Http\Client $client
+     * @param \Zend2\Http\Client $client
      * @param string $applicationId The identity of the app in the form of
      *          Company-AppName-Version
      */
@@ -109,16 +109,16 @@ class GData extends App
      * Imports a feed located at $uri.
      *
      * @param  string $uri
-     * @param  \Zend\Http\Client $client The client used for communication
+     * @param  \Zend2\Http\Client $client The client used for communication
      * @param  string $className The class which is used as the return type
-     * @throws \Zend\GData\App\Exception
-     * @return string|\Zend\GData\App\Feed Returns string only if the object
+     * @throws \Zend2\GData\App\Exception
+     * @return string|\Zend2\GData\App\Feed Returns string only if the object
      *                                    mapping has been disabled explicitly
      *                                    by passing false to the
      *                                    useObjectMapping() function.
      */
     public static function import($uri, $client = null,
-        $className='\Zend\GData\Feed')
+        $className='\Zend2\GData\Feed')
     {
         $app = new GData($client);
         $requestData = $app->decodeRequest('GET', $uri);
@@ -136,15 +136,15 @@ class GData extends App
     /**
      * Retrieve feed as string or object
      *
-     * @param mixed $location The location as string or \Zend\GData\Query
+     * @param mixed $location The location as string or \Zend2\GData\Query
      * @param string $className The class type to use for returning the feed
-     * @throws \Zend\GData\App\InvalidArgumentException
-     * @return string|\Zend\GData\App\Feed Returns string only if the object
+     * @throws \Zend2\GData\App\InvalidArgumentException
+     * @return string|\Zend2\GData\App\Feed Returns string only if the object
      *                                    mapping has been disabled explicitly
      *                                    by passing false to the
      *                                    useObjectMapping() function.
      */
-    public function getFeed($location, $className = '\Zend\GData\Feed')
+    public function getFeed($location, $className = '\Zend2\GData\Feed')
     {
         if (is_string($location)) {
             $uri = $location;
@@ -153,7 +153,7 @@ class GData extends App
         } else {
             throw new App\InvalidArgumentException(
                     'You must specify the location as either a string URI ' .
-                    'or a child of Zend\GData\Query');
+                    'or a child of Zend2\GData\Query');
         }
         return parent::getFeed($uri, $className);
     }
@@ -161,14 +161,14 @@ class GData extends App
     /**
      * Retrieve entry as string or object
      *
-     * @param mixed $location The location as string or \Zend\GData\Query
-     * @throws \Zend\GData\App\InvalidArgumentException
-     * @return string|\Zend\GData\App\Entry Returns string only if the object
+     * @param mixed $location The location as string or \Zend2\GData\Query
+     * @throws \Zend2\GData\App\InvalidArgumentException
+     * @return string|\Zend2\GData\App\Entry Returns string only if the object
      *                                     mapping has been disabled explicitly
      *                                     by passing false to the
      *                                     useObjectMapping() function.
      */
-    public function getEntry($location, $className='\Zend\GData\Entry')
+    public function getEntry($location, $className='\Zend2\GData\Entry')
     {
         if (is_string($location)) {
             $uri = $location;
@@ -177,7 +177,7 @@ class GData extends App
         } else {
             throw new App\InvalidArgumentException(
                     'You must specify the location as either a string URI ' .
-                    'or a child of Zend\GData\Query');
+                    'or a child of Zend2\GData\Query');
         }
         return parent::getEntry($uri, $className);
     }
@@ -185,8 +185,8 @@ class GData extends App
     /**
      * Performs a HTTP request using the specified method.
      *
-     * Overrides the definition in the parent (Zend_Gdata_App)
-     * and uses the Zend_Gdata_HttpClient functionality
+     * Overrides the definition in the parent (Zend2_Gdata_App)
+     * and uses the Zend2_Gdata_HttpClient functionality
      * to filter the HTTP requests and responses.
      *
      * @param string $method The HTTP method for the request -
@@ -200,7 +200,7 @@ class GData extends App
      *                            request body
      * @param int $remainingRedirects Number of redirects to follow
      *                                if requests results in one
-     * @return \Zend\Http\Response The response object
+     * @return \Zend2\Http\Response The response object
      */
     public function performHttpRequest($method, $url, $headers = array(), $body = null, $contentType = null, $remainingRedirects = null)
     {

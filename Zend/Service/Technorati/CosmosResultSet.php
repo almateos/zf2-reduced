@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Technorati;
+namespace Zend2\Service\Technorati;
 
 use DomDocument;
 
 /**
  * Represents a Technorati Cosmos query result set.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class CosmosResultSet extends ResultSet
@@ -37,7 +37,7 @@ class CosmosResultSet extends ResultSet
     /**
      * Technorati weblog url, if queried URL is a valid weblog.
      *
-     * @var     \Zend\Uri\Http
+     * @var     \Zend2\Uri\Http
      * @access  protected
      */
     protected $url;
@@ -117,7 +117,7 @@ class CosmosResultSet extends ResultSet
     /**
      * Returns the weblog URL.
      *
-     * @return  \Zend\Uri\Http
+     * @return  \Zend2\Uri\Http
      */
     public function getUrl()
     {

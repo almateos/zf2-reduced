@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Cache\Storage;
+namespace Zend2\Cache\Storage;
 
 use stdClass,
-    Zend\Cache\Exception,
-    Zend\EventManager\EventManager;
+    Zend2\Cache\Exception,
+    Zend2\EventManager\EventManager;
 
 /**
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Capabilities
@@ -137,7 +137,7 @@ class Capabilities
      *
      * @param stdClass $marker
      * @param array $capabilities
-     * @param null|Zend\Cache\Storage\Capabilities $baseCapabilities
+     * @param null|Zend2\Cache\Storage\Capabilities $baseCapabilities
      */
     public function __construct(
         stdClass $marker,
@@ -152,13 +152,13 @@ class Capabilities
     }
 
     /**
-     * Returns if the dependency of Zend\EventManager is available
+     * Returns if the dependency of Zend2\EventManager is available
      *
      * @return boolean
      */
     public function hasEventManager()
     {
-        return ($this->eventManager !== null || class_exists('Zend\EventManager\EventManager'));
+        return ($this->eventManager !== null || class_exists('Zend2\EventManager\EventManager'));
     }
 
     /**
@@ -173,8 +173,8 @@ class Capabilities
             return $this->eventManager;
         }
 
-        if (!class_exists('Zend\EventManager\EventManager')) {
-            throw new Exception\MissingDependencyException('Zend\EventManager\EventManager not found');
+        if (!class_exists('Zend2\EventManager\EventManager')) {
+            throw new Exception\MissingDependencyException('Zend2\EventManager\EventManager not found');
         }
 
         // create a new event manager object

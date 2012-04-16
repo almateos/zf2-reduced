@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Font
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Font
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Cmap;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
+namespace Zend2\Pdf\Cmap;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
 
 /**
  * Custom cmap type used for the Adobe Standard 14 PDF fonts.
  *
- * Just like {@link \Zend\Pdf\Cmap\ByteEncoding} except that the constructor
+ * Just like {@link \Zend2\Pdf\Cmap\ByteEncoding} except that the constructor
  * takes a predefined array of glyph numbers and can cover any Unicode character.
  *
- * @uses       \Zend\Pdf\Cmap\ByteEncoding
- * @uses       \Zend\Pdf\Exception
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Font
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Cmap\ByteEncoding
+ * @uses       \Zend2\Pdf\Exception
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Font
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class StaticByteEncoding extends ByteEncoding
@@ -48,7 +48,7 @@ class StaticByteEncoding extends ByteEncoding
      *
      * @param array $cmapData Array whose keys are Unicode character codes and
      *   values are glyph numbers.
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct($cmapData)
     {

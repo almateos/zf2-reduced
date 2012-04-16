@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Di\Definition\Builder;
+namespace Zend2\Di\Definition\Builder;
 
 class InjectionMethod
 {

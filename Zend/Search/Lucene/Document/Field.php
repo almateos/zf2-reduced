@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,14 +12,14 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Document
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Document;
+namespace Zend2\Search\Lucene\Document;
 
 /**
  * A field is a section of a Document.  Each field has two parts,
@@ -29,10 +29,10 @@ namespace Zend\Search\Lucene\Document;
  * stored in the index, so that they may be returned with hits
  * on the document.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Document
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Field
@@ -140,7 +140,7 @@ class Field
      * @param string $name
      * @param string $value
      * @param string $encoding
-     * @return \Zend\Search\Lucene\Document\Field
+     * @return \Zend2\Search\Lucene\Document\Field
      */
     public static function keyword($name, $value, $encoding = 'UTF-8')
     {
@@ -155,7 +155,7 @@ class Field
      * @param string $name
      * @param string $value
      * @param string $encoding
-     * @return \Zend\Search\Lucene\Document\Field
+     * @return \Zend2\Search\Lucene\Document\Field
      */
     public static function unIndexed($name, $value, $encoding = 'UTF-8')
     {
@@ -170,7 +170,7 @@ class Field
      * @param string $name
      * @param string $value
      * @param string $encoding
-     * @return \Zend\Search\Lucene\Document\Field
+     * @return \Zend2\Search\Lucene\Document\Field
      */
     public static function binary($name, $value)
     {
@@ -185,7 +185,7 @@ class Field
      * @param string $name
      * @param string $value
      * @param string $encoding
-     * @return \Zend\Search\Lucene\Document\Field
+     * @return \Zend2\Search\Lucene\Document\Field
      */
     public static function text($name, $value, $encoding = 'UTF-8')
     {
@@ -200,7 +200,7 @@ class Field
      * @param string $name
      * @param string $value
      * @param string $encoding
-     * @return \Zend\Search\Lucene\Document\Field
+     * @return \Zend2\Search\Lucene\Document\Field
      */
     public static function unStored($name, $value, $encoding = 'UTF-8')
     {

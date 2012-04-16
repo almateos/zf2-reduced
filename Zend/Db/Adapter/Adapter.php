@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Db
+ * @category   Zend2
+ * @package    Zend2_Db
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Db\Adapter;
+namespace Zend2\Db\Adapter;
 
-use Zend\Db\ResultSet;
+use Zend2\Db\ResultSet;
 
 /**
- * @category   Zend
- * @package    Zend_Db
+ * @category   Zend2
+ * @package    Zend2_Db
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  *
  *
@@ -64,7 +64,7 @@ class Adapter
     protected $platform = null;
 
     /**
-     * @var \Zend\Db\ResultSet\ResultSet
+     * @var \Zend2\Db\ResultSet\ResultSet
      */
     protected $queryResultSetPrototype = null;
 
@@ -91,7 +91,7 @@ class Adapter
 
         if (!$driver instanceof Driver\DriverInterface) {
             throw new \InvalidArgumentException(
-                'The supplied or instantiated driver object does not implement Zend\Db\Adapter\Driver\DriverInterface'
+                'The supplied or instantiated driver object does not implement Zend2\Db\Adapter\Driver\DriverInterface'
             );
         }
 

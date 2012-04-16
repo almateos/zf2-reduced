@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Filter;
-use Zend\Locale\Locale;
+namespace Zend2\Filter;
+use Zend2\Locale\Locale;
 
 /**
- * @uses       Zend\Filter\Exception
- * @uses       Zend\Filter\AbstractFilter
- * @uses       Zend\Locale\Locale
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Filter\Exception
+ * @uses       Zend2\Filter\AbstractFilter
+ * @uses       Zend2\Locale\Locale
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Boolean extends AbstractFilter
@@ -82,11 +82,11 @@ class Boolean extends AbstractFilter
     /**
      * Constructor
      *
-     * @param string|array|\Zend\Config\Config $options OPTIONAL
+     * @param string|array|\Zend2\Config\Config $options OPTIONAL
      */
     public function __construct($options = null)
     {
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         } elseif (!is_array($options)) {
             $options = func_get_args();
@@ -133,8 +133,8 @@ class Boolean extends AbstractFilter
      * Set the null types
      *
      * @param  integer|array $type
-     * @throws \Zend\Filter\Exception
-     * @return \Zend\Filter\Boolean
+     * @throws \Zend2\Filter\Exception
+     * @return \Zend2\Filter\Boolean
      */
     public function setType($type = null)
     {
@@ -174,9 +174,9 @@ class Boolean extends AbstractFilter
     /**
      * Set the locales which are accepted
      *
-     * @param  string|array|\Zend\Locale\Locale $locale
-     * @throws \Zend\Filter\Exception
-     * @return \Zend\Filter\Boolean
+     * @param  string|array|\Zend2\Locale\Locale $locale
+     * @throws \Zend2\Filter\Exception
+     * @return \Zend2\Filter\Boolean
      */
     public function setLocale($locale = null)
     {
@@ -185,7 +185,7 @@ class Boolean extends AbstractFilter
         } elseif ($locale instanceof Locale) {
             $locale = array($locale->toString());
         } elseif (!is_array($locale)) {
-            throw new Exception\InvalidArgumentException('Locale has to be string, array or an instance of Zend_Locale');
+            throw new Exception\InvalidArgumentException('Locale has to be string, array or an instance of Zend2_Locale');
         }
 
         foreach ($locale as $single) {
@@ -214,8 +214,8 @@ class Boolean extends AbstractFilter
      * @param  boolean $locale When true this filter works like cast
      *                         When false it recognises only true and false
      *                         and all other values are returned as is
-     * @throws \Zend\Filter\Exception
-     * @return \Zend\Filter\Boolean
+     * @throws \Zend2\Filter\Exception
+     * @return \Zend2\Filter\Boolean
      */
     public function setCasting($casting = true)
     {
@@ -224,7 +224,7 @@ class Boolean extends AbstractFilter
     }
 
     /**
-     * Defined by Zend_Filter_Interface
+     * Defined by Zend2_Filter_Interface
      *
      * Returns a boolean representation of $value
      *

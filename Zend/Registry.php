@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,13 +12,13 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Registry
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Registry
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend;
+namespace Zend2;
 
 use ArrayObject,
     RuntimeException;
@@ -26,9 +26,9 @@ use ArrayObject,
 /**
  * Generic storage class helps to manage global data.
  *
- * @category   Zend
- * @package    Zend_Registry
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Registry
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Registry extends ArrayObject
@@ -37,7 +37,7 @@ class Registry extends ArrayObject
      * Class name of the singleton registry object.
      * @var string
      */
-    private static $registryClassName = 'Zend\\Registry';
+    private static $registryClassName = 'Zend2\\Registry';
 
     /**
      * Registry object provides storage for shared objects.
@@ -97,7 +97,7 @@ class Registry extends ArrayObject
      * @throws RuntimeException if the registry is initialized or if the
      *   class name is not valid.
      */
-    public static function setClassName($registryClassName = 'Zend\\Registry')
+    public static function setClassName($registryClassName = 'Zend2\\Registry')
     {
         if (self::$registry !== null) {
             throw new RuntimeException('Registry is already initialized');
@@ -108,7 +108,7 @@ class Registry extends ArrayObject
         }
 
         /**
-         * @see Zend\\Loader
+         * @see Zend2\\Loader
          */
         if (!class_exists($registryClassName)) {
             Loader::loadClass($registryClassName);
@@ -130,7 +130,7 @@ class Registry extends ArrayObject
     /**
      * getter method, basically same as offsetGet().
      *
-     * This method can be called from an object of type Zend_Registry, or it
+     * This method can be called from an object of type Zend2_Registry, or it
      * can be called statically.  In the latter case, it uses the default
      * static instance stored in the class.
      *
@@ -152,7 +152,7 @@ class Registry extends ArrayObject
     /**
      * setter method, basically same as offsetSet().
      *
-     * This method can be called from an object of type Zend_Registry, or it
+     * This method can be called from an object of type Zend2_Registry, or it
      * can be called statically.  In the latter case, it uses the default
      * static instance stored in the class.
      *

@@ -1,7 +1,7 @@
 <?php
-namespace Zend\Tag\Exception;
+namespace Zend2\Tag\Exception;
 
 class OutOfBoundsException
     extends \OutOfBoundsException
-    implements \Zend\Tag\Exception
+    implements \Zend2\Tag\Exception
 {}

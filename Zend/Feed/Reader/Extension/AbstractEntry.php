@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
+ * @category   Zend2
  * @package    Reader\Reader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Reader\Extension;
-use Zend\Feed\Reader;
+namespace Zend2\Feed\Reader\Extension;
+use Zend2\Feed\Reader;
 
 /**
-* @uses \Zend\Feed\Reader\Reader
-* @category Zend
+* @uses \Zend2\Feed\Reader\Reader
+* @category Zend2
 * @package Reader\Reader
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 abstract class AbstractEntry
@@ -47,7 +47,7 @@ abstract class AbstractEntry
     /**
      * Entry instance
      *
-     * @var Zend_Feed_Entry_Abstract
+     * @var Zend2_Feed_Entry_Abstract
      */
     protected $_entry = null;
 
@@ -75,7 +75,7 @@ abstract class AbstractEntry
     /**
      * Constructor
      *
-     * @param  Zend_Feed_Entry_Abstract $entry
+     * @param  Zend2_Feed_Entry_Abstract $entry
      * @param  int $entryKey
      * @param  string $type
      * @return void

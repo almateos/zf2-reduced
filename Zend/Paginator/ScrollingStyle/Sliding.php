@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,15 +12,15 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Paginator\ScrollingStyle;
+namespace Zend2\Paginator\ScrollingStyle;
 
-use Zend\Paginator\ScrollingStyle;
+use Zend2\Paginator\ScrollingStyle;
 
 /**
  * A Yahoo! Search-like scrolling style.  The cursor will advance to
@@ -28,11 +28,11 @@ use Zend\Paginator\ScrollingStyle;
  * the end of the page set, at which point it will continue on to
  * the end of the range and the last page in the set.
  *
- * @uses       \Zend\Paginator\ScrollingStyle
- * @link       http://search.yahoo.com/search?p=Zend+Framework
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Paginator\ScrollingStyle
+ * @link       http://search.yahoo.com/search?p=Zend2+Framework
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Sliding implements ScrollingStyle
@@ -40,11 +40,11 @@ class Sliding implements ScrollingStyle
     /**
      * Returns an array of "local" pages given a page number and range.
      *
-     * @param  \Zend\Paginator\Paginator $paginator
+     * @param  \Zend2\Paginator\Paginator $paginator
      * @param  integer $pageRange (Optional) Page range
      * @return array
      */
-    public function getPages(\Zend\Paginator\Paginator $paginator, $pageRange = null)
+    public function getPages(\Zend2\Paginator\Paginator $paginator, $pageRange = null)
     {
         if ($pageRange === null) {
             $pageRange = $paginator->getPageRange();

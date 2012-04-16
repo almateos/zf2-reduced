@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,15 +12,15 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Memory
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Memory
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Memory;
+namespace Zend2\Memory;
 
-use Zend\Cache\Storage\Adapter as CacheAdapter;
+use Zend2\Cache\Storage\Adapter as CacheAdapter;
 
 /**
  * Memory manager
@@ -28,9 +28,9 @@ use Zend\Cache\Storage\Adapter as CacheAdapter;
  * This class encapsulates memory menagement operations, when PHP works
  * in limited memory mode.
  *
- * @category   Zend
- * @package    Zend_Memory
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Memory
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class MemoryManager
@@ -68,7 +68,7 @@ class MemoryManager
     private $_memorySize = 0;
 
     /**
-     * Id for next Zend_Memory object
+     * Id for next Zend2_Memory object
      *
      * @var integer
      */
@@ -107,7 +107,7 @@ class MemoryManager
      * object.
      * So we have to trace only _first_ object modification and do nothing for others
      *
-     * @var \Zend\Memory\Container\Movable
+     * @var \Zend2\Memory\Container\Movable
      */
     private $_lastModified = null;
 
@@ -136,7 +136,7 @@ class MemoryManager
          * it should be changed by something else
          * (Ex. backend interface should be extended to provide this functionality)
          */
-        $this->_managerId = str_replace('.', '_', uniqid('ZendMemManager', true));
+        $this->_managerId = str_replace('.', '_', uniqid('Zend2MemManager', true));
         $this->_tags = array($this->_managerId);
         $this->_managerId .= '_';
     }
@@ -235,11 +235,11 @@ class MemoryManager
     }
 
     /**
-     * Create new Zend_Memory value container
+     * Create new Zend2_Memory value container
      *
      * @param string $value
-     * @return \Zend\Memory\Container
-     * @throws \Zend\Memory\Exception
+     * @return \Zend2\Memory\Container
+     * @throws \Zend2\Memory\Exception
      */
     public function create($value = '')
     {
@@ -247,12 +247,12 @@ class MemoryManager
     }
 
     /**
-     * Create new Zend_Memory value container, which has value always
+     * Create new Zend2_Memory value container, which has value always
      * locked in memory
      *
      * @param string $value
-     * @return \Zend\Memory\Container
-     * @throws \Zend\Memory\Exception
+     * @return \Zend2\Memory\Container
+     * @throws \Zend2\Memory\Exception
      */
     public function createLocked($value = '')
     {
@@ -260,12 +260,12 @@ class MemoryManager
     }
 
     /**
-     * Create new Zend_Memory object
+     * Create new Zend2_Memory object
      *
      * @param string $value
      * @param boolean $locked
-     * @return \Zend\Memory\Container
-     * @throws \Zend\Memory\Exception
+     * @return \Zend2\Memory\Container
+     * @throws \Zend2\Memory\Exception
      */
     private function _create($value, $locked)
     {
@@ -295,7 +295,7 @@ class MemoryManager
      *
      * @internal
      * @param integer $id
-     * @return \Zend\Memory\Container\AbstractContainer
+     * @return \Zend2\Memory\Container\AbstractContainer
      */
     public function unlink(Container\Movable $container, $id)
     {
@@ -318,7 +318,7 @@ class MemoryManager
      * Process value update
      *
      * @internal
-     * @param \Zend\Memory\Container\Movable $container
+     * @param \Zend2\Memory\Container\Movable $container
      * @param integer $id
      */
     public function processUpdate(Container\Movable $container, $id)
@@ -376,7 +376,7 @@ class MemoryManager
     /**
      * Check and swap objects if necessary
      *
-     * @throws Zend_MemoryException
+     * @throws Zend2_MemoryException
      */
     private function _swapCheck()
     {
@@ -405,7 +405,7 @@ class MemoryManager
      * Actualy swaps data or only unloads it from memory,
      * if object is not changed since last swap
      *
-     * @param \Zend\Memory\Container\Movable $container
+     * @param \Zend2\Memory\Container\Movable $container
      * @param integer $id
      */
     private function _swap(Container\Movable $container, $id)
@@ -428,7 +428,7 @@ class MemoryManager
      * Load value from swap file.
      *
      * @internal
-     * @param \Zend\Memory\Container\Movable $container
+     * @param \Zend2\Memory\Container\Movable $container
      * @param integer $id
      */
     public function load(Container\Movable $container, $id)

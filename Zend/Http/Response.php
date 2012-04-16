@@ -1,9 +1,9 @@
 <?php
 
-namespace Zend\Http;
+namespace Zend2\Http;
 
-use Zend\Stdlib\Message,
-    Zend\Stdlib\ResponseDescription;
+use Zend2\Stdlib\Message,
+    Zend2\Stdlib\ResponseDescription;
 
 class Response extends Message implements ResponseDescription
 {

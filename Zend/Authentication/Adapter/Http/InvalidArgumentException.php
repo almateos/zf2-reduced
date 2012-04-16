@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Authentication\Adapter\Http;
+namespace Zend2\Authentication\Adapter\Http;
 
 class InvalidArgumentException
     extends \InvalidArgumentException

@@ -1,7 +1,7 @@
 <?php
-namespace Zend\Search\Lucene\Exception;
+namespace Zend2\Search\Lucene\Exception;
 
 class InvalidFileFormatException
     extends \RuntimeException
-    implements \Zend\Search\Lucene\Exception
+    implements \Zend2\Search\Lucene\Exception
 {}

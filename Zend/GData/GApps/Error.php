@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,14 +12,14 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\GApps;
+namespace Zend2\GData\GApps;
 
 /**
  * Gdata GApps Error class. This class is used to represent errors returned
@@ -30,14 +30,14 @@ namespace Zend\GData\GApps;
  * the error code returned by the server. For a list of error codes
  * available at the time of this writing, see getErrorCode.
  *
- * @uses       \Zend\GData\App\Base
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Base
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Error extends \Zend\GData\App\Base
+class Error extends \Zend2\GData\App\Base
 {
 
     // Error codes as defined at

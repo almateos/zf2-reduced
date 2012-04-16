@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Queue
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Message
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Queue;
+namespace Zend2\Queue;
 
 /**
  * Class for managing queue messages
  *
- * @uses       \Zend\Queue\Exception
- * @category   Zend
- * @package    Zend_Queue
+ * @uses       \Zend2\Queue\Exception
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Message
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Message
@@ -42,7 +42,7 @@ class Message
 
      /**
      * Connected is true if we have a reference to a live
-     * \Zend\Queue\Adapter object.
+     * \Zend2\Queue\Adapter object.
      * This is false after the Message has been deserialized.
      *
      * @var boolean
@@ -50,14 +50,14 @@ class Message
     protected $_connected = true;
 
     /**
-     * \Zend\Queue\Queue parent class or instance
+     * \Zend2\Queue\Queue parent class or instance
      *
-     * @var \Zend\Queue\Queue
+     * @var \Zend2\Queue\Queue
      */
     protected $_queue = null;
 
     /**
-     * Name of the class of the \Zend\Queue\Queue
+     * Name of the class of the \Zend2\Queue\Queue
      *
      * @var string
      */
@@ -67,7 +67,7 @@ class Message
      * Constructor
      *
      * @param  array $options
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function __construct(array $options = array())
     {
@@ -82,7 +82,7 @@ class Message
                 }
 
                 throw new Exception(
-                    '$options[\'queue\'] = ' . $result . ': must be instanceof \Zend\Queue\Queue'
+                    '$options[\'queue\'] = ' . $result . ': must be instanceof \Zend2\Queue\Queue'
                 );
             }
         }
@@ -99,7 +99,7 @@ class Message
      *
      * @param  string $key The user-specified key name.
      * @return string      The corresponding key value.
-     * @throws \Zend\Queue\Exception if the $key is not a column in the message.
+     * @throws \Zend2\Queue\Exception if the $key is not a column in the message.
      */
     public function __get($key)
     {
@@ -115,7 +115,7 @@ class Message
      * @param  string $key   The message key.
      * @param  mixed  $value The value for the property.
      * @return void
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function __set($key, $value)
     {
@@ -165,7 +165,7 @@ class Message
      /**
      * Returns the queue object, or null if this is disconnected message
      *
-     * @return \Zend\Queue\Queue|null
+     * @return \Zend2\Queue\Queue|null
      */
     public function getQueue()
     {
@@ -176,7 +176,7 @@ class Message
      * Set the queue object, to re-establish a live connection
      * to the queue for a Message that has been de-serialized.
      *
-     * @param  \Zend\Queue\Queue $queue
+     * @param  \Zend2\Queue\Queue $queue
      * @return boolean
      */
     public function setQueue(Queue $queue)
@@ -213,7 +213,7 @@ class Message
      * Sets all data in the row from an array.
      *
      * @param  array $data
-     * @return \Zend\Queue\Message\Message Provides a fluent interface
+     * @return \Zend2\Queue\Message\Message Provides a fluent interface
      */
     public function setFromArray(array $data)
     {

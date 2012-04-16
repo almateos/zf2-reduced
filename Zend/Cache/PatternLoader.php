@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Cache
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Cache
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Cache;
+namespace Zend2\Cache;
 
-use Zend\Loader\PluginClassLoader;
+use Zend2\Loader\PluginClassLoader;
 
 /**
  * Plugin Class Loader implementation for cache patterns.
  *
- * @category   Zend
- * @package    Zend_Cache
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Cache
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PatternLoader extends PluginClassLoader
@@ -36,11 +36,11 @@ class PatternLoader extends PluginClassLoader
      * @var array Pre-aliased adapters
      */
     protected $plugins = array(
-        'callback' => 'Zend\Cache\Pattern\CallbackCache',
-        'capture'  => 'Zend\Cache\Pattern\CaptureCache',
-        'class'    => 'Zend\Cache\Pattern\ClassCache',
-        'object'   => 'Zend\Cache\Pattern\ObjectCache',
-        'output'   => 'Zend\Cache\Pattern\OutputCache',
-        'page'     => 'Zend\Cache\Pattern\PageCache',
+        'callback' => 'Zend2\Cache\Pattern\CallbackCache',
+        'capture'  => 'Zend2\Cache\Pattern\CaptureCache',
+        'class'    => 'Zend2\Cache\Pattern\ClassCache',
+        'object'   => 'Zend2\Cache\Pattern\ObjectCache',
+        'output'   => 'Zend2\Cache\Pattern\OutputCache',
+        'page'     => 'Zend2\Cache\Pattern\PageCache',
     );
 }

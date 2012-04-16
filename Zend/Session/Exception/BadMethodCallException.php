@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Session\Exception;
+namespace Zend2\Session\Exception;
 
 class BadMethodCallException
     extends \BadMethodCallException
-    implements \Zend\Session\Exception
+    implements \Zend2\Session\Exception
 {}

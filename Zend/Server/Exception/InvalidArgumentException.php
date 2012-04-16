@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Server\Exception;
+namespace Zend2\Server\Exception;
 
 class InvalidArgumentException
     extends \InvalidArgumentException
-    implements \Zend\Server\Exception
+    implements \Zend2\Server\Exception
 {}

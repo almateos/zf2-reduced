@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Barcode
+ * @category   Zend2
+ * @package    Zend2_Barcode
  * @subpackage Renderer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Barcode\Renderer;
+namespace Zend2\Barcode\Renderer;
 
-use Zend\Barcode\Renderer\Exception,
-    Zend\Pdf\Color,
-    Zend\Pdf\Font,
-    Zend\Pdf\Page,
-    Zend\Pdf\PdfDocument;
+use Zend2\Barcode\Renderer\Exception,
+    Zend2\Pdf\Color,
+    Zend2\Pdf\Font,
+    Zend2\Pdf\Page,
+    Zend2\Pdf\PdfDocument;
 
 /**
  * Class for rendering the barcode in PDF resource
  *
- * @category   Zend
- * @package    Zend_Barcode
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Barcode
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Pdf extends AbstractRenderer
@@ -58,14 +58,14 @@ class Pdf extends AbstractRenderer
     /**
      * Set an image resource to draw the barcode inside
      * @param resource $value
-     * @return \Zend\Barcode\Renderer
+     * @return \Zend2\Barcode\Renderer
      * @throw  Exception
      */
     public function setResource($pdf, $page = 0)
     {
         if (!$pdf instanceof PdfDocument) {
             throw new Exception\InvalidArgumentException(
-                'Invalid Zend\Pdf\PdfDocument resource provided to setResource()'
+                'Invalid Zend2\Pdf\PdfDocument resource provided to setResource()'
             );
         }
 

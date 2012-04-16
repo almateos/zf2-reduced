@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Captcha
+ * @category   Zend2
+ * @package    Zend2_Captcha
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Captcha;
+namespace Zend2\Captcha;
 
 /**
  * Word-based captcha adapter
  *
  * Generates random word which user should recognise
  *
- * @uses       Zend\Captcha\AbstractAdapter
- * @uses       Zend\Loader
- * @category   Zend
- * @package    Zend_Captcha
+ * @uses       Zend2\Captcha\AbstractAdapter
+ * @uses       Zend2\Loader
+ * @category   Zend2
+ * @package    Zend2_Captcha
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Word extends AbstractAdapter
@@ -62,7 +62,7 @@ abstract class Word extends AbstractAdapter
     /**
      * Session
      *
-     * @var \Zend\Session\Container
+     * @var \Zend2\Session\Container
      */
     protected $_session;
 
@@ -71,7 +71,7 @@ abstract class Word extends AbstractAdapter
      *
      * @var string
      */
-    protected $_sessionClass = 'Zend\\Session\\Container';
+    protected $_sessionClass = 'Zend2\\Session\\Container';
 
     /**
      * Should the numbers be used or only letters
@@ -140,7 +140,7 @@ abstract class Word extends AbstractAdapter
      * Set session class for persistence
      *
      * @param  string $_sessionClass
-     * @return \Zend\Captcha\Word
+     * @return \Zend2\Captcha\Word
      */
     public function setSessionClass($_sessionClass)
     {
@@ -162,7 +162,7 @@ abstract class Word extends AbstractAdapter
      * Set word length of captcha
      *
      * @param integer $wordlen
-     * @return \Zend\Captcha\Word
+     * @return \Zend2\Captcha\Word
      */
     public function setWordlen($wordlen)
     {
@@ -187,7 +187,7 @@ abstract class Word extends AbstractAdapter
      * Set captcha identifier
      *
      * @param string $id
-     * return Zend_Captcha_Word
+     * return Zend2_Captcha_Word
      */
     protected function _setId ($id)
     {
@@ -199,7 +199,7 @@ abstract class Word extends AbstractAdapter
      * Set timeout for session token
      *
      * @param  int $ttl
-     * @return \Zend\Captcha\Word
+     * @return \Zend2\Captcha\Word
      */
     public function setTimeout($ttl)
     {
@@ -221,7 +221,7 @@ abstract class Word extends AbstractAdapter
      * Sets if session should be preserved on generate()
      * 
      * @param $keepSession Should session be kept on generate()?
-     * @return \Zend\Captcha\Word
+     * @return \Zend2\Captcha\Word
      */
     public function setKeepSession($keepSession) 
     {
@@ -243,7 +243,7 @@ abstract class Word extends AbstractAdapter
      * Set if numbers should be included in the pattern
      * 
      * @param $_useNumbers numbers should be included in the pattern?
-     * @return Zend_Captcha_Word
+     * @return Zend2_Captcha_Word
      */
     public function setUseNumbers($_useNumbers)
     {
@@ -254,7 +254,7 @@ abstract class Word extends AbstractAdapter
     /**
      * Get session object
      *
-     * @return \Zend\Session\Container
+     * @return \Zend2\Session\Container
      */
     public function getSession()
     {
@@ -263,7 +263,7 @@ abstract class Word extends AbstractAdapter
             if (!class_exists($this->_sessionClass)) {
                 throw new Exception\InvalidArgumentException("Session class $this->_sessionClass not found");
             }
-            $this->_session = new $this->_sessionClass('Zend_Form_Captcha_' . $id);
+            $this->_session = new $this->_sessionClass('Zend2_Form_Captcha_' . $id);
             $this->_session->setExpirationHops(1, null, true);
             $this->_session->setExpirationSeconds($this->getTimeout());
         }
@@ -273,10 +273,10 @@ abstract class Word extends AbstractAdapter
     /**
      * Set session namespace object
      *
-     * @param  \Zend\Session\Container $session
-     * @return \Zend\Captcha\Word
+     * @param  \Zend2\Session\Container $session
+     * @return \Zend2\Captcha\Word
      */
-    public function setSession(\Zend\Session\Container $session)
+    public function setSession(\Zend2\Session\Container $session)
     {
         $this->_session = $session;
         if($session) {
@@ -303,7 +303,7 @@ abstract class Word extends AbstractAdapter
      * Set captcha word
      *
      * @param  string $word
-     * @return \Zend\Captcha\Word
+     * @return \Zend2\Captcha\Word
      */
     protected function _setWord($word)
     {
@@ -364,7 +364,7 @@ abstract class Word extends AbstractAdapter
     /**
      * Validate the word
      *
-     * @see    Zend\Validator\Validator::isValid()
+     * @see    Zend2\Validator\Validator::isValid()
      * @param  mixed $value
      * @return boolean
      */

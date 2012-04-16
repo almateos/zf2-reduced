@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\XmlRpc;
+namespace Zend2\XmlRpc;
 
 use ReflectionClass,
-    Zend\Server\AbstractServer,
-    Zend\Server\Definition,
-    Zend\Server\Reflection;
+    Zend2\Server\AbstractServer,
+    Zend2\Server\Definition,
+    Zend2\Server\Reflection;
 
 /**
  * An XML-RPC server implementation
  *
  * Example:
  * <code>
- * use Zend\XmlRpc;
+ * use Zend2\XmlRpc;
  *
  * // Instantiate server
  * $server = new XmlRpc\Server();
@@ -57,10 +57,10 @@ use ReflectionClass,
  * echo $response;
  * </code>
  *
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Server extends AbstractServer
@@ -81,7 +81,7 @@ class Server extends AbstractServer
      * Class to use for responses; defaults to {@link Response\Http}
      * @var string
      */
-    protected $responseClass = 'Zend\XmlRpc\Response\Http';
+    protected $responseClass = 'Zend2\XmlRpc\Response\Http';
 
     /**
      * Dispatch table of name => method pairs
@@ -97,7 +97,7 @@ class Server extends AbstractServer
         'i4'                         => 'i4',
         'int'                        => 'int',
         'integer'                    => 'int',
-        'Zend\Crypt\Math\BigInteger' => 'i8',
+        'Zend2\Crypt\Math\BigInteger' => 'i8',
         'i8'                         => 'i8',
         'ex:i8'                      => 'i8',
         'double'                     => 'double',
@@ -114,7 +114,7 @@ class Server extends AbstractServer
         'date'                       => 'dateTime.iso8601',
         'time'                       => 'dateTime.iso8601',
         'time'                       => 'dateTime.iso8601',
-        'Zend_Date'                  => 'dateTime.iso8601',
+        'Zend2_Date'                  => 'dateTime.iso8601',
         'DateTime'                   => 'dateTime.iso8601',
         'array'                      => 'array',
         'struct'                     => 'struct',
@@ -164,7 +164,7 @@ class Server extends AbstractServer
      * @param  string $method
      * @param  array $params
      * @return mixed
-     * @throws Zend\XmlRpc\Server\Exception
+     * @throws Zend2\XmlRpc\Server\Exception
      */
     public function __call($method, $params)
     {
@@ -189,7 +189,7 @@ class Server extends AbstractServer
      * @param string|array $function Valid callback
      * @param string $namespace Optional namespace prefix
      * @return void
-     * @throws Zend\XmlRpc\Server\Exception
+     * @throws Zend2\XmlRpc\Server\Exception
      */
     public function addFunction($function, $namespace = '')
     {
@@ -228,7 +228,7 @@ class Server extends AbstractServer
      * @param string $namespace Optional
      * @param mixed $argv Optional arguments to pass to methods
      * @return void
-     * @throws Zend\XmlRpc\Server\Exception on invalid input
+     * @throws Zend2\XmlRpc\Server\Exception on invalid input
      */
     public function setClass($class, $namespace = '', $argv = null)
     {
@@ -252,7 +252,7 @@ class Server extends AbstractServer
      *
      * @param string|Exception $fault
      * @param int $code
-     * @return Zend\XmlRpc\Server\Fault
+     * @return Zend2\XmlRpc\Server\Fault
      */
     public function fault($fault = null, $code = 404)
     {
@@ -338,7 +338,7 @@ class Server extends AbstractServer
      * Load methods as returned from {@link getFunctions}
      *
      * Typically, you will not use this method; it will be called using the
-     * results pulled from {@link Zend\XmlRpc\Server\Cache::get()}.
+     * results pulled from {@link Zend2\XmlRpc\Server\Cache::get()}.
      *
      * @param  array|Definition $definition
      * @return void
@@ -352,7 +352,7 @@ class Server extends AbstractServer
             } else {
                 $type = gettype($definition);
             }
-            throw new Server\Exception\InvalidArgumentException('Unable to load server definition; must be an array or Zend_Server_Definition, received ' . $type, 612);
+            throw new Server\Exception\InvalidArgumentException('Unable to load server definition; must be an array or Zend2_Server_Definition, received ' . $type, 612);
         }
 
         $this->table->clearMethods();
@@ -394,7 +394,7 @@ class Server extends AbstractServer
     }
 
     /**
-     * Do nothing; persistence is handled via {@link Zend\XmlRpc\Server\Cache}
+     * Do nothing; persistence is handled via {@link Zend2\XmlRpc\Server\Cache}
      *
      * @param  mixed $mode
      * @return void
@@ -455,7 +455,7 @@ class Server extends AbstractServer
     public function setResponseClass($class)
     {
         if (!class_exists($class) or
-            ($c = new ReflectionClass($class) and !$c->isSubclassOf('Zend\\XmlRpc\\Response'))) {
+            ($c = new ReflectionClass($class) and !$c->isSubclassOf('Zend2\\XmlRpc\\Response'))) {
 
             throw new Server\Exception\InvalidArgumentException('Invalid response class');
         }
@@ -486,7 +486,7 @@ class Server extends AbstractServer
     /**
      * Returns a list of registered methods
      *
-     * Returns an array of dispatchables (Zend\Server\Reflection\ReflectionFunction,
+     * Returns an array of dispatchables (Zend2\Server\Reflection\ReflectionFunction,
      * ReflectionMethod, and ReflectionClass items).
      *
      * @return array
@@ -544,7 +544,7 @@ class Server extends AbstractServer
      * @param  Request $request
      * @return Response
      * @throws Server\Exception|Exception
-     * Zend\XmlRpc\Server\Exceptions are thrown for internal errors; otherwise,
+     * Zend2\XmlRpc\Server\Exceptions are thrown for internal errors; otherwise,
      * any other exception may be thrown by the callback
      */
     protected function handleRequest(Request $request)

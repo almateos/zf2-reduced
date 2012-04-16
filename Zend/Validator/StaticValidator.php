@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
+namespace Zend2\Validator;
 
-use Zend\Loader\Broker;
+use Zend2\Loader\Broker;
 
 /**
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class StaticValidator
 {
     /**
-     * @var Zend\Loader\Broker
+     * @var Zend2\Loader\Broker
      */
     protected static $broker;
 
@@ -64,7 +64,7 @@ class StaticValidator
      * @param  string   $classBaseName
      * @param  array    $args          OPTIONAL
      * @return boolean
-     * @throws \Zend\Validator\Exception
+     * @throws \Zend2\Validator\Exception
      */
     public static function execute($value, $classBaseName, array $args = array())
     {

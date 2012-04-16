@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail\Storage;
+namespace Zend2\Mail\Storage;
 
-use Zend\Mail\Protocol,
-    Zend\Mail,
-    Zend\Mime;
+use Zend2\Mail\Protocol,
+    Zend2\Mail,
+    Zend2\Mime;
 
 /**
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Pop3 extends AbstractStorage
 {
     /**
      * protocol handler
-     * @var null|\Zend\Mail\Protocol\Pop3
+     * @var null|\Zend2\Mail\Protocol\Pop3
      */
     protected $_protocol;
 
@@ -45,8 +45,8 @@ class Pop3 extends AbstractStorage
      * Count messages all messages in current box
      *
      * @return int number of messages
-     * @throws \Zend\Mail\Storage\Exception
-     * @throws \Zend\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
      */
     public function countMessages()
     {
@@ -61,7 +61,7 @@ class Pop3 extends AbstractStorage
      *
      * @param int $id number of message
      * @return int|array size of given message of list with all messages as array(num => size)
-     * @throws \Zend\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
      */
     public function getSize($id = 0)
     {
@@ -73,8 +73,8 @@ class Pop3 extends AbstractStorage
      * Fetch a message
      *
      * @param int $id number of message
-     * @return \Zend\Mail\Message\Message
-     * @throws \Zend\Mail\Protocol\Exception
+     * @return \Zend2\Mail\Message\Message
+     * @throws \Zend2\Mail\Protocol\Exception
      */
     public function getMessage($id)
     {
@@ -92,8 +92,8 @@ class Pop3 extends AbstractStorage
      * @param  null|array|string $part     path to part or null for messsage header
      * @param  int               $topLines include this many lines with header (after an empty line)
      * @return string raw header
-     * @throws \Zend\Mail\Protocol\Exception
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function getRawHeader($id, $part = null, $topLines = 0)
     {
@@ -111,8 +111,8 @@ class Pop3 extends AbstractStorage
      * @param  int               $id   number of message
      * @param  null|array|string $part path to part or null for messsage content
      * @return string raw content
-     * @throws \Zend\Mail\Protocol\Exception
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function getRawContent($id, $part = null)
     {
@@ -139,8 +139,8 @@ class Pop3 extends AbstractStorage
      *   - ssl 'SSL' or 'TLS' for secure sockets
      *
      * @param  $params array  mail reader specific parameters
-     * @throws \Zend\Mail\Storage\Exception
-     * @throws \Zend\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
      */
     public function __construct($params)
     {
@@ -186,7 +186,7 @@ class Pop3 extends AbstractStorage
      * Keep the server busy.
      *
      * @return null
-     * @throws \Zend\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
      */
     public function noop()
     {
@@ -200,7 +200,7 @@ class Pop3 extends AbstractStorage
      *
      * @param  int $id number of message
      * @return null
-     * @throws \Zend\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
      */
     public function removeMessage($id)
     {
@@ -214,7 +214,7 @@ class Pop3 extends AbstractStorage
      *
      * @param int|null $id message number
      * @return array|string message number for given message or all messages as array
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function getUniqueId($id = null)
     {
@@ -241,7 +241,7 @@ class Pop3 extends AbstractStorage
      *
      * @param string $id unique id
      * @return int message number
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function getNumberByUniqueId($id)
     {
@@ -263,10 +263,10 @@ class Pop3 extends AbstractStorage
      * Special handling for hasTop and hasUniqueid. The headers of the first message is
      * retrieved if Top wasn't needed/tried yet.
      *
-     * @see \Zend\Mail\Storage\Abstract::__get()
+     * @see \Zend2\Mail\Storage\Abstract::__get()
      * @param  string $var
      * @return string
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function __get($var)
     {

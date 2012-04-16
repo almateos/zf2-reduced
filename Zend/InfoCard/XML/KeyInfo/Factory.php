@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard\XML\KeyInfo;
-use Zend\InfoCard\XML;
+namespace Zend2\InfoCard\XML\KeyInfo;
+use Zend2\InfoCard\XML;
 
 /**
  * Factory class to return a XML KeyInfo block based on input XML
  *
- * @uses       \Zend\InfoCard\XML\AbstractElement
- * @uses       \Zend\InfoCard\XML\Exception
- * @uses       \Zend\InfoCard\XML\KeyInfo\Default
- * @uses       \Zend\InfoCard\XML\KeyInfo\XMLDSig
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\InfoCard\XML\AbstractElement
+ * @uses       \Zend2\InfoCard\XML\Exception
+ * @uses       \Zend2\InfoCard\XML\KeyInfo\Default
+ * @uses       \Zend2\InfoCard\XML\KeyInfo\XMLDSig
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Factory
@@ -50,8 +50,8 @@ class Factory
      * Returns an instance of KeyInfo object based on the input KeyInfo XML block
      *
      * @param string $xmlData The KeyInfo XML Block
-     * @return \Zend\InfoCard\XML\KeyInfo\AbstractKeyInfo
-     * @throws \Zend\InfoCard\XML\Exception
+     * @return \Zend2\InfoCard\XML\KeyInfo\AbstractKeyInfo
+     * @throws \Zend2\InfoCard\XML\Exception
      */
     static public function getInstance($xmlData)
     {
@@ -72,7 +72,7 @@ class Factory
             foreach($sxe->getDocNameSpaces() as $namespace) {
                 switch($namespace) {
                     case 'http://www.w3.org/2000/09/xmldsig#':
-                        return simplexml_load_string($strXmlData, 'Zend\InfoCard\XML\KeyInfo\XMLDSig');
+                        return simplexml_load_string($strXmlData, 'Zend2\InfoCard\XML\KeyInfo\XMLDSig');
                     default:
                         throw new XML\Exception\RuntimeException("Unknown KeyInfo Namespace provided");
                     // We are ignoring these lines, as XDebug reports each as a "non executed" line
@@ -83,6 +83,6 @@ class Factory
         }
         // @codeCoverageIgnoreEnd
 
-        return simplexml_load_string($strXmlData, 'Zend\InfoCard\XML\KeyInfo\DefaultKeyInfo');
+        return simplexml_load_string($strXmlData, 'Zend2\InfoCard\XML\KeyInfo\DefaultKeyInfo');
     }
 }

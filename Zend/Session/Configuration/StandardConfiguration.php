@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Session
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Session
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Session\Configuration;
+namespace Zend2\Session\Configuration;
 
-use Zend\Session\Configuration as Configurable,
-    Zend\Session\Exception,
-    Zend\Validator\Hostname as HostnameValidator,
-    Zend\Filter\Word\CamelCaseToUnderscore as CamelCaseToUnderscoreFilter;
+use Zend2\Session\Configuration as Configurable,
+    Zend2\Session\Exception,
+    Zend2\Validator\Hostname as HostnameValidator,
+    Zend2\Filter\Word\CamelCaseToUnderscore as CamelCaseToUnderscoreFilter;
 
 /**
  * Standard session configuration
  *
- * @category   Zend
- * @package    Zend_Session
+ * @category   Zend2
+ * @package    Zend2_Session
  * @subpackage Configuration
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class StandardConfiguration implements Configurable
 {
     /**
-     * @var Zend\Filter Filter to convert CamelCase to underscore_separated
+     * @var Zend2\Filter Filter to convert CamelCase to underscore_separated
      */
     protected $camelCaseToUnderscoreFilter;
     
@@ -99,7 +99,7 @@ class StandardConfiguration implements Configurable
      * 
      * @param  string $storageName 
      * @param  mixed $storageValue 
-     * @return Zend\Session\Configuration\StandardConfiguration
+     * @return Zend2\Session\Configuration\StandardConfiguration
      */
     public function setStorageOption($storageName, $storageValue)
     {

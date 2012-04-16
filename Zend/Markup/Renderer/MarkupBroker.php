@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Markup
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Renderer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Markup\Renderer;
+namespace Zend2\Markup\Renderer;
 
-use Zend\Loader\PluginBroker;
+use Zend2\Loader\PluginBroker;
 
 /**
  * Broker for markup converter instances
  *
- * @category   Zend
- * @package    Zend_Markup
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Renderer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class MarkupBroker extends PluginBroker
@@ -37,7 +37,7 @@ class MarkupBroker extends PluginBroker
     /**
      * @var string Default plugin loading strategy
      */
-    protected $defaultClassLoader = 'Zend\Markup\Renderer\MarkupLoader';
+    protected $defaultClassLoader = 'Zend2\Markup\Renderer\MarkupLoader';
 
     /**
      * Determine if we have a valid markup
@@ -49,7 +49,7 @@ class MarkupBroker extends PluginBroker
     protected function validatePlugin($plugin)
     {
         if (!$plugin instanceof Markup) {
-            throw new Exception('Markup converters must implement Zend\Markup\Renderer\Markup');
+            throw new Exception('Markup converters must implement Zend2\Markup\Renderer\Markup');
         }
         return true;
     }

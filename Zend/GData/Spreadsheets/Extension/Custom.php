@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,41 +12,41 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Spreadsheets
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Spreadsheets\Extension;
+namespace Zend2\GData\Spreadsheets\Extension;
 
 /**
  * Concrete class for working with custom gsx elements.
  *
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\Extension
- * @uses       \Zend\GData\Spreadsheets
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\Extension
+ * @uses       \Zend2\GData\Spreadsheets
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Spreadsheets
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Custom extends \Zend\GData\Extension
+class Custom extends \Zend2\GData\Extension
 {
     // custom elements have custom names.
     protected $_rootElement = null; // The name of the column
     protected $_rootNamespace = 'gsx';
 
     /**
-     * Constructs a new Zend_Gdata_Spreadsheets_Extension_Custom object.
+     * Constructs a new Zend2_Gdata_Spreadsheets_Extension_Custom object.
      * @param string $column (optional) The column/tag name of the element.
      * @param string $value (optional) The text content of the element.
      */
     public function __construct($column = null, $value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Spreadsheets::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\Spreadsheets::$namespaces);
         parent::__construct();
         $this->_text = $value;
         $this->_rootElement = $column;

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Zend_Server_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @subpackage Zend2_Server_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Server\Reflection;
+namespace Zend2\Server\Reflection;
 
 /**
  * Method/Function prototypes
  *
  * Contains accessors for the return value and all method arguments.
  *
- * @uses       \Zend\Server\Reflection\Exception
- * @uses       \Zend\Server\Reflection\ReflectionParameter
- * @uses       \Zend\Server\Reflection\ReflectionReturnValue
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Zend_Server_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Server\Reflection\Exception
+ * @uses       \Zend2\Server\Reflection\ReflectionParameter
+ * @uses       \Zend2\Server\Reflection\ReflectionReturnValue
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @subpackage Zend2_Server_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Prototype
@@ -40,7 +40,7 @@ class Prototype
     /**
      * Constructor
      *
-     * @param Zend\Server\Reflection\ReflectionReturnValue $return
+     * @param Zend2\Server\Reflection\ReflectionReturnValue $return
      * @param array $params
      * @return void
      */
@@ -77,7 +77,7 @@ class Prototype
      * Retrieve the return value object
      *
      * @access public
-     * @return Zend\Server\Reflection\ReflectionReturnValue
+     * @return Zend2\Server\Reflection\ReflectionReturnValue
      */
     public function getReturnValue()
     {
@@ -87,7 +87,7 @@ class Prototype
     /**
      * Retrieve method parameters
      *
-     * @return array Array of {@link \Zend\Server\Reflection\ReflectionParameter}s
+     * @return array Array of {@link \Zend2\Server\Reflection\ReflectionParameter}s
      */
     public function getParameters()
     {

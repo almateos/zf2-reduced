@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Log
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Log
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * @namespace
  */
-namespace Zend\Log;
+namespace Zend2\Log;
 
-use Zend\Loader\PluginBroker;
+use Zend2\Loader\PluginBroker;
 
 /**
- * @uses       \Zend\Loader\PluginBroker
- * @category   Zend
- * @package    Zend_Log
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Loader\PluginBroker
+ * @category   Zend2
+ * @package    Zend2_Log
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class WriterBroker extends PluginBroker
@@ -37,7 +37,7 @@ class WriterBroker extends PluginBroker
     /**
      * @var string Default plugin loading strategy
      */
-    protected $defaultClassLoader = 'Zend\Log\WriterLoader';
+    protected $defaultClassLoader = 'Zend2\Log\WriterLoader';
 
     /**
      * Determine whether we have a valid plugin
@@ -49,7 +49,7 @@ class WriterBroker extends PluginBroker
     protected function validatePlugin($plugin)
     {
         if (!$plugin instanceof Writer) {
-            throw new Exception\InvalidArgumentException('Writer must implement Zend\Log\Writer');
+            throw new Exception\InvalidArgumentException('Writer must implement Zend2\Log\Writer');
         }
 
         return true;

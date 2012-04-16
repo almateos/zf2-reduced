@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Loader;
+namespace Zend2\Loader;
 
-use Zend\Di\Locator;
+use Zend2\Di\Locator;
 
 interface LocatorAware
 {

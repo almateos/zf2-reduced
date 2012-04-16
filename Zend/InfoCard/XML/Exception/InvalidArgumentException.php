@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\InfoCard\XML\Exception;
+namespace Zend2\InfoCard\XML\Exception;
 
 class InvalidArgumentException
     extends \InvalidArgumentException
-    implements \Zend\InfoCard\XML\Exception
+    implements \Zend2\InfoCard\XML\Exception
 {}

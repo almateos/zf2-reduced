@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\InternalStructure;
-use Zend\Pdf\Exception;
-use Zend\Pdf\Action;
-use Zend\Pdf\Destination;
-use Zend\Pdf\InternalType;
-use Zend\Pdf;
+namespace Zend2\Pdf\InternalStructure;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf\Action;
+use Zend2\Pdf\Destination;
+use Zend2\Pdf\InternalType;
+use Zend2\Pdf;
 
 /**
  * PDF target (action or destination)
  *
- * @uses       \Zend\Pdf\Action\AbstractAction
- * @uses       \Zend\Pdf\Destination\AbstractDestination
- * @uses       \Zend\Pdf\InternalType\AbstractTypeObject
- * @uses       \Zend\Pdf\Exception
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Action\AbstractAction
+ * @uses       \Zend2\Pdf\Destination\AbstractDestination
+ * @uses       \Zend2\Pdf\InternalType\AbstractTypeObject
+ * @uses       \Zend2\Pdf\Exception
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class NavigationTarget
@@ -43,9 +43,9 @@ abstract class NavigationTarget
     /**
      * Parse resource and return it as an Action or Explicit Destination
      *
-     * $param \Zend\Pdf\InternalType $resource
-     * @return \Zend\Pdf\Destination\AbstractDestination|\Zend\Pdf\Action\AbstractAction
-     * @throws \Zend\Pdf\Exception
+     * $param \Zend2\Pdf\InternalType $resource
+     * @return \Zend2\Pdf\Destination\AbstractDestination|\Zend2\Pdf\Action\AbstractAction
+     * @throws \Zend2\Pdf\Exception
      */
     public static function load(InternalType\AbstractTypeObject $resource)
     {
@@ -75,7 +75,7 @@ abstract class NavigationTarget
      * Get resource
      *
      * @internal
-     * @return \Zend\Pdf\InternalType\AbstractTypeObject
+     * @return \Zend2\Pdf\InternalType\AbstractTypeObject
      */
     abstract public function getResource();
 }

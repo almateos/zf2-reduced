@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,35 +12,35 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search\Query;
+namespace Zend2\Search\Lucene\Search\Query;
 
-use Zend\Search\Lucene\Index,
-	Zend\Search\Lucene,
-	Zend\Search\Lucene\Analysis\Analyzer,
-	Zend\Search\Lucene\Search\Highlighter,
-	Zend\Search\Lucene\Exception\UnsupportedMethodCallException,
-	Zend\Search\Lucene\Exception\RuntimeException,
-	Zend\Search\Lucene\Exception\OutOfBoundsException;
+use Zend2\Search\Lucene\Index,
+	Zend2\Search\Lucene,
+	Zend2\Search\Lucene\Analysis\Analyzer,
+	Zend2\Search\Lucene\Search\Highlighter,
+	Zend2\Search\Lucene\Exception\UnsupportedMethodCallException,
+	Zend2\Search\Lucene\Exception\RuntimeException,
+	Zend2\Search\Lucene\Exception\OutOfBoundsException;
 
 /**
- * @uses       \Zend\Search\Lucene\Index
- * @uses       \Zend\Search\Lucene\Analysis\Analyzer\Analyzer
- * @uses       \Zend\Search\Lucene\Exception\RuntimeException
- * @uses       \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
- * @uses       \Zend\Search\Lucene\Exception\OutOfBoundsException
- * @uses       \Zend\Search\Lucene\Index\Term
- * @uses       \Zend\Search\Lucene\Search\Query
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Index
+ * @uses       \Zend2\Search\Lucene\Analysis\Analyzer\Analyzer
+ * @uses       \Zend2\Search\Lucene\Exception\RuntimeException
+ * @uses       \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
+ * @uses       \Zend2\Search\Lucene\Exception\OutOfBoundsException
+ * @uses       \Zend2\Search\Lucene\Index\Term
+ * @uses       \Zend2\Search\Lucene\Search\Query
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Wildcard extends AbstractQuery
@@ -51,7 +51,7 @@ class Wildcard extends AbstractQuery
      * Field has to be fully specified or has to be null
      * Text may contain '*' or '?' symbols
      *
-     * @var \Zend\Search\Lucene\Index\Term
+     * @var \Zend2\Search\Lucene\Index\Term
      */
     private $_pattern;
 
@@ -62,7 +62,7 @@ class Wildcard extends AbstractQuery
      * It's filled during the search (rewrite operation) and may be used for search result
      * post-processing
      *
-     * Array of Zend_Search_Lucene_Index_Term objects
+     * Array of Zend2_Search_Lucene_Index_Term objects
      *
      * @var array
      */
@@ -76,9 +76,9 @@ class Wildcard extends AbstractQuery
     private static $_minPrefixLength = 3;
 
     /**
-     * Zend_Search_Lucene_Search_Query_Wildcard constructor.
+     * Zend2_Search_Lucene_Search_Query_Wildcard constructor.
      *
-     * @param \Zend\Search\Lucene\Index\Term $pattern
+     * @param \Zend2\Search\Lucene\Index\Term $pattern
      */
     public function __construct(Index\Term $pattern)
     {
@@ -132,10 +132,10 @@ class Wildcard extends AbstractQuery
     /**
      * Re-write query into primitive queries in the context of specified index
      *
-     * @param \Zend\Search\Lucene\SearchIndex $index
-     * @throws \Zend\Search\Lucene\Exception\RuntimeException
-     * @throws \Zend\Search\Lucene\Exception\OutOfBoundsException
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @param \Zend2\Search\Lucene\SearchIndex $index
+     * @throws \Zend2\Search\Lucene\Exception\RuntimeException
+     * @throws \Zend2\Search\Lucene\Exception\OutOfBoundsException
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     public function rewrite(Lucene\SearchIndex $index)
     {
@@ -158,7 +158,7 @@ class Wildcard extends AbstractQuery
             );
         }
 
-        /** @todo check for PCRE unicode support may be performed through Zend_Environment in some future */
+        /** @todo check for PCRE unicode support may be performed through Zend2_Environment in some future */
         if (@preg_match('/\pL/u', 'a') == 1) {
             // PCRE unicode support is turned on
             // add Unicode modifier to the match expression
@@ -222,9 +222,9 @@ class Wildcard extends AbstractQuery
     /**
      * Optimize query in the context of specified index
      *
-     * @param \Zend\Search\Lucene\SearchIndex $index
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @param \Zend2\Search\Lucene\SearchIndex $index
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     public function optimize(Lucene\SearchIndex $index)
     {
@@ -235,7 +235,7 @@ class Wildcard extends AbstractQuery
     /**
      * Returns query pattern
      *
-     * @return \Zend\Search\Lucene\Index\Term
+     * @return \Zend2\Search\Lucene\Index\Term
      */
     public function getPattern()
     {
@@ -246,7 +246,7 @@ class Wildcard extends AbstractQuery
     /**
      * Return query terms
      *
-     * @throws \Zend\Search\Lucene\Exception\RuntimeException
+     * @throws \Zend2\Search\Lucene\Exception\RuntimeException
      * @return array
      */
     public function getQueryTerms()
@@ -261,9 +261,9 @@ class Wildcard extends AbstractQuery
     /**
      * Constructs an appropriate Weight implementation for this query.
      *
-     * @param \Zend\Search\Lucene\SearchIndex $reader
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
-     * @return \Zend\Search\Lucene\Search\Weight\Weight
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @return \Zend2\Search\Lucene\Search\Weight\Weight
      */
     public function createWeight(Lucene\SearchIndex $reader)
     {
@@ -275,9 +275,9 @@ class Wildcard extends AbstractQuery
      * Execute query in context of index reader
      * It also initializes necessary internal structures
      *
-     * @param \Zend\Search\Lucene\SearchIndex $reader
-     * @param \Zend\Search\Lucene\Index\DocsFilter|null $docsFilter
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
+     * @param \Zend2\Search\Lucene\Index\DocsFilter|null $docsFilter
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
      */
     public function execute(Lucene\SearchIndex $reader, $docsFilter = null)
     {
@@ -289,7 +289,7 @@ class Wildcard extends AbstractQuery
      *
      * It's an array with document ids as keys (performance considerations)
      *
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
      * @return array
      */
     public function matchedDocs()
@@ -303,8 +303,8 @@ class Wildcard extends AbstractQuery
      * Score specified document
      *
      * @param integer $docId
-     * @param \Zend\Search\Lucene\SearchIndex $reader
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
      * @return float
      */
     public function score($docId, Lucene\SearchIndex $reader)
@@ -317,7 +317,7 @@ class Wildcard extends AbstractQuery
     /**
      * Query specific matches highlighting
      *
-     * @param \Zend\Search\Lucene\Search\Highlighter $highlighter  Highlighter object (also contains doc for highlighting)
+     * @param \Zend2\Search\Lucene\Search\Highlighter $highlighter  Highlighter object (also contains doc for highlighting)
      */
     protected function _highlightMatches(Lucene\Search\Highlighter $highlighter)
     {

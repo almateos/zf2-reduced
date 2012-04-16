@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Cache\Storage;
+namespace Zend2\Cache\Storage;
 
-use Zend\Cache\Exception,
-    Zend\Loader\PluginBroker;
+use Zend2\Cache\Exception,
+    Zend2\Loader\PluginBroker;
 
 /**
  * Broker for cache storage adapter instances
  *
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class AdapterBroker extends PluginBroker
@@ -38,7 +38,7 @@ class AdapterBroker extends PluginBroker
     /**
      * @var string Default plugin loading strategy
      */
-    protected $defaultClassLoader = 'Zend\Cache\Storage\AdapterLoader';
+    protected $defaultClassLoader = 'Zend2\Cache\Storage\AdapterLoader';
 
     /**
      * Determine if we have a valid adapter
@@ -50,7 +50,7 @@ class AdapterBroker extends PluginBroker
     protected function validatePlugin($plugin)
     {
         if (!$plugin instanceof Adapter) {
-            throw new Exception\RuntimeException('Cache storage adapters must implement Zend\Cache\Storage\Adapter');
+            throw new Exception\RuntimeException('Cache storage adapters must implement Zend2\Cache\Storage\Adapter');
         }
         return true;
     }

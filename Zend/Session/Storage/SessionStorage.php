@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,13 +12,13 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Session
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Session
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Session\Storage;
+namespace Zend2\Session\Storage;
 
 /**
  * Session storage in $_SESSION
@@ -26,10 +26,10 @@ namespace Zend\Session\Storage;
  * Replaces the $_SESSION superglobal with an ArrayObject that allows for 
  * property access, metadata storage, locking, and immutability.
  * 
- * @category   Zend
- * @package    Zend_Session
+ * @category   Zend2
+ * @package    Zend2_Session
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class SessionStorage extends ArrayStorage

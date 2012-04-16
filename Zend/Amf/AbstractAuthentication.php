@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Amf
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Amf
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Amf;
+namespace Zend2\Amf;
 
 /**
  * Base abstract class for AMF authentication implementation
  *
- * @uses       \Zend\Authentication\Adapter
- * @package    Zend_Amf
+ * @uses       \Zend2\Authentication\Adapter
+ * @package    Zend2_Amf
  * @subpackage Auth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class AbstractAuthentication implements \Zend\Authentication\Adapter
+abstract class AbstractAuthentication implements \Zend2\Authentication\Adapter
 {
     protected $_username;
     protected $_password;

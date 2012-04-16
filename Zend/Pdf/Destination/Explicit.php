@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Destination
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Destination
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Destination;
-use Zend\Pdf\Exception;
-use Zend\Pdf\InternalType;
-use Zend\Pdf;
+namespace Zend2\Pdf\Destination;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf\InternalType;
+use Zend2\Pdf;
 
 /**
  * Abstract PDF explicit destination representation class
  *
- * @uses       \Zend\Pdf\Destination\AbstractDestination
- * @uses       \Zend\Pdf\InternalType\AbstractTypeObject
- * @uses       \Zend\Pdf\Exception
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Destination
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Destination\AbstractDestination
+ * @uses       \Zend2\Pdf\InternalType\AbstractTypeObject
+ * @uses       \Zend2\Pdf\Exception
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Destination
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Explicit extends AbstractDestination
@@ -40,7 +40,7 @@ abstract class Explicit extends AbstractDestination
     /**
      * Destination description array
      *
-     * @var \Zend\Pdf\InternalType\ArrayObject
+     * @var \Zend2\Pdf\InternalType\ArrayObject
      */
     protected $_destinationArray;
 
@@ -54,8 +54,8 @@ abstract class Explicit extends AbstractDestination
     /**
      * Explicit destination object constructor
      *
-     * @param \Zend\Pdf\InternalType\AbstractTypeObject $destinationArray
-     * @throws \Zend\Pdf\Exception
+     * @param \Zend2\Pdf\InternalType\AbstractTypeObject $destinationArray
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct(InternalType\AbstractTypeObject $destinationArray)
     {
@@ -108,7 +108,7 @@ abstract class Explicit extends AbstractDestination
      * Get resource
      *
      * @internal
-     * @return \Zend\Pdf\InternalType\AbstractTypeObject
+     * @return \Zend2\Pdf\InternalType\AbstractTypeObject
      */
     public function getResource()
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,40 +12,40 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_Response_BaseType
- * @uses       Zend_Service_DeveloperGarden_Response_IpLocation_CityType
- * @uses       Zend_Service_DeveloperGarden_Response_IpLocation_GeoCoordinatesType
- * @uses       Zend_Service_DeveloperGarden_Response_IpLocation_RegionType
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Response_BaseType
+ * @uses       Zend2_Service_DeveloperGarden_Response_IpLocation_CityType
+ * @uses       Zend2_Service_DeveloperGarden_Response_IpLocation_GeoCoordinatesType
+ * @uses       Zend2_Service_DeveloperGarden_Response_IpLocation_RegionType
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_Response_IpLocation_IPAddressLocationType
-    extends Zend_Service_DeveloperGarden_Response_BaseType
+class Zend2_Service_DeveloperGarden_Response_IpLocation_IPAddressLocationType
+    extends Zend2_Service_DeveloperGarden_Response_BaseType
 {
     /**
-     * @var Zend_Service_DeveloperGarden_Response_IpLocation_RegionType
+     * @var Zend2_Service_DeveloperGarden_Response_IpLocation_RegionType
      */
     public $isInRegion = null;
 
     /**
-     * @var Zend_Service_DeveloperGarden_Response_IpLocation_GeoCoordinatesType
+     * @var Zend2_Service_DeveloperGarden_Response_IpLocation_GeoCoordinatesType
      */
     public $isInGeo = null;
 
     /**
-     * @var Zend_Service_DeveloperGarden_Response_IpLocation_CityType
+     * @var Zend2_Service_DeveloperGarden_Response_IpLocation_CityType
      */
     public $isInCity = null;
 
@@ -65,7 +65,7 @@ class Zend_Service_DeveloperGarden_Response_IpLocation_IPAddressLocationType
     public $radius = 0;
 
     /**
-     * @return Zend_Service_DeveloperGarden_Response_IpLocation_RegionType
+     * @return Zend2_Service_DeveloperGarden_Response_IpLocation_RegionType
      */
     public function getRegion()
     {
@@ -73,7 +73,7 @@ class Zend_Service_DeveloperGarden_Response_IpLocation_IPAddressLocationType
     }
 
     /**
-     * @return Zend_Service_DeveloperGarden_Response_IpLocation_GeoCoordinatesType
+     * @return Zend2_Service_DeveloperGarden_Response_IpLocation_GeoCoordinatesType
      */
     public function getGeoCoordinates()
     {
@@ -81,7 +81,7 @@ class Zend_Service_DeveloperGarden_Response_IpLocation_IPAddressLocationType
     }
 
     /**
-     * @return Zend_Service_DeveloperGarden_Response_IpLocation_CityType
+     * @return Zend2_Service_DeveloperGarden_Response_IpLocation_CityType
      */
     public function getCity()
     {
@@ -120,15 +120,15 @@ class Zend_Service_DeveloperGarden_Response_IpLocation_IPAddressLocationType
     {
         parent::parse();
         if ($this->isInCity === null) {
-            $this->isInCity = new Zend_Service_DeveloperGarden_Response_IpLocation_CityType();
+            $this->isInCity = new Zend2_Service_DeveloperGarden_Response_IpLocation_CityType();
         }
 
         if ($this->isInRegion === null) {
-            $this->isInRegion = new Zend_Service_DeveloperGarden_Response_IpLocation_RegionType();
+            $this->isInRegion = new Zend2_Service_DeveloperGarden_Response_IpLocation_RegionType();
         }
 
         if ($this->isInGeo === null) {
-            $this->isInGeo = new Zend_Service_DeveloperGarden_Response_IpLocation_GeoCoordinatesType();
+            $this->isInGeo = new Zend2_Service_DeveloperGarden_Response_IpLocation_GeoCoordinatesType();
         }
 
         return $this;

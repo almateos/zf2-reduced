@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
+namespace Zend2\Validator;
 
 use Traversable,
-    Zend\Stdlib\ArrayUtils;
+    Zend2\Stdlib\ArrayUtils;
 
 /**
- * @uses       \Zend\Validator\AbstractValidator
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Validator\AbstractValidator
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Identical extends AbstractValidator
@@ -102,7 +102,7 @@ class Identical extends AbstractValidator
      * Set token against which to compare
      *
      * @param  mixed $token
-     * @return \Zend\Validator\Identical
+     * @return \Zend2\Validator\Identical
      */
     public function setToken($token)
     {
@@ -124,7 +124,7 @@ class Identical extends AbstractValidator
     /**
      * Sets the strict parameter
      *
-     * @param Zend\Validator\Identical
+     * @param Zend2\Validator\Identical
      */
     public function setStrict($strict)
     {

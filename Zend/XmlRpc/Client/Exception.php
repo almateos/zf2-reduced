@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Client
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\XmlRpc\Client;
+namespace Zend2\XmlRpc\Client;
 
 /**
- * Base class for all Zend_XmlRpc_Client_* exceptions
+ * Base class for all Zend2_XmlRpc_Client_* exceptions
  *
- * @uses       Zend\XmlRpc\Exception
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @uses       Zend2\XmlRpc\Exception
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Client
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-interface Exception extends \Zend\XmlRpc\Exception
+interface Exception extends \Zend2\XmlRpc\Exception
 {}

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Zend_Server_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @subpackage Zend2_Server_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Server\Reflection;
+namespace Zend2\Server\Reflection;
 
 /**
  * Method Reflection
  *
  * @uses       ReflectionClass
  * @uses       ReflectionMethod
- * @uses       \Zend\Server\Reflection\ClassReflection
- * @uses       \Zend\Server\Reflection\AbstractFunction
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Zend_Server_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Server\Reflection\ClassReflection
+ * @uses       \Zend2\Server\Reflection\AbstractFunction
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @subpackage Zend2_Server_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ReflectionMethod extends AbstractFunction
@@ -44,14 +44,14 @@ class ReflectionMethod extends AbstractFunction
 
     /**
      * Parent class reflection
-     * @var Zend\Server\Reflection\ReflectionClass
+     * @var Zend2\Server\Reflection\ReflectionClass
      */
     protected $_classReflection;
 
     /**
      * Constructor
      *
-     * @param \Zend\Server\Reflection\ReflectionClass $class
+     * @param \Zend2\Server\Reflection\ReflectionClass $class
      * @param ReflectionMethod $r
      * @param string $namespace
      * @param array $argv
@@ -86,7 +86,7 @@ class ReflectionMethod extends AbstractFunction
     /**
      * Return the reflection for the class that defines this method
      *
-     * @return \Zend\Server\Reflection\ReflectionClass
+     * @return \Zend2\Server\Reflection\ReflectionClass
      */
     public function getDeclaringClass()
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Paginator\Adapter;
+namespace Zend2\Paginator\Adapter;
 
-use Zend\Paginator\Adapter;
+use Zend2\Paginator\Adapter;
 
 /**
- * @uses       \Zend\Paginator\Adapter
- * @uses       \Zend\Paginator\Adapter\Exception
- * @uses       \Zend\Paginator\SerializableLimitIterator
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Paginator\Adapter
+ * @uses       \Zend2\Paginator\Adapter\Exception
+ * @uses       \Zend2\Paginator\SerializableLimitIterator
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Iterator implements Adapter
@@ -51,7 +51,7 @@ class Iterator implements Adapter
      * Constructor.
      *
      * @param  Iterator $iterator Iterator to paginate
-     * @throws \Zend\Paginator\Adapter\Exception
+     * @throws \Zend2\Paginator\Adapter\Exception
      */
     public function __construct(\Iterator $iterator)
     {
@@ -75,7 +75,7 @@ class Iterator implements Adapter
         if ($this->_count == 0) {
             return array();
         }
-        return new \Zend\Paginator\SerializableLimitIterator($this->_iterator, $offset, $itemCountPerPage);
+        return new \Zend2\Paginator\SerializableLimitIterator($this->_iterator, $offset, $itemCountPerPage);
     }
 
     /**

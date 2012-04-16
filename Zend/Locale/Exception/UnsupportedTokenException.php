@@ -1,7 +1,7 @@
 <?php
-namespace Zend\Locale\Exception;
+namespace Zend2\Locale\Exception;
 
 class UnsupportedMethod
     extends \RuntimeException
-    implements \Zend\Locale\Exception
+    implements \Zend2\Locale\Exception
 {}

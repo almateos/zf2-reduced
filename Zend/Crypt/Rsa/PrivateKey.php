@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Crypt
+ * @category   Zend2
+ * @package    Zend2_Crypt
  * @subpackage RSA
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Crypt\Rsa;
+namespace Zend2\Crypt\Rsa;
 
 /**
- * @uses       Zend\Crypt\Exception
- * @uses       Zend\Crypt\Rsa\Key
- * @uses       Zend\Crypt\Rsa\PublicKey
- * @category   Zend
- * @package    Zend_Crypt
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Crypt\Exception
+ * @uses       Zend2\Crypt\Rsa\Key
+ * @uses       Zend2\Crypt\Rsa\PublicKey
+ * @category   Zend2
+ * @package    Zend2_Crypt
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PrivateKey extends Key
@@ -43,13 +43,13 @@ class PrivateKey extends Key
 
     /**
      * @param string $passPhrase
-     * @throws Zend\Crypt\Exception
+     * @throws Zend2\Crypt\Exception
      */
     protected function _parse($passPhrase)
     {
         $result = openssl_get_privatekey($this->_pemString, $passPhrase);
         if (!$result) {
-            throw new \Zend\Crypt\Exception('Unable to load private key');
+            throw new \Zend2\Crypt\Exception('Unable to load private key');
         }
         $this->_opensslKeyResource = $result;
         $this->_details = openssl_pkey_get_details($this->_opensslKeyResource);

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Json
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Json
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Json\Server\Smd;
-use Zend\Json\Server\Smd,
-    Zend\Json\Server,
-    Zend\Json\Server\Exception\InvalidArgumentException;
+namespace Zend2\Json\Server\Smd;
+use Zend2\Json\Server\Smd,
+    Zend2\Json\Server,
+    Zend2\Json\Server\Exception\InvalidArgumentException;
 
 /**
  * Create Service Mapping Description for a method
  *
  * @todo       Revised method regex to allow NS; however, should SMD be revised to strip PHP NS instead when attaching functions?
- * @uses       Zend\Json\Json
- * @uses       Zend\Json\Server\Exception\InvalidArgumentException
- * @uses       Zend\Json\Server\Smd\Smd
- * @package    Zend_Json
+ * @uses       Zend2\Json\Json
+ * @uses       Zend2\Json\Server\Exception\InvalidArgumentException
+ * @uses       Zend2\Json\Server\Smd\Smd
+ * @package    Zend2_Json
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Service
@@ -122,7 +122,7 @@ class Service
      *
      * @param  string|array $spec
      * @return void
-     * @throws Zend\Json\Server\Exception\InvalidArgumentException if no name provided
+     * @throws Zend2\Json\Server\Exception\InvalidArgumentException if no name provided
      */
     public function __construct($spec)
     {
@@ -141,7 +141,7 @@ class Service
      * Set object state
      *
      * @param  array $options
-     * @return Zend\Json\Server\Smd\Service
+     * @return Zend2\Json\Server\Smd\Service
      */
     public function setOptions(array $options)
     {
@@ -162,8 +162,8 @@ class Service
      * Set service name
      *
      * @param  string $name
-     * @return Zend\Json\Server\Smd\Service
-     * @throws Zend\Json\Server\Exception\InvalidArgumentException
+     * @return Zend2\Json\Server\Smd\Service
+     * @throws Zend2\Json\Server\Exception\InvalidArgumentException
      */
     public function setName($name)
     {
@@ -191,7 +191,7 @@ class Service
      * Currently limited to POST
      *
      * @param  string $transport
-     * @return Zend\Json\Server\Smd\Service
+     * @return Zend2\Json\Server\Smd\Service
      */
     public function setTransport($transport)
     {
@@ -217,7 +217,7 @@ class Service
      * Set service target
      *
      * @param  string $target
-     * @return Zend\Json\Server\Smd\Service
+     * @return Zend2\Json\Server\Smd\Service
      */
     public function setTarget($target)
     {
@@ -239,7 +239,7 @@ class Service
      * Set envelope type
      *
      * @param  string $envelopeType
-     * @return Zend\Json\Server\Smd\Service
+     * @return Zend2\Json\Server\Smd\Service
      */
     public function setEnvelope($envelopeType)
     {
@@ -267,7 +267,7 @@ class Service
      * @param  string|array $type
      * @param  array $options
      * @param  int|null $order
-     * @return Zend\Json\Server\Smd\Service
+     * @return Zend2\Json\Server\Smd\Service
      */
     public function addParam($type, array $options = array(), $order = null)
     {
@@ -309,7 +309,7 @@ class Service
      * Each param should be an array, and should include the key 'type'.
      *
      * @param  array $params
-     * @return Zend\Json\Server\Smd\Service
+     * @return Zend2\Json\Server\Smd\Service
      */
     public function addParams(array $params)
     {
@@ -332,7 +332,7 @@ class Service
      * Overwrite all parameters
      *
      * @param  array $params
-     * @return Zend\Json\Server\Smd\Service
+     * @return Zend2\Json\Server\Smd\Service
      */
     public function setParams(array $params)
     {
@@ -370,7 +370,7 @@ class Service
      * Set return type
      *
      * @param  string|array $type
-     * @return Zend\Json\Server\Smd\Service
+     * @return Zend2\Json\Server\Smd\Service
      */
     public function setReturn($type)
     {
@@ -426,7 +426,7 @@ class Service
     public function toJson()
     {
         $service = array($this->getName() => $this->toArray());
-        return \Zend\Json\Json::encode($service);
+        return \Zend2\Json\Json::encode($service);
     }
 
     /**
@@ -444,7 +444,7 @@ class Service
      *
      * @param  string $type
      * @return true
-     * @throws Zend\Json\Server\Exception
+     * @throws Zend2\Json\Server\Exception
      */
     protected function _validateParamType($type, $isReturn = false)
     {

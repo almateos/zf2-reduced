@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,33 +12,33 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Delicious
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Delicious;
+namespace Zend2\Service\Delicious;
 
-use \Zend\Rest\Client as RestClient,
-    \Zend\Date\Date;
+use \Zend2\Rest\Client as RestClient,
+    \Zend2\Date\Date;
 
 /**
- * Zend_Service_Delicious is a concrete implementation of the del.icio.us web service
+ * Zend2_Service_Delicious is a concrete implementation of the del.icio.us web service
  *
  * @uses       DOMDocument
- * @uses       Zend_Date
- * @uses       Zend_Json_Decoder
- * @uses       Zend_Rest_Client
- * @uses       Zend_Service_Delicious_Exception
- * @uses       Zend_Service_Delicious_Post
- * @uses       Zend_Service_Delicious_PostList
- * @uses       Zend_Service_Delicious_SimplePost
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Date
+ * @uses       Zend2_Json_Decoder
+ * @uses       Zend2_Rest_Client
+ * @uses       Zend2_Service_Delicious_Exception
+ * @uses       Zend2_Service_Delicious_Post
+ * @uses       Zend2_Service_Delicious_PostList
+ * @uses       Zend2_Service_Delicious_SimplePost
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Delicious
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Delicious
@@ -66,9 +66,9 @@ class Delicious
     const JSON_URL     = '/feeds/json/url/data';
 
     /**
-     * Zend_Service_Rest instance
+     * Zend2_Service_Rest instance
      *
-     * @var Zend_Service_Rest
+     * @var Zend2_Service_Rest
      */
     protected $_rest;
 
@@ -112,7 +112,7 @@ class Delicious
      *
      * @param  string $uname Client user name
      * @param  string $pass  Client password
-     * @return Zend_Service_Delicious Provides a fluent interface
+     * @return Zend2_Service_Delicious Provides a fluent interface
      */
     public function setAuth($uname, $pass)
     {
@@ -125,8 +125,8 @@ class Delicious
     /**
      * Get time of the last update
      *
-     * @throws Zend_Service_Delicious_Exception
-     * @return Zend_Date
+     * @throws Zend2_Service_Delicious_Exception
+     * @return Zend2_Date
      */
     public function getLastUpdate()
     {
@@ -157,7 +157,7 @@ class Delicious
      *
      * @param  string $old Old tag name
      * @param  string $new New tag name
-     * @return Zend_Service_Delicious Provides a fluent interface
+     * @return Zend2_Service_Delicious Provides a fluent interface
      */
     public function renameTag($old, $new)
     {
@@ -189,7 +189,7 @@ class Delicious
      *
      * @param  string $bundle Name of new bundle
      * @param  array  $tags   Array of tags
-     * @return Zend_Service_Delicious Provides a fluent interface
+     * @return Zend2_Service_Delicious Provides a fluent interface
      */
     public function addBundle($bundle, array $tags)
     {
@@ -205,7 +205,7 @@ class Delicious
      * Delete a bundle
      *
      * @param  string $bundle Name of bundle to be deleted
-     * @return Zend_Service_Delicious Provides a fluent interface
+     * @return Zend2_Service_Delicious Provides a fluent interface
      */
     public function deleteBundle($bundle)
     {
@@ -220,7 +220,7 @@ class Delicious
      * Delete a post
      *
      * @param  string $url URL of post to be deleted
-     * @return Zend_Service_Delicious Provides a fluent interface
+     * @return Zend2_Service_Delicious Provides a fluent interface
      */
     public function deletePost($url)
     {
@@ -257,10 +257,10 @@ class Delicious
      * If no date or url is given, most recent date will be used
      *
      * @param  string    $tag Optional filtering by tag
-     * @param  Zend_Date $dt  Optional filtering by date
+     * @param  Zend2_Date $dt  Optional filtering by date
      * @param  string    $url Optional filtering by url
-     * @throws Zend_Service_Delicious_Exception
-     * @return Zend_Service_Delicious_PostList
+     * @throws Zend2_Service_Delicious_Exception
+     * @return Zend2_Service_Delicious_PostList
      */
     public function getPosts($tag = null, Date $dt = null, $url = null)
     {
@@ -284,7 +284,7 @@ class Delicious
      * Get all posts
      *
      * @param  string $tag Optional filtering by tag
-     * @return Zend_Service_Delicious_PostList
+     * @return Zend2_Service_Delicious_PostList
      */
     public function getAllPosts($tag = null)
     {
@@ -303,7 +303,7 @@ class Delicious
      *
      * @param  string $tag   Optional filtering by tag
      * @param  string $count Maximum number of posts to be returned (default 15)
-     * @return Zend_Service_Delicious_PostList
+     * @return Zend2_Service_Delicious_PostList
      */
     public function getRecentPosts($tag = null, $count = 15)
     {
@@ -323,7 +323,7 @@ class Delicious
     /**
      * Create new post
      *
-     * @return Zend_Service_Delicious_Post
+     * @return Zend2_Service_Delicious_Post
      */
     public function createNewPost($title, $url)
     {
@@ -336,7 +336,7 @@ class Delicious
      * @param  string $user  Owner of the posts
      * @param  int    $count Number of posts (default 15, max. 100)
      * @param  string $tag   Optional filtering by tag
-     * @return Zend_Service_Delicious_PostList
+     * @return Zend2_Service_Delicious_PostList
      */
     public function getUserPosts($user, $count = null, $tag = null)
     {
@@ -438,7 +438,7 @@ class Delicious
      * @param   array  $parms Array of GET parameters
      * @param   string $type  Type of a request ("xml"|"json")
      * @return  mixed  decoded response from web service
-     * @throws  Zend_Service_Delicious_Exception
+     * @throws  Zend2_Service_Delicious_Exception
      */
     public function makeRequest($path, array $parms = array(), $type = 'xml')
     {
@@ -482,7 +482,7 @@ class Delicious
 
                 return $dom;
             case 'json':
-                return \Zend\Json\Decoder::decode($responseBody);
+                return \Zend2\Json\Decoder::decode($responseBody);
         }
     }
 
@@ -495,7 +495,7 @@ class Delicious
      * @param   string      $attKey   Attribute of child tag to be used as a key
      * @param   string      $attValue Attribute of child tag to be used as a value
      * @return  array
-     * @throws  Zend_Service_Delicious_Exception
+     * @throws  Zend2_Service_Delicious_Exception
      */
     private static function _xmlResponseToArray(\DOMDocument $response, $root, $child, $attKey, $attValue)
     {
@@ -519,11 +519,11 @@ class Delicious
     }
 
     /**
-     * Constructs Zend_Service_Delicious_PostList from XML response
+     * Constructs Zend2_Service_Delicious_PostList from XML response
      *
      * @param   DOMDocument $response
-     * @return  Zend_Service_Delicious_PostList
-     * @throws  Zend_Service_Delicious_Exception
+     * @return  Zend2_Service_Delicious_PostList
+     * @throws  Zend2_Service_Delicious_Exception
      */
     private function _parseXmlPostList(\DOMDocument $response)
     {
@@ -541,7 +541,7 @@ class Delicious
      *
      * @param   DOMDocument $response
      * @return  void
-     * @throws  Zend_Service_Delicious_Exception
+     * @throws  Zend2_Service_Delicious_Exception
      */
     private static function _evalXmlResult(\DOMDocument $response)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Paginator
+ * @category   Zend2
+ * @package    Zend2_Paginator
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id$
  */
 
-namespace Zend\Paginator\Adapter;
+namespace Zend2\Paginator\Adapter;
 
 /**
- * @uses       Zend\Paginator\Exception
- * @category   Zend
- * @package    Zend_Paginator
+ * @uses       Zend2\Paginator\Exception
+ * @category   Zend2
+ * @package    Zend2_Paginator
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-interface Exception extends \Zend\Paginator\Exception
+interface Exception extends \Zend2\Paginator\Exception
 {}

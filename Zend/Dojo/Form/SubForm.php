@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage Form
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\Form;
+namespace Zend2\Dojo\Form;
 
 /**
  * Dijit-enabled SubForm
  *
- * @uses       \Zend\Form\SubForm
- * @package    Zend_Dojo
+ * @uses       \Zend2\Form\SubForm
+ * @package    Zend2_Dojo
  * @subpackage Form
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class SubForm extends \Zend\Form\SubForm
+class SubForm extends \Zend2\Form\SubForm
 {
     /**
      * Has the dojo view helper path been registered?
@@ -41,16 +41,16 @@ class SubForm extends \Zend\Form\SubForm
     /**
      * Constructor
      *
-     * @param  array|\Zend\Config\Config|null $options
+     * @param  array|\Zend2\Config\Config|null $options
      * @return void
      */
     public function __construct($options = null)
     {
-        $this->addPrefixPath('Zend\Dojo\Form\Decorator', 'Zend/Dojo/Form/Decorator', 'decorator')
-             ->addPrefixPath('Zend\Dojo\Form\Element', 'Zend/Dojo/Form/Element', 'element')
-             ->addElementPrefixPath('Zend\Dojo\Form\Decorator', 'Zend/Dojo/Form/Decorator', 'decorator')
-             ->addDisplayGroupPrefixPath('Zend\Dojo\Form\Decorator', 'Zend/Dojo/Form/Decorator')
-             ->setDefaultDisplayGroupClass('Zend\Dojo\Form\DisplayGroup');
+        $this->addPrefixPath('Zend2\Dojo\Form\Decorator', 'Zend2/Dojo/Form/Decorator', 'decorator')
+             ->addPrefixPath('Zend2\Dojo\Form\Element', 'Zend2/Dojo/Form/Element', 'element')
+             ->addElementPrefixPath('Zend2\Dojo\Form\Decorator', 'Zend2/Dojo/Form/Decorator', 'decorator')
+             ->addDisplayGroupPrefixPath('Zend2\Dojo\Form\Decorator', 'Zend2/Dojo/Form/Decorator')
+             ->setDefaultDisplayGroupClass('Zend2\Dojo\Form\DisplayGroup');
         parent::__construct($options);
     }
 
@@ -76,14 +76,14 @@ class SubForm extends \Zend\Form\SubForm
     /**
      * Get view
      *
-     * @return \Zend\View\Renderer
+     * @return \Zend2\View\Renderer
      */
     public function getView()
     {
         $view = parent::getView();
         if (!$this->_dojoViewPathRegistered) {
             if(false === $view->getBroker()->isLoaded('dojo')) {
-                $loader = new \Zend\Dojo\View\HelperLoader();
+                $loader = new \Zend2\Dojo\View\HelperLoader();
                 $view->getBroker()->getClassLoader()->registerPlugins($loader);
             }
             $this->_dojoViewPathRegistered = true;

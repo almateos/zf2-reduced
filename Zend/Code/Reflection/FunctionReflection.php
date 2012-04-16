@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Code\Reflection;
+namespace Zend2\Code\Reflection;
 
 use ReflectionFunction,
-    Zend\Code\Reflection;
+    Zend2\Code\Reflection;
 
 /**
  * @uses       ReflectionFunction
- * @uses       \Zend\Code\Reflection\ReflectionDocblockTag
- * @uses       \Zend\Code\Reflection\Exception
- * @uses       \Zend\Code\Reflection\ReflectionParameter
- * @category   Zend
- * @package    Zend_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Code\Reflection\ReflectionDocblockTag
+ * @uses       \Zend2\Code\Reflection\Exception
+ * @uses       \Zend2\Code\Reflection\ReflectionParameter
+ * @category   Zend2
+ * @package    Zend2_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class FunctionReflection extends ReflectionFunction implements Reflection
@@ -39,7 +39,7 @@ class FunctionReflection extends ReflectionFunction implements Reflection
      * Get function docblock
      *
      * @param  string $reflectionClass Name of reflection class to use
-     * @return Zend_Reflection_Docblock
+     * @return Zend2_Reflection_Docblock
      */
     public function getDocblock()
     {
@@ -89,7 +89,7 @@ class FunctionReflection extends ReflectionFunction implements Reflection
      * Get function parameters
      *
      * @param  string $reflectionClass Name of reflection class to use
-     * @return array Array of \Zend\Code\Reflection\ReflectionParameter
+     * @return array Array of \Zend2\Code\Reflection\ReflectionParameter
      */
     public function getParameters()
     {
@@ -107,7 +107,7 @@ class FunctionReflection extends ReflectionFunction implements Reflection
     /**
      * Get return type tag
      *
-     * @return \Zend\Code\Reflection\DocBlock\Tag\Return
+     * @return \Zend2\Code\Reflection\DocBlock\Tag\Return
      */
     public function getReturn()
     {

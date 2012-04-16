@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,34 +12,34 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Cache\Storage\Adapter;
+namespace Zend2\Cache\Storage\Adapter;
 
 use ArrayObject,
     SplObjectStorage,
     stdClass,
     Traversable,
-    Zend\Cache\Exception,
-    Zend\Cache\Storage\Adapter,
-    Zend\Cache\Storage\Capabilities,
-    Zend\Cache\Storage\Event,
-    Zend\Cache\Storage\ExceptionEvent,
-    Zend\Cache\Storage\PostEvent,
-    Zend\Cache\Storage\Plugin,
-    Zend\EventManager\EventCollection,
-    Zend\EventManager\EventManager;
+    Zend2\Cache\Exception,
+    Zend2\Cache\Storage\Adapter,
+    Zend2\Cache\Storage\Capabilities,
+    Zend2\Cache\Storage\Event,
+    Zend2\Cache\Storage\ExceptionEvent,
+    Zend2\Cache\Storage\PostEvent,
+    Zend2\Cache\Storage\Plugin,
+    Zend2\EventManager\EventCollection,
+    Zend2\EventManager\EventManager;
 
 /**
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractAdapter implements Adapter
@@ -254,7 +254,7 @@ abstract class AbstractAdapter implements Adapter
      *
      * @param  string $eventName
      * @param  ArrayObject $args
-     * @return \Zend\EventManager\ResponseCollection All handler return values
+     * @return \Zend2\EventManager\ResponseCollection All handler return values
      */
     protected function triggerPre($eventName, ArrayObject $args)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
+ * @category   Zend2
  * @package    Reader\Reader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Reader\Entry;
-use Zend\Feed\Reader;
+namespace Zend2\Feed\Reader\Entry;
+use Zend2\Feed\Reader;
 
 /**
-* @uses \Zend\Feed\Reader\Reader
-* @uses \Zend\Feed\Reader\Entry\AbstractEntry
-* @uses \Zend\Feed\Reader\Entry
-* @uses \Zend\Feed\Reader\Extension\Atom\Entry
-* @category Zend
-* @package Zend_Feed_Reader
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @uses \Zend2\Feed\Reader\Reader
+* @uses \Zend2\Feed\Reader\Entry\AbstractEntry
+* @uses \Zend2\Feed\Reader\Entry
+* @uses \Zend2\Feed\Reader\Extension\Atom\Entry
+* @category Zend2
+* @package Zend2_Feed_Reader
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 class Atom extends AbstractEntry implements Reader\Entry

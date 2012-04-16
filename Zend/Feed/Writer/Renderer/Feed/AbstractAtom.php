@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Writer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Writer\Renderer\Feed;
-use Zend\Feed\Writer\Renderer;
-use Zend\Date;
-use Zend\Feed\Writer;
+namespace Zend2\Feed\Writer\Renderer\Feed;
+use Zend2\Feed\Writer\Renderer;
+use Zend2\Date;
+use Zend2\Feed\Writer;
 
 /**
-* @uses \Zend\Date\Date
-* @uses \Zend\Feed\Exception
-* @uses \Zend\Feed\Writer\Feed\Feed
-* @uses \Zend\Feed\Writer\Renderer\Entry\Atom\Atom
-* @uses \Zend\Feed\Writer\Renderer\RendererAbstract
-* @uses \Zend\Feed\Writer\Renderer\RendererInterface
-* @uses \Zend\Version
-* @category Zend
-* @package Zend_Feed_Writer
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @uses \Zend2\Date\Date
+* @uses \Zend2\Feed\Exception
+* @uses \Zend2\Feed\Writer\Feed\Feed
+* @uses \Zend2\Feed\Writer\Renderer\Entry\Atom\Atom
+* @uses \Zend2\Feed\Writer\Renderer\RendererAbstract
+* @uses \Zend2\Feed\Writer\Renderer\RendererInterface
+* @uses \Zend2\Version
+* @category Zend2
+* @package Zend2_Feed_Writer
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 class AbstractAtom extends Renderer\AbstractRenderer
@@ -41,7 +41,7 @@ class AbstractAtom extends Renderer\AbstractRenderer
     /**
      * Constructor
      * 
-     * @param  Zend_Feed_Writer_Feed $container 
+     * @param  Zend2_Feed_Writer_Feed $container 
      * @return void
      */
     public function __construct ($container)
@@ -150,8 +150,8 @@ class AbstractAtom extends Renderer\AbstractRenderer
     protected function _setGenerator(\DOMDocument $dom, \DOMElement $root)
     {
         if(!$this->getDataContainer()->getGenerator()) {
-            $this->getDataContainer()->setGenerator('Zend_Feed_Writer',
-                \Zend\Version::VERSION, 'http://framework.zend.com');
+            $this->getDataContainer()->setGenerator('Zend2_Feed_Writer',
+                \Zend2\Version::VERSION, 'http://framework.zend.com');
         }
 
         $gdata = $this->getDataContainer()->getGenerator();

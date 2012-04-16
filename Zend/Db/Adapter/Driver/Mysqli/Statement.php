@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Db
+ * @category   Zend2
+ * @package    Zend2_Db
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Db\Adapter\Driver\Mysqli;
+namespace Zend2\Db\Adapter\Driver\Mysqli;
 
-use Zend\Db\Adapter\Driver\StatementInterface,
-    Zend\Db\Adapter\Exception,
-    Zend\Db\Adapter\ParameterContainer,
-    Zend\Db\Adapter\ParameterContainerInterface;
+use Zend2\Db\Adapter\Driver\StatementInterface,
+    Zend2\Db\Adapter\Exception,
+    Zend2\Db\Adapter\ParameterContainer,
+    Zend2\Db\Adapter\ParameterContainerInterface;
 
 /**
- * @category   Zend
- * @package    Zend_Db
+ * @category   Zend2
+ * @package    Zend2_Db
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Statement implements StatementInterface

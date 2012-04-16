@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf;
-use Zend\Pdf\Exception;
+namespace Zend2\Pdf;
+use Zend2\Pdf\Exception;
 
-use Zend\Memory;
+use Zend2\Memory;
 
 /**
  * General entity which describes PDF document.
@@ -33,24 +33,24 @@ use Zend\Memory;
  * Class agregates document level properties and entities (pages, bookmarks,
  * document level actions, attachments, form object, etc)
  *
- * @uses       \Zend\Memory\MemoryManager
- * @uses       \Zend\Pdf\Color
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\Font
- * @uses       \Zend\Pdf\Image
- * @uses       \Zend\Pdf\InternalStructure
- * @uses       \Zend\Pdf\InternalType
- * @uses       \Zend\Pdf\ObjectFactory
- * @uses       \Zend\Pdf\Outline
- * @uses       \Zend\Pdf\Page
- * @uses       \Zend\Pdf\PdfParser\StructureParser
- * @uses       \Zend\Pdf\Resource\Font\Extracted
- * @uses       \Zend\Pdf\Style
- * @uses       \Zend\Pdf\Trailer
- * @uses       \Zend\Pdf\Util
- * @category   Zend
- * @package    Zend_PDF
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Memory\MemoryManager
+ * @uses       \Zend2\Pdf\Color
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\Font
+ * @uses       \Zend2\Pdf\Image
+ * @uses       \Zend2\Pdf\InternalStructure
+ * @uses       \Zend2\Pdf\InternalType
+ * @uses       \Zend2\Pdf\ObjectFactory
+ * @uses       \Zend2\Pdf\Outline
+ * @uses       \Zend2\Pdf\Page
+ * @uses       \Zend2\Pdf\PdfParser\StructureParser
+ * @uses       \Zend2\Pdf\Resource\Font\Extracted
+ * @uses       \Zend2\Pdf\Style
+ * @uses       \Zend2\Pdf\Trailer
+ * @uses       \Zend2\Pdf\Util
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PdfDocument
@@ -76,7 +76,7 @@ class PdfDocument
      *       to provide incremental parsing and pages tree updating.
      *       That will give good performance and memory (PDF size) benefits.
      *
-     * @var array   - array of \Zend\Pdf\Page object
+     * @var array   - array of \Zend2\Pdf\Page object
      */
     public $pages = array();
 
@@ -117,14 +117,14 @@ class PdfDocument
      * Document named destinations or "GoTo..." actions, used to refer
      * document parts from outside PDF
      *
-     * @var array   - array of \Zend\Pdf\InternalStructure\NavigationTarget objects
+     * @var array   - array of \Zend2\Pdf\InternalStructure\NavigationTarget objects
      */
     protected $_namedTargets = array();
 
     /**
      * Document outlines
      *
-     * @var array - array of \Zend\Pdf\Outline\AbstractOutline objects
+     * @var array - array of \Zend2\Pdf\Outline\AbstractOutline objects
      */
     public $outlines = array();
 
@@ -132,7 +132,7 @@ class PdfDocument
      * Original document outlines list
      * Used to track outlines update
      *
-     * @var array - array of \Zend\Pdf\Outline\AbstractOutline objects
+     * @var array - array of \Zend2\Pdf\Outline\AbstractOutline objects
      */
     protected $_originalOutlines = array();
 
@@ -147,29 +147,29 @@ class PdfDocument
     /**
      * PDF trailer (last or just created)
      *
-     * @var \Zend\Pdf\Trailer\AbstractTrailer
+     * @var \Zend2\Pdf\Trailer\AbstractTrailer
      */
     protected $_trailer = null;
 
     /**
      * PDF objects factory.
      *
-     * @var \Zend\Pdf\ObjectFactory
+     * @var \Zend2\Pdf\ObjectFactory
      */
     protected $_objFactory = null;
 
     /**
      * Memory manager for stream objects
      *
-     * @var \Zend\Memory\MemoryManager|null
+     * @var \Zend2\Memory\MemoryManager|null
      */
     protected static $_memoryManager = null;
 
     /**
      * PDF file parser.
-     * It's not used, but has to be destroyed only with Zend_PDF object
+     * It's not used, but has to be destroyed only with Zend2_PDF object
      *
-     * @var \Zend\Pdf\PdfParser\StructureParser
+     * @var \Zend2\Pdf\PdfParser\StructureParser
      */
     protected $_parser;
 
@@ -184,7 +184,7 @@ class PdfDocument
     /**
      * Request used memory manager
      *
-     * @return Zend\Memory\MemoryManager
+     * @return Zend2\Memory\MemoryManager
      */
     static public function getMemoryManager()
     {
@@ -198,7 +198,7 @@ class PdfDocument
     /**
      * Set user defined memory manager
      *
-     * @param Zend\Memory\MemoryManager $memoryManager
+     * @param Zend2\Memory\MemoryManager $memoryManager
      */
     static public function setMemoryManager(Memory\MemoryManager $memoryManager)
     {
@@ -211,7 +211,7 @@ class PdfDocument
      *
      * @param string $source
      * @param integer $revision
-     * @return \Zend\Pdf\PdfDocument
+     * @return \Zend2\Pdf\PdfDocument
      */
     public static function parse(&$source = null, $revision = null)
     {
@@ -223,7 +223,7 @@ class PdfDocument
      *
      * @param string $source
      * @param integer $revision
-     * @return \Zend\Pdf\PdfDocument
+     * @return \Zend2\Pdf\PdfDocument
      */
     public static function load($source = null, $revision = null)
     {
@@ -237,7 +237,7 @@ class PdfDocument
      *
      * @param string $filename
      * @param boolean $updateOnly
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function save($filename, $updateOnly = false)
     {
@@ -266,8 +266,8 @@ class PdfDocument
      *
      * @param string  $source - PDF file to load
      * @param integer $revision
-     * @throws \Zend\Pdf\Exception
-     * @return \Zend\Pdf\PdfDocument
+     * @throws \Zend2\Pdf\Exception
+     * @return \Zend2\Pdf\PdfDocument
      */
     public function __construct($source = null, $revision = null, $load = false)
     {
@@ -401,7 +401,7 @@ class PdfDocument
     /**
      * Load pages recursively
      *
-     * @param \Zend\Pdf\InternalType\IndirectObjectReference $pages
+     * @param \Zend2\Pdf\InternalType\IndirectObjectReference $pages
      * @param array|null $attributes
      */
     protected function _loadPages(InternalType\IndirectObjectReference $pages, $attributes = array())
@@ -446,9 +446,9 @@ class PdfDocument
     /**
      * Load named destinations recursively
      *
-     * @param \Zend\Pdf\InternalType\IndirectObjectReference $root Document catalog entry
+     * @param \Zend2\Pdf\InternalType\IndirectObjectReference $root Document catalog entry
      * @param string $pdfHeaderVersion
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function _loadNamedDestinations(InternalType\IndirectObjectReference $root, $pdfHeaderVersion)
     {
@@ -484,7 +484,7 @@ class PdfDocument
     /**
      * Load outlines recursively
      *
-     * @param \Zend\Pdf\InternalType\IndirectObjectReference $root Document catalog entry
+     * @param \Zend2\Pdf\InternalType\IndirectObjectReference $root Document catalog entry
      */
     protected function _loadOutlines(InternalType\IndirectObjectReference $root)
     {
@@ -629,7 +629,7 @@ class PdfDocument
             if ($destination instanceof InternalStructure\NavigationTarget) {
                 $destArrayItems[] = $destination->getResource();
             } else {
-                throw new Exception\RuntimeException('PDF named destinations must be a \Zend\Pdf\InternalStructure\NavigationTarget object.');
+                throw new Exception\RuntimeException('PDF named destinations must be a \Zend2\Pdf\InternalStructure\NavigationTarget object.');
             }
         }
         $destArray = $this->_objFactory->newObject(new InternalType\ArrayObject($destArrayItems));
@@ -722,19 +722,19 @@ class PdfDocument
      *    If $factory is null then it will be created and page must be attached to the document to be
      *    included into output.
      * ---------------------------------------------------------
-     * new \Zend\Pdf\Page(string $pagesize);
+     * new \Zend2\Pdf\Page(string $pagesize);
      * ---------------------------------------------------------
      *
      * 2. Create new page with a specified pagesize (in default user space units).
      *    If $factory is null then it will be created and page must be attached to the document to be
      *    included into output.
      * ---------------------------------------------------------
-     * new \Zend\Pdf\Page(numeric $width, numeric $height);
+     * new \Zend2\Pdf\Page(numeric $width, numeric $height);
      * ---------------------------------------------------------
      *
      * @param mixed $param1
      * @param mixed $param2
-     * @return \Zend\Pdf\Page
+     * @return \Zend2\Pdf\Page
      */
     public function newPage($param1, $param2 = null)
     {
@@ -788,10 +788,10 @@ class PdfDocument
 
     /**
      * Get open Action
-     * Returns \Zend\Pdf\InternalStructure\NavigationTarget
-     * (\Zend\Pdf\Destination\AbstractDestination or \Zend\Pdf\Action\AbstractAction object)
+     * Returns \Zend2\Pdf\InternalStructure\NavigationTarget
+     * (\Zend2\Pdf\Destination\AbstractDestination or \Zend2\Pdf\Action\AbstractAction object)
      *
-     * @return \Zend\Pdf\InternalStructure\NavigationTarget
+     * @return \Zend2\Pdf\InternalStructure\NavigationTarget
      */
     public function getOpenAction()
     {
@@ -803,11 +803,11 @@ class PdfDocument
     }
 
     /**
-     * Set open Action which is actually \Zend\Pdf\Destination\AbstractDestination or
-     * \Zend\Pdf\Action\AbstractAction object
+     * Set open Action which is actually \Zend2\Pdf\Destination\AbstractDestination or
+     * \Zend2\Pdf\Action\AbstractAction object
      *
-     * @param \Zend\Pdf\InternalStructure\NavigationTarget $openAction
-     * @returns Zend_PDF
+     * @param \Zend2\Pdf\InternalStructure\NavigationTarget $openAction
+     * @returns Zend2_PDF
      */
     public function setOpenAction(InternalStructure\NavigationTarget $openAction = null)
     {
@@ -843,7 +843,7 @@ class PdfDocument
      * Return specified named destination
      *
      * @param string $name
-     * @return \Zend\Pdf\Destination\Explicit|\Zend\Pdf\Action\GoToAction
+     * @return \Zend2\Pdf\Destination\Explicit|\Zend2\Pdf\Action\GoToAction
      */
     public function getNamedDestination($name)
     {
@@ -858,7 +858,7 @@ class PdfDocument
      * Set specified named destination
      *
      * @param string $name
-     * @param \Zend\Pdf\Destination\Explicit|\Zend\Pdf\Action\GoToAction $target
+     * @param \Zend2\Pdf\Destination\Explicit|\Zend2\Pdf\Action\GoToAction $target
      */
     public function setNamedDestination($name, $destination = null)
     {
@@ -877,7 +877,7 @@ class PdfDocument
 
     /**
      * Pages collection hash:
-     * <page dictionary object hash id> => \Zend\Pdf\Page
+     * <page dictionary object hash id> => \Zend2\Pdf\Page
      *
      * @var SplObjectStorage
      */
@@ -885,7 +885,7 @@ class PdfDocument
 
     /**
      * Pages collection hash:
-     * <page number> => \Zend\Pdf\Page
+     * <page number> => \Zend2\Pdf\Page
      *
      * @var array
      */
@@ -894,7 +894,7 @@ class PdfDocument
     /**
      * Refresh page collection hashes
      *
-     * @return \Zend\Pdf\PdfDocument
+     * @return \Zend2\Pdf\PdfDocument
      */
     protected function _refreshPagesHash()
     {
@@ -913,12 +913,12 @@ class PdfDocument
     /**
      * Resolve destination.
      *
-     * Returns \Zend\Pdf\Page page object or null if destination is not found within PDF document.
+     * Returns \Zend2\Pdf\Page page object or null if destination is not found within PDF document.
      *
-     * @param \Zend\Pdf\Destination\AbstractDestination $destination  Destination to resolve
+     * @param \Zend2\Pdf\Destination\AbstractDestination $destination  Destination to resolve
      * @param boolean $refreshPagesHash  Refresh page collection hashes before processing
-     * @return \Zend\Pdf\Page|null
-     * @throws \Zend\Pdf\Exception
+     * @return \Zend2\Pdf\Page|null
+     * @throws \Zend2\Pdf\Exception
      */
     public function resolveDestination(Destination\AbstractDestination $destination, $refreshPageCollectionHashes = true)
     {
@@ -972,9 +972,9 @@ class PdfDocument
      *
      * @todo Give appropriate name and make method public
      *
-     * @param \Zend\Pdf\Action\AbstractAction $action
+     * @param \Zend2\Pdf\Action\AbstractAction $action
      * @param boolean $refreshPagesHash  Refresh page collection hashes before processing
-     * @return \Zend\Pdf\Action\AbstractAction|null
+     * @return \Zend2\Pdf\Action\AbstractAction|null
      */
     protected function _cleanUpAction(Action\AbstractAction $action, $refreshPageCollectionHashes = true)
     {
@@ -1013,10 +1013,10 @@ class PdfDocument
     /**
      * Extract fonts attached to the document
      *
-     * returns array of \Zend\Pdf\Resource\Font\Extracted objects
+     * returns array of \Zend2\Pdf\Resource\Font\Extracted objects
      *
      * @return array
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function extractFonts()
     {
@@ -1065,8 +1065,8 @@ class PdfDocument
      *
      * $fontName should be specified in UTF-8 encoding
      *
-     * @return \Zend\Pdf\Resource\Font\Extracted|null
-     * @throws \Zend\Pdf\Exception
+     * @return \Zend2\Pdf\Resource\Font\Extracted|null
+     * @throws \Zend2\Pdf\Exception
      */
     public function extractFont($fontName)
     {
@@ -1123,7 +1123,7 @@ class PdfDocument
      * @param boolean $newSegmentOnly
      * @param resource $outputStream
      * @return string
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function render($newSegmentOnly = false, $outputStream = null)
     {
@@ -1328,7 +1328,7 @@ class PdfDocument
      * One) defined in ISO/IEC 8824).
      *
      * @todo This really isn't the best location for this method. It should
-     *   probably actually exist as \Zend\Pdf\InternalType\Date or something like that.
+     *   probably actually exist as \Zend2\Pdf\InternalType\Date or something like that.
      *
      * @todo Address the following E_STRICT issue:
      *   PHP Strict Standards:  date(): It is not safe to rely on the system's

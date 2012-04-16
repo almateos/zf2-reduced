@@ -1,12 +1,12 @@
 <?php
 
-namespace Zend\Di\Definition;
+namespace Zend2\Di\Definition;
 
-use Zend\Di\Exception;
+use Zend2\Di\Exception;
 
 class BuilderDefinition implements Definition
 {
-    protected $defaultClassBuilder = 'Zend\Di\Definition\Builder\PhpClass';
+    protected $defaultClassBuilder = 'Zend2\Di\Definition\Builder\PhpClass';
     protected $classes = array();
 
     public function createClassesFromArray(array $builderData)
@@ -143,7 +143,7 @@ class BuilderDefinition implements Definition
     
     public function hasMethods($class)
     {
-        /* @var $class Zend\Di\Definition\Builder\PhpClass */
+        /* @var $class Zend2\Di\Definition\Builder\PhpClass */
         $class = $this->getClass($class);
         if ($class === false) {
             throw new Exception\RuntimeException('Cannot find class object in this builder definition.');

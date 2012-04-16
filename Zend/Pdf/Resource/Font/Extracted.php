@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Fonts
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Fonts
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Resource\Font;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
+namespace Zend2\Pdf\Resource\Font;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
 
 /**
  * Extracted fonts implementation
@@ -29,11 +29,11 @@ use Zend\Pdf;
  * Thes class allows to extract fonts already mentioned within PDF document and use them
  * for text drawing.
  *
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\Resource\Font\AbstractFont
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Fonts
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\Resource\Font\AbstractFont
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Fonts
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Extracted extends AbstractFont
@@ -57,11 +57,11 @@ class Extracted extends AbstractFont
     /**
      * Object constructor
      *
-     * $fontDictionary is a \Zend\Pdf\InternalType\IndirectObjectReference or
-     * \Zend\Pdf\InternalType\IndirectObject object
+     * $fontDictionary is a \Zend2\Pdf\InternalType\IndirectObjectReference or
+     * \Zend2\Pdf\InternalType\IndirectObject object
      *
      * @param mixed $fontDictionary
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct($fontDictionary)
     {
@@ -200,7 +200,7 @@ class Extracted extends AbstractFont
      *
      * @param array $glyphNumbers Array of glyph numbers.
      * @return array Array of glyph widths (integers).
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function widthsForGlyphs($glyphNumbers)
     {
@@ -214,7 +214,7 @@ class Extracted extends AbstractFont
      *
      * @param integer $glyphNumber
      * @return integer
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function widthForGlyph($glyphNumber)
     {

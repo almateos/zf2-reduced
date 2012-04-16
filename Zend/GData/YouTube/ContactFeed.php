@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\YouTube;
+namespace Zend2\GData\YouTube;
 
-use Zend\GData\YouTube;
+use Zend2\GData\YouTube;
 
 /**
  * The YouTube contacts flavor of an Atom Feed with media support
  * Represents a list of individual contacts, where each contained entry is
  * a contact.
  *
- * @uses       \Zend\GData\Media\Feed
- * @uses       \Zend\GData\YouTube
- * @uses       \Zend\GData\YouTube\ContactEntry
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Media\Feed
+ * @uses       \Zend2\GData\YouTube
+ * @uses       \Zend2\GData\YouTube\ContactEntry
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class ContactFeed extends \Zend\GData\Media\Feed
+class ContactFeed extends \Zend2\GData\Media\Feed
 {
 
     /**
@@ -45,7 +45,7 @@ class ContactFeed extends \Zend\GData\Media\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\YouTube\ContactEntry';
+    protected $_entryClassName = 'Zend2\GData\YouTube\ContactEntry';
 
     /**
      * Constructs a new YouTube Contact Feed object, to represent

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,14 +12,14 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Technorati;
+namespace Zend2\Service\Technorati;
 
 use DomElement;
 
@@ -28,10 +28,10 @@ use DomElement;
  * It is never returned as a standalone object,
  * but it always belongs to a valid CosmosResultSet object.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class CosmosResult extends Result
@@ -47,7 +47,7 @@ class CosmosResult extends Result
     /**
      * The nearest permalink tracked for queried URL.
      *
-     * @var     \Zend\Uri\Http
+     * @var     \Zend2\Uri\Http
      * @access  protected
      */
     protected $nearestPermalink;
@@ -63,7 +63,7 @@ class CosmosResult extends Result
     /**
      * The the datetime the link was created.
      *
-     * @var     \Zend\Date\Date
+     * @var     \Zend2\Date\Date
      * @access  protected
      */
     protected $linkCreated;
@@ -71,7 +71,7 @@ class CosmosResult extends Result
     /**
      * The URL of the specific link target page
      *
-     * @var     \Zend\Uri\Http
+     * @var     \Zend2\Uri\Http
      * @access  protected
      */
     protected $linkUrl;
@@ -112,7 +112,7 @@ class CosmosResult extends Result
     /**
      * Returns the nearest permalink tracked for queried URL.
      *
-     * @return  \Zend\Uri\Http
+     * @return  \Zend2\Uri\Http
      */
     public function getNearestPermalink()
     {
@@ -132,7 +132,7 @@ class CosmosResult extends Result
     /**
      * Returns the datetime the link was created.
      *
-     * @return  \Zend\Date\Date
+     * @return  \Zend2\Date\Date
      */
     public function getLinkCreated()
     {
@@ -143,7 +143,7 @@ class CosmosResult extends Result
      * If queried URL is a valid blog,
      * returns the URL of the specific link target page.
      *
-     * @return  \Zend\Uri\Http
+     * @return  \Zend2\Uri\Http
      */
     public function getLinkUrl()
     {

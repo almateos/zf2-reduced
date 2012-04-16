@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Flickr
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * @uses       DOMXPath
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Flickr
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_Flickr_Result
+class Zend2_Service_Flickr_Result
 {
     /**
      * The photo's Flickr ID.
@@ -123,49 +123,49 @@ class Zend_Service_Flickr_Result
     /**
      * A 75x75 pixel square thumbnail of the image.
      *
-     * @var Zend_Service_Flickr_Image
+     * @var Zend2_Service_Flickr_Image
      */
     public $Square;
 
     /**
      * A 100 pixel thumbnail of the image.
      *
-     * @var Zend_Service_Flickr_Image
+     * @var Zend2_Service_Flickr_Image
      */
     public $Thumbnail;
 
     /**
      * A 240 pixel version of the image.
      *
-     * @var Zend_Service_Flickr_Image
+     * @var Zend2_Service_Flickr_Image
      */
     public $Small;
 
     /**
      * A 500 pixel version of the image.
      *
-     * @var Zend_Service_Flickr_Image
+     * @var Zend2_Service_Flickr_Image
      */
     public $Medium;
 
     /**
      * A 640 pixel version of the image.
      *
-     * @var Zend_Service_Flickr_Image
+     * @var Zend2_Service_Flickr_Image
      */
     public $Large;
 
     /**
      * The original image.
      *
-     * @var Zend_Service_Flickr_Image
+     * @var Zend2_Service_Flickr_Image
      */
     public $Original;
 
     /**
-     * Original Zend_Service_Flickr object.
+     * Original Zend2_Service_Flickr object.
      *
-     * @var Zend_Service_Flickr
+     * @var Zend2_Service_Flickr
      */
     protected $_flickr;
 
@@ -173,10 +173,10 @@ class Zend_Service_Flickr_Result
      * Parse the Flickr Result
      *
      * @param  DOMElement          $image
-     * @param  Zend_Service_Flickr $flickr Original Zend_Service_Flickr object with which the request was made
+     * @param  Zend2_Service_Flickr $flickr Original Zend2_Service_Flickr object with which the request was made
      * @return void
      */
-    public function __construct(DOMElement $image, Zend_Service_Flickr $flickr)
+    public function __construct(DOMElement $image, Zend2_Service_Flickr $flickr)
     {
         $xpath = new DOMXPath($image->ownerDocument);
 

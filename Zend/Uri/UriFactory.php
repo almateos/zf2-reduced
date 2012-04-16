@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,15 +13,15 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Uri
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Uri
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  * @version   $Id$
  */
 
-namespace Zend\Uri;
-use Zend\Uri\Uri;
+namespace Zend2\Uri;
+use Zend2\Uri\Uri;
 
 /**
  * URI Factory Class
@@ -33,15 +33,15 @@ use Zend\Uri\Uri;
  * Note that this class contains only static methods and should not be
  * instanciated
  *
- * @uses      \Zend\Uri\Uri
- * @uses      \Zend\Uri\Http
- * @uses      \Zend\Uri\File
- * @uses      \Zend\Uri\Mailto
- * @uses      \Zend\Uri\Exception
- * @uses      \Zend\Loader
- * @category  Zend
- * @package   Zend_Uri
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Uri\Uri
+ * @uses      \Zend2\Uri\Http
+ * @uses      \Zend2\Uri\File
+ * @uses      \Zend2\Uri\Mailto
+ * @uses      \Zend2\Uri\Exception
+ * @uses      \Zend2\Loader
+ * @category  Zend2
+ * @package   Zend2_Uri
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class UriFactory
@@ -52,10 +52,10 @@ abstract class UriFactory
      * @var array
      */
     static protected $schemeClasses = array(
-        'http'   => 'Zend\Uri\Http',
-        'https'  => 'Zend\Uri\Http',
-        'mailto' => 'Zend\Uri\Mailto',
-        'file'   => 'Zend\Uri\File',
+        'http'   => 'Zend2\Uri\Http',
+        'https'  => 'Zend2\Uri\Http',
+        'mailto' => 'Zend2\Uri\Mailto',
+        'file'   => 'Zend2\Uri\File',
     );
 
     /**
@@ -75,7 +75,7 @@ abstract class UriFactory
      *
      * @param  string $uri
      * @param  string $defaultScheme
-     * @return \Zend\Uri\Uri
+     * @return \Zend2\Uri\Uri
      */
     static public function factory($uriString, $defaultScheme = null)
     {
@@ -97,7 +97,7 @@ abstract class UriFactory
             $uri = new $class($uri);
             if (! $uri instanceof Uri) {
                 throw new Exception\InvalidArgumentException(sprintf(
-                    'class "%s" registered for scheme "%s" is not a subclass of Zend\Uri\Uri',
+                    'class "%s" registered for scheme "%s" is not a subclass of Zend2\Uri\Uri',
                     $class,
                     $scheme
                 ));

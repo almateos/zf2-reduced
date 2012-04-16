@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Tag
+ * @category   Zend2
+ * @package    Zend2_Tag
  * @subpackage Cloud
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Tag\Cloud;
+namespace Zend2\Tag\Cloud;
 
-use Zend\Loader\PluginBroker;
+use Zend2\Loader\PluginBroker;
 
 /**
  * Broker for decorator instances
  *
- * @category   Zend
- * @package    Zend_Tag
+ * @category   Zend2
+ * @package    Zend2_Tag
  * @subpackage Cloud
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DecoratorBroker extends PluginBroker
@@ -37,7 +37,7 @@ class DecoratorBroker extends PluginBroker
     /**
      * @var string Default plugin loading strategy
      */
-    protected $defaultClassLoader = 'Zend\Tag\Cloud\DecoratorLoader';
+    protected $defaultClassLoader = 'Zend2\Tag\Cloud\DecoratorLoader';
 
     /**
      * Determine if we have a valid decorator
@@ -49,7 +49,7 @@ class DecoratorBroker extends PluginBroker
     protected function validatePlugin($plugin)
     {
         if (!$plugin instanceof Decorator) {
-            throw new Exception('Tag cloud decorators must implement Zend\Tag\Cloud\Decorator');
+            throw new Exception('Tag cloud decorators must implement Zend2\Tag\Cloud\Decorator');
         }
         return true;
     }

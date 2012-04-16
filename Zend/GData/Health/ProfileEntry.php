@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,49 +12,49 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Health
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Health;
+namespace Zend2\GData\Health;
 
-use Zend\GData\Health;
+use Zend2\GData\Health;
 
 /**
  * Concrete class for working with Health profile entries.
  *
  * @link http://code.google.com/apis/health/
  *
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\Health
- * @uses       \Zend\GData\Health\Extension\Ccr
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\Health
+ * @uses       \Zend2\GData\Health\Extension\Ccr
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Health
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class ProfileEntry extends \Zend\GData\Entry
+class ProfileEntry extends \Zend2\GData\Entry
 {
     /**
      * The classname for individual profile entry elements.
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\Health\ProfileEntry';
+    protected $_entryClassName = 'Zend2\GData\Health\ProfileEntry';
 
     /**
      * Google Health CCR data
      *
-     * @var \Zend\GData\Health\Extension\Ccr
+     * @var \Zend2\GData\Health\Extension\Ccr
      */
     protected $_ccrData = null;
 
     /**
-     * Constructs a new Zend_Gdata_Health_ProfileEntry object.
+     * Constructs a new Zend2_Gdata_Health_ProfileEntry object.
      * @param DOMElement $element (optional) The DOMElement on which to base this object.
      */
     public function __construct($element = null)
@@ -107,7 +107,7 @@ class ProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the profile entry's CCR data
      * @param string $ccrXMLStr The CCR as an xml string
-     * @return \Zend\GData\Health\Extension\Ccr
+     * @return \Zend2\GData\Health\Extension\Ccr
      */
     public function setCcr($ccrXMLStr) {
         $ccrElement = null;
@@ -122,7 +122,7 @@ class ProfileEntry extends \Zend\GData\Entry
 
     /**
      * Returns all the CCR data in a profile entry
-     * @return \Zend\GData\Health\Extension\Ccr
+     * @return \Zend2\GData\Health\Extension\Ccr
      */
     public function getCcr() {
         return $this->_ccrData;

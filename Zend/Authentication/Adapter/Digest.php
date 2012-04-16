@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Authentication
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Authentication\Adapter;
-use Zend\Authentication\Adapter as AuthenticationAdapter,
-    Zend\Authentication\Result as AuthenticationResult;
+namespace Zend2\Authentication\Adapter;
+use Zend2\Authentication\Adapter as AuthenticationAdapter,
+    Zend2\Authentication\Result as AuthenticationResult;
 
 /**
- * @uses       Zend\Authentication\Adapter\Exception
- * @uses       Zend\Authentication\Adapter
- * @category   Zend
- * @package    Zend_Authentication
+ * @uses       Zend2\Authentication\Adapter\Exception
+ * @uses       Zend2\Authentication\Adapter
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Digest implements AuthenticationAdapter
@@ -96,7 +96,7 @@ class Digest implements AuthenticationAdapter
      * Sets the filename option value
      *
      * @param  mixed $filename
-     * @return Zend\Authentication\Adapter\Digest Provides a fluent interface
+     * @return Zend2\Authentication\Adapter\Digest Provides a fluent interface
      */
     public function setFilename($filename)
     {
@@ -118,7 +118,7 @@ class Digest implements AuthenticationAdapter
      * Sets the realm option value
      *
      * @param  mixed $realm
-     * @return Zend\Authentication\Adapter\Digest Provides a fluent interface
+     * @return Zend2\Authentication\Adapter\Digest Provides a fluent interface
      */
     public function setRealm($realm)
     {
@@ -140,7 +140,7 @@ class Digest implements AuthenticationAdapter
      * Sets the username option value
      *
      * @param  mixed $username
-     * @return Zend\Authentication\Adapter\Digest Provides a fluent interface
+     * @return Zend2\Authentication\Adapter\Digest Provides a fluent interface
      */
     public function setUsername($username)
     {
@@ -162,7 +162,7 @@ class Digest implements AuthenticationAdapter
      * Sets the password option value
      *
      * @param  mixed $password
-     * @return Zend\Authentication\Adapter\Digest Provides a fluent interface
+     * @return Zend2\Authentication\Adapter\Digest Provides a fluent interface
      */
     public function setPassword($password)
     {
@@ -171,10 +171,10 @@ class Digest implements AuthenticationAdapter
     }
 
     /**
-     * Defined by Zend_Auth_Adapter_Interface
+     * Defined by Zend2_Auth_Adapter_Interface
      *
-     * @throws Zend\Authentication\Adapter\Exception\RuntimeException
-     * @return Zend\Authentication\Result
+     * @throws Zend2\Authentication\Adapter\Exception\RuntimeException
+     * @return Zend2\Authentication\Result
      */
     public function authenticate()
     {

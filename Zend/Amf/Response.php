@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Amf
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Amf
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Amf;
+namespace Zend2\Amf;
 
 /**
  * Handles converting the PHP object ready for response back into AMF
  *
- * @uses       \Zend\Amf\Constants
- * @uses       \Zend\Amf\Parser\Amf0\Serializer
- * @uses       \Zend\Amf\Parser\OutputStream
- * @package    Zend_Amf
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Amf\Constants
+ * @uses       \Zend2\Amf\Parser\Amf0\Serializer
+ * @uses       \Zend2\Amf\Parser\OutputStream
+ * @package    Zend2_Amf
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface Response
@@ -35,7 +35,7 @@ interface Response
     /**
      * Instantiate new output stream and start serialization
      *
-     * @return \Zend\Amf\Response
+     * @return \Zend2\Amf\Response
      */
     public function finalize();
 
@@ -43,8 +43,8 @@ interface Response
      * Serialize the PHP data types back into Actionscript and
      * create and AMF stream.
      *
-     * @param  Zend\Amf\Parser\OutputStream $stream
-     * @return Zend\Amf\Response
+     * @param  Zend2\Amf\Parser\OutputStream $stream
+     * @return Zend2\Amf\Response
      */
     public function writeMessage(Parser\OutputStream $stream);
 
@@ -65,8 +65,8 @@ interface Response
     /**
      * Add an AMF body to be sent to the Flash Player
      *
-     * @param  Zend\Amf\Value\MessageBody $body
-     * @return Zend\Amf\Response
+     * @param  Zend2\Amf\Value\MessageBody $body
+     * @return Zend2\Amf\Response
      */
     public function addAmfBody(Value\MessageBody $body);
 
@@ -80,15 +80,15 @@ interface Response
     /**
      * Add an AMF Header to be sent back to the flash player
      *
-     * @param  Zend\Amf\Value\MessageHeader $header
-     * @return Zend\Amf\Response
+     * @param  Zend2\Amf\Value\MessageHeader $header
+     * @return Zend2\Amf\Response
      */
     public function addAmfHeader(Value\MessageHeader $header);
 
     /**
      * Retrieve attached AMF message headers
      *
-     * @return array Array of \Zend\Amf\Value\MessageHeader objects
+     * @return array Array of \Zend2\Amf\Value\MessageHeader objects
      */
     public function getAmfHeaders();
 
@@ -96,7 +96,7 @@ interface Response
      * Set the AMF encoding that will be used for serialization
      *
      * @param  int $encoding
-     * @return Zend\Amf\Response
+     * @return Zend2\Amf\Response
      */
     public function setObjectEncoding($encoding);
 }

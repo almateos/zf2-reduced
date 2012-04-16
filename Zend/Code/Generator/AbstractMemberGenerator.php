@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_CodeGenerator
+ * @category   Zend2
+ * @package    Zend2_CodeGenerator
  * @subpackage PHP
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Code\Generator;
-use Zend\Code\Generator,
-    Zend\Code\Generator\Exception;
+namespace Zend2\Code\Generator;
+use Zend2\Code\Generator,
+    Zend2\Code\Generator\Exception;
 
 /**
- * @uses       \Zend\Code\Generator\AbstractPhp
- * @uses       \Zend\Code\GeneratorDocblock
- * @uses       \Zend\Code\Generator\Exception
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Code\Generator\AbstractPhp
+ * @uses       \Zend2\Code\GeneratorDocblock
+ * @uses       \Zend2\Code\Generator\Exception
+ * @category   Zend2
+ * @package    Zend2_CodeGenerator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractMemberGenerator extends AbstractGenerator
@@ -55,7 +55,7 @@ abstract class AbstractMemberGenerator extends AbstractGenerator
     /**#@-*/
 
     /**
-     * @var \Zend\Code\GeneratorDocblock
+     * @var \Zend2\Code\GeneratorDocblock
      */
     protected $docblock = null;
 
@@ -108,7 +108,7 @@ abstract class AbstractMemberGenerator extends AbstractGenerator
         if (is_string($docblock)) {
             $docblock = new DocblockGenerator($docblock);
         } elseif (!$docblock instanceof DocblockGenerator) {
-            throw new Exception\InvalidArgumentException('setDocblock() is expecting either a string, array or an instance of Zend_CodeGenerator_Php_Docblock');
+            throw new Exception\InvalidArgumentException('setDocblock() is expecting either a string, array or an instance of Zend2_CodeGenerator_Php_Docblock');
         }
 
         $this->docblock = $docblock;

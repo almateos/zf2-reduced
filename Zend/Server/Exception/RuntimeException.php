@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Server\Exception;
+namespace Zend2\Server\Exception;
 
 class RuntimeException
     extends \RuntimeException
-    implements \Zend\Server\Exception
+    implements \Zend2\Server\Exception
 {}

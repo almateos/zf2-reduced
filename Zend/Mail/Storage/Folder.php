@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail\Storage;
-use Zend\Mail\Storage\Exception;
+namespace Zend2\Mail\Storage;
+use Zend2\Mail\Storage\Exception;
 
 /**
  * @uses       RecursiveIterator
- * @uses       \Zend\Mail\Storage\Exception
- * @category   Zend
- * @package    Zend_Mail
+ * @uses       \Zend2\Mail\Storage\Exception
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Folder implements \RecursiveIterator
 {
     /**
-     * subfolders of folder array(localName => \Zend\Mail\Storage\Folder folder)
+     * subfolders of folder array(localName => \Zend2\Mail\Storage\Folder folder)
      * @var array
      */
     protected $_folders;
@@ -63,7 +63,7 @@ class Folder implements \RecursiveIterator
      * @param string $localName  name of folder in current subdirectory
      * @param string $globalName absolute name of folder
      * @param bool   $selectable if true folder holds messages, if false it's just a parent for subfolders
-     * @param array  $folders    init with given instances of \Zend\Mail\Storage\Folder as subfolders
+     * @param array  $folders    init with given instances of \Zend2\Mail\Storage\Folder as subfolders
      */
     public function __construct($localName, $globalName = '', $selectable = true, array $folders = array())
     {
@@ -87,7 +87,7 @@ class Folder implements \RecursiveIterator
     /**
      * implements RecursiveIterator::getChildren()
      *
-     * @return \Zend\Mail\Storage\Folder same as self::current()
+     * @return \Zend2\Mail\Storage\Folder same as self::current()
      */
     public function getChildren()
     {
@@ -127,7 +127,7 @@ class Folder implements \RecursiveIterator
     /**
      * implements Iterator::current()
      *
-     * @return \Zend\Mail\Storage\Folder current folder
+     * @return \Zend2\Mail\Storage\Folder current folder
      */
     public function current()
     {
@@ -148,8 +148,8 @@ class Folder implements \RecursiveIterator
      * get subfolder named $name
      *
      * @param  string $name wanted subfolder
-     * @return \Zend\Mail\Storage\Folder folder named $folder
-     * @throws \Zend\Mail\Storage\Exception
+     * @return \Zend2\Mail\Storage\Folder folder named $folder
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function __get($name)
     {
@@ -164,7 +164,7 @@ class Folder implements \RecursiveIterator
      * add or replace subfolder named $name
      *
      * @param string $name local name of subfolder
-     * @param \Zend\Mail\Storage\Folder $folder instance for new subfolder
+     * @param \Zend2\Mail\Storage\Folder $folder instance for new subfolder
      * @return null
      */
     public function __set($name, Folder $folder)

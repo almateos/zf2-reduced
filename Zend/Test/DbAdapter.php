@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Test
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Test;
+namespace Zend2\Test;
 
 /**
  * Testing Database Adapter which acts as a stack for SQL Results
  *
- * @uses       \Zend\Db\Adapter\AbstractAdapter
- * @uses       \Zend\Db\Profiler\Profiler
- * @uses       \Zend\Test\DbStatement
- * @category   Zend
- * @package    Zend_Test
+ * @uses       \Zend2\Db\Adapter\AbstractAdapter
+ * @uses       \Zend2\Db\Profiler\Profiler
+ * @uses       \Zend2\Test\DbStatement
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class DbAdapter extends \Zend\Db\Adapter\AbstractAdapter
+class DbAdapter extends \Zend2\Db\Adapter\AbstractAdapter
 {
     /**
      * @var array
@@ -70,7 +70,7 @@ class DbAdapter extends \Zend\Db\Adapter\AbstractAdapter
      */
     public function __construct()
     {
-        $profiler = new \Zend\Db\Profiler();
+        $profiler = new \Zend2\Db\Profiler();
         $profiler->setEnabled(true);
         $this->setProfiler($profiler);
     }
@@ -78,8 +78,8 @@ class DbAdapter extends \Zend\Db\Adapter\AbstractAdapter
     /**
      * Append a new Statement to the SQL Result Stack.
      *
-     * @param  \Zend\Test\DbStatement $stmt
-     * @return \Zend\Test\DbAdapter
+     * @param  \Zend2\Test\DbStatement $stmt
+     * @return \Zend2\Test\DbAdapter
      */
     public function appendStatementToStack(DbStatement $stmt)
     {
@@ -91,7 +91,7 @@ class DbAdapter extends \Zend\Db\Adapter\AbstractAdapter
      * Append a new Insert Id to the {@see lastInsertId}.
      *
      * @param  int|string $id
-     * @return \Zend\Test\DbAdapter
+     * @return \Zend2\Test\DbAdapter
      */
     public function appendLastInsertIdToStack($id)
     {
@@ -141,7 +141,7 @@ class DbAdapter extends \Zend\Db\Adapter\AbstractAdapter
      *
      * @param  string $table
      * @param  array $tableInfo
-     * @return \Zend\Test\DbAdapter
+     * @return \Zend2\Test\DbAdapter
      */
     public function setDescribeTable($table, $tableInfo)
     {
@@ -218,8 +218,8 @@ class DbAdapter extends \Zend\Db\Adapter\AbstractAdapter
     /**
      * Prepare a statement and return a PDOStatement-like object.
      *
-     * @param string|\Zend\DB\Select $sql SQL query
-     * @return Zend_Db_Statment|PDOStatement
+     * @param string|\Zend2\DB\Select $sql SQL query
+     * @return Zend2_Db_Statment|PDOStatement
      */
     public function prepare($sql)
     {
@@ -291,7 +291,7 @@ class DbAdapter extends \Zend\Db\Adapter\AbstractAdapter
      *
      * @param integer $mode
      * @return void
-     * @throws \Zend\Db\Adapter\Exception
+     * @throws \Zend2\Db\Adapter\Exception
      */
     public function setFetchMode($mode)
     {

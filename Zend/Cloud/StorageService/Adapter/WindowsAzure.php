@@ -10,30 +10,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Cloud\StorageService
+ * @category   Zend2
+ * @package    Zend2\Cloud\StorageService
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * namespace
  */
-namespace Zend\Cloud\StorageService\Adapter;
+namespace Zend2\Cloud\StorageService\Adapter;
 
-use Zend\Cloud\StorageService\Adapter,
-    Zend\Cloud\StorageService\Exception,
-    Zend\Service\WindowsAzure\Storage\Blob;
+use Zend2\Cloud\StorageService\Adapter,
+    Zend2\Cloud\StorageService\Exception,
+    Zend2\Service\WindowsAzure\Storage\Blob;
 
 /**
  *
  * Windows Azure Blob Service abstraction
  *
- * @category   Zend
- * @package    Zend\Cloud\StorageService
+ * @category   Zend2
+ * @package    Zend2\Cloud\StorageService
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class WindowsAzure implements Adapter
@@ -58,7 +58,7 @@ class WindowsAzure implements Adapter
     const RETURN_LIST  = 1;   // return native list
     const RETURN_NAMES = 2;  // return only names
 
-    const DEFAULT_HOST = Zend\Service\WindowsAzure\Storage::URL_CLOUD_BLOB;
+    const DEFAULT_HOST = Zend2\Service\WindowsAzure\Storage::URL_CLOUD_BLOB;
 
     /**
      * Storage container to operate on
@@ -70,18 +70,18 @@ class WindowsAzure implements Adapter
     /**
      * Storage client
      *
-     * @var Zend\Service\WindowsAzure\Storage\Blob
+     * @var Zend2\Service\WindowsAzure\Storage\Blob
      */
     protected $_storageClient = null;
 
     /**
-     * Creates a new Zend\Cloud\Storage\WindowsAzure instance
+     * Creates a new Zend2\Cloud\Storage\WindowsAzure instance
      *
-     * @param array|Zend\Config\Config  $options   Options for the Zend\Cloud\Storage\WindowsAzure instance
+     * @param array|Zend2\Config\Config  $options   Options for the Zend2\Cloud\Storage\WindowsAzure instance
      */
     public function __construct($options = array())
     {
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         }
 
@@ -89,7 +89,7 @@ class WindowsAzure implements Adapter
             throw new Exception\InvalidArgumentException('Invalid options provided');
         }
 
-        // Build Zend\Service\WindowsAzure\Storage\Blob instance
+        // Build Zend2\Service\WindowsAzure\Storage\Blob instance
         if (!isset($options[self::HOST])) {
             $host = self::DEFAULT_HOST;
         } else {
@@ -164,7 +164,7 @@ class WindowsAzure implements Adapter
                 $path,
                 $returnPath
             );
-        } catch (Zend\Service\WindowsAzure\Exception $e) {
+        } catch (Zend2\Service\WindowsAzure\Exception $e) {
             if (strpos($e->getMessage(), "does not exist") !== false) {
                 return false;
             }
@@ -227,7 +227,7 @@ class WindowsAzure implements Adapter
                 $destinationPath,
                 $temporaryFilePath
             );
-        } catch(Zend\Service\WindowsAzure\Exception $e) {
+        } catch(Zend2\Service\WindowsAzure\Exception $e) {
             @unlink($temporaryFilePath);
             throw new Exception\RuntimeException('Error on store: '.$e->getMessage(), $e->getCode(), $e);
         }
@@ -250,7 +250,7 @@ class WindowsAzure implements Adapter
                 $this->_container,
                 $path
             );
-        } catch (Zend\Service\WindowsAzure\Exception $e) {
+        } catch (Zend2\Service\WindowsAzure\Exception $e) {
             throw new Exception\RuntimeException('Error on delete: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -272,7 +272,7 @@ class WindowsAzure implements Adapter
                 $this->_container,
                 $destinationPath
             );
-        } catch (Zend\Service\WindowsAzure\Exception $e) {
+        } catch (Zend2\Service\WindowsAzure\Exception $e) {
             throw new Exception\RuntimeException('Error on copy: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -299,7 +299,7 @@ class WindowsAzure implements Adapter
                 $this->_container,
                 $sourcePath
             );
-        } catch (Zend\Service\WindowsAzure\Exception $e) {
+        } catch (Zend2\Service\WindowsAzure\Exception $e) {
             throw new Exception\RunTimeException('Error on move: '.$e->getMessage(), $e->getCode(), $e);
         }
 
@@ -345,7 +345,7 @@ class WindowsAzure implements Adapter
                 $this->_container,
                 $path
             );
-        } catch (Zend\Service\WindowsAzure\Exception $e) {
+        } catch (Zend2\Service\WindowsAzure\Exception $e) {
             throw new Exception\RuntimeException('Error on list: '.$e->getMessage(), $e->getCode(), $e);
         }
 
@@ -376,7 +376,7 @@ class WindowsAzure implements Adapter
                 $this->_container,
                 $path
             );
-        } catch (Zend\Service\WindowsAzure\Exception $e) {
+        } catch (Zend2\Service\WindowsAzure\Exception $e) {
             if (strpos($e->getMessage(), "could not be accessed") !== false) {
                 return false;
             }
@@ -397,7 +397,7 @@ class WindowsAzure implements Adapter
     {
         try    {
             $this->_storageClient->setBlobMetadata($this->_container, $destinationPath, $metadata);
-        } catch (Zend\Service\WindowsAzure\Exception $e) {
+        } catch (Zend2\Service\WindowsAzure\Exception $e) {
             if (strpos($e->getMessage(), "could not be accessed") === false) {
                 throw new Exception\RuntimeException('Error on store metadata: '.$e->getMessage(), $e->getCode(), $e);
             }
@@ -415,7 +415,7 @@ class WindowsAzure implements Adapter
     {
         try {
             $this->_storageClient->setBlobMetadata($this->_container, $destinationPath, array());
-        } catch (Zend\Service\WindowsAzure\Exception $e) {
+        } catch (Zend2\Service\WindowsAzure\Exception $e) {
             if (strpos($e->getMessage(), "could not be accessed") === false) {
                 throw new Exception\RuntimeException('Error on delete metadata: '.$e->getMessage(), $e->getCode(), $e);
             }
@@ -431,14 +431,14 @@ class WindowsAzure implements Adapter
     {
         try {
             $this->_storageClient->deleteContainer($this->_container);
-        } catch (Zend\Service\WindowsAzure\Exception $e) {
+        } catch (Zend2\Service\WindowsAzure\Exception $e) {
             throw new Exception\RuntimeException('Error on delete: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
 
     /**
      * Get the concrete adapter.
-     * @return Zend\Service\Azure\Storage\Blob
+     * @return Zend2\Service\Azure\Storage\Blob
      */
     public function getClient()
     {

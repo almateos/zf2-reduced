@@ -1,5 +1,5 @@
 <?php
-namespace Zend\Translator\Adapter;
+namespace Zend2\Translator\Adapter;
 
-interface Exception extends \Zend\Translator\Exception
+interface Exception extends \Zend2\Translator\Exception
 {}

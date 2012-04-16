@@ -1,13 +1,13 @@
 <?php
 
-namespace Zend\Module\Listener;
+namespace Zend2\Module\Listener;
 
-use Zend\Module\ModuleEvent;
+use Zend2\Module\ModuleEvent;
 
 class InitTrigger extends AbstractListener
 {
     /**
-     * @param \Zend\Module\ModuleEvent $e
+     * @param \Zend2\Module\ModuleEvent $e
      * @eturn void
      */
     public function __invoke(ModuleEvent $e)

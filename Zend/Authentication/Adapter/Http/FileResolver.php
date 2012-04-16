@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Authentication
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Adapter_Http
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Authentication\Adapter\Http;
+namespace Zend2\Authentication\Adapter\Http;
 
 /**
  * HTTP Authentication File Resolver
  *
- * @uses       Zend\Authentication\Adapter\Http\Exception
- * @uses       Zend\Authentication\Adapter\Http\Resolver
- * @category   Zend
- * @package    Zend_Authentication
+ * @uses       Zend2\Authentication\Adapter\Http\Exception
+ * @uses       Zend2\Authentication\Adapter\Http\Resolver
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Adapter_Http
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class FileResolver implements Resolver
@@ -58,8 +58,8 @@ class FileResolver implements Resolver
      * Set the path to the credentials file
      *
      * @param  string $path
-     * @return Zend\Authentication\Adapter\Http\FileResolver Provides a fluent interface
-     * @throws Zend\Authentication\Adapter\Http\Exception
+     * @return Zend2\Authentication\Adapter\Http\FileResolver Provides a fluent interface
+     * @throws Zend2\Authentication\Adapter\Http\Exception
      */
     public function setFile($path)
     {
@@ -100,7 +100,7 @@ class FileResolver implements Resolver
      * @param  string $realm    Authentication Realm
      * @return string|false User's shared secret, if the user is found in the
      *         realm, false otherwise.
-     * @throws Zend\Authentication\Adapter\Http\Exception
+     * @throws Zend2\Authentication\Adapter\Http\Exception
      */
     public function resolve($username, $realm)
     {

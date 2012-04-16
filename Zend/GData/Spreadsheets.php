@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category     Zend
- * @package      Zend_Gdata
+ * @category     Zend2
+ * @package      Zend2_Gdata
  * @subpackage   Spreadsheets
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData;
+namespace Zend2\GData;
 
 /**
  * Gdata Spreadsheets
  *
  * @link http://code.google.com/apis/gdata/spreadsheets.html
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Spreadsheets
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Spreadsheets extends GData
@@ -42,7 +42,7 @@ class Spreadsheets extends GData
     const AUTH_SERVICE_NAME = 'wise';
 
     /**
-     * Namespaces used for Zend_Gdata_Photos
+     * Namespaces used for Zend2_Gdata_Photos
      *
      * @var array
      */
@@ -55,14 +55,14 @@ class Spreadsheets extends GData
     /**
      * Create Gdata_Spreadsheets object
      *
-     * @param \Zend\Http\Client $client (optional) The HTTP client to use when
+     * @param \Zend2\Http\Client $client (optional) The HTTP client to use when
      *          when communicating with the Google servers.
      * @param string $applicationId The identity of the app in the form of Company-AppName-Version
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('\Zend\GData\Spreadsheets');
-        $this->registerPackage('\Zend\GData\Spreadsheets\Extension');
+        $this->registerPackage('\Zend2\GData\Spreadsheets');
+        $this->registerPackage('\Zend2\GData\Spreadsheets\Extension');
         parent::__construct($client, $applicationId);
         $this->_httpClient->setParameterPost(array('service' => self::AUTH_SERVICE_NAME));
         $this->_server = 'spreadsheets.google.com';
@@ -72,7 +72,7 @@ class Spreadsheets extends GData
      * Gets a spreadsheet feed.
      *
      * @param mixed $location A DocumentQuery or a string URI specifying the feed location.
-     * @return \Zend\GData\Spreadsheets\SpreadsheetFeed
+     * @return \Zend2\GData\Spreadsheets\SpreadsheetFeed
      */
     public function getSpreadsheetFeed($location = null)
     {
@@ -87,7 +87,7 @@ class Spreadsheets extends GData
             $uri = $location;
         }
 
-        return parent::getFeed($uri, 'Zend\GData\Spreadsheets\SpreadsheetFeed');
+        return parent::getFeed($uri, 'Zend2\GData\Spreadsheets\SpreadsheetFeed');
     }
 
     /**
@@ -107,14 +107,14 @@ class Spreadsheets extends GData
             $uri = $location;
         }
 
-        return parent::getEntry($uri, 'Zend\GData\Spreadsheets\SpreadsheetEntry');
+        return parent::getEntry($uri, 'Zend2\GData\Spreadsheets\SpreadsheetEntry');
     }
 
     /**
      * Gets a worksheet feed.
      *
      * @param mixed $location A DocumentQuery, SpreadsheetEntry, or a string URI
-     * @return \Zend\GData\Spreadsheets\WorksheetFeed The feed of worksheets
+     * @return \Zend2\GData\Spreadsheets\WorksheetFeed The feed of worksheets
      */
     public function getWorksheetFeed($location)
     {
@@ -129,7 +129,7 @@ class Spreadsheets extends GData
             $uri = $location;
         }
 
-        return parent::getFeed($uri, '\Zend\GData\Spreadsheets\WorksheetFeed');
+        return parent::getFeed($uri, '\Zend2\GData\Spreadsheets\WorksheetFeed');
     }
 
     /**
@@ -149,7 +149,7 @@ class Spreadsheets extends GData
             $uri = $location;
         }
 
-        return parent::getEntry($uri, 'Zend\GData\Spreadsheets\WorksheetEntry');
+        return parent::getEntry($uri, 'Zend2\GData\Spreadsheets\WorksheetEntry');
     }
 
     /**
@@ -167,7 +167,7 @@ class Spreadsheets extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\Spreadsheets\CellFeed');
+        return parent::getFeed($uri, 'Zend2\GData\Spreadsheets\CellFeed');
     }
 
     /**
@@ -184,7 +184,7 @@ class Spreadsheets extends GData
             $uri = $location;
         }
 
-        return parent::getEntry($uri, 'Zend\GData\Spreadsheets\CellEntry');
+        return parent::getEntry($uri, 'Zend2\GData\Spreadsheets\CellEntry');
     }
 
     /**
@@ -203,7 +203,7 @@ class Spreadsheets extends GData
             $uri = $location;
         }
 
-        return parent::getFeed($uri, 'Zend\GData\Spreadsheets\ListFeed');
+        return parent::getFeed($uri, 'Zend2\GData\Spreadsheets\ListFeed');
     }
 
     /**
@@ -220,7 +220,7 @@ class Spreadsheets extends GData
             $uri = $location;
         }
 
-        return parent::getEntry($uri, 'Zend\GData\Spreadsheets\ListEntry');
+        return parent::getEntry($uri, 'Zend2\GData\Spreadsheets\ListEntry');
     }
 
     /**
@@ -273,7 +273,7 @@ class Spreadsheets extends GData
         $feed = $this->getListFeed($query);
         $editLink = $feed->getLink('http://schemas.google.com/g/2005#post');
 
-        return $this->insertEntry($newEntry->saveXML(), $editLink->href, 'Zend\GData\Spreadsheets\ListEntry');
+        return $this->insertEntry($newEntry->saveXML(), $editLink->href, 'Zend2\GData\Spreadsheets\ListEntry');
     }
 
     /**
@@ -375,7 +375,7 @@ class Spreadsheets extends GData
      * Alias for getSpreadsheetFeed
      *
      * @param mixed $location A DocumentQuery or a string URI specifying the feed location.
-     * @return \Zend\GData\Spreadsheets\SpreadsheetFeed
+     * @return \Zend2\GData\Spreadsheets\SpreadsheetFeed
      */
     public function getSpreadsheets($location = null)
     {

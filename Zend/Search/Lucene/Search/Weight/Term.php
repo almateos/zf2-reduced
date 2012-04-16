@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search\Weight;
-use Zend\Search\Lucene\Index;
-use Zend\Search\Lucene\Search\Query;
-use Zend\Search\Lucene;
+namespace Zend2\Search\Lucene\Search\Weight;
+use Zend2\Search\Lucene\Index;
+use Zend2\Search\Lucene\Search\Query;
+use Zend2\Search\Lucene;
 
 /**
- * @uses       \Zend\Search\Lucene\Search\Weight\AbstractWeight
- * @uses       \Zend\Search\Lucene\Index\Term
- * @uses       \Zend\Search\Lucene\Search\Query\AbstractQuery
- * @uses       \Zend\Search\Lucene\SearchIndex
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Search\Weight\AbstractWeight
+ * @uses       \Zend2\Search\Lucene\Index\Term
+ * @uses       \Zend2\Search\Lucene\Search\Query\AbstractQuery
+ * @uses       \Zend2\Search\Lucene\SearchIndex
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Term extends AbstractWeight
@@ -40,21 +40,21 @@ class Term extends AbstractWeight
     /**
      * IndexReader.
      *
-     * @var \Zend\Search\Lucene\SearchIndex
+     * @var \Zend2\Search\Lucene\SearchIndex
      */
     private $_reader;
 
     /**
      * Term
      *
-     * @var \Zend\Search\Lucene\Index\Term
+     * @var \Zend2\Search\Lucene\Index\Term
      */
     private $_term;
 
     /**
      * The query that this concerns.
      *
-     * @var \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @var \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     private $_query;
 
@@ -74,12 +74,12 @@ class Term extends AbstractWeight
 
 
     /**
-     * Zend_Search_Lucene_Search_Weight_Term constructor
+     * Zend2_Search_Lucene_Search_Weight_Term constructor
      * reader - index reader
      *
-     * @param \Zend\Search\Lucene\Index\Term                 $term
-     * @param \Zend\Search\Lucene\Search\Query\AbstractQuery $query
-     * @param \Zend\Search\Lucene\SearchIndex             $reader
+     * @param \Zend2\Search\Lucene\Index\Term                 $term
+     * @param \Zend2\Search\Lucene\Search\Query\AbstractQuery $query
+     * @param \Zend2\Search\Lucene\SearchIndex             $reader
      */
     public function __construct(Index\Term            $term,
                                 Query\AbstractQuery   $query,

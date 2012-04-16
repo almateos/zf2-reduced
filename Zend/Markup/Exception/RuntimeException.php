@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Markup\Exception;
+namespace Zend2\Markup\Exception;
 
 class RuntimeException
     extends \RuntimeException
-    implements \Zend\Markup\Exception
+    implements \Zend2\Markup\Exception
 {}

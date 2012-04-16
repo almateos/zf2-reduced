@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Annotation
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Annotation
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Annotation;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
-use Zend\Pdf\InternalType;
+namespace Zend2\Pdf\Annotation;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
+use Zend2\Pdf\InternalType;
 
 /**
  * Abstract PDF annotation representation class
@@ -31,12 +31,12 @@ use Zend\Pdf\InternalType;
  * on a page of a PDF document, or provides a way to interact with the user by
  * means of the mouse and keyboard.
  *
- * @uses       \Zend\Pdf\InternalType\AbstractTypeObject
- * @uses       \Zend\Pdf\InternalType\StringObject
- * @uses       \Zend\Pdf\Exception
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Annotation
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\InternalType\AbstractTypeObject
+ * @uses       \Zend2\Pdf\InternalType\StringObject
+ * @uses       \Zend2\Pdf\Exception
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Annotation
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractAnnotation
@@ -44,7 +44,7 @@ abstract class AbstractAnnotation
     /**
      * Annotation dictionary
      *
-     * @var \Zend\Pdf\InternalType\DictionaryObject|\Zend\Pdf\InternalType\IndirectObject|\Zend\Pdf\InternalType\IndirectObjectReference
+     * @var \Zend2\Pdf\InternalType\DictionaryObject|\Zend2\Pdf\InternalType\IndirectObject|\Zend2\Pdf\InternalType\IndirectObjectReference
      */
     protected $_annotationDictionary;
 
@@ -52,7 +52,7 @@ abstract class AbstractAnnotation
      * Get annotation dictionary
      *
      * @internal
-     * @return \Zend\Pdf\InternalType\AbstractTypeObject
+     * @return \Zend2\Pdf\InternalType\AbstractTypeObject
      */
     public function getResource()
     {
@@ -64,7 +64,7 @@ abstract class AbstractAnnotation
      * Set bottom edge of the annotation rectangle.
      *
      * @param float $bottom
-     * @return \Zend\Pdf\Annotation\AbstractAnnotation
+     * @return \Zend2\Pdf\Annotation\AbstractAnnotation
      */
     public function setBottom($bottom) {
         $this->_annotationDictionary->Rect->items[1]->touch();
@@ -86,7 +86,7 @@ abstract class AbstractAnnotation
      * Set top edge of the annotation rectangle.
      *
      * @param float $top
-     * @return \Zend\Pdf\Annotation\AbstractAnnotation
+     * @return \Zend2\Pdf\Annotation\AbstractAnnotation
      */
     public function setTop($top) {
         $this->_annotationDictionary->Rect->items[3]->touch();
@@ -108,7 +108,7 @@ abstract class AbstractAnnotation
      * Set right edge of the annotation rectangle.
      *
      * @param float $right
-     * @return \Zend\Pdf\Annotation\AbstractAnnotation
+     * @return \Zend2\Pdf\Annotation\AbstractAnnotation
      */
     public function setRight($right) {
         $this->_annotationDictionary->Rect->items[2]->touch();
@@ -130,7 +130,7 @@ abstract class AbstractAnnotation
      * Set left edge of the annotation rectangle.
      *
      * @param float $left
-     * @return \Zend\Pdf\Annotation\AbstractAnnotation
+     * @return \Zend2\Pdf\Annotation\AbstractAnnotation
      */
     public function setLeft($left) {
         $this->_annotationDictionary->Rect->items[0]->touch();
@@ -169,7 +169,7 @@ abstract class AbstractAnnotation
      * in human-readable form.
      *
      * @param string $text
-     * @return \Zend\Pdf\Annotation\AbstractAnnotation
+     * @return \Zend2\Pdf\Annotation\AbstractAnnotation
      */
     public function setText($text) {
         if ($this->_annotationDictionary->Contents === null) {
@@ -186,7 +186,7 @@ abstract class AbstractAnnotation
     /**
      * Annotation object constructor
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct(InternalType\AbstractTypeObject $annotationDictionary)
     {
@@ -219,7 +219,7 @@ abstract class AbstractAnnotation
      *
      * @internal
      * @param $destinationArray
-     * @return \Zend\Pdf\Annotation\AbstractAnnotation
+     * @return \Zend2\Pdf\Annotation\AbstractAnnotation
      */
     public static function load(InternalType\AbstractTypeObject $resource)
     {

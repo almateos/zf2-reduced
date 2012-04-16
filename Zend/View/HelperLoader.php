@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_View
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id$
  */
 
-namespace Zend\View;
+namespace Zend2\View;
 
-use Zend\Loader\PluginClassLoader;
+use Zend2\Loader\PluginClassLoader;
 
 /**
  * Plugin Class Loader implementation for view helpers.
  *
- * @category   Zend
- * @package    Zend_View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_View
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class HelperLoader extends PluginClassLoader
@@ -37,58 +37,58 @@ class HelperLoader extends PluginClassLoader
      * @var array Pre-aliased view helpers
      */
     protected $plugins = array(
-        'action'              => 'Zend\View\Helper\Action',
-        'basepath'            => 'Zend\View\Helper\BasePath',
-        'currency'            => 'Zend\View\Helper\Currency',
-        'cycle'               => 'Zend\View\Helper\Cycle',
-        'declarevars'         => 'Zend\View\Helper\DeclareVars',
-        'doctype'             => 'Zend\View\Helper\Doctype',
-        'escape'              => 'Zend\View\Helper\Escape',
-        'fieldset'            => 'Zend\View\Helper\Fieldset',
-        'formbutton'          => 'Zend\View\Helper\FormButton',
-        'formcheckbox'        => 'Zend\View\Helper\FormCheckbox',
-        'formcsrf'            => 'Zend\View\Helper\FormCsrf',
-        'formerrors'          => 'Zend\View\Helper\FormErrors',
-        'formfile'            => 'Zend\View\Helper\FormFile',
-        'formhidden'          => 'Zend\View\Helper\FormHidden',
-        'formimage'           => 'Zend\View\Helper\FormImage',
-        'formlabel'           => 'Zend\View\Helper\FormLabel',
-        'formmulticheckbox'   => 'Zend\View\Helper\FormMultiCheckbox',
-        'formnote'            => 'Zend\View\Helper\FormNote',
-        'formpassword'        => 'Zend\View\Helper\FormPassword',
-        'formradio'           => 'Zend\View\Helper\FormRadio',
-        'formreset'           => 'Zend\View\Helper\FormReset',
-        'formselect'          => 'Zend\View\Helper\FormSelect',
-        'formsubmit'          => 'Zend\View\Helper\FormSubmit',
-        'formtextarea'        => 'Zend\View\Helper\FormTextarea',
-        'formtext'            => 'Zend\View\Helper\FormText',
-        'form'                => 'Zend\View\Helper\Form',
-        'gravatar'            => 'Zend\View\Helper\Gravatar',
-        'headlink'            => 'Zend\View\Helper\HeadLink',
-        'headmeta'            => 'Zend\View\Helper\HeadMeta',
-        'headscript'          => 'Zend\View\Helper\HeadScript',
-        'headstyle'           => 'Zend\View\Helper\HeadStyle',
-        'headtitle'           => 'Zend\View\Helper\HeadTitle',
-        'htmlflash'           => 'Zend\View\Helper\HtmlFlash',
-        'htmllist'            => 'Zend\View\Helper\HtmlList',
-        'htmlobject'          => 'Zend\View\Helper\HtmlObject',
-        'htmlpage'            => 'Zend\View\Helper\HtmlPage',
-        'htmlquicktime'       => 'Zend\View\Helper\HtmlQuicktime',
-        'inlinescript'        => 'Zend\View\Helper\InlineScript',
-        'json'                => 'Zend\View\Helper\Json',
-        'layout'              => 'Zend\View\Helper\Layout',
-        'navigation'          => 'Zend\View\Helper\Navigation',
-        'paginationcontrol'   => 'Zend\View\Helper\PaginationControl',
-        'partialloop'         => 'Zend\View\Helper\PartialLoop',
-        'partial'             => 'Zend\View\Helper\Partial',
-        'placeholder'         => 'Zend\View\Helper\Placeholder',
-        'renderchildmodel'    => 'Zend\View\Helper\RenderChildModel',
-        'render_child_model'  => 'Zend\View\Helper\RenderChildModel',
-        'rendertoplaceholder' => 'Zend\View\Helper\RenderToPlaceholder',
-        'serverurl'           => 'Zend\View\Helper\ServerUrl',
-        'translator'          => 'Zend\View\Helper\Translator',
-        'url'                 => 'Zend\View\Helper\Url',
-        'viewmodel'           => 'Zend\View\Helper\ViewModel',
-        'view_model'          => 'Zend\View\Helper\ViewModel',
+        'action'              => 'Zend2\View\Helper\Action',
+        'basepath'            => 'Zend2\View\Helper\BasePath',
+        'currency'            => 'Zend2\View\Helper\Currency',
+        'cycle'               => 'Zend2\View\Helper\Cycle',
+        'declarevars'         => 'Zend2\View\Helper\DeclareVars',
+        'doctype'             => 'Zend2\View\Helper\Doctype',
+        'escape'              => 'Zend2\View\Helper\Escape',
+        'fieldset'            => 'Zend2\View\Helper\Fieldset',
+        'formbutton'          => 'Zend2\View\Helper\FormButton',
+        'formcheckbox'        => 'Zend2\View\Helper\FormCheckbox',
+        'formcsrf'            => 'Zend2\View\Helper\FormCsrf',
+        'formerrors'          => 'Zend2\View\Helper\FormErrors',
+        'formfile'            => 'Zend2\View\Helper\FormFile',
+        'formhidden'          => 'Zend2\View\Helper\FormHidden',
+        'formimage'           => 'Zend2\View\Helper\FormImage',
+        'formlabel'           => 'Zend2\View\Helper\FormLabel',
+        'formmulticheckbox'   => 'Zend2\View\Helper\FormMultiCheckbox',
+        'formnote'            => 'Zend2\View\Helper\FormNote',
+        'formpassword'        => 'Zend2\View\Helper\FormPassword',
+        'formradio'           => 'Zend2\View\Helper\FormRadio',
+        'formreset'           => 'Zend2\View\Helper\FormReset',
+        'formselect'          => 'Zend2\View\Helper\FormSelect',
+        'formsubmit'          => 'Zend2\View\Helper\FormSubmit',
+        'formtextarea'        => 'Zend2\View\Helper\FormTextarea',
+        'formtext'            => 'Zend2\View\Helper\FormText',
+        'form'                => 'Zend2\View\Helper\Form',
+        'gravatar'            => 'Zend2\View\Helper\Gravatar',
+        'headlink'            => 'Zend2\View\Helper\HeadLink',
+        'headmeta'            => 'Zend2\View\Helper\HeadMeta',
+        'headscript'          => 'Zend2\View\Helper\HeadScript',
+        'headstyle'           => 'Zend2\View\Helper\HeadStyle',
+        'headtitle'           => 'Zend2\View\Helper\HeadTitle',
+        'htmlflash'           => 'Zend2\View\Helper\HtmlFlash',
+        'htmllist'            => 'Zend2\View\Helper\HtmlList',
+        'htmlobject'          => 'Zend2\View\Helper\HtmlObject',
+        'htmlpage'            => 'Zend2\View\Helper\HtmlPage',
+        'htmlquicktime'       => 'Zend2\View\Helper\HtmlQuicktime',
+        'inlinescript'        => 'Zend2\View\Helper\InlineScript',
+        'json'                => 'Zend2\View\Helper\Json',
+        'layout'              => 'Zend2\View\Helper\Layout',
+        'navigation'          => 'Zend2\View\Helper\Navigation',
+        'paginationcontrol'   => 'Zend2\View\Helper\PaginationControl',
+        'partialloop'         => 'Zend2\View\Helper\PartialLoop',
+        'partial'             => 'Zend2\View\Helper\Partial',
+        'placeholder'         => 'Zend2\View\Helper\Placeholder',
+        'renderchildmodel'    => 'Zend2\View\Helper\RenderChildModel',
+        'render_child_model'  => 'Zend2\View\Helper\RenderChildModel',
+        'rendertoplaceholder' => 'Zend2\View\Helper\RenderToPlaceholder',
+        'serverurl'           => 'Zend2\View\Helper\ServerUrl',
+        'translator'          => 'Zend2\View\Helper\Translator',
+        'url'                 => 'Zend2\View\Helper\Url',
+        'viewmodel'           => 'Zend2\View\Helper\ViewModel',
+        'view_model'          => 'Zend2\View\Helper\ViewModel',
     );
 }

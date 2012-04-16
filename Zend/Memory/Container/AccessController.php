@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,15 +12,15 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Memory
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Memory
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Memory\Container;
+namespace Zend2\Memory\Container;
 
-use Zend\Memory\Container;
+use Zend2\Memory\Container;
 
 /**
  * Memory object container access controller.
@@ -32,13 +32,13 @@ use Zend\Memory\Container;
  * It's not referenced by memory manager and class destructor is invoked immidiately after gouing
  * out of scope or unset operation.
  *
- * Class also provides Zend\Memory\Container interface and works as proxy for such cases.
+ * Class also provides Zend2\Memory\Container interface and works as proxy for such cases.
  *
- * @uses       \Zend\Memory\Container
- * @uses       \Zend\Memory\Container\Movable
- * @category   Zend
- * @package    Zend_Memory
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Memory\Container
+ * @uses       \Zend2\Memory\Container\Movable
+ * @category   Zend2
+ * @package    Zend2_Memory
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class AccessController implements Container
@@ -46,7 +46,7 @@ class AccessController implements Container
     /**
      * Memory container object
      *
-     * @var \Zend\Memory\Container\AbstractContainer
+     * @var \Zend2\Memory\Container\AbstractContainer
      */
     private $_memContainer;
 
@@ -54,7 +54,7 @@ class AccessController implements Container
     /**
      * Object constructor
      *
-     * @param \Zend\Memory\Container\Movable $memContainer
+     * @param \Zend2\Memory\Container\Movable $memContainer
      */
     public function __construct(Movable $memContainer)
     {
@@ -128,7 +128,7 @@ class AccessController implements Container
      *
      * @param string $property
      * @return string
-     * @throws \Zend\Memory\Exception
+     * @throws \Zend2\Memory\Exception
      */
     public function __get($property)
     {

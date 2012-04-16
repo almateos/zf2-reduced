@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Debug
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Debug
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend;
+namespace Zend2;
 
 /**
  * Concrete class for generating debug dumps related to the output source.
  *
- * @category   Zend
- * @package    Zend_Debug
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Debug
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Debug
@@ -52,7 +52,7 @@ class Debug
 
     /**
      * Set the debug ouput environment.
-     * Setting a value of null causes Zend_Debug to use PHP_SAPI.
+     * Setting a value of null causes Zend2_Debug to use PHP_SAPI.
      *
      * @param string $sapi
      * @return void;

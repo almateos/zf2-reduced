@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Docs
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Docs;
-use Zend\GData\App;
+namespace Zend2\GData\Docs;
+use Zend2\GData\App;
 
 /**
  * Assists in constructing queries for Google Document List documents
  *
  * @link http://code.google.com/apis/gdata/spreadsheets/
  *
- * @uses       \Zend\GData\App\Exception
- * @uses       \Zend\GData\Query
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Exception
+ * @uses       \Zend2\GData\Query
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Docs
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Query extends \Zend\GData\Query
+class Query extends \Zend2\GData\Query
 {
 
     /**
@@ -71,7 +71,7 @@ class Query extends \Zend\GData\Query
     protected $_projection = 'full';
 
     /**
-     * Constructs a new instance of a Zend_Gdata_Docs_Query object.
+     * Constructs a new instance of a Zend2_Gdata_Docs_Query object.
      */
     public function __construct()
     {
@@ -83,7 +83,7 @@ class Query extends \Zend\GData\Query
      * include 'full'.
      *
      * @param string $value
-     * @return \Zend\GData\Docs\Query Provides a fluent interface
+     * @return \Zend2\GData\Docs\Query Provides a fluent interface
      */
     public function setProjection($value)
     {
@@ -95,7 +95,7 @@ class Query extends \Zend\GData\Query
      * Sets the visibility for this query. Common values for visibility
      * include 'private'.
      *
-     * @return \Zend\GData\Docs\Query Provides a fluent interface
+     * @return \Zend2\GData\Docs\Query Provides a fluent interface
      */
     public function setVisibility($value)
     {
@@ -129,7 +129,7 @@ class Query extends \Zend\GData\Query
      * completely match the title.
      *
      * @param string $value
-     * @return \Zend\GData\Docs\Query Provides a fluent interface
+     * @return \Zend2\GData\Docs\Query Provides a fluent interface
      */
     public function setTitle($value)
     {
@@ -162,7 +162,7 @@ class Query extends \Zend\GData\Query
      * title parameter will be returned.
      *
      * @param boolean $value Use either true or false
-     * @return \Zend\GData\Docs\Query Provides a fluent interface
+     * @return \Zend2\GData\Docs\Query Provides a fluent interface
      */
     public function setTitleExact($value)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Json
+ * @category   Zend2
+ * @package    Zend2_Json
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Json\Server;
+namespace Zend2\Json\Server;
 
 /**
- * Zend_Json_Server_Cache: cache Zend_Json_Server server definition and SMD
+ * Zend2_Json_Server_Cache: cache Zend2_Json_Server server definition and SMD
  *
- * @uses       \Zend\Server\Cache
- * @category   Zend
- * @package    Zend_Json
+ * @uses       \Zend2\Server\Cache
+ * @category   Zend2
+ * @package    Zend2_Json
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Cache extends \Zend\Server\Cache
+class Cache extends \Zend2\Server\Cache
 {
     /**
      * Cache a service map description (SMD) to a file
@@ -39,7 +39,7 @@ class Cache extends \Zend\Server\Cache
      * Returns true on success, false on failure
      *
      * @param  string $filename
-     * @param  \Zend\Json\Server\Server $server
+     * @param  \Zend2\Json\Server\Server $server
      * @return boolean
      */
     public static function saveSmd($filename, Server $server)

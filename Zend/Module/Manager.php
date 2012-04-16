@@ -1,10 +1,10 @@
 <?php
 
-namespace Zend\Module;
+namespace Zend2\Module;
 
 use Traversable,
-    Zend\EventManager\EventCollection,
-    Zend\EventManager\EventManager;
+    Zend2\EventManager\EventCollection,
+    Zend2\EventManager\EventManager;
 
 class Manager implements ModuleHandler
 {

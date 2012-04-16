@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Image
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Image
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Resource\Image;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
-use Zend\Pdf\ObjectFactory;
-use Zend\Pdf\InternalType;
+namespace Zend2\Pdf\Resource\Image;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
+use Zend2\Pdf\ObjectFactory;
+use Zend2\Pdf\InternalType;
 
 /**
  * PNG image
  *
- * @uses       \Zend\Pdf\ObjectFactory
- * @uses       \Zend\Pdf\InternalType
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\Resource\Image\AbstractImage
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Image
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\ObjectFactory
+ * @uses       \Zend2\Pdf\InternalType
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\Resource\Image\AbstractImage
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Image
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Png extends AbstractImage
@@ -67,7 +67,7 @@ class Png extends AbstractImage
      * Object constructor
      *
      * @param string $imageFileName
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      * @todo Add compression conversions to support compression strategys other than PNG_COMPRESSION_DEFAULT_STRATEGY.
      * @todo Add pre-compression filtering.
      * @todo Add interlaced image handling.

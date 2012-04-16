@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper;
+namespace Zend2\View\Helper;
 
-use Zend\View,
-    Zend\View\Exception;
+use Zend2\View,
+    Zend2\View\Exception;
 
 /**
- * Zend_Layout_View_Helper_HeadMeta
+ * Zend2_Layout_View_Helper_HeadMeta
  *
  * @see        http://www.w3.org/TR/xhtml1/dtds.html
  * @uses       stdClass
- * @uses       \Zend\View\Exception
- * @uses       \Zend\View\Helper\Placeholder\Container\AbstractContainer
- * @uses       \Zend\View\Helper\Placeholder\Container\Standalone
- * @package    Zend_View
+ * @uses       \Zend2\View\Exception
+ * @uses       \Zend2\View\Helper\Placeholder\Container\AbstractContainer
+ * @uses       \Zend2\View\Helper\Placeholder\Container\Standalone
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class HeadMeta extends Placeholder\Container\Standalone
@@ -50,7 +50,7 @@ class HeadMeta extends Placeholder\Container\Standalone
     /**
      * @var string registry key
      */
-    protected $_regKey = 'Zend_View_Helper_HeadMeta';
+    protected $_regKey = 'Zend2_View_Helper_HeadMeta';
 
     /**
      * Constructor
@@ -73,7 +73,7 @@ class HeadMeta extends Placeholder\Container\Standalone
      * @param  string $keyType
      * @param  array $modifiers
      * @param  string $placement
-     * @return \Zend\View\Helper\HeadMeta
+     * @return \Zend2\View\Helper\HeadMeta
      */
     public function __invoke($content = null, $keyValue = null, $keyType = 'name', $modifiers = array(), $placement = Placeholder\Container\AbstractContainer::APPEND)
     {
@@ -132,7 +132,7 @@ class HeadMeta extends Placeholder\Container\Standalone
      *
      * @param  string $method
      * @param  array $args
-     * @return \Zend\View\Helper\HeadMeta
+     * @return \Zend2\View\Helper\HeadMeta
      * @throws Exception\BadMethodCallException
      */
     public function __call($method, $args)
@@ -179,7 +179,7 @@ class HeadMeta extends Placeholder\Container\Standalone
 	 * Not valid in a non-HTML5 doctype
 	 *
 	 * @param string $charset 
-	 * @return \Zend\View\Helper\HeadMeta Provides a fluent interface
+	 * @return \Zend2\View\Helper\HeadMeta Provides a fluent interface
 	 */
     public function setCharset($charset)
     {
@@ -345,7 +345,7 @@ class HeadMeta extends Placeholder\Container\Standalone
             $modifiersString .= $key . '="' . $this->_escape($value) . '" ';
         }
 
-        if ($this->view instanceof \Zend\Loader\Pluggable) {
+        if ($this->view instanceof \Zend2\Loader\Pluggable) {
             if ($this->view->plugin('doctype')->isHtml5()
                 && $type == 'charset'
             ) {

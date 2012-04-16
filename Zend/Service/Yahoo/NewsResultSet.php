@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Yahoo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_Yahoo_NewsResult
- * @uses       Zend_Service_Yahoo_ResultSet
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_Yahoo_NewsResult
+ * @uses       Zend2_Service_Yahoo_ResultSet
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Yahoo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_Yahoo_NewsResultSet extends Zend_Service_Yahoo_ResultSet
+class Zend2_Service_Yahoo_NewsResultSet extends Zend2_Service_Yahoo_ResultSet
 {
     /**
      * News result set namespace
@@ -39,12 +39,12 @@ class Zend_Service_Yahoo_NewsResultSet extends Zend_Service_Yahoo_ResultSet
 
 
     /**
-     * Overrides Zend_Service_Yahoo_ResultSet::current()
+     * Overrides Zend2_Service_Yahoo_ResultSet::current()
      *
-     * @return Zend_Service_Yahoo_NewsResult
+     * @return Zend2_Service_Yahoo_NewsResult
      */
     public function current()
     {
-        return new Zend_Service_Yahoo_NewsResult($this->_results->item($this->_currentIndex));
+        return new Zend2_Service_Yahoo_NewsResult($this->_results->item($this->_currentIndex));
     }
 }

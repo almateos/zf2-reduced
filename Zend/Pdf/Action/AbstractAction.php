@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,18 +12,18 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Action
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Action
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Action;
-use Zend\Pdf\Exception;
-use Zend\Pdf\ObjectFactory;
-use Zend\Pdf\InternalType;
-use Zend\Pdf;
+namespace Zend2\Pdf\Action;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf\ObjectFactory;
+use Zend2\Pdf\InternalType;
+use Zend2\Pdf;
 
 /**
  * Abstract PDF action representation class
@@ -31,32 +31,32 @@ use Zend\Pdf;
  * @uses       Countable
  * @uses       RecursiveIterator
  * @uses       SplObjectStorage
- * @uses       \Zend\Pdf\Action\GoToAction
- * @uses       \Zend\Pdf\Action\GoTo3DView
- * @uses       \Zend\Pdf\Action\GoToE
- * @uses       \Zend\Pdf\Action\GoToR
- * @uses       \Zend\Pdf\Action\Hide
- * @uses       \Zend\Pdf\Action\ImportData
- * @uses       \Zend\Pdf\Action\JavaScript
- * @uses       \Zend\Pdf\Action\Launch
- * @uses       \Zend\Pdf\Action\Movie
- * @uses       \Zend\Pdf\Action\Named
- * @uses       \Zend\Pdf\Action\Rendition
- * @uses       \Zend\Pdf\Action\ResetForm
- * @uses       \Zend\Pdf\Action\SetOCGState
- * @uses       \Zend\Pdf\Action\Sound
- * @uses       \Zend\Pdf\Action\SubmitForm
- * @uses       \Zend\Pdf\Action\Thread
- * @uses       \Zend\Pdf\Action\Trans
- * @uses       \Zend\Pdf\Action\Unknown
- * @uses       \Zend\Pdf\Action\Uri
- * @uses       \Zend\Pdf\InternalType\AbstractTypeObject
- * @uses       \Zend\Pdf\InternalType\ArrayObject
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\InternalStructure\NavigationTarget
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Action
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Action\GoToAction
+ * @uses       \Zend2\Pdf\Action\GoTo3DView
+ * @uses       \Zend2\Pdf\Action\GoToE
+ * @uses       \Zend2\Pdf\Action\GoToR
+ * @uses       \Zend2\Pdf\Action\Hide
+ * @uses       \Zend2\Pdf\Action\ImportData
+ * @uses       \Zend2\Pdf\Action\JavaScript
+ * @uses       \Zend2\Pdf\Action\Launch
+ * @uses       \Zend2\Pdf\Action\Movie
+ * @uses       \Zend2\Pdf\Action\Named
+ * @uses       \Zend2\Pdf\Action\Rendition
+ * @uses       \Zend2\Pdf\Action\ResetForm
+ * @uses       \Zend2\Pdf\Action\SetOCGState
+ * @uses       \Zend2\Pdf\Action\Sound
+ * @uses       \Zend2\Pdf\Action\SubmitForm
+ * @uses       \Zend2\Pdf\Action\Thread
+ * @uses       \Zend2\Pdf\Action\Trans
+ * @uses       \Zend2\Pdf\Action\Unknown
+ * @uses       \Zend2\Pdf\Action\Uri
+ * @uses       \Zend2\Pdf\InternalType\AbstractTypeObject
+ * @uses       \Zend2\Pdf\InternalType\ArrayObject
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\InternalStructure\NavigationTarget
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Action
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractAction extends Pdf\InternalStructure\NavigationTarget implements \RecursiveIterator, \Countable
@@ -64,9 +64,9 @@ abstract class AbstractAction extends Pdf\InternalStructure\NavigationTarget imp
     /**
      * Action dictionary
      *
-     * @var   \Zend\Pdf\InternalType\DictionaryObject
-     *      | \Zend\Pdf\InternalType\IndirectObject
-     *      | \Zend\Pdf\InternalType\IndirectObjectReference
+     * @var   \Zend2\Pdf\InternalType\DictionaryObject
+     *      | \Zend2\Pdf\InternalType\IndirectObject
+     *      | \Zend2\Pdf\InternalType\IndirectObjectReference
      */
     protected $_actionDictionary;
 
@@ -74,24 +74,24 @@ abstract class AbstractAction extends Pdf\InternalStructure\NavigationTarget imp
     /**
      * An original list of chained actions
      *
-     * @var array  Array of \Zend\Pdf\Action\AbstractAction objects
+     * @var array  Array of \Zend2\Pdf\Action\AbstractAction objects
      */
     protected $_originalNextList;
 
     /**
      * A list of next actions in actions tree (used for actions chaining)
      *
-     * @var array  Array of \Zend\Pdf\Action\AbstractAction objects
+     * @var array  Array of \Zend2\Pdf\Action\AbstractAction objects
      */
     public $next = array();
 
     /**
      * Object constructor
      *
-     * @param \Zend\Pdf\InternalType\DictionaryObject $dictionary
+     * @param \Zend2\Pdf\InternalType\DictionaryObject $dictionary
      * @param SplObjectStorage      $processedActions  list of already processed action dictionaries,
      *                                                 used to avoid cyclic references
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct(InternalType\AbstractTypeObject $dictionary, \SplObjectStorage $processedActions)
     {
@@ -128,10 +128,10 @@ abstract class AbstractAction extends Pdf\InternalStructure\NavigationTarget imp
      * Load PDF action object using specified dictionary
      *
      * @internal
-     * @param \Zend\Pdf\InternalType\AbstractTypeObject $dictionary (It's actually Dictionary or Dictionary Object or Reference to a Dictionary Object)
+     * @param \Zend2\Pdf\InternalType\AbstractTypeObject $dictionary (It's actually Dictionary or Dictionary Object or Reference to a Dictionary Object)
      * @param SplObjectStorage $processedActions  list of already processed action dictionaries, used to avoid cyclic references
-     * @return \Zend\Pdf\Action\AbstractAction
-     * @throws \Zend\Pdf\Exception
+     * @return \Zend2\Pdf\Action\AbstractAction
+     * @throws \Zend2\Pdf\Exception
      */
     public static function load(InternalType\AbstractTypeObject $dictionary, \SplObjectStorage $processedActions = null)
     {
@@ -214,7 +214,7 @@ abstract class AbstractAction extends Pdf\InternalStructure\NavigationTarget imp
      * Get resource
      *
      * @internal
-     * @return \Zend\Pdf\InternalType\AbstractTypeObject
+     * @return \Zend2\Pdf\InternalType\AbstractTypeObject
      */
     public function getResource()
     {
@@ -227,10 +227,10 @@ abstract class AbstractAction extends Pdf\InternalStructure\NavigationTarget imp
      * Returns dictionary indirect object or reference
      *
      * @internal
-     * @param \Zend\Pdf\ObjectFactory $factory    Object factory for newly created indirect objects
+     * @param \Zend2\Pdf\ObjectFactory $factory    Object factory for newly created indirect objects
      * @param SplObjectStorage $processedActions  list of already processed actions
      *                                            (used to prevent infinity loop caused by cyclic references)
-     * @return \Zend\Pdf\InternalType\IndirectObject|\Zend\Pdf\InternalType\IndirectObjectReference
+     * @return \Zend2\Pdf\InternalType\IndirectObject|\Zend2\Pdf\InternalType\IndirectObjectReference
      */
     public function dumpAction(ObjectFactory $factory, \SplObjectStorage $processedActions = null)
     {
@@ -302,7 +302,7 @@ abstract class AbstractAction extends Pdf\InternalStructure\NavigationTarget imp
     /**
      * Returns current child action.
      *
-     * @return \Zend\Pdf\Action\AbstractAction
+     * @return \Zend2\Pdf\Action\AbstractAction
      */
     public function current()
     {
@@ -348,7 +348,7 @@ abstract class AbstractAction extends Pdf\InternalStructure\NavigationTarget imp
     /**
      * Returns the child action.
      *
-     * @return \Zend\Pdf\Action\AbstractAction|null
+     * @return \Zend2\Pdf\Action\AbstractAction|null
      */
     public function getChildren()
     {

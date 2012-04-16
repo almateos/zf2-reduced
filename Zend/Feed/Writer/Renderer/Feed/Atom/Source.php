@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,33 +12,33 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Writer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Writer\Renderer\Feed\Atom;
+namespace Zend2\Feed\Writer\Renderer\Feed\Atom;
 
 /**
  * @uses       DOMDocument
- * @uses       \Zend\Feed\Writer\Renderer\Feed\Atom\AbstractAtom
- * @uses       \Zend\Feed\Writer\Renderer
- * @category   Zend
- * @package    Zend_Feed_Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Feed\Writer\Renderer\Feed\Atom\AbstractAtom
+ * @uses       \Zend2\Feed\Writer\Renderer
+ * @category   Zend2
+ * @package    Zend2_Feed_Writer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Source extends AbstractAtom implements \Zend\Feed\Writer\Renderer
+class Source extends AbstractAtom implements \Zend2\Feed\Writer\Renderer
 {
 
     /**
      * Constructor
      * 
-     * @param  Zend_Feed_Writer_Feed_Source $container 
+     * @param  Zend2_Feed_Writer_Feed_Source $container 
      * @return void
      */
-    public function __construct (\Zend\Feed\Writer\Source $container)
+    public function __construct (\Zend2\Feed\Writer\Source $container)
     {
         parent::__construct($container);
     }
@@ -46,7 +46,7 @@ class Source extends AbstractAtom implements \Zend\Feed\Writer\Renderer
     /**
      * Render Atom Feed Metadata (Source element)
      * 
-     * @return \Zend\Feed\Writer\Renderer\Feed\Atom
+     * @return \Zend2\Feed\Writer\Renderer\Feed\Atom
      */
     public function render()
     {

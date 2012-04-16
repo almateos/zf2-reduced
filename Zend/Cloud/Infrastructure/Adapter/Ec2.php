@@ -1,30 +1,30 @@
 <?php
 /**
- * @category   Zend
- * @package    Zend\Cloud\Infrastructure
+ * @category   Zend2
+ * @package    Zend2\Cloud\Infrastructure
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Cloud\Infrastructure\Adapter;
+namespace Zend2\Cloud\Infrastructure\Adapter;
 
-use Zend\Service\Amazon\Ec2\Instance as Ec2Instance,
-    Zend\Service\Amazon\Ec2\Image as Ec2Image,
-    Zend\Service\Amazon\Ec2\AvailabilityZones as Ec2Zone,
-    Zend\Service\Amazon\Ec2\CloudWatch as Ec2Monitor,
-    Zend\Service\Amazon\Ec2\Exception as Ec2Exception,
-    Zend\Cloud\Infrastructure\Instance,    
-    Zend\Cloud\Infrastructure\InstanceList,
-    Zend\Cloud\Infrastructure\Image,
-    Zend\Cloud\Infrastructure\ImageList;
+use Zend2\Service\Amazon\Ec2\Instance as Ec2Instance,
+    Zend2\Service\Amazon\Ec2\Image as Ec2Image,
+    Zend2\Service\Amazon\Ec2\AvailabilityZones as Ec2Zone,
+    Zend2\Service\Amazon\Ec2\CloudWatch as Ec2Monitor,
+    Zend2\Service\Amazon\Ec2\Exception as Ec2Exception,
+    Zend2\Cloud\Infrastructure\Instance,    
+    Zend2\Cloud\Infrastructure\InstanceList,
+    Zend2\Cloud\Infrastructure\Image,
+    Zend2\Cloud\Infrastructure\ImageList;
 
 /**
  * Amazon EC2 adapter for infrastructure service
  *
- * @package    Zend\Cloud\Infrastructure
+ * @package    Zend2\Cloud\Infrastructure
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Ec2 extends AbstractAdapter
@@ -117,7 +117,7 @@ class Ec2 extends AbstractAdapter
     /**
      * Constructor
      *
-     * @param  array|Zend\Config\Config $options
+     * @param  array|Zend2\Config\Config $options
      * @return void
      */
     public function __construct($options = array())
@@ -547,7 +547,7 @@ class Ec2 extends AbstractAdapter
     /**
      * Get the last HTTP response
      * 
-     * @return Zend\Http\Response 
+     * @return Zend2\Http\Response 
      */
     public function getLastHttpResponse()
     {

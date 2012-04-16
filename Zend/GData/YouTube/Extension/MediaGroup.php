@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,14 +12,14 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace Zend2\GData\YouTube\Extension;
 
 /**
  * This class represents the media:group element of Media RSS.
@@ -27,60 +27,60 @@ namespace Zend\GData\YouTube\Extension;
  * different representations of the same content.  When it exists,
  * it is a child of an Entry (Atom) or Item (RSS).
  *
- * @uses       \Zend\GData\Media\Extension\MediaGroup
- * @uses       \Zend\GData\YouTube
- * @uses       \Zend\GData\YouTube\Extension\Duration
- * @uses       \Zend\GData\YouTube\Extension\MediaContent
- * @uses       \Zend\GData\YouTube\Extension\MediaCredit
- * @uses       \Zend\GData\YouTube\Extension\MediaRating
- * @uses       \Zend\GData\YouTube\Extension\Private
- * @uses       \Zend\GData\YouTube\Extension\Uploaded
- * @uses       \Zend\GData\YouTube\Extension\VideoId
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Media\Extension\MediaGroup
+ * @uses       \Zend2\GData\YouTube
+ * @uses       \Zend2\GData\YouTube\Extension\Duration
+ * @uses       \Zend2\GData\YouTube\Extension\MediaContent
+ * @uses       \Zend2\GData\YouTube\Extension\MediaCredit
+ * @uses       \Zend2\GData\YouTube\Extension\MediaRating
+ * @uses       \Zend2\GData\YouTube\Extension\Private
+ * @uses       \Zend2\GData\YouTube\Extension\Uploaded
+ * @uses       \Zend2\GData\YouTube\Extension\VideoId
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class MediaGroup extends \Zend\GData\Media\Extension\MediaGroup
+class MediaGroup extends \Zend2\GData\Media\Extension\MediaGroup
 {
 
     protected $_rootElement = 'group';
     protected $_rootNamespace = 'media';
 
     /**
-     * @var \Zend\GData\YouTube\Extension\Duration
+     * @var \Zend2\GData\YouTube\Extension\Duration
      */
     protected $_duration = null;
 
     /**
-     * @var \Zend\GData\YouTube\Extension\Private
+     * @var \Zend2\GData\YouTube\Extension\Private
      */
     protected $_private = null;
 
     /**
-     * @var \Zend\GData\YouTube\Extension\VideoId
+     * @var \Zend2\GData\YouTube\Extension\VideoId
      */
     protected $_videoid = null;
 
     /**
-     * @var \Zend\GData\YouTube\Extension\MediaRating
+     * @var \Zend2\GData\YouTube\Extension\MediaRating
      */
     protected $_mediarating = null;
 
     /**
-     * @var \Zend\GData\YouTube\Extension\MediaCredit
+     * @var \Zend2\GData\YouTube\Extension\MediaCredit
      */
     protected $_mediacredit = null;
 
     /**
-     * @var \Zend\GData\YouTube\Extension\Uploaded
+     * @var \Zend2\GData\YouTube\Extension\Uploaded
      */
     protected $_uploaded = null;
 
     public function __construct($element = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\YouTube::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\YouTube::$namespaces);
         parent::__construct($element);
     }
 
@@ -168,7 +168,7 @@ class MediaGroup extends \Zend\GData\Media\Extension\MediaGroup
     /**
      * Returns the duration value of this element
      *
-     * @return \Zend\GData\YouTube\Extension\Duration
+     * @return \Zend2\GData\YouTube\Extension\Duration
      */
     public function getDuration()
     {
@@ -178,8 +178,8 @@ class MediaGroup extends \Zend\GData\Media\Extension\MediaGroup
     /**
      * Sets the duration value of this element
      *
-     * @param \Zend\GData\YouTube\Extension\Duration $value The duration value
-     * @return \Zend\GData\YouTube\Extension\MediaGroup Provides a fluent
+     * @param \Zend2\GData\YouTube\Extension\Duration $value The duration value
+     * @return \Zend2\GData\YouTube\Extension\MediaGroup Provides a fluent
      *         interface
      */
     public function setDuration($value)
@@ -191,7 +191,7 @@ class MediaGroup extends \Zend\GData\Media\Extension\MediaGroup
     /**
      * Returns the videoid value of this element
      *
-     * @return \Zend\GData\YouTube\Extension\VideoId
+     * @return \Zend2\GData\YouTube\Extension\VideoId
      */
     public function getVideoId()
     {
@@ -201,8 +201,8 @@ class MediaGroup extends \Zend\GData\Media\Extension\MediaGroup
     /**
      * Sets the videoid value of this element
      *
-     * @param \Zend\GData\YouTube\Extension\VideoId $value The video id value
-     * @return \Zend\GData\YouTube\Extension\MediaGroup Provides a fluent
+     * @param \Zend2\GData\YouTube\Extension\VideoId $value The video id value
+     * @return \Zend2\GData\YouTube\Extension\MediaGroup Provides a fluent
      *         interface
      */
     public function setVideoId($value)
@@ -214,7 +214,7 @@ class MediaGroup extends \Zend\GData\Media\Extension\MediaGroup
     /**
      * Returns the yt:uploaded element
      *
-     * @return \Zend\GData\YouTube\Extension\Uploaded
+     * @return \Zend2\GData\YouTube\Extension\Uploaded
      */
     public function getUploaded()
     {
@@ -224,8 +224,8 @@ class MediaGroup extends \Zend\GData\Media\Extension\MediaGroup
     /**
      * Sets the yt:uploaded element
      *
-     * @param \Zend\GData\YouTube\Extension\Uploaded $value The uploaded value
-     * @return \Zend\GData\YouTube\Extension\MediaGroup Provides a fluent
+     * @param \Zend2\GData\YouTube\Extension\Uploaded $value The uploaded value
+     * @return \Zend2\GData\YouTube\Extension\MediaGroup Provides a fluent
      *         interface
      */
     public function setUploaded($value)
@@ -237,7 +237,7 @@ class MediaGroup extends \Zend\GData\Media\Extension\MediaGroup
     /**
      * Returns the private value of this element
      *
-     * @return \Zend\GData\YouTube\Extension\Private
+     * @return \Zend2\GData\YouTube\Extension\Private
      */
     public function getPrivate()
     {
@@ -247,8 +247,8 @@ class MediaGroup extends \Zend\GData\Media\Extension\MediaGroup
     /**
      * Sets the private value of this element
      *
-     * @param \Zend\GData\YouTube\Extension\Private $value The private value
-     * @return \Zend\GData\YouTube\Extension\MediaGroup Provides a fluent
+     * @param \Zend2\GData\YouTube\Extension\Private $value The private value
+     * @return \Zend2\GData\YouTube\Extension\MediaGroup Provides a fluent
      *         interface
      */
     public function setPrivate($value)
@@ -260,7 +260,7 @@ class MediaGroup extends \Zend\GData\Media\Extension\MediaGroup
     /**
      * Returns the rating value of this element
      *
-     * @return \Zend\GData\YouTube\Extension\MediaRating
+     * @return \Zend2\GData\YouTube\Extension\MediaRating
      */
     public function getMediaRating()
     {
@@ -270,8 +270,8 @@ class MediaGroup extends \Zend\GData\Media\Extension\MediaGroup
     /**
      * Sets the media:rating value of this element
      *
-     * @param \Zend\GData\YouTube\Extension\MediaRating $value The rating element
-     * @return \Zend\GData\YouTube\Extension\MediaGroup Provides a fluent
+     * @param \Zend2\GData\YouTube\Extension\MediaRating $value The rating element
+     * @return \Zend2\GData\YouTube\Extension\MediaGroup Provides a fluent
      *         interface
      */
     public function setMediaRating($value)
@@ -283,7 +283,7 @@ class MediaGroup extends \Zend\GData\Media\Extension\MediaGroup
     /**
      * Returns the media:credit value of this element
      *
-     * @return \Zend\GData\YouTube\Extension\MediaCredit
+     * @return \Zend2\GData\YouTube\Extension\MediaCredit
      */
     public function getMediaCredit()
     {
@@ -293,8 +293,8 @@ class MediaGroup extends \Zend\GData\Media\Extension\MediaGroup
     /**
      * Sets the media:credit value of this element
      *
-     * @param \Zend\GData\YouTube\Extension\MediaCredit $value The credit element
-     * @return \Zend\GData\YouTube\Extension\MediaGroup Provides a fluent
+     * @param \Zend2\GData\YouTube\Extension\MediaCredit $value The credit element
+     * @return \Zend2\GData\YouTube\Extension\MediaGroup Provides a fluent
      *         interface
      */
     public function setMediaCredit($value)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Docs
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Docs;
+namespace Zend2\GData\Docs;
 
-use Zend\GData\Docs;
+use Zend2\GData\Docs;
 
 /**
  * Data model for a Google Documents List feed of documents
  *
- * @uses       \Zend\GData\Docs
- * @uses       \Zend\GData\Feed
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Docs
+ * @uses       \Zend2\GData\Feed
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Docs
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class DocumentListFeed extends \Zend\GData\Feed
+class DocumentListFeed extends \Zend2\GData\Feed
 {
 
     /**
@@ -42,14 +42,14 @@ class DocumentListFeed extends \Zend\GData\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\Docs\DocumentListEntry';
+    protected $_entryClassName = 'Zend2\GData\Docs\DocumentListEntry';
 
     /**
      * The classname for the feed.
      *
      * @var string
      */
-    protected $_feedClassName = 'Zend\GData\Docs\DocumentListFeed';
+    protected $_feedClassName = 'Zend2\GData\Docs\DocumentListFeed';
 
     /**
      * Create a new instance of a feed for a list of documents.

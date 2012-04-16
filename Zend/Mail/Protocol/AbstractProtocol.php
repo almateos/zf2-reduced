@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,27 +13,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail\Protocol;
+namespace Zend2\Mail\Protocol;
 
-use Zend\Validator\Hostname as HostnameValidator,
-    Zend\Validator;
+use Zend2\Validator\Hostname as HostnameValidator,
+    Zend2\Validator;
 
 /**
- * Zend_Mail_Protocol_Abstract
+ * Zend2_Mail_Protocol_Abstract
  *
  * Provides low-level methods for concrete adapters to communicate with a remote mail server and track requests and responses.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @todo Implement proxy settings
  */
@@ -72,7 +72,7 @@ abstract class AbstractProtocol
 
 
     /**
-     * Instance of Zend\Validator\ValidatorChain to check hostnames
+     * Instance of Zend2\Validator\ValidatorChain to check hostnames
      * @var Validator\ValidatorChain
      */
     protected $_validHost;
@@ -351,7 +351,7 @@ abstract class AbstractProtocol
      * Parse server response for successful codes
      *
      * Read the response from the stream and check for expected return code.
-     * Throws a Zend_Mail_Protocol_Exception if an unexpected code is returned.
+     * Throws a Zend2_Mail_Protocol_Exception if an unexpected code is returned.
      *
      * @param  string|array $code One or more codes that indicate a successful response
      * @throws Exception\RuntimeException

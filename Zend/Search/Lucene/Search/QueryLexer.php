@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search;
+namespace Zend2\Search\Lucene\Search;
 
-use Zend\Search\Lucene,
-	Zend\Search\Lucene\Search\Exception\QueryParserException;
+use Zend2\Search\Lucene,
+	Zend2\Search\Lucene\Search\Exception\QueryParserException;
 
 /**
- * @uses       \Zend\Search\Lucene\AbstractFSM
- * @uses       \Zend\Search\Lucene\FSMAction
- * @uses	   \Zend\Search\Lucene\Search\Exception\QueryParserException
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\AbstractFSM
+ * @uses       \Zend2\Search\Lucene\FSMAction
+ * @uses	   \Zend2\Search\Lucene\Search\Exception\QueryParserException
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class QueryLexer extends Lucene\AbstractFSM
@@ -328,7 +328,7 @@ class QueryLexer extends Lucene\AbstractFSM
      * @param string $inputString
      * @param string $encoding
      * @return array
-     * @throws \Zend\Search\Lucene\Search\Exception\QueryParserException
+     * @throws \Zend2\Search\Lucene\Search\Exception\QueryParserException
      */
     public function tokenize($inputString, $encoding)
     {
@@ -377,7 +377,7 @@ class QueryLexer extends Lucene\AbstractFSM
     /**
      * Add query syntax lexeme
      *
-     * @throws \Zend\Search\Lucene\Search\Exception\QueryParserException
+     * @throws \Zend2\Search\Lucene\Search\Exception\QueryParserException
      */
     public function addQuerySyntaxLexeme()
     {

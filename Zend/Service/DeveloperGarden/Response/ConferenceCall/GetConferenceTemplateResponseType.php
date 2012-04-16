@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,34 +12,34 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_Response_BaseType
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Response_BaseType
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_Response_ConferenceCall_GetConferenceTemplateResponseType
-    extends Zend_Service_DeveloperGarden_Response_BaseType
+class Zend2_Service_DeveloperGarden_Response_ConferenceCall_GetConferenceTemplateResponseType
+    extends Zend2_Service_DeveloperGarden_Response_BaseType
 {
     /**
      * details
      *
-     * @var Zend_Service_DeveloperGarden_ConferenceCall_ConferenceDetail
+     * @var Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceDetail
      */
     public $detail = null;
 
     /**
-     * array of Zend_Service_DeveloperGarden_ConferenceCall_Participant
+     * array of Zend2_Service_DeveloperGarden_ConferenceCall_Participant
      *
      * @var array
      */
@@ -48,7 +48,7 @@ class Zend_Service_DeveloperGarden_Response_ConferenceCall_GetConferenceTemplate
     /**
      * returns the details object
      *
-     * @return Zend_Service_DeveloperGarden_ConferenceCall_ConferenceDetail
+     * @return Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceDetail
      */
     public function getDetail()
     {
@@ -57,13 +57,13 @@ class Zend_Service_DeveloperGarden_Response_ConferenceCall_GetConferenceTemplate
 
     /**
      * returns array with all participants
-     * Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
+     * Zend2_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
      *
-     * @return array of Zend_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
+     * @return array of Zend2_Service_DeveloperGarden_ConferenceCall_ParticipantDetail
      */
     public function getParticipants()
     {
-        if ($this->participants instanceof Zend_Service_DeveloperGarden_ConferenceCall_Participant) {
+        if ($this->participants instanceof Zend2_Service_DeveloperGarden_ConferenceCall_Participant) {
             $this->participants = array(
                 $this->participants
             );
@@ -75,7 +75,7 @@ class Zend_Service_DeveloperGarden_Response_ConferenceCall_GetConferenceTemplate
      * returns the participant object if found in the response
      *
      * @param string $participantId
-     * @return Zend_Service_DeveloperGarden_ConferenceCall_Participant
+     * @return Zend2_Service_DeveloperGarden_ConferenceCall_Participant
      */
     public function getParticipantById($participantId)
     {

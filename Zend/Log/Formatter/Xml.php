@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Log
+ * @category   Zend2
+ * @package    Zend2_Log
  * @subpackage Formatter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Log\Formatter;
+namespace Zend2\Log\Formatter;
 
 use DOMDocument,
     DOMElement,
-    Zend\Log\Formatter,
-    Zend\Config\Config;
+    Zend2\Log\Formatter,
+    Zend2\Config\Config;
 
 /**
- * @category   Zend
- * @package    Zend_Log
+ * @category   Zend2
+ * @package    Zend2_Log
  * @subpackage Formatter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Xml implements Formatter
@@ -107,7 +107,7 @@ class Xml implements Formatter
      * Set encoding
      *
      * @param  string $value
-     * @return \Zend\Log\Formatter\Xml
+     * @return \Zend2\Log\Formatter\Xml
      */
     public function setEncoding($value)
     {

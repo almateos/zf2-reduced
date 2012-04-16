@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Value
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\XmlRpc\Value;
+namespace Zend2\XmlRpc\Value;
 
 /**
- * @uses       Zend\XmlRpc\Value\Scalar
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @uses       Zend2\XmlRpc\Value\Scalar
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Value
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Boolean extends Scalar
@@ -42,7 +42,7 @@ class Boolean extends Scalar
     {
         $this->_type = self::XMLRPC_TYPE_BOOLEAN;
         // Make sure the value is boolean and then convert it into a integer
-        // The double convertion is because a bug in the ZendOptimizer in PHP version 5.0.4
+        // The double convertion is because a bug in the Zend2Optimizer in PHP version 5.0.4
         $this->_value = (int)(bool)$value;
     }
 

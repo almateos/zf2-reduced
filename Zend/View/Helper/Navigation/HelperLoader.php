@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper\Navigation;
+namespace Zend2\View\Helper\Navigation;
 
-use Zend\Loader\PluginClassLoader;
+use Zend2\Loader\PluginClassLoader;
 
 /**
  * Plugin map for navigation helpers
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class HelperLoader extends PluginClassLoader
 {
     protected $plugins = array(
-        'breadcrumbs' => 'Zend\View\Helper\Navigation\Breadcrumbs',
-        'links'       => 'Zend\View\Helper\Navigation\Links',
-        'menu'        => 'Zend\View\Helper\Navigation\Menu',
-        'sitemap'     => 'Zend\View\Helper\Navigation\Sitemap',
+        'breadcrumbs' => 'Zend2\View\Helper\Navigation\Breadcrumbs',
+        'links'       => 'Zend2\View\Helper\Navigation\Links',
+        'menu'        => 'Zend2\View\Helper\Navigation\Menu',
+        'sitemap'     => 'Zend2\View\Helper\Navigation\Sitemap',
     );
 }

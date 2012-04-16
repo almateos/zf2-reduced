@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Dojo
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo;
+namespace Zend2\Dojo;
 
-use Zend\View\Renderer,
-    Zend\View\Renderer\PhpRenderer;
+use Zend2\View\Renderer,
+    Zend2\View\Renderer\PhpRenderer;
 
 /**
  * Enable Dojo components
  *
- * @package    Zend_Dojo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @package    Zend2_Dojo
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Dojo
@@ -55,16 +55,16 @@ class Dojo
     /**
      * Dojo-enable a form instance
      *
-     * @param  \Zend\Form\Form $form
+     * @param  \Zend2\Form\Form $form
      * @return void
      */
-    public static function enableForm(\Zend\Form\Form $form)
+    public static function enableForm(\Zend2\Form\Form $form)
     {
-        $form->addPrefixPath('Zend\Dojo\Form\Decorator', 'Zend/Dojo/Form/Decorator', 'decorator')
-             ->addPrefixPath('Zend\Dojo\Form\Element', 'Zend/Dojo/Form/Element', 'element')
-             ->addElementPrefixPath('Zend\Dojo\Form\Decorator', 'Zend/Dojo/Form/Decorator', 'decorator')
-             ->addDisplayGroupPrefixPath('Zend\Dojo\Form\Decorator', 'Zend/Dojo/Form/Decorator')
-             ->setDefaultDisplayGroupClass('Zend\Dojo\Form\DisplayGroup');
+        $form->addPrefixPath('Zend2\Dojo\Form\Decorator', 'Zend2/Dojo/Form/Decorator', 'decorator')
+             ->addPrefixPath('Zend2\Dojo\Form\Element', 'Zend2/Dojo/Form/Element', 'element')
+             ->addElementPrefixPath('Zend2\Dojo\Form\Decorator', 'Zend2/Dojo/Form/Decorator', 'decorator')
+             ->addDisplayGroupPrefixPath('Zend2\Dojo\Form\Decorator', 'Zend2/Dojo/Form/Decorator')
+             ->setDefaultDisplayGroupClass('Zend2\Dojo\Form\DisplayGroup');
 
         foreach ($form->getSubForms() as $subForm) {
             self::enableForm($subForm);
@@ -78,7 +78,7 @@ class Dojo
     /**
      * Dojo-enable a view instance
      *
-     * @param  \Zend\View\Renderer $view
+     * @param  \Zend2\View\Renderer $view
      * @return void
      */
     public static function enableView(Renderer $view)
@@ -95,7 +95,7 @@ class Dojo
     /**
      * Dojo-disable a dojo enabled view
      * 
-     * @param  \Zend\View\Renderer $view
+     * @param  \Zend2\View\Renderer $view
      * @return void
      */
     public static function disableView(Renderer $view)

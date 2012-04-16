@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Log
+ * @category   Zend2
+ * @package    Zend2_Log
  * @subpackage Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Log\Writer;
+namespace Zend2\Log\Writer;
 
-use Zend\Log\Logger,
-    Zend\Log\Formatter,
-    Zend\Log\Exception;
+use Zend2\Log\Logger,
+    Zend2\Log\Formatter,
+    Zend2\Log\Exception;
 
 /**
  * Writes log messages to syslog
  *
- * @category   Zend
- * @package    Zend_Log
+ * @category   Zend2
+ * @package    Zend2_Log
  * @subpackage Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Syslog extends AbstractWriter
 {
     /**
-     * Maps Zend_Log priorities to PHP's syslog priorities
+     * Maps Zend2_Log priorities to PHP's syslog priorities
      *
      * @var array
      */
@@ -78,7 +78,7 @@ class Syslog extends AbstractWriter
      *
      * @var string
      */
-    protected $appName = 'Zend\Log';
+    protected $appName = 'Zend2\Log';
 
     /**
      * Facility used by this syslog-writer instance

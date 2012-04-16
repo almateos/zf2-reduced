@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Serializer
+ * @category   Zend2
+ * @package    Zend2_Serializer
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Serializer\Adapter;
+namespace Zend2\Serializer\Adapter;
 
-use Zend\Serializer\Exception\RuntimeException,
-    Zend\Amf\Parser as AmfParser;
+use Zend2\Serializer\Exception\RuntimeException,
+    Zend2\Amf\Parser as AmfParser;
 
 /**
- * @uses       Zend\Amf\Parser\Amf3\Deserializer
- * @uses       Zend\Amf\Parser\Amf3\Serializer
- * @uses       Zend\Amf\Parser\InputStream
- * @uses       Zend\Amf\Parser\OutputStream
- * @uses       Zend\Serializer\Adapter\AbstractAdapter
- * @uses       Zend\Serializer\Exception\RuntimeException
- * @category   Zend
- * @package    Zend_Serializer
+ * @uses       Zend2\Amf\Parser\Amf3\Deserializer
+ * @uses       Zend2\Amf\Parser\Amf3\Serializer
+ * @uses       Zend2\Amf\Parser\InputStream
+ * @uses       Zend2\Amf\Parser\OutputStream
+ * @uses       Zend2\Serializer\Adapter\AbstractAdapter
+ * @uses       Zend2\Serializer\Exception\RuntimeException
+ * @category   Zend2
+ * @package    Zend2_Serializer
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Amf3 extends AbstractAdapter
@@ -45,7 +45,7 @@ class Amf3 extends AbstractAdapter
      * @param  mixed $value 
      * @param  array $opts 
      * @return string
-     * @throws Zend\Serializer\Exception
+     * @throws Zend2\Serializer\Exception
      */
     public function serialize($value, array $opts = array())
     {
@@ -65,7 +65,7 @@ class Amf3 extends AbstractAdapter
      * @param  mixed $value 
      * @param  array $opts 
      * @return string
-     * @throws Zend\Serializer\Exception
+     * @throws Zend2\Serializer\Exception
      */
     public function unserialize($value, array $opts = array())
     {

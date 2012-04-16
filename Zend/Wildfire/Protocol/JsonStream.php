@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Wildfire
+ * @category   Zend2
+ * @package    Zend2_Wildfire
  * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Wildfire\Protocol;
-use Zend\Wildfire\Plugin,
-    Zend\Wildfire\Protocol\Exception,
-    Zend\Wildfire;
+namespace Zend2\Wildfire\Protocol;
+use Zend2\Wildfire\Plugin,
+    Zend2\Wildfire\Protocol\Exception,
+    Zend2\Wildfire;
 
 /**
  * Encodes messages into the Wildfire JSON Stream Communication Protocol.
  *
- * @uses       \Zend\Json\Json
- * @uses       \Zend\Wildfire\Channel
- * @uses       \Zend\Wildfire\Exception
- * @uses       \Zend\Wildfire\Plugin
- * @category   Zend
- * @package    Zend_Wildfire
+ * @uses       \Zend2\Json\Json
+ * @uses       \Zend2\Wildfire\Channel
+ * @uses       \Zend2\Wildfire\Exception
+ * @uses       \Zend2\Wildfire\Plugin
+ * @category   Zend2
+ * @package    Zend2_Wildfire
  * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class JsonStream
@@ -59,7 +59,7 @@ class JsonStream
     /**
      * Register a plugin that uses this protocol
      *
-     * @param \Zend\Wildfire\Plugin $plugin The plugin to be registered
+     * @param \Zend2\Wildfire\Plugin $plugin The plugin to be registered
      * @return boolean Returns TRUE if plugin was registered, false if it was already registered
      */
     public function registerPlugin(Plugin $plugin)
@@ -74,7 +74,7 @@ class JsonStream
     /**
      * Record a message with the given data in the given structure
      *
-     * @param \Zend\Wildfire\Plugin $plugin The plugin recording the message
+     * @param \Zend2\Wildfire\Plugin $plugin The plugin recording the message
      * @param string $structure The structure to be used for the data
      * @param array $data The data to be recorded
      * @return boolean Returns TRUE if message was recorded
@@ -98,7 +98,7 @@ class JsonStream
     /**
      * Remove all qued messages
      *
-     * @param \Zend\Wildfire\Plugin $plugin The plugin for which to clear messages
+     * @param \Zend2\Wildfire\Plugin $plugin The plugin for which to clear messages
      * @return boolean Returns TRUE if messages were present
      */
     public function clearMessages(Plugin $plugin)
@@ -144,15 +144,15 @@ class JsonStream
      */
     protected function _encode($value)
     {
-        return \Zend\Json\Json::encode($value, true, array('silenceCyclicalExceptions'=>true));
+        return \Zend2\Json\Json::encode($value, true, array('silenceCyclicalExceptions'=>true));
     }
 
     /**
      * Retrieves all formatted data ready to be sent by the channel.
      *
-     * @param \Zend\Wildfire\Channel $channel The instance of the channel that will be transmitting the data
+     * @param \Zend2\Wildfire\Channel $channel The instance of the channel that will be transmitting the data
      * @return mixed Returns the data to be sent by the channel.
-     * @throws \Zend\Wildfire\Exception
+     * @throws \Zend2\Wildfire\Exception
      */
     public function getPayload(Wildfire\Channel $channel)
     {

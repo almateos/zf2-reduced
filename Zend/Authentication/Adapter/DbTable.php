@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Authentication
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Authentication\Adapter;
-use Zend\Authentication\Adapter as AuthenticationAdapter,
-    Zend\Authentication\Result as AuthenticationResult,
-    Zend\Db\Adapter\Adapter as DbAdapter,
-    Zend\Db\Sql\Select as DbSelect,
-    Zend\Db\Sql\Expression,
-    Zend\Db\ResultSet\ResultSet;
+namespace Zend2\Authentication\Adapter;
+use Zend2\Authentication\Adapter as AuthenticationAdapter,
+    Zend2\Authentication\Result as AuthenticationResult,
+    Zend2\Db\Adapter\Adapter as DbAdapter,
+    Zend2\Db\Sql\Select as DbSelect,
+    Zend2\Db\Sql\Expression,
+    Zend2\Db\ResultSet\ResultSet;
 
 /**
- * @category   Zend
- * @package    Zend_Authentication
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DbTable implements AuthenticationAdapter
@@ -318,7 +318,7 @@ class DbTable implements AuthenticationAdapter
     }
 
     /**
-     * authenticate() - defined by Zend_Auth_Adapter_Interface.  This method is called to
+     * authenticate() - defined by Zend2_Auth_Adapter_Interface.  This method is called to
      * attempt an authentication.  Previous to this call, this adapter would have already
      * been configured with all necessary information to successfully connect to a database
      * table and attempt to find a record matching the provided identity.
@@ -385,7 +385,7 @@ class DbTable implements AuthenticationAdapter
     }
 
     /**
-     * _authenticateCreateSelect() - This method creates a Zend\Db\Sql\Select object that
+     * _authenticateCreateSelect() - This method creates a Zend2\Db\Sql\Select object that
      * is completely configured to be queried against the database.
      *
      * @return DbSelect
@@ -415,7 +415,7 @@ class DbTable implements AuthenticationAdapter
     }
 
     /**
-     * _authenticateQuerySelect() - This method accepts a Zend\Db\Sql\Select object and
+     * _authenticateQuerySelect() - This method accepts a Zend2\Db\Sql\Select object and
      * performs a query against the database with that object.
      *
      * @param  DbSelect $dbSelect
@@ -445,7 +445,7 @@ class DbTable implements AuthenticationAdapter
      * certain that only one record was returned in the resultset
      *
      * @param array $resultIdentities
-     * @return true|Zend\Authentication\Result
+     * @return true|Zend2\Authentication\Result
      */
     protected function _authenticateValidateResultSet(array $resultIdentities)
     {
@@ -488,7 +488,7 @@ class DbTable implements AuthenticationAdapter
     }
 
     /**
-     * _authenticateCreateAuthResult() - Creates a Zend_Auth_Result object from
+     * _authenticateCreateAuthResult() - Creates a Zend2_Auth_Result object from
      * the information that has been collected during the authenticate() attempt.
      *
      * @return AuthenticationResult

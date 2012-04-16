@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,14 +12,14 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Technorati;
+namespace Zend2\Service\Technorati;
 
 use DomElement,
     DOMXPath;
@@ -27,10 +27,10 @@ use DomElement,
 /**
  * Represents a weblog Author object. It usually belongs to a Technorati account.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Author
@@ -78,7 +78,7 @@ class Author
     /**
      * Technorati account thumbnail picture URL, if any
      *
-     * @var     null|\Zend\Uri\Http
+     * @var     null|\Zend2\Uri\Http
      * @access  protected
      */
     protected $thumbnailPicture;
@@ -166,7 +166,7 @@ class Author
     /**
      * Returns Technorati account thumbnail picture.
      *
-     * @return  null|\Zend\Uri\Http  Technorati account thumbnail picture
+     * @return  null|\Zend2\Uri\Http  Technorati account thumbnail picture
      */
     public function getThumbnailPicture()
     {
@@ -237,7 +237,7 @@ class Author
     /**
      * Sets Technorati account thumbnail picture.
      *
-     * @param   string|\Zend\Uri\Http $input thumbnail picture URI
+     * @param   string|\Zend2\Uri\Http $input thumbnail picture URI
      * @return  Author  $this instance
      * @throws  Exception\RuntimeException if $input is an invalid URI
      *          (via Utils::normalizeUriHttp)

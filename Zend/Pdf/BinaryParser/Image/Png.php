@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Image
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Image
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\BinaryParser\Image;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
+namespace Zend2\Pdf\BinaryParser\Image;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
 
 /**
  * Abstract base class for Image file parsers.
  *
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\BinaryParser\Image\AbstractImage
- * @uses       \Zend\Pdf\Image
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Image
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\BinaryParser\Image\AbstractImage
+ * @uses       \Zend2\Pdf\Image
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Image
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Png extends AbstractImage

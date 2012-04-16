@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Text_Table
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Text_Table
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Text\Table\Decorator;
+namespace Zend2\Text\Table\Decorator;
 
-use Zend\Text\Table\Decorator;
+use Zend2\Text\Table\Decorator;
 
 /**
- * Unicode Decorator for Zend_Text_Table
+ * Unicode Decorator for Zend2_Text_Table
  *
- * @uses      \Zend\Text\Table\Decorator
- * @category  Zend
- * @package   Zend_Text_Table
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Text\Table\Decorator
+ * @category  Zend2
+ * @package   Zend2_Text_Table
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Unicode implements Decorator
 {
     /**
-     * Defined by Zend_Text_Table_Decorator_Interface
+     * Defined by Zend2_Text_Table_Decorator_Interface
      *
      * @return string
      */
@@ -44,7 +44,7 @@ class Unicode implements Decorator
     }
 
     /**
-     * Defined by Zend_Text_Table_Decorator_Interface
+     * Defined by Zend2_Text_Table_Decorator_Interface
      *
      * @return string
      */
@@ -54,7 +54,7 @@ class Unicode implements Decorator
     }
 
     /**
-     * Defined by Zend_Text_Table_Decorator_Interface
+     * Defined by Zend2_Text_Table_Decorator_Interface
      *
      * @return string
      */
@@ -64,7 +64,7 @@ class Unicode implements Decorator
     }
 
     /**
-     * Defined by Zend_Text_Table_Decorator_Interface
+     * Defined by Zend2_Text_Table_Decorator_Interface
      *
      * @return string
      */
@@ -74,7 +74,7 @@ class Unicode implements Decorator
     }
 
     /**
-     * Defined by Zend_Text_Table_Decorator_Interface
+     * Defined by Zend2_Text_Table_Decorator_Interface
      *
      * @return string
      */
@@ -84,7 +84,7 @@ class Unicode implements Decorator
     }
 
     /**
-     * Defined by Zend_Text_Table_Decorator_Interface
+     * Defined by Zend2_Text_Table_Decorator_Interface
      *
      * @return string
      */
@@ -94,7 +94,7 @@ class Unicode implements Decorator
     }
 
     /**
-     * Defined by Zend_Text_Table_Decorator_Interface
+     * Defined by Zend2_Text_Table_Decorator_Interface
      *
      * @return string
      */
@@ -104,7 +104,7 @@ class Unicode implements Decorator
     }
 
     /**
-     * Defined by Zend_Text_Table_Decorator_Interface
+     * Defined by Zend2_Text_Table_Decorator_Interface
      *
      * @return string
      */
@@ -114,7 +114,7 @@ class Unicode implements Decorator
     }
 
     /**
-     * Defined by Zend_Text_Table_Decorator_Interface
+     * Defined by Zend2_Text_Table_Decorator_Interface
      *
      * @return string
      */
@@ -124,7 +124,7 @@ class Unicode implements Decorator
     }
 
     /**
-     * Defined by Zend_Text_Table_Decorator_Interface
+     * Defined by Zend2_Text_Table_Decorator_Interface
      *
      * @return string
      */
@@ -134,7 +134,7 @@ class Unicode implements Decorator
     }
 
     /**
-     * Defined by Zend_Text_Table_Decorator_Interface
+     * Defined by Zend2_Text_Table_Decorator_Interface
      *
      * @return string
      */

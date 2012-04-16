@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\App;
+namespace Zend2\GData\App;
 
 /**
  * Gdata exceptions
  *
  * Class to represent exceptions that occur during Gdata operations.
  *
- * @uses       \Zend\GData\App\Exception
- * @uses       \Zend\Http\Client\Exception
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Exception
+ * @uses       \Zend2\Http\Client\Exception
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class HttpException extends Exception
@@ -41,11 +41,11 @@ class HttpException extends Exception
     protected $_response = null;
 
     /**
-     * Create a new \Zend\Gdata\App\HttpException
+     * Create a new \Zend2\Gdata\App\HttpException
      *
      * @param  string $message Optionally set a message
-     * @param \Zend\Http\Client\Exception Optionally pass in a \Zend\Http\Client\Exception
-     * @param \Zend\Http\Response Optionally pass in a \Zend\Http\Response
+     * @param \Zend2\Http\Client\Exception Optionally pass in a \Zend2\Http\Client\Exception
+     * @param \Zend2\Http\Response Optionally pass in a \Zend2\Http\Response
      */
     public function __construct($message = null, $e = null, $response = null)
     {
@@ -55,9 +55,9 @@ class HttpException extends Exception
     }
 
     /**
-     * Get the Zend_Http_Client_Exception.
+     * Get the Zend2_Http_Client_Exception.
      *
-     * @return \Zend\Http\Client\Exception
+     * @return \Zend2\Http\Client\Exception
      */
     public function getHttpClientException()
     {
@@ -65,9 +65,9 @@ class HttpException extends Exception
     }
 
     /**
-     * Set the Zend_Http_Client_Exception.
+     * Set the Zend2_Http_Client_Exception.
      *
-     * @param \Zend\Http\Client\Exception $value
+     * @param \Zend2\Http\Client\Exception $value
      */
     public function setHttpClientException($value)
     {
@@ -76,9 +76,9 @@ class HttpException extends Exception
     }
 
     /**
-     * Set the Zend_Http_Response.
+     * Set the Zend2_Http_Response.
      *
-     * @param \Zend\Http\Response $response
+     * @param \Zend2\Http\Response $response
      */
     public function setResponse($response)
     {
@@ -87,9 +87,9 @@ class HttpException extends Exception
     }
 
     /**
-     * Get the Zend_Http_Response.
+     * Get the Zend2_Http_Response.
      *
-     * @return \Zend\Http\Response
+     * @return \Zend2\Http\Response
      */
     public function getResponse()
     {
@@ -97,7 +97,7 @@ class HttpException extends Exception
     }
 
     /**
-     * Get the body of the Zend_Http_Response
+     * Get the body of the Zend2_Http_Response
      *
      * @return string
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace Zend2\GData\YouTube\Extension;
 
 /**
  * Represents the yt:state element used by the YouTube data API
  *
- * @uses       \Zend\GData\Extension
- * @uses       \Zend\GData\YouTube
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Extension
+ * @uses       \Zend2\GData\YouTube
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class State extends \Zend\GData\Extension
+class State extends \Zend2\GData\Extension
 {
 
     protected $_rootNamespace = 'yt';
@@ -42,7 +42,7 @@ class State extends \Zend\GData\Extension
     protected $_helpUrl = null;
 
     /**
-     * Constructs a new Zend_Gdata_YouTube_Extension_State object.
+     * Constructs a new Zend2_Gdata_YouTube_Extension_State object.
      *
      * @param string $explanation(optional) The explanation of this state
      * @param string $name(optional) The name value
@@ -52,7 +52,7 @@ class State extends \Zend\GData\Extension
     public function __construct($explanation = null, $name = null,
                                 $reasonCode = null, $helpUrl = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\YouTube::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\YouTube::$namespaces);
         parent::__construct();
         $this->_text = $explanation;
         $this->_name = $name;
@@ -124,7 +124,7 @@ class State extends \Zend\GData\Extension
      * Set the value for this element's name attribute.
      *
      * @param int $value The desired value for this attribute.
-     * @return \Zend\GData\YouTube\Extension\State The element being modified.
+     * @return \Zend2\GData\YouTube\Extension\State The element being modified.
      */
     public function setName($value)
     {
@@ -146,7 +146,7 @@ class State extends \Zend\GData\Extension
      * Set the value for this element's reasonCode attribute.
      *
      * @param int $value The desired value for this attribute.
-     * @return \Zend\GData\YouTube\Extension\State The element being modified.
+     * @return \Zend2\GData\YouTube\Extension\State The element being modified.
      */
     public function setReasonCode($value)
     {
@@ -168,7 +168,7 @@ class State extends \Zend\GData\Extension
      * Set the value for this element's helpUrl attribute.
      *
      * @param int $value The desired value for this attribute.
-     * @return \Zend\GData\YouTube\Extension\State The element being modified.
+     * @return \Zend2\GData\YouTube\Extension\State The element being modified.
      */
     public function setHelpUrl($value)
     {

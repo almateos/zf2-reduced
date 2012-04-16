@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\GApps\Extension;
+namespace Zend2\GData\GApps\Extension;
 
 /**
  * Represents the apps:emailList element used by the Apps data API. This
  * class represents properties of an email list and is usually contained
- * within an instance of Zend_Gdata_GApps_EmailListEntry.
+ * within an instance of Zend2_Gdata_GApps_EmailListEntry.
  *
- * @uses       \Zend\GData\Extension
- * @uses       \Zend\GData\GApps
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Extension
+ * @uses       \Zend2\GData\GApps
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class EmailList extends \Zend\GData\Extension
+class EmailList extends \Zend2\GData\Extension
 {
 
     protected $_rootNamespace = 'apps';
@@ -49,13 +49,13 @@ class EmailList extends \Zend\GData\Extension
     protected $_name = null;
 
     /**
-     * Constructs a new Zend_Gdata_GApps_Extension_EmailList object.
+     * Constructs a new Zend2_Gdata_GApps_Extension_EmailList object.
      *
      * @param string $name (optional) The name to be used for this email list.
      */
     public function __construct($name = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\GApps::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\GApps::$namespaces);
         parent::__construct();
         $this->_name = $name;
     }
@@ -114,7 +114,7 @@ class EmailList extends \Zend\GData\Extension
      * domain, and will be used to form this email list's email address.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\GApps\Extension\EmailList The element being modified.
+     * @return \Zend2\GData\GApps\Extension\EmailList The element being modified.
      */
     public function setName($value)
     {

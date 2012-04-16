@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Markup
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Renderer_Markup_Html
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Markup\Renderer\Markup\Html;
-use Zend\Markup\Token;
+namespace Zend2\Markup\Renderer\Markup\Html;
+use Zend2\Markup\Token;
 
 /**
  * URL markup for HTML
  *
- * @uses       \Zend\Markup\Renderer\Html
- * @uses       \Zend\Markup\Renderer\Markup\Html\AbstractHtml
- * @uses       \Zend\Markup\Token
- * @category   Zend
- * @package    Zend_Markup
+ * @uses       \Zend2\Markup\Renderer\Html
+ * @uses       \Zend2\Markup\Renderer\Markup\Html\AbstractHtml
+ * @uses       \Zend2\Markup\Token
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Renderer_Markup_Html
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Url extends AbstractHtml
@@ -40,7 +40,7 @@ class Url extends AbstractHtml
     /**
      * Convert the token
      *
-     * @param \Zend\Markup\Token $token
+     * @param \Zend2\Markup\Token $token
      * @param string $text
      *
      * @return string
@@ -58,8 +58,8 @@ class Url extends AbstractHtml
         }
 
         // check if the URL is valid
-        // TODO: re-implement this (probably with the new \Zend\Uri)
-        //if (!\Zend\Markup\Renderer\Html::isValidUri($uri)) {
+        // TODO: re-implement this (probably with the new \Zend2\Uri)
+        //if (!\Zend2\Markup\Renderer\Html::isValidUri($uri)) {
         //   return $text;
         //}
 

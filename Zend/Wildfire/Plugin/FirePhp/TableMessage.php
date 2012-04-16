@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Wildfire
+ * @category   Zend2
+ * @package    Zend2_Wildfire
  * @subpackage Plugin
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Wildfire\Plugin\FirePhp;
+namespace Zend2\Wildfire\Plugin\FirePhp;
 
-use Zend\Wildfire\Plugin\FirePhp,
-    Zend\Wildfire\Plugin\Exception,
-    Zend\Wildfire;
+use Zend2\Wildfire\Plugin\FirePhp,
+    Zend2\Wildfire\Plugin\Exception,
+    Zend2\Wildfire;
 
 /**
  * A message envelope that can be updated for the duration of the requet before
  * it gets flushed at the end of the request.
  *
- * @uses       \Zend\Wildfire\Exception
- * @uses       \Zend\Wildfire\Plugin\FirePhp
- * @uses       \Zend\Wildfire\Plugin\FirePhp\Message
- * @category   Zend
- * @package    Zend_Wildfire
+ * @uses       \Zend2\Wildfire\Exception
+ * @uses       \Zend2\Wildfire\Plugin\FirePhp
+ * @uses       \Zend2\Wildfire\Plugin\FirePhp\Message
+ * @category   Zend2
+ * @package    Zend2_Wildfire
  * @subpackage Plugin
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class TableMessage extends Message
@@ -104,7 +104,7 @@ class TableMessage extends Message
      *
      * @param integer $index The index of the row
      * @return array Returns the row
-     * @throws \Zend\Wildfire\Exception
+     * @throws \Zend2\Wildfire\Exception
      */
     public function getRowAt($index)
     {
@@ -122,7 +122,7 @@ class TableMessage extends Message
      *
      * @param integer $index The index of the row
      * @param array $row The new data for the row
-     * @throws \Zend\Wildfire\Exception
+     * @throws \Zend2\Wildfire\Exception
      */
     public function setRowAt($index, $row)
     {
@@ -149,7 +149,7 @@ class TableMessage extends Message
      * Returns the last row of the table
      *
      * @return array Returns the last row
-     * @throws \Zend\Wildfire\Exception
+     * @throws \Zend2\Wildfire\Exception
      */
     public function getLastRow()
     {

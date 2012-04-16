@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,33 +12,33 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_Client_AbstractClient
- * @uses       Zend_Service_DeveloperGarden_Request_VoiceButler_CallStatus
- * @uses       Zend_Service_DeveloperGarden_Request_VoiceButler_NewCall
- * @uses       Zend_Service_DeveloperGarden_Request_VoiceButler_NewCallSequenced
- * @uses       Zend_Service_DeveloperGarden_Request_VoiceButler_TearDownCall
- * @uses       Zend_Service_DeveloperGarden_Response_VoiceButler_CallStatus2Response
- * @uses       Zend_Service_DeveloperGarden_Response_VoiceButler_CallStatusResponse
- * @uses       Zend_Service_DeveloperGarden_Response_VoiceButler_NewCallResponse
- * @uses       Zend_Service_DeveloperGarden_Response_VoiceButler_NewCallSequencedResponse
- * @uses       Zend_Service_DeveloperGarden_Response_VoiceButler_TearDownCallResponse
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Client_AbstractClient
+ * @uses       Zend2_Service_DeveloperGarden_Request_VoiceButler_CallStatus
+ * @uses       Zend2_Service_DeveloperGarden_Request_VoiceButler_NewCall
+ * @uses       Zend2_Service_DeveloperGarden_Request_VoiceButler_NewCallSequenced
+ * @uses       Zend2_Service_DeveloperGarden_Request_VoiceButler_TearDownCall
+ * @uses       Zend2_Service_DeveloperGarden_Response_VoiceButler_CallStatus2Response
+ * @uses       Zend2_Service_DeveloperGarden_Response_VoiceButler_CallStatusResponse
+ * @uses       Zend2_Service_DeveloperGarden_Response_VoiceButler_NewCallResponse
+ * @uses       Zend2_Service_DeveloperGarden_Response_VoiceButler_NewCallSequencedResponse
+ * @uses       Zend2_Service_DeveloperGarden_Response_VoiceButler_TearDownCallResponse
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_VoiceCall
-    extends Zend_Service_DeveloperGarden_Client_AbstractClient
+class Zend2_Service_DeveloperGarden_VoiceCall
+    extends Zend2_Service_DeveloperGarden_Client_AbstractClient
 {
     /**
      * wsdl file
@@ -61,11 +61,11 @@ class Zend_Service_DeveloperGarden_VoiceCall
      *
      */
     protected $_classMap = array(
-        'newCallResponse'          => 'Zend_Service_DeveloperGarden_Response_VoiceButler_NewCallResponse',
-        'newCallSequencedResponse' => 'Zend_Service_DeveloperGarden_Response_VoiceButler_NewCallSequencedResponse',
-        'tearDownCallResponse'     => 'Zend_Service_DeveloperGarden_Response_VoiceButler_TearDownCallResponse',
-        'callStatusResponse'       => 'Zend_Service_DeveloperGarden_Response_VoiceButler_CallStatusResponse',
-        'callStatus2Response'      => 'Zend_Service_DeveloperGarden_Response_VoiceButler_CallStatus2Response'
+        'newCallResponse'          => 'Zend2_Service_DeveloperGarden_Response_VoiceButler_NewCallResponse',
+        'newCallSequencedResponse' => 'Zend2_Service_DeveloperGarden_Response_VoiceButler_NewCallSequencedResponse',
+        'tearDownCallResponse'     => 'Zend2_Service_DeveloperGarden_Response_VoiceButler_TearDownCallResponse',
+        'callStatusResponse'       => 'Zend2_Service_DeveloperGarden_Response_VoiceButler_CallStatusResponse',
+        'callStatus2Response'      => 'Zend2_Service_DeveloperGarden_Response_VoiceButler_CallStatus2Response'
     );
 
     /**
@@ -79,12 +79,12 @@ class Zend_Service_DeveloperGarden_VoiceCall
      * @param boolean $privacyA
      * @param boolean $privacyB
      * @param string $greeter
-     * @return Zend_Service_DeveloperGarden_Response_VoiceButler_NewCallResponse
+     * @return Zend2_Service_DeveloperGarden_Response_VoiceButler_NewCallResponse
      */
     public function newCall($aNumber, $bNumber, $expiration, $maxDuration,
         $account = null, $privacyA = null, $privacyB = null, $greeter = null
     ) {
-        $request = new Zend_Service_DeveloperGarden_Request_VoiceButler_NewCall(
+        $request = new Zend2_Service_DeveloperGarden_Request_VoiceButler_NewCall(
                 $this->getEnvironment()
         );
         $request->setANumber($aNumber)
@@ -108,7 +108,7 @@ class Zend_Service_DeveloperGarden_VoiceCall
      * you can define a set of numbers to be called if the first number
      * isnt reachable (ie: bNumber = +4930-111111,+4930-222222,+4930-333333)
      *
-     * @throws Zend_Service_DeveloperGarden_Client_Exception
+     * @throws Zend2_Service_DeveloperGarden_Client_Exception
      * @param string $aNumber
      * @param array $bNumber
      * @param integer $expiration
@@ -118,12 +118,12 @@ class Zend_Service_DeveloperGarden_VoiceCall
      * @param boolean $privacyA
      * @param boolean $privacyB
      * @param string $greeter
-     * @return Zend_Service_DeveloperGarden_Response_VoiceButler_NewCallSequencedResponse
+     * @return Zend2_Service_DeveloperGarden_Response_VoiceButler_NewCallSequencedResponse
      */
     public function newCallSequenced($aNumber, $bNumber, $expiration, $maxDuration,
         $maxWait, $account = null, $privacyA = null, $privacyB = null, $greeter = null
     ) {
-        $request = new Zend_Service_DeveloperGarden_Request_VoiceButler_NewCallSequenced(
+        $request = new Zend2_Service_DeveloperGarden_Request_VoiceButler_NewCallSequenced(
                 $this->getEnvironment()
         );
         $request->setANumber($aNumber)
@@ -146,11 +146,11 @@ class Zend_Service_DeveloperGarden_VoiceCall
      * This tear down the call with the given sessionId
      *
      * @param string $sessionId
-     * @return Zend_Service_DeveloperGarden_Response_VoiceButler_TearDownCallResponse
+     * @return Zend2_Service_DeveloperGarden_Response_VoiceButler_TearDownCallResponse
      */
     public function tearDownCall($sessionId)
     {
-        $request = new Zend_Service_DeveloperGarden_Request_VoiceButler_TearDownCall(
+        $request = new Zend2_Service_DeveloperGarden_Request_VoiceButler_TearDownCall(
             $this->getEnvironment(),
             $sessionId
         );
@@ -166,11 +166,11 @@ class Zend_Service_DeveloperGarden_VoiceCall
      *
      * @param string $sessionId
      * @param integer $keepAlive
-     * @return Zend_Service_DeveloperGarden_Response_VoiceButler_CallStatusResponse
+     * @return Zend2_Service_DeveloperGarden_Response_VoiceButler_CallStatusResponse
      */
     public function callStatus($sessionId, $keepAlive = null)
     {
-        $request = new Zend_Service_DeveloperGarden_Request_VoiceButler_CallStatus(
+        $request = new Zend2_Service_DeveloperGarden_Request_VoiceButler_CallStatus(
             $this->getEnvironment(),
             $sessionId,
             $keepAlive

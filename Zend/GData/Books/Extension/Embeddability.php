@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Books
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Books\Extension;
+namespace Zend2\GData\Books\Extension;
 
 /**
  * Describes an embeddability
  *
- * @uses       \Zend\GData\Books
- * @uses       \Zend\GData\Extension
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Books
+ * @uses       \Zend2\GData\Extension
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Books
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Embeddability extends \Zend\GData\Extension
+class Embeddability extends \Zend2\GData\Extension
 {
 
     protected $_rootNamespace = 'gbs';
@@ -40,7 +40,7 @@ class Embeddability extends \Zend\GData\Extension
     protected $_value = null;
 
     /**
-     * Constructor for Zend_Gdata_Books_Extension_Embeddability which
+     * Constructor for Zend2_Gdata_Books_Extension_Embeddability which
      * Describes an embeddability.
      *
      * @param string|null $value A programmatic value representing the book's
@@ -48,7 +48,7 @@ class Embeddability extends \Zend\GData\Extension
      */
     public function __construct($value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Books::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\Books::$namespaces);
         parent::__construct();
         $this->_value = $value;
     }
@@ -106,7 +106,7 @@ class Embeddability extends \Zend\GData\Extension
      *
      * @param string|null $value Programmatic value that describes the
      *        embeddability of a volume in Google Book Search
-     * @return \Zend\GData\Books\Extension\Embeddability Provides a fluent
+     * @return \Zend2\GData\Books\Extension\Embeddability Provides a fluent
      *     interface
      */
     public function setValue($value)

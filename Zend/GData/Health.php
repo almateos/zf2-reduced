@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,24 +13,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Health
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData;
+namespace Zend2\GData;
 
 /**
  * Service class for interacting with the Google Health Data API
  *
  * @link http://code.google.com/apis/health
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Health
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Health extends GData
@@ -83,9 +83,9 @@ class Health extends GData
               'gd' => 'http://schemas.google.com/g/2005');
 
     /**
-     * Create Zend_Gdata_Health object
+     * Create Zend2_Gdata_Health object
      *
-     * @param \Zend\Http\Client $client (optional) The HTTP client to use when
+     * @param \Zend2\Http\Client $client (optional) The HTTP client to use when
      *     when communicating with the Google Health servers.
      * @param string $applicationId The identity of the application in the form
      *     of Company-AppName-Version
@@ -94,8 +94,8 @@ class Health extends GData
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0', $useH9Sandbox = false)
     {
-        $this->registerPackage('Zend\GData\Health');
-        $this->registerPackage('Zend\GData\Health\Extension\Ccr');
+        $this->registerPackage('Zend2\GData\Health');
+        $this->registerPackage('Zend2\GData\Health\Extension\Ccr');
         parent::__construct($client, $applicationId);
         $this->_useH9Sandbox = $useH9Sandbox;
     }
@@ -114,7 +114,7 @@ class Health extends GData
      * Sets which of the user's profiles will be used
      *
      * @param string $id The profile ID
-     * @return \Zend\GData\Health Provides a fluent interface
+     * @return \Zend2\GData\Health Provides a fluent interface
      */
     public function setProfileID($id) {
         $this->_profileID = $id;
@@ -126,7 +126,7 @@ class Health extends GData
      * credentials.
      *
      * @param string $query The query of the feed as a URL or Query object
-     * @return \Zend\GData\Feed
+     * @return \Zend2\GData\Feed
      */
     public function getHealthProfileListFeed($query = null)
     {
@@ -148,7 +148,7 @@ class Health extends GData
             $uri = str_replace('/health/', '/h9/', $uri);
         }
 
-        return parent::getFeed($uri, 'Zend\GData\Health\ProfileListFeed');
+        return parent::getFeed($uri, 'Zend2\GData\Health\ProfileListFeed');
     }
 
     /**
@@ -157,7 +157,7 @@ class Health extends GData
      * the profile associated with the AuthSub token is read.
      *
      * @param mixed $query The query for the feed, as a URL or Query
-     * @return \Zend\GData\Health\ProfileFeed
+     * @return \Zend2\GData\Health\ProfileFeed
      */
     public function getHealthProfileFeed($query = null)
     {
@@ -183,14 +183,14 @@ class Health extends GData
             $uri = str_replace('/health/', '/h9/', $uri);
         }
 
-        return parent::getFeed($uri, 'Zend\GData\Health\ProfileFeed');
+        return parent::getFeed($uri, 'Zend2\GData\Health\ProfileFeed');
     }
 
     /**
      * Retrieve a profile entry object
      *
      * @param mixed $query The query for the feed, as a URL or Query
-     * @return \Zend\GData\Health\ProfileEntry
+     * @return \Zend2\GData\Health\ProfileEntry
      */
     public function getHealthProfileEntry($query = null)
     {
@@ -202,7 +202,7 @@ class Health extends GData
         } else {
             $uri = $query;
         }
-        return parent::getEntry($uri, 'Zend\GData\Health\ProfileEntry');
+        return parent::getEntry($uri, 'Zend2\GData\Health\ProfileEntry');
     }
 
     /**
@@ -214,7 +214,7 @@ class Health extends GData
      * @param string $bodyType The (optional) type of message body
      *     (text, xhtml, html, etc.)
      * @param string $ccrXML The (optional) CCR to add to the user's profile
-     * @return \Zend\GData\Health\ProfileEntry
+     * @return \Zend2\GData\Health\ProfileEntry
      */
     public function sendHealthNotice($subject, $body, $bodyType = null, $ccrXML = null)
     {
@@ -241,6 +241,6 @@ class Health extends GData
             $uri = str_replace('/health/', '/h9/', $uri);
         }
 
-        return $this->insertEntry($entry, $uri, 'Zend\GData\Health\ProfileEntry');
+        return $this->insertEntry($entry, $uri, 'Zend2\GData\Health\ProfileEntry');
     }
 }

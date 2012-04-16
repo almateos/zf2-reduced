@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,14 +12,14 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Zend_Server_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @subpackage Zend2_Server_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Server\Reflection;
+namespace Zend2\Server\Reflection;
 
 /**
  * Function/Method Reflection
@@ -29,20 +29,20 @@ namespace Zend\Server\Reflection;
  * setting and retrieving the description (originally set using the docblock
  * contents), retrieving the callback and callback type, retrieving additional
  * method invocation arguments, and retrieving the
- * method {@link \Zend\Server\Reflection\Prototype prototypes}.
+ * method {@link \Zend2\Server\Reflection\Prototype prototypes}.
  *
  * @uses       ReflectionClass
  * @uses       ReflectionFunction
  * @uses       ReflectionMethod
- * @uses       \Zend\Server\Reflection\Exception
- * @uses       \Zend\Server\Reflection\Node
- * @uses       \Zend\Server\Reflection\ReflectionParameter
- * @uses       \Zend\Server\Reflection\Prototype
- * @uses       \Zend\Server\Reflection\ReflectionReturnValue
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Zend_Server_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Server\Reflection\Exception
+ * @uses       \Zend2\Server\Reflection\Node
+ * @uses       \Zend2\Server\Reflection\ReflectionParameter
+ * @uses       \Zend2\Server\Reflection\Prototype
+ * @uses       \Zend2\Server\Reflection\ReflectionReturnValue
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @subpackage Zend2_Server_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractFunction
@@ -140,7 +140,7 @@ abstract class AbstractFunction
      * each array in {@link $_sigParams}, adding every value of the next level
      * to the current value (unless the current value is null).
      *
-     * @param \Zend\Server\Reflection\Node $parent
+     * @param \Zend2\Server\Reflection\Node $parent
      * @param int $level
      * @return void
      */
@@ -163,7 +163,7 @@ abstract class AbstractFunction
      *
      * Builds a signature tree starting at the return values and descending
      * through each method argument. Returns an array of
-     * {@link \Zend\Server\Reflection\Node}s.
+     * {@link \Zend2\Server\Reflection\Node}s.
      *
      * @return array
      */
@@ -453,7 +453,7 @@ abstract class AbstractFunction
 
     /**
      * Retrieve all prototypes as array of
-     * {@link \Zend\Server\Reflection\Prototype}s
+     * {@link \Zend2\Server\Reflection\Prototype}s
      *
      * @return array
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search;
-use Zend\Search\Lucene;
+namespace Zend2\Search\Lucene\Search;
+use Zend2\Search\Lucene;
 
 /**
- * @uses       \Zend\Search\Lucene\Exception\UnexpectedValueException
- * @uses       \Zend\Search\Lucene\AbstractFSM
- * @uses       \Zend\Search\Lucene\FSMAction
- * @uses       \Zend\Search\Lucene\Search\QueryParser
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Exception\UnexpectedValueException
+ * @uses       \Zend2\Search\Lucene\AbstractFSM
+ * @uses       \Zend2\Search\Lucene\FSMAction
+ * @uses       \Zend2\Search\Lucene\Search\QueryParser
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class BooleanExpressionRecognizer extends Lucene\AbstractFSM
@@ -190,7 +190,7 @@ class BooleanExpressionRecognizer extends Lucene\AbstractFSM
      *        ...
      *      ) // end of structure
      *
-     * @throws \Zend\Search\Lucene\Exception\UnexpectedValueException
+     * @throws \Zend2\Search\Lucene\Exception\UnexpectedValueException
      * @return array
      */
     public function finishExpression()

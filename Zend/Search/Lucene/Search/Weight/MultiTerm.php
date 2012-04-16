@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search\Weight;
-use Zend\Search\Lucene\Search\Query;
-use Zend\Search\Lucene;
+namespace Zend2\Search\Lucene\Search\Weight;
+use Zend2\Search\Lucene\Search\Query;
+use Zend2\Search\Lucene;
 
 /**
- * @uses       \Zend\Search\Lucene\Search\Weight\AbstractWeight
- * @uses       \Zend\Search\Lucene\Search\Query\AbstractQuery
- * @uses       \Zend\Search\Lucene\SearchIndex
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Search\Weight\AbstractWeight
+ * @uses       \Zend2\Search\Lucene\Search\Query\AbstractQuery
+ * @uses       \Zend2\Search\Lucene\SearchIndex
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class MultiTerm extends AbstractWeight
@@ -38,20 +38,20 @@ class MultiTerm extends AbstractWeight
     /**
      * IndexReader.
      *
-     * @var \Zend\Search\Lucene\SearchIndex
+     * @var \Zend2\Search\Lucene\SearchIndex
      */
     private $_reader;
 
     /**
      * The query that this concerns.
      *
-     * @var \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @var \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     private $_query;
 
     /**
      * Query terms weights
-     * Array of Zend_Search_Lucene_Search_Weight_Term
+     * Array of Zend2_Search_Lucene_Search_Weight_Term
      *
      * @var array
      */
@@ -59,12 +59,12 @@ class MultiTerm extends AbstractWeight
 
 
     /**
-     * Zend_Search_Lucene_Search_Weight_MultiTerm constructor
+     * Zend2_Search_Lucene_Search_Weight_MultiTerm constructor
      * query - the query that this concerns.
      * reader - index reader
      *
-     * @param \Zend\Search\Lucene\Search\Query\AbstractQuery $query
-     * @param \Zend\Search\Lucene\SearchIndex             $reader
+     * @param \Zend2\Search\Lucene\Search\Query\AbstractQuery $query
+     * @param \Zend2\Search\Lucene\SearchIndex             $reader
      */
     public function __construct(Query\AbstractQuery $query, Lucene\SearchIndex $reader)
     {

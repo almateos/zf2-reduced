@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Paginator;
+namespace Zend2\Paginator;
 
-use Zend\Loader\PluginClassLoader;
+use Zend2\Loader\PluginClassLoader;
 
 /**
  * Plugin Class Loader implementation for scrolling style adapters.
  *
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ScrollingStyleLoader extends PluginClassLoader
@@ -36,9 +36,9 @@ class ScrollingStyleLoader extends PluginClassLoader
      * @var array Pre-aliased adapters 
      */
     protected $plugins = array(
-        'all'     => 'Zend\Paginator\ScrollingStyle\All',
-        'elastic' => 'Zend\Paginator\ScrollingStyle\Elastic',
-        'jumping' => 'Zend\Paginator\ScrollingStyle\Jumping',
-        'sliding' => 'Zend\Paginator\ScrollingStyle\Sliding',
+        'all'     => 'Zend2\Paginator\ScrollingStyle\All',
+        'elastic' => 'Zend2\Paginator\ScrollingStyle\Elastic',
+        'jumping' => 'Zend2\Paginator\ScrollingStyle\Jumping',
+        'sliding' => 'Zend2\Paginator\ScrollingStyle\Sliding',
     );
 }

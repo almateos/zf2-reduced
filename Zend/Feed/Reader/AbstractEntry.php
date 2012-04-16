@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Reader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Reader
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Reader;
+namespace Zend2\Feed\Reader;
 
 /**
- * @uses       \Zend\Feed\Exception
- * @uses       \Zend\Feed\Reader\Reader
- * @category   Zend
- * @package    Zend_Feed_Reader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Feed\Exception
+ * @uses       \Zend2\Feed\Reader\Reader
+ * @category   Zend2
+ * @package    Zend2_Feed_Reader
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractEntry
@@ -47,7 +47,7 @@ abstract class AbstractEntry
     /**
      * Entry instance
      *
-     * @var Zend\Feed\Entry
+     * @var Zend2\Feed\Entry
      */
     protected $_entry = null;
 
@@ -167,7 +167,7 @@ abstract class AbstractEntry
      * Set the XPath query
      *
      * @param  DOMXPath $xpath
-     * @return Zend\Feed\Reader\AbstractEntry
+     * @return Zend2\Feed\Reader\AbstractEntry
      */
     public function setXpath(\DOMXPath $xpath)
     {
@@ -189,7 +189,7 @@ abstract class AbstractEntry
      * Return an Extension object with the matching name (postfixed with _Entry)
      *
      * @param string $name
-     * @return \Zend\Feed\Reader\Extension\AbstractEntry
+     * @return \Zend2\Feed\Reader\Extension\AbstractEntry
      */
     public function getExtension($name)
     {
@@ -205,7 +205,7 @@ abstract class AbstractEntry
      * @param  string $method
      * @param  array $args
      * @return mixed
-     * @throws \Zend\Feed\Exception if no extensions implements the method
+     * @throws \Zend2\Feed\Exception if no extensions implements the method
      */
     public function __call($method, $args)
     {
@@ -214,12 +214,12 @@ abstract class AbstractEntry
                 return call_user_func_array(array($extension, $method), $args);
             }
         }
-        throw new \Zend\Feed\Exception('Method: ' . $method
+        throw new \Zend2\Feed\Exception('Method: ' . $method
             . 'does not exist and could not be located on a registered Extension');
     }
 
     /**
-     * Load extensions from Zend_Feed_Reader
+     * Load extensions from Zend2_Feed_Reader
      *
      * @return void
      */

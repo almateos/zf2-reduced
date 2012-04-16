@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Filter\File;
-use Zend\Filter,
-    Zend\Filter\Exception;
+namespace Zend2\Filter\File;
+use Zend2\Filter,
+    Zend2\Filter\Exception;
 
 /**
- * @uses       \Zend\Filter\Exception
- * @uses       \Zend\Filter\StringToUpper
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Filter\Exception
+ * @uses       \Zend2\Filter\StringToUpper
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class UpperCase extends Filter\StringToUpper
@@ -45,13 +45,13 @@ class UpperCase extends Filter\StringToUpper
     }
 
     /**
-     * Defined by Zend_Filter_Interface
+     * Defined by Zend2_Filter_Interface
      *
      * Does a lowercase on the content of the given file
      *
      * @param  string $value Full path of file to change
      * @return string The given $value
-     * @throws \Zend\Filter\Exception
+     * @throws \Zend2\Filter\Exception
      */
     public function __invoke($value)
     {

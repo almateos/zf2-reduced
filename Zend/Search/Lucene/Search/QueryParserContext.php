@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search;
+namespace Zend2\Search\Lucene\Search;
 
-use Zend\Search\Lucene,
-	Zend\Search\Lucene\Exception\UnexpectedValueException,
-	Zend\Search\Lucene\Search\Exception\QueryParserException;
+use Zend2\Search\Lucene,
+	Zend2\Search\Lucene\Exception\UnexpectedValueException,
+	Zend2\Search\Lucene\Search\Exception\QueryParserException;
 
 /**
- * @uses       \Zend\Search\Lucene\Exception\UnexpectedValueException
- * @uses 	   \Zend\Search\Lucene\Search\Exception\QueryParserException
- * @uses       \Zend\Search\Lucene\Search\Query
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Exception\UnexpectedValueException
+ * @uses 	   \Zend2\Search\Lucene\Search\Exception\QueryParserException
+ * @uses       \Zend2\Search\Lucene\Search\Query
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class QueryParserContext
@@ -41,7 +41,7 @@ class QueryParserContext
      * Default field for the context.
      *
      * null means, that term should be searched through all fields
-     * Zend_Search_Lucene_Search_Query::rewriteQuery($index) transletes such queries to several
+     * Zend2_Search_Lucene_Search_Query::rewriteQuery($index) transletes such queries to several
      *
      * @var string|null
      */
@@ -87,8 +87,8 @@ class QueryParserContext
 
     /**
      * Query entries
-     * Each entry is a Zend_Search_Lucene_Search_QueryEntry object or
-     * boolean operator (Zend_Search_Lucene_Search_QueryToken class constant)
+     * Each entry is a Zend2_Search_Lucene_Search_QueryEntry object or
+     * boolean operator (Zend2_Search_Lucene_Search_QueryToken class constant)
      *
      * @var array
      */
@@ -140,8 +140,8 @@ class QueryParserContext
      * Set sign for next entry
      *
      * @param integer $sign
-     * @throws \Zend\Search\Lucene\Search\Exception\QueryParserException
-     * @throws \Zend\Search\Lucene\Exception\UnexpectedValueException
+     * @throws \Zend2\Search\Lucene\Search\Exception\QueryParserException
+     * @throws \Zend2\Search\Lucene\Exception\UnexpectedValueException
      */
     public function setNextEntrySign($sign)
     {
@@ -164,7 +164,7 @@ class QueryParserContext
     /**
      * Add entry to a query
      *
-     * @param \Zend\Search\Lucene\Search\QueryEntry\AbstractQueryEntry $entry
+     * @param \Zend2\Search\Lucene\Search\QueryEntry\AbstractQueryEntry $entry
      */
     public function addEntry(QueryEntry\AbstractQueryEntry $entry)
     {
@@ -182,7 +182,7 @@ class QueryParserContext
     /**
      * Process fuzzy search or proximity search modifier
      *
-     * @throws \Zend\Search\Lucene\Search\Exception\QueryParserException
+     * @throws \Zend2\Search\Lucene\Search\Exception\QueryParserException
      */
     public function processFuzzyProximityModifier($parameter = null)
     {
@@ -207,7 +207,7 @@ class QueryParserContext
      * Set boost factor to the entry
      *
      * @param float $boostFactor
-     * @throws \Zend\Search\Lucene\Search\Exception\QueryParserException
+     * @throws \Zend2\Search\Lucene\Search\Exception\QueryParserException
      */
     public function boost($boostFactor)
     {
@@ -232,7 +232,7 @@ class QueryParserContext
      * Process logical operator
      *
      * @param integer $operator
-     * @throws \Zend\Search\Lucene\Search\Exception\QueryParserException
+     * @throws \Zend2\Search\Lucene\Search\Exception\QueryParserException
      */
     public function addLogicalOperator($operator)
     {
@@ -250,7 +250,7 @@ class QueryParserContext
      * Generate 'signs style' query from the context
      * '+term1 term2 -term3 +(<subquery1>) ...'
      *
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     public function _signStyleExpressionQuery()
     {
@@ -275,8 +275,8 @@ class QueryParserContext
      * Generate 'boolean style' query from the context
      * 'term1 and term2   or   term3 and (<subquery1>) and not (<subquery2>)'
      *
-     * @throws \Zend\Search\Lucene\Search\Exception\QueryParserException
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @throws \Zend2\Search\Lucene\Search\Exception\QueryParserException
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     private function _booleanExpressionQuery()
     {
@@ -317,7 +317,7 @@ class QueryParserContext
             }
 
             $conjuctions = $expressionRecognizer->finishExpression();
-        } catch (\Zend\Search\Lucene\Exception $e) {
+        } catch (\Zend2\Search\Lucene\Exception $e) {
             // It's query syntax error message and it should be user friendly. So FSM message is omitted
             throw new QueryParserException('Boolean expression error.', 0, $e);
         }
@@ -377,7 +377,7 @@ class QueryParserContext
     /**
      * Generate query from current context
      *
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     public function getQuery()
     {

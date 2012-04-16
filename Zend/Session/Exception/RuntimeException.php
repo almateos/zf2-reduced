@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Session\Exception;
+namespace Zend2\Session\Exception;
 
 class RuntimeException
     extends \RuntimeException
-    implements \Zend\Session\Exception
+    implements \Zend2\Session\Exception
 {}

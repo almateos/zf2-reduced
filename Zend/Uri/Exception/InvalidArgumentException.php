@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Uri\Exception;
+namespace Zend2\Uri\Exception;
 
 class InvalidArgumentException
     extends \InvalidArgumentException
-    implements \Zend\Uri\Exception
+    implements \Zend2\Uri\Exception
 {}

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml_Security
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml_Security
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard\XML;
+namespace Zend2\InfoCard\XML;
 
 /**
- * @uses       \Zend\InfoCard\XML\Security\Exception
- * @uses       \Zend\InfoCard\XML\Security\Transform\TransformChain
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml_Security
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\InfoCard\XML\Security\Exception
+ * @uses       \Zend2\InfoCard\XML\Security\Transform\TransformChain
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml_Security
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Security
@@ -81,7 +81,7 @@ class Security
      *
      * @param  string $strXMLInput An XML block containing a Signature
      * @return bool True if the signature validated, false otherwise
-     * @throws \Zend\InfoCard\XML\Security\Exception
+     * @throws \Zend2\InfoCard\XML\Security\Exception
      */
     static public function validateXMLSignature($strXMLInput)
     {
@@ -245,7 +245,7 @@ class Security
      * @param string $data The data to encode
      * @param const $type The encoding format constant
      * @return string The encoded value
-     * @throws \Zend\InfoCard\XML\Security\Exception
+     * @throws \Zend2\InfoCard\XML\Security\Exception
      */
     static protected function _encodeValue($data, $type)
     {

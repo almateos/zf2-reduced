@@ -1,7 +1,7 @@
 <?php
-namespace Zend\Di\Exception;
+namespace Zend2\Di\Exception;
 
-use Zend\Di\Exception;
+use Zend2\Di\Exception;
 
 class RuntimeException extends \RuntimeException implements Exception
 {

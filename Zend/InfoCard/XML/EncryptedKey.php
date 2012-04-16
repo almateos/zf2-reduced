@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard\XML;
+namespace Zend2\InfoCard\XML;
 
 /**
  * An object representing an Xml EncryptedKEy block
  *
- * @uses       \Zend\InfoCard\XML\AbstractElement
- * @uses       \Zend\InfoCard\XML\EncryptedKey
- * @uses       \Zend\InfoCard\XML\Exception
- * @uses       \Zend\InfoCard\XML\KeyInfo\Factory
- * @uses       \Zend\InfoCard\XML\KeyInfo
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\InfoCard\XML\AbstractElement
+ * @uses       \Zend2\InfoCard\XML\EncryptedKey
+ * @uses       \Zend2\InfoCard\XML\Exception
+ * @uses       \Zend2\InfoCard\XML\KeyInfo\Factory
+ * @uses       \Zend2\InfoCard\XML\KeyInfo
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class EncryptedKey extends AbstractElement implements KeyInfo
@@ -40,9 +40,9 @@ class EncryptedKey extends AbstractElement implements KeyInfo
     /**
      * Return an instance of the object based on input XML Data
      *
-     * @throws \Zend\InfoCard\XML\Exception
+     * @throws \Zend2\InfoCard\XML\Exception
      * @param string $xmlData The EncryptedKey XML Block
-     * @return \Zend\InfoCard\XML\EncryptedKey
+     * @return \Zend2\InfoCard\XML\EncryptedKey
      */
     static public function getInstance($xmlData)
     {
@@ -60,13 +60,13 @@ class EncryptedKey extends AbstractElement implements KeyInfo
             throw new Exception\InvalidArgumentException("Invalid XML Block provided for EncryptedKey");
         }
 
-        return simplexml_load_string($strXmlData, 'Zend\InfoCard\XML\EncryptedKey');
+        return simplexml_load_string($strXmlData, 'Zend2\InfoCard\XML\EncryptedKey');
     }
 
     /**
      * Returns the Encyption Method Algorithm URI of the block
      *
-     * @throws \Zend\InfoCard\XML\Exception
+     * @throws \Zend2\InfoCard\XML\Exception
      * @return string the Encryption method algorithm URI
      */
     public function getEncryptionMethod()
@@ -92,7 +92,7 @@ class EncryptedKey extends AbstractElement implements KeyInfo
     /**
      * Returns the Digest Method Algorithm URI used
      *
-     * @throws \Zend\InfoCard\XML\Exception
+     * @throws \Zend2\InfoCard\XML\Exception
      * @return string the Digest Method Algorithm URI
      */
     public function getDigestMethod()
@@ -121,8 +121,8 @@ class EncryptedKey extends AbstractElement implements KeyInfo
     /**
      * Returns the KeyInfo block object
      *
-     * @throws \Zend\InfoCard\XML\Exception
-     * @return \Zend\InfoCard\XML\KeyInfo\AbstractKeyInfo
+     * @throws \Zend2\InfoCard\XML\Exception
+     * @return \Zend2\InfoCard\XML\KeyInfo\AbstractKeyInfo
      */
     public function getKeyInfo()
     {
@@ -137,7 +137,7 @@ class EncryptedKey extends AbstractElement implements KeyInfo
     /**
      * Return the encrypted value of the block in base64 format
      *
-     * @throws \Zend\InfoCard\XML\Exception
+     * @throws \Zend2\InfoCard\XML\Exception
      * @return string The Value of the CipherValue block in base64 format
      */
     public function getCipherValue()

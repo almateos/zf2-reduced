@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,39 +12,39 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Calendar\Extension;
+namespace Zend2\GData\Calendar\Extension;
 
 /**
  * Data model class to represent an entry's sendEventNotifications
  *
- * @uses       \Zend\GData\Calendar
- * @uses       \Zend\GData\Extension
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Calendar
+ * @uses       \Zend2\GData\Extension
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class SendEventNotifications extends \Zend\GData\Extension
+class SendEventNotifications extends \Zend2\GData\Extension
 {
     protected $_rootNamespace = 'gCal';
     protected $_rootElement = 'sendEventNotifications';
     protected $_value = null;
 
     /**
-     * Constructs a new Zend_Gdata_Extension_SendEventNotifications object.
+     * Constructs a new Zend2_Gdata_Extension_SendEventNotifications object.
      * @param bool $value (optional) SendEventNotifications value as URI.
      */
     public function __construct($value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Calendar::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\Calendar::$namespaces);
         parent::__construct();
         $this->_value = $value;
     }
@@ -86,7 +86,7 @@ class SendEventNotifications extends \Zend\GData\Extension
                 $this->_value = false;
             }
             else {
-                throw new \Zend\GData\App\InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
+                throw new \Zend2\GData\App\InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
             }
             break;
         default:
@@ -108,7 +108,7 @@ class SendEventNotifications extends \Zend\GData\Extension
      * Set the value for this element's Value attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Extension_SendEventNotifications The element being modified.
+     * @return Zend2_Gdata_Extension_SendEventNotifications The element being modified.
      */
     public function setValue($value)
     {

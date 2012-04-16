@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\InternalType\IndirectObjectReference;
-use Zend\Pdf\PdfParser;
+namespace Zend2\Pdf\InternalType\IndirectObjectReference;
+use Zend2\Pdf\PdfParser;
 
 /**
  * PDF reference object context
  * Reference context is defined by PDF parser and PDF Refernce table
  *
- * @uses       Zend\Pdf\PdfParser\DataParser
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Pdf\PdfParser\DataParser
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Context
@@ -38,22 +38,22 @@ class Context
     /**
      * PDF parser object.
      *
-     * @var \Zend\Pdf\PdfParser\DataParser
+     * @var \Zend2\Pdf\PdfParser\DataParser
      */
     private $_stringParser;
 
     /**
      * Reference table
      *
-     * @var \Zend\Pdf\InternalType\IndirectObjectReference\ReferenceTable
+     * @var \Zend2\Pdf\InternalType\IndirectObjectReference\ReferenceTable
      */
     private $_refTable;
 
     /**
      * Object constructor
      *
-     * @param \Zend\Pdf\PdfParser\DataParser $parser
-     * @param \Zend\Pdf\InternalType\IndirectObjectReference\ReferenceTable $refTable
+     * @param \Zend2\Pdf\PdfParser\DataParser $parser
+     * @param \Zend2\Pdf\InternalType\IndirectObjectReference\ReferenceTable $refTable
      */
     public function __construct(PdfParser\DataParser $parser, ReferenceTable $refTable)
     {
@@ -65,7 +65,7 @@ class Context
     /**
      * Context parser
      *
-     * @return \Zend\Pdf\PdfParser\DataParser
+     * @return \Zend2\Pdf\PdfParser\DataParser
      */
     public function getParser()
     {
@@ -76,7 +76,7 @@ class Context
     /**
      * Context reference table
      *
-     * @return \Zend\Pdf\InternalType\IndirectObjectReference\ReferenceTable
+     * @return \Zend2\Pdf\InternalType\IndirectObjectReference\ReferenceTable
      */
     public function getRefTable()
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail\Storage;
+namespace Zend2\Mail\Storage;
 
 use ArrayAccess,
     Countable,
     SeekableIterator,
-    Zend\Mail\Storage;
+    Zend2\Mail\Storage;
 
 /**
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractStorage implements Countable, ArrayAccess, SeekableIterator
@@ -62,7 +62,7 @@ abstract class AbstractStorage implements Countable, ArrayAccess, SeekableIterat
      * used message class, change it in an extened class to extend the returned message class
      * @var string
      */
-    protected $_messageClass = 'Zend\Mail\Storage\Message';
+    protected $_messageClass = 'Zend2\Mail\Storage\Message';
 
     /**
      * Getter for has-properties. The standard has properties
@@ -244,7 +244,7 @@ abstract class AbstractStorage implements Countable, ArrayAccess, SeekableIterat
       * ArrayAccess::offsetGet()
       *
       * @param    int $id
-      * @return   \Zend\Mail\Message\Message message object
+      * @return   \Zend2\Mail\Message\Message message object
       */
      public function offsetGet($id)
      {
@@ -257,7 +257,7 @@ abstract class AbstractStorage implements Countable, ArrayAccess, SeekableIterat
       *
       * @param    id     $id
       * @param    mixed  $value
-      * @throws   \Zend\Mail\Storage\Exception
+      * @throws   \Zend2\Mail\Storage\Exception
       * @return   void
       */
      public function offsetSet($id, $value)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Captcha
+ * @category   Zend2
+ * @package    Zend2_Captcha
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Captcha;
+namespace Zend2\Captcha;
 
 /**
  * Generic Captcha adapter interface
  *
  * Each specific captcha implementation should implement this interface
  *
- * @uses       Zend\Validator\Validator
- * @category   Zend
- * @package    Zend_Captcha
+ * @uses       Zend2\Validator\Validator
+ * @category   Zend2
+ * @package    Zend2_Captcha
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-interface Adapter extends \Zend\Validator\Validator
+interface Adapter extends \Zend2\Validator\Validator
 {
     /**
      * Generate a new captcha
@@ -45,17 +45,17 @@ interface Adapter extends \Zend\Validator\Validator
     /**
      * Display the captcha
      *
-     * @param  \Zend\View\Renderer $view
+     * @param  \Zend2\View\Renderer $view
      * @param  mixed $element
      * @return string
      */
-    public function render(\Zend\View\Renderer $view = null, $element = null);
+    public function render(\Zend2\View\Renderer $view = null, $element = null);
 
     /**
      * Set captcha name
      *
      * @param  string $name
-     * @return \Zend\Captcha\Adapter
+     * @return \Zend2\Captcha\Adapter
      */
     public function setName($name);
 
@@ -69,7 +69,7 @@ interface Adapter extends \Zend\Validator\Validator
     /**
      * Get optional private decorator for this captcha type
      *
-     * @return \Zend\Form\Decorator|string
+     * @return \Zend2\Form\Decorator|string
      */
     public function getDecorator();
 }

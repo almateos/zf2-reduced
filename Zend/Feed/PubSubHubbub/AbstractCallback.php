@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,42 +12,42 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Pubsubhubbub
+ * @category   Zend2
+ * @package    Zend2_Feed_Pubsubhubbub
  * @subpackage Callback
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\PubSubHubbub;
+namespace Zend2\Feed\PubSubHubbub;
 
 /**
- * @uses       \Zend\Feed\PubSubHubbub\Callback
- * @uses       \Zend\Feed\PubSubHubbub\Exception
- * @uses       \Zend\Feed\PubSubHubbub\HttpResponse
- * @category   Zend
- * @package    Zend_Feed_Pubsubhubbub
+ * @uses       \Zend2\Feed\PubSubHubbub\Callback
+ * @uses       \Zend2\Feed\PubSubHubbub\Exception
+ * @uses       \Zend2\Feed\PubSubHubbub\HttpResponse
+ * @category   Zend2
+ * @package    Zend2_Feed_Pubsubhubbub
  * @subpackage Callback
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractCallback implements Callback
 {
     /**
-     * An instance of Zend_Feed_Pubsubhubbub_Model_SubscriptionPersistence used 
+     * An instance of Zend2_Feed_Pubsubhubbub_Model_SubscriptionPersistence used 
      * to background save any verification tokens associated with a subscription
      * or other.
      *
-     * @var \Zend\Feed\PubSubHubbub\Model\SubscriptionPersistence
+     * @var \Zend2\Feed\PubSubHubbub\Model\SubscriptionPersistence
      */
     protected $_storage = null;
 
     /**
      * An instance of a class handling Http Responses. This is implemented in
-     * Zend\Feed\Pubsubhubbub\HttpResponse which shares an unenforced interface with
-     * (i.e. not inherited from) Zend\Controller\Response\Http.
+     * Zend2\Feed\Pubsubhubbub\HttpResponse which shares an unenforced interface with
+     * (i.e. not inherited from) Zend2\Controller\Response\Http.
      *
-     * @var Zend_Feed_Pubsubhubbub_HttpResponse|\Zend\Controller\Response\Http
+     * @var Zend2_Feed_Pubsubhubbub_HttpResponse|\Zend2\Controller\Response\Http
      */
     protected $_httpResponse = null;
 
@@ -59,11 +59,11 @@ abstract class AbstractCallback implements Callback
     protected $_subscriberCount = 1;
 
     /**
-     * Constructor; accepts an array or Zend\Config instance to preset
+     * Constructor; accepts an array or Zend2\Config instance to preset
      * options for the Subscriber without calling all supported setter
      * methods in turn.
      *
-     * @param array|\Zend\Config\Config $options Options array or \Zend\Config\Config instance
+     * @param array|\Zend2\Config\Config $options Options array or \Zend2\Config\Config instance
      */
     public function __construct($config = null)
     {
@@ -75,15 +75,15 @@ abstract class AbstractCallback implements Callback
     /**
      * Process any injected configuration options
      *
-     * @param  array|\Zend\Config\Config $options Options array or \Zend\Config\Config instance
-     * @return \Zend\Feed\PubSubHubbub\AbstractCallback
+     * @param  array|\Zend2\Config\Config $options Options array or \Zend2\Config\Config instance
+     * @return \Zend2\Feed\PubSubHubbub\AbstractCallback
      */
     public function setConfig($config)
     {
-        if ($config instanceof \Zend\Config\Config) {
+        if ($config instanceof \Zend2\Config\Config) {
             $config = $config->toArray();
         } elseif (!is_array($config)) {
-            throw new Exception('Array or Zend_Config object'
+            throw new Exception('Array or Zend2_Config object'
             . 'expected, got ' . gettype($config));
         }
         if (array_key_exists('storage', $config)) {
@@ -94,7 +94,7 @@ abstract class AbstractCallback implements Callback
 
     /**
      * Send the response, including all headers.
-     * If you wish to handle this via Zend_Controller, use the getter methods
+     * If you wish to handle this via Zend2_Controller, use the getter methods
      * to retrieve any data needed to be set on your HTTP Response object, or
      * simply give this object the HTTP Response instance to work with for you!
      *
@@ -106,12 +106,12 @@ abstract class AbstractCallback implements Callback
     }
 
     /**
-     * Sets an instance of Zend\Feed\Pubsubhubbub\Model\SubscriptionPersistence used
+     * Sets an instance of Zend2\Feed\Pubsubhubbub\Model\SubscriptionPersistence used
      * to background save any verification tokens associated with a subscription
      * or other.
      *
-     * @param  \Zend\Feed\PubSubHubbub\Model\SubscriptionPersistence $storage
-     * @return \Zend\Feed\PubSubHubbub\AbstractCallback
+     * @param  \Zend2\Feed\PubSubHubbub\Model\SubscriptionPersistence $storage
+     * @return \Zend2\Feed\PubSubHubbub\AbstractCallback
      */
     public function setStorage(Model\SubscriptionPersistence $storage)
     {
@@ -120,38 +120,38 @@ abstract class AbstractCallback implements Callback
     }
 
     /**
-     * Gets an instance of Zend\Feed\Pubsubhubbub\Model\SubscriptionPersistence used
+     * Gets an instance of Zend2\Feed\Pubsubhubbub\Model\SubscriptionPersistence used
      * to background save any verification tokens associated with a subscription
      * or other.
      *
-     * @return \Zend\Feed\PubSubHubbub\Model\SubscriptionPersistence
+     * @return \Zend2\Feed\PubSubHubbub\Model\SubscriptionPersistence
      */
     public function getStorage()
     {
         if ($this->_storage === null) {
             throw new Exception('No storage object has been'
-                . ' set that subclasses Zend\Feed\Pubsubhubbub\Model\SubscriptionPersistence');
+                . ' set that subclasses Zend2\Feed\Pubsubhubbub\Model\SubscriptionPersistence');
         }
         return $this->_storage;
     }
 
     /**
      * An instance of a class handling Http Responses. This is implemented in
-     * Zend\Feed\Pubsubhubbub\HttpResponse which shares an unenforced interface with
-     * (i.e. not inherited from) Zend\Controller\Response\Http.
+     * Zend2\Feed\Pubsubhubbub\HttpResponse which shares an unenforced interface with
+     * (i.e. not inherited from) Zend2\Controller\Response\Http.
      *
-     * @param  Zend\Feed\Pubsubhubbub\HttpResponse|\Zend\Controller\Response\Http $httpResponse
-     * @return \Zend\Feed\PubSubHubbub\AbstractCallback
+     * @param  Zend2\Feed\Pubsubhubbub\HttpResponse|\Zend2\Controller\Response\Http $httpResponse
+     * @return \Zend2\Feed\PubSubHubbub\AbstractCallback
      */
     public function setHttpResponse($httpResponse)
     {
         if (!is_object($httpResponse)
             || (!$httpResponse instanceof HttpResponse
-                && !$httpResponse instanceof \Zend\Controller\Response\Http)
+                && !$httpResponse instanceof \Zend2\Controller\Response\Http)
         ) {
             throw new Exception('HTTP Response object must'
-                . ' implement one of Zend\Feed\Pubsubhubbub\HttpResponse or'
-                . ' Zend\Controller\Response\Http');
+                . ' implement one of Zend2\Feed\Pubsubhubbub\HttpResponse or'
+                . ' Zend2\Controller\Response\Http');
         }
         $this->_httpResponse = $httpResponse;
         return $this;
@@ -159,10 +159,10 @@ abstract class AbstractCallback implements Callback
 
     /**
      * An instance of a class handling Http Responses. This is implemented in
-     * Zend\Feed\Pubsubhubbub\HttpResponse which shares an unenforced interface with
-     * (i.e. not inherited from) Zend\Controller\Response\Http.
+     * Zend2\Feed\Pubsubhubbub\HttpResponse which shares an unenforced interface with
+     * (i.e. not inherited from) Zend2\Controller\Response\Http.
      *
-     * @return Zend\Feed\Pubsubhubbub\HttpResponse|\Zend\Controller\Response\Http
+     * @return Zend2\Feed\Pubsubhubbub\HttpResponse|\Zend2\Controller\Response\Http
      */
     public function getHttpResponse()
     {
@@ -178,7 +178,7 @@ abstract class AbstractCallback implements Callback
      * Defaults to 1 if left unchanged.
      *
      * @param  string|int $count
-     * @return \Zend\Feed\PubSubHubbub\AbstractCallback
+     * @return \Zend2\Feed\PubSubHubbub\AbstractCallback
      */
     public function setSubscriberCount($count)
     {

@@ -10,23 +10,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_ProgressBar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_ProgressBar
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\ProgressBar;
+namespace Zend2\ProgressBar;
 
-use Zend\ProgressBar\Exception,
-    Zend\Session;
+use Zend2\ProgressBar\Exception,
+    Zend2\Session;
 
 /**
- * Zend_ProgressBar offers an interface for multiple enviroments.
+ * Zend2_ProgressBar offers an interface for multiple enviroments.
  *
- * @category  Zend
- * @package   Zend_ProgressBar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_ProgressBar
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ProgressBar
@@ -69,7 +69,7 @@ class ProgressBar
     /**
      * Adapter for the output
      *
-     * @var \Zend\ProgressBar\Adapter\Adapter
+     * @var \Zend2\ProgressBar\Adapter\Adapter
      */
     protected $_adapter;
 
@@ -83,11 +83,11 @@ class ProgressBar
     /**
      * Create a new progressbar backend.
      *
-     * @param  \Zend\ProgressBar\Adapter\Adapter $adapter
+     * @param  \Zend2\ProgressBar\Adapter\Adapter $adapter
      * @param  float                    $min
      * @param  float                    $max
      * @param  string                   $persistenceNamespace
-     * @throws \Zend\ProgressBar\Exception When $min is greater than $max
+     * @throws \Zend2\ProgressBar\Exception When $min is greater than $max
      */
     public function __construct(Adapter\AbstractAdapter $adapter, $min = 0, $max = 100, $persistenceNamespace = null)
     {
@@ -131,7 +131,7 @@ class ProgressBar
     /**
      * Get the current adapter
      *
-     * @return \Zend\ProgressBar\Adapter\Adapter
+     * @return \Zend2\ProgressBar\Adapter\Adapter
      */
     public function getAdapter()
     {

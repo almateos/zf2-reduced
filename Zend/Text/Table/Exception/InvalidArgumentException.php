@@ -1,8 +1,8 @@
 <?php
-namespace Zend\Text\Table\Exception;
+namespace Zend2\Text\Table\Exception;
 
 class InvalidArgumentException
     extends \InvalidArgumentException
-    implements \Zend\Text\Exception
+    implements \Zend2\Text\Exception
 {
 }

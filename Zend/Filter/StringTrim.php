@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,19 +12,19 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Filter;
+namespace Zend2\Filter;
 
 /**
- * @uses       Zend\Filter\AbstractFilter
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Filter\AbstractFilter
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class StringTrim extends AbstractFilter
@@ -42,12 +42,12 @@ class StringTrim extends AbstractFilter
     /**
      * Sets filter options
      *
-     * @param  string|array|\Zend\Config\Config $options
+     * @param  string|array|\Zend2\Config\Config $options
      * @return void
      */
     public function __construct($options = null)
     {
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         } elseif (!is_array($options)) {
             $options          = func_get_args();
@@ -74,7 +74,7 @@ class StringTrim extends AbstractFilter
      * Sets the charList option
      *
      * @param  string|null $charList
-     * @return \Zend\Filter\StringTrim Provides a fluent interface
+     * @return \Zend2\Filter\StringTrim Provides a fluent interface
      */
     public function setCharList($charList)
     {
@@ -83,7 +83,7 @@ class StringTrim extends AbstractFilter
     }
 
     /**
-     * Defined by Zend_Filter_Interface
+     * Defined by Zend2_Filter_Interface
      *
      * Returns the string $value with characters stripped from the beginning and end
      *

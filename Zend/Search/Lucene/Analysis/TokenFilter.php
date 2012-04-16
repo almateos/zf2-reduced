@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Analysis
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Analysis;
+namespace Zend2\Search\Lucene\Analysis;
 
 /**
  * Token filter converts (normalizes) Token ore removes it from a token stream.
  *
- * @uses       \Zend\Search\Lucene\Analysis\Token
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Analysis\Token
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Analysis
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface TokenFilter
@@ -36,8 +36,8 @@ interface TokenFilter
     /**
      * Normalize Token or remove it (if null is returned)
      *
-     * @param \Zend\Search\Lucene\Analysis\Token $srcToken
-     * @return \Zend\Search\Lucene\Analysis\Token
+     * @param \Zend2\Search\Lucene\Analysis\Token $srcToken
+     * @return \Zend2\Search\Lucene\Analysis\Token
      */
     public function normalize(Token $srcToken);
 }

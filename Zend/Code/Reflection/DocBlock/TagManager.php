@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Code\Reflection\DocBlock;
+namespace Zend2\Code\Reflection\DocBlock;
 
-use Zend\Code\Reflection\Exception;
+use Zend2\Code\Reflection\Exception;
 
 class TagManager
 {

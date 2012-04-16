@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage ReCaptcha
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\ReCaptcha;
+namespace Zend2\Service\ReCaptcha;
 
-use Zend\Http\Response as HTTPResponse;
+use Zend2\Http\Response as HTTPResponse;
 
 /**
- * Zend_Service_ReCaptcha_Response
+ * Zend2_Service_ReCaptcha_Response
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage ReCaptcha
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Response
@@ -58,7 +58,7 @@ class Response
      *
      * @param string $status
      * @param string $errorCode
-     * @param \Zend\Http\Response $httpResponse If this is set the content will override $status and $errorCode
+     * @param \Zend2\Http\Response $httpResponse If this is set the content will override $status and $errorCode
      */
     public function __construct($status = null, $errorCode = null, HTTPResponse $httpResponse = null)
     {
@@ -79,7 +79,7 @@ class Response
      * Set the status
      *
      * @param string $status
-     * @return \Zend\Service\ReCaptcha\Response
+     * @return \Zend2\Service\ReCaptcha\Response
      */
     public function setStatus($status)
     {
@@ -116,7 +116,7 @@ class Response
      * Set the error code
      *
      * @param string $errorCode
-     * @return \Zend\Service\ReCaptcha\Response
+     * @return \Zend2\Service\ReCaptcha\Response
      */
     public function setErrorCode($errorCode)
     {
@@ -136,10 +136,10 @@ class Response
     }
 
     /**
-     * Populate this instance based on a Zend_Http_Response object
+     * Populate this instance based on a Zend2_Http_Response object
      *
-     * @param \Zend\Http\Response $response
-     * @return \Zend\Service\ReCaptcha\Response
+     * @param \Zend2\Http\Response $response
+     * @return \Zend2\Service\ReCaptcha\Response
      */
     public function setFromHttpResponse(HTTPResponse $response)
     {

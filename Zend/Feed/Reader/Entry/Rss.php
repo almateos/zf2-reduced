@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
+ * @category   Zend2
  * @package    Reader\Reader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Reader\Entry;
-use Zend\Feed\Reader;
-use Zend\Date;
+namespace Zend2\Feed\Reader\Entry;
+use Zend2\Feed\Reader;
+use Zend2\Date;
 
 /**
-* @uses \Zend\Date\Date
-* @uses \Zend\Feed\Exception
-* @uses \Zend\Feed\Reader\Reader
-* @uses \Zend\Feed\Reader\Collection\Category
-* @uses \Zend\Feed\Reader\EntryAbstract
-* @uses \Zend\Feed\Reader\EntryInterface
-* @uses \Zend\Feed\Reader\Extension\Atom\Entry
-* @uses \Zend\Feed\Reader\Extension\Content\Entry
-* @uses \Zend\Feed\Reader\Extension\DublinCore\Entry
-* @uses \Zend\Feed\Reader\Extension\Slash\Entry
-* @uses \Zend\Feed\Reader\Extension\Thread\Entry
-* @uses \Zend\Feed\Reader\Extension\WellformedWeb\Entry
-* @category Zend
+* @uses \Zend2\Date\Date
+* @uses \Zend2\Feed\Exception
+* @uses \Zend2\Feed\Reader\Reader
+* @uses \Zend2\Feed\Reader\Collection\Category
+* @uses \Zend2\Feed\Reader\EntryAbstract
+* @uses \Zend2\Feed\Reader\EntryInterface
+* @uses \Zend2\Feed\Reader\Extension\Atom\Entry
+* @uses \Zend2\Feed\Reader\Extension\Content\Entry
+* @uses \Zend2\Feed\Reader\Extension\DublinCore\Entry
+* @uses \Zend2\Feed\Reader\Extension\Slash\Entry
+* @uses \Zend2\Feed\Reader\Extension\Thread\Entry
+* @uses \Zend2\Feed\Reader\Extension\WellformedWeb\Entry
+* @category Zend2
 * @package Reader\Reader
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 class Rss extends AbstractEntry implements Reader\Entry
@@ -60,7 +60,7 @@ class Rss extends AbstractEntry implements Reader\Entry
     /**
      * Constructor
      *
-     * @param  Zend_Feed_Entry_Abstract $entry
+     * @param  Zend2_Feed_Entry_Abstract $entry
      * @param  string $entryKey
      * @param  string $type
      * @return void
@@ -238,7 +238,7 @@ class Rss extends AbstractEntry implements Reader\Entry
                             break;
                         } catch (Date\Exception $e) {
                             if ($standard == Date\Date::DATES) {
-                                require_once 'Zend/Feed/Exception.php';
+                                require_once 'Zend2/Feed/Exception.php';
                                 throw new Exception(
                                     'Could not load date due to unrecognised'
                                     .' format (should follow RFC 822 or 2822):'

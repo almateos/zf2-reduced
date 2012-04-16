@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Paginator;
+namespace Zend2\Paginator;
 
 /**
  * @uses       LimitIterator
  * @uses       Serializable
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class SerializableLimitIterator extends \LimitIterator implements \Serializable, \ArrayAccess
@@ -46,7 +46,7 @@ class SerializableLimitIterator extends \LimitIterator implements \Serializable,
     private $_count;
 
     /**
-     * Construct a Zend_Paginator_SerializableLimitIterator
+     * Construct a Zend2_Paginator_SerializableLimitIterator
      *
      * @param Iterator $it Iterator to limit (must be serializable by un-/serialize)
      * @param int $offset Offset to first element

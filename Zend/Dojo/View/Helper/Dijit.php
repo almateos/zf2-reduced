@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,34 +12,34 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\View\Helper;
+namespace Zend2\Dojo\View\Helper;
 
-use Zend\Json\Json,
-    Zend\View\Renderer as View,
-    Zend\View\Helper\HtmlElement;
+use Zend2\Json\Json,
+    Zend2\View\Renderer as View,
+    Zend2\View\Helper\HtmlElement;
 
 /**
  * Dojo dijit base class
  *
- * @uses       \Zend\Dojo\View\Helper\Dojo
- * @uses       \Zend\Json\Json
- * @uses       \Zend\View\Helper\HtmlElement
- * @package    Zend_Dojo
+ * @uses       \Zend2\Dojo\View\Helper\Dojo
+ * @uses       \Zend2\Json\Json
+ * @uses       \Zend2\View\Helper\HtmlElement
+ * @package    Zend2_Dojo
  * @subpackage View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Dijit extends HtmlElement
 {
     /**
-     * @var \Zend\Dojo\View\Helper\Dojo\Container
+     * @var \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public $dojo;
 
@@ -78,8 +78,8 @@ abstract class Dijit extends HtmlElement
      *
      * Set view and enable dojo
      *
-     * @param  \Zend\View\Renderer $view
-     * @return \Zend\Dojo\View\Helper\Dijit
+     * @param  \Zend2\View\Renderer $view
+     * @return \Zend2\Dojo\View\Helper\Dijit
      */
     public function setView(View $view)
     {
@@ -104,7 +104,7 @@ abstract class Dijit extends HtmlElement
      * Set root node type
      *
      * @param  string $value
-     * @return \Zend\Dojo\View\Helper\Dijit
+     * @return \Zend2\Dojo\View\Helper\Dijit
      */
     public function setRootNode($value)
     {

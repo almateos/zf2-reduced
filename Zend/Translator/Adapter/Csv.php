@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Translator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Translator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Translator\Adapter;
+namespace Zend2\Translator\Adapter;
 
-use Zend\Translator\Adapter\AbstractAdapter,
-    Zend\Translator\Exception\InvalidArgumentException;
+use Zend2\Translator\Adapter\AbstractAdapter,
+    Zend2\Translator\Exception\InvalidArgumentException;
 
 /**
- * @uses       \Zend\Locale\Locale
- * @uses       \Zend\Translator\Adapter\AbstractAdapter
- * @uses       \Zend\Translator\Exception\InvalidArgumentException
- * @category   Zend
- * @package    Zend_Translator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Locale\Locale
+ * @uses       \Zend2\Translator\Adapter\AbstractAdapter
+ * @uses       \Zend2\Translator\Exception\InvalidArgumentException
+ * @category   Zend2
+ * @package    Zend2_Translator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Csv extends AbstractAdapter
@@ -37,7 +37,7 @@ class Csv extends AbstractAdapter
     /**
      * Generates the adapter
      *
-     * @param  array|Zend_Config $options Translation content
+     * @param  array|Zend2_Config $options Translation content
      */
     public function __construct($options = array())
     {
@@ -45,7 +45,7 @@ class Csv extends AbstractAdapter
         $this->_options['length']    = 0;
         $this->_options['enclosure'] = '"';
 
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         } else if (func_num_args() > 1) {
             $args               = func_get_args();
@@ -72,9 +72,9 @@ class Csv extends AbstractAdapter
      *
      * @param  string|array  $filename  Filename and full path to the translation source
      * @param  string        $locale    Locale/Language to add data for, identical with locale identifier,
-     *                                  see Zend_Locale for more information
+     *                                  see Zend2_Locale for more information
      * @param  array         $option    OPTIONAL Options to use
-     * @throws \Zend\Translator\Exception\InvalidArgumentException
+     * @throws \Zend2\Translator\Exception\InvalidArgumentException
      * @return array
      */
     protected function _loadTranslationData($filename, $locale, array $options = array())

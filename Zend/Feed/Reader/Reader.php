@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Reader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Reader
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Reader;
+namespace Zend2\Feed\Reader;
 
-use Zend\Cache\Storage\Adapter as CacheAdapter,
-    Zend\Http,
-    Zend\Loader,
-    Zend\Stdlib\ErrorHandler;
+use Zend2\Cache\Storage\Adapter as CacheAdapter,
+    Zend2\Http,
+    Zend2\Loader,
+    Zend2\Stdlib\ErrorHandler;
 
 /**
-* @category Zend
-* @package Zend_Feed_Reader
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @category Zend2
+* @package Zend2_Feed_Reader
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 class Reader
@@ -71,7 +71,7 @@ class Reader
     /**
      * HTTP client object to use for retrieving feeds
      *
-     * @var \Zend\Http\Client
+     * @var \Zend2\Http\Client
      */
     protected static $_httpClient = null;
 
@@ -133,7 +133,7 @@ class Reader
      *
      * Sets the HTTP client object to use for retrieving the feeds.
      *
-     * @param  \Zend\Http\Client $httpClient
+     * @param  \Zend2\Http\Client $httpClient
      * @return void
      */
     public static function setHttpClient(Http\Client $httpClient)
@@ -143,9 +143,9 @@ class Reader
 
 
     /**
-     * Gets the HTTP client object. If none is set, a new \Zend\Http\Client will be used.
+     * Gets the HTTP client object. If none is set, a new \Zend2\Http\Client will be used.
      *
-     * @return \Zend\Http\Client
+     * @return \Zend2\Http\Client
      */
     public static function getHttpClient()
     {
@@ -201,7 +201,7 @@ class Reader
      * @param  string $url The URL to the feed
      * @param  string $etag OPTIONAL Last received ETag for this resource
      * @param  string $lastModified OPTIONAL Last-Modified value for this resource
-     * @return Zend_Feed_Reader_FeedInterface
+     * @return Zend2_Feed_Reader_FeedInterface
      */
     public static function import($uri, $etag = null, $lastModified = null)
     {
@@ -213,7 +213,7 @@ class Reader
         $headers = new Http\Headers();
         $client->setHeaders($headers);
         $client->setUri($uri);
-        $cacheId = 'Zend_Feed_Reader_' . md5($uri);
+        $cacheId = 'Zend2_Feed_Reader_' . md5($uri);
 
         if (self::$_httpConditionalGet && $cache) {
             $data = $cache->getItem($cacheId);
@@ -275,7 +275,7 @@ class Reader
      * Import a feed from a string
      *
      * @param  string $string
-     * @return \Zend\Feed\Reader\Feed
+     * @return \Zend2\Feed\Reader\Feed
      */
     public static function importString($string)
     {
@@ -307,7 +307,7 @@ class Reader
             $reader = new Feed\Atom($dom, $type);
         } else {
             throw new Exception('The URI used does not point to a '
-            . 'valid Atom, RSS or RDF feed that Zend_Feed_Reader can parse.');
+            . 'valid Atom, RSS or RDF feed that Zend2_Feed_Reader can parse.');
         }
         return $reader;
     }
@@ -316,8 +316,8 @@ class Reader
      * Imports a feed from a file located at $filename.
      *
      * @param  string $filename
-     * @throws Zend_Feed_Exception
-     * @return Zend_Feed_Reader_FeedInterface
+     * @throws Zend2_Feed_Exception
+     * @return Zend2_Feed_Reader_FeedInterface
      */
     public static function importFile($filename)
     {
@@ -362,7 +362,7 @@ class Reader
     /**
      * Detect the feed type of the provided feed
      *
-     * @param  Zend_Feed_Abstract|DOMDocument|string $feed
+     * @param  Zend2_Feed_Abstract|DOMDocument|string $feed
      * @return string
      */
     public static function detectType($feed, $specOnly = false)
@@ -388,7 +388,7 @@ class Reader
             }
         } else {
             throw new Exception('Invalid object/scalar provided: must'
-            . ' be of type Zend\Feed\Reader\Feed, DomDocument or string');
+            . ' be of type Zend2\Feed\Reader\Feed, DomDocument or string');
         }
         $xpath = new \DOMXPath($dom);
 
@@ -474,7 +474,7 @@ class Reader
     /**
      * Set plugin loader for use with Extensions
      *
-     * @param  \Zend\Loader\ShortNameLocator $loader
+     * @param  \Zend2\Loader\ShortNameLocator $loader
      */
     public static function setPluginLoader(Loader\ShortNameLocator $loader)
     {
@@ -484,13 +484,13 @@ class Reader
     /**
      * Get plugin loader for use with Extensions
      *
-     * @return  \Zend\Loader\PrefixPathLoader $loader
+     * @return  \Zend2\Loader\PrefixPathLoader $loader
      */
     public static function getPluginLoader()
     {
         if (!isset(self::$_pluginLoader)) {
             self::setPluginLoader(new Loader\PrefixPathLoader(array(
-                'Zend\Feed\Reader\Extension\\' => 'Zend/Feed/Reader/Extension/',
+                'Zend2\Feed\Reader\Extension\\' => 'Zend2/Feed/Reader/Extension/',
             )));
         }
         return self::$_pluginLoader;
@@ -540,7 +540,7 @@ class Reader
      *
      * @param  string $name
      * @return void
-     * @throws \Zend\Feed\Exception if unable to resolve Extension class
+     * @throws \Zend2\Feed\Exception if unable to resolve Extension class
      */
     public static function registerExtension($name)
     {
@@ -555,7 +555,7 @@ class Reader
         $loader->load($feedName);
         $loader->load($entryName);
         if (!$loader->isLoaded($feedName) && !$loader->isLoaded($entryName)) {
-            throw new \Zend\Feed\Exception('Could not load extension: ' . $name
+            throw new \Zend2\Feed\Exception('Could not load extension: ' . $name
                 . ' using Plugin Loader. Check prefix paths are configured and extension exists.');
         }
         if ($loader->isLoaded($feedName)) {

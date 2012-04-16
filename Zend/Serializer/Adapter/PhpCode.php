@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Serializer
+ * @category   Zend2
+ * @package    Zend2_Serializer
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Serializer\Adapter;
+namespace Zend2\Serializer\Adapter;
 
-use Zend\Serializer\Exception\RuntimeException;
+use Zend2\Serializer\Exception\RuntimeException;
 
 /**
- * @uses       Zend\Serializer\Adapter\AbstractAdapter
- * @uses       Zend\Serializer\Exception\RuntimeException
- * @category   Zend
- * @package    Zend_Serializer
+ * @uses       Zend2\Serializer\Adapter\AbstractAdapter
+ * @uses       Zend2\Serializer\Exception\RuntimeException
+ * @category   Zend2
+ * @package    Zend2_Serializer
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PhpCode extends AbstractAdapter
@@ -54,7 +54,7 @@ class PhpCode extends AbstractAdapter
      * @param  string $code 
      * @param  array $opts 
      * @return mixed
-     * @throws Zend\Serializer\Exception on eval error
+     * @throws Zend2\Serializer\Exception on eval error
      */
     public function unserialize($code, array $opts = array())
     {

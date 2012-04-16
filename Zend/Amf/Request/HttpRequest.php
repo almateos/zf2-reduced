@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Amf
+ * @category   Zend2
+ * @package    Zend2_Amf
  * @subpackage Request
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Amf\Request;
+namespace Zend2\Amf\Request;
 
 /**
  * AMF Request object -- Request via HTTP
  *
- * Extends {@link Zend_Amf_Request} to accept a request via HTTP. Request is
+ * Extends {@link Zend2_Amf_Request} to accept a request via HTTP. Request is
  * built at construction time using a raw POST; if no data is available, the
  * request is declared a fault.
  *
- * @uses       \Zend\Amf\Request\StreamRequest
- * @package    Zend_Amf
+ * @uses       \Zend2\Amf\Request\StreamRequest
+ * @package    Zend2_Amf
  * @subpackage Request
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class HttpRequest extends StreamRequest
@@ -63,7 +63,7 @@ class HttpRequest extends StreamRequest
             $this->_rawRequest = $amfRequest;
             $this->initialize($amfRequest);
         } else {
-            echo '<p>Zend Amf Endpoint</p>' ;
+            echo '<p>Zend2 Amf Endpoint</p>' ;
         }
     }
 

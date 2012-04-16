@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Di\Definition\Annotation;
+namespace Zend2\Di\Definition\Annotation;
 
-use Zend\Code\Annotation\Annotation;
+use Zend2\Code\Annotation\Annotation;
 
 class Instantiator implements Annotation
 {

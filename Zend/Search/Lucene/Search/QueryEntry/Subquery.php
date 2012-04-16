@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search\QueryEntry;
+namespace Zend2\Search\Lucene\Search\QueryEntry;
 
 /**
- * @uses       \Zend\Search\Lucene\Search\QueryEntry\AbstractQueryEntry
- * @uses       \Zend\Search\Lucene\Search\Exception\QueryParserException
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Search\QueryEntry\AbstractQueryEntry
+ * @uses       \Zend2\Search\Lucene\Search\Exception\QueryParserException
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Subquery extends AbstractQueryEntry
@@ -35,16 +35,16 @@ class Subquery extends AbstractQueryEntry
     /**
      * Query
      *
-     * @var \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @var \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     private $_query;
 
     /**
      * Object constractor
      *
-     * @param \Zend\Search\Lucene\Search\Query\AbstractQuery $query
+     * @param \Zend2\Search\Lucene\Search\Query\AbstractQuery $query
      */
-    public function __construct(\Zend\Search\Lucene\Search\Query\AbstractQuery $query)
+    public function __construct(\Zend2\Search\Lucene\Search\Query\AbstractQuery $query)
     {
         $this->_query = $query;
     }
@@ -53,11 +53,11 @@ class Subquery extends AbstractQueryEntry
      * Process modifier ('~')
      *
      * @param mixed $parameter
-     * @throws \Zend\Search\Lucene\Search\Exception\QueryParserException
+     * @throws \Zend2\Search\Lucene\Search\Exception\QueryParserException
      */
     public function processFuzzyProximityModifier($parameter = null)
     {
-        throw new \Zend\Search\Lucene\Search\Exception\QueryParserException(
+        throw new \Zend2\Search\Lucene\Search\Exception\QueryParserException(
         	'\'~\' sign must follow term or phrase'
         );
     }
@@ -67,7 +67,7 @@ class Subquery extends AbstractQueryEntry
      * Transform entry to a subquery
      *
      * @param string $encoding
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     public function getQuery($encoding)
     {

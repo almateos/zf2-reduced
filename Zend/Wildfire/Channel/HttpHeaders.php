@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,34 +12,34 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Wildfire
+ * @category   Zend2
+ * @package    Zend2_Wildfire
  * @subpackage Channel
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Wildfire\Channel;
-use Zend\Wildfire,
-    Zend\Wildfire\Protocol,
-    Zend\Controller,
-    Zend\Controller\Request\Http as HttpRequest;
+namespace Zend2\Wildfire\Channel;
+use Zend2\Wildfire,
+    Zend2\Wildfire\Protocol,
+    Zend2\Controller,
+    Zend2\Controller\Request\Http as HttpRequest;
 
 /**
  * Implements communication via HTTP request and response headers for Wildfire Protocols.
  *
- * @uses       \Zend\Controller\Front
- * @uses       \Zend\Controller\Plugin\AbstractPlugin
- * @uses       \Zend\Controller\Request\AbstractRequest
- * @uses       \Zend\Controller\Response\AbstractResponse
- * @uses       \Zend\Loader
- * @uses       \Zend\Wildfire\Channel
- * @uses       \Zend\Wildfire\Exception
- * @uses       \Zend\Wildfire\Protocol\JsonStream
- * @category   Zend
- * @package    Zend_Wildfire
+ * @uses       \Zend2\Controller\Front
+ * @uses       \Zend2\Controller\Plugin\AbstractPlugin
+ * @uses       \Zend2\Controller\Request\AbstractRequest
+ * @uses       \Zend2\Controller\Response\AbstractResponse
+ * @uses       \Zend2\Loader
+ * @uses       \Zend2\Wildfire\Channel
+ * @uses       \Zend2\Wildfire\Exception
+ * @uses       \Zend2\Wildfire\Protocol\JsonStream
+ * @category   Zend2
+ * @package    Zend2_Wildfire
  * @subpackage Channel
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class HttpHeaders
@@ -54,7 +54,7 @@ class HttpHeaders
 
     /**
      * Singleton instance
-     * @var \Zend\Wildfire\Channel\HttpHeaders
+     * @var \Zend2\Wildfire\Channel\HttpHeaders
      */
     protected static $_instance = null;
 
@@ -73,14 +73,14 @@ class HttpHeaders
     /**
      * Initialize singleton instance.
      *
-     * @param string $class OPTIONAL Subclass of \Zend\Wildfire\Channel\HttpHeaders
-     * @return \Zend\Wildfire\Channel\HttpHeaders Returns the singleton \Zend\Wildfire\Channel\HttpHeaders instance
-     * @throws \Zend\Wildfire\Exception
+     * @param string $class OPTIONAL Subclass of \Zend2\Wildfire\Channel\HttpHeaders
+     * @return \Zend2\Wildfire\Channel\HttpHeaders Returns the singleton \Zend2\Wildfire\Channel\HttpHeaders instance
+     * @throws \Zend2\Wildfire\Exception
      */
     public static function init($class = null)
     {
         if (self::$_instance !== null) {
-            throw new Exception\RuntimeException('Singleton instance of Zend_Wildfire_Channel_HttpHeaders already exists!');
+            throw new Exception\RuntimeException('Singleton instance of Zend2_Wildfire_Channel_HttpHeaders already exists!');
         }
         if ($class !== null) {
             if (!is_string($class)) {
@@ -91,7 +91,7 @@ class HttpHeaders
 
             if (!self::$_instance instanceof HttpHeaders) {
                 self::$_instance = null;
-                throw new Exception\InvalidArgumentException('Invalid class to third argument. Must be subclass of Zend_Wildfire_Channel_HttpHeaders.');
+                throw new Exception\InvalidArgumentException('Invalid class to third argument. Must be subclass of Zend2_Wildfire_Channel_HttpHeaders.');
             }
         } else {
             self::$_instance = new self();
@@ -105,7 +105,7 @@ class HttpHeaders
      * Get or create singleton instance
      *
      * @param $skipCreate boolean True if an instance should not be created
-     * @return \Zend\Wildfire\Channel\HttpHeaders
+     * @return \Zend2\Wildfire\Channel\HttpHeaders
      */
     public static function getInstance($skipCreate=false)
     {
@@ -149,7 +149,7 @@ class HttpHeaders
      *
      * @param string $uri The URI for the protocol to be initialized
      * @return object Returns the new initialized protocol instance
-     * @throws \Zend\Wildfire\Exception
+     * @throws \Zend2\Wildfire\Exception
      */
     protected function _initProtocol($uri)
     {
@@ -215,7 +215,7 @@ class HttpHeaders
 
 
     /*
-     * Zend_Wildfire_Channel_Interface
+     * Zend2_Wildfire_Channel_Interface
      */
 
     /**
@@ -276,7 +276,7 @@ class HttpHeaders
 
 
     /*
-     * Zend_Controller_Plugin_Abstract
+     * Zend2_Controller_Plugin_Abstract
      */
 
     /**
@@ -292,8 +292,8 @@ class HttpHeaders
     /**
      * Get the request object
      *
-     * @return \Zend\Controller\Request\AbstractRequest
-     * @throws \Zend\Wildfire\Exception
+     * @return \Zend2\Controller\Request\AbstractRequest
+     * @throws \Zend2\Wildfire\Exception
      */
     public function getRequest()
     {
@@ -310,8 +310,8 @@ class HttpHeaders
     /**
      * Get the response object
      *
-     * @return \Zend\Controller\Response\AbstractResponse
-     * @throws \Zend\Wildfire\Exception
+     * @return \Zend2\Controller\Response\AbstractResponse
+     * @throws \Zend2\Wildfire\Exception
      */
     public function getResponse()
     {

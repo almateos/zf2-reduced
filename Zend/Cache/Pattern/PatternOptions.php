@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Pattern
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Cache\Pattern;
+namespace Zend2\Cache\Pattern;
 
-use Zend\Cache\Exception,
-    Zend\Cache\StorageFactory,
-    Zend\Cache\Storage\Adapter as StorageAdapter,
-    Zend\Stdlib\Options;
+use Zend2\Cache\Exception,
+    Zend2\Cache\StorageFactory,
+    Zend2\Cache\Storage\Adapter as StorageAdapter,
+    Zend2\Stdlib\Options;
 
 /**
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Pattern
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PatternOptions extends Options
@@ -158,7 +158,7 @@ class PatternOptions extends Options
      * - CaptureCache
      * @var string
      */
-    protected $tagKey = 'ZendCachePatternCaptureCache_Tags';
+    protected $tagKey = 'Zend2CachePatternCaptureCache_Tags';
 
     /**
      * Used by:
@@ -869,8 +869,8 @@ class PatternOptions extends Options
             $storage = StorageFactory::adapterFactory($storage);
         } elseif ( !($storage instanceof StorageAdapter) ) {
             throw new Exception\InvalidArgumentException(
-                'The storage must be an instanceof Zend\Cache\Storage\Adapter '
-                . 'or an array passed to Zend\Cache\Storage::factory '
+                'The storage must be an instanceof Zend2\Cache\Storage\Adapter '
+                . 'or an array passed to Zend2\Cache\Storage::factory '
                 . 'or simply the name of the storage adapter'
             );
         }

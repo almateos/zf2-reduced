@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard\XML\EncryptedData;
-use Zend\InfoCard\XML;
+namespace Zend2\InfoCard\XML\EncryptedData;
+use Zend2\InfoCard\XML;
 
 /**
- * A factory class for producing Zend_InfoCard_Xml_EncryptedData objects based on
+ * A factory class for producing Zend2_InfoCard_Xml_EncryptedData objects based on
  * the type of XML document provided
  *
- * @uses       \Zend\InfoCard\XML\EncryptedData\XMLEnc
- * @uses       \Zend\InfoCard\XML\Exception
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\InfoCard\XML\EncryptedData\XMLEnc
+ * @uses       \Zend2\InfoCard\XML\Exception
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 final class Factory
@@ -49,8 +49,8 @@ final class Factory
      * Returns an instance of the class
      *
      * @param string $xmlData The XML EncryptedData String
-     * @return \Zend\InfoCard\XML\EncryptedData\AbstractEncryptedData
-     * @throws \Zend\InfoCard\XML\Exception
+     * @return \Zend2\InfoCard\XML\EncryptedData\AbstractEncryptedData
+     * @throws \Zend2\InfoCard\XML\Exception
      */
     static public function getInstance($xmlData)
     {
@@ -67,7 +67,7 @@ final class Factory
 
         switch($sxe['Type']) {
             case 'http://www.w3.org/2001/04/xmlenc#Element':
-                return simplexml_load_string($strXmlData, 'Zend\InfoCard\XML\EncryptedData\XMLEnc');
+                return simplexml_load_string($strXmlData, 'Zend2\InfoCard\XML\EncryptedData\XMLEnc');
             default:
                 throw new XML\Exception\InvalidArgumentException("Unknown EncryptedData type found");
                 break;

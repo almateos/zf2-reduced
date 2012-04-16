@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Soap
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage WSDL
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Soap\Wsdl\ComplexTypeStrategy;
+namespace Zend2\Soap\Wsdl\ComplexTypeStrategy;
 
-use Zend\Soap\Wsdl\ComplexTypeStrategy,
-    Zend\Soap\Exception,
-    Zend\Soap\Wsdl;
+use Zend2\Soap\Wsdl\ComplexTypeStrategy,
+    Zend2\Soap\Exception,
+    Zend2\Soap\Wsdl;
 
 /**
- * Zend_Soap_Wsdl_Strategy_Composite
+ * Zend2_Soap_Wsdl_Strategy_Composite
  *
- * @uses       \Zend\Soap\Wsdl\Exception
- * @uses       \Zend\Soap\Wsdl\Strategy\StrategyInterface
- * @category   Zend
- * @package    Zend_Soap
+ * @uses       \Zend2\Soap\Wsdl\Exception
+ * @uses       \Zend2\Soap\Wsdl\Strategy\StrategyInterface
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage WSDL
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Composite implements ComplexTypeStrategy
@@ -48,25 +48,25 @@ class Composite implements ComplexTypeStrategy
     /**
      * Default Strategy of this composite
      *
-     * @var string|\Zend\Soap\Wsdl\Strategy
+     * @var string|\Zend2\Soap\Wsdl\Strategy
      */
     protected $_defaultStrategy;
 
     /**
      * Context WSDL file that this composite serves
      *
-     * @var \Zend\Soap\Wsdl|null
+     * @var \Zend2\Soap\Wsdl|null
      */
     protected $_context;
 
     /**
      * Construct Composite WSDL Strategy.
      *
-     * @throws \Zend\Soap\WsdlException
+     * @throws \Zend2\Soap\WsdlException
      * @param array $typeMap
-     * @param string|\Zend\Soap\Wsdl\Strategy $defaultStrategy
+     * @param string|\Zend2\Soap\Wsdl\Strategy $defaultStrategy
      */
-    public function __construct(array $typeMap=array(), $defaultStrategy='\Zend\Soap\Wsdl\Strategy\DefaultComplexType')
+    public function __construct(array $typeMap=array(), $defaultStrategy='\Zend2\Soap\Wsdl\Strategy\DefaultComplexType')
     {
         foreach($typeMap AS $type => $strategy) {
             $this->connectTypeToStrategy($type, $strategy);
@@ -77,10 +77,10 @@ class Composite implements ComplexTypeStrategy
     /**
      * Connect a complex type to a given strategy.
      *
-     * @throws \Zend\Soap\WsdlException
+     * @throws \Zend2\Soap\WsdlException
      * @param  string $type
-     * @param  string|\Zend\Soap\Wsdl\Strategy $strategy
-     * @return \Zend\Soap\Wsdl\Strategy\Composite
+     * @param  string|\Zend2\Soap\Wsdl\Strategy $strategy
+     * @return \Zend2\Soap\Wsdl\Strategy\Composite
      */
     public function connectTypeToStrategy($type, $strategy)
     {
@@ -94,9 +94,9 @@ class Composite implements ComplexTypeStrategy
     /**
      * Return default strategy of this composite
      *
-     * @throws \Zend\Soap\WsdlException
+     * @throws \Zend2\Soap\WsdlException
      * @param  string $type
-     * @return \Zend\Soap\Wsdl\Strategy
+     * @return \Zend2\Soap\Wsdl\Strategy
      */
     public function getDefaultStrategy()
     {
@@ -116,9 +116,9 @@ class Composite implements ComplexTypeStrategy
     /**
      * Return specific strategy or the default strategy of this type.
      *
-     * @throws \Zend\Soap\WsdlException
+     * @throws \Zend2\Soap\WsdlException
      * @param  string $type
-     * @return \Zend\Soap\Wsdl\Strategy
+     * @return \Zend2\Soap\Wsdl\Strategy
      */
     public function getStrategyOfType($type)
     {
@@ -144,7 +144,7 @@ class Composite implements ComplexTypeStrategy
     /**
      * Method accepts the current WSDL context file.
      *
-     * @param \Zend\Soap\Wsdl $context
+     * @param \Zend2\Soap\Wsdl $context
      */
     public function setContext(Wsdl $context)
     {
@@ -155,7 +155,7 @@ class Composite implements ComplexTypeStrategy
     /**
      * Create a complex type based on a strategy
      *
-     * @throws \Zend\Soap\WsdlException
+     * @throws \Zend2\Soap\WsdlException
      * @param  string $type
      * @return string XSD type
      */

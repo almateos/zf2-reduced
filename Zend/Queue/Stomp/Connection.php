@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Queue
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Stomp
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Queue\Stomp;
+namespace Zend2\Queue\Stomp;
 
-use Zend\Queue\Exception as QueueException;
+use Zend2\Queue\Exception as QueueException;
 
 /**
  * The Stomp client interacts with a Stomp server.
  *
- * @uses       \Zend\Queue\Exception
- * @uses       \Zend\Queue\Stomp\StompConnection
- * @category   Zend
- * @package    Zend_Queue
+ * @uses       \Zend2\Queue\Exception
+ * @uses       \Zend2\Queue\Stomp\StompConnection
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Stomp
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Connection implements StompConnection
@@ -61,7 +61,7 @@ class Connection implements StompConnection
      * @param  int $port
      * @param  array $options Accepts "timeout_sec" and "timeout_usec" keys
      * @return true;
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function open($scheme, $host, $port, array $options = array())
     {
@@ -129,7 +129,7 @@ class Connection implements StompConnection
      * Check whether we are connected to the server
      *
      * @return true
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function ping()
     {
@@ -144,7 +144,7 @@ class Connection implements StompConnection
      *
      * example: $response = $client->write($frame)->read();
      *
-     * @param \Zend\Queue\Stom\StompFrame $frame
+     * @param \Zend2\Queue\Stom\StompFrame $frame
      * @return $this
      */
     public function write(StompFrame $frame)
@@ -184,8 +184,8 @@ class Connection implements StompConnection
     /**
      * Reads in a frame from the socket or returns false.
      *
-     * @return \Zend\Queue\Stomp\StompFrame|false
-     * @throws \Zend\Queue\Exception
+     * @return \Zend2\Queue\Stomp\StompFrame|false
+     * @throws \Zend2\Queue\Exception
      */
     public function read()
     {
@@ -259,9 +259,9 @@ class Connection implements StompConnection
     /**
      * Set the frameClass to be used
      *
-     * This must be a \Zend\Queue\Stomp\StompFrame.
+     * This must be a \Zend2\Queue\Stomp\StompFrame.
      *
-     * @param  string $classname - class is an instance of \Zend\Queue\Stomp\StompFrame
+     * @param  string $classname - class is an instance of \Zend2\Queue\Stomp\StompFrame
      * @return $this;
      */
     public function setFrameClass($classname)
@@ -279,13 +279,13 @@ class Connection implements StompConnection
     {
         return isset($this->_options['frameClass'])
             ? $this->_options['frameClass']
-            : '\Zend\Queue\Stomp\Frame';
+            : '\Zend2\Queue\Stomp\Frame';
     }
 
     /**
      * Create an empty frame
      *
-     * @return \Zend\Queue\Stomp\StompFrame
+     * @return \Zend2\Queue\Stomp\StompFrame
      */
     public function createFrame()
     {
@@ -294,7 +294,7 @@ class Connection implements StompConnection
         $frame = new $class();
 
         if (!$frame instanceof StompFrame) {
-            throw new QueueException('Invalid Frame class provided; must implement \Zend\Queue\Stomp\StompFrame');
+            throw new QueueException('Invalid Frame class provided; must implement \Zend2\Queue\Stomp\StompFrame');
         }
 
         return $frame;
@@ -303,7 +303,7 @@ class Connection implements StompConnection
     /**
      * Check if the connection has timed out
      *
-     * @throws Zend\Queue\Exception if the connection has timed out
+     * @throws Zend2\Queue\Exception if the connection has timed out
      */
     protected function _checkSocketReadTimeout()
     {

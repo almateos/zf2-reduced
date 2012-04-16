@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\Form\Element;
-use Zend\Form,
-    Zend\Form\Element\Exception;;
+namespace Zend2\Dojo\Form\Element;
+use Zend2\Form,
+    Zend2\Form\Element\Exception;;
 
 /**
  * DateTextBox dijit
  *
- * @uses       \Zend\Dojo\Form\Element\ValidationTextBox
- * @uses       \Zend\Form\Element\Exception
- * @package    Zend_Dojo
+ * @uses       \Zend2\Dojo\Form\Element\ValidationTextBox
+ * @uses       \Zend2\Form\Element\Exception
+ * @package    Zend2_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DateTextBox extends ValidationTextBox
@@ -65,7 +65,7 @@ class DateTextBox extends ValidationTextBox
      * Set am,pm flag
      *
      * @param  bool $am,pm
-     * @return \Zend\Dojo\Form\Element\DateTextBox
+     * @return \Zend2\Dojo\Form\Element\DateTextBox
      */
     public function setAmPm($flag)
     {
@@ -90,7 +90,7 @@ class DateTextBox extends ValidationTextBox
      * Set strict flag
      *
      * @param  bool $strict
-     * @return \Zend\Dojo\Form\Element\DateTextBox
+     * @return \Zend2\Dojo\Form\Element\DateTextBox
      */
     public function setStrict($flag)
     {
@@ -115,7 +115,7 @@ class DateTextBox extends ValidationTextBox
      * Set locale
      *
      * @param  string $locale
-     * @return \Zend\Dojo\Form\Element\DateTextBox
+     * @return \Zend2\Dojo\Form\Element\DateTextBox
      */
     public function setLocale($locale)
     {
@@ -137,7 +137,7 @@ class DateTextBox extends ValidationTextBox
      * Set date format pattern
      *
      * @param  string $pattern
-     * @return \Zend\Dojo\Form\Element\NumberTextBox
+     * @return \Zend2\Dojo\Form\Element\NumberTextBox
      */
     public function setDatePattern($pattern)
     {
@@ -160,7 +160,7 @@ class DateTextBox extends ValidationTextBox
      *
      * @see    $_allowedFormatTypes
      * @param  string $formatLength
-     * @return \Zend\Dojo\Form\Element\NumberTextBox
+     * @return \Zend2\Dojo\Form\Element\NumberTextBox
      */
     public function setFormatLength($formatLength)
     {
@@ -188,7 +188,7 @@ class DateTextBox extends ValidationTextBox
      *
      * @see    $_allowedSelectorTypes
      * @param  string $selector
-     * @return \Zend\Dojo\Form\Element\NumberTextBox
+     * @return \Zend2\Dojo\Form\Element\NumberTextBox
      */
     public function setSelector($selector)
     {

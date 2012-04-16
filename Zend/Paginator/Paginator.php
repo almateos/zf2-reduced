@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Paginator;
+namespace Zend2\Paginator;
 
 use ArrayIterator,
     Countable,
     Iterator,
     IteratorAggregate,
     Traversable,
-    Zend\Cache\Storage\Adapter as CacheAdapter,
-    Zend\Db\Select as DbSelect,
-    Zend\Db\Table\AbstractRowset as DbAbstractRowset,
-    Zend\Db\Table\Select as DbTableSelect,
-    Zend\Filter\Filter,
-    Zend\Json\Json,
-    Zend\Stdlib\ArrayUtils,
-    Zend\View;
+    Zend2\Cache\Storage\Adapter as CacheAdapter,
+    Zend2\Db\Select as DbSelect,
+    Zend2\Db\Table\AbstractRowset as DbAbstractRowset,
+    Zend2\Db\Table\Select as DbTableSelect,
+    Zend2\Filter\Filter,
+    Zend2\Json\Json,
+    Zend2\Stdlib\ArrayUtils,
+    Zend2\View;
 
 /**
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Paginator implements Countable, IteratorAggregate
@@ -47,13 +47,13 @@ class Paginator implements Countable, IteratorAggregate
      *
      * @var string
      */
-    const INTERNAL_ADAPTER = 'Zend\Paginator\Adapter\Internal';
+    const INTERNAL_ADAPTER = 'Zend2\Paginator\Adapter\Internal';
 
     /**
      * The cache tag prefix used to namespace Paginator results in the cache
      *
      */
-    const CACHE_TAG_PREFIX = 'Zend_Paginator_';
+    const CACHE_TAG_PREFIX = 'Zend2_Paginator_';
 
     /**
      * Adapter broker
@@ -98,7 +98,7 @@ class Paginator implements Countable, IteratorAggregate
     protected static $_cache;
 
     /**
-     * Enable or desable the cache by Zend_Paginator instance
+     * Enable or desable the cache by Zend2_Paginator instance
      *
      * @var bool
      */
@@ -385,8 +385,8 @@ class Paginator implements Countable, IteratorAggregate
             $this->_adapter = $adapter->getPaginatorAdapter();
         } else {
             throw new Exception\InvalidArgumentException(
-                'Zend_Paginator only accepts instances of the type ' .
-                'Zend_Paginator_Adapter_Interface or Zend_Paginator_AdapterAggregate.'
+                'Zend2_Paginator only accepts instances of the type ' .
+                'Zend2_Paginator_Adapter_Interface or Zend2_Paginator_AdapterAggregate.'
             );
         }
 
@@ -1049,7 +1049,7 @@ class Paginator implements Countable, IteratorAggregate
             case 'object':
                 if (!$scrollingStyle instanceof ScrollingStyle) {
                     throw new Exception\InvalidArgumentException(
-                        'Scrolling style must implement Zend_Paginator_ScrollingStyle_Interface'
+                        'Scrolling style must implement Zend2_Paginator_ScrollingStyle_Interface'
                     );
                 }
 
@@ -1064,7 +1064,7 @@ class Paginator implements Countable, IteratorAggregate
             default:
                 throw new Exception\InvalidArgumentException(
                     'Scrolling style must be a class ' .
-                    'name or object implementing Zend\Paginator\ScrollingStyle'
+                    'name or object implementing Zend2\Paginator\ScrollingStyle'
                 );
         }
     }

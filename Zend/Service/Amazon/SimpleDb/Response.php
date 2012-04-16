@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_Amazon
+ * @category   Zend2
+ * @package    Zend2_Service_Amazon
  * @subpackage SimpleDb
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Amazon\SimpleDb;
-use Zend\Http;
+namespace Zend2\Service\Amazon\SimpleDb;
+use Zend2\Http;
 
 /**
- * @category   Zend
- * @package    Zend_Service_Amazon
+ * @category   Zend2
+ * @package    Zend2_Service_Amazon
  * @subpackage SimpleDb
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Response
@@ -41,7 +41,7 @@ class Response
      *
      * This contains the response body and headers.
      *
-     * @var Zend\Http\Response
+     * @var Zend2\Http\Response
      */
     private $_httpResponse = null;
 
@@ -62,7 +62,7 @@ class Response
     /**
      * Creates a new high-level SimpleDB response object
      *
-     * @param  Zend\Http\Response $httpResponse the HTTP response.
+     * @param  Zend2\Http\Response $httpResponse the HTTP response.
      * @return void
      */
     public function __construct(Http\Response $httpResponse)
@@ -110,7 +110,7 @@ class Response
     /**
      * Get HTTP response object
      *
-     * @return Zend\Http\Response
+     * @return Zend2\Http\Response
      */
     public function getHttpResponse()
     {

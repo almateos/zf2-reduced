@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,38 +12,38 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GBase
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\GBase;
+namespace Zend2\GData\GBase;
 
-use Zend\GData\GBase;
+use Zend2\GData\GBase;
 
 /**
  * Base class for the Google Base Feed
  *
  * @link http://code.google.com/apis/base/
  *
- * @uses       \Zend\GData\Feed
- * @uses       \Zend\GData\GBase
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Feed
+ * @uses       \Zend2\GData\GBase
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GBase
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Feed extends \Zend\GData\Feed
+class Feed extends \Zend2\GData\Feed
 {
     /**
      * The classname for the feed.
      *
      * @var string
      */
-    protected $_feedClassName = 'Zend\GData\GBase\Feed';
+    protected $_feedClassName = 'Zend2\GData\GBase\Feed';
 
     /**
      * Create a new instance.

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Spreadsheets
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Spreadsheets;
+namespace Zend2\GData\Spreadsheets;
 
-use Zend\GData\Spreadsheets;
+use Zend2\GData\Spreadsheets;
 
 /**
- * @uses       \Zend\GData\Feed
- * @uses       \Zend\GData\Spreadsheets
- * @uses       \Zend\GData\Spreadsheets\Extension\ColCount
- * @uses       \Zend\GData\Spreadsheets\Extension\RowCount
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Feed
+ * @uses       \Zend2\GData\Spreadsheets
+ * @uses       \Zend2\GData\Spreadsheets\Extension\ColCount
+ * @uses       \Zend2\GData\Spreadsheets\Extension\RowCount
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Spreadsheets
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class CellFeed extends \Zend\GData\Feed
+class CellFeed extends \Zend2\GData\Feed
 {
 
     /**
@@ -42,31 +42,31 @@ class CellFeed extends \Zend\GData\Feed
     *
     * @var string
     */
-    protected $_entryClassName = 'Zend\GData\Spreadsheets\CellEntry';
+    protected $_entryClassName = 'Zend2\GData\Spreadsheets\CellEntry';
 
     /**
     * The classname for the feed.
     *
     * @var string
     */
-    protected $_feedClassName = 'Zend\GData\Spreadsheets\CellFeed';
+    protected $_feedClassName = 'Zend2\GData\Spreadsheets\CellFeed';
 
     /**
     * The row count for the feed.
     *
-    * @var \Zend\GData\Spreadsheets\Extension\RowCount
+    * @var \Zend2\GData\Spreadsheets\Extension\RowCount
     */
     protected $_rowCount = null;
 
     /**
     * The column count for the feed.
     *
-    * @var \Zend\GData\Spreadsheets\Extension\ColCount
+    * @var \Zend2\GData\Spreadsheets\Extension\ColCount
     */
     protected $_colCount = null;
 
     /**
-     * Constructs a new Zend_Gdata_Spreadsheets_CellFeed object.
+     * Constructs a new Zend2_Gdata_Spreadsheets_CellFeed object.
      * @param DOMElement $element (optional) The XML Element on which to base this object.
      */
     public function __construct($element = null)

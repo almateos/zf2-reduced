@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Http
+ * @category   Zend2
+ * @package    Zend2_Http
  * @subpackage Client_Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Http\Client\Adapter;
-use Zend\Http\Client,
-    Zend\Http\Client\Adapter\Exception as AdapterException;
+namespace Zend2\Http\Client\Adapter;
+use Zend2\Http\Client,
+    Zend2\Http\Client\Adapter\Exception as AdapterException;
 
 /**
- * HTTP Proxy-supporting Zend_Http_Client adapter class, based on the default
+ * HTTP Proxy-supporting Zend2_Http_Client adapter class, based on the default
  * socket based adapter.
  *
  * Should be used if proxy HTTP access is required. If no proxy is set, will
- * fall back to Zend_Http_Client_Adapter_Socket behavior. Just like the
+ * fall back to Zend2_Http_Client_Adapter_Socket behavior. Just like the
  * default Socket adapter, this adapter does not require any special extensions
  * installed.
  *
- * @category   Zend
- * @package    Zend_Http
+ * @category   Zend2
+ * @package    Zend2_Http
  * @subpackage Client_Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Proxy extends Socket
@@ -99,7 +99,7 @@ class Proxy extends Socket
      * Send request to the proxy server
      *
      * @param string        $method
-     * @param \Zend\Uri\Uri $uri
+     * @param \Zend2\Uri\Uri $uri
      * @param string        $http_ver
      * @param array         $headers
      * @param string        $body
@@ -220,7 +220,7 @@ class Proxy extends Socket
         }
 
         // Check that the response from the proxy is 200
-        if (\Zend\Http\Response::extractCode($response) != 200) {
+        if (\Zend2\Http\Response::extractCode($response) != 200) {
             throw new AdapterException\RuntimeException("Unable to connect to HTTPS proxy. Server response: " . $response);
         }
 

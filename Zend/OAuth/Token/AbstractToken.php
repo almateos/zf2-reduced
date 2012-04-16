@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\OAuth\Token;
-use Zend\Http\Response as HTTPResponse,
-    Zend\OAuth\Token as OAuthToken,
-    Zend\OAuth\Http\Utility as HTTPUtility,
-    Zend\OAuth\Exception as OAuthException;
+namespace Zend2\OAuth\Token;
+use Zend2\Http\Response as HTTPResponse,
+    Zend2\OAuth\Token as OAuthToken,
+    Zend2\OAuth\Http\Utility as HTTPUtility,
+    Zend2\OAuth\Exception as OAuthException;
 
 /**
- * @uses       Zend\Http\Response
- * @uses       Zend\OAuth\Http\Utility
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Http\Response
+ * @uses       Zend2\OAuth\Http\Utility
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractToken implements OAuthToken
@@ -52,20 +52,20 @@ abstract class AbstractToken implements OAuthToken
     /**
      * OAuth response object
      * 
-     * @var \Zend\Http\Response
+     * @var \Zend2\Http\Response
      */
     protected $_response = null;
 
     /**
-     * @var \Zend\OAuth\Http\Utility
+     * @var \Zend2\OAuth\Http\Utility
      */
     protected $_httpUtility = null;
 
     /**
      * Constructor; basic setup for any Token subclass.
      *
-     * @param  null|\Zend\Http\Response $response
-     * @param  null|\Zend\OAuth\Http\Utility $utility
+     * @param  null|\Zend2\Http\Response $response
+     * @param  null|\Zend2\OAuth\Http\Utility $utility
      * @return void
      */
     public function __construct(
@@ -106,7 +106,7 @@ abstract class AbstractToken implements OAuthToken
     /**
      * Return the HTTP response object used to initialise this instance.
      *
-     * @return \Zend\Http\Response
+     * @return \Zend2\Http\Response
      */
     public function getResponse()
     {
@@ -118,7 +118,7 @@ abstract class AbstractToken implements OAuthToken
      * requests with this Token.
      *
      * @param  string $secret
-     * @return \Zend\OAuth\Token\AbstractToken
+     * @return \Zend2\OAuth\Token\AbstractToken
      */
     public function setTokenSecret($secret)
     {
@@ -143,7 +143,7 @@ abstract class AbstractToken implements OAuthToken
      *
      * @param  string $key
      * @param  string $value
-     * @return \Zend\OAuth\Token\AbstractToken
+     * @return \Zend2\OAuth\Token\AbstractToken
      */
     public function setParam($key, $value)
     {
@@ -156,7 +156,7 @@ abstract class AbstractToken implements OAuthToken
      * a simple filter to remove any trailing newlines.
      *
      * @param  array $params
-     * @return \Zend\OAuth\Token\AbstractToken
+     * @return \Zend2\OAuth\Token\AbstractToken
      */
     public function setParams(array $params)
     {
@@ -184,7 +184,7 @@ abstract class AbstractToken implements OAuthToken
      * Sets the value for a Token.
      *
      * @param  string $token
-     * @return \Zend\OAuth\Token\AbstractToken
+     * @return \Zend2\OAuth\Token\AbstractToken
      */
     public function setToken($token)
     {
@@ -249,7 +249,7 @@ abstract class AbstractToken implements OAuthToken
      * Parse a HTTP response body and collect returned parameters
      * as raw url decoded key-value pairs in an associative array.
      *
-     * @param  \Zend\Http\Response $response
+     * @param  \Zend2\Http\Response $response
      * @return array
      */
     protected function _parseParameters(HTTPResponse $response)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,41 +12,41 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Version
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Version
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend;
+namespace Zend2;
 
-use Zend\Json\Json;
+use Zend2\Json\Json;
 
 /**
- * Class to store and retrieve the version of Zend Framework.
+ * Class to store and retrieve the version of Zend2 Framework.
  *
- * @category   Zend
- * @package    Zend_Version
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Version
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 final class Version
 {
     /**
-     * Zend Framework version identification - see compareVersion()
+     * Zend2 Framework version identification - see compareVersion()
      */
     const VERSION = '2.0.0beta3';
 
     /**
-     * The latest stable version Zend Framework available
+     * The latest stable version Zend2 Framework available
      *
      * @var string
      */
     protected static $latestVersion;
 
     /**
-     * Compare the specified Zend Framework version string $version
-     * with the current Zend_Version::VERSION of Zend Framework.
+     * Compare the specified Zend2 Framework version string $version
+     * with the current Zend2_Version::VERSION of Zend2 Framework.
      *
      * @param  string  $version  A version string (e.g. "0.7.1").
      * @return int           -1 if the $version is older,
@@ -96,7 +96,7 @@ final class Version
     }
 
     /**
-     * Returns true if the running version of Zend Framework is
+     * Returns true if the running version of Zend2 Framework is
      * the latest (or newer??) than the latest tag on GitHub,
      * which is returned by static::getLatest(). 
      * 

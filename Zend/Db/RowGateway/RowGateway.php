@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Db
+ * @category   Zend2
+ * @package    Zend2_Db
  * @subpackage RowGateway
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Db\RowGateway;
+namespace Zend2\Db\RowGateway;
 
-use Zend\Db\Adapter\Adapter,
-    Zend\Db\ResultSet\Row,
-    Zend\Db\ResultSet\RowObjectInterface,
-    Zend\Db\TableGateway\TableGateway;
+use Zend2\Db\Adapter\Adapter,
+    Zend2\Db\ResultSet\Row,
+    Zend2\Db\ResultSet\RowObjectInterface,
+    Zend2\Db\TableGateway\TableGateway;
 
 /**
- * @category   Zend
- * @package    Zend_Db
+ * @category   Zend2
+ * @package    Zend2_Db
  * @subpackage RowGateway
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class RowGateway implements RowGatewayInterface, RowObjectInterface

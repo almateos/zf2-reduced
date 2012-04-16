@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Loader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Loader
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 
-namespace Zend\Loader;
+namespace Zend2\Loader;
 
 require_once __DIR__ . '/SplAutoloader.php';
 
-if (class_exists('Zend\Loader\AutoloaderFactory')) return;
+if (class_exists('Zend2\Loader\AutoloaderFactory')) return;
 
 /**
- * @category   Zend
- * @package    Zend_Loader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Loader
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AutoloaderFactory
 {
-    const STANDARD_AUTOLOADER = 'Zend\Loader\StandardAutoloader';
+    const STANDARD_AUTOLOADER = 'Zend2\Loader\StandardAutoloader';
 
     /**
      * @var array All autoloaders registered using the factory
@@ -63,10 +63,10 @@ abstract class AutoloaderFactory
      * {@link getRegisteredAutoloaders()}.
      *
      * Note that the class names must be resolvable on the include_path or via
-     * the Zend library, using PSR-0 rules (unless the class has already been
+     * the Zend2 library, using PSR-0 rules (unless the class has already been
      * loaded).
      *
-     * @param  array|Traversable $options (optional) options to use. Defaults to Zend\Loader\StandardAutoloader
+     * @param  array|Traversable $options (optional) options to use. Defaults to Zend2\Loader\StandardAutoloader
      * @return void
      * @throws Exception\InvalidArgumentException for invalid options
      * @throws Exception\InvalidArgumentException for unloadable autoloader classes
@@ -105,10 +105,10 @@ abstract class AutoloaderFactory
                 // unfortunately is_subclass_of is broken on some 5.3 versions
                 // additionally instanceof is also broken for this use case
                 if (version_compare(PHP_VERSION, '5.3.7', '>=')) {
-                    if (!is_subclass_of($class, 'Zend\Loader\SplAutoloader')) {
+                    if (!is_subclass_of($class, 'Zend2\Loader\SplAutoloader')) {
                         require_once 'Exception/InvalidArgumentException.php';
                         throw new Exception\InvalidArgumentException(
-                            sprintf('Autoloader class %s must implement Zend\\Loader\\SplAutoloader', $class)
+                            sprintf('Autoloader class %s must implement Zend2\\Loader\\SplAutoloader', $class)
                         );
                     }
                 }
@@ -191,7 +191,7 @@ abstract class AutoloaderFactory
      *
      * Used to attempt to resolve autoloader classes, using the
      * StandardAutoloader. The instance is marked as a fallback autoloader, to
-     * allow resolving autoloaders not under the "Zend" namespace.
+     * allow resolving autoloaders not under the "Zend2" namespace.
      *
      * @return SplAutoloader
      */

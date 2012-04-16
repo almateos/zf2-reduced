@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Zend_Server_Method
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @subpackage Zend2_Server_Method
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Server\Method;
+namespace Zend2\Server\Method;
 
 /**
  * Method prototype metadata
  *
- * @uses       \Zend\Server\Method\Parameter
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Zend_Server_Method
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Server\Method\Parameter
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @subpackage Zend2_Server_Method
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Prototype
@@ -65,7 +65,7 @@ class Prototype
      * Set return value
      *
      * @param  string $returnType
-     * @return \Zend\Server\Method\Prototype
+     * @return \Zend2\Server\Method\Prototype
      */
     public function setReturnType($returnType)
     {
@@ -87,7 +87,7 @@ class Prototype
      * Add a parameter
      *
      * @param  string $parameter
-     * @return \Zend\Server\Method\Prototype
+     * @return \Zend2\Server\Method\Prototype
      */
     public function addParameter($parameter)
     {
@@ -109,7 +109,7 @@ class Prototype
      * Add parameters
      *
      * @param  array $parameter
-     * @return \Zend\Server\Method\Prototype
+     * @return \Zend2\Server\Method\Prototype
      */
     public function addParameters(array $parameters)
     {
@@ -123,7 +123,7 @@ class Prototype
      * Set parameters
      *
      * @param  array $parameters
-     * @return \Zend\Server\Method\Prototype
+     * @return \Zend2\Server\Method\Prototype
      */
     public function setParameters(array $parameters)
     {
@@ -161,7 +161,7 @@ class Prototype
      * Retrieve a single parameter by name or index
      *
      * @param  string|int $index
-     * @return null|\Zend\Server\Method\Parameter
+     * @return null|\Zend2\Server\Method\Parameter
      */
     public function getParameter($index)
     {
@@ -181,7 +181,7 @@ class Prototype
      * Set object state from array
      *
      * @param  array $options
-     * @return \Zend\Server\Method\Prototype
+     * @return \Zend2\Server\Method\Prototype
      */
     public function setOptions(array $options)
     {

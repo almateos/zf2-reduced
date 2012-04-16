@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Amf
+ * @category   Zend2
+ * @package    Zend2_Amf
  * @subpackage Parse_Amf3
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Amf\Parser\Amf3;
-use Zend\Amf\Parser\AbstractDeserializer,
-    Zend\Amf,
-    Zend\Amf\Parse;
+namespace Zend2\Amf\Parser\Amf3;
+use Zend2\Amf\Parser\AbstractDeserializer,
+    Zend2\Amf,
+    Zend2\Amf\Parse;
 
 /**
  * Read an AMF3 input stream and convert it into PHP data types.
@@ -30,14 +30,14 @@ use Zend\Amf\Parser\AbstractDeserializer,
  * @todo       readObject to handle Typed Objects
  * @todo       readXMLStrimg to be implemented.
  * @todo       Class could be implemented as Factory Class with each data type it's own class.
- * @uses       Zend\Amf\Constants
- * @uses       Zend\Amf\Exception
- * @uses       Zend\Amf\Parser\Deserializer
- * @uses       Zend\Amf\Parser\TypeLoader
- * @uses       Zend\Date\Date
- * @package    Zend_Amf
+ * @uses       Zend2\Amf\Constants
+ * @uses       Zend2\Amf\Exception
+ * @uses       Zend2\Amf\Parser\Deserializer
+ * @uses       Zend2\Amf\Parser\TypeLoader
+ * @uses       Zend2\Date\Date
+ * @package    Zend2_Amf
  * @subpackage Parse_Amf3
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Deserializer extends AbstractDeserializer
@@ -75,7 +75,7 @@ class Deserializer extends AbstractDeserializer
      *
      * @param  integer $typeMarker
      * @return mixed Whatever the corresponding PHP data type is
-     * @throws Zend\Amf\Exception for unidentified marker type
+     * @throws Zend2\Amf\Exception for unidentified marker type
      */
     public function readTypeMarker($typeMarker = null)
     {
@@ -209,7 +209,7 @@ class Deserializer extends AbstractDeserializer
      *
      * - date = 0x08 integer-data [ number-data ]
      *
-     * @return \Zend\Date\Date
+     * @return \Zend2\Date\Date
      */
     public function readDate()
     {
@@ -224,7 +224,7 @@ class Deserializer extends AbstractDeserializer
 
         $timestamp = floor($this->_stream->readDouble() / 1000);
 
-        $dateTime  = new \Zend\Date\Date((int) $timestamp);
+        $dateTime  = new \Zend2\Date\Date((int) $timestamp);
         $this->_referenceObjects[] = $dateTime;
         return $dateTime;
     }
@@ -271,7 +271,7 @@ class Deserializer extends AbstractDeserializer
     /**
      * Read an object from the AMF stream and convert it into a PHP object
      *
-     * @todo   Rather than using an array of traitsInfo create Zend_Amf_Value_TraitsInfo
+     * @todo   Rather than using an array of traitsInfo create Zend2_Amf_Value_TraitsInfo
      * @return object|array
      */
     public function readObject()
@@ -302,7 +302,7 @@ class Deserializer extends AbstractDeserializer
                 $propertyNames = $this->_referenceDefinitions[$ref]['propertyNames'];
             } else {
                 // The class was not in the reference tables. Start reading rawdata to build traits.
-                // Create a traits table. Zend_Amf_Value_TraitsInfo would be ideal
+                // Create a traits table. Zend2_Amf_Value_TraitsInfo would be ideal
                 $className     = $this->readString();
                 $encoding      = $traitsInfo & 0x03;
                 $propertyNames = array();

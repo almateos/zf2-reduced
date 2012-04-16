@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\GApps\Extension;
+namespace Zend2\GData\GApps\Extension;
 
 /**
  * Represents the apps:quota element used by the Apps data API. This is
  * used to indicate the amount of storage space available to a user. Quotas
  * may not be able to be set, depending on the domain used. This class
- * is usually contained within an instance of Zend_Gdata_GApps_UserEntry.
+ * is usually contained within an instance of Zend2_Gdata_GApps_UserEntry.
  *
- * @uses       \Zend\GData\Extension
- * @uses       \Zend\GData\GApps
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Extension
+ * @uses       \Zend2\GData\GApps
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Quota extends \Zend\GData\Extension
+class Quota extends \Zend2\GData\Extension
 {
 
     protected $_rootNamespace = 'apps';
@@ -49,13 +49,13 @@ class Quota extends \Zend\GData\Extension
     protected $_limit = null;
 
     /**
-     * Constructs a new Zend_Gdata_GApps_Extension_Quota object.
+     * Constructs a new Zend2_Gdata_GApps_Extension_Quota object.
      *
      * @param string $limit (optional) The limit, in bytes, for this quota.
      */
     public function __construct($limit = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\GApps::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\GApps::$namespaces);
         parent::__construct();
         $this->_limit = $limit;
     }
@@ -114,7 +114,7 @@ class Quota extends \Zend\GData\Extension
      * the associated user.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\GApps\Extension\Quota Provides a fluent interface.
+     * @return \Zend2\GData\GApps\Extension\Quota Provides a fluent interface.
      */
     public function setLimit($value)
     {

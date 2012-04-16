@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Filter;
+namespace Zend2\Filter;
 
-use Zend\Config\Config,
-    Zend\Locale\Locale as ZendLocale,
-    Zend\Registry;
+use Zend2\Config\Config,
+    Zend2\Locale\Locale as Zend2Locale,
+    Zend2\Registry;
 
 /**
- * @uses       Zend\Filter\AbstractFilter
- * @uses       Zend\Locale\Locale
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Filter\AbstractFilter
+ * @uses       Zend2\Locale\Locale
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Alnum extends AbstractFilter
@@ -51,7 +51,7 @@ class Alnum extends AbstractFilter
     /**
      * Locale to use
      *
-     * @var \Zend\Locale\Locale object
+     * @var \Zend2\Locale\Locale object
      */
     protected $locale;
 
@@ -108,7 +108,7 @@ class Alnum extends AbstractFilter
      * Sets the allowWhiteSpace option
      *
      * @param boolean $allowWhiteSpace
-     * @return \Zend\Filter\Alnum Provides a fluent interface
+     * @return \Zend2\Filter\Alnum Provides a fluent interface
      */
     public function setAllowWhiteSpace($allowWhiteSpace)
     {
@@ -130,16 +130,16 @@ class Alnum extends AbstractFilter
      * Sets the locale option
      *
      * @param boolean $locale
-     * @return \Zend\Filter\Alnum Provides a fluent interface
+     * @return \Zend2\Filter\Alnum Provides a fluent interface
      */
     public function setLocale($locale = null)
     {
-        $this->locale = ZendLocale::findLocale($locale);
+        $this->locale = Zend2Locale::findLocale($locale);
         return $this;
     }
 
     /**
-     * Defined by Zend_Filter_Interface
+     * Defined by Zend2_Filter_Interface
      *
      * Returns the string $value, removing all but alphabetic and digit characters
      *

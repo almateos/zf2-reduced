@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search\Query\Preprocessing;
+namespace Zend2\Search\Lucene\Search\Query\Preprocessing;
 
-use Zend\Search\Lucene,
-	Zend\Search\Lucene\Search\Query,
-	Zend\Search\Lucene\Exception\UnsupportedMethodCallException;
+use Zend2\Search\Lucene,
+	Zend2\Search\Lucene\Search\Query,
+	Zend2\Search\Lucene\Exception\UnsupportedMethodCallException;
 
 /**
  * It's an internal abstract class intended to finalize ase a query processing after query parsing.
  * This type of query is not actually involved into query execution.
  *
- * @uses       \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
- * @uses       \Zend\Search\Lucene\Search\Query\AbstractQuery
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
+ * @uses       \Zend2\Search\Lucene\Search\Query\AbstractQuery
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
  * @internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractPreprocessing extends Query\AbstractQuery
@@ -46,7 +46,7 @@ abstract class AbstractPreprocessing extends Query\AbstractQuery
      * Matched terms list.
      * It's filled during rewrite operation and may be used for search result highlighting
      *
-     * Array of Zend_Search_Lucene_Index_Term objects
+     * Array of Zend2_Search_Lucene_Index_Term objects
      *
      * @var array
      */
@@ -55,9 +55,9 @@ abstract class AbstractPreprocessing extends Query\AbstractQuery
     /**
      * Optimize query in the context of specified index
      *
-     * @param \Zend\Search\Lucene\SearchIndex $index
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @param \Zend2\Search\Lucene\SearchIndex $index
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     public function optimize(Lucene\SearchIndex $index)
     {
@@ -67,9 +67,9 @@ abstract class AbstractPreprocessing extends Query\AbstractQuery
     /**
      * Constructs an appropriate Weight implementation for this query.
      *
-     * @param \Zend\Search\Lucene\SearchIndex $reader
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
-     * @return \Zend\Search\Lucene\Search\Weight\Weight
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @return \Zend2\Search\Lucene\Search\Weight\Weight
      */
     public function createWeight(Lucene\SearchIndex $reader)
     {
@@ -80,9 +80,9 @@ abstract class AbstractPreprocessing extends Query\AbstractQuery
      * Execute query in context of index reader
      * It also initializes necessary internal structures
      *
-     * @param \Zend\Search\Lucene\SearchIndex $reader
-     * @param \Zend\Search\Lucene\Index\DocsFilter|null $docsFilter
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
+     * @param \Zend2\Search\Lucene\Index\DocsFilter|null $docsFilter
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
      */
     public function execute(Lucene\SearchIndex $reader, $docsFilter = null)
     {
@@ -94,7 +94,7 @@ abstract class AbstractPreprocessing extends Query\AbstractQuery
      *
      * It's an array with document ids as keys (performance considerations)
      *
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
      * @return array
      */
     public function matchedDocs()
@@ -106,8 +106,8 @@ abstract class AbstractPreprocessing extends Query\AbstractQuery
      * Score specified document
      *
      * @param integer $docId
-     * @param \Zend\Search\Lucene\SearchIndex $reader
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
      * @return float
      */
     public function score($docId, Lucene\SearchIndex $reader)
@@ -118,7 +118,7 @@ abstract class AbstractPreprocessing extends Query\AbstractQuery
     /**
      * Return query terms
      *
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
      * @return array
      */
     public function getQueryTerms()

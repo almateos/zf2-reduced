@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Analysis
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Analysis\Analyzer;
+namespace Zend2\Search\Lucene\Analysis\Analyzer;
 
-use Zend\Search\Lucene\Analysis\Analyzer as LuceneAnalyzer;
+use Zend2\Search\Lucene\Analysis\Analyzer as LuceneAnalyzer;
 
 /**
  * General analyzer implementation.
  *
- * @uses       \Zend\Search\Lucene\Analysis\Analyzer
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Analysis\Analyzer
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Analysis
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractAnalyzer implements LuceneAnalyzer
@@ -51,9 +51,9 @@ abstract class AbstractAnalyzer implements LuceneAnalyzer
 
     /**
      * Tokenize text to a terms
-     * Returns array of \Zend\Search\Lucene\Analysis\Token objects
+     * Returns array of \Zend2\Search\Lucene\Analysis\Token objects
      *
-     * Tokens are returned in UTF-8 (internal Zend_Search_Lucene encoding)
+     * Tokens are returned in UTF-8 (internal Zend2_Search_Lucene encoding)
      *
      * @param string $data
      * @return array

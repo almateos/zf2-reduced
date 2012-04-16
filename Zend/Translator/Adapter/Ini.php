@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Translator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Translator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Translator\Adapter;
+namespace Zend2\Translator\Adapter;
 
-use Zend\Translator\Adapter\AbstractAdapter,
-    Zend\Translator\Exception\InvalidArgumentException;
+use Zend2\Translator\Adapter\AbstractAdapter,
+    Zend2\Translator\Exception\InvalidArgumentException;
 
 /**
- * @uses       \Zend\Locale\Locale
- * @uses       \Zend\Translator\Adapter\AbstractAdapter
- * @uses       \Zend\Translator\Exception\InvalidArgumentException
- * @category   Zend
- * @package    Zend_Translator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Locale\Locale
+ * @uses       \Zend2\Translator\Adapter\AbstractAdapter
+ * @uses       \Zend2\Translator\Exception\InvalidArgumentException
+ * @category   Zend2
+ * @package    Zend2_Translator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Ini extends AbstractAdapter
@@ -39,9 +39,9 @@ class Ini extends AbstractAdapter
      *
      * @param  string|array  $data
      * @param  string        $locale  Locale/Language to add data for, identical with locale identifier,
-     *                                see Zend_Locale for more information
+     *                                see Zend2_Locale for more information
      * @param  array         $options OPTIONAL Options to use
-     * @throws \Zend\Translator\Exception\InvalidArgumentException when Ini file not found
+     * @throws \Zend2\Translator\Exception\InvalidArgumentException when Ini file not found
      * @return array
      */
     protected function _loadTranslationData($data, $locale, array $options = array())

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Index
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Index\SegmentWriter;
-use Zend\Search\Lucene\Storage\Directory;
-use Zend\Search\Lucene\Index as LuceneIndex;
+namespace Zend2\Search\Lucene\Index\SegmentWriter;
+use Zend2\Search\Lucene\Storage\Directory;
+use Zend2\Search\Lucene\Index as LuceneIndex;
 
 /**
- * @uses       \Zend\Search\Lucene\Index\SegmentInfo
- * @uses       \Zend\Search\Lucene\Index\SegmentWriter\AbstractSegmentWriter
- * @uses       \Zend\Search\Lucene\Storage\Directory
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Index\SegmentInfo
+ * @uses       \Zend2\Search\Lucene\Index\SegmentWriter\AbstractSegmentWriter
+ * @uses       \Zend2\Search\Lucene\Storage\Directory
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Index
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class StreamWriter extends AbstractSegmentWriter
@@ -38,7 +38,7 @@ class StreamWriter extends AbstractSegmentWriter
     /**
      * Object constructor.
      *
-     * @param \Zend\Search\Lucene\Storage\Directory $directory
+     * @param \Zend2\Search\Lucene\Storage\Directory $directory
      * @param string $name
      */
     public function __construct(Directory $directory, $name)
@@ -71,7 +71,7 @@ class StreamWriter extends AbstractSegmentWriter
     /**
      * Close segment, write it to disk and return segment info
      *
-     * @return \Zend\Search\Lucene\Index\SegmentInfo
+     * @return \Zend2\Search\Lucene\Index\SegmentInfo
      */
     public function close()
     {

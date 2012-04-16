@@ -1,7 +1,7 @@
 <?php
-namespace Zend\Di\Display;
+namespace Zend2\Di\Display;
 
-use Zend\Di\Di;
+use Zend2\Di\Di;
 
 class Console
 {

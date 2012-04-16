@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Http_Client
- * @uses       Zend_Service_WindowsAzure_Credentials_AbstractCredentials
- * @uses       Zend_Service_WindowsAzure_Storage
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2_Http_Client
+ * @uses       Zend2_Service_WindowsAzure_Credentials_AbstractCredentials
+ * @uses       Zend2_Service_WindowsAzure_Storage
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */ 
-class Zend_Service_WindowsAzure_Credentials_SharedKey
-    extends Zend_Service_WindowsAzure_Credentials_AbstractCredentials
+class Zend2_Service_WindowsAzure_Credentials_SharedKey
+    extends Zend2_Service_WindowsAzure_Credentials_AbstractCredentials
 {
     /**
 	 * Sign request URL with credentials
@@ -40,8 +40,8 @@ class Zend_Service_WindowsAzure_Credentials_SharedKey
 	 */
 	public function signRequestUrl(
 		$requestUrl = '',
-		$resourceType = Zend_Service_WindowsAzure_Storage::RESOURCE_UNKNOWN,
-		$requiredPermission = Zend_Service_WindowsAzure_Credentials_AbstractCredentials::PERMISSION_READ
+		$resourceType = Zend2_Service_WindowsAzure_Storage::RESOURCE_UNKNOWN,
+		$requiredPermission = Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::PERMISSION_READ
 	) {
 	    return $requestUrl;
 	}
@@ -59,13 +59,13 @@ class Zend_Service_WindowsAzure_Credentials_SharedKey
 	 * @return array Array of headers
 	 */
 	public function signRequestHeaders(
-		$httpVerb = Zend_Http_Client::GET,
+		$httpVerb = Zend2_Http_Client::GET,
 		$path = '/',
 		$queryString = '',
 		$headers = null,
 		$forTableStorage = false,
-		$resourceType = Zend_Service_WindowsAzure_Storage::RESOURCE_UNKNOWN,
-		$requiredPermission = Zend_Service_WindowsAzure_Credentials_AbstractCredentials::PERMISSION_READ
+		$resourceType = Zend2_Service_WindowsAzure_Storage::RESOURCE_UNKNOWN,
+		$requiredPermission = Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::PERMISSION_READ
 	) {
 		// http://github.com/sriramk/winazurestorage/blob/214010a2f8931bac9c96dfeb337d56fe084ca63b/winazurestorage.py
 
@@ -82,11 +82,11 @@ class Zend_Service_WindowsAzure_Credentials_SharedKey
 		
 		// Request date
 		$requestDate = '';
-		if (isset($headers[Zend_Service_WindowsAzure_Credentials_AbstractCredentials::PREFIX_STORAGE_HEADER . 'date'])) {
-		    $requestDate = $headers[Zend_Service_WindowsAzure_Credentials_AbstractCredentials::PREFIX_STORAGE_HEADER . 'date'];
+		if (isset($headers[Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::PREFIX_STORAGE_HEADER . 'date'])) {
+		    $requestDate = $headers[Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::PREFIX_STORAGE_HEADER . 'date'];
 		} else {
 		    $requestDate = gmdate('D, d M Y H:i:s', time()) . ' GMT'; // RFC 1123
-		    $canonicalizedHeaders[] = Zend_Service_WindowsAzure_Credentials_AbstractCredentials::PREFIX_STORAGE_HEADER . 'date:' . $requestDate;
+		    $canonicalizedHeaders[] = Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::PREFIX_STORAGE_HEADER . 'date:' . $requestDate;
 		}
 		
 		// Build canonicalized headers
@@ -97,7 +97,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedKey
 				}
 
 				$headers[$header] = $value;
-				if (substr($header, 0, strlen(Zend_Service_WindowsAzure_Credentials_AbstractCredentials::PREFIX_STORAGE_HEADER)) == Zend_Service_WindowsAzure_Credentials_AbstractCredentials::PREFIX_STORAGE_HEADER) {
+				if (substr($header, 0, strlen(Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::PREFIX_STORAGE_HEADER)) == Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::PREFIX_STORAGE_HEADER) {
 				    $canonicalizedHeaders[] = strtolower($header) . ':' . $value;
 				}
 			}
@@ -132,7 +132,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedKey
     	$signString     = base64_encode(hash_hmac('sha256', $stringToSign, $this->_accountKey, true));
 
     	// Sign request
-    	$headers[Zend_Service_WindowsAzure_Credentials_AbstractCredentials::PREFIX_STORAGE_HEADER . 'date'] = $requestDate;
+    	$headers[Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::PREFIX_STORAGE_HEADER . 'date'] = $requestDate;
     	$headers['Authorization'] = 'SharedKey ' . $this->_accountName . ':' . $signString;
     	
     	// Return headers

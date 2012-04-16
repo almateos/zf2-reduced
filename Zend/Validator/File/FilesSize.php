@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator\File;
+namespace Zend2\Validator\File;
 
-use Zend\Loader;
+use Zend2\Loader;
 
 /**
  * Validator for the size of all files which will be validated in sum
  *
- * @uses      \Zend\Loader
- * @uses      \Zend\Validator\File\Size
- * @uses      \Zend\Validator\Exception
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Loader
+ * @uses      \Zend2\Validator\File\Size
+ * @uses      \Zend2\Validator\Exception
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class FilesSize extends Size
@@ -64,7 +64,7 @@ class FilesSize extends Size
      * Min limits the used diskspace for all files, when used with max=null it is the maximum filesize
      * It also accepts an array with the keys 'min' and 'max'
      *
-     * @param  integer|array|\Zend\Config\Config $options Options for this validator
+     * @param  integer|array|\Zend2\Config\Config $options Options for this validator
      * @return void
      */
     public function __construct($options = null)
@@ -72,12 +72,12 @@ class FilesSize extends Size
         $this->_files = array();
         $this->_setSize(0);
 
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         } elseif (is_scalar($options)) {
             $options = array('max' => $options);
         } elseif (!is_array($options)) {
-            throw new \Zend\Validator\Exception\InvalidArgumentException('Invalid options to validator provided');
+            throw new \Zend2\Validator\Exception\InvalidArgumentException('Invalid options to validator provided');
         }
 
         if (1 < func_num_args()) {
@@ -97,7 +97,7 @@ class FilesSize extends Size
      * not bigger than max (when max is not null).
      *
      * @param  string|array $value Real file to check for size
-     * @param  array        $file  File data from \Zend\File\Transfer\Transfer
+     * @param  array        $file  File data from \Zend2\File\Transfer\Transfer
      * @return boolean
      */
     public function isValid($value, $file = null)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\OAuth\Token;
+namespace Zend2\OAuth\Token;
 
-use Zend\OAuth\Config,
-    Zend\OAuth,
-    Zend\Uri;
+use Zend2\OAuth\Config,
+    Zend2\OAuth,
+    Zend2\Uri;
 
 /**
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Access extends AbstractToken
@@ -36,7 +36,7 @@ class Access extends AbstractToken
      * Cast to HTTP header
      * 
      * @param  string $url 
-     * @param  \Zend\OAuth\Config $config 
+     * @param  \Zend2\OAuth\Config $config 
      * @param  null|array $customParams 
      * @param  null|string $realm 
      * @return string
@@ -60,7 +60,7 @@ class Access extends AbstractToken
      * Cast to HTTP query string
      * 
      * @param  mixed $url 
-     * @param  Zend\OAuth\Config $config 
+     * @param  Zend2\OAuth\Config $config 
      * @param  null|array $params 
      * @return string
      */
@@ -83,9 +83,9 @@ class Access extends AbstractToken
      * 
      * @param  array $oauthOptions 
      * @param  null|string $uri 
-     * @param  null|array|Zend\Config\Config $config 
+     * @param  null|array|Zend2\Config\Config $config 
      * @param  bool $excludeCustomParamsFromHeader 
-     * @return Zend\OAuth\Client
+     * @return Zend2\OAuth\Client
      */
     public function getHttpClient(array $oauthOptions, $uri = null, $config = null, $excludeCustomParamsFromHeader = true)
     {

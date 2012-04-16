@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Filter\Encrypt;
+namespace Zend2\Filter\Encrypt;
 
-use Zend\Filter\Exception,
-    Zend\Filter\Compress,
-    Zend\Filter\Decompress;
+use Zend2\Filter\Exception,
+    Zend2\Filter\Compress,
+    Zend2\Filter\Decompress;
 
 /**
  * Encryption adapter for openssl
  *
- * @uses       \Zend\Filter\Encrypt\EncryptionAlgorithm
- * @uses       \Zend\Filter\Exception
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Filter\Encrypt\EncryptionAlgorithm
+ * @uses       \Zend2\Filter\Exception
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Openssl implements EncryptionAlgorithm
@@ -89,7 +89,7 @@ class Openssl implements EncryptionAlgorithm
             throw new Exception\ExtensionNotLoadedException('This filter needs the openssl extension');
         }
 
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         }
 
@@ -119,7 +119,7 @@ class Openssl implements EncryptionAlgorithm
      * Sets the encryption keys
      *
      * @param  string|array $keys Key with type association
-     * @return \Zend\Filter\Encrypt\Openssl
+     * @return \Zend2\Filter\Encrypt\Openssl
      */
     protected function _setKeys($keys)
     {
@@ -182,7 +182,7 @@ class Openssl implements EncryptionAlgorithm
      * Sets public keys
      *
      * @param  string|array $key Public keys
-     * @return \Zend\Filter\Encrypt\Openssl
+     * @return \Zend2\Filter\Encrypt\Openssl
      */
     public function setPublicKey($key)
     {
@@ -216,7 +216,7 @@ class Openssl implements EncryptionAlgorithm
      *
      * @param  string $key Private key
      * @param  string $passphrase
-     * @return \Zend\Filter\Encrypt\Openssl
+     * @return \Zend2\Filter\Encrypt\Openssl
      */
     public function setPrivateKey($key, $passphrase = null)
     {
@@ -253,7 +253,7 @@ class Openssl implements EncryptionAlgorithm
      * Sets envelope keys
      *
      * @param  string|array $options Envelope keys
-     * @return \Zend\Filter\Encrypt\Openssl
+     * @return \Zend2\Filter\Encrypt\Openssl
      */
     public function setEnvelopeKey($key)
     {
@@ -285,7 +285,7 @@ class Openssl implements EncryptionAlgorithm
      * Sets a new passphrase
      *
      * @param string $passphrase
-     * @return \Zend\Filter\Encrypt\Openssl
+     * @return \Zend2\Filter\Encrypt\Openssl
      */
     public function setPassphrase($passphrase)
     {
@@ -307,7 +307,7 @@ class Openssl implements EncryptionAlgorithm
      * Sets a internal compression for values to encrypt
      *
      * @param string|array $compression
-     * @return \Zend\Filter\Encrypt\Openssl
+     * @return \Zend2\Filter\Encrypt\Openssl
      */
     public function setCompression($compression)
     {
@@ -333,7 +333,7 @@ class Openssl implements EncryptionAlgorithm
      * Sets if the envelope keys should be included in the encrypted value
      *
      * @param boolean $package
-     * @return \Zend\Filter\Encrypt\Openssl
+     * @return \Zend2\Filter\Encrypt\Openssl
      */
     public function setPackage($package)
     {
@@ -347,7 +347,7 @@ class Openssl implements EncryptionAlgorithm
      *
      * @param  string $value Content to encrypt
      * @return string The encrypted content
-     * @throws \Zend\Filter\Exception
+     * @throws \Zend2\Filter\Exception
      */
     public function encrypt($value)
     {
@@ -366,7 +366,7 @@ class Openssl implements EncryptionAlgorithm
             if ($this->_package) {
                 $details = openssl_pkey_get_details($keys[$key]);
                 if ($details === false) {
-                    $details = array('key' => 'ZendFramework');
+                    $details = array('key' => 'Zend2Framework');
                 }
 
                 ++$count;
@@ -405,13 +405,13 @@ class Openssl implements EncryptionAlgorithm
     }
 
     /**
-     * Defined by Zend_Filter_Interface
+     * Defined by Zend2_Filter_Interface
      *
      * Decrypts $value with the defined settings
      *
      * @param  string $value Content to decrypt
      * @return string The decrypted content
-     * @throws \Zend\Filter\Exception
+     * @throws \Zend2\Filter\Exception
      */
     public function decrypt($value)
     {
@@ -435,7 +435,7 @@ class Openssl implements EncryptionAlgorithm
             if ($details !== false) {
                 $fingerprint = md5($details['key']);
             } else {
-                $fingerprint = md5("ZendFramework");
+                $fingerprint = md5("Zend2Framework");
             }
 
             $count = unpack('ncount', $value);

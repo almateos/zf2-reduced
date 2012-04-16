@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Annotation
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Annotation
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Annotation;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
-use Zend\Pdf\InternalType;
+namespace Zend2\Pdf\Annotation;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
+use Zend2\Pdf\InternalType;
 
 /**
  * A markup annotation
  *
- * @uses       \Zend\Pdf\Annotation\AbstractAnnotation
- * @uses       \Zend\Pdf\InternalType\AbstractTypeObject
- * @uses       \Zend\Pdf\InternalType\ArrayObject
- * @uses       \Zend\Pdf\InternalType\DictionaryObject
- * @uses       \Zend\Pdf\InternalType\NameObject
- * @uses       \Zend\Pdf\InternalType\NumericObject
- * @uses       \Zend\Pdf\InternalType\StringObject
- * @uses       \Zend\Pdf\Exception
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Annotation
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Annotation\AbstractAnnotation
+ * @uses       \Zend2\Pdf\InternalType\AbstractTypeObject
+ * @uses       \Zend2\Pdf\InternalType\ArrayObject
+ * @uses       \Zend2\Pdf\InternalType\DictionaryObject
+ * @uses       \Zend2\Pdf\InternalType\NameObject
+ * @uses       \Zend2\Pdf\InternalType\NumericObject
+ * @uses       \Zend2\Pdf\InternalType\StringObject
+ * @uses       \Zend2\Pdf\Exception
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Annotation
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Markup extends AbstractAnnotation
@@ -53,7 +53,7 @@ class Markup extends AbstractAnnotation
     /**
      * Annotation object constructor
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct(InternalType\AbstractTypeObject $annotationDictionary)
     {
@@ -82,10 +82,10 @@ class Markup extends AbstractAnnotation
      * they display a pop-up window containing the text of the associated note.
      *
      * $subType parameter may contain
-     *     \Zend\Pdf\Annotation\Markup::SUBTYPE_HIGHLIGHT
-     *     \Zend\Pdf\Annotation\Markup::SUBTYPE_UNDERLINE
-     *     \Zend\Pdf\Annotation\Markup::SUBTYPE_SQUIGGLY
-     *     \Zend\Pdf\Annotation\Markup::SUBTYPE_STRIKEOUT
+     *     \Zend2\Pdf\Annotation\Markup::SUBTYPE_HIGHLIGHT
+     *     \Zend2\Pdf\Annotation\Markup::SUBTYPE_UNDERLINE
+     *     \Zend2\Pdf\Annotation\Markup::SUBTYPE_SQUIGGLY
+     *     \Zend2\Pdf\Annotation\Markup::SUBTYPE_STRIKEOUT
      * for for a highlight, underline, squiggly-underline, or strikeout annotation,
      * respectively.
      *
@@ -106,8 +106,8 @@ class Markup extends AbstractAnnotation
      * @param string $text
      * @param string $subType
      * @param array $quadPoints  [x1 y1 x2 y2 x3 y3 x4 y4]
-     * @return \Zend\Pdf\Annotation\Markup
-     * @throws \Zend\Pdf\Exception
+     * @return \Zend2\Pdf\Annotation\Markup
+     * @throws \Zend2\Pdf\Exception
      */
     public static function create($x1, $y1, $x2, $y2, $text, $subType, $quadPoints)
     {

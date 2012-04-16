@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Paginator\ScrollingStyle;
+namespace Zend2\Paginator\ScrollingStyle;
 
 /**
  * A Google-like scrolling style.  Incrementally expands the range to about
  * twice the given page range, then behaves like a slider.  See the example
  * link.
  *
- * @uses       \Zend\Paginator\ScrollingStyle\Sliding
- * @link       http://www.google.com/search?q=Zend+Framework
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Paginator\ScrollingStyle\Sliding
+ * @link       http://www.google.com/search?q=Zend2+Framework
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Elastic extends Sliding
@@ -37,11 +37,11 @@ class Elastic extends Sliding
     /**
      * Returns an array of "local" pages given a page number and range.
      *
-     * @param  \Zend\Paginator\Paginator $paginator
+     * @param  \Zend2\Paginator\Paginator $paginator
      * @param  integer $pageRange Unused
      * @return array
      */
-    public function getPages(\Zend\Paginator\Paginator $paginator, $pageRange = null)
+    public function getPages(\Zend2\Paginator\Paginator $paginator, $pageRange = null)
     {
         $pageRange  = $paginator->getPageRange();
         $pageNumber = $paginator->getCurrentPageNumber();

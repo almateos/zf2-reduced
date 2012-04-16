@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail\Storage;
+namespace Zend2\Mail\Storage;
 
 use RecursiveIterator;
 
 /**
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface MailPart extends RecursiveIterator
@@ -88,7 +88,7 @@ interface MailPart extends RecursiveIterator
      * Get a header in specificed format
      *
      * Internally headers that occur more than once are saved as array, all other as string. If $format
-     * is set to string implode is used to concat the values (with Zend_Mime::LINEEND as delim).
+     * is set to string implode is used to concat the values (with Zend2_Mime::LINEEND as delim).
      *
      * @param  string $name   name of header, matches case-insensitive, but camel-case is replaced with dashes
      * @param  string $format change type of return value to 'string' or 'array'

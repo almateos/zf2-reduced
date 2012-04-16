@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Config
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Config\Processor;
+namespace Zend2\Config\Processor;
 
-use Zend\Config\Config,
-    Zend\Config\Processor,
-    Zend\Config\Exception,
+use Zend2\Config\Config,
+    Zend2\Config\Processor,
+    Zend2\Config\Exception,
     \Traversable,
     \ArrayObject;
 
 /**
- * @category   Zend
- * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Config
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Token implements Processor
@@ -66,12 +66,12 @@ class Token implements Processor
      * Token Processor walks through a Config structure and replaces all
      * occurences of tokens with supplied values.
      *
-     * @param  array|\Zend\Config\Config|ArrayObject|\Traversable   $tokens  Associative array of TOKEN => value
+     * @param  array|\Zend2\Config\Config|ArrayObject|\Traversable   $tokens  Associative array of TOKEN => value
      *                                                                      to replace it with
      * @param string $prefix
      * @param string $suffix
      * @internal param array $options
-     * @return \Zend\Config\Processor\Token
+     * @return \Zend2\Config\Processor\Token
      */
     public function __construct($tokens = array(), $prefix = '', $suffix = '')
     {
@@ -123,9 +123,9 @@ class Token implements Processor
     /**
      * Set token registry.
      *
-     * @param  array|\Zend\Config\Config|\ArrayObject|\Traversable   $tokens  Associative array of TOKEN => value
+     * @param  array|\Zend2\Config\Config|\ArrayObject|\Traversable   $tokens  Associative array of TOKEN => value
      *                                                                      to replace it with
-     * @throws \Zend\Config\Exception\InvalidArgumentException
+     * @throws \Zend2\Config\Exception\InvalidArgumentException
      */
     public function setTokens($tokens)
     {
@@ -160,7 +160,7 @@ class Token implements Processor
      *
      * @param $token
      * @param $value
-     * @throws \Zend\Config\Exception\InvalidArgumentException
+     * @throws \Zend2\Config\Exception\InvalidArgumentException
      */
     public function addToken($token, $value)
     {
@@ -178,7 +178,7 @@ class Token implements Processor
      *
      * @param $token
      * @param $value
-     * @throws \Zend\Config\Exception\InvalidArgumentException
+     * @throws \Zend2\Config\Exception\InvalidArgumentException
      */
     public function setToken($token, $value)
     {

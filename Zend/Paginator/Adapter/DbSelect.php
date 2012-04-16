@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Paginator\Adapter;
+namespace Zend2\Paginator\Adapter;
 
-use Zend\Db\Select,
-    Zend\Db,
-    Zend\Paginator\Adapter,
-    Zend\Paginator\Adapter\Exception;
+use Zend2\Db\Select,
+    Zend2\Db,
+    Zend2\Paginator\Adapter,
+    Zend2\Paginator\Adapter\Exception;
 
 /**
- * @uses       \Zend\Db\Db
- * @uses       \Zend\Db\Expr
- * @uses       \Zend\Db\Select
- * @uses       \Zend\Paginator\Adapter
- * @uses       Zend\Paginator\Adapter\Exception
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Db\Db
+ * @uses       \Zend2\Db\Expr
+ * @uses       \Zend2\Db\Select
+ * @uses       \Zend2\Paginator\Adapter
+ * @uses       Zend2\Paginator\Adapter\Exception
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DbSelect implements Adapter
@@ -48,14 +48,14 @@ class DbSelect implements Adapter
     /**
      * The COUNT query
      *
-     * @var \Zend\Db\Select
+     * @var \Zend2\Db\Select
      */
     protected $_countSelect = null;
 
     /**
      * Database query
      *
-     * @var \Zend\Db\Select
+     * @var \Zend2\Db\Select
      */
     protected $_select = null;
 
@@ -69,7 +69,7 @@ class DbSelect implements Adapter
     /**
      * Constructor.
      *
-     * @param \Zend\Db\Select $select The select query
+     * @param \Zend2\Db\Select $select The select query
      */
     public function __construct(Select $select)
     {
@@ -86,10 +86,10 @@ class DbSelect implements Adapter
      * Users are therefore encouraged to profile their queries to find
      * the solution that best meets their needs.
      *
-     * @param  \Zend\Db\Select|integer $totalRowCount Total row count integer
+     * @param  \Zend2\Db\Select|integer $totalRowCount Total row count integer
      *                                               or query
-     * @return \Zend\Paginator\Adapter\DbSelect $this
-     * @throws \Zend\Paginator\Adapter\Exception
+     * @return \Zend2\Paginator\Adapter\DbSelect $this
+     * @throws \Zend2\Paginator\Adapter\Exception
      */
     public function setRowCount($rowCount)
     {
@@ -158,7 +158,7 @@ class DbSelect implements Adapter
      * In that use-case I'm expecting problems when either GROUP BY or DISTINCT
      * has one column.
      *
-     * @return \Zend\Db\Select
+     * @return \Zend2\Db\Select
      */
     public function getCountSelect()
     {

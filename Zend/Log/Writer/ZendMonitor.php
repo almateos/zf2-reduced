@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,43 +12,43 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Log
+ * @category   Zend2
+ * @package    Zend2_Log
  * @subpackage Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Log\Writer;
+namespace Zend2\Log\Writer;
 
 /**
- * @uses       \Zend\Log\Writer\AbstractWriter
- * @category   Zend
- * @package    Zend_Log
+ * @uses       \Zend2\Log\Writer\AbstractWriter
+ * @category   Zend2
+ * @package    Zend2_Log
  * @subpackage Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class ZendMonitor extends AbstractWriter
+class Zend2Monitor extends AbstractWriter
 {
     /**
-     * Is Zend Monitor enabled?
+     * Is Zend2 Monitor enabled?
      *
      * @var boolean
      */
     protected $isEnabled = true;
 
     /**
-     * Is this for a Zend Server intance?
+     * Is this for a Zend2 Server intance?
      *
      * @var boolean
      */
-    protected $isZendServer = false;
+    protected $isZend2Server = false;
 
     /**
      * Constructor
      *
-     * @return ZendMonitor
+     * @return Zend2Monitor
      */
     public function __construct()
     {
@@ -56,14 +56,14 @@ class ZendMonitor extends AbstractWriter
             $this->isEnabled = false;
         }
         if (function_exists('zend_monitor_custom_event')) {
-            $this->isZendServer = true;
+            $this->isZend2Server = true;
         }
     }
 
     /**
      * Is logging to this writer enabled?
      *
-     * If the Zend Monitor extension is not enabled, this log writer will
+     * If the Zend2 Monitor extension is not enabled, this log writer will
      * fail silently. You can query this method to determine if the log
      * writer is enabled.
      *
@@ -102,11 +102,11 @@ class ZendMonitor extends AbstractWriter
         unset($event['priority'], $event['message']);
 
         if (!empty($event)) {
-            if ($this->isZendServer) {
-                // On Zend Server; third argument should be the event
+            if ($this->isZend2Server) {
+                // On Zend2 Server; third argument should be the event
                 zend_monitor_custom_event($priority, $message, $event);
             } else {
-                // On Zend Platform; third argument is severity -- either
+                // On Zend2 Platform; third argument is severity -- either
                 // 0 or 1 -- and fourth is optional (event)
                 // Severity is either 0 (normal) or 1 (severe); classifying
                 // notice, info, and debug as "normal", and all others as

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_Amazon
+ * @category   Zend2
+ * @package    Zend2_Service_Amazon
  * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Amazon\Ec2;
-use Zend\Service\Amazon,
-    Zend\Service\Amazon\Ec2\Exception;
+namespace Zend2\Service\Amazon\Ec2;
+use Zend2\Service\Amazon,
+    Zend2\Service\Amazon\Ec2\Exception;
 
 /**
  * An Amazon EC2 interface to create, delete and describe Ec2 KeyPairs.
  *
- * @uses       Zend\Service\Amazon\AbstractEc2
- * @uses       Zend\Service\Amazon\Ec2\Exception
- * @category   Zend
- * @package    Zend_Service_Amazon
+ * @uses       Zend2\Service\Amazon\AbstractEc2
+ * @uses       Zend2\Service\Amazon\Ec2\Exception
+ * @category   Zend2
+ * @package    Zend2_Service_Amazon
  * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Keypair extends AbstractEc2
@@ -41,7 +41,7 @@ class Keypair extends AbstractEc2
      * be used to reference this key pair when launching new instances.
      *
      * @param string $keyName           A unique name for the key pair.
-     * @throws Zend\Service\Amazon\Ec2\Exception
+     * @throws Zend2\Service\Amazon\Ec2\Exception
      * @return array
      */
     public function create($keyName)
@@ -110,7 +110,7 @@ class Keypair extends AbstractEc2
      * Deletes a key pair
      *
      * @param string $keyName           Name of the key pair to delete.
-     * @throws Zend\Service\Amazon\Ec2\Exception
+     * @throws Zend2\Service\Amazon\Ec2\Exception
      * @return boolean                  Return true or false from the deletion.
      */
     public function delete($keyName)

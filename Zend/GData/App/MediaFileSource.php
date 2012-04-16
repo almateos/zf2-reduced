@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\App;
+namespace Zend2\GData\App;
 
 /**
  * Concrete class to use a file handle as an attachment within a MediaEntry.
  *
- * @uses       \Zend\GData\App\IOException
- * @uses       \Zend\Gdata\App\MediaData
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\IOException
+ * @uses       \Zend2\Gdata\App\MediaData
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class MediaFileSource extends BaseMediaSource
@@ -49,7 +49,7 @@ class MediaFileSource extends BaseMediaSource
     protected $_contentType = null;
 
     /**
-     * Create a new \Zend\Gdata\App\MediaFileSource object.
+     * Create a new \Zend2\Gdata\App\MediaFileSource object.
      *
      * @param string $filename The name of the file to read from.
      */
@@ -62,7 +62,7 @@ class MediaFileSource extends BaseMediaSource
      * Return the MIME multipart representation of this MediaEntry.
      *
      * @return string
-     * @throws \Zend\GData\App\IOException
+     * @throws \Zend2\GData\App\IOException
      */
     public function encode()
     {
@@ -98,7 +98,7 @@ class MediaFileSource extends BaseMediaSource
      * Set the filename which is to be read.
      *
      * @param string $value The desired file handle.
-     * @return \Zend\GData\App\MediaFileSource Provides a fluent interface.
+     * @return \Zend2\GData\App\MediaFileSource Provides a fluent interface.
      */
     public function setFilename($value)
     {
@@ -120,7 +120,7 @@ class MediaFileSource extends BaseMediaSource
      * Set the content type for the file attached (example image/png)
      *
      * @param string $value The content type
-     * @return \Zend\GData\App\MediaFileSource Provides a fluent interface
+     * @return \Zend2\GData\App\MediaFileSource Provides a fluent interface
      */
     public function setContentType($value)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Http
+ * @category   Zend2
+ * @package    Zend2_Http
  * @subpackage Response
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Http\Response;
+namespace Zend2\Http\Response;
 
-use Zend\Http\Response;
+use Zend2\Http\Response;
 
 /**
- * Zend_Http_Response represents an HTTP 1.0 / 1.1 response message. It
+ * Zend2_Http_Response represents an HTTP 1.0 / 1.1 response message. It
  * includes easy access to all the response's different elemts, as well as some
  * convenience methods for parsing and validating HTTP responses.
  *
- * @uses       \Zend\Http\Response
- * @package    Zend_Http
+ * @uses       \Zend2\Http\Response
+ * @package    Zend2_Http
  * @subpackage Response
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Stream extends Response
@@ -73,7 +73,7 @@ class Stream extends Response
      * Set the response stream
      *
      * @param resourse $stream
-     * @return \Zend\Http\Response\Stream
+     * @return \Zend2\Http\Response\Stream
      */
     public function setStream($stream)
     {
@@ -115,7 +115,7 @@ class Stream extends Response
      * Set file name associated with the stream
      *
      * @param string $stream_name Name to set
-     * @return \Zend\Http\Response\Stream
+     * @return \Zend2\Http\Response\Stream
      */
     public function setStreamName($stream_name)
     {
@@ -124,7 +124,7 @@ class Stream extends Response
     }
 
     /**
-     * Create a new Zend\Http\Response\Stream object from a string
+     * Create a new Zend2\Http\Response\Stream object from a string
      *
      * @param  string $response_str
      * @param  resource $stream

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Server;
+namespace Zend2\Server;
 
 /**
  * Server methods metadata
  *
  * @uses       Countable
  * @uses       Iterator
- * @uses       \Zend\Server\Exception
- * @uses       \Zend\Server\Method\Definition
- * @category   Zend
- * @package    Zend_Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Server\Exception
+ * @uses       \Zend2\Server\Method\Definition
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Definition implements \Countable, \Iterator
 {
     /**
-     * @var array Array of \Zend\Server\Method\Definition objects
+     * @var array Array of \Zend2\Server\Method\Definition objects
      */
     protected $_methods = array();
 
@@ -72,10 +72,10 @@ class Definition implements \Countable, \Iterator
     /**
      * Add method to definition
      *
-     * @param  array|\Zend\Server\Method\Definition $method
+     * @param  array|\Zend2\Server\Method\Definition $method
      * @param  null|string $name
-     * @return \Zend\Server\Definition
-     * @throws \Zend\Server\Exception if duplicate or invalid method provided
+     * @return \Zend2\Server\Definition
+     * @throws \Zend2\Server\Exception if duplicate or invalid method provided
      */
     public function addMethod($method, $name = null)
     {
@@ -107,8 +107,8 @@ class Definition implements \Countable, \Iterator
     /**
      * Add multiple methods
      *
-     * @param  array $methods Array of \Zend\Server\Method\Definition objects or arrays
-     * @return \Zend\Server\Definition
+     * @param  array $methods Array of \Zend2\Server\Method\Definition objects or arrays
+     * @return \Zend2\Server\Definition
      */
     public function addMethods(array $methods)
     {
@@ -121,8 +121,8 @@ class Definition implements \Countable, \Iterator
     /**
      * Set all methods at once (overwrite)
      *
-     * @param  array $methods Array of \Zend\Server\Method\Definition objects or arrays
-     * @return \Zend\Server\Definition
+     * @param  array $methods Array of \Zend2\Server\Method\Definition objects or arrays
+     * @return \Zend2\Server\Definition
      */
     public function setMethods(array $methods)
     {
@@ -146,7 +146,7 @@ class Definition implements \Countable, \Iterator
      * Get a given method definition
      *
      * @param  string $method
-     * @return null|\Zend\Server\Method\Definition
+     * @return null|\Zend2\Server\Method\Definition
      */
     public function getMethod($method)
     {
@@ -159,7 +159,7 @@ class Definition implements \Countable, \Iterator
     /**
      * Get all method definitions
      *
-     * @return array Array of \Zend\Server\Method\Definition objects
+     * @return array Array of \Zend2\Server\Method\Definition objects
      */
     public function getMethods()
     {
@@ -170,7 +170,7 @@ class Definition implements \Countable, \Iterator
      * Remove a method definition
      *
      * @param  string $method
-     * @return \Zend\Server\Definition
+     * @return \Zend2\Server\Definition
      */
     public function removeMethod($method)
     {
@@ -183,7 +183,7 @@ class Definition implements \Countable, \Iterator
     /**
      * Clear all method definitions
      *
-     * @return \Zend\Server\Definition
+     * @return \Zend2\Server\Definition
      */
     public function clearMethods()
     {

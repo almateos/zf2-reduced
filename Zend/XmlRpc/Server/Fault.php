@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,14 +12,14 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\XmlRpc\Server;
+namespace Zend2\XmlRpc\Server;
 
 /**
  * XMLRPC Server Faults
@@ -34,16 +34,16 @@ namespace Zend\XmlRpc\Server;
  * need only implement a static 'observe' method.
  *
  * To allow method chaining, you may use the {@link getInstance()} factory
- * to instantiate a Zend_XmlRpc_Server_Fault.
+ * to instantiate a Zend2_XmlRpc_Server_Fault.
  *
- * @uses       Zend\XmlRpc\Fault
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @uses       Zend2\XmlRpc\Fault
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Fault extends \Zend\XmlRpc\Fault
+class Fault extends \Zend2\XmlRpc\Fault
 {
     /**
      * @var Exception
@@ -53,7 +53,7 @@ class Fault extends \Zend\XmlRpc\Fault
     /**
      * @var array Array of exception classes that may define xmlrpc faults
      */
-    protected static $_faultExceptionClasses = array('Zend\\XmlRpc\\Server\\Exception' => true);
+    protected static $_faultExceptionClasses = array('Zend2\\XmlRpc\\Server\\Exception' => true);
 
     /**
      * @var array Array of fault observers
@@ -64,7 +64,7 @@ class Fault extends \Zend\XmlRpc\Fault
      * Constructor
      *
      * @param  Exception $e
-     * @return Zend\XmlRpc\Server\Fault
+     * @return Zend2\XmlRpc\Server\Fault
      */
     public function __construct(\Exception $e)
     {
@@ -92,10 +92,10 @@ class Fault extends \Zend\XmlRpc\Fault
     }
 
     /**
-     * Return Zend\XmlRpc\Server\Fault instance
+     * Return Zend2\XmlRpc\Server\Fault instance
      *
      * @param Exception $e
-     * @return Zend\XmlRpc\Server\Fault
+     * @return Zend2\XmlRpc\Server\Fault
      */
     public static function getInstance(\Exception $e)
     {

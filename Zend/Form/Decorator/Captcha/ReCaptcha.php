@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form\Decorator\Captcha;
+namespace Zend2\Form\Decorator\Captcha;
 
-use Zend\Form\Decorator\AbstractDecorator;
+use Zend2\Form\Decorator\AbstractDecorator;
 
 /**
  * ReCaptcha-based captcha decorator
@@ -29,10 +29,10 @@ use Zend\Form\Decorator\AbstractDecorator;
  * Adds hidden fields for challenge and response input, and JS for populating 
  * from known recaptcha IDs
  *
- * @category   Zend
- * @package    Zend_Form
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ReCaptcha extends AbstractDecorator
@@ -46,7 +46,7 @@ class ReCaptcha extends AbstractDecorator
     public function render($content)
     {
         $element = $this->getElement();
-        if (!$element instanceof \Zend\Form\Element\Captcha) {
+        if (!$element instanceof \Zend2\Form\Element\Captcha) {
             return $content;
         }
 

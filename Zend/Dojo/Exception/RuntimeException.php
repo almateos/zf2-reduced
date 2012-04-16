@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Dojo\Exception;
+namespace Zend2\Dojo\Exception;
 
 class RuntimeException
     extends \RuntimeException
-    implements \Zend\Dojo\Exception
+    implements \Zend2\Dojo\Exception
 {}

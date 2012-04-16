@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard\XML\EncryptedData;
-use Zend\InfoCard\XML\AbstractElement;
-use Zend\InfoCard\XML;
+namespace Zend2\InfoCard\XML\EncryptedData;
+use Zend2\InfoCard\XML\AbstractElement;
+use Zend2\InfoCard\XML;
 
 /**
  * An abstract class representing a generic EncryptedData XML block. This class is extended
  * into a specific type of EncryptedData XML block (i.e. XmlEnc) as necessary
  *
- * @uses       \Zend\InfoCard\XML\AbstractElement
- * @uses       \Zend\InfoCard\XML\KeyInfo\Factory
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\InfoCard\XML\AbstractElement
+ * @uses       \Zend2\InfoCard\XML\KeyInfo\Factory
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractEncryptedData extends AbstractElement
@@ -41,7 +41,7 @@ abstract class AbstractEncryptedData extends AbstractElement
     /**
      * Returns the KeyInfo Block
      *
-     * @return \Zend\InfoCard\XML\KeyInfo\AbstractKeyInfo
+     * @return \Zend2\InfoCard\XML\KeyInfo\AbstractKeyInfo
      */
     public function getKeyInfo()
     {
@@ -52,7 +52,7 @@ abstract class AbstractEncryptedData extends AbstractElement
      * Return the Encryption method used to encrypt the assertion document
      * (the symmetric cipher)
      *
-     * @throws \Zend\InfoCard\XML\Exception
+     * @throws \Zend2\InfoCard\XML\Exception
      * @return string The URI of the Symmetric Encryption Method used
      */
     public function getEncryptionMethod()

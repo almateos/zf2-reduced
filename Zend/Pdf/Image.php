@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Image
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Image
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf;
+namespace Zend2\Pdf;
 
 /**
- * Abstract factory class which vends {@link \Zend\Pdf\Resource\Image\AbstractImage} objects.
+ * Abstract factory class which vends {@link \Zend2\Pdf\Resource\Image\AbstractImage} objects.
  *
  * This class is also the home for image-related constants because the name of
- * the true base class ({@link \Zend\Pdf\Resource\Image\AbstractImage}) is not intuitive
+ * the true base class ({@link \Zend2\Pdf\Resource\Image\AbstractImage}) is not intuitive
  * for the end user.
  *
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\BinaryParser\DataSource
- * @uses       \Zend\Pdf\BinaryParser\Image
- * @uses       \Zend\Pdf\Resource\Image
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Image
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\BinaryParser\DataSource
+ * @uses       \Zend2\Pdf\BinaryParser\Image
+ * @uses       \Zend2\Pdf\Resource\Image
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Image
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-use Zend\Pdf\Exception;
+use Zend2\Pdf\Exception;
 
 abstract class Image
 {
@@ -114,11 +114,11 @@ abstract class Image
     /* Factory Methods */
 
     /**
-     * Returns a {@link \Zend\Pdf\Resource\Image\AbstractImage} object by file path.
+     * Returns a {@link \Zend2\Pdf\Resource\Image\AbstractImage} object by file path.
      *
      * @param string $filePath Full path to the image file.
-     * @return \Zend\Pdf\Resource\Image\AbstractImage
-     * @throws \Zend\Pdf\Exception
+     * @return \Zend2\Pdf\Resource\Image\AbstractImage
+     * @throws \Zend2\Pdf\Exception
      */
     public static function imageWithPath($filePath)
     {
@@ -187,10 +187,10 @@ abstract class Image
     /**
      * Attempts to extract a JPEG Image from the data source.
      *
-     * @param \Zend\Pdf\BinaryParser\DataSource\AbstractDataSource $dataSource
-     * @return \Zend\Pdf\Resource\Image\Jpeg May also return null if
+     * @param \Zend2\Pdf\BinaryParser\DataSource\AbstractDataSource $dataSource
+     * @return \Zend2\Pdf\Resource\Image\Jpeg May also return null if
      *   the data source does not appear to contain valid image data.
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected static function _extractJpegImage($dataSource)
     {
@@ -206,8 +206,8 @@ abstract class Image
     /**
      * Attempts to extract a PNG Image from the data source.
      *
-     * @param \Zend\Pdf\BinaryParser\DataSource\AbstractDataSource $dataSource
-     * @return \Zend\Pdf\Resource\Image\Png May also return null if
+     * @param \Zend2\Pdf\BinaryParser\DataSource\AbstractDataSource $dataSource
+     * @return \Zend2\Pdf\Resource\Image\Png May also return null if
      *   the data source does not appear to contain valid image data.
      */
     protected static function _extractPngImage($dataSource)
@@ -222,10 +222,10 @@ abstract class Image
     /**
      * Attempts to extract a TIFF Image from the data source.
      *
-     * @param \Zend\Pdf\BinaryParser\DataSource\AbstractDataSource $dataSource
-     * @return \Zend\Pdf\Resource\Image\Tiff May also return null if
+     * @param \Zend2\Pdf\BinaryParser\DataSource\AbstractDataSource $dataSource
+     * @return \Zend2\Pdf\Resource\Image\Tiff May also return null if
      *   the data source does not appear to contain valid image data.
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected static function _extractTiffImage($dataSource)
     {

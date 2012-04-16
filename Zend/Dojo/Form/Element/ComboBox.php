@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\Form\Element;
+namespace Zend2\Dojo\Form\Element;
 
 /**
  * ComboBox dijit
  *
- * @uses       \Zend\Dojo\Form\Element\DijitMulti
- * @package    Zend_Dojo
+ * @uses       \Zend2\Dojo\Form\Element\DijitMulti
+ * @package    Zend2_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ComboBox extends DijitMulti
@@ -61,7 +61,7 @@ class ComboBox extends DijitMulti
      * Set datastore identifier
      *
      * @param  string $identifier
-     * @return \Zend\Dojo\Form\Element\ComboBox
+     * @return \Zend2\Dojo\Form\Element\ComboBox
      */
     public function setStoreId($identifier)
     {
@@ -89,7 +89,7 @@ class ComboBox extends DijitMulti
      * Set datastore dijit type
      *
      * @param  string $dojoType
-     * @return \Zend\Dojo\Form\Element\ComboBox
+     * @return \Zend2\Dojo\Form\Element\ComboBox
      */
     public function setStoreType($dojoType)
     {
@@ -117,7 +117,7 @@ class ComboBox extends DijitMulti
      * Set datastore parameters
      *
      * @param  array $params
-     * @return \Zend\Dojo\Form\Element\ComboBox
+     * @return \Zend2\Dojo\Form\Element\ComboBox
      */
     public function setStoreParams(array $params)
     {
@@ -145,7 +145,7 @@ class ComboBox extends DijitMulti
      * Set autocomplete flag
      *
      * @param  bool $flag
-     * @return \Zend\Dojo\Form\Element\ComboBox
+     * @return \Zend2\Dojo\Form\Element\ComboBox
      */
     public function setAutocomplete($flag)
     {

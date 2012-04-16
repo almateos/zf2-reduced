@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Photos
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Photos;
+namespace Zend2\GData\Photos;
 
-use Zend\GData\Photos,
-    Zend\GData\App;
+use Zend2\GData\Photos,
+    Zend2\GData\App;
 
 /**
  * Assists in constructing queries for user entries.
@@ -30,18 +30,18 @@ use Zend\GData\Photos,
  * required.
  *
  * For information on submitting queries to a server, see the
- * service class, Zend_Gdata_Photos.
+ * service class, Zend2_Gdata_Photos.
  *
- * @uses       \Zend\GData\App\InvalidArgumentException
- * @uses       \Zend\GData\GApps\Query
- * @uses       \Zend\GData\Photos
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\InvalidArgumentException
+ * @uses       \Zend2\GData\GApps\Query
+ * @uses       \Zend2\GData\Photos
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Photos
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class UserQuery extends \Zend\GData\Query
+class UserQuery extends \Zend2\GData\Query
 {
 
     /**
@@ -82,7 +82,7 @@ class UserQuery extends \Zend\GData\Query
      * 'api' or 'base'. Normally, 'api' will be desired. Default is 'api'.
      *
      * @param string $value
-     * @return \Zend\GData\Photos\UserQuery Provides a fluent interface
+     * @return \Zend2\GData\Photos\UserQuery Provides a fluent interface
      */
     public function setProjection($value)
     {
@@ -106,7 +106,7 @@ class UserQuery extends \Zend\GData\Query
      * 'feed' or 'entry'. Normally, 'feed' will be desired. Default is 'feed'.
      *
      * @param string $value
-     * @return \Zend\GData\Photos\UserQuery Provides a fluent interface
+     * @return \Zend2\GData\Photos\UserQuery Provides a fluent interface
      */
     public function setType($value)
     {
@@ -317,7 +317,7 @@ class UserQuery extends \Zend\GData\Query
      * parameters.
      *
      * @return string A URL generated based on the state of this query.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function getQueryUrl($incomingUri = null)
     {

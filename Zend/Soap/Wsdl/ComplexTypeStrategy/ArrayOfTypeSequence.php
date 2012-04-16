@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Soap
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Soap
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Soap\Wsdl\ComplexTypeStrategy;
+namespace Zend2\Soap\Wsdl\ComplexTypeStrategy;
 
-use Zend\Soap\Wsdl;
+use Zend2\Soap\Wsdl;
 
 /**
- * Zend_Soap_Wsdl_Strategy_ArrayOfTypeSequence
+ * Zend2_Soap_Wsdl_Strategy_ArrayOfTypeSequence
  *
- * @uses       \Zend\Soap\Wsdl\Strategy\DefaultComplexType
- * @category   Zend
- * @package    Zend_Soap
+ * @uses       \Zend2\Soap\Wsdl\Strategy\DefaultComplexType
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage WSDL
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ArrayOfTypeSequence extends DefaultComplexType

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage SlideShare
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\SlideShare;
+namespace Zend2\Service\SlideShare;
 
 use SimpleXMLElement,
-    Zend\Cache\StorageFactory as CacheFactory,
-    Zend\Cache\Storage\Adapter as CacheAdapter,
-    Zend\Http,
-    Zend\Http\Client;
+    Zend2\Cache\StorageFactory as CacheFactory,
+    Zend2\Cache\Storage\Adapter as CacheAdapter,
+    Zend2\Http,
+    Zend2\Http\Client;
 
 /**
- * The Zend\Service\SlideShare component is used to interface with the
+ * The Zend2\Service\SlideShare component is used to interface with the
  * slideshare.net web server to retrieve slide shows hosted on the web site for
  * display or other processing.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage SlideShare
- * @throws     Zend\Service\SlideShare\Exception
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @throws     Zend2\Service\SlideShare\Exception
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class SlideShare
@@ -106,7 +106,7 @@ class SlideShare
     /**
      * The HTTP Client object to use to perform requests
      *
-     * @var Zend\Http\Client
+     * @var Zend2\Http\Client
      */
     protected $httpclient;
 
@@ -118,11 +118,11 @@ class SlideShare
     protected $cacheobject;
 
     /**
-     * Sets the Zend\Http\Client object to use in requests. If not provided a default will
+     * Sets the Zend2\Http\Client object to use in requests. If not provided a default will
      * be used.
      *
-     * @param Zend\Http\Client $client The HTTP client instance to use
-     * @return Zend\Service\SlideShare\SlideShare
+     * @param Zend2\Http\Client $client The HTTP client instance to use
+     * @return Zend2\Service\SlideShare\SlideShare
      */
     public function setHttpClient(Http\Client $client)
     {
@@ -131,10 +131,10 @@ class SlideShare
     }
 
     /**
-     * Returns the instance of the Zend\Http\Client which will be used. Creates an instance
-     * of Zend\Http\Client if no previous client was set.
+     * Returns the instance of the Zend2\Http\Client which will be used. Creates an instance
+     * of Zend2\Http\Client if no previous client was set.
      *
-     * @return Zend\Http\Client The HTTP client which will be used
+     * @return Zend2\Http\Client The HTTP client which will be used
      */
     public function getHttpClient()
     {
@@ -155,7 +155,7 @@ class SlideShare
      * Sets the CacheAdapter object to use to cache the results of API queries
      *
      * @param  CacheAdapter $cacheobject The CacheAdapter object used
-     * @return Zend\Service\SlideShare\SlideShare
+     * @return Zend2\Service\SlideShare\SlideShare
      */
     public function setCacheObject(CacheAdapter $cacheobject)
     {
@@ -211,7 +211,7 @@ class SlideShare
      * Sets the user name to use for API calls
      *
      * @param string $un The username to use
-     * @return Zend\Service\SlideShare\SlideShare
+     * @return Zend2\Service\SlideShare\SlideShare
      */
     public function setUserName($un)
     {
@@ -233,7 +233,7 @@ class SlideShare
      * Sets the password to use in API calls
      *
      * @param string $pw The password to use
-     * @return Zend\Service\SlideShare\SlideShare
+     * @return Zend2\Service\SlideShare\SlideShare
      */
     public function setPassword($pw)
     {
@@ -255,7 +255,7 @@ class SlideShare
      * Sets the API key to be used in making API calls
      *
      * @param string $key The API key to use
-     * @return Zend\Service\SlideShare\SlideShare
+     * @return Zend2\Service\SlideShare\SlideShare
      */
     public function setApiKey($key)
     {
@@ -277,7 +277,7 @@ class SlideShare
      * Sets the shared secret used in making API calls
      *
      * @param string $secret the shared secret
-     * @return Zend\Service\SlideShare\SlideShare
+     * @return Zend2\Service\SlideShare\SlideShare
      */
     public function setSharedSecret($secret)
     {
@@ -306,10 +306,10 @@ class SlideShare
     /**
      * Uploads the specified Slide show the the server
      *
-     * @param Zend\Service\SlideShare\SlideShow $ss The slide show object representing the slide show to upload
+     * @param Zend2\Service\SlideShare\SlideShow $ss The slide show object representing the slide show to upload
      * @param boolean $makeSourcePublic Determines if the slide show's source file is public or not upon upload
-     * @throws \Zend\Service\SlideShare\Exception
-     * @return Zend\Service\SlideShare\SlideShow The passed Slide show object, with the new assigned ID provided
+     * @throws \Zend2\Service\SlideShare\Exception
+     * @return Zend2\Service\SlideShare\SlideShow The passed Slide show object, with the new assigned ID provided
      */
     public function uploadSlideShow(SlideShow $ss, $makeSourcePublic = true)
     {
@@ -441,7 +441,7 @@ class SlideShare
      * @param string $username The username to retrieve slide shows from
      * @param int $offset The offset of the list to start retrieving from
      * @param int $limit The maximum number of slide shows to retrieve
-     * @return array An array of Zend\Service\SlideShare\SlideShow objects
+     * @return array An array of Zend2\Service\SlideShare\SlideShow objects
      */
     public function getSlideShowsByUsername($username, $offset = null, $limit = null)
     {

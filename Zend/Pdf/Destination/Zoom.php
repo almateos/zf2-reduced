@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Destination
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Destination
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Destination;
-use Zend\Pdf\Exception;
-use Zend\Pdf\InternalType;
-use Zend\Pdf;
+namespace Zend2\Pdf\Destination;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf\InternalType;
+use Zend2\Pdf;
 
 /**
- * \Zend\Pdf\Destination\Zoom explicit detination
+ * \Zend2\Pdf\Destination\Zoom explicit detination
  *
  * Destination array: [page /XYZ left top zoom]
  *
@@ -35,15 +35,15 @@ use Zend\Pdf;
  * or zoom specifies that the current value of that parameter is to be retained unchanged.
  * A zoom value of 0 has the same meaning as a null value.
  *
- * @uses       \Zend\Pdf\Destination\Explicit
- * @uses       \Zend\Pdf\InternalType\ArrayObject
- * @uses       \Zend\Pdf\InternalType\NameObject
- * @uses       \Zend\Pdf\InternalType\NullObject
- * @uses       \Zend\Pdf\InternalType\NumericObject
- * @uses       \Zend\Pdf\Exception
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Destination
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Destination\Explicit
+ * @uses       \Zend2\Pdf\InternalType\ArrayObject
+ * @uses       \Zend2\Pdf\InternalType\NameObject
+ * @uses       \Zend2\Pdf\InternalType\NullObject
+ * @uses       \Zend2\Pdf\InternalType\NumericObject
+ * @uses       \Zend2\Pdf\Exception
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Destination
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zoom extends Explicit
@@ -51,12 +51,12 @@ class Zoom extends Explicit
     /**
      * Create destination object
      *
-     * @param \Zend\Pdf\Page|integer $page  Page object or page number
+     * @param \Zend2\Pdf\Page|integer $page  Page object or page number
      * @param float $left  Left edge of displayed page
      * @param float $top   Top edge of displayed page
      * @param float $zoom  Zoom factor
-     * @return \Zend\Pdf\Destination\Zoom
-     * @throws \Zend\Pdf\Exception
+     * @return \Zend2\Pdf\Destination\Zoom
+     * @throws \Zend2\Pdf\Exception
      */
     public static function create($page, $left = null, $top = null, $zoom = null)
     {
@@ -67,7 +67,7 @@ class Zoom extends Explicit
         } else if (is_integer($page)) {
             $destinationArray->items[] = new InternalType\NumericObject($page);
         } else {
-            throw new Exception\InvalidArgumentException('$page parametr must be a \Zend\Pdf\Page object or a page number.');
+            throw new Exception\InvalidArgumentException('$page parametr must be a \Zend2\Pdf\Page object or a page number.');
         }
 
         $destinationArray->items[] = new InternalType\NameObject('XYZ');
@@ -107,7 +107,7 @@ class Zoom extends Explicit
      * Set left edge of the displayed page (null means viewer application 'current value')
      *
      * @param float $left
-     * @return \Zend\Pdf\Action\Zoom
+     * @return \Zend2\Pdf\Action\Zoom
      */
     public function setLeftEdge($left)
     {
@@ -134,7 +134,7 @@ class Zoom extends Explicit
      * Set top edge of the displayed page (null means viewer application 'current viewer')
      *
      * @param float $top
-     * @return \Zend\Pdf\Action\Zoom
+     * @return \Zend2\Pdf\Action\Zoom
      */
     public function setTopEdge($top)
     {
@@ -161,7 +161,7 @@ class Zoom extends Explicit
      * Set ZoomFactor of the displayed page (null or 0 means viewer application 'current viewer')
      *
      * @param float $zoom
-     * @return \Zend\Pdf\Action\Zoom
+     * @return \Zend2\Pdf\Action\Zoom
      */
     public function setZoomFactor($zoom)
     {

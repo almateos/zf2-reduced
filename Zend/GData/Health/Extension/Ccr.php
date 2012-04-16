@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,41 +12,41 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Health
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Health\Extension;
+namespace Zend2\GData\Health\Extension;
 
 /**
  * Concrete class for working with CCR elements.
  *
- * @uses       \Zend\GData\App\Extension\Element
- * @uses       \Zend\GData\Health
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Extension\Element
+ * @uses       \Zend2\GData\Health
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Health
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Ccr extends \Zend\GData\App\Extension\Element
+class Ccr extends \Zend2\GData\App\Extension\Element
 {
     protected $_rootNamespace = 'ccr';
     protected $_rootElement = 'ContinuityOfCareRecord';
     protected $_ccrDom = null;
 
     /**
-     * Creates a Zend_Gdata_Health_Extension_Ccr entry, representing CCR data
+     * Creates a Zend2_Gdata_Health_Extension_Ccr entry, representing CCR data
      *
      * @param DOMElement $element (optional) DOMElement from which this
      *          object should be constructed.
      */
     public function __construct($element = null)
     {
-        foreach (\Zend\GData\Health::$namespaces as $nsPrefix => $nsUri) {
+        foreach (\Zend2\GData\Health::$namespaces as $nsPrefix => $nsUri) {
             $this->registerNamespace($nsPrefix, $nsUri);
         }
     }

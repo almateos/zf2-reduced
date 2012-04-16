@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Queue
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Queue;
+namespace Zend2\Queue;
 
 /**
  * Interface for common queue operations
  *
- * @uses       \Zend\Queue\Queue
- * @uses       \Zend\Queue\Message
- * @category   Zend
- * @package    Zend_Queue
+ * @uses       \Zend2\Queue\Queue
+ * @uses       \Zend2\Queue\Message
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface Adapter
@@ -37,8 +37,8 @@ interface Adapter
     /**
      * Constructor
      *
-     * @param  array|\Zend\Config\Config $options
-     * @param  \Zend\Queue\Queue $queue
+     * @param  array|\Zend2\Config\Config $options
+     * @param  \Zend2\Queue\Queue $queue
      * @return void
      */
     public function __construct($options, Queue $queue = null);
@@ -46,15 +46,15 @@ interface Adapter
     /**
      * Retrieve queue instance
      *
-     * @return \Zend\Queue\Queue
+     * @return \Zend2\Queue\Queue
      */
     public function getQueue();
 
     /**
      * Set queue instnace
      *
-     * @param  \Zend\Queue\Queue $queue
-     * @return \Zend\Queue\Adapter
+     * @param  \Zend2\Queue\Queue $queue
+     * @return \Zend2\Queue\Adapter
      */
     public function setQueue(Queue $queue);
 
@@ -107,7 +107,7 @@ interface Adapter
     /**
      * Return the approximate number of messages in the queue
      *
-     * @param  \Zend\Queue\Queue|null $queue
+     * @param  \Zend2\Queue\Queue|null $queue
      * @return integer
      */
     public function count(Queue $queue = null);
@@ -120,8 +120,8 @@ interface Adapter
      * Send a message to the queue
      *
      * @param  mixed $message Message to send to the active queue
-     * @param  \Zend\Queue\Queue|null $queue
-     * @return \Zend\Queue\Message
+     * @param  \Zend2\Queue\Queue|null $queue
+     * @return \Zend2\Queue\Message
      */
     public function send($message, Queue $queue = null);
 
@@ -130,8 +130,8 @@ interface Adapter
      *
      * @param  integer|null $maxMessages Maximum number of messages to return
      * @param  integer|null $timeout Visibility timeout for these messages
-     * @param  \Zend\Queue\Queue|null $queue
-     * @return \Zend\Queue\Message\MessageIterator
+     * @param  \Zend2\Queue\Queue|null $queue
+     * @return \Zend2\Queue\Message\MessageIterator
      */
     public function receive($maxMessages = null, $timeout = null, Queue $queue = null);
 
@@ -141,7 +141,7 @@ interface Adapter
      * Return true if the message is deleted, false if the deletion is
      * unsuccessful.
      *
-     * @param  \Zend\Queue\Message $message
+     * @param  \Zend2\Queue\Message $message
      * @return boolean
      */
     public function deleteMessage(Message $message);

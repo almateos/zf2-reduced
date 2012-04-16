@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,40 +12,40 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Fonts
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Fonts
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Resource\Font\Simple\Parsed;
-use Zend\Pdf\InternalType;
-use Zend\Pdf\BinaryParser\Font\OpenType as OpenTypeFontParser;
-use Zend\Pdf;
+namespace Zend2\Pdf\Resource\Font\Simple\Parsed;
+use Zend2\Pdf\InternalType;
+use Zend2\Pdf\BinaryParser\Font\OpenType as OpenTypeFontParser;
+use Zend2\Pdf;
 
 /**
  * Parsed and (optionaly) embedded fonts implementation
  *
  * OpenType fonts can contain either TrueType or PostScript Type 1 outlines.
  *
- * @uses       \Zend\Pdf\InternalType\ArrayObject
- * @uses       \Zend\Pdf\InternalType\NameObject
- * @uses       \Zend\Pdf\InternalType\NumericObject
- * @uses       \Zend\Pdf\Font
- * @uses       \Zend\Pdf\Resource\Font\Simple\AbstractSimple
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Fonts
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\InternalType\ArrayObject
+ * @uses       \Zend2\Pdf\InternalType\NameObject
+ * @uses       \Zend2\Pdf\InternalType\NumericObject
+ * @uses       \Zend2\Pdf\Font
+ * @uses       \Zend2\Pdf\Resource\Font\Simple\AbstractSimple
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Fonts
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class AbstractParsed extends \Zend\Pdf\Resource\Font\Simple\AbstractSimple
+abstract class AbstractParsed extends \Zend2\Pdf\Resource\Font\Simple\AbstractSimple
 {
     /**
      * Object constructor
      *
-     * @param \Zend\Pdf\BinaryParser\Font\OpenType\AbstractOpenType $fontParser Font parser object containing OpenType file.
-     * @throws \Zend\Pdf\Exception
+     * @param \Zend2\Pdf\BinaryParser\Font\OpenType\AbstractOpenType $fontParser Font parser object containing OpenType file.
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct(OpenTypeFontParser\AbstractOpenType $fontParser)
     {
@@ -88,13 +88,13 @@ abstract class AbstractParsed extends \Zend\Pdf\Resource\Font\Simple\AbstractSim
         $this->_resource->FirstChar = new InternalType\NumericObject(0);
         $this->_resource->LastChar  = new InternalType\NumericObject(count($this->_glyphWidths) - 1);
 
-        /* Now convert the scalar glyph widths to \Zend\Pdf\InternalType\NumericObect objects.
+        /* Now convert the scalar glyph widths to \Zend2\Pdf\InternalType\NumericObect objects.
          */
         $pdfWidths = array();
         foreach ($this->_glyphWidths as $width) {
             $pdfWidths[] = new InternalType\NumericObject($this->toEmSpace($width));
         }
-        /* Create the \Zend\Pdf\InternalType\ArrayObject object and add it to the font's
+        /* Create the \Zend2\Pdf\InternalType\ArrayObject object and add it to the font's
          * object factory and resource dictionary.
          */
         $widthsArrayElement = new InternalType\ArrayObject($pdfWidths);

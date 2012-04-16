@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Barcode
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Barcode
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Barcode;
+namespace Zend2\Barcode;
 
 use Traversable,
-    Zend,
-    Zend\Loader\Broker,
-    Zend\Loader\ShortNameLocator,
-    Zend\Stdlib\ArrayUtils;
+    Zend2,
+    Zend2\Loader\Broker,
+    Zend2\Loader\ShortNameLocator,
+    Zend2\Stdlib\ArrayUtils;
 
 /**
  * Class for generate Barcode
  *
- * @category   Zend
- * @package    Zend_Barcode
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Barcode
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Barcode
@@ -92,7 +92,7 @@ class Barcode
     }
 
     /**
-     * Factory for Zend_Barcode classes.
+     * Factory for Zend2_Barcode classes.
      *
      * First argument may be a string containing the base of the adapter class
      * name, e.g. 'int25' corresponds to class Object\Int25.  This

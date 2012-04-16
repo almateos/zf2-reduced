@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Translator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Translator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Translator\Adapter;
+namespace Zend2\Translator\Adapter;
 
-use Zend\Translator\Adapter\AbstractAdapter,
-    Zend\Translator,
-    Zend\Translator\Exception\InvalidArgumentException,
-    Zend\Translator\Exception\InvalidFileTypeException;
+use Zend2\Translator\Adapter\AbstractAdapter,
+    Zend2\Translator,
+    Zend2\Translator\Exception\InvalidArgumentException,
+    Zend2\Translator\Exception\InvalidFileTypeException;
 
 /**
- * @uses       \Zend\Locale\Locale
- * @uses       \Zend\Translator\Adapter\AbstractAdapter
- * @uses       \Zend\Translator\Exception\InvalidArgumentException
- * @category   Zend
- * @package    Zend_Translator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Locale\Locale
+ * @uses       \Zend2\Translator\Adapter\AbstractAdapter
+ * @uses       \Zend2\Translator\Exception\InvalidArgumentException
+ * @category   Zend2
+ * @package    Zend2_Translator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Gettext extends AbstractAdapter
@@ -60,10 +60,10 @@ class Gettext extends AbstractAdapter
      *
      * @param  string  $filename  MO file to add, full path must be given for access
      * @param  string  $locale    New Locale/Language to set, identical with locale identifier,
-     *                            see Zend_Locale for more information
+     *                            see Zend2_Locale for more information
      * @param  array   $option    OPTIONAL Options to use
-     * @throws \Zend\Translator\Exception\InvalidArgumentException
-     * @throws \Zend\Translator\Exception\InvalidFileTypeException
+     * @throws \Zend2\Translator\Exception\InvalidArgumentException
+     * @throws \Zend2\Translator\Exception\InvalidFileTypeException
      * @return array
      */
     protected function _loadTranslationData($filename, $locale, array $options = array())

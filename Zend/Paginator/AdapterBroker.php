@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Paginator;
+namespace Zend2\Paginator;
 
-use Zend\Loader\PluginBroker;
+use Zend2\Loader\PluginBroker;
 
 /**
  * Broker for pagination adapter instances
  *
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class AdapterBroker extends PluginBroker
@@ -35,7 +35,7 @@ class AdapterBroker extends PluginBroker
     /**
      * @var string Default plugin loading strategy
      */
-    protected $defaultClassLoader = 'Zend\Paginator\AdapterLoader';
+    protected $defaultClassLoader = 'Zend2\Paginator\AdapterLoader';
 
     /**
      * @var boolean Adapters must not be registred on load
@@ -52,7 +52,7 @@ class AdapterBroker extends PluginBroker
     protected function validatePlugin($plugin)
     {
         if (!$plugin instanceof Adapter) {
-            throw new Exception('Pagination adapters must implement Zend\Paginator\Adapter');
+            throw new Exception('Pagination adapters must implement Zend2\Paginator\Adapter');
         }
         return true;
     }

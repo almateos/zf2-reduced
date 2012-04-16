@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Mvc;
+namespace Zend2\Mvc;
 
 interface Exception
 {}

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,18 +12,18 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Acl
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Acl
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Acl;
+namespace Zend2\Acl;
 
 /**
- * @category   Zend
- * @package    Zend_Acl
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Acl
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Acl
@@ -123,7 +123,7 @@ class Acl
         }
 
         if (!$role instanceof Role\RoleInterface) {
-            throw new Exception\InvalidArgumentException('addRole() expects $role to be of type Zend\Acl\Role\RoleInterface');
+            throw new Exception\InvalidArgumentException('addRole() expects $role to be of type Zend2\Acl\Role\RoleInterface');
         }
 
 
@@ -257,7 +257,7 @@ class Acl
         }
 
         if (!$resource instanceof Resource\ResourceInterface) {
-            throw new Exception\InvalidArgumentException('addResource() expects $resource to be of type Zend\Acl\Resource\ResourceInterface');
+            throw new Exception\InvalidArgumentException('addResource() expects $resource to be of type Zend2\Acl\Resource\ResourceInterface');
         }
 
         $resourceId = $resource->getResourceId();
@@ -678,7 +678,7 @@ class Acl
      *
      * If either $role or $resource is null, then the query applies to all Roles or all Resources,
      * respectively. Both may be null to query whether the ACL has a "blacklist" rule
-     * (allow everything to all). By default, Zend_Acl creates a "whitelist" rule (deny
+     * (allow everything to all). By default, Zend2_Acl creates a "whitelist" rule (deny
      * everything to all), and this method would return false unless this default has
      * been overridden (i.e., by executing $acl->allow()).
      *
@@ -917,14 +917,14 @@ class Acl
     ) {
         if (null === $privilege) {
             /**
-             * @see Zend_Acl_Exception
+             * @see Zend2_Acl_Exception
              */
             throw new Exception\RuntimeException('$privilege parameter may not be null');
         }
 
         if (null === $dfs) {
             /**
-             * @see Zend_Acl_Exception
+             * @see Zend2_Acl_Exception
              */
             throw new Exception\RuntimeException('$dfs parameter may not be null');
         }

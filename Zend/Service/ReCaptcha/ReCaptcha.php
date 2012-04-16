@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage ReCaptcha
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\ReCaptcha;
+namespace Zend2\Service\ReCaptcha;
 
-use Zend\Config\Config,
-    Zend\Http\Request,
-    Zend\Service\AbstractService;
+use Zend2\Config\Config,
+    Zend2\Http\Request,
+    Zend2\Service\AbstractService;
 
 /**
- * Zend_Service_ReCaptcha
+ * Zend2_Service_ReCaptcha
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage ReCaptcha
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ReCaptcha extends AbstractService
@@ -106,7 +106,7 @@ class ReCaptcha extends AbstractService
     /**
      * Response from the verify server
      *
-     * @var \Zend\Service\ReCaptcha\Response
+     * @var \Zend2\Service\ReCaptcha\Response
      */
     protected $_response = null;
 
@@ -118,7 +118,7 @@ class ReCaptcha extends AbstractService
      * @param array $params
      * @param array $options
      * @param string $ip
-     * @param array|\Zend\Config\Config $params
+     * @param array|\Zend2\Config\Config $params
      */
     public function __construct($publicKey = null, $privateKey = null,
                                 $params = null, $options = null, $ip = null)
@@ -171,7 +171,7 @@ class ReCaptcha extends AbstractService
      * Set the ip property
      *
      * @param string $ip
-     * @return \Zend\Service\ReCaptcha\ReCaptcha
+     * @return \Zend2\Service\ReCaptcha\ReCaptcha
      */
     public function setIp($ip)
     {
@@ -195,7 +195,7 @@ class ReCaptcha extends AbstractService
      *
      * @param string $key
      * @param string $value
-     * @return \Zend\Service\ReCaptcha\ReCaptcha
+     * @return \Zend2\Service\ReCaptcha\ReCaptcha
      */
     public function setParam($key, $value)
     {
@@ -207,9 +207,9 @@ class ReCaptcha extends AbstractService
     /**
      * Set parameters
      *
-     * @param array|\Zend\Config\Config $params
-     * @return \Zend\Service\ReCaptcha\ReCaptcha
-     * @throws \Zend\Service\ReCaptcha\Exception
+     * @param array|\Zend2\Config\Config $params
+     * @return \Zend2\Service\ReCaptcha\ReCaptcha
+     * @throws \Zend2\Service\ReCaptcha\Exception
      */
     public function setParams($params)
     {
@@ -223,7 +223,7 @@ class ReCaptcha extends AbstractService
             }
         } else {
             throw new Exception(
-                'Expected array or Zend\\Config\\Config object'
+                'Expected array or Zend2\\Config\\Config object'
             );
         }
 
@@ -256,7 +256,7 @@ class ReCaptcha extends AbstractService
      *
      * @param string $key
      * @param string $value
-     * @return \Zend\Service\ReCaptcha\ReCaptcha
+     * @return \Zend2\Service\ReCaptcha\ReCaptcha
      */
     public function setOption($key, $value)
     {
@@ -268,9 +268,9 @@ class ReCaptcha extends AbstractService
     /**
      * Set options
      *
-     * @param array|\Zend\Config\Config $options
-     * @return \Zend\Service\ReCaptcha\ReCaptcha
-     * @throws \Zend\Service\ReCaptcha\Exception
+     * @param array|\Zend2\Config\Config $options
+     * @return \Zend2\Service\ReCaptcha\ReCaptcha
+     * @throws \Zend2\Service\ReCaptcha\Exception
      */
     public function setOptions($options)
     {
@@ -284,7 +284,7 @@ class ReCaptcha extends AbstractService
             }
         } else {
             throw new Exception(
-                'Expected array or Zend\\Config\\Config object'
+                'Expected array or Zend2\\Config\\Config object'
             );
         }
 
@@ -326,7 +326,7 @@ class ReCaptcha extends AbstractService
      * Set the public key
      *
      * @param string $publicKey
-     * @return \Zend\Service\ReCaptcha\ReCaptcha
+     * @return \Zend2\Service\ReCaptcha\ReCaptcha
      */
     public function setPublicKey($publicKey)
     {
@@ -349,7 +349,7 @@ class ReCaptcha extends AbstractService
      * Set the private key
      *
      * @param string $privateKey
-     * @return \Zend\Service\ReCaptcha\ReCaptcha
+     * @return \Zend2\Service\ReCaptcha\ReCaptcha
      */
     public function setPrivateKey($privateKey)
     {
@@ -365,7 +365,7 @@ class ReCaptcha extends AbstractService
      *
      * @param null|string $name Base name for recaptcha form elements
      * @return string
-     * @throws \Zend\Service\ReCaptcha\Exception
+     * @throws \Zend2\Service\ReCaptcha\Exception
      */
     public function getHtml($name = null)
     {
@@ -396,7 +396,7 @@ class ReCaptcha extends AbstractService
         $reCaptchaOptions = '';
 
         if (!empty($this->_options)) {
-            $encoded = \Zend\Json\Json::encode($this->_options);
+            $encoded = \Zend2\Json\Json::encode($this->_options);
             $reCaptchaOptions = <<<SCRIPT
 <script type="text/javascript">
     var RecaptchaOptions = {$encoded};
@@ -435,8 +435,8 @@ HTML;
      *
      * @param string $challengeField
      * @param string $responseField
-     * @return \Zend\Http\Response
-     * @throws \Zend\Service\ReCaptcha\Exception
+     * @return \Zend2\Http\Response
+     * @throws \Zend2\Service\ReCaptcha\Exception
      */
     protected function _post($challengeField, $responseField)
     {
@@ -475,11 +475,11 @@ HTML;
      * Verify the user input
      *
      * This method calls up the post method and returns a
-     * Zend_Service_ReCaptcha_Response object.
+     * Zend2_Service_ReCaptcha_Response object.
      *
      * @param string $challengeField
      * @param string $responseField
-     * @return \Zend\Service\ReCaptcha\Response
+     * @return \Zend2\Service\ReCaptcha\Response
      */
     public function verify($challengeField, $responseField)
     {

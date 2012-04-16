@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search\Highlighter;
+namespace Zend2\Search\Lucene\Search\Highlighter;
 
-use Zend\Search\Lucene\Search\Highlighter,
-    Zend\Search\Lucene\Document;
+use Zend2\Search\Lucene\Search\Highlighter,
+    Zend2\Search\Lucene\Document;
 
 /**
- * @uses       \Zend\Search\Lucene\Search\Highlighter
- * @uses       \Zend\Search\Lucene\Document;
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Search\Highlighter
+ * @uses       \Zend2\Search\Lucene\Document;
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DefaultHighlighter implements Highlighter
@@ -58,14 +58,14 @@ class DefaultHighlighter implements Highlighter
     /**
      * HTML document for highlighting
      *
-     * @var \Zend\Search\Lucene\Document\HTML
+     * @var \Zend2\Search\Lucene\Document\HTML
      */
     protected $_doc;
 
     /**
      * Set document for highlighting.
      *
-     * @param \Zend\Search\Lucene\Document\HTML $document
+     * @param \Zend2\Search\Lucene\Document\HTML $document
      */
     public function setDocument(Document\HTML $document)
     {
@@ -75,7 +75,7 @@ class DefaultHighlighter implements Highlighter
     /**
      * Get document for highlighting.
      *
-     * @return \Zend\Search\Lucene\Document\HTML $document
+     * @return \Zend2\Search\Lucene\Document\HTML $document
      */
     public function getDocument()
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,34 +12,34 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Log
+ * @category   Zend2
+ * @package    Zend2_Log
  * @subpackage Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Log\Writer;
+namespace Zend2\Log\Writer;
 
-use Zend\Log\Formatter\Simple as SimpleFormatter,
-    Zend\Log\Exception,
-    Zend\Mail\Message,
-    Zend\Mail\Transport,
-    Zend\Mail\Transport\Exception as MailException,
-    Zend\Mail\Transport\Sendmail as SendmailTransport;
+use Zend2\Log\Formatter\Simple as SimpleFormatter,
+    Zend2\Log\Exception,
+    Zend2\Mail\Message,
+    Zend2\Mail\Transport,
+    Zend2\Mail\Transport\Exception as MailException,
+    Zend2\Mail\Transport\Sendmail as SendmailTransport;
 
 /**
- * Class used for writing log messages to email via Zend\Mail.
+ * Class used for writing log messages to email via Zend2\Mail.
  *
  * Allows for emailing log messages at and above a certain level via a
- * Zend\Mail\Message object.  Note that this class only sends the email upon
+ * Zend2\Mail\Message object.  Note that this class only sends the email upon
  * completion, so any log entries accumulated are sent in a single email.
- * The email is sent using a Zend\Mail\Transport object (Sendmail is default).
+ * The email is sent using a Zend2\Mail\Transport object (Sendmail is default).
  * 
- * @category   Zend
- * @package    Zend_Log
+ * @category   Zend2
+ * @package    Zend2_Log
  * @subpackage Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Mail extends AbstractWriter
@@ -76,7 +76,7 @@ class Mail extends AbstractWriter
     /**
      * Subject prepend text.
      *
-     * Can only be used of the Zend\Mail object has not already had its
+     * Can only be used of the Zend2\Mail object has not already had its
      * subject line set.  Using this will cause the subject to have the entry
      * counts per-priority level appended to it.
      *
@@ -138,8 +138,8 @@ class Mail extends AbstractWriter
      * entry counts per-priority level.
      *
      * Sets the text for use in the subject, with entry counts per-priority
-     * level appended to the end.  Since a Zend\Mail\Message subject can only be set
-     * once, this method cannot be used if the Zend\Mail\Message object already has a
+     * level appended to the end.  Since a Zend2\Mail\Message subject can only be set
+     * once, this method cannot be used if the Zend2\Mail\Message object already has a
      * subject set.
      *
      * @param  string $subject Subject prepend text
@@ -168,7 +168,7 @@ class Mail extends AbstractWriter
 
         if ($this->subjectPrependText !== null) {
             // Tack on the summary of entries per-priority to the subject
-            // line and set it on the Zend\Mail object.
+            // line and set it on the Zend2\Mail object.
             $numEntries = $this->getFormattedNumEntriesPerPriority();
             $this->mail->setSubject("{$this->subjectPrependText} ({$numEntries})");
         }

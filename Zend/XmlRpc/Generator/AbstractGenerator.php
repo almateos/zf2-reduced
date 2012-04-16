@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Generator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\XmlRpc\Generator;
+namespace Zend2\XmlRpc\Generator;
 
-use Zend\XmlRpc\Generator as GeneratorAdapter;
+use Zend2\XmlRpc\Generator as GeneratorAdapter;
 
 /**
  * Abstract XML generator adapter
  *
- * @uses Zend\XmlRpc\Generator
+ * @uses Zend2\XmlRpc\Generator
  */
 abstract class AbstractGenerator implements GeneratorAdapter
 {
@@ -62,7 +62,7 @@ abstract class AbstractGenerator implements GeneratorAdapter
      * 
      * @param string $name XML tag name
      * @param string $value Optional value of the XML tag
-     * @return Zend_XmlRpc_Generator_Abstract Fluent interface
+     * @return Zend2_XmlRpc_Generator_Abstract Fluent interface
      */
     public function openElement($name, $value = null)
     {
@@ -80,7 +80,7 @@ abstract class AbstractGenerator implements GeneratorAdapter
      * Method marks the end of an XML element
      *
      * @param string $name XML tag name
-     * @return Zend_XmlRpc_Generator_Abstract Fluent interface
+     * @return Zend2_XmlRpc_Generator_Abstract Fluent interface
      */
     public function closeElement($name)
     {
@@ -103,7 +103,7 @@ abstract class AbstractGenerator implements GeneratorAdapter
      * Set XML encoding
      * 
      * @param  string $encoding 
-     * @return Zend\XmlRpc\Generator\AbstractGenerator
+     * @return Zend2\XmlRpc\Generator\AbstractGenerator
      */
     public function setEncoding($encoding)
     {

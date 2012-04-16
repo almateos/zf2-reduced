@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Mvc;
+namespace Zend2\Mvc;
 
-use Zend\EventManager\EventDescription as Event;
+use Zend2\EventManager\EventDescription as Event;
 
 interface InjectApplicationEvent
 {

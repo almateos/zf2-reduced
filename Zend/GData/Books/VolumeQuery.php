@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Books
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Books;
+namespace Zend2\GData\Books;
 
-use Zend\GData\Books;
+use Zend2\GData\Books;
 
 /**
  * Assists in constructing queries for Books volumes
  *
- * @uses       \Zend\GData\Books\Books
- * @uses       \Zend\GData\Query
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Books\Books
+ * @uses       \Zend2\GData\Query
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Books
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class VolumeQuery extends \Zend\GData\Query
+class VolumeQuery extends \Zend2\GData\Query
 {
 
     /**
@@ -52,7 +52,7 @@ class VolumeQuery extends \Zend\GData\Query
      * Sets the minimum level of viewability of volumes to return in the search results
      *
      * @param string|null $value The minimum viewability - 'full' or 'partial'
-     * @return \Zend\GData\Books\VolumeQuery Provides a fluent interface
+     * @return \Zend2\GData\Books\VolumeQuery Provides a fluent interface
      */
     public function setMinViewability($value = null)
     {

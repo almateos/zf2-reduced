@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Zend_Server_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @subpackage Zend2_Server_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Server\Reflection;
+namespace Zend2\Server\Reflection;
 
 /**
- * Node Tree class for Zend_Server reflection operations
+ * Node Tree class for Zend2_Server reflection operations
  *
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Zend_Server_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @subpackage Zend2_Server_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Node
@@ -46,7 +46,7 @@ class Node
 
     /**
      * Parent node (if any)
-     * @var \Zend\Server\Reflection\Node
+     * @var \Zend2\Server\Reflection\Node
      */
     protected $_parent = null;
 
@@ -54,8 +54,8 @@ class Node
      * Constructor
      *
      * @param mixed $value
-     * @param \Zend\Server\Reflection\Node $parent Optional
-     * @return \Zend\Server\Reflection\Node
+     * @param \Zend2\Server\Reflection\Node $parent Optional
+     * @return \Zend2\Server\Reflection\Node
      */
     public function __construct($value, Node $parent = null)
     {
@@ -70,7 +70,7 @@ class Node
     /**
      * Set parent node
      *
-     * @param \Zend\Server\Reflection\Node $node
+     * @param \Zend2\Server\Reflection\Node $node
      * @param boolean $new Whether or not the child node is newly created
      * and should always be attached
      * @return void
@@ -90,7 +90,7 @@ class Node
      *
      * @param mixed $value
      * @access public
-     * @return \Zend\Server\Reflection\Node New child node
+     * @return \Zend2\Server\Reflection\Node New child node
      */
     public function createChild($value)
     {
@@ -102,7 +102,7 @@ class Node
     /**
      * Attach a child node
      *
-     * @param \Zend\Server\Reflection\Node $node
+     * @param \Zend2\Server\Reflection\Node $node
      * @return void
      */
     public function attachChild(Node $node)
@@ -137,7 +137,7 @@ class Node
     /**
      * Return the parent node
      *
-     * @return null|\Zend\Server\Reflection\Node
+     * @return null|\Zend2\Server\Reflection\Node
      */
     public function getParent()
     {

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,28 +13,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData;
+namespace Zend2\GData;
 
-use Zend\Http,
-    Zend\Http\Header\Etag,
-    Zend\Uri;
+use Zend2\Http,
+    Zend2\Http\Header\Etag,
+    Zend2\Uri;
 
 /**
  * Provides Atom Publishing Protocol (APP) functionality.  This class and all
- * other components of Zend_Gdata_App are designed to work independently from
- * other Zend_Gdata components in order to interact with generic APP services.
+ * other components of Zend2_Gdata_App are designed to work independently from
+ * other Zend2_Gdata components in order to interact with generic APP services.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class App
@@ -55,14 +55,14 @@ class App
     /**
      * Client object used to communicate
      *
-     * @var \Zend\Http\Client
+     * @var \Zend2\Http\Client
      */
     protected $_httpClient;
 
     /**
      * Client object used to communicate in static context
      *
-     * @var \Zend\Http\Client
+     * @var \Zend2\Http\Client
      */
     protected static $_staticHttpClient = null;
 
@@ -101,8 +101,8 @@ class App
      * @var array
      */
     protected $_registeredPackages = array(
-        'Zend\GData\App\Extension',
-        'Zend\GData\App'
+        'Zend2\GData\App\Extension',
+        'Zend2\GData\App'
         );
 
     /**
@@ -118,7 +118,7 @@ class App
       * value >= 1 is considered valid.
       *
       * Under most circumtances, this will be automatically set by
-      * Zend_Gdata_App subclasses.
+      * Zend2_Gdata_App subclasses.
       *
       * @see setMajorProtocolVersion()
       * @see getMajorProtocolVersion()
@@ -134,7 +134,7 @@ class App
       * used in the future.
       *
       * Under most circumtances, this will be automatically set by
-      * Zend_Gdata_App subclasses.
+      * Zend2_Gdata_App subclasses.
       *
       * @see setMinorProtocolVersion()
       * @see getMinorProtocolVersion()
@@ -151,7 +151,7 @@ class App
     /**
      * Create Gdata object
      *
-     * @param \Zend\Http\Client $client
+     * @param \Zend2\Http\Client $client
      * @param string $applicationId
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
@@ -174,11 +174,11 @@ class App
     }
 
     /**
-     * Adds a Zend Framework package to the $_registeredPackages array.
+     * Adds a Zend2 Framework package to the $_registeredPackages array.
      * This array is searched when using the magic __call method below
      * to instantiante new objects.
      *
-     * @param string $name The name of the package (eg \Zend\GData\App)
+     * @param string $name The name of the package (eg \Zend2\GData\App)
      * @return void
      */
     public function registerPackage($name)
@@ -191,12 +191,12 @@ class App
      *
      * @param string $uri The uri from which to retrieve the feed
      * @param string $className The class which is used as the return type
-     * @return string|\Zend\GData\App\Feed Returns string only if the object
+     * @return string|\Zend2\GData\App\Feed Returns string only if the object
      *                                    mapping has been disabled explicitly
      *                                    by passing false to the
      *                                    useObjectMapping() function.
      */
-    public function getFeed($uri, $className='Zend\GData\App\Feed')
+    public function getFeed($uri, $className='Zend2\GData\App\Feed')
     {
         return $this->importUrl($uri, $className, null);
     }
@@ -206,20 +206,20 @@ class App
      *
      * @param string $uri
      * @param string $className The class which is used as the return type
-     * @return string|\Zend\GData\App\Entry Returns string only if the object
+     * @return string|\Zend2\GData\App\Entry Returns string only if the object
      *                                     mapping has been disabled explicitly
      *                                     by passing false to the
      *                                     useObjectMapping() function.
      */
-    public function getEntry($uri, $className='Zend\GData\App\Entry')
+    public function getEntry($uri, $className='Zend2\GData\App\Entry')
     {
         return $this->importUrl($uri, $className, null);
     }
 
     /**
-     * Get the \Zend\Http\Client object used for communication
+     * Get the \Zend2\Http\Client object used for communication
      *
-     * @return \Zend\Http\Client
+     * @return \Zend2\Http\Client
      */
     public function getHttpClient()
     {
@@ -227,11 +227,11 @@ class App
     }
 
     /**
-     * Set the \Zend\Http\Client object used for communication
+     * Set the \Zend2\Http\Client object used for communication
      *
-     * @param \Zend\Http\Client $client The client to use for communication
-     * @throws \Zend\GData\App\HttpException
-     * @return \Zend\GData\App Provides a fluent interface
+     * @param \Zend2\Http\Client $client The client to use for communication
+     * @throws \Zend2\GData\App\HttpException
+     * @return \Zend2\GData\App Provides a fluent interface
      */
     public function setHttpClient($client,
         $applicationId = 'MyCompany-MyApp-1.0')
@@ -241,10 +241,10 @@ class App
         }
         if (!$client instanceof Http\Client) {
             throw new App\HttpException(
-                'Argument is not an instance of Zend\Http\Client.');
+                'Argument is not an instance of Zend2\Http\Client.');
         }
-        $userAgent = $applicationId . ' Zend_Framework_Gdata/' .
-            \Zend\Version::VERSION;
+        $userAgent = $applicationId . ' Zend2_Framework_Gdata/' .
+            \Zend2\Version::VERSION;
         $client->getRequest()->headers()->addHeaderLine('User-Agent', $userAgent);
         $client->setConfig(array(
             'strictredirects' => true
@@ -260,7 +260,7 @@ class App
      *
      * Sets the static HTTP client object to use for retrieving the feed.
      *
-     * @param  \Zend\Http\Client $httpClient
+     * @param  \Zend2\Http\Client $httpClient
      * @return void
      */
     public static function setStaticHttpClient(Http\Client $httpClient)
@@ -270,15 +270,15 @@ class App
 
 
     /**
-     * Gets the HTTP client object. If none is set, a new \Zend\Http\Client will be used.
+     * Gets the HTTP client object. If none is set, a new \Zend2\Http\Client will be used.
      *
-     * @return \Zend\Http\Client
+     * @return \Zend2\Http\Client
      */
     public static function getStaticHttpClient()
     {
         if (!self::$_staticHttpClient instanceof Http\Client) {
             $client = new Http\Client();
-            $userAgent = 'Zend_Framework_Gdata/' . \Zend\Version::VERSION;
+            $userAgent = 'Zend2_Framework_Gdata/' . \Zend2\Version::VERSION;
             $client->setHeaders('User-Agent', $userAgent);
             $client->setConfig(array(
                 'strictredirects' => true
@@ -393,11 +393,11 @@ class App
 
     /**
      * Set the major protocol version that should be used. Values < 1 will
-     * cause a \Zend\Gdata\App\InvalidArgumentException to be thrown.
+     * cause a \Zend2\Gdata\App\InvalidArgumentException to be thrown.
      *
      * @see _majorProtocolVersion
      * @param int $value The major protocol version to use.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function setMajorProtocolVersion($value)
     {
@@ -422,11 +422,11 @@ class App
     /**
      * Set the minor protocol version that should be used. If set to NULL, no
      * minor protocol version will be sent to the server. Values < 0 will
-     * cause a \Zend\Gdata\App\InvalidArgumentException to be thrown.
+     * cause a \Zend2\Gdata\App\InvalidArgumentException to be thrown.
      *
      * @see _minorProtocolVersion
      * @param (int|NULL) $value The minor protocol version to use.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function setMinorProtocolVersion($value)
     {
@@ -465,7 +465,7 @@ class App
      *                    or null if found in $data
      * @param array $headers An associative array of HTTP headers for this
      *                       request
-     * @param mixed $data The \Zend\GData\App\Entry or XML for the
+     * @param mixed $data The \Zend2\GData\App\Entry or XML for the
      *                    body of the request
      * @param string $contentTypeOverride The override value for the
      *                                    content type of the request body
@@ -574,7 +574,7 @@ class App
      *                                of the request body
      * @param int $remainingRedirects Number of redirects to follow if request
      *                              s results in one
-     * @return \Zend\Http\Response The response object
+     * @return \Zend2\Http\Response The response object
      */
     public function performHttpRequest($method, $url, $headers = null,
         $body = null, $contentType = null, $remainingRedirects = null)
@@ -600,7 +600,7 @@ class App
             $headers['x-http-method-override'] != 'DELETE') {
                 throw new App\InvalidArgumentException(
                         'You must specify the data to post as either a ' .
-                        'string or a child of Zend\GData\App\Entry');
+                        'string or a child of Zend2\GData\App\Entry');
         }
         if ($url === null) {
             throw new App\InvalidArgumentException(
@@ -643,12 +643,12 @@ class App
         $usingMimeStream = false;
         $oldHttpAdapter = null;
 
-        if ($body instanceof \Zend\GData\MediaMimeStream) {
+        if ($body instanceof \Zend2\GData\MediaMimeStream) {
             $usingMimeStream = true;
             $this->_httpClient->setRawDataStream($body, $contentType);
             $oldHttpAdapter = $this->_httpClient->getAdapter();
 
-            if ($oldHttpAdapter instanceof \Zend\Http\Client\Adapter\Proxy) {
+            if ($oldHttpAdapter instanceof \Zend2\Http\Client\Adapter\Proxy) {
                 $newAdapter = new HttpAdapterStreamingProxy();
             } else {
                 $newAdapter = new HttpAdapterStreamingSocket();
@@ -665,7 +665,7 @@ class App
             if ($usingMimeStream) {
                 $this->_httpClient->setAdapter($oldHttpAdapter);
             }
-        } catch (\Zend\Http\Client\Exception $e) {
+        } catch (\Zend2\Http\Client\Exception $e) {
             // reset adapter
             if ($usingMimeStream) {
                 $this->_httpClient->setAdapter($oldHttpAdapter);
@@ -704,16 +704,16 @@ class App
      * Imports a feed located at $uri.
      *
      * @param  string $uri
-     * @param  \Zend\Http\Client $client The client used for communication
+     * @param  \Zend2\Http\Client $client The client used for communication
      * @param  string $className The class which is used as the return type
-     * @throws \Zend\GData\App\Exception
-     * @return string|\Zend\GData\App\Feed Returns string only if the object
+     * @throws \Zend2\GData\App\Exception
+     * @return string|\Zend2\GData\App\Feed Returns string only if the object
      *                                    mapping has been disabled explicitly
      *                                    by passing false to the
      *                                    useObjectMapping() function.
      */
     public static function import($uri, $client = null,
-        $className='Zend\GData\App\Feed')
+        $className='Zend2\GData\App\Feed')
     {
         $app = new self($client);
         $requestData = $app->prepareRequest('GET', $uri);
@@ -738,13 +738,13 @@ class App
      * @param  string $className The class which is used as the return type
      * @param array $extraHeaders Extra headers to add to the request, as an
      *        array of string-based key/value pairs.
-     * @throws \Zend\GData\App\Exception
-     * @return string|\Zend\GData\App\Feed Returns string only if the object
+     * @throws \Zend2\GData\App\Exception
+     * @return string|\Zend2\GData\App\Feed Returns string only if the object
      *                                    mapping has been disabled explicitly
      *                                    by passing false to the
      *                                    useObjectMapping() function.
      */
-    public function importUrl($url, $className='Zend\GData\App\Feed',
+    public function importUrl($url, $className='Zend2\GData\App\Feed',
         $extraHeaders = array())
     {
         $response = $this->get($url, $extraHeaders);
@@ -790,11 +790,11 @@ class App
      *        of the data model object that is to be created.
      * @param integer $minorProcolVersion (optional) The minor protocol version
      *        of the data model object that is to be created.
-     * @throws \Zend\GData\App\Exception
-     * @return \Zend\GData\App\Feed
+     * @throws \Zend2\GData\App\Exception
+     * @return \Zend2\GData\App\Feed
      */
     public static function importString($string,
-        $className='Zend\GData\App\Feed', $majorProtocolVersion = null,
+        $className='Zend2\GData\App\Feed', $majorProtocolVersion = null,
         $minorProtocolVersion = null)
     {
         if (!class_exists($className)) {
@@ -827,11 +827,11 @@ class App
      * @param  string $filename
      * @param  string $className The class which is used as the return type
      * @param  string $useIncludePath Whether the include_path should be searched
-     * @throws \Zend\GData\App\Exception
-     * @return \Zend\GData\App\Feed
+     * @throws \Zend2\GData\App\Exception
+     * @return \Zend2\GData\App\Feed
      */
     public static function importFile($filename,
-            $className='Zend\GData\App\Feed', $useIncludePath = false)
+            $className='Zend2\GData\App\Feed', $useIncludePath = false)
     {
         @ini_set('track_errors', 1);
         $feed = @file_get_contents($filename, $useIncludePath);
@@ -849,8 +849,8 @@ class App
      * @param string $uri GET URI
      * @param array $extraHeaders Extra headers to add to the request, as an
      *        array of string-based key/value pairs.
-     * @throws \Zend\GData\App\HttpException
-     * @return \Zend\Http\Response
+     * @throws \Zend2\GData\App\HttpException
+     * @return \Zend2\Http\Response
      */
     public function get($uri, $extraHeaders = array())
     {
@@ -863,16 +863,16 @@ class App
     /**
      * POST data with client object
      *
-     * @param mixed $data The \Zend\GData\App\Entry or XML to post
+     * @param mixed $data The \Zend2\GData\App\Entry or XML to post
      * @param string $uri POST URI
      * @param array $headers Additional HTTP headers to insert.
      * @param string $contentType Content-type of the data
      * @param array $extraHeaders Extra headers to add to the request, as an
      *        array of string-based key/value pairs.
-     * @return \Zend\Http\Response
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @return \Zend2\Http\Response
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function post($data, $uri = null, $remainingRedirects = null,
             $contentType = null, $extraHeaders = null)
@@ -888,16 +888,16 @@ class App
     /**
      * PUT data with client object
      *
-     * @param mixed $data The \Zend\GData\App\Entry or XML to post
+     * @param mixed $data The \Zend2\GData\App\Entry or XML to post
      * @param string $uri PUT URI
      * @param array $headers Additional HTTP headers to insert.
      * @param string $contentType Content-type of the data
      * @param array $extraHeaders Extra headers to add to the request, as an
      *        array of string-based key/value pairs.
-     * @return \Zend\Http\Response
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @return \Zend2\Http\Response
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function put($data, $uri = null, $remainingRedirects = null,
             $contentType = null, $extraHeaders = null)
@@ -913,11 +913,11 @@ class App
     /**
      * DELETE entry with client object
      *
-     * @param mixed $data The \Zend\GData\App\Entry or URL to delete
+     * @param mixed $data The \Zend2\GData\App\Entry or URL to delete
      * @return void
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\App\Exception
+     * @throws \Zend2\GData\App\HttpException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public function delete($data, $remainingRedirects = null)
     {
@@ -941,15 +941,15 @@ class App
      * Inserts an entry to a given URI and returns the response as a
      * fully formed Entry.
      *
-     * @param mixed  $data The \Zend\GData\App\Entry or XML to post
+     * @param mixed  $data The \Zend2\GData\App\Entry or XML to post
      * @param string $uri POST URI
      * @param string $className The class of entry to be returned.
      * @param array $extraHeaders Extra headers to add to the request, as an
      *        array of string-based key/value pairs.
-     * @return \Zend\GData\App\Entry The entry returned by the service after
+     * @return \Zend2\GData\App\Entry The entry returned by the service after
      *         insertion.
      */
-    public function insertEntry($data, $uri, $className='Zend\GData\App\Entry',
+    public function insertEntry($data, $uri, $className='Zend2\GData\App\Entry',
         $extraHeaders = array())
     {
         if (!class_exists($className)) {
@@ -971,16 +971,16 @@ class App
     /**
      * Update an entry
      *
-     * @param mixed $data \Zend\GData\App\Entry or XML (w/ID and link rel='edit')
+     * @param mixed $data \Zend2\GData\App\Entry or XML (w/ID and link rel='edit')
      * @param string|null The URI to send requests to, or null if $data
      *        contains the URI.
      * @param string|null The name of the class that should be deserialized
-     *        from the server response. If null, then 'Zend_Gdata_App_Entry'
+     *        from the server response. If null, then 'Zend2_Gdata_App_Entry'
      *        will be used.
      * @param array $extraHeaders Extra headers to add to the request, as an
      *        array of string-based key/value pairs.
-     * @return \Zend\GData\App\Entry The entry returned from the server
-     * @throws \Zend\GData\App\Exception
+     * @return \Zend2\GData\App\Entry The entry returned from the server
+     * @throws \Zend2\GData\App\Exception
      */
     public function updateEntry($data, $uri = null, $className = null,
         $extraHeaders = array())
@@ -988,7 +988,7 @@ class App
         if ($className === null && $data instanceof App\Entry) {
             $className = get_class($data);
         } elseif ($className === null) {
-            $className = 'Zend\GData\App\Entry';
+            $className = 'Zend2\GData\App\Entry';
         }
 
         if (!class_exists($className)) {
@@ -1009,16 +1009,16 @@ class App
 
     /**
      * Provides a magic factory method to instantiate new objects with
-     * shorter syntax than would otherwise be required by the Zend Framework
+     * shorter syntax than would otherwise be required by the Zend2 Framework
      * naming conventions.  For instance, to construct a new
-     * Zend_Gdata_Calendar_Extension_Color, a developer simply needs to do
+     * Zend2_Gdata_Calendar_Extension_Color, a developer simply needs to do
      * $gCal->newColor().  For this magic constructor, packages are searched
      * in the same order as which they appear in the $_registeredPackages
      * array
      *
      * @param string $method The method name being called
      * @param array $args The arguments passed to the call
-     * @throws \Zend\GData\App\Exception
+     * @throws \Zend2\GData\App\Exception
      */
     public function __call($method, $args)
     {
@@ -1091,7 +1091,7 @@ class App
 
     /**
      * This method enables logging of requests by changing the
-     * Zend_Http_Client_Adapter used for performing the requests.
+     * Zend2_Http_Client_Adapter used for performing the requests.
      * NOTE: This will not work if you have customized the adapter
      * already to use a proxy server or other interface.
      *
@@ -1100,7 +1100,7 @@ class App
     public function enableRequestDebugLogging($logfile)
     {
         $this->_httpClient->setConfig(array(
-            'adapter' => 'Zend\GData\App\LoggingHttpClientAdapterSocket',
+            'adapter' => 'Zend2\GData\App\LoggingHttpClientAdapterSocket',
             'logfile' => $logfile
             ));
     }
@@ -1108,13 +1108,13 @@ class App
     /**
      * Retrieve next set of results based on a given feed.
      *
-     * @param \Zend\GData\App\Feed $feed The feed from which to
+     * @param \Zend2\GData\App\Feed $feed The feed from which to
      *          retreive the next set of results.
      * @param string $className (optional) The class of feed to be returned.
      *          If null, the next feed (if found) will be the same class as
      *          the feed that was given as the first argument.
-     * @return \Zend\GData\App\Feed|null Returns a
-     *          Zend_Gdata_App_Feed or null if no next set of results
+     * @return \Zend2\GData\App\Feed|null Returns a
+     *          Zend2_Gdata_App_Feed or null if no next set of results
      *          exists.
      */
     public function getNextFeed($feed, $className = null)
@@ -1135,13 +1135,13 @@ class App
     /**
      * Retrieve previous set of results based on a given feed.
      *
-     * @param \Zend\GData\App\Feed $feed The feed from which to
+     * @param \Zend2\GData\App\Feed $feed The feed from which to
      *          retreive the previous set of results.
      * @param string $className (optional) The class of feed to be returned.
      *          If null, the previous feed (if found) will be the same class as
      *          the feed that was given as the first argument.
-     * @return \Zend\GData\App\Feed|null Returns a
-     *          Zend_Gdata_App_Feed or null if no previous set of results
+     * @return \Zend2\GData\App\Feed|null Returns a
+     *          Zend2_Gdata_App_Feed or null if no previous set of results
      *          exists.
      */
     public function getPreviousFeed($feed, $className = null)

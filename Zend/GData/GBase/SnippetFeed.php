@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,33 +12,33 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GBase
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\GBase;
+namespace Zend2\GData\GBase;
 
 /**
  * Represents the Google Base Snippets Feed
  *
  * @link http://code.google.com/apis/base/
  *
- * @uses       \Zend\GData\GBase\Feed
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\GBase\Feed
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GBase
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class SnippetFeed extends \Zend\GData\Feed
+class SnippetFeed extends \Zend2\GData\Feed
 {
     /**
      * The classname for individual snippet feed elements.
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\GBase\SnippetEntry';
+    protected $_entryClassName = 'Zend2\GData\GBase\SnippetEntry';
 }

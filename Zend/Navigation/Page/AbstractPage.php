@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Navigation
+ * @category   Zend2
+ * @package    Zend2_Navigation
  * @subpackage Page
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Navigation\Page;
+namespace Zend2\Navigation\Page;
 
 use Traversable,
-    Zend\Acl\Resource as AclResource,
-    Zend\Navigation\Container,
-    Zend\Navigation\Exception,
-    Zend\Stdlib\ArrayUtils;
+    Zend2\Acl\Resource as AclResource,
+    Zend2\Navigation\Container,
+    Zend2\Navigation\Exception,
+    Zend2\Stdlib\ArrayUtils;
 
 /**
- * Base class for Zend\Navigation\Page pages
+ * Base class for Zend2\Navigation\Page pages
  *
- * @category   Zend
- * @package    Zend_Navigation
+ * @category   Zend2
+ * @package    Zend2_Navigation
  * @subpackage Page
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractPage extends Container
@@ -115,7 +115,7 @@ abstract class AbstractPage extends Container
     /**
      * ACL resource associated with this page
      *
-     * @var string|\Zend\Acl\Resource|null
+     * @var string|\Zend2\Acl\Resource|null
      */
     protected $resource;
 
@@ -143,7 +143,7 @@ abstract class AbstractPage extends Container
     /**
      * Parent container
      *
-     * @var \Zend\Navigation\Container|null
+     * @var \Zend2\Navigation\Container|null
      */
     protected $parent;
 
@@ -157,19 +157,19 @@ abstract class AbstractPage extends Container
     // Initialization:
 
     /**
-     * Factory for Zend_Navigation_Page classes
+     * Factory for Zend2_Navigation_Page classes
      *
      * A specific type to construct can be specified by specifying the key
      * 'type' in $options. If type is 'uri' or 'mvc', the type will be resolved
-     * to Zend_Navigation_Page_Uri or Zend_Navigation_Page_Mvc. Any other value
+     * to Zend2_Navigation_Page_Uri or Zend2_Navigation_Page_Mvc. Any other value
      * for 'type' will be considered the full name of the class to construct.
-     * A valid custom page class must extend Zend_Navigation_Page.
+     * A valid custom page class must extend Zend2_Navigation_Page.
      *
      * If 'type' is not given, the type of page to construct will be determined
      * by the following rules:
      * - If $options contains either of the keys 'action', 'controller',
-     *   or 'route', a Zend_Navigation_Page_Mvc page will be created.
-     * - If $options contains the key 'uri', a Zend_Navigation_Page_Uri page
+     *   or 'route', a Zend2_Navigation_Page_Mvc page will be created.
+     * - If $options contains the key 'uri', a Zend2_Navigation_Page_Uri page
      *   will be created.
      *
      * @param  array|Traversable $options  options used for creating page
@@ -204,10 +204,10 @@ abstract class AbstractPage extends Container
             if (is_string($type) && !empty($type)) {
                 switch (strtolower($type)) {
                     case 'mvc':
-                        $type = 'Zend\Navigation\Page\Mvc';
+                        $type = 'Zend2\Navigation\Page\Mvc';
                         break;
                     case 'uri':
-                        $type = 'Zend\Navigation\Page\Uri';
+                        $type = 'Zend2\Navigation\Page\Uri';
                         break;
                 }
 
@@ -222,7 +222,7 @@ abstract class AbstractPage extends Container
                     throw new Exception\InvalidArgumentException(
                         sprintf(
                             'Invalid argument: Detected type "%s", which ' .
-                            'is not an instance of Zend\Navigation\Page',
+                            'is not an instance of Zend2\Navigation\Page',
                             $type
                         )
                     );
@@ -672,7 +672,7 @@ abstract class AbstractPage extends Container
         } else {
             throw new Exception\InvalidArgumentException(
                 'Invalid argument: $resource must be null, a string, ' .
-                'or an instance of Zend\Acl\Resource'
+                'or an instance of Zend2\Acl\Resource'
             );
         }
 

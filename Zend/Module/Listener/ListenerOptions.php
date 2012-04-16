@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Module\Listener;
+namespace Zend2\Module\Listener;
 
-use Zend\Stdlib\Options,
+use Zend2\Stdlib\Options,
     Traversable;
 
 class ListenerOptions extends Options
@@ -49,7 +49,7 @@ class ListenerOptions extends Options
             throw new Exception\InvalidArgumentException(
                 sprintf('Argument passed to %::%s() must be an array, '
                 . 'implement the \Traversable interface, or be an '
-                . 'instance of Zend\Config\Config. %s given.',
+                . 'instance of Zend2\Config\Config. %s given.',
                 __CLASS__, __METHOD__, gettype($modulePaths))
             );
         }

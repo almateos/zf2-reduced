@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Media
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Media;
+namespace Zend2\GData\Media;
 
-use Zend\GData\Media;
+use Zend2\GData\Media;
 
 /**
  * The Gdata flavor of an Atom Feed with media support
  *
- * @uses       \Zend\GData\Feed
- * @uses       \Zend\GData\Media
- * @uses       \Zend\GData\Media\Entry
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Feed
+ * @uses       \Zend2\GData\Media
+ * @uses       \Zend2\GData\Media\Entry
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Media
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Feed extends \Zend\GData\Feed
+class Feed extends \Zend2\GData\Feed
 {
 
     /**
@@ -43,7 +43,7 @@ class Feed extends \Zend\GData\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\Media\Entry';
+    protected $_entryClassName = 'Zend2\GData\Media\Entry';
 
     /**
      * Create a new instance.

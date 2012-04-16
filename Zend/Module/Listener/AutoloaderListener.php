@@ -1,16 +1,16 @@
 <?php
 
-namespace Zend\Module\Listener;
+namespace Zend2\Module\Listener;
 
-use Zend\Loader\AutoloaderFactory,
-    Zend\Module\Consumer\AutoloaderProvider,
-    Zend\Module\ModuleEvent;
+use Zend2\Loader\AutoloaderFactory,
+    Zend2\Module\Consumer\AutoloaderProvider,
+    Zend2\Module\ModuleEvent;
 
 class AutoloaderListener extends AbstractListener
 {
 
     /**
-     * @param \Zend\Module\ModuleEvent $e
+     * @param \Zend2\Module\ModuleEvent $e
      * @return void
      */
     public function __invoke(ModuleEvent $e)

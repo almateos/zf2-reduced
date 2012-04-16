@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,20 +13,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Service\Rackspace
+ * @category   Zend2
+ * @package    Zend2\Service\Rackspace
  * @subpackage Servers
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Rackspace\Servers;
+namespace Zend2\Service\Rackspace\Servers;
 
-use Zend\Service\Rackspace\Servers as RackspaceServers;
+use Zend2\Service\Rackspace\Servers as RackspaceServers;
 
 class SharedIpGroup
 {
-    const ERROR_PARAM_CONSTRUCT  = 'You must pass a Zend\Service\Rackspace\Servers object and an array';
+    const ERROR_PARAM_CONSTRUCT  = 'You must pass a Zend2\Service\Rackspace\Servers object and an array';
     const ERROR_PARAM_NO_NAME    = 'You must pass the image\'s name in the array (name)';
     const ERROR_PARAM_NO_ID      = 'You must pass the image\'s id in the array (id)';
     const ERROR_PARAM_NO_SERVERS = 'The servers parameter must be an array of Ids';
@@ -51,7 +51,7 @@ class SharedIpGroup
     /**
      * The service that has created the image object
      *
-     * @var Zend\Service\Rackspace\Servers
+     * @var Zend2\Service\Rackspace\Servers
      */
     protected $service;
     /**
@@ -121,7 +121,7 @@ class SharedIpGroup
      * Get the server 
      * 
      * @param integer $id
-     * @return Zend\Service\Rackspace\Servers\Server|boolean
+     * @return Zend2\Service\Rackspace\Servers\Server|boolean
      */
     public function getServer($id)
     {
@@ -139,7 +139,7 @@ class SharedIpGroup
      * @param array $data
      * @param array $metadata
      * @param array $files 
-     * @return Zend\Service\Rackspace\Servers\Server|boolean
+     * @return Zend2\Service\Rackspace\Servers\Server|boolean
      */
     public function createServer(array $data, $metadata=array(),$files=array()) 
     {

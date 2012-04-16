@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_Client_AbstractClient
- * @uses       Zend_Service_DeveloperGarden_Response_SecurityTokenServer_GetTokensResponse
- * @uses       Zend_Service_DeveloperGarden_Response_SecurityTokenServer_SecurityTokenResponse
- * @uses       Zend_Service_DeveloperGarden_SecurityTokenServer_Cache
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Client_AbstractClient
+ * @uses       Zend2_Service_DeveloperGarden_Response_SecurityTokenServer_GetTokensResponse
+ * @uses       Zend2_Service_DeveloperGarden_Response_SecurityTokenServer_SecurityTokenResponse
+ * @uses       Zend2_Service_DeveloperGarden_SecurityTokenServer_Cache
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_SecurityTokenServer
-    extends Zend_Service_DeveloperGarden_Client_AbstractClient
+class Zend2_Service_DeveloperGarden_SecurityTokenServer
+    extends Zend2_Service_DeveloperGarden_Client_AbstractClient
 {
     /**
      * wsdl file
@@ -55,18 +55,18 @@ class Zend_Service_DeveloperGarden_SecurityTokenServer
      *
      */
     protected $_classMap = array(
-        'SecurityTokenResponse' => 'Zend_Service_DeveloperGarden_Response_SecurityTokenServer_SecurityTokenResponse',
-        'getTokensResponse'     => 'Zend_Service_DeveloperGarden_Response_SecurityTokenServer_GetTokensResponse'
+        'SecurityTokenResponse' => 'Zend2_Service_DeveloperGarden_Response_SecurityTokenServer_SecurityTokenResponse',
+        'getTokensResponse'     => 'Zend2_Service_DeveloperGarden_Response_SecurityTokenServer_GetTokensResponse'
     );
 
     /**
      * does the login and return the specific response
      *
-     * @return Zend_Service_DeveloperGarden_Response_SecurityTokenServer_SecurityTokenResponse
+     * @return Zend2_Service_DeveloperGarden_Response_SecurityTokenServer_SecurityTokenResponse
      */
     public function getLoginToken()
     {
-        $token = Zend_Service_DeveloperGarden_SecurityTokenServer_Cache::getTokenFromCache(
+        $token = Zend2_Service_DeveloperGarden_SecurityTokenServer_Cache::getTokenFromCache(
             'securityToken'
         );
 
@@ -74,7 +74,7 @@ class Zend_Service_DeveloperGarden_SecurityTokenServer
             || !$token->isValid()
         ) {
             $token = $this->getSoapClient()->login('login');
-            Zend_Service_DeveloperGarden_SecurityTokenServer_Cache::setTokenToCache(
+            Zend2_Service_DeveloperGarden_SecurityTokenServer_Cache::setTokenToCache(
                 'securityToken',
                 $token
             );
@@ -86,11 +86,11 @@ class Zend_Service_DeveloperGarden_SecurityTokenServer
     /**
      * returns the fetched token from token server
      *
-     * @return Zend_Service_DeveloperGarden_Response_SecurityTokenServer_GetTokensResponse
+     * @return Zend2_Service_DeveloperGarden_Response_SecurityTokenServer_GetTokensResponse
      */
     public function getTokens()
     {
-        $token = Zend_Service_DeveloperGarden_SecurityTokenServer_Cache::getTokenFromCache(
+        $token = Zend2_Service_DeveloperGarden_SecurityTokenServer_Cache::getTokenFromCache(
             'getTokens'
         );
 
@@ -100,7 +100,7 @@ class Zend_Service_DeveloperGarden_SecurityTokenServer
             $token = $this->getSoapClient()->getTokens(array(
                 'serviceId' => $this->_serviceAuthId
             ));
-            Zend_Service_DeveloperGarden_SecurityTokenServer_Cache::setTokenToCache(
+            Zend2_Service_DeveloperGarden_SecurityTokenServer_Cache::setTokenToCache(
                 'getTokens',
                 $token
             );

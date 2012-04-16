@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,24 +13,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData;
+namespace Zend2\GData;
 
-use Zend\Http\Header\Etag;
+use Zend2\Http\Header\Etag;
 
 /**
  * The Gdata flavor of an Atom Feed
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Feed extends App\Feed
@@ -41,26 +41,26 @@ class Feed extends App\Feed
      *
      * @var string
      */
-    protected $_entryClassName = '\Zend\GData\Entry';
+    protected $_entryClassName = '\Zend2\GData\Entry';
 
     /**
      * The openSearch:totalResults element
      *
-     * @var \Zend\GData\Extension\OpenSearchTotalResults|null
+     * @var \Zend2\GData\Extension\OpenSearchTotalResults|null
      */
     protected $_totalResults = null;
 
     /**
      * The openSearch:startIndex element
      *
-     * @var \Zend\GData\Extension\OpenSearchStartIndex|null
+     * @var \Zend2\GData\Extension\OpenSearchStartIndex|null
      */
     protected $_startIndex = null;
 
     /**
      * The openSearch:itemsPerPage element
      *
-     * @var \Zend\GData\Extension\OpenSearchItemsPerPage|null
+     * @var \Zend2\GData\Extension\OpenSearchItemsPerPage|null
      */
     protected $_itemsPerPage = null;
 
@@ -157,9 +157,9 @@ class Feed extends App\Feed
     /**
      *  Set the value of the totalResults property.
      *
-     * @param \Zend\GData\Extension\OpenSearchTotalResults|null $value The
+     * @param \Zend2\GData\Extension\OpenSearchTotalResults|null $value The
      *        value of the totalResults property. Use null to unset.
-     * @return \Zend\GData\Feed Provides a fluent interface.
+     * @return \Zend2\GData\Feed Provides a fluent interface.
      */
     function setTotalResults($value) {
         $this->_totalResults = $value;
@@ -169,7 +169,7 @@ class Feed extends App\Feed
     /**
      * Get the value of the totalResults property.
      *
-     * @return \Zend\GData\Extension\OpenSearchTotalResults|null The value of
+     * @return \Zend2\GData\Extension\OpenSearchTotalResults|null The value of
      *         the totalResults property, or null if unset.
      */
     function getTotalResults() {
@@ -179,9 +179,9 @@ class Feed extends App\Feed
     /**
      * Set the start index property for feed paging.
      *
-     * @param \Zend\GData\Extension\OpenSearchStartIndex|null $value The value
+     * @param \Zend2\GData\Extension\OpenSearchStartIndex|null $value The value
      *        for the startIndex property. Use null to unset.
-     * @return \Zend\GData\Feed Provides a fluent interface.
+     * @return \Zend2\GData\Feed Provides a fluent interface.
      */
     function setStartIndex($value) {
         $this->_startIndex = $value;
@@ -191,7 +191,7 @@ class Feed extends App\Feed
     /**
      * Get the value of the startIndex property.
      *
-     * @return \Zend\GData\Extension\OpenSearchStartIndex|null The value of the
+     * @return \Zend2\GData\Extension\OpenSearchStartIndex|null The value of the
      *         startIndex property, or null if unset.
      */
     function getStartIndex() {
@@ -201,9 +201,9 @@ class Feed extends App\Feed
     /**
      * Set the itemsPerPage property.
      *
-     * @param \Zend\GData\Extension\OpenSearchItemsPerPage|null $value The
+     * @param \Zend2\GData\Extension\OpenSearchItemsPerPage|null $value The
      *        value for the itemsPerPage property. Use nul to unset.
-     * @return \Zend\GData\Feed Provides a fluent interface.
+     * @return \Zend2\GData\Feed Provides a fluent interface.
      */
     function setItemsPerPage($value) {
         $this->_itemsPerPage = $value;
@@ -213,7 +213,7 @@ class Feed extends App\Feed
     /**
      * Get the value of the itemsPerPage property.
      *
-     * @return \Zend\GData\Extension\OpenSearchItemsPerPage|null The value of
+     * @return \Zend2\GData\Extension\OpenSearchItemsPerPage|null The value of
      *         the itemsPerPage property, or null if unset.
      */
     function getItemsPerPage() {

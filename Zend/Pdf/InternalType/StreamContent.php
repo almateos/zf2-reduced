@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\InternalType;
-use Zend\Pdf;
+namespace Zend2\Pdf\InternalType;
+use Zend2\Pdf;
 
 /**
  * PDF file 'stream' element implementation
  *
- * @uses       \Zend\Pdf\PdfDocument
- * @uses       \Zend\Pdf\InternalType\AbstractTypeObject
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\PdfDocument
+ * @uses       \Zend2\Pdf\InternalType\AbstractTypeObject
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class StreamContent extends AbstractTypeObject
@@ -38,7 +38,7 @@ class StreamContent extends AbstractTypeObject
     /**
      * Object value
      *
-     * @var \Zend\Memory\Container\AbstractContainer
+     * @var \Zend2\Memory\Container\AbstractContainer
      */
     public $value;
 
@@ -99,10 +99,10 @@ class StreamContent extends AbstractTypeObject
     /**
       * Detach PDF object from the factory (if applicable), clone it and attach to new factory.
       *
-      * @param \Zend\Pdf\ObjectFactory $factory  The factory to attach
+      * @param \Zend2\Pdf\ObjectFactory $factory  The factory to attach
       * @param array &$processed  List of already processed indirect objects, used to avoid objects duplication
       * @param integer $mode  Cloning mode (defines filter for objects cloning)
-      * @returns \Zend\Pdf\InternalType\AbstractTypeObject
+      * @returns \Zend2\Pdf\InternalType\AbstractTypeObject
       */
      public function makeClone(Pdf\ObjectFactory $factory, array &$processed, $mode)
      {
@@ -112,7 +112,7 @@ class StreamContent extends AbstractTypeObject
     /**
      * Return object as string
      *
-     * @param \Zend\Pdf\ObjectFactory $factory
+     * @param \Zend2\Pdf\ObjectFactory $factory
      * @return string
      */
     public function toString(Pdf\ObjectFactory $factory = null)

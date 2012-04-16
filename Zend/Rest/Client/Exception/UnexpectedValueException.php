@@ -1,7 +1,7 @@
 <?php
-namespace Zend\Rest\Client\Exception;
+namespace Zend2\Rest\Client\Exception;
 
 class UnexpectedValueException
     extends \UnexpectedValueException
-    implements \Zend\Rest\Client\Exception
+    implements \Zend2\Rest\Client\Exception
 {}

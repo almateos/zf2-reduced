@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Locale
+ * @category   Zend2
+ * @package    Zend2_Locale
  * @subpackage Format
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Locale;
+namespace Zend2\Locale;
 
-use Zend\Cache\Storage\Adapter,
-    Zend\Locale\Data\Cldr;
+use Zend2\Cache\Storage\Adapter,
+    Zend2\Locale\Data\Cldr;
 
 /**
- * @category   Zend
- * @package    Zend_Locale
+ * @category   Zend2
+ * @package    Zend2_Locale
  * @subpackage Format
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Format
@@ -56,7 +56,7 @@ class Format
      * with the default date format for a locale, use array('date_format' => null, 'locale' => $locale) for their options.
      *
      * @param  array  $options  Array of options, keyed by option name: format_type = 'iso' | 'php', fix_date = true | false,
-     *                          locale = Zend_Locale | locale string, precision = whole number between -1 and 30
+     *                          locale = Zend2_Locale | locale string, precision = whole number between -1 and 30
      * @return Options array if no option was given
      */
     public static function setOptions(array $options = array())
@@ -70,8 +70,8 @@ class Format
      * See {@link setOptions()} for details.
      *
      * @param  array  $options  Array of options, keyed by option name: format_type = 'iso' | 'php', fix_date = true | false,
-     *                          locale = Zend_Locale | locale string, precision = whole number between -1 and 30
-     * @throws \Zend\Locale\Exception\InvalidArgumentException
+     *                          locale = Zend2_Locale | locale string, precision = whole number between -1 and 30
+     * @throws \Zend2\Locale\Exception\InvalidArgumentException
      * @return Options array if no option was given
      */
     private static function _checkOptions(array $options = array())
@@ -190,9 +190,9 @@ class Format
      *   convertNumerals('100 Tests', 'Latn', 'Arab'); -> returns '١١٠ Tests'
      *
      * @param  string  $input  String to convert
-     * @param  string  $from   Script to parse, see {@link Zend_Locale::getScriptList()} for details.
+     * @param  string  $from   Script to parse, see {@link Zend2_Locale::getScriptList()} for details.
      * @param  string  $to     OPTIONAL Script to convert to
-     * @throws \Zend\Locale\Exception\InvalidArgumentException
+     * @throws \Zend2\Locale\Exception\InvalidArgumentException
      * @return string  Returns the converted input
      */
     public static function convertNumerals($input, $from, $to = null)
@@ -242,7 +242,7 @@ class Format
      *
      * @param  string $input    Input string to parse for numbers
      * @param  array  $options  Options: locale, precision. See {@link setOptions()} for details.
-     * @throws \Zend\Locale\Exception\InvalidArgumentException
+     * @throws \Zend2\Locale\Exception\InvalidArgumentException
      * @return string Returns the extracted number
      */
     public static function getNumber($input, array $options = array())
@@ -299,7 +299,7 @@ class Format
      *
      * @param   string  $input    Localized number string
      * @param   array   $options  Options: number_format, locale, precision. See {@link setOptions()} for details.
-     * @throws \Zend\Locale\Exception\InvalidArgumentException
+     * @throws \Zend2\Locale\Exception\InvalidArgumentException
      * @return  string  locale formatted number
      */
     public static function toNumber($value, array $options = array())
@@ -534,7 +534,7 @@ class Format
      * Internal method to convert cldr number syntax into regex
      *
      * @param  string $type
-     * @throws \Zend\Locale\Exception\UnsupportedTokenException
+     * @throws \Zend2\Locale\Exception\UnsupportedTokenException
      * @return string
      */
     private static function _getRegexForType($type, $options)
@@ -729,7 +729,7 @@ class Format
 
     /**
      * Converts a format string from PHP's date format to ISO format
-     * Remember that Zend Date always returns localized string, so a month name which returns the english
+     * Remember that Zend2 Date always returns localized string, so a month name which returns the english
      * month in php's date() will return the translated month name with this function... use 'en' as locale
      * if you are in need of the original english names
      *
@@ -767,7 +767,7 @@ class Format
      *
      * @param   string  $date     Date string to parse
      * @param   array   $options  Options: format_type, fix_date, locale, date_format. See {@link setOptions()} for details.
-     * @throws \Zend\Locale\Exception\InvalidArgumentException
+     * @throws \Zend2\Locale\Exception\InvalidArgumentException
      * @return  array             Possible array members: day, month, year, hour, minute, second, fixed, format
      */
     private static function _parseDate($date, $options)
@@ -1086,8 +1086,8 @@ class Format
     /**
      * Returns the default date format for $locale.
      *
-     * @param  string|\Zend\Locale\Locale  $locale  OPTIONAL Locale of $number, possibly in string form (e.g. 'de_AT')
-     * @throws \Zend\Locale\Exception\InvalidArgumentException
+     * @param  string|\Zend2\Locale\Locale  $locale  OPTIONAL Locale of $number, possibly in string form (e.g. 'de_AT')
+     * @throws \Zend2\Locale\Exception\InvalidArgumentException
      * @return string  format
      */
     public static function getDateFormat($locale = null)
@@ -1127,7 +1127,7 @@ class Format
     /**
      * Returns if the given datestring contains all date parts from the given format.
      * If no format is given, the default date format from the locale is used
-     * If you want to check if the date is a proper date you should use Zend_Date::isDate()
+     * If you want to check if the date is a proper date you should use Zend2_Date::isDate()
      *
      * @param   string  $date     Date string
      * @param   array   $options  Options: format_type, fix_date, locale, date_format. See {@link setOptions()} for details.
@@ -1197,8 +1197,8 @@ class Format
     /**
      * Returns the default time format for $locale.
      *
-     * @param  string|\Zend\Locale\Locale  $locale  OPTIONAL Locale of $number, possibly in string form (e.g. 'de_AT')
-     * @throws \Zend\Locale\Exception\InvalidArgumentException
+     * @param  string|\Zend2\Locale\Locale  $locale  OPTIONAL Locale of $number, possibly in string form (e.g. 'de_AT')
+     * @throws \Zend2\Locale\Exception\InvalidArgumentException
      * @return string  format
      */
     public static function getTimeFormat($locale = null)
@@ -1235,8 +1235,8 @@ class Format
     /**
      * Returns the default datetime format for $locale.
      *
-     * @param  string|\Zend\Locale\Locale  $locale  OPTIONAL Locale of $number, possibly in string form (e.g. 'de_AT')
-     * @throws \Zend\Locale\Exception\InvalidArgumentException
+     * @param  string|\Zend2\Locale\Locale  $locale  OPTIONAL Locale of $number, possibly in string form (e.g. 'de_AT')
+     * @throws \Zend2\Locale\Exception\InvalidArgumentException
      * @return string  format
      */
     public static function getDateTimeFormat($locale = null)

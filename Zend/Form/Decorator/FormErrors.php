@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form\Decorator;
+namespace Zend2\Form\Decorator;
 
-use Zend\Form,
-    Zend\View\Renderer as View;
+use Zend2\Form,
+    Zend2\View\Renderer as View;
 
 /**
- * Zend_Form_Decorator_FormErrors
+ * Zend2_Form_Decorator_FormErrors
  *
  * Displays all form errors in one view.
  *
  * Any options passed will be used as HTML attributes of the ul tag for the errors.
  *
- * @uses       \Zend\Form\Decorator\AbstractDecorator
- * @category   Zend
- * @package    Zend_Form
+ * @uses       \Zend2\Form\Decorator\AbstractDecorator
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class FormErrors extends AbstractDecorator
@@ -151,7 +151,7 @@ class FormErrors extends AbstractDecorator
      * Set markupElementLabelStart
      *
      * @param  string $markupElementLabelStart
-     * @return \Zend\Form\Decorator\FormErrors
+     * @return \Zend2\Form\Decorator\FormErrors
      */
     public function setMarkupElementLabelStart($markupElementLabelStart)
     {
@@ -182,7 +182,7 @@ class FormErrors extends AbstractDecorator
      * Set markupElementLabelEnd
      *
      * @param  string $markupElementLabelEnd
-     * @return \Zend\Form\Decorator\FormErrors
+     * @return \Zend2\Form\Decorator\FormErrors
      */
     public function setMarkupElementLabelEnd($markupElementLabelEnd)
     {
@@ -213,7 +213,7 @@ class FormErrors extends AbstractDecorator
      * Set markupListStart
      *
      * @param  string $markupListStart
-     * @return \Zend\Form\Decorator\FormErrors
+     * @return \Zend2\Form\Decorator\FormErrors
      */
     public function setMarkupListStart($markupListStart)
     {
@@ -244,7 +244,7 @@ class FormErrors extends AbstractDecorator
      * Set markupListEnd
      *
      * @param  string $markupListEnd
-     * @return \Zend\Form\Decorator\FormErrors
+     * @return \Zend2\Form\Decorator\FormErrors
      */
     public function setMarkupListEnd($markupListEnd)
     {
@@ -275,7 +275,7 @@ class FormErrors extends AbstractDecorator
      * Set markupListItemStart
      *
      * @param  string $markupListItemStart
-     * @return \Zend\Form\Decorator\FormErrors
+     * @return \Zend2\Form\Decorator\FormErrors
      */
     public function setMarkupListItemStart($markupListItemStart)
     {
@@ -306,7 +306,7 @@ class FormErrors extends AbstractDecorator
      * Set markupListItemEnd
      *
      * @param  string $markupListItemEnd
-     * @return \Zend\Form\Decorator\FormErrors
+     * @return \Zend2\Form\Decorator\FormErrors
      */
     public function setMarkupListItemEnd($markupListItemEnd)
     {
@@ -337,7 +337,7 @@ class FormErrors extends AbstractDecorator
      * Set ignoreSubForms
      *
      * @param  bool $ignoreSubForms
-     * @return \Zend\Form\Decorator\FormErrors
+     * @return \Zend2\Form\Decorator\FormErrors
      */
     public function setIgnoreSubForms($ignoreSubForms)
     {
@@ -367,7 +367,7 @@ class FormErrors extends AbstractDecorator
      * Set showCustomFormErrors
      *
      * @param  bool $showCustomFormErrors
-     * @return Zend_Form_Decorator_FormErrors
+     * @return Zend2_Form_Decorator_FormErrors
      */
     public function setShowCustomFormErrors($showCustomFormErrors)
     {
@@ -398,7 +398,7 @@ class FormErrors extends AbstractDecorator
      * in addition to custom form messages.
      *
      * @param  bool $onlyCustomFormErrors
-     * @return Zend_Form_Decorator_FormErrors
+     * @return Zend2_Form_Decorator_FormErrors
      */
     public function setOnlyCustomFormErrors($onlyCustomFormErrors)
     {
@@ -409,8 +409,8 @@ class FormErrors extends AbstractDecorator
     /**
      * Render element label
      *
-     * @param  \Zend\Form\Element $element
-     * @param  \Zend\View\Renderer $view
+     * @param  \Zend2\Form\Element $element
+     * @param  \Zend2\View\Renderer $view
      * @return string
      */
     public function renderLabel(Form\Element $element, View $view)
@@ -428,8 +428,8 @@ class FormErrors extends AbstractDecorator
     /**
      * Recurse through a form object, rendering errors
      *
-     * @param  \Zend\Form\Form $form
-     * @param  \Zend\View\Renderer $view
+     * @param  \Zend2\Form\Form $form
+     * @param  \Zend2\View\Renderer $view
      * @return string
      */
     protected function _recurseForm(Form\Form $form, View $view)

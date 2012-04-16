@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Docbook;
+namespace Zend2\Docbook;
 
 use DOMDocument;
 

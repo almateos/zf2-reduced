@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Queue
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Queue\Adapter;
-use Zend\Queue\Queue,
-    Zend\Queue\Message,
-    Zend\Queue\Exception as QueueException;
+namespace Zend2\Queue\Adapter;
+use Zend2\Queue\Queue,
+    Zend2\Queue\Message,
+    Zend2\Queue\Exception as QueueException;
 
 
 /**
- * Class testing.  No supported functions.  Also used to disable a Zend_Queue.
+ * Class testing.  No supported functions.  Also used to disable a Zend2_Queue.
  *
- * @uses       \Zend\Queue\Adapter\AdapterAbstract
- * @uses       \Zend\Queue\Queue
- * @uses       \Zend\Queue\Exception
- * @uses       \Zend\Queue\Message
- * @category   Zend
- * @package    Zend_Queue
+ * @uses       \Zend2\Queue\Adapter\AdapterAbstract
+ * @uses       \Zend2\Queue\Queue
+ * @uses       \Zend2\Queue\Exception
+ * @uses       \Zend2\Queue\Message
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Null extends AbstractAdapter
@@ -43,8 +43,8 @@ class Null extends AbstractAdapter
     /**
      * Constructor
      *
-     * @param  array|\Zend\Config\Config $options
-     * @param  null|\Zend\Queue\Queue $queue
+     * @param  array|\Zend2\Config\Config $options
+     * @param  null|\Zend2\Queue\Queue $queue
      * @return void
      */
     public function __construct($options, Queue $queue = null)
@@ -59,7 +59,7 @@ class Null extends AbstractAdapter
     /**
      * Does a queue already exist?
      *
-     * @throws \Zend\Queue\Exception - not supported.
+     * @throws \Zend2\Queue\Exception - not supported.
      */
     public function isExists($name)
     {
@@ -70,7 +70,7 @@ class Null extends AbstractAdapter
     /**
      * Create a new queue
      *
-     * @throws \Zend\Queue\Exception - not supported.
+     * @throws \Zend2\Queue\Exception - not supported.
      */
     public function create($name, $timeout=null)
     {
@@ -80,7 +80,7 @@ class Null extends AbstractAdapter
     /**
      * Delete a queue and all of it's messages
      *
-     * @throws \Zend\Queue\Exception - not supported.
+     * @throws \Zend2\Queue\Exception - not supported.
      */
     public function delete($name)
     {
@@ -90,7 +90,7 @@ class Null extends AbstractAdapter
     /**
      * Get an array of all available queues
      *
-     * @throws \Zend\Queue\Exception - not supported.
+     * @throws \Zend2\Queue\Exception - not supported.
      */
     public function getQueues()
     {
@@ -100,7 +100,7 @@ class Null extends AbstractAdapter
     /**
      * Return the approximate number of messages in the queue
      *
-     * @throws \Zend\Queue\Exception - not supported.
+     * @throws \Zend2\Queue\Exception - not supported.
      */
     public function count(Queue $queue=null)
     {
@@ -114,7 +114,7 @@ class Null extends AbstractAdapter
     /**
      * Send a message to the queue
      *
-     * @throws \Zend\Queue\Exception - not supported.
+     * @throws \Zend2\Queue\Exception - not supported.
      */
     public function send($message, Queue $queue=null)
     {
@@ -124,7 +124,7 @@ class Null extends AbstractAdapter
     /**
      * Get messages in the queue
      *
-     * @throws \Zend\Queue\Exception - not supported.
+     * @throws \Zend2\Queue\Exception - not supported.
      */
     public function receive($maxMessages=null, $timeout=null, Queue $queue=null)
     {
@@ -134,7 +134,7 @@ class Null extends AbstractAdapter
     /**
      * Delete a message from the queue
      *
-     * @throws \Zend\Queue\Exception - not supported.
+     * @throws \Zend2\Queue\Exception - not supported.
      */
     public function deleteMessage(Message $message)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,47 +12,47 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Photos
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Photos;
+namespace Zend2\GData\Photos;
 
-use Zend\GData\Photos;
+use Zend2\GData\Photos;
 
 /**
  * Data model class for a Comment Entry.
  *
  * To transfer user entries to and from the servers, including
  * creating new entries, refer to the service class,
- * Zend_Gdata_Photos.
+ * Zend2_Gdata_Photos.
  *
  * This class represents <atom:entry> in the Google Data protocol.
  *
- * @uses       \Zend\GData\App\Extension\Category
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\Photos
- * @uses       \Zend\GData\Photos\Extension\Id
- * @uses       \Zend\GData\Photos\Extension\PhotoId
- * @uses       \Zend\GData\Photos\Extension\Weight
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Extension\Category
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\Photos
+ * @uses       \Zend2\GData\Photos\Extension\Id
+ * @uses       \Zend2\GData\Photos\Extension\PhotoId
+ * @uses       \Zend2\GData\Photos\Extension\Weight
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Photos
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class CommentEntry extends \Zend\GData\Entry
+class CommentEntry extends \Zend2\GData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\Photos\CommentEntry';
+    protected $_entryClassName = 'Zend2\GData\Photos\CommentEntry';
 
     /**
      * gphoto:id element
      *
-     * @var \Zend\GData\Photos\Extension\Id
+     * @var \Zend2\GData\Photos\Extension\Id
      */
     protected $_gphotoId = null;
 
@@ -61,7 +61,7 @@ class CommentEntry extends \Zend\GData\Entry
      * actual identification number unique exclusively to photo entries,
      * whereas gphoto:id can refer to all gphoto objects
      *
-     * @var \Zend\GData\Photos\Extension\PhotoId
+     * @var \Zend2\GData\Photos\Extension\PhotoId
      */
     protected $_gphotoPhotoId = null;
 
@@ -76,7 +76,7 @@ class CommentEntry extends \Zend\GData\Entry
         $this->registerAllNamespaces(Photos::$namespaces);
         parent::__construct($element);
 
-        $category = new \Zend\GData\App\Extension\Category(
+        $category = new \Zend2\GData\App\Extension\Category(
             'http://schemas.google.com/photos/2007#comment',
             'http://schemas.google.com/g/2005#kind');
         $this->setCategory(array($category));
@@ -145,7 +145,7 @@ class CommentEntry extends \Zend\GData\Entry
      * Set the value for this element's gphoto:photoid attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\PhotoId The element being modified.
+     * @return \Zend2\GData\Photos\Extension\PhotoId The element being modified.
      */
     public function setGphotoPhotoId($value)
     {
@@ -168,7 +168,7 @@ class CommentEntry extends \Zend\GData\Entry
      * Set the value for this element's gphoto:id attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Id The element being modified.
+     * @return \Zend2\GData\Photos\Extension\Id The element being modified.
      */
     public function setGphotoId($value)
     {

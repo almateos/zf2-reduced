@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Queue
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Stomp
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Queue\Stomp;
+namespace Zend2\Queue\Stomp;
 
 /**
  * The Stomp client interacts with a Stomp server.
  *
- * @category   Zend
- * @package    Zend_Queue
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Stomp
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Client
 {
     /**
-     * Array of $client \Zend\Queue\Stomp\StompConnection
+     * Array of $client \Zend2\Queue\Stomp\StompConnection
      *
      * @var array
      */
@@ -48,8 +48,8 @@ class Client
      */
     public function __construct(
         $scheme = null, $host = null, $port = null,
-        $connectionClass = '\Zend\Queue\Stomp\Connection',
-        $frameClass = '\Zend\Queue\Stomp\Frame'
+        $connectionClass = '\Zend2\Queue\Stomp\Connection',
+        $frameClass = '\Zend2\Queue\Stomp\Frame'
     ) {
         if (($scheme !== null)
             && ($host !== null)
@@ -83,10 +83,10 @@ class Client
      * @param string  $scheme ['tcp', 'udp']
      * @param string  host
      * @param integer port
-     * @param string  class - create a connection with this class; class must support \Zend\Queue\Stomp\StompConnection
+     * @param string  class - create a connection with this class; class must support \Zend2\Queue\Stomp\StompConnection
      * @return boolean
      */
-    public function addConnection($scheme, $host, $port, $class = '\Zend\Queue\Stomp\Connection')
+    public function addConnection($scheme, $host, $port, $class = '\Zend2\Queue\Stomp\Connection')
     {
         $connection = new $class();
 
@@ -102,7 +102,7 @@ class Client
     /**
      * Set client connection
      *
-     * @param \Zend\Queue\Stomp\StompConnection
+     * @param \Zend2\Queue\Stomp\StompConnection
      * @return void
      */
     public function setConnection(StompConnection $connection)
@@ -114,7 +114,7 @@ class Client
     /**
      * Get client connection
      *
-     * @return \Zend\Queue\Stomp\StompConnection|null
+     * @return \Zend2\Queue\Stomp\StompConnection|null
      */
     public function getConnection()
     {
@@ -126,7 +126,7 @@ class Client
      *
      * Returns true if the frame was successfully sent.
      *
-     * @param \Zend\Queue\Stomp\StompFrame $frame
+     * @param \Zend2\Queue\Stomp\StompFrame $frame
      * @return boolean
      */
     public function send(StompFrame $frame)
@@ -140,7 +140,7 @@ class Client
      *
      * Returns a frame or false if none were to be read.
      *
-     * @return \Zend\Queue\Stomp\StompFrame|boolean
+     * @return \Zend2\Queue\Stomp\StompFrame|boolean
      */
     public function receive()
     {
@@ -160,7 +160,7 @@ class Client
     /**
      * creates a frame class
      *
-     * @return \Zend\Queue\Stomp\StompFrame
+     * @return \Zend2\Queue\Stomp\StompFrame
      */
     public function createFrame()
     {

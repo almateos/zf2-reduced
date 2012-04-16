@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard\XML\KeyInfo;
+namespace Zend2\InfoCard\XML\KeyInfo;
 
-use Zend\InfoCard\XML\KeyInfo;
+use Zend2\InfoCard\XML\KeyInfo;
 
 /**
  * Represents a Xml Digital Signature XML Data Block
  *
- * @uses       \Zend\InfoCard\XML\EncryptedKey
- * @uses       \Zend\InfoCard\XML\Exception
- * @uses       \Zend\InfoCard\XML\KeyInfo\AbstractKeyInfo
- * @uses       \Zend\InfoCard\XML\KeyInfo
- * @category   Zend
- * @package    Zend_InfoCard
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\InfoCard\XML\EncryptedKey
+ * @uses       \Zend2\InfoCard\XML\Exception
+ * @uses       \Zend2\InfoCard\XML\KeyInfo\AbstractKeyInfo
+ * @uses       \Zend2\InfoCard\XML\KeyInfo
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class XMLDSig extends AbstractKeyInfo implements KeyInfo
@@ -39,25 +39,25 @@ class XMLDSig extends AbstractKeyInfo implements KeyInfo
     /**
      * Returns an instance of the EncryptedKey Data Block
      *
-     * @throws \Zend\InfoCard\XML\Exception
-     * @return \Zend\InfoCard\XML\EncryptedKey
+     * @throws \Zend2\InfoCard\XML\Exception
+     * @return \Zend2\InfoCard\XML\EncryptedKey
      */
     public function getEncryptedKey()
     {
         $this->registerXPathNamespace('e', 'http://www.w3.org/2001/04/xmlenc#');
         list($encryptedkey) = $this->xpath('//e:EncryptedKey');
 
-        if(!($encryptedkey instanceof \Zend\InfoCard\XML\AbstractElement)) {
-            throw new \Zend\InfoCard\XML\Exception\RuntimeException("Failed to retrieve encrypted key");
+        if(!($encryptedkey instanceof \Zend2\InfoCard\XML\AbstractElement)) {
+            throw new \Zend2\InfoCard\XML\Exception\RuntimeException("Failed to retrieve encrypted key");
         }
 
-        return \Zend\InfoCard\XML\EncryptedKey::getInstance($encryptedkey);
+        return \Zend2\InfoCard\XML\EncryptedKey::getInstance($encryptedkey);
     }
 
     /**
      * Returns the KeyInfo Block within the encrypted key
      *
-     * @return \Zend\InfoCard\XML\KeyInfo\Default
+     * @return \Zend2\InfoCard\XML\KeyInfo\Default
      */
     public function getKeyInfo()
     {

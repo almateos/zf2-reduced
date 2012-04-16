@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Markup
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Markup
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Markup;
+namespace Zend2\Markup;
 
-use Zend\Loader\PluginBroker;
+use Zend2\Loader\PluginBroker;
 
 /**
  * Broker for markup parser instances
  *
- * @category   Zend
- * @package    Zend_Markup
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Markup
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ParserBroker extends PluginBroker
@@ -35,7 +35,7 @@ class ParserBroker extends PluginBroker
     /**
      * @var string Default plugin loading strategy
      */
-    protected $defaultClassLoader = 'Zend\Markup\ParserLoader';
+    protected $defaultClassLoader = 'Zend2\Markup\ParserLoader';
 
     /**
      * Determine if we have a valid parser
@@ -47,7 +47,7 @@ class ParserBroker extends PluginBroker
     protected function validatePlugin($plugin)
     {
         if (!$plugin instanceof Parser) {
-            throw new Exception('Markup parsers must implement Zend\Markup\Parser');
+            throw new Exception('Markup parsers must implement Zend2\Markup\Parser');
         }
         return true;
     }

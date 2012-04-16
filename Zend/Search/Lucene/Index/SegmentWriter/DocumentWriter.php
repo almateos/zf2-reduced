@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,42 +12,42 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Index
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Index\SegmentWriter;
-use Zend\Search\Lucene;
-use Zend\Search\Lucene\Index;
-use Zend\Search\Lucene\Analysis\Analyzer;
-use Zend\Search\Lucene\Storage\Directory;
-use Zend\Search\Lucene\Document;
-use Zend\Search\Lucene\Search\Similarity;
+namespace Zend2\Search\Lucene\Index\SegmentWriter;
+use Zend2\Search\Lucene;
+use Zend2\Search\Lucene\Index;
+use Zend2\Search\Lucene\Analysis\Analyzer;
+use Zend2\Search\Lucene\Storage\Directory;
+use Zend2\Search\Lucene\Document;
+use Zend2\Search\Lucene\Search\Similarity;
 
 /**
- * @uses       \Zend\Search\Lucene\Analysis\Analyzer
- * @uses       \Zend\Search\Lucene\Exception
- * @uses       \Zend\Search\Lucene\Index\SegmentInfo
- * @uses       \Zend\Search\Lucene\Index\SegmentWriter\AbstractSegmentWriter
- * @uses       \Zend\Search\Lucene\Index\Term
- * @uses       \Zend\Search\Lucene\Search\Similarity
- * @uses       \Zend\Search\Lucene\Storage\Directory
- * @uses       \Zend\Search\Lucene\Document;
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Analysis\Analyzer
+ * @uses       \Zend2\Search\Lucene\Exception
+ * @uses       \Zend2\Search\Lucene\Index\SegmentInfo
+ * @uses       \Zend2\Search\Lucene\Index\SegmentWriter\AbstractSegmentWriter
+ * @uses       \Zend2\Search\Lucene\Index\Term
+ * @uses       \Zend2\Search\Lucene\Search\Similarity
+ * @uses       \Zend2\Search\Lucene\Storage\Directory
+ * @uses       \Zend2\Search\Lucene\Document;
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Index
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DocumentWriter extends AbstractSegmentWriter
 {
     /**
      * Term Dictionary
-     * Array of the Zend_Search_Lucene_Index_Term objects
-     * Corresponding Zend_Search_Lucene_Index_TermInfo object stored in the $_termDictionaryInfos
+     * Array of the Zend2_Search_Lucene_Index_Term objects
+     * Corresponding Zend2_Search_Lucene_Index_TermInfo object stored in the $_termDictionaryInfos
      *
      * @var array
      */
@@ -63,7 +63,7 @@ class DocumentWriter extends AbstractSegmentWriter
     /**
      * Object constructor.
      *
-     * @param \Zend\Search\Lucene\Storage\Directory $directory
+     * @param \Zend2\Search\Lucene\Storage\Directory $directory
      * @param string $name
      */
     public function __construct(Directory $directory, $name)
@@ -78,8 +78,8 @@ class DocumentWriter extends AbstractSegmentWriter
     /**
      * Adds a document to this segment.
      *
-     * @param \Zend\Search\Lucene\Document $document
-     * @throws \Zend\Search\Lucene\Exception
+     * @param \Zend2\Search\Lucene\Document $document
+     * @throws \Zend2\Search\Lucene\Exception
      */
     public function addDocument(Document $document)
     {
@@ -206,7 +206,7 @@ class DocumentWriter extends AbstractSegmentWriter
     /**
      * Close segment, write it to disk and return segment info
      *
-     * @return \Zend\Search\Lucene\Index\SegmentInfo
+     * @return \Zend2\Search\Lucene\Index\SegmentInfo
      */
     public function close()
     {

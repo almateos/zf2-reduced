@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Session
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Session
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Session;
+namespace Zend2\Session;
 
 /**
  * Base Manager implementation
  *
  * Defines common constructor logic and getters for Storage and Configuration
  *
- * @category   Zend
- * @package    Zend_Session
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Session
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractManager implements Manager
@@ -41,7 +41,7 @@ abstract class AbstractManager implements Manager
      * Default configuration class to use when no configuration provided
      * @var string
      */
-    protected $configDefaultClass = 'Zend\\Session\\Configuration\\SessionConfiguration';
+    protected $configDefaultClass = 'Zend2\\Session\\Configuration\\SessionConfiguration';
 
     /**
      * @var Storage
@@ -52,7 +52,7 @@ abstract class AbstractManager implements Manager
      * Default storage class to use when no storage provided
      * @var string
      */
-    protected $storageDefaultClass = 'Zend\\Session\\Storage\\SessionStorage';
+    protected $storageDefaultClass = 'Zend2\\Session\\Storage\\SessionStorage';
 
     /**
      * @var SaveHandler
@@ -91,7 +91,7 @@ abstract class AbstractManager implements Manager
         if (null === $config) {
             $config = new $this->configDefaultClass();
             if (!$config instanceof Configuration) {
-                throw new Exception\InvalidArgumentException('Default configuration type provided is invalid; must implement Zend\\Session\\Configuration');
+                throw new Exception\InvalidArgumentException('Default configuration type provided is invalid; must implement Zend2\\Session\\Configuration');
             }
         }
 
@@ -119,7 +119,7 @@ abstract class AbstractManager implements Manager
         if (null === $storage) {
             $storage = new $this->storageDefaultClass();
             if (!$storage instanceof Storage) {
-                throw new Exception\InvalidArgumentException('Default storage type provided is invalid; must implement Zend\\Session\\Storage');
+                throw new Exception\InvalidArgumentException('Default storage type provided is invalid; must implement Zend2\\Session\\Storage');
             }
         }
 

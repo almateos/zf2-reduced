@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Di\ServiceLocator;
+namespace Zend2\Di\ServiceLocator;
 
 class GeneratorInstance
 {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\View\Helper;
+namespace Zend2\Dojo\View\Helper;
 
-use Zend\View\Helper\Form as FormHelper;
+use Zend2\View\Helper\Form as FormHelper;
 
 /**
  * Dojo Form dijit
  *
- * @uses       \Zend\Dojo\View\Helper\Dijit
- * @uses       \Zend\View\Helper\Form
- * @package    Zend_Dojo
+ * @uses       \Zend2\Dojo\View\Helper\Dijit
+ * @uses       \Zend2\View\Helper\Form
+ * @package    Zend2_Dojo
  * @subpackage View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DojoForm extends Dijit
@@ -48,7 +48,7 @@ class DojoForm extends Dijit
     protected $_module = 'dijit.form.Form';
 
     /**
-     * @var \Zend\View\Helper\Form
+     * @var \Zend2\View\Helper\Form
      */
     protected $_helper;
 
@@ -80,7 +80,7 @@ class DojoForm extends Dijit
     /**
      * Get standard form helper
      *
-     * @return \Zend\View\Helper\Form
+     * @return \Zend2\View\Helper\Form
      */
     public function getFormHelper()
     {

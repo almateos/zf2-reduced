@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Cache\Storage;
+namespace Zend2\Cache\Storage;
 
-use Zend\Cache\Exception,
-    Zend\Loader\PluginBroker as BasePluginBroker;
+use Zend2\Cache\Exception,
+    Zend2\Loader\PluginBroker as BasePluginBroker;
 
 /**
  * Broker for cache storage plugin instances
  *
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PluginBroker extends BasePluginBroker
@@ -40,7 +40,7 @@ class PluginBroker extends BasePluginBroker
      *
      * @var string Default plugin loading strategy
      */
-    protected $defaultClassLoader = 'Zend\Cache\Storage\PluginLoader';
+    protected $defaultClassLoader = 'Zend2\Cache\Storage\PluginLoader';
 
     /**
      * Determine if we have a valid adapter
@@ -53,7 +53,7 @@ class PluginBroker extends BasePluginBroker
     {
         if (!$plugin instanceof Plugin) {
             throw new Exception\RuntimeException(
-                'Cache storage plugins must implement Zend\Cache\Storage\Plugin'
+                'Cache storage plugins must implement Zend2\Cache\Storage\Plugin'
             );
         }
         return true;

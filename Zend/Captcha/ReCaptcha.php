@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,19 +12,19 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Captcha
+ * @category   Zend2
+ * @package    Zend2_Captcha
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Captcha;
+namespace Zend2\Captcha;
 
 use Traversable,
-    Zend\Form\Element,
-    Zend\Service\ReCaptcha\ReCaptcha as ReCaptchaService,
-    Zend\View\Renderer;
+    Zend2\Form\Element,
+    Zend2\Service\ReCaptcha\ReCaptcha as ReCaptchaService,
+    Zend2\View\Renderer;
 
 /**
  * ReCaptcha adapter
@@ -33,10 +33,10 @@ use Traversable,
  *
  * @see http://recaptcha.net/apidocs/captcha/
  *
- * @category   Zend
- * @package    Zend_Captcha
+ * @category   Zend2
+ * @package    Zend2_Captcha
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ReCaptcha extends AbstractAdapter
@@ -52,7 +52,7 @@ class ReCaptcha extends AbstractAdapter
     /**
      * Recaptcha service object
      *
-     * @var Zend_Service_Recaptcha
+     * @var Zend2_Service_Recaptcha
      */
     protected $_service;
 
@@ -211,7 +211,7 @@ class ReCaptcha extends AbstractAdapter
     /**
      * Validate captcha
      *
-     * @see    \Zend\Validator\Validator::isValid()
+     * @see    \Zend2\Validator\Validator::isValid()
      * @param  mixed $value
      * @return boolean
      */

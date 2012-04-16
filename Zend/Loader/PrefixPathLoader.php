@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Loader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Loader
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Loader;
+namespace Zend2\Loader;
 
-use Zend\Stdlib\ArrayStack,
-    Zend\Stdlib\SplStack,
+use Zend2\Stdlib\ArrayStack,
+    Zend2\Stdlib\SplStack,
     SplDoublyLinkedList,
     SplFileInfo;
 
 /**
  * Prefix/Path plugin loader
  *
- * @category   Zend
- * @package    Zend_Loader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Loader
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PrefixPathLoader implements ShortNameLocator, PrefixPathMapper
@@ -145,7 +145,7 @@ class PrefixPathLoader implements ShortNameLocator, PrefixPathMapper
      * @param string $prefix
      * @param string $path
      * @param  bool $namespaced Whether the paths are namespaced or prefixed; namespaced by default
-     * @return \Zend\Loader\PrefixPathLoader
+     * @return \Zend2\Loader\PrefixPathLoader
      */
     public function addPrefixPath($prefix, $path, $namespaced = true)
     {
@@ -271,7 +271,7 @@ class PrefixPathLoader implements ShortNameLocator, PrefixPathMapper
      *
      * @param  string $prefix
      * @param  string $path
-     * @return Zend\Loader\PrefixPathLoader
+     * @return Zend2\Loader\PrefixPathLoader
      */
     public function removePrefixPath($prefix, $path)
     {
@@ -314,7 +314,7 @@ class PrefixPathLoader implements ShortNameLocator, PrefixPathMapper
      * Whether or not a Plugin by a specific name is loaded
      *
      * @param string $name
-     * @return \Zend\Loader\PrefixPathLoader
+     * @return \Zend2\Loader\PrefixPathLoader
      */
     public function isLoaded($name)
     {

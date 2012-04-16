@@ -20,7 +20,7 @@ TODO
 
         array(
             'properties' => array(
-                'Zend\Foo\Bar' => array(
+                'Zend2\Foo\Bar' => array(
                     'public' => true,
                     'methods' => array(
                         '__construct' => array(
@@ -69,7 +69,7 @@ TODO
 
 - Annotation Parsing
 
-  Ideally, at some point, Zend\Code\Scanner will support Annotation parsing. When
+  Ideally, at some point, Zend2\Code\Scanner will support Annotation parsing. When
   this is possible, we'd like to be able to use @inject similar to
   http://picocontainer.org/annotated-method-injection.html
 
@@ -85,7 +85,7 @@ TODO
   The compiler also needs to be aware of other definitions when looking up SuperTypes
 
     $definition = new AggregateDefinition();
-    $definition->addDefinition('Zend\Controller\DiDefinition');
+    $definition->addDefinition('Zend2\Controller\DiDefinition');
 
     $compiler = new Compiler()
     $compiler->addDefinition($definition);
@@ -95,7 +95,7 @@ TODO
 
 - Performance & Benchmarking
 
-  Zend\Code\Scanner- check memory usage, perhaps use gc_collect_cycles() to free memory,
+  Zend2\Code\Scanner- check memory usage, perhaps use gc_collect_cycles() to free memory,
   we'll have to do this on large scan bases.
 
   Benchmark compiler: reflection vs. code scanner

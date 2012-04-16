@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Fonts
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Fonts
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\BinaryParser\Font\OpenType;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
-use Zend\Pdf\Cmap;
+namespace Zend2\Pdf\BinaryParser\Font\OpenType;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
+use Zend2\Pdf\Cmap;
 
 /**
  * Abstract base class for OpenType font file parsers.
@@ -44,13 +44,13 @@ use Zend\Pdf\Cmap;
  *  <li>{@link http://partners.adobe.com/public/developer/opentype/index_spec.html}
  * </ul>
  *
- * @uses       \Zend\Pdf\Cmap\AbstractCmap
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\BinaryParser\Font\AbstractFont
- * @uses       \Zend\Pdf\Font
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Fonts
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Cmap\AbstractCmap
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\BinaryParser\Font\AbstractFont
+ * @uses       \Zend2\Pdf\Font
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Fonts
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
@@ -89,7 +89,7 @@ abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
      * NOTE: This method should be overridden in subclasses to check the
      * specific format and set $this->_isScreened!
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function screen()
     {
@@ -105,7 +105,7 @@ abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
      * NOTE: This method should be overridden in subclasses to add type-
      * specific parsing and set $this->isParsed.
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function parse()
     {
@@ -154,7 +154,7 @@ abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
      * The table directory contains the identifier, checksum, byte offset, and
      * length of each of the information tables housed in the font file.
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function _parseTableDirectory()
     {
@@ -219,7 +219,7 @@ abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
      * The head table contains global information about the font such as the
      * revision number and global metrics.
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function _parseHeadTable()
     {
@@ -280,7 +280,7 @@ abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
      * The name table contains all of the identifying strings associated with
      * the font such as its name, copyright, trademark, license, etc.
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function _parseNameTable()
     {
@@ -374,7 +374,7 @@ abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
      * on PostScript printers. It also contains the preferred location and
      * thickness for an underline, which is used by our layout code.
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function _parsePostTable()
     {
@@ -411,7 +411,7 @@ abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
      * contains some vertical layout information for Apple systems. The vertical
      * layout information for the PDF file is usually taken from the OS/2 table.
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function _parseHheaTable()
     {
@@ -461,7 +461,7 @@ abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
      * contains some vertical layout information for Apple systems. The vertical
      * layout information for the PDF file is usually taken from the OS/2 table.
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function _parseMaxpTable()
     {
@@ -489,7 +489,7 @@ abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
      * this table to determine most of the vertical layout and stylistic
      * information and for the font.
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function _parseOs2Table()
     {
@@ -556,7 +556,7 @@ abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
         /* Indicates the visual weight and aspect ratio of the characters. Used
          * primarily to logically sort fonts in lists. Also used to help choose
          * a more appropriate substitute font when necessary. See the WEIGHT_
-         * and WIDTH_ constants defined in \Zend\Pdf\Font.
+         * and WIDTH_ constants defined in \Zend2\Pdf\Font.
          */
         $this->fontWeight = $this->readUInt(2);
         $this->fontWidth  = $this->readUInt(2);
@@ -720,7 +720,7 @@ abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
      * within the font. These are the critical values for horizontal layout of
      * text.
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function _parseHmtxTable()
     {
@@ -773,7 +773,7 @@ abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
      *   are tolerable. Most specifically, since everything above this layer deals
      *   in Unicode, we need to be sure to only accept format 0 MacRoman tables.
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function _parseCMapTable()
     {
@@ -914,7 +914,7 @@ abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
             throw new Exception\CorruptedFontException('Unable to find usable cmap table');
         }
 
-        /* Now extract the subtable data and create a \Zend\Pdf\Cmap\AbstractCmap object.
+        /* Now extract the subtable data and create a \Zend2\Pdf\Cmap\AbstractCmap object.
          */
         $this->_debugLog('Using cmap type %d; offset: 0x%x; length: %d',
                          $cmapType, $cmapOffset, $cmapLength);
@@ -934,7 +934,7 @@ abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
      * is not recognized.
      *
      * @return integer
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function _readScalerType()
     {
@@ -973,7 +973,7 @@ abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
      * start of that table.
      *
      * @param string $tableName
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function _jumpToTable($tableName)
     {
@@ -993,7 +993,7 @@ abstract class AbstractOpenType extends Pdf\BinaryParser\Font\AbstractFont
      * @param float $minVersion Minimum compatible version number.
      * @param float $maxVertion Maximum compatible version number.
      * @return float Table version number.
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function _readTableVersion($minVersion, $maxVersion)
     {

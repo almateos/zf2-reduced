@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper\Navigation;
+namespace Zend2\View\Helper\Navigation;
 
 use DOMDocument,
     RecursiveIteratorIterator,
-    Zend\Navigation\Page\AbstractPage,
-    Zend\Navigation\Container,
-    Zend\Uri,
-    Zend\View,
-    Zend\View\Exception;
+    Zend2\Navigation\Page\AbstractPage,
+    Zend2\Navigation\Container,
+    Zend2\Uri,
+    Zend2\View,
+    Zend2\View\Exception;
 
 /**
  * Helper for printing sitemaps
  *
  * @link http://www.sitemaps.org/protocol.php
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Sitemap extends AbstractHelper
@@ -71,7 +71,7 @@ class Sitemap extends AbstractHelper
     protected $useXmlDeclaration = true;
 
     /**
-     * Whether sitemap should be validated using Zend\Validate\Sitemap\*
+     * Whether sitemap should be validated using Zend2\Validate\Sitemap\*
      *
      * @var bool
      */
@@ -154,7 +154,7 @@ class Sitemap extends AbstractHelper
     }
 
     /**
-     * Sets whether sitemap should be validated using Zend\Validate\Sitemap_*
+     * Sets whether sitemap should be validated using Zend2\Validate\Sitemap_*
      *
      * @param  bool $useSitemapValidators whether sitemap validators should be used
      * @returnSitemap  fluent interface, returns self
@@ -166,7 +166,7 @@ class Sitemap extends AbstractHelper
     }
 
     /**
-     * Returns whether sitemap should be validated using Zend\Validate\Sitemap_*
+     * Returns whether sitemap should be validated using Zend2\Validate\Sitemap_*
      *
      * @return bool  whether sitemap should be validated using validators
      */
@@ -319,10 +319,10 @@ class Sitemap extends AbstractHelper
         // check if we should validate using our own validators
         if ($this->getUseSitemapValidators()) {
             // create validators
-            $locValidator        = new \Zend\Validator\Sitemap\Loc();
-            $lastmodValidator    = new \Zend\Validator\Sitemap\Lastmod();
-            $changefreqValidator = new \Zend\Validator\Sitemap\Changefreq();
-            $priorityValidator   = new \Zend\Validator\Sitemap\Priority();
+            $locValidator        = new \Zend2\Validator\Sitemap\Loc();
+            $lastmodValidator    = new \Zend2\Validator\Sitemap\Lastmod();
+            $changefreqValidator = new \Zend2\Validator\Sitemap\Changefreq();
+            $priorityValidator   = new \Zend2\Validator\Sitemap\Priority();
         }
 
         // create document
@@ -432,7 +432,7 @@ class Sitemap extends AbstractHelper
         return $dom;
     }
 
-    // Zend_View_Helper_Navigation_Helper:
+    // Zend2_View_Helper_Navigation_Helper:
 
     /**
      * Renders helper

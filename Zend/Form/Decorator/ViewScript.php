@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form\Decorator;
+namespace Zend2\Form\Decorator;
 
 /**
- * Zend_Form_Decorator_ViewScript
+ * Zend2_Form_Decorator_ViewScript
  *
  * Render a view script as a decorator
  *
@@ -41,12 +41,12 @@ namespace Zend\Form\Decorator;
  * Any options other than separator, placement, and viewScript are passed to
  * the partial as local variables.
  *
- * @uses       \Zend\Form\Decorator\AbstractDecorator
- * @uses       \Zend\Form\Decorator\Exception
- * @category   Zend
- * @package    Zend_Form
+ * @uses       \Zend2\Form\Decorator\AbstractDecorator
+ * @uses       \Zend2\Form\Decorator\Exception
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ViewScript extends AbstractDecorator
@@ -67,7 +67,7 @@ class ViewScript extends AbstractDecorator
      * Set view script
      *
      * @param  string $script
-     * @return \Zend\Form\Decorator\ViewScript
+     * @return \Zend2\Form\Decorator\ViewScript
      */
     public function setViewScript($script)
     {

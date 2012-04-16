@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Image
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Image
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\BinaryParser\Image;
-use Zend\Pdf\BinaryParser;
+namespace Zend2\Pdf\BinaryParser\Image;
+use Zend2\Pdf\BinaryParser;
 
 /**
- * \Zend\Pdf\Image related file parsers abstract class.
+ * \Zend2\Pdf\Image related file parsers abstract class.
  *
- * @uses       \Zend\Pdf\BinaryParser\AbstractBinaryParser
- * @uses       \Zend\Pdf\Image
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Image
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\BinaryParser\AbstractBinaryParser
+ * @uses       \Zend2\Pdf\Image
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Image
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractImage extends BinaryParser\AbstractBinaryParser
@@ -46,11 +46,11 @@ abstract class AbstractImage extends BinaryParser\AbstractBinaryParser
      *
      * Validates the data source and enables debug logging if so configured.
      *
-     * @param \Zend\Pdf\BinaryParser\DataSource\AbstractDataSource $dataSource
+     * @param \Zend2\Pdf\BinaryParser\DataSource\AbstractDataSource $dataSource
      */
-    public function __construct(\Zend\Pdf\BinaryParser\DataSource\AbstractDataSource $dataSource)
+    public function __construct(\Zend2\Pdf\BinaryParser\DataSource\AbstractDataSource $dataSource)
     {
         parent::__construct($dataSource);
-        $this->imageType = \Zend\Pdf\Image::TYPE_UNKNOWN;
+        $this->imageType = \Zend2\Pdf\Image::TYPE_UNKNOWN;
     }
 }

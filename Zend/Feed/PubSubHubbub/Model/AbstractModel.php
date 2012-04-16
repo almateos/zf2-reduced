@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Pubsubhubbub
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Pubsubhubbub
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\PubSubHubbub\Model;
+namespace Zend2\Feed\PubSubHubbub\Model;
 
-use \Zend\Db\TableGateway;
+use \Zend2\Db\TableGateway;
 
 /**
- * @uses       \Zend\Db\Table\Table
- * @uses       \Zend\Registry
- * @category   Zend
- * @package    Zend_Feed_Pubsubhubbub
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Db\Table\Table
+ * @uses       \Zend2\Registry
+ * @category   Zend2
+ * @package    Zend2_Feed_Pubsubhubbub
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class AbstractModel
 {
     /**
-     * Zend_Db_Table instance to host database methods
+     * Zend2_Db_Table instance to host database methods
      *
-     * @var \Zend\Db\Table\Table
+     * @var \Zend2\Db\Table\Table
      */
     protected $_db = null;
  
@@ -43,7 +43,7 @@ class AbstractModel
      * Constructor
      * 
      * @param  array $data 
-     * @param  \Zend\Db\Table\AbstractTable $tableGateway 
+     * @param  \Zend2\Db\Table\AbstractTable $tableGateway 
      * @return void
      */
     public function __construct(TableGateway\TableGatewayInterface $tableGateway = null)

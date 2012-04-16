@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,40 +12,40 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene;
+namespace Zend2\Search\Lucene;
 
-use Zend\Search\Lucene\Storage\Directory,
-	Zend\Search\Lucene\Exception\InvalidArgumentException,
-	Zend\Search\Lucene\Exception\UnsupportedMethodCallException,
-	Zend\Search\Lucene\Exception\OutOfRangeException,
-	Zend\Search\Lucene\Exception\RuntimeException;
+use Zend2\Search\Lucene\Storage\Directory,
+	Zend2\Search\Lucene\Exception\InvalidArgumentException,
+	Zend2\Search\Lucene\Exception\UnsupportedMethodCallException,
+	Zend2\Search\Lucene\Exception\OutOfRangeException,
+	Zend2\Search\Lucene\Exception\RuntimeException;
 
 /**
  * Multisearcher allows to search through several independent indexes.
  *
- * @uses       \Zend\Search\Lucene\Index
- * @uses       \Zend\Search\Lucene\Exception\InvalidArgumentException
- * @uses	   \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
- * @uses	   \Zend\Search\Lucene\Exception\OutOfRangeException
- * @uses       \Zend\Search\Lucene\Exception\RuntimeException
- * @uses       \Zend\Search\Lucene\SearchIndex
- * @uses       \Zend\Search\Lucene\TermStreamsPriorityQueue
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Search\Lucene\Index
+ * @uses       \Zend2\Search\Lucene\Exception\InvalidArgumentException
+ * @uses	   \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
+ * @uses	   \Zend2\Search\Lucene\Exception\OutOfRangeException
+ * @uses       \Zend2\Search\Lucene\Exception\RuntimeException
+ * @uses       \Zend2\Search\Lucene\SearchIndex
+ * @uses       \Zend2\Search\Lucene\TermStreamsPriorityQueue
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class MultiSearcher implements SearchIndex
 {
     /**
      * List of indices for searching.
-     * Array of Zend_Search_Lucene_Interface objects
+     * Array of Zend2_Search_Lucene_Interface objects
      *
      * @var array
      */
@@ -55,7 +55,7 @@ class MultiSearcher implements SearchIndex
      * Object constructor.
      *
      * @param array $indices   Arrays of indices for search
-     * @throws \Zend\Search\Lucene\Exception\InvalidArgumentException
+     * @throws \Zend2\Search\Lucene\Exception\InvalidArgumentException
      */
     public function __construct($indices = array())
     {
@@ -63,7 +63,7 @@ class MultiSearcher implements SearchIndex
 
         foreach ($this->_indices as $index) {
             if (!$index instanceof SearchIndex) {
-                throw new InvalidArgumentException('sub-index objects have to implement Zend\Search\Lucene\Interface.');
+                throw new InvalidArgumentException('sub-index objects have to implement Zend2\Search\Lucene\Interface.');
             }
         }
     }
@@ -71,7 +71,7 @@ class MultiSearcher implements SearchIndex
     /**
      * Add index for searching.
      *
-     * @param \Zend\Search\Lucene\SearchIndex $index
+     * @param \Zend2\Search\Lucene\SearchIndex $index
      */
     public function addIndex(SearchIndex $index)
     {
@@ -86,9 +86,9 @@ class MultiSearcher implements SearchIndex
      * 0 means pre-2.1 index format
      * -1 means there are no segments files.
      *
-     * @param \Zend\Search\Lucene\Storage\Directory $directory
+     * @param \Zend2\Search\Lucene\Storage\Directory $directory
      * @return integer
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
      */
     public static function getActualGeneration(Directory $directory)
     {
@@ -110,7 +110,7 @@ class MultiSearcher implements SearchIndex
      * Get index format version
      *
      * @return integer
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
      */
     public function getFormatVersion()
     {
@@ -131,10 +131,10 @@ class MultiSearcher implements SearchIndex
     }
 
     /**
-     * Returns the Zend_Search_Lucene_Storage_Directory instance for this index.
+     * Returns the Zend2_Search_Lucene_Storage_Directory instance for this index.
      *
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
-     * @return \Zend\Search\Lucene\Storage\Directory
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @return \Zend2\Search\Lucene\Storage\Directory
      */
     public function getDirectory()
     {
@@ -190,7 +190,7 @@ class MultiSearcher implements SearchIndex
      *
      * @param integer $id
      * @return boolean
-     * @throws \Zend\Search\Lucene\Exception\OutOfRangeException	is thrown if $id is out of the range
+     * @throws \Zend2\Search\Lucene\Exception\OutOfRangeException	is thrown if $id is out of the range
      */
     public function isDeleted($id)
     {
@@ -216,7 +216,7 @@ class MultiSearcher implements SearchIndex
      * Default value is 10
      *
      * @return integer
-     * @throws \Zend\Search\Lucene\Exception\RuntimeException
+     * @throws \Zend2\Search\Lucene\Exception\RuntimeException
      */
     public function getMaxBufferedDocs()
     {
@@ -263,7 +263,7 @@ class MultiSearcher implements SearchIndex
      * Default value is PHP_INT_MAX
      *
      * @return integer
-     * @throws \Zend\Search\Lucene\Exception\RuntimeException
+     * @throws \Zend2\Search\Lucene\Exception\RuntimeException
      */
     public function getMaxMergeDocs()
     {
@@ -317,7 +317,7 @@ class MultiSearcher implements SearchIndex
      * Default value is 10
      *
      * @return integer
-     * @throws \Zend\Search\Lucene\Exception\RuntimeException
+     * @throws \Zend2\Search\Lucene\Exception\RuntimeException
      */
     public function getMergeFactor()
     {
@@ -362,11 +362,11 @@ class MultiSearcher implements SearchIndex
 
     /**
      * Performs a query against the index and returns an array
-     * of Zend_Search_Lucene_Search_QueryHit objects.
-     * Input is a string or Zend_Search_Lucene_Search_Query.
+     * of Zend2_Search_Lucene_Search_QueryHit objects.
+     * Input is a string or Zend2_Search_Lucene_Search_Query.
      *
      * @param mixed $query
-     * @return array \Zend\Search\Lucene\Search\QueryHit
+     * @return array \Zend2\Search\Lucene\Search\QueryHit
      */
     public function find($query)
     {
@@ -413,17 +413,17 @@ class MultiSearcher implements SearchIndex
     }
 
     /**
-     * Returns a Zend_Search_Lucene_Document object for the document
+     * Returns a Zend2_Search_Lucene_Document object for the document
      * number $id in this index.
      *
-     * @param integer|\Zend\Search\Lucene\Search\QueryHit $id
-     * @return \Zend\Search\Lucene\Document
-     * @throws \Zend\Search\Lucene\Exception\OutOfRangeException	is thrown if $id is out of the range
+     * @param integer|\Zend2\Search\Lucene\Search\QueryHit $id
+     * @return \Zend2\Search\Lucene\Document
+     * @throws \Zend2\Search\Lucene\Exception\OutOfRangeException	is thrown if $id is out of the range
      */
     public function getDocument($id)
     {
         if ($id instanceof Search\QueryHit) {
-            /* @var $id Zend\Search\Lucene\Search\QueryHit */
+            /* @var $id Zend2\Search\Lucene\Search\QueryHit */
             $id = $id->id;
         }
 
@@ -445,7 +445,7 @@ class MultiSearcher implements SearchIndex
      *
      * Is used for query optimization.
      *
-     * @param \Zend\Search\Lucene\Index\Term $term
+     * @param \Zend2\Search\Lucene\Index\Term $term
      * @return boolean
      */
     public function hasTerm(Index\Term $term)
@@ -462,10 +462,10 @@ class MultiSearcher implements SearchIndex
     /**
      * Returns IDs of all the documents containing term.
      *
-     * @param \Zend\Search\Lucene\Index\Term $term
-     * @param \Zend\Search\Lucene\Index\DocsFilter|null $docsFilter
+     * @param \Zend2\Search\Lucene\Index\Term $term
+     * @param \Zend2\Search\Lucene\Index\DocsFilter|null $docsFilter
      * @return array
-     * @throws \Zend\Search\Lucene\Exception\InvalidArgumentException
+     * @throws \Zend2\Search\Lucene\Exception\InvalidArgumentException
      */
     public function termDocs(Index\Term $term, $docsFilter = null)
     {
@@ -496,12 +496,12 @@ class MultiSearcher implements SearchIndex
      * Returns documents filter for all documents containing term.
      *
      * It performs the same operation as termDocs, but return result as
-     * Zend_Search_Lucene_Index_DocsFilter object
+     * Zend2_Search_Lucene_Index_DocsFilter object
      *
-     * @param \Zend\Search\Lucene\Index\Term $term
-     * @param \Zend\Search\Lucene\Index\DocsFilter|null $docsFilter
-     * @return \Zend\Search\Lucene\Index\DocsFilter
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @param \Zend2\Search\Lucene\Index\Term $term
+     * @param \Zend2\Search\Lucene\Index\DocsFilter|null $docsFilter
+     * @return \Zend2\Search\Lucene\Index\DocsFilter
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
      */
     public function termDocsFilter(Index\Term $term, $docsFilter = null)
     {
@@ -512,10 +512,10 @@ class MultiSearcher implements SearchIndex
      * Returns an array of all term freqs.
      * Return array structure: array( docId => freq, ...)
      *
-     * @param \Zend\Search\Lucene\Index\Term $term
-     * @param \Zend\Search\Lucene\Index\DocsFilter|null $docsFilter
+     * @param \Zend2\Search\Lucene\Index\Term $term
+     * @param \Zend2\Search\Lucene\Index\DocsFilter|null $docsFilter
      * @return integer
-     * @throws \Zend\Search\Lucene\Exception\InvalidArgumentException
+     * @throws \Zend2\Search\Lucene\Exception\InvalidArgumentException
      */
     public function termFreqs(Index\Term $term, $docsFilter = null)
     {
@@ -549,9 +549,9 @@ class MultiSearcher implements SearchIndex
      * Returns an array of all term positions in the documents.
      * Return array structure: array( docId => array( pos1, pos2, ...), ...)
      *
-     * @param \Zend\Search\Lucene\Index\Term $term
-     * @param \Zend\Search\Lucene\Index\DocsFilter|null $docsFilter
-     * @throws \Zend\Search\Lucene\Exception\InvalidArgumentException
+     * @param \Zend2\Search\Lucene\Index\Term $term
+     * @param \Zend2\Search\Lucene\Index\DocsFilter|null $docsFilter
+     * @throws \Zend2\Search\Lucene\Exception\InvalidArgumentException
      * @return array
      */
     public function termPositions(Index\Term $term, $docsFilter = null)
@@ -585,7 +585,7 @@ class MultiSearcher implements SearchIndex
     /**
      * Returns the number of documents in this index containing the $term.
      *
-     * @param \Zend\Search\Lucene\Index\Term $term
+     * @param \Zend2\Search\Lucene\Index\Term $term
      * @return integer
      */
     public function docFreq(Index\Term $term)
@@ -602,8 +602,8 @@ class MultiSearcher implements SearchIndex
     /**
      * Retrive similarity used by index reader
      *
-     * @throws \Zend\Search\Lucene\Exception\RuntimeException
-     * @return \Zend\Search\Lucene\Search\Similarity
+     * @throws \Zend2\Search\Lucene\Exception\RuntimeException
+     * @return \Zend2\Search\Lucene\Search\Similarity
      */
     public function getSimilarity()
     {
@@ -664,8 +664,8 @@ class MultiSearcher implements SearchIndex
      * Deletes a document from the index.
      * $id is an internal document id
      *
-     * @param integer|\Zend\Search\Lucene\Search\QueryHit $id
-     * @throws \Zend\Search\Lucene\Exception\OutOfRangeException
+     * @param integer|\Zend2\Search\Lucene\Search\QueryHit $id
+     * @throws \Zend2\Search\Lucene\Exception\OutOfRangeException
      */
     public function delete($id)
     {
@@ -688,7 +688,7 @@ class MultiSearcher implements SearchIndex
      * Callback used to choose target index for new documents
      *
      * Function/method signature:
-     *    Zend_Search_Lucene_Interface  callbackFunction(Zend_Search_Lucene_Document $document, array $indices);
+     *    Zend2_Search_Lucene_Interface  callbackFunction(Zend2_Search_Lucene_Document $document, array $indices);
      *
      * null means "default documents distributing algorithm"
      *
@@ -700,7 +700,7 @@ class MultiSearcher implements SearchIndex
      * Set callback for choosing target index.
      *
      * @param callback $callback
-     * @throws \Zend\Search\Lucene\Exception\InvalidArgumentException
+     * @throws \Zend2\Search\Lucene\Exception\InvalidArgumentException
      */
     public function setDocumentDistributorCallback($callback)
     {
@@ -724,7 +724,7 @@ class MultiSearcher implements SearchIndex
     /**
      * Adds a document to this index.
      *
-     * @param \Zend\Search\Lucene\Document $document
+     * @param \Zend2\Search\Lucene\Document $document
      */
     public function addDocument(Document $document)
     {
@@ -779,7 +779,7 @@ class MultiSearcher implements SearchIndex
     /**
      * Terms stream priority queue object
      *
-     * @var \Zend\Search\Lucene\TermStreamsPriorityQueue
+     * @var \Zend2\Search\Lucene\TermStreamsPriorityQueue
      */
     private $_termsStream = null;
 
@@ -800,7 +800,7 @@ class MultiSearcher implements SearchIndex
      *
      * Prefix contains fully specified field info and portion of searched term
      *
-     * @param \Zend\Search\Lucene\Index\Term $prefix
+     * @param \Zend2\Search\Lucene\Index\Term $prefix
      */
     public function skipTo(Index\Term $prefix)
     {
@@ -810,7 +810,7 @@ class MultiSearcher implements SearchIndex
     /**
      * Scans terms dictionary and returns next term
      *
-     * @return \Zend\Search\Lucene\Index\Term|null
+     * @return \Zend2\Search\Lucene\Index\Term|null
      */
     public function nextTerm()
     {
@@ -820,7 +820,7 @@ class MultiSearcher implements SearchIndex
     /**
      * Returns term in current position
      *
-     * @return \Zend\Search\Lucene\Index\Term|null
+     * @return \Zend2\Search\Lucene\Index\Term|null
      */
     public function currentTerm()
     {

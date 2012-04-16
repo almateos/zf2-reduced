@@ -1,16 +1,16 @@
 <?php
 
-namespace Zend\Module;
+namespace Zend2\Module;
 
-use Zend\EventManager\Event,
-    Zend\Module\Listener\ConfigMerger;
+use Zend2\EventManager\Event,
+    Zend2\Module\Listener\ConfigMerger;
 
 /**
  * Custom event for use with module manager
  *
  * Composes Module objects
  *
- * @copyright Copyright (C) 2006-Present, Zend Technologies, Inc.
+ * @copyright Copyright (C) 2006-Present, Zend2 Technologies, Inc.
  * @license New BSD {@link http://framework.zend.com/license}
  */
 class ModuleEvent extends Event
@@ -91,7 +91,7 @@ class ModuleEvent extends Event
     {
         if (!$configListener instanceof ConfigMerger) {
             throw new Exception\InvalidArgumentException(sprintf(
-                '%s::%s() expects an object implementing Zend\Module\Listener\ConfigMerger as an argument; %s provided'
+                '%s::%s() expects an object implementing Zend2\Module\Listener\ConfigMerger as an argument; %s provided'
                 ,__CLASS__, __METHOD__, gettype($configListener)
             ));
         }

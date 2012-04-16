@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form\Element;
+namespace Zend2\Form\Element;
 
 /**
  * Checkbox form element
  *
- * @uses       \Zend\Form\Element\Xhtml
- * @category   Zend
- * @package    Zend_Form
+ * @uses       \Zend2\Form\Element\Xhtml
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Checkbox extends Xhtml
@@ -79,7 +79,7 @@ class Checkbox extends Xhtml
      * value against checked and unchecked values after configuration.
      *
      * @param  array $options
-     * @return \Zend\Form\Element\Checkbox
+     * @return \Zend2\Form\Element\Checkbox
      */
     public function setOptions(array $options)
     {
@@ -113,7 +113,7 @@ class Checkbox extends Xhtml
      *
      *
      * @param  mixed $value
-     * @return \Zend\Form\Element\Checkbox
+     * @return \Zend2\Form\Element\Checkbox
      */
     public function setValue($value)
     {
@@ -131,7 +131,7 @@ class Checkbox extends Xhtml
      * Set checked value
      *
      * @param  string $value
-     * @return \Zend\Form\Element\Checkbox
+     * @return \Zend2\Form\Element\Checkbox
      */
     public function setCheckedValue($value)
     {
@@ -154,7 +154,7 @@ class Checkbox extends Xhtml
      * Set unchecked value
      *
      * @param  string $value
-     * @return \Zend\Form\Element\Checkbox
+     * @return \Zend2\Form\Element\Checkbox
      */
     public function setUncheckedValue($value)
     {
@@ -177,7 +177,7 @@ class Checkbox extends Xhtml
      * Set checked flag
      *
      * @param  bool $flag
-     * @return \Zend\Form\Element\Checkbox
+     * @return \Zend2\Form\Element\Checkbox
      */
     public function setChecked($flag)
     {

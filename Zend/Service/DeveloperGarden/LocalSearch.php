@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_Client_AbstractClient
- * @uses       Zend_Service_DeveloperGarden_LocalSearch_SearchParameters
- * @uses       Zend_Service_DeveloperGarden_Request_LocalSearch_LocalSearchRequest
- * @uses       Zend_Service_DeveloperGarden_Response_LocalSearch_LocalSearchResponse
- * @uses       Zend_Service_DeveloperGarden_Response_LocalSearch_LocalSearchResponseType
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Client_AbstractClient
+ * @uses       Zend2_Service_DeveloperGarden_LocalSearch_SearchParameters
+ * @uses       Zend2_Service_DeveloperGarden_Request_LocalSearch_LocalSearchRequest
+ * @uses       Zend2_Service_DeveloperGarden_Response_LocalSearch_LocalSearchResponse
+ * @uses       Zend2_Service_DeveloperGarden_Response_LocalSearch_LocalSearchResponseType
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_LocalSearch
-    extends Zend_Service_DeveloperGarden_Client_AbstractClient
+class Zend2_Service_DeveloperGarden_LocalSearch
+    extends Zend2_Service_DeveloperGarden_Client_AbstractClient
 {
     /**
      * wsdl file
@@ -56,21 +56,21 @@ class Zend_Service_DeveloperGarden_LocalSearch
      *
      */
     protected $_classMap = array(
-        'LocalSearchResponseType' => 'Zend_Service_DeveloperGarden_Response_LocalSearch_LocalSearchResponseType'
+        'LocalSearchResponseType' => 'Zend2_Service_DeveloperGarden_Response_LocalSearch_LocalSearchResponseType'
     );
 
     /**
      * localSearch with the given parameters
      *
-     * @param Zend_Service_DeveloperGarden_LocalSearch_SearchParameters $searchParameters
+     * @param Zend2_Service_DeveloperGarden_LocalSearch_SearchParameters $searchParameters
      * @param integer $account
-     * @return Zend_Service_DeveloperGarden_Response_LocalSearch_LocalSearchResponseType
+     * @return Zend2_Service_DeveloperGarden_Response_LocalSearch_LocalSearchResponseType
      */
     public function localSearch(
-        Zend_Service_DeveloperGarden_LocalSearch_SearchParameters $searchParameters,
+        Zend2_Service_DeveloperGarden_LocalSearch_SearchParameters $searchParameters,
         $account = null
     ) {
-        $request = new Zend_Service_DeveloperGarden_Request_LocalSearch_LocalSearchRequest(
+        $request = new Zend2_Service_DeveloperGarden_Request_LocalSearch_LocalSearchRequest(
             $this->getEnvironment(),
             $searchParameters,
             $account
@@ -78,7 +78,7 @@ class Zend_Service_DeveloperGarden_LocalSearch
 
         $result = $this->getSoapClient()->localSearch($request);
 
-        $response = new Zend_Service_DeveloperGarden_Response_LocalSearch_LocalSearchResponse($result);
+        $response = new Zend2_Service_DeveloperGarden_Response_LocalSearch_LocalSearchResponse($result);
         return $response->parse();
     }
 }

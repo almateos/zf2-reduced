@@ -1,12 +1,12 @@
 <?php
 
-namespace Zend\Http\PhpEnvironment;
+namespace Zend2\Http\PhpEnvironment;
 
-use Zend\Http\Request as HttpRequest,
-    Zend\Uri\Http as HttpUri,
-    Zend\Http\Header\Cookie,
-    Zend\Stdlib\Parameters,
-    Zend\Stdlib\ParametersDescription;
+use Zend2\Http\Request as HttpRequest,
+    Zend2\Uri\Http as HttpUri,
+    Zend2\Http\Header\Cookie,
+    Zend2\Stdlib\Parameters,
+    Zend2\Stdlib\ParametersDescription;
 
 class Request extends HttpRequest
 {
@@ -133,7 +133,7 @@ class Request extends HttpRequest
      * Provide an alternate Parameter Container implementation for server parameters in this object, (this is NOT the
      * primary API for value setting, for that see server())
      *
-     * @param \Zend\Stdlib\ParametersDescription $server
+     * @param \Zend2\Stdlib\ParametersDescription $server
      * @return Request
      */
     public function setServer(ParametersDescription $server)

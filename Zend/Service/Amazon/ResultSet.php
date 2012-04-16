@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Amazon;
-use Zend\Service\Amazon\Exception;
+namespace Zend2\Service\Amazon;
+use Zend2\Service\Amazon\Exception;
 
 /**
  * @uses       DOMXPath
- * @uses       \Zend\Service\Amazon\OutOfBoundsException
+ * @uses       \Zend2\Service\Amazon\OutOfBoundsException
  * @uses       SeekableIterator
- * @uses       Zend_Service_Amazon_Item
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_Amazon_Item
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ResultSet implements \SeekableIterator
@@ -64,7 +64,7 @@ class ResultSet implements \SeekableIterator
     protected $_currentIndex = 0;
 
     /**
-     * Create an instance of Zend_Service_Amazon_ResultSet and create the necessary data objects
+     * Create an instance of Zend2_Service_Amazon_ResultSet and create the necessary data objects
      *
      * @param  DOMDocument $dom
      * @return void
@@ -102,7 +102,7 @@ class ResultSet implements \SeekableIterator
     /**
      * Implement SeekableIterator::current()
      *
-     * @return Zend_Service_Amazon_Item
+     * @return Zend2_Service_Amazon_Item
      */
     public function current()
     {
@@ -143,7 +143,7 @@ class ResultSet implements \SeekableIterator
      * Implement SeekableIterator::seek()
      *
      * @param  int $index
-     * @throws \Zend\Service\Amazon\OutOfBoundsException
+     * @throws \Zend2\Service\Amazon\OutOfBoundsException
      * @return void
      */
     public function seek($index)

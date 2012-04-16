@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Code\Generator\Exception;
+namespace Zend2\Code\Generator\Exception;
 
 class InvalidArgumentException
     extends \InvalidArgumentException
-    implements \Zend\Code\Generator\Exception
+    implements \Zend2\Code\Generator\Exception
 {}

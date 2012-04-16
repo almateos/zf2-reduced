@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,37 +12,37 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Calendar;
+namespace Zend2\GData\Calendar;
 
-use Zend\GData\Calendar;
+use Zend2\GData\Calendar;
 
 /**
  * Represents a Calendar entry in the Calendar data API meta feed of a user's
  * calendars.
  *
- * @uses       \Zend\GData\Calendar
- * @uses       \Zend\GData\Calendar\Extension\AccessLevel
- * @uses       \Zend\GData\Calendar\Extension\Color
- * @uses       \Zend\GData\Calendar\Extension\Hidden
- * @uses       \Zend\GData\Calendar\Extension\Selected
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\Extension\EventStatus
- * @uses       \Zend\GData\Extension\Visibility
- * @uses       \Zend\GData\Extension\Where
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Calendar
+ * @uses       \Zend2\GData\Calendar\Extension\AccessLevel
+ * @uses       \Zend2\GData\Calendar\Extension\Color
+ * @uses       \Zend2\GData\Calendar\Extension\Hidden
+ * @uses       \Zend2\GData\Calendar\Extension\Selected
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\Extension\EventStatus
+ * @uses       \Zend2\GData\Extension\Visibility
+ * @uses       \Zend2\GData\Extension\Where
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class ListEntry extends \Zend\GData\Entry
+class ListEntry extends \Zend2\GData\Entry
 {
 
     protected $_color = null;
@@ -114,7 +114,7 @@ class ListEntry extends \Zend\GData\Entry
             $this->_timezone = $timezone;
             break;
         case $this->lookupNamespace('gd') . ':' . 'where';
-            $where = new \Zend\GData\Extension\Where();
+            $where = new \Zend2\GData\Extension\Where();
             $where->transferFromDOM($child);
             $this->_where[] = $where;
             break;
@@ -130,8 +130,8 @@ class ListEntry extends \Zend\GData\Entry
     }
 
     /**
-     * @param \Zend\GData\Calendar\Extension\AccessLevel $value
-     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
+     * @param \Zend2\GData\Calendar\Extension\AccessLevel $value
+     * @return Zend2_Gdata_Extension_ListEntry Provides a fluent interface
      */
     public function setAccessLevel($value)
     {
@@ -144,8 +144,8 @@ class ListEntry extends \Zend\GData\Entry
     }
 
     /**
-     * @param \Zend\GData\Calendar\Extension\Color $value
-     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
+     * @param \Zend2\GData\Calendar\Extension\Color $value
+     * @return Zend2_Gdata_Extension_ListEntry Provides a fluent interface
      */
     public function setColor($value)
     {
@@ -159,8 +159,8 @@ class ListEntry extends \Zend\GData\Entry
     }
 
     /**
-     * @param \Zend\GData\Calendar\Extension\Hidden $value
-     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
+     * @param \Zend2\GData\Calendar\Extension\Hidden $value
+     * @return Zend2_Gdata_Extension_ListEntry Provides a fluent interface
      */
     public function setHidden($value)
     {
@@ -174,8 +174,8 @@ class ListEntry extends \Zend\GData\Entry
     }
 
     /**
-     * @param \Zend\GData\Calendar\Extension\Selected $value
-     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
+     * @param \Zend2\GData\Calendar\Extension\Selected $value
+     * @return Zend2_Gdata_Extension_ListEntry Provides a fluent interface
      */
     public function setSelected($value)
     {
@@ -189,8 +189,8 @@ class ListEntry extends \Zend\GData\Entry
     }
 
     /**
-     * @param \Zend\GData\Calendar\Extension\Timezone $value
-     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
+     * @param \Zend2\GData\Calendar\Extension\Timezone $value
+     * @return Zend2_Gdata_Extension_ListEntry Provides a fluent interface
      */
     public function setTimezone($value)
     {
@@ -204,8 +204,8 @@ class ListEntry extends \Zend\GData\Entry
     }
 
     /**
-     * @param \Zend\GData\Extension\Where $value
-     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
+     * @param \Zend2\GData\Extension\Where $value
+     * @return Zend2_Gdata_Extension_ListEntry Provides a fluent interface
      */
     public function setWhere($value)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Barcode
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Barcode
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Barcode;
+namespace Zend2\Barcode;
 
-use Zend\Loader\PluginBroker;
+use Zend2\Loader\PluginBroker;
 
 /**
  * Broker for Barcode Object instances
  *
- * @category   Zend
- * @package    Zend_Barcode
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Barcode
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ObjectBroker extends PluginBroker
@@ -35,7 +35,7 @@ class ObjectBroker extends PluginBroker
     /**
      * @var string Default plugin loading strategy
      */
-    protected $defaultClassLoader = 'Zend\Barcode\ObjectLoader';
+    protected $defaultClassLoader = 'Zend2\Barcode\ObjectLoader';
 
     /**
      * Determine if we have a valid Object
@@ -47,7 +47,7 @@ class ObjectBroker extends PluginBroker
     protected function validatePlugin($plugin)
     {
         if (!$plugin instanceof Object\AbstractObject) {
-            throw new Exception\InvalidArgumentException('Barcode Objects must extend Zend\Barcode\Object\AbstractObject');
+            throw new Exception\InvalidArgumentException('Barcode Objects must extend Zend2\Barcode\Object\AbstractObject');
         }
         return true;
     }

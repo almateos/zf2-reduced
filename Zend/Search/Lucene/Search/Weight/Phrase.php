@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search\Weight;
-use Zend\Search\Lucene\Search\Query;
-use Zend\Search\Lucene;
+namespace Zend2\Search\Lucene\Search\Weight;
+use Zend2\Search\Lucene\Search\Query;
+use Zend2\Search\Lucene;
 
 /**
- * @uses       \Zend\Search\Lucene\Search\Weight\AbstractWeight
- * @uses       \Zend\Search\Lucene\Search\Query\Phrase
- * @uses       \Zend\Search\Lucene\SearchIndex
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Search\Weight\AbstractWeight
+ * @uses       \Zend2\Search\Lucene\Search\Query\Phrase
+ * @uses       \Zend2\Search\Lucene\SearchIndex
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Phrase extends AbstractWeight
@@ -38,14 +38,14 @@ class Phrase extends AbstractWeight
     /**
      * IndexReader.
      *
-     * @var \Zend\Search\Lucene\SearchIndex
+     * @var \Zend2\Search\Lucene\SearchIndex
      */
     private $_reader;
 
     /**
      * The query that this concerns.
      *
-     * @var \Zend\Search\Lucene\Search\Query\Phrase
+     * @var \Zend2\Search\Lucene\Search\Query\Phrase
      */
     private $_query;
 
@@ -57,10 +57,10 @@ class Phrase extends AbstractWeight
     private $_idf;
 
     /**
-     * Zend_Search_Lucene_Search_Weight_Phrase constructor
+     * Zend2_Search_Lucene_Search_Weight_Phrase constructor
      *
-     * @param \Zend\Search\Lucene\Search\Query\Phrase $query
-     * @param \Zend\Search\Lucene\SearchIndex      $reader
+     * @param \Zend2\Search\Lucene\Search\Query\Phrase $query
+     * @param \Zend2\Search\Lucene\SearchIndex      $reader
      */
     public function __construct(Query\Phrase $query, Lucene\SearchIndex $reader)
     {

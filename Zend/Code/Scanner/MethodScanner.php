@@ -1,11 +1,11 @@
 <?php
 
-namespace Zend\Code\Scanner;
+namespace Zend2\Code\Scanner;
 
-use Zend\Code\Scanner,
-    Zend\Code\NameInformation,
-    Zend\Code\Exception,
-    Zend\Code\Annotation;
+use Zend2\Code\Scanner,
+    Zend2\Code\NameInformation,
+    Zend2\Code\Exception,
+    Zend2\Code\Annotation;
 
 class MethodScanner implements Scanner
 {

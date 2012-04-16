@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Fonts
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Fonts
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Resource\Font\Simple\Standard;
-use Zend\Pdf;
-use Zend\Pdf\Cmap;
+namespace Zend2\Pdf\Resource\Font\Simple\Standard;
+use Zend2\Pdf;
+use Zend2\Pdf\Cmap;
 
 /**
  * Implementation for the standard PDF font Helvetica-BoldOblique.
@@ -36,13 +36,13 @@ use Zend\Pdf\Cmap;
  * standard fonts. You should modify the script and regenerate the classes
  * instead of changing this class file by hand.
  *
- * @uses       \Zend\Pdf\Cmap\AbstractCmap
- * @uses       \Zend\Pdf\InternalType\NameObject
- * @uses       \Zend\Pdf\Font
- * @uses       \Zend\Pdf\Resource\Font\Simple\Standard\AbstractStandard
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Fonts
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Cmap\AbstractCmap
+ * @uses       \Zend2\Pdf\InternalType\NameObject
+ * @uses       \Zend2\Pdf\Font
+ * @uses       \Zend2\Pdf\Resource\Font\Simple\Standard\AbstractStandard
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Fonts
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class HelveticaBoldOblique extends AbstractStandard

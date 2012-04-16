@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,41 +12,41 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace Zend2\GData\YouTube\Extension;
 
 /**
  * Specialized Link class for use with YouTube. Enables use of yt extension elements.
  *
- * @uses       \Zend\GData\App\Extension\Link
- * @uses       \Zend\GData\YouTube
- * @uses       \Zend\GData\YouTube\Extension\Token
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Extension\Link
+ * @uses       \Zend2\GData\YouTube
+ * @uses       \Zend2\GData\YouTube\Extension\Token
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Link extends \Zend\GData\App\Extension\Link
+class Link extends \Zend2\GData\App\Extension\Link
 {
 
     protected $_token = null;
 
     /**
-     * Constructs a new Zend_Gdata_Calendar_Extension_Link object.
-     * @see Zend_Gdata_App_Extension_Link#__construct
-     * @param \Zend\GData\YouTube\Extension\Token $token
+     * Constructs a new Zend2_Gdata_Calendar_Extension_Link object.
+     * @see Zend2_Gdata_App_Extension_Link#__construct
+     * @param \Zend2\GData\YouTube\Extension\Token $token
      */
     public function __construct($href = null, $rel = null, $type = null,
             $hrefLang = null, $title = null, $length = null, $token = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\YouTube::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\YouTube::$namespaces);
         parent::__construct($href, $rel, $type, $hrefLang, $title, $length);
         $this->_token = $token;
     }
@@ -94,7 +94,7 @@ class Link extends \Zend\GData\App\Extension\Link
     /**
      * Get the value for this element's token attribute.
      *
-     * @return \Zend\GData\YouTube\Extension\Token The token element.
+     * @return \Zend2\GData\YouTube\Extension\Token The token element.
      */
     public function getToken()
     {
@@ -104,8 +104,8 @@ class Link extends \Zend\GData\App\Extension\Link
     /**
      * Set the value for this element's token attribute.
      *
-     * @param \Zend\GData\YouTube\Extension\Token $value The desired value for this attribute.
-     * @return Zend_YouTube_Extension_Link The element being modified.
+     * @param \Zend2\GData\YouTube\Extension\Token $value The desired value for this attribute.
+     * @return Zend2_YouTube_Extension_Link The element being modified.
      */
     public function setToken($value)
     {

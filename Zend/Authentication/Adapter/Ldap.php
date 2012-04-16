@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,39 +12,39 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Authentication
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Authentication\Adapter;
+namespace Zend2\Authentication\Adapter;
 
-use Zend\Authentication\Adapter as AuthenticationAdapter,
-    Zend\Authentication\Result as AuthenticationResult,
-    Zend\Ldap as ZendLdap,
-    Zend\Ldap\Exception\LdapException;
+use Zend2\Authentication\Adapter as AuthenticationAdapter,
+    Zend2\Authentication\Result as AuthenticationResult,
+    Zend2\Ldap as Zend2Ldap,
+    Zend2\Ldap\Exception\LdapException;
 
 /**
- * @category   Zend
- * @package    Zend_Authentication
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Ldap implements AuthenticationAdapter
 {
 
     /**
-     * The Zend\Ldap\Ldap context.
+     * The Zend2\Ldap\Ldap context.
      *
-     * @var ZendLdap\Ldap
+     * @var Zend2Ldap\Ldap
      */
     protected $ldap = null;
 
     /**
-     * The array of arrays of Zend\Ldap\Ldap options passed to the constructor.
+     * The array of arrays of Zend2\Ldap\Ldap options passed to the constructor.
      *
      * @var array
      */
@@ -74,7 +74,7 @@ class Ldap implements AuthenticationAdapter
     /**
      * Constructor
      *
-     * @param  array  $options  An array of arrays of Zend\Ldap\Ldap options
+     * @param  array  $options  An array of arrays of Zend2\Ldap\Ldap options
      * @param  string $username The username of the account being authenticated
      * @param  string $password The password of the account being authenticated
      * @return void
@@ -91,7 +91,7 @@ class Ldap implements AuthenticationAdapter
     }
 
     /**
-     * Returns the array of arrays of Zend\Ldap\Ldap options of this adapter.
+     * Returns the array of arrays of Zend2\Ldap\Ldap options of this adapter.
      *
      * @return array|null
      */
@@ -101,10 +101,10 @@ class Ldap implements AuthenticationAdapter
     }
 
     /**
-     * Sets the array of arrays of Zend\Ldap\Ldap options to be used by
+     * Sets the array of arrays of Zend2\Ldap\Ldap options to be used by
      * this adapter.
      *
-     * @param  array $options The array of arrays of Zend\Ldap\Ldap options
+     * @param  array $options The array of arrays of Zend2\Ldap\Ldap options
      * @return Ldap Provides a fluent interface
      */
     public function setOptions($options)
@@ -192,12 +192,12 @@ class Ldap implements AuthenticationAdapter
     /**
      * Returns the LDAP Object
      *
-     * @return ZendLdap\Ldap The Zend\Ldap\Ldap object used to authenticate the credentials
+     * @return Zend2Ldap\Ldap The Zend2\Ldap\Ldap object used to authenticate the credentials
      */
     public function getLdap()
     {
         if ($this->ldap === null) {
-            $this->ldap = new ZendLdap\Ldap();
+            $this->ldap = new Zend2Ldap\Ldap();
         }
 
         return $this->ldap;
@@ -206,10 +206,10 @@ class Ldap implements AuthenticationAdapter
     /**
      * Set an Ldap connection
      *
-     * @param  ZendLdap\Ldap $ldap An existing Ldap object
+     * @param  Zend2Ldap\Ldap $ldap An existing Ldap object
      * @return Ldap Provides a fluent interface
      */
-    public function setLdap(ZendLdap\Ldap $ldap)
+    public function setLdap(Zend2Ldap\Ldap $ldap)
     {
         $this->ldap = $ldap;
 
@@ -236,8 +236,8 @@ class Ldap implements AuthenticationAdapter
     /**
      * Authenticate the user
      *
-     * @return Zend\Authentication\Result
-     * @throws Zend\Authentication\Adapter\Exception
+     * @return Zend2\Authentication\Result
+     * @throws Zend2\Authentication\Adapter\Exception
      */
     public function authenticate()
     {
@@ -306,7 +306,7 @@ class Ldap implements AuthenticationAdapter
                  * Fixes problem when authenticated user is not allowed to retrieve
                  * group-membership information or own account.
                  * This requires that the user specified with "username" and optionally
-                 * "password" in the Zend\Ldap\Ldap options is able to retrieve the required
+                 * "password" in the Zend2\Ldap\Ldap options is able to retrieve the required
                  * information.
                  */
                 $requireRebind = false;
@@ -314,7 +314,7 @@ class Ldap implements AuthenticationAdapter
                     $ldap->bind();
                     $requireRebind = true;
                 }
-                $dn = $ldap->getCanonicalAccountName($canonicalName, ZendLdap\Ldap::ACCTNAME_FORM_DN);
+                $dn = $ldap->getCanonicalAccountName($canonicalName, Zend2Ldap\Ldap::ACCTNAME_FORM_DN);
 
                 $groupResult = $this->checkGroupMembership($ldap, $canonicalName, $dn, $adapterOptions);
                 if ($groupResult === true) {
@@ -377,18 +377,18 @@ class Ldap implements AuthenticationAdapter
     }
 
     /**
-     * Sets the LDAP specific options on the Zend\Ldap\Ldap instance
+     * Sets the LDAP specific options on the Zend2\Ldap\Ldap instance
      *
-     * @param  ZendLdap\Ldap $ldap
+     * @param  Zend2Ldap\Ldap $ldap
      * @param  array         $options
      * @return array of auth-adapter specific options
      */
-    protected function prepareOptions(ZendLdap\Ldap $ldap, array $options)
+    protected function prepareOptions(Zend2Ldap\Ldap $ldap, array $options)
     {
         $adapterOptions = array(
             'group'       => null,
             'groupDn'     => $ldap->getBaseDn(),
-            'groupScope'  => ZendLdap\Ldap::SEARCH_SCOPE_SUB,
+            'groupScope'  => Zend2Ldap\Ldap::SEARCH_SCOPE_SUB,
             'groupAttr'   => 'cn',
             'groupFilter' => 'objectClass=groupOfUniqueNames',
             'memberAttr'  => 'uniqueMember',
@@ -401,8 +401,8 @@ class Ldap implements AuthenticationAdapter
                 switch ($key) {
                     case 'groupScope':
                         $value = (int)$value;
-                        if (in_array($value, array(ZendLdap\Ldap::SEARCH_SCOPE_BASE,
-                                ZendLdap\Ldap::SEARCH_SCOPE_ONE, ZendLdap\Ldap::SEARCH_SCOPE_SUB), true)) {
+                        if (in_array($value, array(Zend2Ldap\Ldap::SEARCH_SCOPE_BASE,
+                                Zend2Ldap\Ldap::SEARCH_SCOPE_ONE, Zend2Ldap\Ldap::SEARCH_SCOPE_SUB), true)) {
                            $adapterOptions[$key] = $value;
                         }
                         break;
@@ -423,13 +423,13 @@ class Ldap implements AuthenticationAdapter
     /**
      * Checks the group membership of the bound user
      *
-     * @param  ZendLdap\Ldap $ldap
+     * @param  Zend2Ldap\Ldap $ldap
      * @param  string        $canonicalName
      * @param  string        $dn
      * @param  array         $adapterOptions
      * @return string|true
      */
-    protected function checkGroupMembership(ZendLdap\Ldap $ldap, $canonicalName, $dn, array $adapterOptions)
+    protected function checkGroupMembership(Zend2Ldap\Ldap $ldap, $canonicalName, $dn, array $adapterOptions)
     {
         if ($adapterOptions['group'] === null) {
             return true;
@@ -441,9 +441,9 @@ class Ldap implements AuthenticationAdapter
             $user = $dn;
         }
 
-        $groupName   = ZendLdap\Filter::equals($adapterOptions['groupAttr'], $adapterOptions['group']);
-        $membership  = ZendLdap\Filter::equals($adapterOptions['memberAttr'], $user);
-        $group       = ZendLdap\Filter::andFilter($groupName, $membership);
+        $groupName   = Zend2Ldap\Filter::equals($adapterOptions['groupAttr'], $adapterOptions['group']);
+        $membership  = Zend2Ldap\Filter::equals($adapterOptions['memberAttr'], $user);
+        $group       = Zend2Ldap\Filter::andFilter($groupName, $membership);
         $groupFilter = $adapterOptions['groupFilter'];
         if (!empty($groupFilter)) {
             $group = $group->addAnd($groupFilter);
@@ -461,7 +461,7 @@ class Ldap implements AuthenticationAdapter
     /**
      * getAccountObject() - Returns the result entry as a stdClass object
      *
-     * This resembles the feature {@see Zend\Authentication\Adapter\DbTable::getResultRowObject()}.
+     * This resembles the feature {@see Zend2\Authentication\Adapter\DbTable::getResultRowObject()}.
      * Closes ZF-6813
      *
      * @param  array $returnAttribs

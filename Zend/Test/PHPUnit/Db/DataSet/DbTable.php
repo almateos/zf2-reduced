@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,33 +12,33 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Test
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Test\PHPUnit\Db\DataSet;
+namespace Zend2\Test\PHPUnit\Db\DataSet;
 
 /**
- * Use a Zend_Db_Table for assertions with other PHPUnit Database Extension table types.
+ * Use a Zend2_Db_Table for assertions with other PHPUnit Database Extension table types.
  *
  * @uses       PHPUnit_Extensions_Database_DataSet_DefaultTableMetaData
  * @uses       PHPUnit_Extensions_Database_DataSet_QueryTable
- * @uses       \Zend\Db\Table\AbstractTable
- * @category   Zend
- * @package    Zend_Test
+ * @uses       \Zend2\Db\Table\AbstractTable
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DbTable extends \PHPUnit_Extensions_Database_DataSet_QueryTable
 {
     /**
-     * Zend_Db_Table object
+     * Zend2_Db_Table object
      *
-     * @var \Zend\Db\Table\AbstractTable
+     * @var \Zend2\Db\Table\AbstractTable
      */
     protected $_table = null;
 
@@ -68,15 +68,15 @@ class DbTable extends \PHPUnit_Extensions_Database_DataSet_QueryTable
     protected $_offset = null;
 
     /**
-     * Construct Dataset Table from Zend_Db_Table object
+     * Construct Dataset Table from Zend2_Db_Table object
      *
-     * @param \Zend\Db\Table\AbstractTable        $table
-     * @param string|\Zend\Db\Select|null    $where
+     * @param \Zend2\Db\Table\AbstractTable        $table
+     * @param string|\Zend2\Db\Select|null    $where
      * @param string|null                   $order
      * @param int                           $count
      * @param int                           $offset
      */
-    public function __construct(\Zend\Db\Table\AbstractTable $table, $where=null, $order=null, $count=null, $offset=null)
+    public function __construct(\Zend2\Db\Table\AbstractTable $table, $where=null, $order=null, $count=null, $offset=null)
     {
         $this->tableName = $table->info('name');
         $this->_columns = $table->info('cols');
@@ -99,7 +99,7 @@ class DbTable extends \PHPUnit_Extensions_Database_DataSet_QueryTable
             $this->data = $this->_table->fetchAll(
                 $this->_where, $this->_order, $this->_count, $this->_offset
             );
-            if($this->data instanceof \Zend\Db\Table\AbstractRowset) {
+            if($this->data instanceof \Zend2\Db\Table\AbstractRowset) {
                 $this->data = $this->data->toArray();
             }
         }

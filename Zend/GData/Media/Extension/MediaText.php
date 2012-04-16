@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Media
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Media\Extension;
+namespace Zend2\GData\Media\Extension;
 
 /**
  * Represents the media:text element
  *
- * @uses       \Zend\GData\Extension
- * @uses       \Zend\GData\Media
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Extension
+ * @uses       \Zend2\GData\Media
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Media
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class MediaText extends \Zend\GData\Extension
+class MediaText extends \Zend2\GData\Extension
 {
 
     protected $_rootElement = 'text';
@@ -70,7 +70,7 @@ class MediaText extends \Zend\GData\Extension
     public function __construct($text = null, $type = null, $lang = null,
             $start = null, $end = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\Media::$namespaces);
         parent::__construct();
         $this->_text = $text;
         $this->_type = $type;
@@ -144,7 +144,7 @@ class MediaText extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaText Provides a fluent interface
+     * @return \Zend2\GData\Media\Extension\MediaText Provides a fluent interface
      */
     public function setType($value)
     {
@@ -162,7 +162,7 @@ class MediaText extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaText Provides a fluent interface
+     * @return \Zend2\GData\Media\Extension\MediaText Provides a fluent interface
      */
     public function setLang($value)
     {
@@ -180,7 +180,7 @@ class MediaText extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaText Provides a fluent interface
+     * @return \Zend2\GData\Media\Extension\MediaText Provides a fluent interface
      */
     public function setStart($value)
     {
@@ -198,7 +198,7 @@ class MediaText extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaText Provides a fluent interface
+     * @return \Zend2\GData\Media\Extension\MediaText Provides a fluent interface
      */
     public function setEnd($value)
     {

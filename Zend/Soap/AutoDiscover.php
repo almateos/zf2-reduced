@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Soap
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage AutoDiscover
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Soap;
+namespace Zend2\Soap;
 
-use Zend\Uri,
-    Zend\Soap\Wsdl,
-    Zend\Soap\Wsdl\ComplexTypeStrategy,
-    Zend\Server\Reflection\AbstractFunction,
-    Zend\Server\Reflection,
-    Zend\Server\Reflection\Prototype,
-    Zend\Server\Reflection\ReflectionParameter,
-    Zend\Soap\AutoDiscover\DiscoveryStrategy\ReflectionDiscovery;
+use Zend2\Uri,
+    Zend2\Soap\Wsdl,
+    Zend2\Soap\Wsdl\ComplexTypeStrategy,
+    Zend2\Server\Reflection\AbstractFunction,
+    Zend2\Server\Reflection,
+    Zend2\Server\Reflection\Prototype,
+    Zend2\Server\Reflection\ReflectionParameter,
+    Zend2\Soap\AutoDiscover\DiscoveryStrategy\ReflectionDiscovery;
 
 /**
- * \Zend\Soap\AutoDiscover
+ * \Zend2\Soap\AutoDiscover
  *
- * @category   Zend
- * @package    Zend_Soap
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage AutoDiscover
  */
 class AutoDiscover
@@ -45,7 +45,7 @@ class AutoDiscover
     protected $_serviceName;
 
     /**
-     * @var \Zend\Server\Reflection
+     * @var \Zend2\Server\Reflection
      */
     protected $_reflection = null;
 
@@ -94,7 +94,7 @@ class AutoDiscover
      *
      * @var string
      */
-    protected $_wsdlClass = 'Zend\Soap\Wsdl';
+    protected $_wsdlClass = 'Zend2\Soap\Wsdl';
 
     /**
      * Class Map of PHP to WSDL types.
@@ -106,14 +106,14 @@ class AutoDiscover
     /**
      * Discovery strategy for types and other method details.
      *
-     * @var Zend\Soap\AutoDiscover\DiscoveryStrategy
+     * @var Zend2\Soap\AutoDiscover\DiscoveryStrategy
      */
     protected $_discoveryStrategy;
 
     /**
      * Constructor
      *
-     * @param \Zend\Soap\Wsdl\ComplexTypeStrategy $strategy
+     * @param \Zend2\Soap\Wsdl\ComplexTypeStrategy $strategy
      * @param string|Uri\Uri $endpointUri
      * @param string $wsdlClass
      */
@@ -139,7 +139,7 @@ class AutoDiscover
      * Set the discovery strategy for method type and other information.
      *
      * @param  AutoDiscover\DiscoveryStrategy $discoveryStrategy
-     * @return Zend\Soap\AutoDiscover
+     * @return Zend2\Soap\AutoDiscover
      */
     public function setDiscoveryStrategy(DiscoveryStrategy $discoveryStrategy)
     {
@@ -212,14 +212,14 @@ class AutoDiscover
      * Set the location at which the WSDL file will be availabe.
      *
      * @param  Uri\Uri|string $uri
-     * @return \Zend\Soap\AutoDiscover
-     * @throws \Zend\Soap\Exception\InvalidArgumentException
+     * @return \Zend2\Soap\AutoDiscover
+     * @throws \Zend2\Soap\Exception\InvalidArgumentException
      */
     public function setUri($uri)
     {
         if (!is_string($uri) && !($uri instanceof Uri\Uri)) {
             throw new Exception\InvalidArgumentException(
-                'No uri given to \Zend\Soap\AutoDiscover::setUri as string or \Zend\Uri\Uri instance.'
+                'No uri given to \Zend2\Soap\AutoDiscover::setUri as string or \Zend2\Uri\Uri instance.'
             );
         }
         $this->_uri = $uri;
@@ -248,14 +248,14 @@ class AutoDiscover
      * Set the name of the WSDL handling class.
      *
      * @param  string $wsdlClass
-     * @return \Zend\Soap\AutoDiscover
-     * @throws \Zend\Soap\Exception\InvalidArgumentException
+     * @return \Zend2\Soap\AutoDiscover
+     * @throws \Zend2\Soap\Exception\InvalidArgumentException
      */
     public function setWsdlClass($wsdlClass)
     {
-        if (!is_string($wsdlClass) && !is_subclass_of($wsdlClass, 'Zend\Soap\Wsdl')) {
+        if (!is_string($wsdlClass) && !is_subclass_of($wsdlClass, 'Zend2\Soap\Wsdl')) {
             throw new Exception\InvalidArgumentException(
-                'No \Zend\Soap\Wsdl subclass given to Zend\Soap\AutoDiscover::setWsdlClass as string.'
+                'No \Zend2\Soap\Wsdl subclass given to Zend2\Soap\AutoDiscover::setWsdlClass as string.'
             );
         }
         $this->_wsdlClass = $wsdlClass;
@@ -280,8 +280,8 @@ class AutoDiscover
      * 'encodingStyle' => "http://schemas.xmlsoap.org/soap/encoding/".
      *
      * @param  array $operationStyle
-     * @return \Zend\Soap\AutoDiscover
-     * @throws \Zend\Soap\Exception\InvalidArgumentException
+     * @return \Zend2\Soap\AutoDiscover
+     * @throws \Zend2\Soap\Exception\InvalidArgumentException
      */
     public function setOperationBodyStyle(array $operationStyle=array())
     {
@@ -298,7 +298,7 @@ class AutoDiscover
      * By default 'style' is 'rpc' and 'transport' is 'http://schemas.xmlsoap.org/soap/http'.
      *
      * @param  array $bindingStyle
-     * @return \Zend\Soap\AutoDiscover
+     * @return \Zend2\Soap\AutoDiscover
      */
     public function setBindingStyle(array $bindingStyle=array())
     {
@@ -314,8 +314,8 @@ class AutoDiscover
     /**
      * Set the strategy that handles functions and classes that are added AFTER this call.
      *
-     * @param  \Zend\Soap\Wsdl\ComplexTypeStrategy $strategy
-     * @return \Zend\Soap\AutoDiscover
+     * @param  \Zend2\Soap\Wsdl\ComplexTypeStrategy $strategy
+     * @return \Zend2\Soap\AutoDiscover
      */
     public function setComplexTypeStrategy(ComplexTypeStrategy $strategy)
     {
@@ -328,7 +328,7 @@ class AutoDiscover
      * Set the Class the SOAP server will use
      *
      * @param string $class Class Name
-     * @return \Zend\Soap\AutoDiscover
+     * @return \Zend2\Soap\AutoDiscover
      */
     public function setClass($class)
     {
@@ -340,7 +340,7 @@ class AutoDiscover
      * Add a Single or Multiple Functions to the WSDL
      *
      * @param string $function Function Name
-     * @return \Zend\Soap\AutoDiscover
+     * @return \Zend2\Soap\AutoDiscover
      */
     public function addFunction($function)
     {
@@ -351,7 +351,7 @@ class AutoDiscover
     /**
      * Generate the WSDL for a service class.
      *
-     * @return Zend\Soap\Wsdl
+     * @return Zend2\Soap\Wsdl
      */
     protected function _generateClass()
     {
@@ -361,7 +361,7 @@ class AutoDiscover
     /**
      * Generate the WSDL for a set of functions.
      *
-     * @return Zend\Soap\Wsdl
+     * @return Zend2\Soap\Wsdl
      */
     protected function _generateFunctions()
     {
@@ -376,7 +376,7 @@ class AutoDiscover
     /**
      * Generate the WSDL for a set of reflection method instances.
      *
-     * @return Zend\Soap\Wsdl
+     * @return Zend2\Soap\Wsdl
      */
     protected function _generateWsdl(array $reflectionMethods)
     {
@@ -404,8 +404,8 @@ class AutoDiscover
     /**
      * Add a function to the WSDL document.
      *
-     * @param $function \Zend\Server\Reflection\AbstractFunction function to add
-     * @param $wsdl \Zend\Soap\Wsdl WSDL document
+     * @param $function \Zend2\Server\Reflection\AbstractFunction function to add
+     * @param $wsdl \Zend2\Soap\Wsdl WSDL document
      * @param $port object wsdl:portType
      * @param $binding object wsdl:binding
      * @return void
@@ -515,7 +515,7 @@ class AutoDiscover
     /**
      * Generate the WSDL file from the configured input.
      *
-     * @return Zend_Wsdl
+     * @return Zend2_Wsdl
      */
     public function generate()
     {
@@ -537,7 +537,7 @@ class AutoDiscover
      *
      * @param string $filename
      * @return bool
-     * @throws \Zend\Soap\Exception\RuntimeException
+     * @throws \Zend2\Soap\Exception\RuntimeException
      */
     public function dump($filename)
     {
@@ -548,7 +548,7 @@ class AutoDiscover
      * Proxy to WSDL toXml() function
      *
      * @return string
-     * @throws \Zend\Soap\Exception\RuntimeException
+     * @throws \Zend2\Soap\Exception\RuntimeException
      */
     public function toXml()
     {

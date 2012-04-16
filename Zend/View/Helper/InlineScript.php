@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper;
+namespace Zend2\View\Helper;
 
 /**
  * Helper for setting and retrieving script elements for inclusion in HTML body
  * section
  *
- * @uses       Zend_View_Helper_Head_Script
- * @package    Zend_View
+ * @uses       Zend2_View_Helper_Head_Script
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class InlineScript extends HeadScript
@@ -37,7 +37,7 @@ class InlineScript extends HeadScript
      * Registry key for placeholder
      * @var string
      */
-    protected $_regKey = 'Zend_View_Helper_InlineScript';
+    protected $_regKey = 'Zend2_View_Helper_InlineScript';
 
     /**
      * Return InlineScript object
@@ -50,7 +50,7 @@ class InlineScript extends HeadScript
      * @param  string $placement Append, prepend, or set
      * @param  array $attrs Array of script attributes
      * @param  string $type Script type and/or array of script attributes
-     * @return \Zend\View\Helper\InlineScript
+     * @return \Zend2\View\Helper\InlineScript
      */
     public function __invoke($mode = HeadScript::FILE, $spec = null, $placement = 'APPEND', array $attrs = array(), $type = 'text/javascript')
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\OAuth\Signature;
+namespace Zend2\OAuth\Signature;
 
-use Zend\OAuth\Signature as OAuthSignature,
-    Zend\OAuth\Http\Utility as HTTPUtility,
-    Zend\OAuth\Exception as OAuthException,
-    Zend\Uri;
+use Zend2\OAuth\Signature as OAuthSignature,
+    Zend2\OAuth\Http\Utility as HTTPUtility,
+    Zend2\OAuth\Exception as OAuthException,
+    Zend2\Uri;
 
 /**
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractSignature implements OAuthSignature

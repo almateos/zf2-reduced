@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,47 +12,47 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Config
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Config\Processor;
+namespace Zend2\Config\Processor;
 
-use Zend\Config\Config,
-    Zend\Config\Processor,
-    Zend\Config\Exception,
-    Zend\Filter\Filter as ZendFilter,
+use Zend2\Config\Config,
+    Zend2\Config\Processor,
+    Zend2\Config\Exception,
+    Zend2\Filter\Filter as Zend2Filter,
     \Traversable,
     \ArrayObject;
 
 /**
- * @category   Zend
- * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Config
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Filter implements Processor
 {
     /**
-     * @var \Zend\Filter\Filter
+     * @var \Zend2\Filter\Filter
      */
     protected $filter;
 
     /**
-     * Filter all config values using the supplied Zend\Filter
+     * Filter all config values using the supplied Zend2\Filter
      *
-     * @param \Zend\Filter\Filter $filter
-     * @return \Zend\Config\Processor\Filter
+     * @param \Zend2\Filter\Filter $filter
+     * @return \Zend2\Config\Processor\Filter
      */
-    public function __construct(ZendFilter $filter)
+    public function __construct(Zend2Filter $filter)
     {
         $this->setFilter($filter);
     }
 
     /**
-     * @return \Zend\Filter\Filter
+     * @return \Zend2\Filter\Filter
      */
     public function getFilter()
     {
@@ -60,9 +60,9 @@ class Filter implements Processor
     }
 
     /**
-     * @param \Zend\Filter\Filter $filter
+     * @param \Zend2\Filter\Filter $filter
      */
-    public function setFilter(ZendFilter $filter)
+    public function setFilter(Zend2Filter $filter)
     {
         $this->filter = $filter;
     }

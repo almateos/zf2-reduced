@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
-use Zend;
-use Zend\Locale;
+namespace Zend2\Validator;
+use Zend2;
+use Zend2\Locale;
 
 /**
- * @uses       \Zend\Locale\Locale
- * @uses       \Zend\Locale\Format
- * @uses       \Zend\Registry
- * @uses       \Zend\Validator\AbstractValidator
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Locale\Locale
+ * @uses       \Zend2\Locale\Format
+ * @uses       \Zend2\Registry
+ * @uses       \Zend2\Validator\AbstractValidator
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Float extends AbstractValidator
@@ -58,7 +58,7 @@ class Float extends AbstractValidator
      * Constructor
      *
      * @param array $options
-     * @return \Zend\Validator\Float
+     * @return \Zend2\Validator\Float
      */
     public function __construct($options = null)
     {
@@ -72,7 +72,7 @@ class Float extends AbstractValidator
     /**
      * Returns the set locale
      *
-     * @return \Zend\Locale
+     * @return \Zend2\Locale
      */
     public function getLocale()
     {
@@ -82,7 +82,7 @@ class Float extends AbstractValidator
     /**
      * Sets the locale to use
      *
-     * @param string|\Zend\Locale\Locale $locale
+     * @param string|\Zend2\Locale\Locale $locale
      */
     public function setLocale($locale = null)
     {

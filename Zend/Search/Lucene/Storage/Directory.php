@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Storage;
+namespace Zend2\Search\Lucene\Storage;
 
 /**
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface Directory
@@ -49,7 +49,7 @@ interface Directory
      * Creates a new, empty file in the directory with the given $filename.
      *
      * @param string $filename
-     * @return \Zend\Search\Lucene\Storage\File
+     * @return \Zend2\Search\Lucene\Storage\File
      */
     public function createFile($filename);
 
@@ -119,7 +119,7 @@ interface Directory
 
 
     /**
-     * Returns a Zend_Search_Lucene_Storage_File object for a given $filename in the directory.
+     * Returns a Zend2_Search_Lucene_Storage_File object for a given $filename in the directory.
      *
      * If $shareHandler option is true, then file handler can be shared between File Object
      * requests. It speed-ups performance, but makes problems with file position.
@@ -128,7 +128,7 @@ interface Directory
      *
      * @param string $filename
      * @param boolean $shareHandler
-     * @return \Zend\Search\Lucene\Storage\File
+     * @return \Zend2\Search\Lucene\Storage\File
      */
     public function getFileObject($filename, $shareHandler = true);
 }

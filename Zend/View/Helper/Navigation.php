@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper;
+namespace Zend2\View\Helper;
 
-use Zend\Loader\ShortNameLocator,
-    Zend\Loader\PluginClassLoader,
-    Zend\Navigation\Container,
-    Zend\View\Helper\Navigation\AbstractHelper as AbstractNavigationHelper,
-    Zend\View\Helper\Navigation\Helper as NavigationHelper,
-    Zend\View\Exception;
+use Zend2\Loader\ShortNameLocator,
+    Zend2\Loader\PluginClassLoader,
+    Zend2\Navigation\Container,
+    Zend2\View\Helper\Navigation\AbstractHelper as AbstractNavigationHelper,
+    Zend2\View\Helper\Navigation\Helper as NavigationHelper,
+    Zend2\View\Exception;
 
 /**
  * Proxy helper for retrieving navigational helpers and forwarding calls
  *
- * @uses       \Zend\View\Exception
- * @uses       \Zend\View\Helper\Navigation\AbstractHelper
- * @category   Zend
- * @package    Zend_View
+ * @uses       \Zend2\View\Exception
+ * @uses       \Zend2\View\Helper\Navigation\AbstractHelper
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Navigation extends AbstractNavigationHelper
@@ -46,7 +46,7 @@ class Navigation extends AbstractNavigationHelper
      *
      * @var string
      */
-    const NS = 'Zend\View\Helper\Navigation';
+    const NS = 'Zend2\View\Helper\Navigation';
 
     /**
      * @var ShortNameLocator
@@ -91,9 +91,9 @@ class Navigation extends AbstractNavigationHelper
     /**
      * Helper entry point
      *
-     * @param  \Zend\Navigation\Container $container  [optional] container to
+     * @param  \Zend2\Navigation\Container $container  [optional] container to
      *                                               operate on
-     * @return \Zend\View\Helper\Navigation           fluent interface, returns
+     * @return \Zend2\View\Helper\Navigation           fluent interface, returns
      *                                               self
      */
     public function __invoke(Container $container = null)
@@ -124,11 +124,11 @@ class Navigation extends AbstractNavigationHelper
      *                                    container
      * @param  array  $arguments          [optional] arguments to pass
      * @return mixed                      returns what the proxied call returns
-     * @throws \Zend\View\Exception        if proxying to a helper, and the
+     * @throws \Zend2\View\Exception        if proxying to a helper, and the
      *                                    helper is not an instance of the
      *                                    interface specified in
      *                                    {@link findHelper()}
-     * @throws \Zend\Navigation\Exception  if method does not exist in container
+     * @throws \Zend2\Navigation\Exception  if method does not exist in container
      */
     public function __call($method, array $arguments = array())
     {
@@ -174,15 +174,15 @@ class Navigation extends AbstractNavigationHelper
      * Returns the helper matching $proxy
      *
      * The helper must implement the interface
-     * {@link Zend\View\Helper\Navigation\Helper}.
+     * {@link Zend2\View\Helper\Navigation\Helper}.
      *
      * @param string $proxy                        helper name
      * @param bool   $strict                       [optional] whether
      *                                             exceptions should be
      *                                             thrown if something goes
      *                                             wrong. Default is true.
-     * @return \Zend\View\Helper\Navigation\Helper  helper instance
-     * @throws \Zend\Loader\PluginLoader\Exception  if $strict is true and
+     * @return \Zend2\View\Helper\Navigation\Helper  helper instance
+     * @throws \Zend2\Loader\PluginLoader\Exception  if $strict is true and
      *         helper cannot be found
      * @throws Exception\InvalidArgumentException if $strict is true and
      *         helper does not implement the specified interface
@@ -200,7 +200,7 @@ class Navigation extends AbstractNavigationHelper
         } else {
             try {
                 $class = $loader->load($proxy);
-            } catch (\Zend\Loader\Exception $e) {
+            } catch (\Zend2\Loader\Exception $e) {
                 return null;
             }
         }
@@ -211,7 +211,7 @@ class Navigation extends AbstractNavigationHelper
             if ($strict) {
                 throw new Exception\InvalidArgumentException(sprintf(
                         'Proxy helper "%s" is not an instance of ' .
-                        'Zend\View\Helper\Navigation\Helper',
+                        'Zend2\View\Helper\Navigation\Helper',
                         get_class($helper)
                 ));
             }
@@ -230,7 +230,7 @@ class Navigation extends AbstractNavigationHelper
      * Injects container, ACL, and translator to the given $helper if this
      * helper is configured to do so
      *
-     * @param  \Zend\View\Helper\Navigation\Helper $helper  helper instance
+     * @param  \Zend2\View\Helper\Navigation\Helper $helper  helper instance
      * @return void
      */
     protected function _inject(NavigationHelper $helper)
@@ -259,7 +259,7 @@ class Navigation extends AbstractNavigationHelper
      * Sets the default proxy to use in {@link render()}
      *
      * @param  string $proxy                default proxy
-     * @return \Zend\View\Helper\Navigation  fluent interface, returns self
+     * @return \Zend2\View\Helper\Navigation  fluent interface, returns self
      */
     public function setDefaultProxy($proxy)
     {
@@ -283,7 +283,7 @@ class Navigation extends AbstractNavigationHelper
      * @param bool $injectContainer         [optional] whether container should
      *                                      be injected when proxying. Default
      *                                      is true.
-     * @return \Zend\View\Helper\Navigation  fluent interface, returns self
+     * @return \Zend2\View\Helper\Navigation  fluent interface, returns self
      */
     public function setInjectContainer($injectContainer = true)
     {
@@ -307,7 +307,7 @@ class Navigation extends AbstractNavigationHelper
      * @param  bool $injectAcl              [optional] whether ACL should be
      *                                      injected when proxying. Default is
      *                                      true.
-     * @return \Zend\View\Helper\Navigation  fluent interface, returns self
+     * @return \Zend2\View\Helper\Navigation  fluent interface, returns self
      */
     public function setInjectAcl($injectAcl = true)
     {
@@ -331,7 +331,7 @@ class Navigation extends AbstractNavigationHelper
      * @param  bool $injectTranslator       [optional] whether translator should
      *                                      be injected when proxying. Default
      *                                      is true.
-     * @return \Zend\View\Helper\Navigation  fluent interface, returns self
+     * @return \Zend2\View\Helper\Navigation  fluent interface, returns self
      */
     public function setInjectTranslator($injectTranslator = true)
     {
@@ -349,18 +349,18 @@ class Navigation extends AbstractNavigationHelper
         return $this->_injectTranslator;
     }
 
-    // Zend\View\Helper\Navigation\Helper:
+    // Zend2\View\Helper\Navigation\Helper:
 
     /**
      * Renders helper
      *
-     * @param  \Zend\Navigation\Container $container  [optional] container to
+     * @param  \Zend2\Navigation\Container $container  [optional] container to
      *                                               render. Default is to
      *                                               render the container
      *                                               registered in the helper.
      * @return string                                helper output
-     * @throws \Zend\Loader\PluginLoader\Exception    if helper cannot be found
-     * @throws \Zend\View\Exception                   if helper doesn't implement
+     * @throws \Zend2\Loader\PluginLoader\Exception    if helper cannot be found
+     * @throws \Zend2\View\Exception                   if helper doesn't implement
      *                                               the interface specified in
      *                                               {@link findHelper()}
      */

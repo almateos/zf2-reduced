@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,19 +12,19 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Crypt
+ * @category   Zend2
+ * @package    Zend2_Crypt
  * @subpackage Math
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Crypt\Math;
+namespace Zend2\Crypt\Math;
 
 /**
  * Support for arbitrary precision mathematics in PHP.
  *
- * Zend_Crypt_Math_BigInteger is a wrapper across three PHP extensions: bcmath, gmp
+ * Zend2_Crypt_Math_BigInteger is a wrapper across three PHP extensions: bcmath, gmp
  * and big_int. Since each offer similar functionality, but availability of
  * each differs across installations of PHP, this wrapper attempts to select
  * the fastest option available and encapsulate a subset of its functionality
@@ -37,10 +37,10 @@ namespace Zend\Crypt\Math;
  * flag. BIG_INT support is available from a big_int PHP library available from
  * only from PECL (a Windows port is not available).
  *
- * @uses       Zend\Crypt\Math\BigInteger\BigIntegerCapable
- * @category   Zend
- * @package    Zend_Crypt
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Crypt\Math\BigInteger\BigIntegerCapable
+ * @category   Zend2
+ * @package    Zend2_Crypt
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class BigInteger implements BigInteger\BigIntegerCapable
@@ -48,7 +48,7 @@ class BigInteger implements BigInteger\BigIntegerCapable
     /**
      * Holds an instance of one of the three arbitrary precision wrappers.
      *
-     * @var \Zend\Crypt\Math\BigInteger\BigIntegerCapable
+     * @var \Zend2\Crypt\Math\BigInteger\BigIntegerCapable
      */
     protected $_math = null;
 
@@ -58,7 +58,7 @@ class BigInteger implements BigInteger\BigIntegerCapable
      * object.
      *
      * @param  string $extension
-     * @throws Zend\Crypt\Math\BigInteger\Exception
+     * @throws Zend2\Crypt\Math\BigInteger\Exception
      */
     public function __construct($extension = null)
     {
@@ -73,7 +73,7 @@ class BigInteger implements BigInteger\BigIntegerCapable
      *
      * @param   string $methodName
      * @param   array $args
-     * @throws  Zend\Crypt\Math\BigInteger\Exception
+     * @throws  Zend2\Crypt\Math\BigInteger\Exception
      */
     public function __call($methodName, $args)
     {
@@ -212,7 +212,7 @@ class BigInteger implements BigInteger\BigIntegerCapable
 
     /**
      * @param  string $extension
-     * @throws Zend\Crypt\Math\BigInteger\Exception
+     * @throws Zend2\Crypt\Math\BigInteger\Exception
      */
     protected function _loadAdapter($extension = null)
     {

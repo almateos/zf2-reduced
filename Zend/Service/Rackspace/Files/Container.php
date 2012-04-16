@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,20 +13,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Service\Rackspace
+ * @category   Zend2
+ * @package    Zend2\Service\Rackspace
  * @subpackage Files
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Rackspace\Files;
+namespace Zend2\Service\Rackspace\Files;
 
-use Zend\Service\Rackspace\Files as RackspaceFiles;
+use Zend2\Service\Rackspace\Files as RackspaceFiles;
 
 class Container
 {
-    const ERROR_PARAM_FILE_CONSTRUCT  = 'The Zend\Service\Rackspace\Files passed in construction is not valid';
+    const ERROR_PARAM_FILE_CONSTRUCT  = 'The Zend2\Service\Rackspace\Files passed in construction is not valid';
     const ERROR_PARAM_ARRAY_CONSTRUCT = 'The array passed in construction is not valid';
     const ERROR_PARAM_NO_NAME         = 'The container name is empty';
     /**
@@ -191,7 +191,7 @@ class Container
     /**
      * Get all the object of the container
      *
-     * @return Zend\Service\Rackspace\Files\ObjectList
+     * @return Zend2\Service\Rackspace\Files\ObjectList
      */
     public function getObjects()
     {
@@ -202,7 +202,7 @@ class Container
      * 
      * @param string $name
      * @param array $headers
-     * @return Zend\Service\Rackspace\Files\Object|boolean
+     * @return Zend2\Service\Rackspace\Files\Object|boolean
      */
     public function getObject($name, $headers=array())
     {

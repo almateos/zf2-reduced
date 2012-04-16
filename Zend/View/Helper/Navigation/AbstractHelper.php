@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper\Navigation;
+namespace Zend2\View\Helper\Navigation;
 
 use RecursiveIteratorIterator,
-    Zend\Acl,
-    Zend\Navigation,
-    Zend\Navigation\Page\AbstractPage,
-    Zend\Registry,
-    Zend\Translator,
-    Zend\View,
-    Zend\View\Exception;
+    Zend2\Acl,
+    Zend2\Navigation,
+    Zend2\Navigation\Page\AbstractPage,
+    Zend2\Registry,
+    Zend2\Translator,
+    Zend2\View,
+    Zend2\View\Exception;
 
 /**
  * Base class for navigational helpers
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractHelper extends View\Helper\HtmlElement implements Helper
@@ -72,7 +72,7 @@ abstract class AbstractHelper extends View\Helper\HtmlElement implements Helper
     /**
      * Translator
      *
-     * @var \Zend\Translator\Adapter
+     * @var \Zend2\Translator\Adapter
      */
     protected $translator;
 
@@ -150,10 +150,10 @@ abstract class AbstractHelper extends View\Helper\HtmlElement implements Helper
      *
      * If a helper is not explicitly set in this helper instance by calling
      * {@link setContainer()} or by passing it through the helper entry point,
-     * this method will look in {@link \Zend\Registry} for a container by using
-     * the key 'Zend_Navigation'.
+     * this method will look in {@link \Zend2\Registry} for a container by using
+     * the key 'Zend2_Navigation'.
      *
-     * If no container is set, and nothing is found in Zend\Registry, a new
+     * If no container is set, and nothing is found in Zend2\Registry, a new
      * container will be instantiated and stored in the helper.
      *
      * @return Navigation\Container  navigation container
@@ -162,15 +162,15 @@ abstract class AbstractHelper extends View\Helper\HtmlElement implements Helper
     {
         if (null === $this->container) {
             // try to fetch from registry first
-            if (\Zend\Registry::isRegistered('Zend_Navigation')) {
-                $nav = \Zend\Registry::get('Zend_Navigation');
+            if (\Zend2\Registry::isRegistered('Zend2_Navigation')) {
+                $nav = \Zend2\Registry::get('Zend2_Navigation');
                 if ($nav instanceof Navigation\Container) {
                     return $this->container = $nav;
                 }
             }
 
             // nothing found in registry, create new container
-            $this->container = new \Zend\Navigation\Navigation();
+            $this->container = new \Zend2\Navigation\Navigation();
         }
 
         return $this->container;
@@ -289,8 +289,8 @@ abstract class AbstractHelper extends View\Helper\HtmlElement implements Helper
     public function getTranslator()
     {
         if (null === $this->translator) {
-            if (Registry::isRegistered('Zend_Translator')) {
-                $this->setTranslator(Registry::get('Zend_Translator'));
+            if (Registry::isRegistered('Zend2_Translator')) {
+                $this->setTranslator(Registry::get('Zend2_Translator'));
             }
         }
 
@@ -348,7 +348,7 @@ abstract class AbstractHelper extends View\Helper\HtmlElement implements Helper
         } else {
             throw new Exception\InvalidArgumentException(sprintf(
                 '$role must be a string, null, or an instance of ' 
-                .  'Zend_Acl_Role_Interface; %s given',
+                .  'Zend2_Acl_Role_Interface; %s given',
                 gettype($role)
             ));
         }
@@ -808,7 +808,7 @@ abstract class AbstractHelper extends View\Helper\HtmlElement implements Helper
             self::$defaultRole = $role;
         } else {
             throw new Exception\InvalidArgumentException(
-                '$role must be null|string|Zend\Acl\Role'
+                '$role must be null|string|Zend2\Acl\Role'
             );
         }
     }

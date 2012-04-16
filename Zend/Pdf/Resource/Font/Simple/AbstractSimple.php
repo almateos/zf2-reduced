@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Fonts
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Fonts
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Resource\Font\Simple;
-use Zend\Pdf\Resource\Font as FontResource;
-use Zend\Pdf\InternalType;
+namespace Zend2\Pdf\Resource\Font\Simple;
+use Zend2\Pdf\Resource\Font as FontResource;
+use Zend2\Pdf\InternalType;
 
 /**
  * Adobe PDF Simple fonts implementation
@@ -36,7 +36,7 @@ use Zend\Pdf\InternalType;
  *   encoding.
  *   PDF specification provides a possibility to specify any user defined encoding in addition
  *   to the standard built-in encodings: Standard-Encoding, MacRomanEncoding, WinAnsiEncoding,
- *   and PDFDocEncoding, but Zend_PDF simple fonts implementation operates only with
+ *   and PDFDocEncoding, but Zend2_PDF simple fonts implementation operates only with
  *   Windows ANSI encoding (except Symbol and ZapfDingbats built-in fonts).
  *
  * - Each glyph has a single set of metrics, including a horizontal displacement or
@@ -47,14 +47,14 @@ use Zend\Pdf\InternalType;
  * directly with subclasses.
  *
  * Font objects should be normally be obtained from the factory methods
- * {@link \Zend\Pdf\Font::fontWithName} and {@link \Zend\Pdf\Font::fontWithPath}.
+ * {@link \Zend2\Pdf\Font::fontWithName} and {@link \Zend2\Pdf\Font::fontWithPath}.
  *
- * @uses       \Zend\Pdf\InternalType\NameObject
- * @uses       \Zend\Pdf\Font
- * @uses       \Zend\Pdf\Resource\Font\AbstractFont
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Fonts
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\InternalType\NameObject
+ * @uses       \Zend2\Pdf\Font
+ * @uses       \Zend2\Pdf\Resource\Font\AbstractFont
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Fonts
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractSimple extends FontResource\AbstractFont
@@ -63,7 +63,7 @@ abstract class AbstractSimple extends FontResource\AbstractFont
      * Object representing the font's cmap (character to glyph map).
      * Is set in descending classes
      *
-     * @var \Zend\Pdf\Cmap\AbstractCmap
+     * @var \Zend2\Pdf\Cmap\AbstractCmap
      */
     protected $_cmap = null;
 
@@ -71,7 +71,7 @@ abstract class AbstractSimple extends FontResource\AbstractFont
      * Array containing the widths of each of the glyphs contained in the font.
      *
      * Keys are integers starting from 0, which coresponds to
-     * \Zend\Pdf\Cmap\AbstractCmap::MISSING_CHARACTER_GLYPH.
+     * \Zend2\Pdf\Cmap\AbstractCmap::MISSING_CHARACTER_GLYPH.
      *
      * Font character map may contain gaps for actually used glyphs, nevertheless glyphWidths array
      * contains widths for all glyphs even they are unused.

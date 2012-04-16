@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Dojo
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo;
-use Zend\Json\Json;
+namespace Zend2\Dojo;
+use Zend2\Json\Json;
 
 /**
- * dojo.data support for Zend Framework
+ * dojo.data support for Zend2 Framework
  *
  * @uses       ArrayAccess
  * @uses       IteratorAggregate
  * @uses       Countable
- * @uses       \Zend\Dojo\Exception
- * @uses       \Zend\Json\Json
- * @package    Zend_Dojo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Dojo\Exception
+ * @uses       \Zend2\Json\Json
+ * @package    Zend2_Dojo
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Data implements \ArrayAccess,\IteratorAggregate,\Countable
@@ -84,7 +84,7 @@ class Data implements \ArrayAccess,\IteratorAggregate,\Countable
      * Set the items to collect
      *
      * @param array|Traversable $items
-     * @return \Zend\Dojo\Data
+     * @return \Zend2\Dojo\Data
      */
     public function setItems($items)
     {
@@ -97,7 +97,7 @@ class Data implements \ArrayAccess,\IteratorAggregate,\Countable
      *
      * @param  array|object $item
      * @param  string|null $identifier
-     * @return \Zend\Dojo\Data
+     * @return \Zend2\Dojo\Data
      */
     public function setItem($item, $id = null)
     {
@@ -111,7 +111,7 @@ class Data implements \ArrayAccess,\IteratorAggregate,\Countable
      *
      * @param  array|object $item
      * @param  string|null $id
-     * @return \Zend\Dojo\Data
+     * @return \Zend2\Dojo\Data
      */
     public function addItem($item, $id = null)
     {
@@ -130,7 +130,7 @@ class Data implements \ArrayAccess,\IteratorAggregate,\Countable
      * Add multiple items at once
      *
      * @param  array|Traversable $items
-     * @return \Zend\Dojo\Data
+     * @return \Zend2\Dojo\Data
      */
     public function addItems($items)
     {
@@ -189,7 +189,7 @@ class Data implements \ArrayAccess,\IteratorAggregate,\Countable
      * Remove item by identifier
      *
      * @param  string $id
-     * @return \Zend\Dojo\Data
+     * @return \Zend2\Dojo\Data
      */
     public function removeItem($id)
     {
@@ -203,7 +203,7 @@ class Data implements \ArrayAccess,\IteratorAggregate,\Countable
     /**
      * Remove all items at once
      *
-     * @return \Zend\Dojo\Data
+     * @return \Zend2\Dojo\Data
      */
     public function clearItems()
     {
@@ -216,7 +216,7 @@ class Data implements \ArrayAccess,\IteratorAggregate,\Countable
      * Set identifier for item lookups
      *
      * @param  string|int|null $identifier
-     * @return \Zend\Dojo\Data
+     * @return \Zend2\Dojo\Data
      */
     public function setIdentifier($identifier)
     {
@@ -248,7 +248,7 @@ class Data implements \ArrayAccess,\IteratorAggregate,\Countable
      * Set label to use for displaying item associations
      *
      * @param  string|null $label
-     * @return \Zend\Dojo\Data
+     * @return \Zend2\Dojo\Data
      */
     public function setLabel($label)
     {
@@ -275,7 +275,7 @@ class Data implements \ArrayAccess,\IteratorAggregate,\Countable
      *
      * @param  string|array $spec
      * @param  mixed $value
-     * @return \Zend\Dojo\Data
+     * @return \Zend2\Dojo\Data
      */
     public function setMetadata($spec, $value = null)
     {
@@ -312,7 +312,7 @@ class Data implements \ArrayAccess,\IteratorAggregate,\Countable
      * Clear individual or all metadata item(s)
      *
      * @param  null|string $key
-     * @return \Zend\Dojo\Data
+     * @return \Zend2\Dojo\Data
      */
     public function clearMetadata($key = null)
     {
@@ -328,7 +328,7 @@ class Data implements \ArrayAccess,\IteratorAggregate,\Countable
      * Load object from array
      *
      * @param  array $data
-     * @return \Zend\Dojo\Data
+     * @return \Zend2\Dojo\Data
      */
     public function fromArray(array $data)
     {
@@ -350,7 +350,7 @@ class Data implements \ArrayAccess,\IteratorAggregate,\Countable
      * Load object from JSON
      *
      * @param  string $json
-     * @return \Zend\Dojo\Data
+     * @return \Zend2\Dojo\Data
      */
     public function fromJson($json)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator\File;
+namespace Zend2\Validator\File;
 
-use Zend\Loader;
+use Zend2\Loader;
 
 /**
  * Validator for the file extension of a file
  *
- * @uses      \Zend\Loader
- * @uses      \Zend\Validator\AbstractValidator
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Loader
+ * @uses      \Zend2\Validator\AbstractValidator
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Extension extends \Zend\Validator\AbstractValidator
+class Extension extends \Zend2\Validator\AbstractValidator
 {
     /**
      * @const string Error constants
@@ -68,12 +68,12 @@ class Extension extends \Zend\Validator\AbstractValidator
     /**
      * Sets validator options
      *
-     * @param  string|array|\Zend\Config\Config $options
+     * @param  string|array|\Zend2\Config\Config $options
      * @return void
      */
     public function __construct($options = null)
     {
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         }
 
@@ -116,7 +116,7 @@ class Extension extends \Zend\Validator\AbstractValidator
      * Sets the case to use
      *
      * @param  boolean $case
-     * @return \Zend\Validator\File\Extension Provides a fluent interface
+     * @return \Zend2\Validator\File\Extension Provides a fluent interface
      */
     public function setCase($case)
     {
@@ -140,7 +140,7 @@ class Extension extends \Zend\Validator\AbstractValidator
      * Sets the file extensions
      *
      * @param  string|array $extension The extensions to validate
-     * @return \Zend\Validator\File\Extension Provides a fluent interface
+     * @return \Zend2\Validator\File\Extension Provides a fluent interface
      */
     public function setExtension($extension)
     {
@@ -153,7 +153,7 @@ class Extension extends \Zend\Validator\AbstractValidator
      * Adds the file extensions
      *
      * @param  string|array $extension The extensions to add for validation
-     * @return \Zend\Validator\File\Extension Provides a fluent interface
+     * @return \Zend2\Validator\File\Extension Provides a fluent interface
      */
     public function addExtension($extension)
     {
@@ -188,7 +188,7 @@ class Extension extends \Zend\Validator\AbstractValidator
      * set extension list
      *
      * @param  string  $value Real file to check for extension
-     * @param  array   $file  File data from \Zend\File\Transfer\Transfer
+     * @param  array   $file  File data from \Zend2\File\Transfer\Transfer
      * @return boolean
      */
     public function isValid($value, $file = null)

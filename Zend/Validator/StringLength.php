@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
+namespace Zend2\Validator;
 
 /**
- * @uses       \Zend\Validator\AbstractValidator
- * @uses       \Zend\Validator\Exception
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Validator\AbstractValidator
+ * @uses       \Zend2\Validator\Exception
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class StringLength extends AbstractValidator
@@ -60,7 +60,7 @@ class StringLength extends AbstractValidator
     /**
      * Sets validator options
      *
-     * @param  integer|array|\Zend\Config\Config $options
+     * @param  integer|array|\Zend2\Config\Config $options
      * @return void
      */
     public function __construct($options = array())
@@ -96,8 +96,8 @@ class StringLength extends AbstractValidator
      * Sets the min option
      *
      * @param  integer $min
-     * @throws \Zend\Validator\Exception
-     * @return \Zend\Validator\StringLength Provides a fluent interface
+     * @throws \Zend2\Validator\Exception
+     * @return \Zend2\Validator\StringLength Provides a fluent interface
      */
     public function setMin($min)
     {
@@ -124,8 +124,8 @@ class StringLength extends AbstractValidator
      * Sets the max option
      *
      * @param  integer|null $max
-     * @throws \Zend\Validator\Exception
-     * @return \Zend\Validator\StringLength Provides a fluent interface
+     * @throws \Zend2\Validator\Exception
+     * @return \Zend2\Validator\StringLength Provides a fluent interface
      */
     public function setMax($max)
     {
@@ -155,7 +155,7 @@ class StringLength extends AbstractValidator
      * Sets a new encoding to use
      *
      * @param string $encoding
-     * @return \Zend\Validator\StringLength
+     * @return \Zend2\Validator\StringLength
      */
     public function setEncoding($encoding = null)
     {

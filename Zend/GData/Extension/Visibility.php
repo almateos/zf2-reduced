@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Extension;
+namespace Zend2\GData\Extension;
 
-use Zend\GData\Extension;
+use Zend2\GData\Extension;
 
 /**
  * Data model class to represent an entry's visibility
  *
- * @uses       \Zend\GData\Extension
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Extension
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Visibility extends Extension
@@ -40,7 +40,7 @@ class Visibility extends Extension
     protected $_value = null;
 
     /**
-     * Constructs a new Zend_Gdata_Extension_Visibility object.
+     * Constructs a new Zend2_Gdata_Extension_Visibility object.
      * @param bool $value (optional) Visibility value as URI.
      */
     public function __construct($value = null)
@@ -100,7 +100,7 @@ class Visibility extends Extension
      * Set the value for this element's Value attribute.
      *
      * @param bool $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Visibility The element being modified.
+     * @return \Zend2\GData\Extension\Visibility The element being modified.
      */
     public function setValue($value)
     {

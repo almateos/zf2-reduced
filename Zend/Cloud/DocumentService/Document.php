@@ -10,17 +10,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Cloud
+ * @category   Zend2
+ * @package    Zend2\Cloud
  * @subpackage DocumentService
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * namespace
  */
-namespace Zend\Cloud\DocumentService;
+namespace Zend2\Cloud\DocumentService;
 
 /**
  * Class encapsulating documents. Fields are stored in a name/value
@@ -28,10 +28,10 @@ namespace Zend\Cloud\DocumentService;
  *
  * TODO Can fields be large enough to warrant support for streams?
  *
- * @category   Zend
- * @package    Zend\Cloud
+ * @category   Zend2
+ * @package    Zend2\Cloud
  * @subpackage DocumentService
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Document
@@ -53,7 +53,7 @@ class Document
     protected $_fields;
 
     /**
-     * Construct an instance of Zend\Cloud\DocumentService\Document.
+     * Construct an instance of Zend2\Cloud\DocumentService\Document.
      *
      * If no identifier is provided, but a field matching KEY_FIELD is present,
      * then that field's value will be used as the document identifier.
@@ -81,7 +81,7 @@ class Document
      * Set document identifier
      *
      * @param  mixed $id
-     * @return Zend\Cloud\DocumentService\Document
+     * @return Zend2\Cloud\DocumentService\Document
      */
     public function setId($id)
     {
@@ -128,7 +128,7 @@ class Document
      *
      * @param  string $name
      * @param  mixed $value
-     * @return Zend\Cloud\DocumentService\Document
+     * @return Zend2\Cloud\DocumentService\Document
      */
     public function setField($name, $value)
     {

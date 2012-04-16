@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator\File;
+namespace Zend2\Validator\File;
 
 /**
  * Validator for the maximum size of a file up to a max of 2GB
  *
- * @uses      \Zend\Validator\AbstractValidator
- * @uses      \Zend\Validator\Exception
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Validator\AbstractValidator
+ * @uses      \Zend2\Validator\Exception
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Upload extends \Zend\Validator\AbstractValidator
+class Upload extends \Zend2\Validator\AbstractValidator
 {
     /**
      * @const string Error constants
@@ -69,11 +69,11 @@ class Upload extends \Zend\Validator\AbstractValidator
     /**
      * Sets validator options
      *
-     * The array $files must be given in syntax of Zend_File_Transfer to be checked
+     * The array $files must be given in syntax of Zend2_File_Transfer to be checked
      * If no files are given the $_FILES array will be used automatically.
      * NOTE: This validator will only work with HTTP POST uploads!
      *
-     * @param  array|Zend_Config $options Array of files in syntax of \Zend\File\Transfer\Transfer
+     * @param  array|Zend2_Config $options Array of files in syntax of \Zend2\File\Transfer\Transfer
      * @return void
      */
     public function __construct($options = array())
@@ -90,7 +90,7 @@ class Upload extends \Zend\Validator\AbstractValidator
      *
      * @param  string $files (Optional) The file to return in detail
      * @return array
-     * @throws \Zend\Validator\Exception If file is not found
+     * @throws \Zend2\Validator\Exception If file is not found
      */
     public function getFiles($file = null)
     {
@@ -107,7 +107,7 @@ class Upload extends \Zend\Validator\AbstractValidator
             }
 
             if (count($return) === 0) {
-                throw new \Zend\Validator\Exception\InvalidArgumentException("The file '$file' was not found");
+                throw new \Zend2\Validator\Exception\InvalidArgumentException("The file '$file' was not found");
             }
 
             return $return;
@@ -119,8 +119,8 @@ class Upload extends \Zend\Validator\AbstractValidator
     /**
      * Sets the files to be checked
      *
-     * @param  array $files The files to check in syntax of \Zend\File\Transfer\Transfer
-     * @return \Zend\Validator\File\Upload Provides a fluent interface
+     * @param  array $files The files to check in syntax of \Zend2\File\Transfer\Transfer
+     * @return \Zend2\Validator\File\Upload Provides a fluent interface
      */
     public function setFiles($files = array())
     {

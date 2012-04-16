@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Cache\Storage\Adapter;
+namespace Zend2\Cache\Storage\Adapter;
 
 use ArrayObject,
     GlobIterator,
     stdClass,
     Exception as BaseException,
-    Zend\Cache\Exception,
-    Zend\Cache\Storage,
-    Zend\Cache\Storage\Capabilities,
-    Zend\Cache\Utils,
-    Zend\Stdlib\ErrorHandler;
+    Zend2\Cache\Exception,
+    Zend2\Cache\Storage,
+    Zend2\Cache\Storage\Capabilities,
+    Zend2\Cache\Utils,
+    Zend2\Stdlib\ErrorHandler;
 
 /**
- * @category   Zend
- * @package    Zend_Cache
+ * @category   Zend2
+ * @package    Zend2_Cache
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Filesystem extends AbstractAdapter
@@ -1512,7 +1512,7 @@ class Filesystem extends AbstractAdapter
                         continue;
                     }
 
-                // if Zend_Cache::MATCH_ACTIVE mode selected do not remove expired data
+                // if Zend2_Cache::MATCH_ACTIVE mode selected do not remove expired data
                 } else {
                     if ( $time >= ($mtime + $ttl) ) {
                         continue;

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search\QueryEntry;
+namespace Zend2\Search\Lucene\Search\QueryEntry;
 
 /**
- * @uses       \Zend\Search\Lucene\Search\QueryEntry\AbstractQueryEntry
- * @uses       \Zend\Search\Lucene\Search\Query\Preprocessing\Phrase
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Search\QueryEntry\AbstractQueryEntry
+ * @uses       \Zend2\Search\Lucene\Search\Query\Preprocessing\Phrase
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Phrase extends AbstractQueryEntry
@@ -92,12 +92,12 @@ class Phrase extends AbstractQueryEntry
      * Transform entry to a subquery
      *
      * @param string $encoding
-     * @throws \Zend\Search\Lucene\Search\Exception\QueryParserException
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @throws \Zend2\Search\Lucene\Search\Exception\QueryParserException
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     public function getQuery($encoding)
     {
-        $query = new \Zend\Search\Lucene\Search\Query\Preprocessing\Phrase($this->_phrase,
+        $query = new \Zend2\Search\Lucene\Search\Query\Preprocessing\Phrase($this->_phrase,
                                                                           $encoding,
                                                                           ($this->_field !== null)?
                                                                               iconv($encoding, 'UTF-8', $this->_field) :

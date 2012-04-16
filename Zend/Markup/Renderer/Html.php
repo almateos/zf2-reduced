@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Markup
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Renderer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Markup\Renderer;
+namespace Zend2\Markup\Renderer;
 
-use Zend\Markup\Renderer\Markup\Html\Root as RootMarkup;
+use Zend2\Markup\Renderer\Markup\Html\Root as RootMarkup;
 
 /**
  * HTML renderer
  *
- * @category   Zend
- * @package    Zend_Markup
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Renderer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Html extends AbstractRenderer
@@ -38,7 +38,7 @@ class Html extends AbstractRenderer
     /**
      * Constructor
      *
-     * @param array|\Zend\Config\Config $options
+     * @param array|\Zend2\Config\Config $options
      *
      * @todo make constructor compliant with new configuration standards
      *
@@ -51,9 +51,9 @@ class Html extends AbstractRenderer
         }
 
         if (isset($options['markups'])) {
-            if (!isset($options['markups']['Zend_Markup_Root'])) {
+            if (!isset($options['markups']['Zend2_Markup_Root'])) {
                 $options['markups'] = array(
-                    'Zend_Markup_Root' => new RootMarkup()
+                    'Zend2_Markup_Root' => new RootMarkup()
                 );
             }
         }

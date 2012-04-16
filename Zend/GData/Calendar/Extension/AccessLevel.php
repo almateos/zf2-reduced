@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Calendar\Extension;
+namespace Zend2\GData\Calendar\Extension;
 
 /**
  * Represents the gCal:accessLevel element used by the Calendar data API
  *
- * @uses       \Zend\GData\Calendar
- * @uses       \Zend\GData\Extension
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Calendar
+ * @uses       \Zend2\GData\Extension
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class AccessLevel extends \Zend\GData\Extension
+class AccessLevel extends \Zend2\GData\Extension
 {
 
     protected $_rootNamespace = 'gCal';
@@ -40,12 +40,12 @@ class AccessLevel extends \Zend\GData\Extension
     protected $_value = null;
 
     /**
-     * Constructs a new Zend_Gdata_Calendar_Extension_AccessLevel object.
+     * Constructs a new Zend2_Gdata_Calendar_Extension_AccessLevel object.
      * @param string $value (optional) The text content of the element.
      */
     public function __construct($value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Calendar::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\Calendar::$namespaces);
         parent::__construct();
         $this->_value = $value;
     }
@@ -102,7 +102,7 @@ class AccessLevel extends \Zend\GData\Extension
      * Set the value for this element's value attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Calendar\Extension\Selected The element being modified.
+     * @return \Zend2\GData\Calendar\Extension\Selected The element being modified.
      */
     public function setValue($value)
     {

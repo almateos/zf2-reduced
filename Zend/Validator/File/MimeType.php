@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator\File;
+namespace Zend2\Validator\File;
 
 use Traversable,
-    Zend\Loader,
-    Zend\Stdlib\ArrayUtils,
-    Zend\Validator\AbstractValidator,
-    Zend\Validator\Exception;
+    Zend2\Loader,
+    Zend2\Stdlib\ArrayUtils,
+    Zend2\Validator\AbstractValidator,
+    Zend2\Validator\Exception;
 
 /**
  * Validator for the mime type of a file
  *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class MimeType extends AbstractValidator
@@ -226,7 +226,7 @@ class MimeType extends AbstractValidator
      * Disables usage of MagicFile
      *
      * @param $disable boolean False disables usage of magic file
-     * @return \Zend\Validator\File\MimeType Provides fluid interface
+     * @return \Zend2\Validator\File\MimeType Provides fluid interface
      */
     public function disableMagicFile($disable)
     {
@@ -259,7 +259,7 @@ class MimeType extends AbstractValidator
      * Note that this is unsave and therefor the default value is false
      *
      * @param  boolean $headerCheck
-     * @return \Zend\Validator\File\MimeType Provides fluid interface
+     * @return \Zend2\Validator\File\MimeType Provides fluid interface
      */
     public function enableHeaderCheck($headerCheck = true)
     {
@@ -338,14 +338,14 @@ class MimeType extends AbstractValidator
     }
 
     /**
-     * Defined by Zend_Validate_Interface
+     * Defined by Zend2_Validate_Interface
      *
      * Returns true if the mimetype of the file matches the given ones. Also parts
      * of mimetypes can be checked. If you give for example "image" all image
      * mime types will be accepted like "image/gif", "image/jpeg" and so on.
      *
      * @param  string $value Real file to check for mimetype
-     * @param  array  $file  File data from \Zend\File\Transfer\Transfer
+     * @param  array  $file  File data from \Zend2\File\Transfer\Transfer
      * @return boolean
      */
     public function isValid($value, $file = null)

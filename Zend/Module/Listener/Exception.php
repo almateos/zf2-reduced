@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Module\Listener;
+namespace Zend2\Module\Listener;
 
-interface Exception extends \Zend\Module\Exception
+interface Exception extends \Zend2\Module\Exception
 {}

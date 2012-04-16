@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mvc_Router
+ * @category   Zend2
+ * @package    Zend2_Mvc_Router
  * @subpackage Http
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mvc\Router\Http;
+namespace Zend2\Mvc\Router\Http;
 
-use Zend\Mvc\Router\Exception,
+use Zend2\Mvc\Router\Exception,
     Traversable,
-    Zend\Stdlib\ArrayUtils,
-    Zend\Mvc\Router\SimpleRouteStack,
-    Zend\Mvc\Router\Route as BaseRoute,
-    Zend\Mvc\Router\Http\Route,
-    Zend\Stdlib\RequestDescription as Request,
-    Zend\Uri\Http as HttpUri;
+    Zend2\Stdlib\ArrayUtils,
+    Zend2\Mvc\Router\SimpleRouteStack,
+    Zend2\Mvc\Router\Route as BaseRoute,
+    Zend2\Mvc\Router\Http\Route,
+    Zend2\Stdlib\RequestDescription as Request,
+    Zend2\Uri\Http as HttpUri;
 
 /**
  * Tree search implementation.
  *
- * @package    Zend_Mvc_Router
+ * @package    Zend2_Mvc_Router
  * @subpackage Http
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class TreeRouteStack extends SimpleRouteStack

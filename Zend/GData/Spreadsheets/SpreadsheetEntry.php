@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,35 +12,35 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Spreadsheets
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Spreadsheets;
+namespace Zend2\GData\Spreadsheets;
 
-use Zend\GData\Spreadsheets;
+use Zend2\GData\Spreadsheets;
 
 /**
  * Concrete class for working with Atom entries.
  *
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\Spreadsheets
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\Spreadsheets
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Spreadsheets
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class SpreadsheetEntry extends \Zend\GData\Entry
+class SpreadsheetEntry extends \Zend2\GData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\Spreadsheets\SpreadsheetEntry';
+    protected $_entryClassName = 'Zend2\GData\Spreadsheets\SpreadsheetEntry';
 
     /**
-     * Constructs a new Zend_Gdata_Spreadsheets_SpreadsheetEntry object.
+     * Constructs a new Zend2_Gdata_Spreadsheets_SpreadsheetEntry object.
      * @param DOMElement $element (optional) The DOMElement on which to base this object.
      */
     public function __construct($element = null)
@@ -52,7 +52,7 @@ class SpreadsheetEntry extends \Zend\GData\Entry
     /**
      * Returns the worksheets in this spreadsheet
      *
-     * @return \Zend\GData\Spreadsheets\WorksheetFeed The worksheets
+     * @return \Zend2\GData\Spreadsheets\WorksheetFeed The worksheets
      */
     public function getWorksheets()
     {

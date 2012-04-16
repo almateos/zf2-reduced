@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,13 +12,13 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Controller
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Controller
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\XmlRpc;
+namespace Zend2\XmlRpc;
 
 /**
  * XmlRpc Request object
@@ -32,11 +32,11 @@ namespace Zend\XmlRpc;
  * {@link isFault()} and {@link getFault()}.
  *
  * @uses       SimpleXMLElement
- * @uses       Zend\XmlRpc\Fault
- * @uses       Zend\XmlRpc\Value
- * @category   Zend
- * @package    Zend_XmlRpc
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\XmlRpc\Fault
+ * @uses       Zend2\XmlRpc\Value
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Request
@@ -67,7 +67,7 @@ class Request
 
     /**
      * Fault object, if any
-     * @var Zend\XmlRpc\Fault
+     * @var Zend2\XmlRpc\Fault
      */
     protected $_fault = null;
 
@@ -105,7 +105,7 @@ class Request
      * Set encoding to use in request
      *
      * @param string $encoding
-     * @return Zend\XmlRpc\Request
+     * @return Zend2\XmlRpc\Request
      */
     public function setEncoding($encoding)
     {
@@ -361,7 +361,7 @@ class Request
     /**
      * Retrieve the fault response, if any
      *
-     * @return null|Zend\XmlRpc\Fault
+     * @return null|Zend2\XmlRpc\Fault
      */
     public function getFault()
     {

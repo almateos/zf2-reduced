@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Markup
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Markup
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Markup;
+namespace Zend2\Markup;
 
 /**
  * @uses       RecursiveIterator
- * @uses       \Zend\Markup\Token
- * @category   Zend
- * @package    Zend_Markup
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Markup\Token
+ * @category   Zend2
+ * @package    Zend2_Markup
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class TokenList implements \RecursiveIterator
@@ -41,7 +41,7 @@ class TokenList implements \RecursiveIterator
     /**
      * Get the current token
      *
-     * @return \Zend\Markup\Token
+     * @return \Zend2\Markup\Token
      */
     public function current()
     {
@@ -51,7 +51,7 @@ class TokenList implements \RecursiveIterator
     /**
      * Get the children of the current token
      *
-     * @return \Zend\Markup\TokenList
+     * @return \Zend2\Markup\TokenList
      */
     public function getChildren()
     {
@@ -61,7 +61,7 @@ class TokenList implements \RecursiveIterator
     /**
      * Add a new child token
      *
-     * @param \Zend\Markup\Token $child
+     * @param \Zend2\Markup\Token $child
      *
      * @return void
      */
@@ -93,7 +93,7 @@ class TokenList implements \RecursiveIterator
     /**
      * Go to the next token
      *
-     * @return \Zend\Markup\Token
+     * @return \Zend2\Markup\Token
      */
     public function next()
     {

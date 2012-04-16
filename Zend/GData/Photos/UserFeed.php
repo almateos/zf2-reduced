@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,70 +12,70 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Photos
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Photos;
+namespace Zend2\GData\Photos;
 
-use Zend\GData\Photos;
+use Zend2\GData\Photos;
 
 /**
  * Data model for a collection of entries for a specific user, usually
  * provided by the servers.
  *
  * For information on requesting this feed from a server, see the
- * service class, Zend_Gdata_Photos.
+ * service class, Zend2_Gdata_Photos.
  *
- * @uses       \Zend\GData\App\Exception
- * @uses       \Zend\GData\Feed
- * @uses       \Zend\GData\Photos
- * @uses       \Zend\GData\Photos\AlbumEntry
- * @uses       \Zend\GData\Photos\CommentEntry
- * @uses       \Zend\GData\Photos\PhotoEntry
- * @uses       \Zend\GData\Photos\TagEntry
- * @uses       \Zend\GData\Photos\UserEntry
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Exception
+ * @uses       \Zend2\GData\Feed
+ * @uses       \Zend2\GData\Photos
+ * @uses       \Zend2\GData\Photos\AlbumEntry
+ * @uses       \Zend2\GData\Photos\CommentEntry
+ * @uses       \Zend2\GData\Photos\PhotoEntry
+ * @uses       \Zend2\GData\Photos\TagEntry
+ * @uses       \Zend2\GData\Photos\UserEntry
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Photos
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class UserFeed extends \Zend\GData\Feed
+class UserFeed extends \Zend2\GData\Feed
 {
 
     /**
      * gphoto:user element
      *
-     * @var \Zend\GData\Photos\Extension\User
+     * @var \Zend2\GData\Photos\Extension\User
      */
     protected $_gphotoUser = null;
 
     /**
      * gphoto:thumbnail element
      *
-     * @var \Zend\GData\Photos\Extension\Thumbnail
+     * @var \Zend2\GData\Photos\Extension\Thumbnail
      */
     protected $_gphotoThumbnail = null;
 
     /**
      * gphoto:nickname element
      *
-     * @var \Zend\GData\Photos\Extension\Nickname
+     * @var \Zend2\GData\Photos\Extension\Nickname
      */
     protected $_gphotoNickname = null;
 
-    protected $_entryClassName = 'Zend\GData\Photos\UserEntry';
-    protected $_feedClassName = 'Zend\GData\Photos\UserFeed';
+    protected $_entryClassName = 'Zend2\GData\Photos\UserEntry';
+    protected $_feedClassName = 'Zend2\GData\Photos\UserFeed';
 
     protected $_entryKindClassMapping = array(
-        'http://schemas.google.com/photos/2007#album' => 'Zend\GData\Photos\AlbumEntry',
-        'http://schemas.google.com/photos/2007#photo' => 'Zend\GData\Photos\PhotoEntry',
-        'http://schemas.google.com/photos/2007#comment' => 'Zend\GData\Photos\CommentEntry',
-        'http://schemas.google.com/photos/2007#tag' => 'Zend\GData\Photos\TagEntry'
+        'http://schemas.google.com/photos/2007#album' => 'Zend2\GData\Photos\AlbumEntry',
+        'http://schemas.google.com/photos/2007#photo' => 'Zend2\GData\Photos\PhotoEntry',
+        'http://schemas.google.com/photos/2007#comment' => 'Zend2\GData\Photos\CommentEntry',
+        'http://schemas.google.com/photos/2007#tag' => 'Zend2\GData\Photos\TagEntry'
     );
 
     public function __construct($element = null)
@@ -111,7 +111,7 @@ class UserFeed extends \Zend\GData\Feed
                 break;
             case $this->lookupNamespace('atom') . ':' . 'entry':
                 $entryClassName = $this->_entryClassName;
-                $tmpEntry = new \Zend\GData\App\Entry($child);
+                $tmpEntry = new \Zend2\GData\App\Entry($child);
                 $categories = $tmpEntry->getCategory();
                 foreach ($categories as $category) {
                     if ($category->scheme == Photos::KIND_PATH &&
@@ -119,7 +119,7 @@ class UserFeed extends \Zend\GData\Feed
                             $entryClassName = $this->_entryKindClassMapping[$category->term];
                             break;
                     } else {
-                        throw new \Zend\GData\App\Exception('Entry is missing kind declaration.');
+                        throw new \Zend2\GData\App\Exception('Entry is missing kind declaration.');
                     }
                 }
 
@@ -164,7 +164,7 @@ class UserFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:user attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\User The element being modified.
+     * @return \Zend2\GData\Photos\Extension\User The element being modified.
      */
     public function setGphotoUser($value)
     {
@@ -187,7 +187,7 @@ class UserFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:nickname attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Nickname The element being modified.
+     * @return \Zend2\GData\Photos\Extension\Nickname The element being modified.
      */
     public function setGphotoNickname($value)
     {
@@ -210,7 +210,7 @@ class UserFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:thumbnail attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Thumbnail The element being modified.
+     * @return \Zend2\GData\Photos\Extension\Thumbnail The element being modified.
      */
     public function setGphotoThumbnail($value)
     {

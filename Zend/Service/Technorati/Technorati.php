@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Technorati;
+namespace Zend2\Service\Technorati;
 
 use DomDocument,
-    Zend\Http\Response,
-    Zend\Rest\Client\RestClient;
+    Zend2\Http\Response,
+    Zend2\Rest\Client\RestClient;
 
 /**
- * Zend\Service\Technorati provides an easy, intuitive and object-oriented interface
+ * Zend2\Service\Technorati provides an easy, intuitive and object-oriented interface
  * for using the Technorati API.
  *
  * It provides access to all available Technorati API queries
  * and returns the original XML response as a friendly PHP object.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Technorati
@@ -80,7 +80,7 @@ class Technorati
 
 
     /**
-     * Constructs a new Zend\Service\Technorati instance
+     * Constructs a new Zend2\Service\Technorati instance
      * and setup character encoding.
      *
      * @param  string $apiKey  Your Technorati API key
@@ -792,7 +792,7 @@ class Technorati
 
     /**
      * Checks whether 'format' option value is valid.
-     * Be aware that Zend\Service\Technorati supports only XML as format value.
+     * Be aware that Zend2\Service\Technorati supports only XML as format value.
      *
      * @param   array $options
      * @return  void
@@ -804,7 +804,7 @@ class Technorati
         if (isset($options['format']) && $options['format'] != 'xml') {
             throw new Exception\RuntimeException(
                         "Invalid value '" . $options['format'] . "' for 'format' option. " .
-                        "Zend\Service\Technorati supports only 'xml'");
+                        "Zend2\Service\Technorati supports only 'xml'");
         }
     }
 
@@ -858,7 +858,7 @@ class Technorati
      * @return  void
      * @throws  Exception\RuntimeException if 'url' value is invalid
      * @access  protected
-     * @todo    support for Zend\Uri\Http
+     * @todo    support for Zend2\Uri\Http
      */
     protected function validateOptionUrl(array $options)
     {

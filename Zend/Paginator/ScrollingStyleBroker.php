@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Paginator;
+namespace Zend2\Paginator;
 
-use Zend\Loader\PluginBroker;
+use Zend2\Loader\PluginBroker;
 
 /**
  * Broker for scrolling-style adapter instances
  *
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ScrollingStyleBroker extends PluginBroker
@@ -35,7 +35,7 @@ class ScrollingStyleBroker extends PluginBroker
     /**
      * @var string Default plugin loading strategy
      */
-    protected $defaultClassLoader = 'Zend\Paginator\ScrollingStyleLoader';
+    protected $defaultClassLoader = 'Zend2\Paginator\ScrollingStyleLoader';
 
     /**
      * Determine if we have a valid adapter
@@ -47,7 +47,7 @@ class ScrollingStyleBroker extends PluginBroker
     protected function validatePlugin($plugin)
     {
         if (!$plugin instanceof ScrollingStyle) {
-            throw new Exception('ScrollingStyle adapters must implement Zend\Paginator\ScrollingStyle');
+            throw new Exception('ScrollingStyle adapters must implement Zend2\Paginator\ScrollingStyle');
         }
         return true;
     }

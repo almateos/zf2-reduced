@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Action
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Action
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Action;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
-use Zend\Pdf\InternalType;
+namespace Zend2\Pdf\Action;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
+use Zend2\Pdf\InternalType;
 
 /**
  * PDF 'Resolve a uniform resource identifier' action
@@ -30,15 +30,15 @@ use Zend\Pdf\InternalType;
  * A URI action causes a URI to be resolved.
  *
  * @uses       SplObjectStorage
- * @uses       \Zend\Pdf\Action\AbstractAction
- * @uses       \Zend\Pdf\InternalType\BooleanObject
- * @uses       \Zend\Pdf\InternalType\DictionaryObject
- * @uses       \Zend\Pdf\InternalType\NameObject
- * @uses       \Zend\Pdf\InternalType\StringObject
- * @uses       \Zend\Pdf\Exception
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Action
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Action\AbstractAction
+ * @uses       \Zend2\Pdf\InternalType\BooleanObject
+ * @uses       \Zend2\Pdf\InternalType\DictionaryObject
+ * @uses       \Zend2\Pdf\InternalType\NameObject
+ * @uses       \Zend2\Pdf\InternalType\StringObject
+ * @uses       \Zend2\Pdf\Exception
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Action
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Uri extends AbstractAction
@@ -46,10 +46,10 @@ class Uri extends AbstractAction
     /**
      * Object constructor
      *
-     * @param \Zend\Pdf\InternalType\DictionaryObject $dictionary
+     * @param \Zend2\Pdf\InternalType\DictionaryObject $dictionary
      * @param SplObjectStorage      $processedActions  list of already processed action dictionaries,
      *                                                 used to avoid cyclic references
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct(InternalType\AbstractTypeObject $dictionary, \SplObjectStorage $processedActions)
     {
@@ -65,7 +65,7 @@ class Uri extends AbstractAction
      *
      * @param string $uri
      * @return true
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected static function _validateUri($uri)
     {
@@ -76,11 +76,11 @@ class Uri extends AbstractAction
     }
 
     /**
-     * Create new \Zend\Pdf\Action\Uri object using specified uri
+     * Create new \Zend2\Pdf\Action\Uri object using specified uri
      *
      * @param string  $uri    The URI to resolve, encoded in 7-bit ASCII
      * @param boolean $isMap  A flag specifying whether to track the mouse position when the URI is resolved
-     * @return \Zend\Pdf\Action\Uri
+     * @return \Zend2\Pdf\Action\Uri
      */
     public static function create($uri, $isMap = false)
     {
@@ -102,7 +102,7 @@ class Uri extends AbstractAction
      * Set URI to resolve
      *
      * @param string $uri   The uri to resolve, encoded in 7-bit ASCII.
-     * @return \Zend\Pdf\Action\Uri
+     * @return \Zend2\Pdf\Action\Uri
      */
     public function setUri($uri)
     {
@@ -133,7 +133,7 @@ class Uri extends AbstractAction
      * relative to the upper-left corner of the annotation rectangle.
      *
      * @param boolean $isMap  A flag specifying whether to track the mouse position when the URI is resolved
-     * @return \Zend\Pdf\Action\Uri
+     * @return \Zend2\Pdf\Action\Uri
      */
     public function setIsMap($isMap)
     {

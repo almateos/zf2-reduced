@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Authentication
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Authentication\Storage;
+namespace Zend2\Authentication\Storage;
 
-use Zend\Authentication\Storage as AuthenticationStorage,
-    Zend\Session\Container as SessionContainer,
-    Zend\Session\Manager as SessionManager;
+use Zend2\Authentication\Storage as AuthenticationStorage,
+    Zend2\Session\Container as SessionContainer,
+    Zend2\Session\Manager as SessionManager;
 
 /**
- * @uses       Zend\Authentication\Storage
- * @uses       Zend\Session\Manager
- * @category   Zend
- * @package    Zend_Authentication
+ * @uses       Zend2\Authentication\Storage
+ * @uses       Zend2\Session\Manager
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Session implements AuthenticationStorage
@@ -39,7 +39,7 @@ class Session implements AuthenticationStorage
     /**
      * Default session namespace
      */
-    const NAMESPACE_DEFAULT = 'Zend_Auth';
+    const NAMESPACE_DEFAULT = 'Zend2_Auth';
 
     /**
      * Default session object member name
@@ -49,7 +49,7 @@ class Session implements AuthenticationStorage
     /**
      * Object to proxy $_SESSION storage
      *
-     * @var Zend\Session\Container
+     * @var Zend2\Session\Container
      */
     protected $_session;
 
@@ -103,7 +103,7 @@ class Session implements AuthenticationStorage
     }
 
     /**
-     * Defined by Zend\Auth\Storage
+     * Defined by Zend2\Auth\Storage
      *
      * @return boolean
      */
@@ -113,7 +113,7 @@ class Session implements AuthenticationStorage
     }
 
     /**
-     * Defined by Zend\Auth\Storage
+     * Defined by Zend2\Auth\Storage
      *
      * @return mixed
      */
@@ -123,7 +123,7 @@ class Session implements AuthenticationStorage
     }
 
     /**
-     * Defined by Zend\Auth\Storage
+     * Defined by Zend2\Auth\Storage
      *
      * @param  mixed $contents
      * @return void
@@ -134,7 +134,7 @@ class Session implements AuthenticationStorage
     }
 
     /**
-     * Defined by Zend\Auth\Storage
+     * Defined by Zend2\Auth\Storage
      *
      * @return void
      */

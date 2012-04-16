@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,19 +12,19 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_BinaryParser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_BinaryParser
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\BinaryParser\DataSource;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
+namespace Zend2\Pdf\BinaryParser\DataSource;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
 
 /**
- * Abstract helper class for {@link \Zend\Pdf\BinaryParser\AbstractBinaryParser}
+ * Abstract helper class for {@link \Zend2\Pdf\BinaryParser\AbstractBinaryParser}
  * that provides the data source for parsing.
  *
  * Concrete subclasses allow for parsing of in-memory, filesystem, and other
@@ -46,9 +46,9 @@ use Zend\Pdf;
  * The destructor is also not defined in this abstract class. However, 
  * implementing classes should define one, and have it close the data source.
  *
- * @package    Zend_PDF
- * @subpackage Zend_PDF_BinaryParser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_BinaryParser
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractDataSource
@@ -87,7 +87,7 @@ abstract class AbstractDataSource
      *
      * @param integer $byteCount Number of bytes to read.
      * @return string
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     abstract public function readBytes($byteCount);
 
@@ -157,7 +157,7 @@ abstract class AbstractDataSource
      * parent method.
      *
      * @param integer $offset Destination byte offset.
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function moveToOffset($offset)
     {
@@ -182,7 +182,7 @@ abstract class AbstractDataSource
      * the end of the data source.
      *
      * @param integer $byteCount Number of bytes to skip.
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function skipBytes($byteCount)
     {

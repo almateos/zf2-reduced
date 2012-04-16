@@ -1,10 +1,10 @@
 <?php
 
-namespace Zend\Di\Definition\Builder;
+namespace Zend2\Di\Definition\Builder;
 
 class PhpClass
 {
-    protected $defaultMethodBuilder = 'Zend\Di\Definition\Builder\InjectionMethod';
+    protected $defaultMethodBuilder = 'Zend2\Di\Definition\Builder\InjectionMethod';
     protected $name                 = null;
     protected $instantiator         = '__construct';
     protected $injectionMethods     = array();

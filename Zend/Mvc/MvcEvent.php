@@ -1,11 +1,11 @@
 <?php
 
-namespace Zend\Mvc;
+namespace Zend2\Mvc;
 
-use Zend\EventManager\Event,
-    Zend\Stdlib\RequestDescription as Request,
-    Zend\Stdlib\ResponseDescription as Response,
-    Zend\View\Model as ViewModel;
+use Zend2\EventManager\Event,
+    Zend2\Stdlib\RequestDescription as Request,
+    Zend2\Stdlib\ResponseDescription as Response,
+    Zend2\View\Model as ViewModel;
 
 class MvcEvent extends Event
 {

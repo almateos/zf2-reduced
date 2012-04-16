@@ -1,5 +1,5 @@
 <?php
-namespace Zend\Test;
+namespace Zend2\Test;
 
 interface Exception
 {}

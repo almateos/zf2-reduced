@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Http\Header;
+namespace Zend2\Http\Header;
 
 /**
  * @throws Exception\InvalidArgumentException
@@ -422,7 +422,7 @@ class SetCookie implements MultipleHeaderDescription
     }
 
     /**
-     * @param \Zend\Http\Header\true $httponly
+     * @param \Zend2\Http\Header\true $httponly
      */
     public function setHttponly($httponly)
     {
@@ -430,7 +430,7 @@ class SetCookie implements MultipleHeaderDescription
     }
 
     /**
-     * @return \Zend\Http\Header\true
+     * @return \Zend2\Http\Header\true
      */
     public function isHttponly()
     {

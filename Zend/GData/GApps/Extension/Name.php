@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\GApps\Extension;
+namespace Zend2\GData\GApps\Extension;
 
 /**
  * Represents the apps:name element used by the Apps data API. This is used
  * to represent a user's full name. This class is usually contained within
- * instances of Zend_Gdata_GApps_UserEntry.
+ * instances of Zend2_Gdata_GApps_UserEntry.
  *
- * @uses       \Zend\GData\Extension
- * @uses       \Zend\GData\GApps
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Extension
+ * @uses       \Zend2\GData\GApps
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Name extends \Zend\GData\Extension
+class Name extends \Zend2\GData\Extension
 {
 
     protected $_rootNamespace = 'apps';
@@ -55,7 +55,7 @@ class Name extends \Zend\GData\Extension
     protected $_givenName = null;
 
     /**
-     * Constructs a new Zend_Gdata_GApps_Extension_Name object.
+     * Constructs a new Zend2_Gdata_GApps_Extension_Name object.
      *
      * @param string $familyName (optional) The familyName to be set for this
      *          object.
@@ -64,7 +64,7 @@ class Name extends \Zend\GData\Extension
      */
     public function __construct($familyName = null, $givenName = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\GApps::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\GApps::$namespaces);
         parent::__construct();
         $this->_familyName = $familyName;
         $this->_givenName = $givenName;
@@ -129,7 +129,7 @@ class Name extends \Zend\GData\Extension
      * represents a user's family name.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\GApps\Extension\Name Provides a fluent interface..
+     * @return \Zend2\GData\GApps\Extension\Name Provides a fluent interface..
      */
     public function setFamilyName($value)
     {
@@ -153,7 +153,7 @@ class Name extends \Zend\GData\Extension
      * represents a user's given name.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\GApps\Extension\Name Provides a fluent interface.
+     * @return \Zend2\GData\GApps\Extension\Name Provides a fluent interface.
      */
     public function setGivenName($value)
     {

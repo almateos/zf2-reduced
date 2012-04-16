@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,14 +12,14 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Test
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Test\PHPUnit\Db\Operation;
+namespace Zend2\Test\PHPUnit\Db\Operation;
 
 /**
  * Operation for Truncating on setup or teardown of a database tester.
@@ -28,12 +28,12 @@ namespace Zend\Test\PHPUnit\Db\Operation;
  * @uses       PHPUnit_Extensions_Database_DB_IDatabaseConnection
  * @uses       PHPUnit_Extensions_Database_Operation_Exception
  * @uses       PHPUnit_Extensions_Database_Operation_IDatabaseOperation
- * @uses       \Zend\Test\PHPUnit\Db\Connection
- * @uses       \Zend\Test\PHPUnit\Db\Exception\InvalidArgumentException
- * @category   Zend
- * @package    Zend_Test
+ * @uses       \Zend2\Test\PHPUnit\Db\Connection
+ * @uses       \Zend2\Test\PHPUnit\Db\Exception\InvalidArgumentException
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Truncate implements \PHPUnit_Extensions_Database_Operation_IDatabaseOperation
@@ -46,9 +46,9 @@ class Truncate implements \PHPUnit_Extensions_Database_Operation_IDatabaseOperat
      */
     public function execute(\PHPUnit_Extensions_Database_DB_IDatabaseConnection $connection, \PHPUnit_Extensions_Database_DataSet_IDataSet $dataSet)
     {
-        if(!($connection instanceof \Zend\Test\PHPUnit\Db\Connection)) {
-            throw new \Zend\Test\PHPUnit\Db\Exception\InvalidArgumentException(
-            	"Not a valid Zend_Test_PHPUnit_Db_Connection instance, ".get_class($connection)." given!"
+        if(!($connection instanceof \Zend2\Test\PHPUnit\Db\Connection)) {
+            throw new \Zend2\Test\PHPUnit\Db\Exception\InvalidArgumentException(
+            	"Not a valid Zend2_Test_PHPUnit_Db_Connection instance, ".get_class($connection)." given!"
             );
         }
 
@@ -65,16 +65,16 @@ class Truncate implements \PHPUnit_Extensions_Database_Operation_IDatabaseOperat
     /**
      * Truncate a given table.
      *
-     * @param \Zend\Db\Adapter\AbstractAdapter $db
+     * @param \Zend2\Db\Adapter\AbstractAdapter $db
      * @param string $tableName
      * @return void
      */
-    protected function _truncate(\Zend\Db\Adapter\AbstractAdapter $db, $tableName)
+    protected function _truncate(\Zend2\Db\Adapter\AbstractAdapter $db, $tableName)
     {
         $tableName = $db->quoteIdentifier($tableName);
-        if($db instanceof \Zend\Db\Adapter\Pdo\Sqlite) {
+        if($db instanceof \Zend2\Db\Adapter\Pdo\Sqlite) {
             $db->query('DELETE FROM '.$tableName);
-        } else if($db instanceof \Zend\Db\Adapter\Db2) {
+        } else if($db instanceof \Zend2\Db\Adapter\Db2) {
             /*if(strstr(PHP_OS, "WIN")) {
                 $file = tempnam(sys_get_temp_dir(), "zendtestdbibm_");
                 file_put_contents($file, "");
@@ -83,10 +83,10 @@ class Truncate implements \PHPUnit_Extensions_Database_Operation_IDatabaseOperat
             } else {
                 $db->query('IMPORT FROM /dev/null OF DEL REPLACE INTO '.$tableName);
             }*/
-            throw \Zend\Test\PHPUnit\Db\Exception\InvalidArgumentException("IBM Db2 TRUNCATE not supported.");
+            throw \Zend2\Test\PHPUnit\Db\Exception\InvalidArgumentException("IBM Db2 TRUNCATE not supported.");
         } else if($this->_isMssqlOrOracle($db)) {
             $db->query('TRUNCATE TABLE '.$tableName);
-        } else if($db instanceof \Zend\Db\Adapter\Pdo\PgSql) {
+        } else if($db instanceof \Zend2\Db\Adapter\Pdo\PgSql) {
             $db->query('TRUNCATE '.$tableName.' CASCADE');
         } else {
             $db->query('TRUNCATE '.$tableName);
@@ -96,16 +96,16 @@ class Truncate implements \PHPUnit_Extensions_Database_Operation_IDatabaseOperat
     /**
      * Detect if an adapter is for Mssql or Oracle Databases.
      *
-     * @param  \Zend\DB\Adapter\AbstractAdapter $db
+     * @param  \Zend2\DB\Adapter\AbstractAdapter $db
      * @return bool
      */
     private function _isMssqlOrOracle($db)
     {
         return (
-            $db instanceof \Zend\Db\Adapter\Pdo\Mssql ||
-            $db instanceof \Zend\Db\Adapter\Sqlsrv ||
-            $db instanceof \Zend\Db\Adapter\Pdo\Oci ||
-            $db instanceof \Zend\Db\Adapter\Oracle
+            $db instanceof \Zend2\Db\Adapter\Pdo\Mssql ||
+            $db instanceof \Zend2\Db\Adapter\Sqlsrv ||
+            $db instanceof \Zend2\Db\Adapter\Pdo\Oci ||
+            $db instanceof \Zend2\Db\Adapter\Oracle
         );
     }
 }

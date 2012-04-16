@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\InternalType;
-use Zend\Pdf;
+namespace Zend2\Pdf\InternalType;
+use Zend2\Pdf;
 
 /**
  * PDF file element implementation
  *
- * @uses       \Zend\Pdf\InternalType\ArrayObject
- * @uses       \Zend\Pdf\InternalType\BooleanObject
- * @uses       \Zend\Pdf\InternalType\DictionaryObject
- * @uses       \Zend\Pdf\InternalType\NumericObject
- * @uses       \Zend\Pdf\InternalType\StringObject
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\InternalType\ArrayObject
+ * @uses       \Zend2\Pdf\InternalType\BooleanObject
+ * @uses       \Zend2\Pdf\InternalType\DictionaryObject
+ * @uses       \Zend2\Pdf\InternalType\NumericObject
+ * @uses       \Zend2\Pdf\InternalType\StringObject
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractTypeObject
@@ -49,7 +49,7 @@ abstract class AbstractTypeObject
     /**
      * Reference to the top level indirect object, which contains this element.
      *
-     * @var \Zend\Pdf\InternalType\IndirectObject
+     * @var \Zend2\Pdf\InternalType\IndirectObject
      */
     private $_parentObject = null;
 
@@ -67,7 +67,7 @@ abstract class AbstractTypeObject
      *
      * $factory parameter defines operation context.
      *
-     * @param \Zend\Pdf\ObjectFactory $factory
+     * @param \Zend2\Pdf\ObjectFactory $factory
      * @return string
      */
     abstract public function toString(Pdf\ObjectFactory $factory = null);
@@ -82,10 +82,10 @@ abstract class AbstractTypeObject
      * @todo It's necessary to check if SplObjectStorage class works faster
      * (Needs PHP 5.3.x to attach object _with_ additional data to storage)
      *
-     * @param \Zend\Pdf\ObjectFactory $factory  The factory to attach
+     * @param \Zend2\Pdf\ObjectFactory $factory  The factory to attach
      * @param array &$processed List of already processed indirect objects, used to avoid objects duplication
      * @param integer $mode  Cloning mode (defines filter for objects cloning)
-     * @returns \Zend\Pdf\InternalType\AbstractTypeObject
+     * @returns \Zend2\Pdf\InternalType\AbstractTypeObject
      */
     public function makeClone(Pdf\ObjectFactory $factory, array &$processed, $mode)
     {
@@ -95,7 +95,7 @@ abstract class AbstractTypeObject
     /**
      * Set top level parent indirect object.
      *
-     * @param \Zend\Pdf\InternalType\IndirectObject $parent
+     * @param \Zend2\Pdf\InternalType\IndirectObject $parent
      */
     public function setParentObject(IndirectObject $parent)
     {
@@ -106,7 +106,7 @@ abstract class AbstractTypeObject
     /**
      * Get top level parent indirect object.
      *
-     * @return \Zend\Pdf\InternalType\IndirectObject
+     * @return \Zend2\Pdf\InternalType\IndirectObject
      */
     public function getParentObject()
     {
@@ -149,7 +149,7 @@ abstract class AbstractTypeObject
      * Convert PHP value into PDF element.
      *
      * @param mixed $input
-     * @return \Zend\Pdf\InternalType\AbstractTypeObject
+     * @return \Zend2\Pdf\InternalType\AbstractTypeObject
      */
     public static function phpToPDF($input)
     {

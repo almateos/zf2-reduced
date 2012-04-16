@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,25 +13,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_OpenId
- * @subpackage Zend_OpenId_Consumer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OpenId
+ * @subpackage Zend2_OpenId_Consumer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\OpenId\Consumer\Storage;
-use Zend\OpenId;
+namespace Zend2\OpenId\Consumer\Storage;
+use Zend2\OpenId;
 
 /**
  * External storage implemmentation using serialized files
  *
- * @uses       Zend\OpenId\Consumer\Storage\AbstractStorage
- * @uses       Zend\OpenId\Exception
- * @category   Zend
- * @package    Zend_OpenId
- * @subpackage Zend_OpenId_Consumer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\OpenId\Consumer\Storage\AbstractStorage
+ * @uses       Zend2\OpenId\Exception
+ * @category   Zend2
+ * @package    Zend2_OpenId
+ * @subpackage Zend2_OpenId_Consumer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class File extends AbstractStorage
@@ -48,7 +48,7 @@ class File extends AbstractStorage
      * Constructs storage object and creates storage directory
      *
      * @param string $dir directory name to store data files in
-     * @throws Zend\OpenId\Exception
+     * @throws Zend2\OpenId\Exception
      */
     public function __construct($dir = null)
     {

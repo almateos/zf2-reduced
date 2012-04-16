@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,18 +12,18 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\OAuth;
+namespace Zend2\OAuth;
 
 /**
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Http
@@ -37,7 +37,7 @@ class Http
     protected $_parameters = array();
 
     /**
-     * Reference to the Zend_OAuth_Consumer instance in use.
+     * Reference to the Zend2_OAuth_Consumer instance in use.
      *
      * @var string
      */
@@ -60,18 +60,18 @@ class Http
     protected $_preferredRequestMethod = OAuth::POST;
 
     /**
-     * Instance of the general Zend\OAuth\Http\Utility class.
+     * Instance of the general Zend2\OAuth\Http\Utility class.
      *
-     * @var Zend\OAuth\Http\Utility
+     * @var Zend2\OAuth\Http\Utility
      */
     protected $_httpUtility = null;
 
     /**
      * Constructor
      *
-     * @param  Zend\OAuth\Consumer $consumer
+     * @param  Zend2\OAuth\Consumer $consumer
      * @param  null|array $parameters
-     * @param  null|Zend\OAuth\Http\Utility $utility
+     * @param  null|Zend2\OAuth\Http\Utility $utility
      * @return void
      */
     public function __construct(
@@ -95,7 +95,7 @@ class Http
      * Set a preferred HTTP request method.
      *
      * @param  string $method
-     * @return Zend\OAuth\Http
+     * @return Zend2\OAuth\Http
      */
     public function setMethod($method)
     {
@@ -120,7 +120,7 @@ class Http
      * Mutator to set an array of custom parameters for the HTTP request.
      *
      * @param  array $customServiceParameters
-     * @return Zend\OAuth\Http
+     * @return Zend2\OAuth\Http
      */
     public function setParameters(array $customServiceParameters)
     {
@@ -141,7 +141,7 @@ class Http
     /**
      * Return the Consumer instance in use.
      *
-     * @return Zend\OAuth\Consumer
+     * @return Zend2\OAuth\Consumer
      */
     public function getConsumer()
     {
@@ -157,8 +157,8 @@ class Http
      *
      * @todo   Remove cycling?; Replace with upfront do-or-die configuration
      * @param  array $params
-     * @return Zend\Http\Response
-     * @throws Zend\OAuth\Exception on HTTP request errors
+     * @return Zend2\Http\Response
+     * @throws Zend2\OAuth\Exception on HTTP request errors
      */
     public function startRequestCycle(array $params)
     {
@@ -167,7 +167,7 @@ class Http
         $status   = null;
         try {
             $response = $this->_attemptRequest($params);
-        } catch (\Zend\Http\Client\Exception $e) {
+        } catch (\Zend2\Http\Client\Exception $e) {
             throw new Exception(sprintf(
                 'Error in HTTP request: %s',
                 $e->getMessage()
@@ -190,12 +190,12 @@ class Http
     }
 
     /**
-     * Return an instance of Zend_Http_Client configured to use the Query
+     * Return an instance of Zend2_Http_Client configured to use the Query
      * String scheme for an OAuth driven HTTP request.
      *
      * @param array $params
      * @param string $url
-     * @return Zend\Http\Client
+     * @return Zend2\Http\Client
      */
     public function getRequestSchemeQueryStringClient(array $params, $url)
     {
@@ -212,11 +212,11 @@ class Http
      * Manages the switch from OAuth request scheme to another lower preference
      * scheme during a request cycle.
      *
-     * @param  Zend\Http\Response
+     * @param  Zend2\Http\Response
      * @return void
-     * @throws Zend\OAuth\Exception if unable to retrieve valid token response
+     * @throws Zend2\OAuth\Exception if unable to retrieve valid token response
      */
-    protected function _assessRequestAttempt(\Zend\Http\Response $response = null)
+    protected function _assessRequestAttempt(\Zend2\Http\Response $response = null)
     {
         switch ($this->_preferredRequestScheme) {
             case OAuth::REQUEST_SCHEME_HEADER:
@@ -264,7 +264,7 @@ class Http
      * return the resulting HTTP Response.
      *
      * @param  array $params
-     * @return Zend\Http\Response
+     * @return Zend2\Http\Response
      */
     protected function _attemptRequest(array $params)
     {

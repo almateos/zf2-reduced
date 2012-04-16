@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard\XML\KeyInfo;
+namespace Zend2\InfoCard\XML\KeyInfo;
 
 /**
  * An object representation of a XML <KeyInfo> block which doesn't provide a namespace
  * In this context, it is assumed to mean that it is the type of KeyInfo block which
  * contains the SecurityTokenReference
  *
- * @uses       \Zend\InfoCard\XML\Exception
- * @uses       \Zend\InfoCard\XML\KeyInfo\AbstractKeyInfo
- * @uses       \Zend\InfoCard\XML\SecurityTokenReference
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\InfoCard\XML\Exception
+ * @uses       \Zend2\InfoCard\XML\KeyInfo\AbstractKeyInfo
+ * @uses       \Zend2\InfoCard\XML\SecurityTokenReference
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DefaultKeyInfo extends AbstractKeyInfo
@@ -40,8 +40,8 @@ class DefaultKeyInfo extends AbstractKeyInfo
     /**
      * Returns the object representation of the SecurityTokenReference block
      *
-     * @throws \Zend\InfoCard\XML\Exception
-     * @return \Zend\InfoCard\XML\SecurityTokenReference
+     * @throws \Zend2\InfoCard\XML\Exception
+     * @return \Zend2\InfoCard\XML\SecurityTokenReference
      */
     public function getSecurityTokenReference()
     {
@@ -49,10 +49,10 @@ class DefaultKeyInfo extends AbstractKeyInfo
 
         list($sectokenref) = $this->xpath('//o:SecurityTokenReference');
 
-        if(!($sectokenref instanceof \Zend\InfoCard\XML\AbstractElement)) {
-            throw new \Zend\InfoCard\XML\Exception\RuntimeException('Could not locate the Security Token Reference');
+        if(!($sectokenref instanceof \Zend2\InfoCard\XML\AbstractElement)) {
+            throw new \Zend2\InfoCard\XML\Exception\RuntimeException('Could not locate the Security Token Reference');
         }
 
-        return \Zend\InfoCard\XML\SecurityTokenReference::getInstance($sectokenref);
+        return \Zend2\InfoCard\XML\SecurityTokenReference::getInstance($sectokenref);
     }
 }

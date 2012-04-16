@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Log
+ * @category   Zend2
+ * @package    Zend2_Log
  * @subpackage Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Log\Writer;
+namespace Zend2\Log\Writer;
 
-use Zend\Log\Formatter,
-    Zend\Log\Exception,
-    Zend\Db\Adapter\Adapter;
+use Zend2\Log\Formatter,
+    Zend2\Log\Exception,
+    Zend2\Db\Adapter\Adapter;
 
 /**
- * @uses       \Zend\Log\Exception\InvalidArgumentException
- * @uses       \Zend\Log\Exception\RuntimeException
- * @uses       \Zend\Log\Writer\AbstractWriter
- * @category   Zend
- * @package    Zend_Log
+ * @uses       \Zend2\Log\Exception\InvalidArgumentException
+ * @uses       \Zend2\Log\Exception\RuntimeException
+ * @uses       \Zend2\Log\Writer\AbstractWriter
+ * @category   Zend2
+ * @package    Zend2_Log
  * @subpackage Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Db extends AbstractWriter
@@ -68,7 +68,7 @@ class Db extends AbstractWriter
     /**
      * Constructor
      *
-     * We used the Adapter instead of Zend\Db for a performance reason.
+     * We used the Adapter instead of Zend2\Db for a performance reason.
      * 
      * @param Adapter $db 
      * @param string $tableName
@@ -78,7 +78,7 @@ class Db extends AbstractWriter
     public function __construct(Adapter $db, $tableName, array $columnMap = null, $separator = null)
     {
         if ($db === null) {
-            Exception\InvalidArgumentException('You must pass a valid Zend\Db\Adapter\Adapter');
+            Exception\InvalidArgumentException('You must pass a valid Zend2\Db\Adapter\Adapter');
         }
         
         $this->db        = $db;

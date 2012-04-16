@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_CodeGenerator
+ * @category   Zend2
+ * @package    Zend2_CodeGenerator
  * @subpackage PHP
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Code\Generator;
+namespace Zend2\Code\Generator;
 
-use Zend\Code\Reflection\ParameterReflection;
+use Zend2\Code\Reflection\ParameterReflection;
 
 /**
  *
- * @uses       \Zend\Code\Generator\AbstractPhp
- * @uses       Zend_CodeGenerator_Php_ParameterDefaultValue
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Code\Generator\AbstractPhp
+ * @uses       Zend2_CodeGenerator_Php_ParameterDefaultValue
+ * @category   Zend2
+ * @package    Zend2_CodeGenerator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ParameterGenerator extends AbstractGenerator
@@ -117,7 +117,7 @@ class ParameterGenerator extends AbstractGenerator
      * setType()
      *
      * @param string $type
-     * @return \Zend\Code\Generator\PhpParameter\Parameter
+     * @return \Zend2\Code\Generator\PhpParameter\Parameter
      */
     public function setType($type)
     {
@@ -139,7 +139,7 @@ class ParameterGenerator extends AbstractGenerator
      * setName()
      *
      * @param string $name
-     * @return \Zend\Code\Generator\PhpParameter\Parameter
+     * @return \Zend2\Code\Generator\PhpParameter\Parameter
      */
     public function setName($name)
     {
@@ -162,8 +162,8 @@ class ParameterGenerator extends AbstractGenerator
      *
      * Certain variables are difficult to expres
      *
-     * @param null|bool|string|int|float|\Zend\Code\Generator\PhpParameter\DefaultValue $defaultValue
-     * @return \Zend\Code\Generator\PhpParameter\Parameter
+     * @param null|bool|string|int|float|\Zend2\Code\Generator\PhpParameter\DefaultValue $defaultValue
+     * @return \Zend2\Code\Generator\PhpParameter\Parameter
      */
     public function setDefaultValue($defaultValue)
     {
@@ -207,7 +207,7 @@ class ParameterGenerator extends AbstractGenerator
      * setPosition()
      *
      * @param int $position
-     * @return \Zend\Code\Generator\PhpParameter\Parameter
+     * @return \Zend2\Code\Generator\PhpParameter\Parameter
      */
     public function setPosition($position)
     {

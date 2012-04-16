@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Delicious
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Delicious;
-use \Zend\Date\Date;
+namespace Zend2\Service\Delicious;
+use \Zend2\Date\Date;
 
 /**
- * Zend_Service_Delicious_Post represents a post of a user that can be edited
+ * Zend2_Service_Delicious_Post represents a post of a user that can be edited
  *
- * @uses       Zend_Date
- * @uses       Zend_Service_Delicious
- * @uses       Zend_Service_Delicious_Exception
- * @uses       Zend_Service_Delicious_SimplePost
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Date
+ * @uses       Zend2_Service_Delicious
+ * @uses       Zend2_Service_Delicious_Exception
+ * @uses       Zend2_Service_Delicious_SimplePost
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Delicious
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Post extends SimplePost
@@ -40,7 +40,7 @@ class Post extends SimplePost
     /**
      * Service that has downloaded the post
      *
-     * @var Zend_Service_Delicious
+     * @var Zend2_Service_Delicious
      */
     protected $_service;
 
@@ -50,7 +50,7 @@ class Post extends SimplePost
     protected $_others;
 
     /**
-     * @var \Zend\Date\Date Post date
+     * @var \Zend2\Date\Date Post date
      */
     protected $_date;
 
@@ -67,9 +67,9 @@ class Post extends SimplePost
     /**
      * Constructs a new del.icio.us post
      *
-     * @param  Zend_Service_Delicious $service Service that has downloaded the post
+     * @param  Zend2_Service_Delicious $service Service that has downloaded the post
      * @param  DOMElement|array       $values  Post content
-     * @throws Zend_Service_Delicious_Exception
+     * @throws Zend2_Service_Delicious_Exception
      * @return void
      */
     public function __construct(Delicious $service, $values)
@@ -86,7 +86,7 @@ class Post extends SimplePost
         }
 
         if (isset($values['date']) && ! $values['date'] instanceof Date) {
-            throw new Exception("Date has to be an instance of \Zend\Date\Date");
+            throw new Exception("Date has to be an instance of \Zend2\Date\Date");
         }
 
         foreach (array('url', 'title', 'notes', 'others', 'tags', 'date', 'shared', 'hash') as $key) {
@@ -100,7 +100,7 @@ class Post extends SimplePost
      * Setter for title
      *
      * @param  string $newTitle
-     * @return Zend_Service_Delicious_Post
+     * @return Zend2_Service_Delicious_Post
      */
     public function setTitle($newTitle)
     {
@@ -113,7 +113,7 @@ class Post extends SimplePost
      * Setter for notes
      *
      * @param  string $newNotes
-     * @return Zend_Service_Delicious_Post
+     * @return Zend2_Service_Delicious_Post
      */
     public function setNotes($newNotes)
     {
@@ -126,7 +126,7 @@ class Post extends SimplePost
      * Setter for tags
      *
      * @param  array $tags
-     * @return Zend_Service_Delicious_Post
+     * @return Zend2_Service_Delicious_Post
      */
     public function setTags(array $tags)
     {
@@ -139,7 +139,7 @@ class Post extends SimplePost
      * Add a tag
      *
      * @param  string $tag
-     * @return Zend_Service_Delicious_Post
+     * @return Zend2_Service_Delicious_Post
      */
     public function addTag($tag)
     {
@@ -152,7 +152,7 @@ class Post extends SimplePost
      * Remove a tag
      *
      * @param  string $tag
-     * @return Zend_Service_Delicious_Post
+     * @return Zend2_Service_Delicious_Post
      */
     public function removeTag($tag)
     {
@@ -164,7 +164,7 @@ class Post extends SimplePost
     /**
      * Getter for date
      *
-     * @return \Zend\Date\Date
+     * @return \Zend2\Date\Date
      */
     public function getDate()
     {
@@ -209,7 +209,7 @@ class Post extends SimplePost
      * Setter for shared
      *
      * @param  bool $isShared
-     * @return Zend_Service_Delicious_Post
+     * @return Zend2_Service_Delicious_Post
      */
     public function setShared($isShared)
     {
@@ -221,7 +221,7 @@ class Post extends SimplePost
     /**
      * Deletes post
      *
-     * @return Zend_Service_Delicious
+     * @return Zend2_Service_Delicious
      */
     public function delete()
     {
@@ -244,7 +244,7 @@ class Post extends SimplePost
             'replace'    => 'yes'
         );
         /*
-        if ($this->_date instanceof \Zend\Date\Date) {
+        if ($this->_date instanceof \Zend2\Date\Date) {
             $parms['dt'] = $this->_date->get('Y-m-d\TH:i:s\Z');
         }
         */

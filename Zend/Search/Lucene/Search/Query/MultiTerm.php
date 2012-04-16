@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,35 +12,35 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search\Query;
+namespace Zend2\Search\Lucene\Search\Query;
 
-use Zend\Search\Lucene,
-	Zend\Search\Lucene\Index,
-	Zend\Search\Lucene\Search\Weight,
-	Zend\Search\Lucene\Search\Highlighter,
-	Zend\Search\Lucene\Exception\InvalidArgumentException;
+use Zend2\Search\Lucene,
+	Zend2\Search\Lucene\Index,
+	Zend2\Search\Lucene\Search\Weight,
+	Zend2\Search\Lucene\Search\Highlighter,
+	Zend2\Search\Lucene\Exception\InvalidArgumentException;
 
 /**
- * @uses       \Zend\Search\Lucene\Index
- * @uses       \Zend\Search\Lucene\Exception\InvalidArgumentException
- * @uses       \Zend\Search\Lucene\Index\DocsFilter
- * @uses       \Zend\Search\Lucene\Search\Query\AbstractQuery
- * @uses       \Zend\Search\Lucene\Search\Query\Boolean
- * @uses       \Zend\Search\Lucene\Search\Query\EmptyResult
- * @uses       \Zend\Search\Lucene\Search\Query\MultiTerm
- * @uses       \Zend\Search\Lucene\Search\Query\Term
- * @uses       \Zend\Search\Lucene\Search\Weight\MultiTerm
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Index
+ * @uses       \Zend2\Search\Lucene\Exception\InvalidArgumentException
+ * @uses       \Zend2\Search\Lucene\Index\DocsFilter
+ * @uses       \Zend2\Search\Lucene\Search\Query\AbstractQuery
+ * @uses       \Zend2\Search\Lucene\Search\Query\Boolean
+ * @uses       \Zend2\Search\Lucene\Search\Query\EmptyResult
+ * @uses       \Zend2\Search\Lucene\Search\Query\MultiTerm
+ * @uses       \Zend2\Search\Lucene\Search\Query\Term
+ * @uses       \Zend2\Search\Lucene\Search\Weight\MultiTerm
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class MultiTerm extends AbstractQuery
@@ -48,7 +48,7 @@ class MultiTerm extends AbstractQuery
 
     /**
      * Terms to find.
-     * Array of Zend_Search_Lucene_Index_Term
+     * Array of Zend2_Search_Lucene_Index_Term
      *
      * @var array
      */
@@ -97,7 +97,7 @@ class MultiTerm extends AbstractQuery
 
     /**
      * Terms weights
-     * array of Zend_Search_Lucene_Search_Weight
+     * array of Zend2_Search_Lucene_Search_Weight
      *
      * @var array
      */
@@ -110,9 +110,9 @@ class MultiTerm extends AbstractQuery
      * if $signs array is omitted then all terms are required
      * it differs from addTerm() behavior, but should never be used
      *
-     * @param array $terms    Array of \Zend\Search\Lucene\Index\Term objects
+     * @param array $terms    Array of \Zend2\Search\Lucene\Index\Term objects
      * @param array $signs    Array of signs.  Sign is boolean|null.
-     * @throws \Zend\Search\Lucene\Exception\InvalidArgumentException
+     * @throws \Zend2\Search\Lucene\Exception\InvalidArgumentException
      */
     public function __construct($terms = null, $signs = null)
     {
@@ -138,14 +138,14 @@ class MultiTerm extends AbstractQuery
 
 
     /**
-     * Add a $term (Zend_Search_Lucene_Index_Term) to this query.
+     * Add a $term (Zend2_Search_Lucene_Index_Term) to this query.
      *
      * The sign is specified as:
      *     TRUE  - term is required
      *     FALSE - term is prohibited
      *     NULL  - term is neither prohibited, nor required
      *
-     * @param  \Zend\Search\Lucene\Index\Term $term
+     * @param  \Zend2\Search\Lucene\Index\Term $term
      * @param  boolean|null $sign
      * @return void
      */
@@ -167,8 +167,8 @@ class MultiTerm extends AbstractQuery
     /**
      * Re-write query into primitive queries in the context of specified index
      *
-     * @param \Zend\Search\Lucene\SearchIndex $index
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @param \Zend2\Search\Lucene\SearchIndex $index
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     public function rewrite(Lucene\SearchIndex $index)
     {
@@ -206,8 +206,8 @@ class MultiTerm extends AbstractQuery
     /**
      * Optimize query in the context of specified index
      *
-     * @param \Zend\Search\Lucene\SearchIndex $index
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @param \Zend2\Search\Lucene\SearchIndex $index
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     public function optimize(Lucene\SearchIndex $index)
     {
@@ -295,7 +295,7 @@ class MultiTerm extends AbstractQuery
      * Set weight for specified term
      *
      * @param integer $num
-     * @param \Zend\Search\Lucene\Search\Weight\Term $weight
+     * @param \Zend2\Search\Lucene\Search\Weight\Term $weight
      */
     public function setWeight($num, $weight)
     {
@@ -306,8 +306,8 @@ class MultiTerm extends AbstractQuery
     /**
      * Constructs an appropriate Weight implementation for this query.
      *
-     * @param \Zend\Search\Lucene\SearchIndex $reader
-     * @return \Zend\Search\Lucene\Search\Weight\Weight
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
+     * @return \Zend2\Search\Lucene\Search\Weight\Weight
      */
     public function createWeight(Lucene\SearchIndex $reader)
     {
@@ -320,7 +320,7 @@ class MultiTerm extends AbstractQuery
      * Calculate result vector for Conjunction query
      * (like '+something +another')
      *
-     * @param \Zend\Search\Lucene\SearchIndex $reader
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
      */
     private function _calculateConjunctionResult(Lucene\SearchIndex $reader)
     {
@@ -362,7 +362,7 @@ class MultiTerm extends AbstractQuery
      * Calculate result vector for non Conjunction query
      * (like '+something -another')
      *
-     * @param \Zend\Search\Lucene\SearchIndex $reader
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
      */
     private function _calculateNonConjunctionResult(Lucene\SearchIndex $reader)
     {
@@ -461,7 +461,7 @@ class MultiTerm extends AbstractQuery
      * Score calculator for conjunction queries (all terms are required)
      *
      * @param integer $docId
-     * @param \Zend\Search\Lucene\SearchIndex $reader
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
      * @return float
      */
     public function _conjunctionScore($docId, Lucene\SearchIndex $reader)
@@ -491,7 +491,7 @@ class MultiTerm extends AbstractQuery
      * Score calculator for non conjunction queries (not all terms are required)
      *
      * @param integer $docId
-     * @param \Zend\Search\Lucene\SearchIndex $reader
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
      * @return float
      */
     public function _nonConjunctionScore($docId, $reader)
@@ -538,8 +538,8 @@ class MultiTerm extends AbstractQuery
      * Execute query in context of index reader
      * It also initializes necessary internal structures
      *
-     * @param \Zend\Search\Lucene\SearchIndex $reader
-     * @param \Zend\Search\Lucene\Index\DocsFilter|null $docsFilter
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
+     * @param \Zend2\Search\Lucene\Index\DocsFilter|null $docsFilter
      */
     public function execute(Lucene\SearchIndex $reader, $docsFilter = null)
     {
@@ -569,7 +569,7 @@ class MultiTerm extends AbstractQuery
      * Score specified document
      *
      * @param integer $docId
-     * @param \Zend\Search\Lucene\SearchIndex $reader
+     * @param \Zend2\Search\Lucene\SearchIndex $reader
      * @return float
      */
     public function score($docId, Lucene\SearchIndex $reader)
@@ -610,7 +610,7 @@ class MultiTerm extends AbstractQuery
     /**
      * Query specific matches highlighting
      *
-     * @param \Zend\Search\Lucene\Search\Highlighter $highlighter  Highlighter object (also contains doc for highlighting)
+     * @param \Zend2\Search\Lucene\Search\Highlighter $highlighter  Highlighter object (also contains doc for highlighting)
      */
     protected function _highlightMatches(Highlighter $highlighter)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Wildfire
+ * @category   Zend2
+ * @package    Zend2_Wildfire
  * @subpackage Plugin
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Wildfire\Plugin;
-use Zend\Wildfire,
-    Zend\Wildfire\Plugin\Exception;
+namespace Zend2\Wildfire\Plugin;
+use Zend2\Wildfire,
+    Zend2\Wildfire\Plugin\Exception;
 
 /**
  * Primary class for communicating with the FirePHP Firefox Extension.
  *
  * @uses       ReflectionClass
- * @uses       \Zend\Controller\Request\AbstractRequest
- * @uses       \Zend\Controller\Response\AbstractResponse
- * @uses       \Zend\Loader
- * @uses       \Zend\Wildfire\Channel\HttpHeaders
- * @uses       \Zend\Wildfire\Exception
- * @uses       \Zend\Wildfire\Plugin
- * @uses       \Zend\Wildfire\Protocol\JsonStream
- * @category   Zend
- * @package    Zend_Wildfire
+ * @uses       \Zend2\Controller\Request\AbstractRequest
+ * @uses       \Zend2\Controller\Response\AbstractResponse
+ * @uses       \Zend2\Loader
+ * @uses       \Zend2\Wildfire\Channel\HttpHeaders
+ * @uses       \Zend2\Wildfire\Exception
+ * @uses       \Zend2\Wildfire\Plugin
+ * @uses       \Zend2\Wildfire\Protocol\JsonStream
+ * @category   Zend2
+ * @package    Zend2_Wildfire
  * @subpackage Plugin
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class FirePhp implements Wildfire\Plugin
@@ -96,7 +96,7 @@ class FirePhp implements Wildfire\Plugin
     /**
      * The plugin URI for this plugin
      */
-    const PLUGIN_URI = 'http://meta.firephp.org/Wildfire/Plugin/ZendFramework/FirePHP/1.6.2';
+    const PLUGIN_URI = 'http://meta.firephp.org/Wildfire/Plugin/Zend2Framework/FirePHP/1.6.2';
 
     /**
      * The protocol URI for this plugin
@@ -115,7 +115,7 @@ class FirePhp implements Wildfire\Plugin
 
     /**
      * Singleton instance
-     * @var \Zend\Wildfire\Plugin\FirePhp
+     * @var \Zend2\Wildfire\Plugin\FirePhp
      */
     protected static $_instance = null;
 
@@ -127,7 +127,7 @@ class FirePhp implements Wildfire\Plugin
 
     /**
      * The channel via which to send the encoded messages.
-     * @var \Zend\Wildfire\Channel
+     * @var \Zend2\Wildfire\Channel
      */
     protected $_channel = null;
 
@@ -164,14 +164,14 @@ class FirePhp implements Wildfire\Plugin
     /**
      * Create singleton instance.
      *
-     * @param string $class OPTIONAL Subclass of \Zend\Wildfire\Plugin\FirePhp
-     * @return \Zend\Wildfire\Plugin\FirePhp Returns the singleton \Zend\Wildfire\Plugin\FirePhp instance
-     * @throws \Zend\Wildfire\Exception
+     * @param string $class OPTIONAL Subclass of \Zend2\Wildfire\Plugin\FirePhp
+     * @return \Zend2\Wildfire\Plugin\FirePhp Returns the singleton \Zend2\Wildfire\Plugin\FirePhp instance
+     * @throws \Zend2\Wildfire\Exception
      */
     public static function init($class = null)
     {
         if (self::$_instance !== null) {
-            throw new Exception\RuntimeException('Singleton instance of Zend_Wildfire_Plugin_FirePhp already exists!');
+            throw new Exception\RuntimeException('Singleton instance of Zend2_Wildfire_Plugin_FirePhp already exists!');
         }
         if ($class !== null) {
             if (!is_string($class)) {
@@ -181,7 +181,7 @@ class FirePhp implements Wildfire\Plugin
             self::$_instance = new $class();
             if (!self::$_instance instanceof self) {
                 self::$_instance = null;
-                throw new Exception\InvalidArgumentException('Invalid class to third argument. Must be subclass of Zend_Wildfire_Plugin_FirePhp.');
+                throw new Exception\InvalidArgumentException('Invalid class to third argument. Must be subclass of Zend2_Wildfire_Plugin_FirePhp.');
             }
         } else {
             self::$_instance = new self();
@@ -204,7 +204,7 @@ class FirePhp implements Wildfire\Plugin
      * Get or create singleton instance
      *
      * @param $skipCreate boolean True if an instance should not be created
-     * @return \Zend\Wildfire\Plugin\FirePhp
+     * @return \Zend2\Wildfire\Plugin\FirePhp
      */
     public static function getInstance($skipCreate=false)
     {
@@ -344,7 +344,7 @@ class FirePhp implements Wildfire\Plugin
      * @param  string  $style  OPTIONAL Style of the log event.
      * @param  array  $options OPTIONAL Options to change how messages are processed and sent
      * @return boolean Returns TRUE if the variable was added to the response headers or buffered.
-     * @throws \Zend\Wildfire\Exception
+     * @throws \Zend2\Wildfire\Exception
      */
     public static function send($var, $label=null, $style=null, $options=array())
     {
@@ -514,7 +514,7 @@ class FirePhp implements Wildfire\Plugin
             return $trace;
         }
 
-        if (isset($options['fixZendLogOffsetIfApplicable']) && $options['fixZendLogOffsetIfApplicable']) {
+        if (isset($options['fixZend2LogOffsetIfApplicable']) && $options['fixZend2LogOffsetIfApplicable']) {
             if (count($trace) >=3 &&
                 isset($trace[0]['file']) && substr($trace[0]['file'], -10, 10)=='Logger.php' &&
                 isset($trace[1]['function']) && $trace[1]['function']=='__call') {
@@ -533,7 +533,7 @@ class FirePhp implements Wildfire\Plugin
      * @param array $data The data to be recorded
      * @param boolean $skipEncode TRUE if variable encoding should be skipped
      * @return boolean Returns TRUE if message was recorded
-     * @throws \Zend\Wildfire\Exception
+     * @throws \Zend2\Wildfire\Exception
      */
     protected function _recordMessage($structure, $data, $skipEncode=false)
     {
@@ -766,7 +766,7 @@ class FirePhp implements Wildfire\Plugin
     }
 
     /*
-     * Zend_Wildfire_Plugin_Interface
+     * Zend2_Wildfire_Plugin_Interface
      */
 
     /**

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail\Protocol;
-use Zend\Mail\Protocol\Exception;
+namespace Zend2\Mail\Protocol;
+use Zend2\Mail\Protocol\Exception;
 /**
- * @uses       \Zend\Mail\Protocol\Exception
- * @category   Zend
- * @package    Zend_Mail
+ * @uses       \Zend2\Mail\Protocol\Exception
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Pop3
@@ -86,7 +86,7 @@ class Pop3
      * @param  int|null    $port  of POP3 server, default is 110 (995 for ssl)
      * @param  string|bool $ssl   use 'SSL', 'TLS' or false
      * @return string welcome message
-     * @throws \Zend\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
      */
     public function connect($host, $port = null, $ssl = false)
     {
@@ -133,7 +133,7 @@ class Pop3
      *
      * @param string $request your request without newline
      * @return null
-     * @throws \Zend\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
      */
     public function sendRequest($request)
     {
@@ -149,7 +149,7 @@ class Pop3
      *
      * @param  boolean $multiline response has multiple lines and should be read until "<nl>.<nl>"
      * @return string response
-     * @throws \Zend\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
      */
     public function readResponse($multiline = false)
     {
@@ -347,7 +347,7 @@ class Pop3
      * @param  int  $lines    number of wanted body lines (empty line is inserted after header lines)
      * @param  bool $fallback fallback with full retrieve if top is not supported
      * @return string message headers with wanted body lines
-     * @throws \Zend\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
      */
     public function top($msgno, $lines = 0, $fallback = false)
     {

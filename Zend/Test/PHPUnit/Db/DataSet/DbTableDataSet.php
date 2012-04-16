@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Test
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Test\PHPUnit\Db\DataSet;
+namespace Zend2\Test\PHPUnit\Db\DataSet;
 
 /**
- * Aggregate several Zend_Db_Table instances into a dataset.
+ * Aggregate several Zend2_Db_Table instances into a dataset.
  *
- * @uses       \Zend\Test\PHPUnit\Db\Exception\InvalidArgumentException
+ * @uses       \Zend2\Test\PHPUnit\Db\Exception\InvalidArgumentException
  * @uses       PHPUnit_Extensions_Database_DataSet_DefaultTableIterator
  * @uses       PHPUnit_Extensions_Database_DataSet_QueryDataSet
  * @uses       PHPUnit_Extensions_Database_DB_IDatabaseConnection
- * @uses       \Zend\Test\PHPUnit\Db\DataSet\DbTable
- * @category   Zend
- * @package    Zend_Test
+ * @uses       \Zend2\Test\PHPUnit\Db\DataSet\DbTable
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DbTableDataSet extends \PHPUnit_Extensions_Database_DataSet_AbstractDataSet
@@ -47,14 +47,14 @@ class DbTableDataSet extends \PHPUnit_Extensions_Database_DataSet_AbstractDataSe
      *
      * By default a select * will be done on the given tablename.
      *
-     * @param \Zend\Db\Table\AbstractTable $table
-     * @param string|\Zend\Db\Select $query
+     * @param \Zend2\Db\Table\AbstractTable $table
+     * @param string|\Zend2\Db\Select $query
      * @param string $where
      * @param string $order
      * @param string $count
      * @param string $offset
      */
-    public function addTable(\Zend\Db\Table\AbstractTable $table, $where = null, $order = null, $count = null, $offset = null)
+    public function addTable(\Zend2\Db\Table\AbstractTable $table, $where = null, $order = null, $count = null, $offset = null)
     {
         $tableName = $table->info('name');
         $this->tables[$tableName] = new DbTable($table, $where, $order, $count, $offset);
@@ -81,7 +81,7 @@ class DbTableDataSet extends \PHPUnit_Extensions_Database_DataSet_AbstractDataSe
     public function getTable($tableName)
     {
         if (!isset($this->tables[$tableName])) {
-            throw new \Zend\Test\PHPUnit\Db\Exception\InvalidArgumentException(
+            throw new \Zend2\Test\PHPUnit\Db\Exception\InvalidArgumentException(
             	"$tableName is not a table in the current database."
             );
         }

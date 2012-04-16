@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
+ * @category   Zend2
+ * @package    Zend2_PDF
  * @subpackage FileParser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\BinaryParser\Font\OpenType;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
+namespace Zend2\Pdf\BinaryParser\Font\OpenType;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
 
 /**
  * Parses an OpenType font file containing TrueType outlines.
  *
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\BinaryParser\Font\OpenType\AbstractOpenType
- * @uses       \Zend\Pdf\Font
- * @package    Zend_PDF
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\BinaryParser\Font\OpenType\AbstractOpenType
+ * @uses       \Zend2\Pdf\Font
+ * @package    Zend2_PDF
  * @subpackage FileParser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class TrueType extends AbstractOpenType
@@ -44,7 +44,7 @@ class TrueType extends AbstractOpenType
     /**
      * Verifies that the font file actually contains TrueType outlines.
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function screen()
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard\XML\EncryptedData;
-use Zend\InfoCard\XML\AbstractElement,
-    Zend\InfoCard\XML;
+namespace Zend2\InfoCard\XML\EncryptedData;
+use Zend2\InfoCard\XML\AbstractElement,
+    Zend2\InfoCard\XML;
 
 /**
  * An XmlEnc formatted EncryptedData XML block
  *
- * @uses       \Zend\InfoCard\XML\EncryptedData\AbstractEncryptedData
- * @uses       \Zend\InfoCard\XML\Exception
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\InfoCard\XML\EncryptedData\AbstractEncryptedData
+ * @uses       \Zend2\InfoCard\XML\Exception
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class XMLEnc extends AbstractEncryptedData
@@ -40,7 +40,7 @@ class XMLEnc extends AbstractEncryptedData
     /**
      * Returns the Encrypted CipherValue block from the EncryptedData XML document
      *
-     * @throws \Zend\InfoCard\XML\Exception
+     * @throws \Zend2\InfoCard\XML\Exception
      * @return string The value of the CipherValue block base64 encoded
      */
     public function getCipherValue()

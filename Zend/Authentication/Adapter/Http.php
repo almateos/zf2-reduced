@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Authentication
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Adapter_HTTP
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Authentication\Adapter;
+namespace Zend2\Authentication\Adapter;
 
-use Zend\Authentication\Adapter as AuthenticationAdapter,
-    Zend\Authentication,
-    Zend\Http\Request as HTTPRequest,
-    Zend\Http\Response as HTTPResponse,
-    Zend\Uri\UriFactory;
+use Zend2\Authentication\Adapter as AuthenticationAdapter,
+    Zend2\Authentication,
+    Zend2\Http\Request as HTTPRequest,
+    Zend2\Http\Response as HTTPResponse,
+    Zend2\Uri\UriFactory;
 
 /**
  * HTTP Authentication Adapter
  *
  * Implements a pretty good chunk of RFC 2617.
  *
- * @uses       Zend\Authentication\Exception
- * @uses       Zend\Authentication\Adapter
- * @category   Zend
- * @package    Zend_Authentication
+ * @uses       Zend2\Authentication\Exception
+ * @uses       Zend2\Authentication\Adapter
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Adapter_Http
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @todo       Support auth-int
  * @todo       Track nonces, nonce-count, opaque for replay protection and stale support
@@ -62,14 +62,14 @@ class Http implements AuthenticationAdapter
     /**
      * Object that looks up user credentials for the Basic scheme
      *
-     * @var Zend\Authentication\Adapter\Http\Resolver
+     * @var Zend2\Authentication\Adapter\Http\Resolver
      */
     protected $_basicResolver;
 
     /**
      * Object that looks up user credentials for the Digest scheme
      *
-     * @var Zend\Authentication\Adapter\Http\Resolver
+     * @var Zend2\Authentication\Adapter\Http\Resolver
      */
     protected $_digestResolver;
 
@@ -164,7 +164,7 @@ class Http implements AuthenticationAdapter
      *    'use_opaque' => <bool> Whether to send the opaque value in the header
      *    'alogrithm' => <string> See $_supportedAlgos. Default: MD5
      *    'proxy_auth' => <bool> Whether to do authentication as a Proxy
-     * @throws Zend\Authentication\Adapter\InvalidArgumentException
+     * @throws Zend2\Authentication\Adapter\InvalidArgumentException
      * @return void
      */
     public function __construct(array $config)
@@ -244,8 +244,8 @@ class Http implements AuthenticationAdapter
     /**
      * Setter for the _basicResolver property
      *
-     * @param  Zend\Authentication\Adapter\Http\Resolver $resolver
-     * @return Zend\Authentication\Adapter\Http Provides a fluent interface
+     * @param  Zend2\Authentication\Adapter\Http\Resolver $resolver
+     * @return Zend2\Authentication\Adapter\Http Provides a fluent interface
      */
     public function setBasicResolver(Http\Resolver $resolver)
     {
@@ -257,7 +257,7 @@ class Http implements AuthenticationAdapter
     /**
      * Getter for the _basicResolver property
      *
-     * @return Zend\Authentication\Adapter\Http\Resolver
+     * @return Zend2\Authentication\Adapter\Http\Resolver
      */
     public function getBasicResolver()
     {
@@ -267,8 +267,8 @@ class Http implements AuthenticationAdapter
     /**
      * Setter for the _digestResolver property
      *
-     * @param  Zend\Authentication\Adapter\Http\Resolver $resolver
-     * @return Zend\Authentication\Adapter\Http Provides a fluent interface
+     * @param  Zend2\Authentication\Adapter\Http\Resolver $resolver
+     * @return Zend2\Authentication\Adapter\Http Provides a fluent interface
      */
     public function setDigestResolver(Http\Resolver $resolver)
     {
@@ -280,7 +280,7 @@ class Http implements AuthenticationAdapter
     /**
      * Getter for the _digestResolver property
      *
-     * @return Zend\Authentication\Adapter\Http\Resolver
+     * @return Zend2\Authentication\Adapter\Http\Resolver
      */
     public function getDigestResolver()
     {
@@ -336,8 +336,8 @@ class Http implements AuthenticationAdapter
     /**
      * Authenticate
      *
-     * @throws Zend\Authentication\Adapter\Exception\RuntimeException
-     * @return Zend\Authentication\Result
+     * @throws Zend2\Authentication\Adapter\Exception\RuntimeException
+     * @return Zend2\Authentication\Result
      */
     public function authenticate()
     {
@@ -401,7 +401,7 @@ class Http implements AuthenticationAdapter
      * Sets a 401 or 407 Unauthorized response code, and creates the
      * appropriate Authenticate header(s) to prompt for credentials.
      *
-     * @return Zend\Authentication\Result Always returns a non-identity Auth result
+     * @return Zend2\Authentication\Result Always returns a non-identity Auth result
      */
     protected function _challengeClient()
     {
@@ -467,8 +467,8 @@ class Http implements AuthenticationAdapter
      * Basic Authentication
      *
      * @param  string $header Client's Authorization header
-     * @throws Zend\Authentication\UnexpectedValueException
-     * @return Zend\Authentication\Result
+     * @throws Zend2\Authentication\UnexpectedValueException
+     * @return Zend2\Authentication\Result
      */
     protected function _basicAuth($header)
     {
@@ -514,8 +514,8 @@ class Http implements AuthenticationAdapter
      * Digest Authentication
      *
      * @param  string $header Client's Authorization header
-     * @throws Zend\Authentication\Adapter\Exception\UnexpectedValueException
-     * @return Zend\Authentication\Result Valid auth result only on successful auth
+     * @throws Zend2\Authentication\Adapter\Exception\UnexpectedValueException
+     * @return Zend2\Authentication\Result Valid auth result only on successful auth
      */
     protected function _digestAuth($header)
     {

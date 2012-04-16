@@ -1,7 +1,7 @@
 <?php
 
-namespace Zend\Amf\Parser;
+namespace Zend2\Amf\Parser;
 
-interface Exception extends \Zend\Amf\Exception
+interface Exception extends \Zend2\Amf\Exception
 {
 }

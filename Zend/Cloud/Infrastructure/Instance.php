@@ -1,23 +1,23 @@
 <?php
 /**
- * @category   Zend
- * @package    Zend\Cloud
+ * @category   Zend2
+ * @package    Zend2\Cloud
  * @subpackage Infrastructure
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * namespace
  */
-namespace Zend\Cloud\Infrastructure;
+namespace Zend2\Cloud\Infrastructure;
 
 /**
  * Instance of an infrastructure service
  *
- * @package    Zend\Cloud
+ * @package    Zend2\Cloud
  * @subpackage Infrastructure
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Instance 
@@ -56,7 +56,7 @@ class Instance
     const SSH_PASSPHRASE       = 'passphrase';
 
     /**
-     * @var Zend\Cloud\Infrastructure\Adapter
+     * @var Zend2\Cloud\Infrastructure\Adapter
      */
     protected $adapter;
 
@@ -91,7 +91,7 @@ class Instance
     public function __construct(Adapter $adapter, $data = null)
     {
         if (!($adapter instanceof Adapter)) {
-            throw new Exception\InvalidArgumentException("You must pass a Zend\Cloud\Infrastructure\Adapter instance");
+            throw new Exception\InvalidArgumentException("You must pass a Zend2\Cloud\Infrastructure\Adapter instance");
         }
 
         if (is_object($data)) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Rest
+ * @category   Zend2
+ * @package    Zend2_Rest
  * @subpackage Client
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Rest\Client;
+namespace Zend2\Rest\Client;
 
 /**
  * @uses       IteratorAggregate
- * @uses       \Zend\Rest\Client\Exception\ResultException
- * @category   Zend
- * @package    Zend_Rest
+ * @uses       \Zend2\Rest\Client\Exception\ResultException
+ * @category   Zend2
+ * @package    Zend2_Rest
  * @subpackage Client
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Result implements \IteratorAggregate 
@@ -47,7 +47,7 @@ class Result implements \IteratorAggregate
      * Constructor
      *
      * @param string $data XML Result
-     * @throws \Zend\Rest\Client\Exception\ResultException
+     * @throws \Zend2\Rest\Client\Exception\ResultException
      * @return void
      */
     public function __construct($data)
@@ -98,7 +98,7 @@ class Result implements \IteratorAggregate
      * Get Property Overload
      *
      * @param string $name
-     * @return null|SimpleXMLElement|array Null if not found, SimpleXMLElement if only one value found, array of \Zend\Rest\Client\Result objects otherwise
+     * @return null|SimpleXMLElement|array Null if not found, SimpleXMLElement if only one value found, array of \Zend2\Rest\Client\Result objects otherwise
      */
     public function __get($name)
     {

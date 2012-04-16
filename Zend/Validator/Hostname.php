@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
+namespace Zend2\Validator;
 
 /**
  * Please note there are two standalone test scripts for testing IDN characters due to problems
  * with file encoding.
  *
- * The first is tests/Zend/Validator/HostnameTestStandalone.php which is designed to be run on
+ * The first is tests/Zend2/Validator/HostnameTestStandalone.php which is designed to be run on
  * the command line.
  *
- * The second is tests/Zend/Validator/HostnameTestForm.php which is designed to be run via HTML
+ * The second is tests/Zend2/Validator/HostnameTestForm.php which is designed to be run via HTML
  * to allow users to test entering UTF-8 characters in a form.
  *
- * @uses       \Zend\Validator\AbstractValidator
- * @uses       \Zend\Validator\Ip
- * @category   Zend
- * @package    Zend_Validator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Validator\AbstractValidator
+ * @uses       \Zend2\Validator\Ip
+ * @category   Zend2
+ * @package    Zend2_Validator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Hostname extends AbstractValidator
@@ -323,7 +323,7 @@ class Hostname extends AbstractValidator
      * @param integer           $allow       OPTIONAL Set what types of hostname to allow (default ALLOW_DNS)
      * @param boolean           $validateIdn OPTIONAL Set whether IDN domains are validated (default true)
      * @param boolean           $validateTld OPTIONAL Set whether the TLD element of a hostname is validated (default true)
-     * @param \Zend\Validator\Ip $ipValidator OPTIONAL
+     * @param \Zend2\Validator\Ip $ipValidator OPTIONAL
      * @return void
      * @see http://www.iana.org/cctld/specifications-policies-cctlds-01apr02.htm  Technical Specifications for ccTLDs
      */
@@ -357,7 +357,7 @@ class Hostname extends AbstractValidator
     /**
      * Returns the set ip validator
      *
-     * @return \Zend\Validator\Ip
+     * @return \Zend2\Validator\Ip
      */
     public function getIpValidator()
     {
@@ -365,7 +365,7 @@ class Hostname extends AbstractValidator
     }
 
     /**
-     * @param \Zend\Validator\Ip $ipValidator OPTIONAL
+     * @param \Zend2\Validator\Ip $ipValidator OPTIONAL
      * @return void;
      */
     public function setIpValidator(Ip $ipValidator = null)
@@ -392,7 +392,7 @@ class Hostname extends AbstractValidator
      * Sets the allow option
      *
      * @param  integer $allow
-     * @return \Zend\Validator\Hostname Provides a fluent interface
+     * @return \Zend2\Validator\Hostname Provides a fluent interface
      */
     public function setAllow($allow)
     {
@@ -447,12 +447,12 @@ class Hostname extends AbstractValidator
     }
 
     /**
-     * Defined by \Zend\Validator\Interface
+     * Defined by \Zend2\Validator\Interface
      *
      * Returns true if and only if the $value is a valid hostname with respect to the current allow option
      *
      * @param  string $value
-     * @throws \Zend\Validator\Exception if a fatal error occurs for validation process
+     * @throws \Zend2\Validator\Exception if a fatal error occurs for validation process
      * @return boolean
      */
     public function isValid($value)
@@ -525,7 +525,7 @@ class Hostname extends AbstractValidator
                     /**
                      * Match against IDN hostnames
                      * Note: Keep label regex short to avoid issues with long patterns when matching IDN hostnames
-                     * @see \Zend\Validator\Hostname\Interface
+                     * @see \Zend2\Validator\Hostname\Interface
                      */
                     $regexChars = array(0 => '/^[a-z0-9\x2d]{1,63}$/i');
                     if ($this->getIdnCheck() &&  isset($this->_validIdns[strtoupper($this->_tld)])) {

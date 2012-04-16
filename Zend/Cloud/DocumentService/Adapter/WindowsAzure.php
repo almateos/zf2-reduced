@@ -10,33 +10,33 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Cloud\DocumentService
+ * @category   Zend2
+ * @package    Zend2\Cloud\DocumentService
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * namespace
  */
-namespace Zend\Cloud\DocumentService\Adapter;
+namespace Zend2\Cloud\DocumentService\Adapter;
 
-use Zend\Cloud\DocumentService\Adapter\AbstractAdapter,
-    Zend\Service\WindowsAzure\Storage,
-    Zend\Service\WindowsAzure\Storage\Table,
-    Zend\Service\WindowsAzure\Storage\DynamicTableEntity,
-    Zend\Service\DocumentService\Document,
-    Zend\Config\Config;
+use Zend2\Cloud\DocumentService\Adapter\AbstractAdapter,
+    Zend2\Service\WindowsAzure\Storage,
+    Zend2\Service\WindowsAzure\Storage\Table,
+    Zend2\Service\WindowsAzure\Storage\DynamicTableEntity,
+    Zend2\Service\DocumentService\Document,
+    Zend2\Config\Config;
 
 
 /**
  * WindowsAzure adapter for document service.
  *
- * @category   Zend
- * @package    Zend\Cloud\DocumentService
+ * @category   Zend2
+ * @package    Zend2\Cloud\DocumentService
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class WindowsAzure extends AbstractAdapter
@@ -58,12 +58,12 @@ class WindowsAzure extends AbstractAdapter
     const TIMESTAMP_KEY         = "Timestamp";
 
     const DEFAULT_HOST          = Storage::URL_CLOUD_TABLE;
-    const DEFAULT_QUERY_CLASS   = '\Zend\Cloud\DocumentService\Adapter\WindowsAzure\Query';
+    const DEFAULT_QUERY_CLASS   = '\Zend2\Cloud\DocumentService\Adapter\WindowsAzure\Query';
 
     /**
      * Azure  service instance.
      *
-     * @var Zend\Service\WindowsAzure\Storage\Table
+     * @var Zend2\Service\WindowsAzure\Storage\Table
      */
     protected $_storageClient;
 
@@ -72,7 +72,7 @@ class WindowsAzure extends AbstractAdapter
      *
      * @var string
      */
-    protected $_queryClass = '\Zend\Cloud\DocumentService\Adapter\WindowsAzure\Query';
+    protected $_queryClass = '\Zend2\Cloud\DocumentService\Adapter\WindowsAzure\Query';
 
     /**
      * Partition key to use by default when constructing document identifiers
@@ -112,7 +112,7 @@ class WindowsAzure extends AbstractAdapter
             $this->setQueryClass($options[self::QUERY_CLASS]);
         }
 
-        // Build Zend\Service\WindowsAzure\Storage\Blob instance
+        // Build Zend2\Service\WindowsAzure\Storage\Blob instance
         if (!isset($options[self::HOST])) {
             $host = self::DEFAULT_HOST;
         } else {
@@ -129,7 +129,7 @@ class WindowsAzure extends AbstractAdapter
 
         // TODO: support $usePathStyleUri and $retryPolicy
         try {
-            $this->_storageClient = new Zend\Service\WindowsAzure\Storage\Table(
+            $this->_storageClient = new Zend2\Service\WindowsAzure\Storage\Table(
                     $host, $options[self::ACCOUNT_NAME], $options[self::ACCOUNT_KEY]);
             // Parse other options
             if (! empty($options[self::PROXY_HOST])) {
@@ -141,7 +141,7 @@ class WindowsAzure extends AbstractAdapter
             if (isset($options[self::HTTP_ADAPTER])) {
                 $this->_storageClient->setHttpClientChannel($options[self::HTTP_ADAPTER]);
             }
-        } catch(Zend\Service\WindowsAzure\Exception $e) {
+        } catch(Zend2\Service\WindowsAzure\Exception $e) {
             throw new Exception\RuntimeException('Error on document service creation: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -150,7 +150,7 @@ class WindowsAzure extends AbstractAdapter
      * Set the default partition key
      *
      * @param  string $key
-     * @return Zend\Cloud\DocumentService\Adapter\WindowsAzure
+     * @return Zend2\Cloud\DocumentService\Adapter\WindowsAzure
      */
     public function setDefaultPartitionKey($key)
     {
@@ -183,7 +183,7 @@ class WindowsAzure extends AbstractAdapter
         }
         try {
             $this->_storageClient->createTable($name);
-        } catch(Zend\Service\WindowsAzure\Exception $e) {
+        } catch(Zend2\Service\WindowsAzure\Exception $e) {
             if (strpos($e->getMessage(), "table specified already exists") === false) {
                 throw new Exception\RunTimeException('Error on collection creation: '.$e->getMessage(), $e->getCode(), $e);
             }
@@ -202,7 +202,7 @@ class WindowsAzure extends AbstractAdapter
     {
         try {
             $this->_storageClient->deleteTable($name);
-        } catch(Zend\Service\WindowsAzure\Exception $e) {
+        } catch(Zend2\Service\WindowsAzure\Exception $e) {
             if (strpos($e->getMessage(), "does not exist") === false) {
                 throw new Exception\RuntimeException('Error on collection deletion: '.$e->getMessage(), $e->getCode(), $e);
             }
@@ -225,7 +225,7 @@ class WindowsAzure extends AbstractAdapter
                 $restables[] = $table->name;
             }
             return $restables;
-        } catch(Zend\Service\WindowsAzure\Exception $e) {
+        } catch(Zend2\Service\WindowsAzure\Exception $e) {
             throw new Exception\RuntimeException('Error on collection list: '.$e->getMessage(), $e->getCode(), $e);
         }
 
@@ -237,7 +237,7 @@ class WindowsAzure extends AbstractAdapter
      *
      * @param  array $document
      * @param  null|string $collectionName Collection to which this document belongs
-     * @return Zend\Cloud\DocumentService\Document
+     * @return Zend2\Cloud\DocumentService\Document
      */
     protected function _getDocumentFromArray($document, $collectionName = null)
     {
@@ -269,7 +269,7 @@ class WindowsAzure extends AbstractAdapter
      *
      * @param  string $collectionName
      * @param  null|array $options
-     * @return Zend\Cloud\DocumentService\DocumentSet
+     * @return Zend2\Cloud\DocumentService\DocumentSet
      */
     public function listDocuments($collectionName, array $options = null)
     {
@@ -280,7 +280,7 @@ class WindowsAzure extends AbstractAdapter
     /**
      * Insert document
      *
-     * @param  array|Zend\Cloud\DocumentService\Document $document
+     * @param  array|Zend2\Cloud\DocumentService\Document $document
      * @param  array $options
      * @return boolean
      */
@@ -290,7 +290,7 @@ class WindowsAzure extends AbstractAdapter
             $document =  $this->_getDocumentFromArray($document, $collectionName);
         }
 
-        if (!$document instanceof Zend\Cloud\DocumentService\Document) {
+        if (!$document instanceof Zend2\Cloud\DocumentService\Document) {
             throw new Exception\InvalidArgumentException('Invalid document supplied');
         }
 
@@ -304,7 +304,7 @@ class WindowsAzure extends AbstractAdapter
             $entity = new DynamicTableEntity($key[0], $key[1]);
             $entity->setAzureValues($document->getFields(), true);
             $this->_storageClient->insertEntity($collectionName, $entity);
-        } catch(Zend\Service\WindowsAzure\Exception $e) {
+        } catch(Zend2\Service\WindowsAzure\Exception $e) {
             throw new Exception\RuntimeException('Error on document insertion: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -314,7 +314,7 @@ class WindowsAzure extends AbstractAdapter
      *
      * The new document replaces the existing document.
      *
-     * @param  Zend\Cloud\DocumentService\Document $document
+     * @param  Zend2\Cloud\DocumentService\Document $document
      * @param  array $options
      * @return boolean
      */
@@ -324,7 +324,7 @@ class WindowsAzure extends AbstractAdapter
             $document = $this->_getDocumentFromArray($document, $collectionName);
         }
 
-        if (!$document instanceof Zend\Cloud\DocumentService\Document) {
+        if (!$document instanceof Zend2\Cloud\DocumentService\Document) {
             throw new Exception\InvalidArgumentException('Invalid document supplied');
         }
 
@@ -338,7 +338,7 @@ class WindowsAzure extends AbstractAdapter
             }
 
             $this->_storageClient->updateEntity($collectionName, $entity, isset($options[self::VERIFY_ETAG]));
-        } catch(Zend\Service\WindowsAzure\Exception $e) {
+        } catch(Zend2\Service\WindowsAzure\Exception $e) {
             throw new Exception\RuntimeException('Error on document replace: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -349,17 +349,17 @@ class WindowsAzure extends AbstractAdapter
      * The new document is merged the existing document.
      *
      * @param  string $collectionName
-     * @param  mixed|Zend\Cloud\DocumentService\Document $documentId Document identifier or document contaiing updates
-     * @param  null|array|Zend\Cloud\DocumentService\Document Fields to update (or new fields))
+     * @param  mixed|Zend2\Cloud\DocumentService\Document $documentId Document identifier or document contaiing updates
+     * @param  null|array|Zend2\Cloud\DocumentService\Document Fields to update (or new fields))
      * @param  array $options
      * @return boolean
      */
     public function updateDocument($collectionName, $documentId, $fieldset = null, $options = null)
     {
-        if (null === $fieldset && $documentId instanceof Zend\Cloud\DocumentService\Document) {
+        if (null === $fieldset && $documentId instanceof Zend2\Cloud\DocumentService\Document) {
             $fieldset   = $documentId->getFields();
             $documentId = $documentId->getId();
-        } elseif ($fieldset instanceof Zend\Cloud\DocumentService\Document) {
+        } elseif ($fieldset instanceof Zend2\Cloud\DocumentService\Document) {
             if ($documentId == null) {
                 $documentId = $fieldset->getId();
             }
@@ -383,7 +383,7 @@ class WindowsAzure extends AbstractAdapter
             }
 
             $this->_storageClient->mergeEntity($collectionName, $entity, isset($options[self::VERIFY_ETAG]));
-        } catch(Zend\Service\WindowsAzure\Exception $e) {
+        } catch(Zend2\Service\WindowsAzure\Exception $e) {
             throw new Exception\RuntimeException('Error on document update: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -397,7 +397,7 @@ class WindowsAzure extends AbstractAdapter
      */
     public function deleteDocument($collectionName, $documentId, $options = null)
     {
-        if ($documentId instanceof Zend\Cloud\DocumentService\Document) {
+        if ($documentId instanceof Zend2\Cloud\DocumentService\Document) {
             $documentId = $documentId->getId();
         }
 
@@ -409,7 +409,7 @@ class WindowsAzure extends AbstractAdapter
                 $entity->setEtag($options[self::VERIFY_ETAG]);
             }
             $this->_storageClient->deleteEntity($collectionName, $entity, isset($options[self::VERIFY_ETAG]));
-        } catch(Zend\Service\WindowsAzure\Exception $e) {
+        } catch(Zend2\Service\WindowsAzure\Exception $e) {
             if (strpos($e->getMessage(), "does not exist") === false) {
                 throw new Exception\RuntimeException('Error on document deletion: '.$e->getMessage(), $e->getCode(), $e);
             }
@@ -422,7 +422,7 @@ class WindowsAzure extends AbstractAdapter
      * @param  string $collectionName Collection name
      * @param  mixed $documentId Document ID, adapter-dependent
      * @param  array $options
-     * @return Zend\Cloud\DocumentService\Document
+     * @return Zend2\Cloud\DocumentService\Document
      */
     public function fetchDocument($collectionName, $documentId, $options = null)
     {
@@ -431,7 +431,7 @@ class WindowsAzure extends AbstractAdapter
             $entity = $this->_storageClient->retrieveEntityById($collectionName, $documentId[0], $documentId[1]);
             $documentClass = $this->getDocumentClass();
             return new $documentClass($this->_resolveAttributes($entity), array($entity->getPartitionKey(), $entity->getRowKey()));
-        } catch (Zend\Service\WindowsAzure\Exception $e) {
+        } catch (Zend2\Service\WindowsAzure\Exception $e) {
             if (strpos($e->getMessage(), "does not exist") !== false) {
                 return false;
             }
@@ -444,14 +444,14 @@ class WindowsAzure extends AbstractAdapter
      * $query, the query string will be passed directly to the service.
      *
      * @param  string $collectionName Collection name
-     * @param  string|Zend\Cloud\DocumentService\Adapter\WindowsAzure\Query $query
+     * @param  string|Zend2\Cloud\DocumentService\Adapter\WindowsAzure\Query $query
      * @param  array $options
-     * @return array Zend\Cloud\DocumentService\DocumentSet
+     * @return array Zend2\Cloud\DocumentService\DocumentSet
      */
     public function query($collectionName, $query, $options = null)
     {
         try {
-            if ($query instanceof Zend\Cloud\DocumentService\Adapter\WindowsAzure\Query) {
+            if ($query instanceof Zend2\Cloud\DocumentService\Adapter\WindowsAzure\Query) {
                 $entities = $this->_storageClient->retrieveEntities($query->assemble());
             } else {
                 $entities = $this->_storageClient->retrieveEntities($collectionName, $query);
@@ -465,7 +465,7 @@ class WindowsAzure extends AbstractAdapter
                     array($entity->getPartitionKey(), $entity->getRowKey())
                 );
             }
-        } catch(Zend\Service\WindowsAzure\Exception $e) {
+        } catch(Zend2\Service\WindowsAzure\Exception $e) {
             throw new Exception\RuntimeException('Error on document query: '.$e->getMessage(), $e->getCode(), $e);
         }
 
@@ -476,7 +476,7 @@ class WindowsAzure extends AbstractAdapter
     /**
      * Create query statement
      *
-     * @return Zend\Cloud\DocumentService\Query
+     * @return Zend2\Cloud\DocumentService\Query
      */
     public function select($fields = null)
     {
@@ -495,7 +495,7 @@ class WindowsAzure extends AbstractAdapter
     /**
      * Get the concrete service client
      *
-     * @return Zend\Service\WindowsAzure\Storage\Table
+     * @return Zend2\Service\WindowsAzure\Storage\Table
      */
     public function getClient()
     {
@@ -505,10 +505,10 @@ class WindowsAzure extends AbstractAdapter
     /**
      * Resolve table values to attributes
      *
-     * @param  Zend\Service\WindowsAzure\Storage\TableEntity $entity
+     * @param  Zend2\Service\WindowsAzure\Storage\TableEntity $entity
      * @return array
      */
-    protected function _resolveAttributes(Zend\Service\WindowsAzure\Storage\TableEntity $entity)
+    protected function _resolveAttributes(Zend2\Service\WindowsAzure\Storage\TableEntity $entity)
     {
         $result = array();
         foreach ($entity->getAzureValues() as $attr) {
@@ -523,7 +523,7 @@ class WindowsAzure extends AbstractAdapter
      *
      * @param  string $key
      * @return void
-     * @throws Zend\Cloud\DocumentService\Exception\InvalidArgumentException
+     * @throws Zend2\Cloud\DocumentService\Exception\InvalidArgumentException
      */
     protected function _validateKey($key)
     {
@@ -536,7 +536,7 @@ class WindowsAzure extends AbstractAdapter
      * Validate a composite key
      *
      * @param  array $key
-     * @return throws Zend\Cloud\DocumentService\Exception\InvalidArgumentException
+     * @return throws Zend2\Cloud\DocumentService\Exception\InvalidArgumentException
      */
     protected function _validateCompositeKey(array $key)
     {
@@ -561,7 +561,7 @@ class WindowsAzure extends AbstractAdapter
      * @param  array|string $documentId
      * @param  null|string $collectionName
      * @return array
-     * @throws Zend\Cloud\DocumentService\Exception
+     * @throws Zend2\Cloud\DocumentService\Exception
      */
     protected function _validateDocumentId($documentId, $collectionName = false)
     {
@@ -590,13 +590,13 @@ class WindowsAzure extends AbstractAdapter
      * Since Azure uses Atom, and fieldnames are included as part of XML
      * element tag names, the field names must be valid XML names.
      *
-     * @param  Zend\Cloud\DocumentService\Document|array $document
+     * @param  Zend2\Cloud\DocumentService\Document|array $document
      * @return void
-     * @throws Zend\Cloud\DocumentService\Exception
+     * @throws Zend2\Cloud\DocumentService\Exception
      */
     public function _validateFields($document)
     {
-        if ($document instanceof Zend\Cloud\DocumentService\Document) {
+        if ($document instanceof Zend2\Cloud\DocumentService\Document) {
             $document = $document->getFields();
         } elseif (!is_array($document)) {
             throw new Exception\RuntimeException('Cannot inspect fields; invalid type provided');
@@ -619,7 +619,7 @@ class WindowsAzure extends AbstractAdapter
      *
      * @param  string $key
      * @return void
-     * @throws Zend\Cloud\DocumentService\Exception\InvalidArgumentException
+     * @throws Zend2\Cloud\DocumentService\Exception\InvalidArgumentException
      */
     public function _validateFieldKey($key)
     {

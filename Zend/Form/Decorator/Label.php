@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form\Decorator;
+namespace Zend2\Form\Decorator;
 
 /**
- * Zend_Form_Decorator_Label
+ * Zend2_Form_Decorator_Label
  *
  * Accepts the options:
  * - separator: separator to use between label and content (defaults to PHP_EOL)
@@ -35,13 +35,13 @@ namespace Zend\Form\Decorator;
  *
  * Any other options passed will be used as HTML attributes of the label tag.
  *
- * @uses       \Zend\Form\Decorator\AbstractDecorator
- * @uses       \Zend\Form\Decorator\HtmlTag
- * @uses       \Zend\Form\Decorator\Exception
- * @category   Zend
- * @package    Zend_Form
+ * @uses       \Zend2\Form\Decorator\AbstractDecorator
+ * @uses       \Zend2\Form\Decorator\HtmlTag
+ * @uses       \Zend2\Form\Decorator\Exception
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Label extends AbstractDecorator
@@ -62,7 +62,7 @@ class Label extends AbstractDecorator
      * Set element ID
      *
      * @param  string $id
-     * @return \Zend\Form\Decorator\Label
+     * @return \Zend2\Form\Decorator\Label
      */
     public function setId($id)
     {
@@ -95,7 +95,7 @@ class Label extends AbstractDecorator
      * Set HTML tag with which to surround label
      *
      * @param  string $tag
-     * @return \Zend\Form\Decorator\Label
+     * @return \Zend2\Form\Decorator\Label
      */
     public function setTag($tag)
     {
@@ -191,7 +191,7 @@ class Label extends AbstractDecorator
      * @param  string $method
      * @param  array $args
      * @return mixed
-     * @throws \Zend\Form\Decorator\Exception for unsupported methods
+     * @throws \Zend2\Form\Decorator\Exception for unsupported methods
      */
     public function __call($method, $args)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Reader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Reader
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
  
-namespace Zend\Feed\Reader\Entry;
-use Zend\Feed\Reader;
-use Zend\Feed\Reader\Exception;
+namespace Zend2\Feed\Reader\Entry;
+use Zend2\Feed\Reader;
+use Zend2\Feed\Reader\Exception;
 
 /**
-* @uses \Zend\Feed\Reader\Exception
-* @uses \Zend\Feed\Reader\Reader
-* @category Zend
-* @package Zend_Feed_Reader
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @uses \Zend2\Feed\Reader\Exception
+* @uses \Zend2\Feed\Reader\Reader
+* @category Zend2
+* @package Zend2_Feed_Reader
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 abstract class AbstractEntry
@@ -49,7 +49,7 @@ abstract class AbstractEntry
     /**
      * Entry instance
      *
-     * @var Zend_Feed_Entry_Interface
+     * @var Zend2_Feed_Entry_Interface
      */
     protected $_entry = null;
 
@@ -169,7 +169,7 @@ abstract class AbstractEntry
      * Set the XPath query
      *
      * @param  DOMXPath $xpath
-     * @return Zend_Feed_Reader_Entry_EntryAbstract
+     * @return Zend2_Feed_Reader_Entry_EntryAbstract
      */
     public function setXpath(\DOMXPath $xpath)
     {
@@ -191,7 +191,7 @@ abstract class AbstractEntry
      * Return an Extension object with the matching name (postfixed with _Entry)
      *
      * @param string $name
-     * @return Zend_Feed_Reader_Extension_EntryAbstract
+     * @return Zend2_Feed_Reader_Extension_EntryAbstract
      */
     public function getExtension($name)
     {
@@ -207,7 +207,7 @@ abstract class AbstractEntry
      * @param  string $method
      * @param  array $args
      * @return mixed
-     * @throws Zend_Feed_Exception if no extensions implements the method
+     * @throws Zend2_Feed_Exception if no extensions implements the method
      */
     public function __call($method, $args)
     {
@@ -221,7 +221,7 @@ abstract class AbstractEntry
     }
 
     /**
-     * Load extensions from Zend_Feed_Reader
+     * Load extensions from Zend2_Feed_Reader
      *
      * @return void
      */

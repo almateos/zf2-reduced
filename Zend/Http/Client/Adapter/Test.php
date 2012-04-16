@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Http
+ * @category   Zend2
+ * @package    Zend2_Http
  * @subpackage Client_Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Http\Client\Adapter;
-use Zend\Http\Client\Adapter as HttpAdapter,
-    Zend\Http\Client\Adapter\Exception as AdapterException,
-    Zend\Http\Response;
+namespace Zend2\Http\Client\Adapter;
+use Zend2\Http\Client\Adapter as HttpAdapter,
+    Zend2\Http\Client\Adapter\Exception as AdapterException,
+    Zend2\Http\Response;
 
 /**
  * A testing-purposes adapter.
  *
- * Should be used to test all components that rely on Zend_Http_Client,
+ * Should be used to test all components that rely on Zend2_Http_Client,
  * without actually performing an HTTP request. You should instantiate this
  * object manually, and then set it as the client's adapter. Then, you can
  * set the expected response using the setResponse() method.
  *
- * @category   Zend
- * @package    Zend_Http
+ * @category   Zend2
+ * @package    Zend2_Http
  * @subpackage Client_Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Test implements HttpAdapter
@@ -80,7 +80,7 @@ class Test implements HttpAdapter
      * Set the nextRequestWillFail flag
      *
      * @param boolean $flag
-     * @return \Zend\Http\Client\Adapter\Test
+     * @return \Zend2\Http\Client\Adapter\Test
      */
     public function setNextRequestWillFail($flag)
     {
@@ -92,16 +92,16 @@ class Test implements HttpAdapter
     /**
      * Set the configuration array for the adapter
      *
-     * @param \Zend\Config\Config | array $config
+     * @param \Zend2\Config\Config | array $config
      */
     public function setConfig($config = array())
     {
-        if ($config instanceof \Zend\Config\Config) {
+        if ($config instanceof \Zend2\Config\Config) {
             $config = $config->toArray();
 
         } elseif (! is_array($config)) {
             throw new AdapterException\InvalidArgumentException(
-                'Array or Zend\Config\Config object expected, got ' . gettype($config)
+                'Array or Zend2\Config\Config object expected, got ' . gettype($config)
             );
         }
 
@@ -118,7 +118,7 @@ class Test implements HttpAdapter
      * @param int     $port
      * @param boolean $secure
      * @param int     $timeout
-     * @throws \Zend\Http\Client\Adapter\Exception
+     * @throws \Zend2\Http\Client\Adapter\Exception
      */
     public function connect($host, $port = 80, $secure = false)
     {
@@ -132,7 +132,7 @@ class Test implements HttpAdapter
      * Send request to the remote server
      *
      * @param string        $method
-     * @param \Zend\Uri\Uri $uri
+     * @param \Zend2\Uri\Uri $uri
      * @param string        $http_ver
      * @param array         $headers
      * @param string        $body
@@ -186,7 +186,7 @@ class Test implements HttpAdapter
     /**
      * Set the HTTP response(s) to be returned by this adapter
      *
-     * @param \Zend\Http\Response|array|string $response
+     * @param \Zend2\Http\Response|array|string $response
      */
     public function setResponse($response)
     {
@@ -201,7 +201,7 @@ class Test implements HttpAdapter
     /**
      * Add another response to the response buffer.
      *
-     * @param string \Zend\Http\Response|$response
+     * @param string \Zend2\Http\Response|$response
      */
     public function addResponse($response)
     {

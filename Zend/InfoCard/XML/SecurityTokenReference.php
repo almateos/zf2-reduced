@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard\XML;
+namespace Zend2\InfoCard\XML;
 
 /**
  * Represents a SecurityTokenReference XML block
  *
- * @uses       \Zend\InfoCard\XML\AbstractElement
- * @uses       \Zend\InfoCard\XML\Exception
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\InfoCard\XML\AbstractElement
+ * @uses       \Zend2\InfoCard\XML\Exception
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class SecurityTokenReference extends AbstractElement
@@ -43,8 +43,8 @@ class SecurityTokenReference extends AbstractElement
      * Return an instance of the object based on the input XML
      *
      * @param string $xmlData The SecurityTokenReference XML Block
-     * @return \Zend\InfoCard\XML\SecurityTokenReference
-     * @throws \Zend\InfoCard\XML\Exception
+     * @return \Zend2\InfoCard\XML\SecurityTokenReference
+     * @throws \Zend2\InfoCard\XML\Exception
      */
     static public function getInstance($xmlData)
     {
@@ -62,14 +62,14 @@ class SecurityTokenReference extends AbstractElement
             throw new Exception\InvalidArgumentException("Invalid XML Block provided for SecurityTokenReference");
         }
 
-        return simplexml_load_string($strXmlData, 'Zend\InfoCard\XML\SecurityTokenReference');
+        return simplexml_load_string($strXmlData, 'Zend2\InfoCard\XML\SecurityTokenReference');
     }
 
     /**
      * Return the Key Identifier XML Object
      *
-     * @return \Zend\InfoCard\XML\AbstractElement
-     * @throws \Zend\InfoCard\XML\Exception
+     * @return \Zend2\InfoCard\XML\AbstractElement
+     * @throws \Zend2\InfoCard\XML\Exception
      */
     protected function _getKeyIdentifier()
     {
@@ -87,7 +87,7 @@ class SecurityTokenReference extends AbstractElement
      * Return the Key URI identifying the thumbprint type used
      *
      * @return string The thumbprint type URI
-     * @throws  \Zend\InfoCard\XML\Exception
+     * @throws  \Zend2\InfoCard\XML\Exception
      */
     public function getKeyThumbprintType()
     {
@@ -108,7 +108,7 @@ class SecurityTokenReference extends AbstractElement
      * Return the thumbprint encoding type used as a URI
      *
      * @return string the URI of the thumbprint encoding used
-     * @throws \Zend\InfoCard\XML\Exception
+     * @throws \Zend2\InfoCard\XML\Exception
      */
     public function getKeyThumbprintEncodingType()
     {
@@ -129,7 +129,7 @@ class SecurityTokenReference extends AbstractElement
      *
      * @param bool $decode if true, will return a decoded version of the key
      * @return string the key reference thumbprint, either in binary or encoded form
-     * @throws \Zend\InfoCard\XML\Exception
+     * @throws \Zend2\InfoCard\XML\Exception
      */
     public function getKeyReference($decode = true)
     {

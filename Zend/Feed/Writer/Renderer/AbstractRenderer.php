@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Writer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
  
-namespace Zend\Feed\Writer\Renderer;
-use Zend\Feed\Writer;
+namespace Zend2\Feed\Writer\Renderer;
+use Zend2\Feed\Writer;
 
 /**
-* @uses \Zend\Feed\Exception
-* @uses \Zend\Feed\Writer\Writer
-* @uses \Zend\Version
-* @category Zend
-* @package Zend_Feed_Writer
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @uses \Zend2\Feed\Exception
+* @uses \Zend2\Feed\Writer\Writer
+* @uses \Zend2\Version
+* @category Zend2
+* @package Zend2_Feed_Writer
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 class AbstractRenderer
@@ -135,7 +135,7 @@ class AbstractRenderer
      * Set feed encoding
      * 
      * @param  string $enc 
-     * @return Zend_Feed_Writer_Renderer_RendererAbstract
+     * @return Zend2_Feed_Writer_Renderer_RendererAbstract
      */
     public function setEncoding($enc)
     {
@@ -157,7 +157,7 @@ class AbstractRenderer
      * Indicate whether or not to ignore exceptions
      * 
      * @param  bool $bool 
-     * @return Zend_Feed_Writer_Renderer_RendererAbstract
+     * @return Zend2_Feed_Writer_Renderer_RendererAbstract
      */
     public function ignoreExceptions($bool = true)
     {
@@ -224,7 +224,7 @@ class AbstractRenderer
     }
     
     /**
-     * Load extensions from Zend_Feed_Writer
+     * Load extensions from Zend2_Feed_Writer
      *
      * @return void
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,14 +12,14 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Media
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Media\Extension;
+namespace Zend2\GData\Media\Extension;
 
 /**
  * This class represents the media:group element of Media RSS.
@@ -27,29 +27,29 @@ namespace Zend\GData\Media\Extension;
  * different representations of the same content.  When it exists,
  * it is a child of an Entry (Atom) or Item (RSS).
  *
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\Extension
- * @uses       \Zend\GData\Media
- * @uses       \Zend\GData\Media\Extension\MediaCategory
- * @uses       \Zend\GData\Media\Extension\MediaContent
- * @uses       \Zend\GData\Media\Extension\MediaCopyright
- * @uses       \Zend\GData\Media\Extension\MediaCredit
- * @uses       \Zend\GData\Media\Extension\MediaDescription
- * @uses       \Zend\GData\Media\Extension\MediaHash
- * @uses       \Zend\GData\Media\Extension\MediaKeywords
- * @uses       \Zend\GData\Media\Extension\MediaPlayer
- * @uses       \Zend\GData\Media\Extension\MediaRating
- * @uses       \Zend\GData\Media\Extension\MediaRestriction
- * @uses       \Zend\GData\Media\Extension\MediaText
- * @uses       \Zend\GData\Media\Extension\MediaThumbnail
- * @uses       \Zend\GData\Media\Extension\MediaTitle
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\Extension
+ * @uses       \Zend2\GData\Media
+ * @uses       \Zend2\GData\Media\Extension\MediaCategory
+ * @uses       \Zend2\GData\Media\Extension\MediaContent
+ * @uses       \Zend2\GData\Media\Extension\MediaCopyright
+ * @uses       \Zend2\GData\Media\Extension\MediaCredit
+ * @uses       \Zend2\GData\Media\Extension\MediaDescription
+ * @uses       \Zend2\GData\Media\Extension\MediaHash
+ * @uses       \Zend2\GData\Media\Extension\MediaKeywords
+ * @uses       \Zend2\GData\Media\Extension\MediaPlayer
+ * @uses       \Zend2\GData\Media\Extension\MediaRating
+ * @uses       \Zend2\GData\Media\Extension\MediaRestriction
+ * @uses       \Zend2\GData\Media\Extension\MediaText
+ * @uses       \Zend2\GData\Media\Extension\MediaThumbnail
+ * @uses       \Zend2\GData\Media\Extension\MediaTitle
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Media
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class MediaGroup extends \Zend\GData\Extension
+class MediaGroup extends \Zend2\GData\Extension
 {
 
     protected $_rootElement = 'group';
@@ -66,7 +66,7 @@ class MediaGroup extends \Zend\GData\Extension
     protected $_category = array();
 
     /**
-     * @var \Zend\GData\Media\Extension\MediaCopyright
+     * @var \Zend2\GData\Media\Extension\MediaCopyright
      */
     protected $_copyright = null;
 
@@ -76,7 +76,7 @@ class MediaGroup extends \Zend\GData\Extension
     protected $_credit = array();
 
     /**
-     * @var \Zend\GData\Media\Extension\MediaDescription
+     * @var \Zend2\GData\Media\Extension\MediaDescription
      */
     protected $_description = null;
 
@@ -86,7 +86,7 @@ class MediaGroup extends \Zend\GData\Extension
     protected $_hash = array();
 
     /**
-     * @var \Zend\GData\Media\Extension\MediaKeywords
+     * @var \Zend2\GData\Media\Extension\MediaKeywords
      */
     protected $_keywords = null;
 
@@ -125,7 +125,7 @@ class MediaGroup extends \Zend\GData\Extension
      */
     public function __construct($element = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\Media::$namespaces);
         parent::__construct($element);
     }
 
@@ -279,7 +279,7 @@ class MediaGroup extends \Zend\GData\Extension
 
     /**
      * @param array $value
-     * @return Zend_Gdata_Media_MediaGroup Provides a fluent interface
+     * @return Zend2_Gdata_Media_MediaGroup Provides a fluent interface
      */
     public function setContent($value)
     {
@@ -297,7 +297,7 @@ class MediaGroup extends \Zend\GData\Extension
 
     /**
      * @param array $value
-     * @return \Zend\GData\Media\Extension\MediaGroup
+     * @return \Zend2\GData\Media\Extension\MediaGroup
      */
     public function setCategory($value)
     {
@@ -306,7 +306,7 @@ class MediaGroup extends \Zend\GData\Extension
     }
 
     /**
-     * @return \Zend\GData\Media\Extension\MediaCopyright
+     * @return \Zend2\GData\Media\Extension\MediaCopyright
      */
     public function getCopyright()
     {
@@ -314,8 +314,8 @@ class MediaGroup extends \Zend\GData\Extension
     }
 
     /**
-     * @param \Zend\GData\Media\Extension\MediaCopyright $value
-     * @return \Zend\GData\Media\Extension\MediaGroup
+     * @param \Zend2\GData\Media\Extension\MediaCopyright $value
+     * @return \Zend2\GData\Media\Extension\MediaGroup
      */
     public function setCopyright($value)
     {
@@ -333,7 +333,7 @@ class MediaGroup extends \Zend\GData\Extension
 
     /**
      * @param array $value
-     * @return \Zend\GData\Media\Extension\MediaGroup
+     * @return \Zend2\GData\Media\Extension\MediaGroup
      */
     public function setCredit($value)
     {
@@ -342,7 +342,7 @@ class MediaGroup extends \Zend\GData\Extension
     }
 
     /**
-     * @return \Zend\GData\Media\Extension\MediaTitle
+     * @return \Zend2\GData\Media\Extension\MediaTitle
      */
     public function getTitle()
     {
@@ -350,8 +350,8 @@ class MediaGroup extends \Zend\GData\Extension
     }
 
     /**
-     * @param \Zend\GData\Media\Extension\MediaTitle $value
-     * @return \Zend\GData\Media\Extension\MediaGroup
+     * @param \Zend2\GData\Media\Extension\MediaTitle $value
+     * @return \Zend2\GData\Media\Extension\MediaGroup
      */
     public function setTitle($value)
     {
@@ -360,7 +360,7 @@ class MediaGroup extends \Zend\GData\Extension
     }
 
     /**
-     * @return \Zend\GData\Media\Extension\MediaDescription
+     * @return \Zend2\GData\Media\Extension\MediaDescription
      */
     public function getDescription()
     {
@@ -368,8 +368,8 @@ class MediaGroup extends \Zend\GData\Extension
     }
 
     /**
-     * @param \Zend\GData\Media\Extension\MediaDescription $value
-     * @return \Zend\GData\Media\Extension\MediaGroup
+     * @param \Zend2\GData\Media\Extension\MediaDescription $value
+     * @return \Zend2\GData\Media\Extension\MediaGroup
      */
     public function setDescription($value)
     {
@@ -387,7 +387,7 @@ class MediaGroup extends \Zend\GData\Extension
 
     /**
      * @param array $value
-     * @return \Zend\GData\Media\Extension\MediaGroup
+     * @return \Zend2\GData\Media\Extension\MediaGroup
      */
     public function setHash($value)
     {
@@ -396,7 +396,7 @@ class MediaGroup extends \Zend\GData\Extension
     }
 
     /**
-     * @return \Zend\GData\Media\Extension\MediaKeywords
+     * @return \Zend2\GData\Media\Extension\MediaKeywords
      */
     public function getKeywords()
     {
@@ -405,7 +405,7 @@ class MediaGroup extends \Zend\GData\Extension
 
     /**
      * @param array $value
-     * @return \Zend\GData\Media\Extension\MediaGroup Provides a fluent interface
+     * @return \Zend2\GData\Media\Extension\MediaGroup Provides a fluent interface
      */
     public function setKeywords($value)
     {
@@ -423,7 +423,7 @@ class MediaGroup extends \Zend\GData\Extension
 
     /**
      * @param array
-     * @return \Zend\GData\Media\Extension\MediaGroup
+     * @return \Zend2\GData\Media\Extension\MediaGroup
      */
     public function setPlayer($value)
     {
@@ -441,7 +441,7 @@ class MediaGroup extends \Zend\GData\Extension
 
     /**
      * @param array
-     * @return \Zend\GData\Media\Extension\MediaGroup
+     * @return \Zend2\GData\Media\Extension\MediaGroup
      */
     public function setRating($value)
     {
@@ -459,7 +459,7 @@ class MediaGroup extends \Zend\GData\Extension
 
     /**
      * @param array
-     * @return \Zend\GData\Media\Extension\MediaGroup
+     * @return \Zend2\GData\Media\Extension\MediaGroup
      */
     public function setRestriction($value)
     {
@@ -477,7 +477,7 @@ class MediaGroup extends \Zend\GData\Extension
 
     /**
      * @param array
-     * @return \Zend\GData\Media\Extension\MediaGroup
+     * @return \Zend2\GData\Media\Extension\MediaGroup
      */
     public function setThumbnail($value)
     {
@@ -495,7 +495,7 @@ class MediaGroup extends \Zend\GData\Extension
 
     /**
      * @param array
-     * @return \Zend\GData\Media\Extension\MediaGroup
+     * @return \Zend2\GData\Media\Extension\MediaGroup
      */
     public function setMediaText($value)
     {

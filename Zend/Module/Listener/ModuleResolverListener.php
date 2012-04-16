@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Module\Listener;
+namespace Zend2\Module\Listener;
 
 class ModuleResolverListener extends AbstractListener
 {

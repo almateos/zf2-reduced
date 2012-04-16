@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,142 +12,142 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Photos
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Photos;
+namespace Zend2\GData\Photos;
 
-use Zend\GData\Photos;
+use Zend2\GData\Photos;
 
 /**
  * Data model class for a Comment Entry.
  *
  * To transfer user entries to and from the servers, including
  * creating new entries, refer to the service class,
- * Zend_Gdata_Photos.
+ * Zend2_Gdata_Photos.
  *
  * This class represents <atom:entry> in the Google Data protocol.
  *
- * @uses       \Zend\GData\App\Extension\Category
- * @uses       \Zend\GData\EXIF\Extension\Tags
- * @uses       \Zend\GData\Geo\Extension\GeoRssWhere
- * @uses       Zend_Gdata_MediaEntry
- * @uses       \Zend\GData\Photos
- * @uses       \Zend\GData\Photos\Extension\AlbumId
- * @uses       \Zend\GData\Photos\Extension\Checksum
- * @uses       \Zend\GData\Photos\Extension\Client
- * @uses       \Zend\GData\Photos\Extension\CommentCount
- * @uses       \Zend\GData\Photos\Extension\CommentingEnabled
- * @uses       \Zend\GData\Photos\Extension\Height
- * @uses       \Zend\GData\Photos\Extension\Id
- * @uses       \Zend\GData\Photos\Extension\PhotoId
- * @uses       \Zend\GData\Photos\Extension\Size
- * @uses       \Zend\GData\Photos\Extension\Timestamp
- * @uses       \Zend\GData\Photos\Extension\Version
- * @uses       \Zend\GData\Photos\Extension\Width
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Extension\Category
+ * @uses       \Zend2\GData\EXIF\Extension\Tags
+ * @uses       \Zend2\GData\Geo\Extension\GeoRssWhere
+ * @uses       Zend2_Gdata_MediaEntry
+ * @uses       \Zend2\GData\Photos
+ * @uses       \Zend2\GData\Photos\Extension\AlbumId
+ * @uses       \Zend2\GData\Photos\Extension\Checksum
+ * @uses       \Zend2\GData\Photos\Extension\Client
+ * @uses       \Zend2\GData\Photos\Extension\CommentCount
+ * @uses       \Zend2\GData\Photos\Extension\CommentingEnabled
+ * @uses       \Zend2\GData\Photos\Extension\Height
+ * @uses       \Zend2\GData\Photos\Extension\Id
+ * @uses       \Zend2\GData\Photos\Extension\PhotoId
+ * @uses       \Zend2\GData\Photos\Extension\Size
+ * @uses       \Zend2\GData\Photos\Extension\Timestamp
+ * @uses       \Zend2\GData\Photos\Extension\Version
+ * @uses       \Zend2\GData\Photos\Extension\Width
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Photos
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class PhotoEntry extends \Zend\GData\Media\Entry
+class PhotoEntry extends \Zend2\GData\Media\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\Photos\PhotoEntry';
+    protected $_entryClassName = 'Zend2\GData\Photos\PhotoEntry';
 
     /**
      * gphoto:id element
      *
-     * @var \Zend\GData\Photos\Extension\Id
+     * @var \Zend2\GData\Photos\Extension\Id
      */
     protected $_gphotoId = null;
 
     /**
      * gphoto:albumid element
      *
-     * @var \Zend\GData\Photos\Extension\AlbumId
+     * @var \Zend2\GData\Photos\Extension\AlbumId
      */
     protected $_gphotoAlbumId = null;
 
     /**
      * gphoto:version element
      *
-     * @var \Zend\GData\Photos\Extension\Version
+     * @var \Zend2\GData\Photos\Extension\Version
      */
     protected $_gphotoVersion = null;
 
     /**
      * gphoto:width element
      *
-     * @var \Zend\GData\Photos\Extension\Width
+     * @var \Zend2\GData\Photos\Extension\Width
      */
     protected $_gphotoWidth = null;
 
     /**
      * gphoto:height element
      *
-     * @var \Zend\GData\Photos\Extension\Height
+     * @var \Zend2\GData\Photos\Extension\Height
      */
     protected $_gphotoHeight = null;
 
     /**
      * gphoto:size element
      *
-     * @var \Zend\GData\Photos\Extension\Size
+     * @var \Zend2\GData\Photos\Extension\Size
      */
     protected $_gphotoSize = null;
 
     /**
      * gphoto:client element
      *
-     * @var \Zend\GData\Photos\Extension\Client
+     * @var \Zend2\GData\Photos\Extension\Client
      */
     protected $_gphotoClient = null;
 
     /**
      * gphoto:checksum element
      *
-     * @var \Zend\GData\Photos\Extension\Checksum
+     * @var \Zend2\GData\Photos\Extension\Checksum
      */
     protected $_gphotoChecksum = null;
 
     /**
      * gphoto:timestamp element
      *
-     * @var \Zend\GData\Photos\Extension\Timestamp
+     * @var \Zend2\GData\Photos\Extension\Timestamp
      */
     protected $_gphotoTimestamp = null;
 
     /**
      * gphoto:commentCount element
      *
-     * @var \Zend\GData\Photos\Extension\CommentCount
+     * @var \Zend2\GData\Photos\Extension\CommentCount
      */
     protected $_gphotoCommentCount = null;
 
     /**
      * gphoto:commentingEnabled element
      *
-     * @var \Zend\GData\Photos\Extension\CommentingEnabled
+     * @var \Zend2\GData\Photos\Extension\CommentingEnabled
      */
     protected $_gphotoCommentingEnabled = null;
 
     /**
      * exif:tags element
      *
-     * @var \Zend\GData\EXIF\Extension\Tags
+     * @var \Zend2\GData\EXIF\Extension\Tags
      */
     protected $_exifTags = null;
 
     /**
      * georss:where element
      *
-     * @var \Zend\GData\Geo\Extension\GeoRssWhere
+     * @var \Zend2\GData\Geo\Extension\GeoRssWhere
      */
     protected $_geoRssWhere = null;
 
@@ -162,7 +162,7 @@ class PhotoEntry extends \Zend\GData\Media\Entry
         $this->registerAllNamespaces(Photos::$namespaces);
         parent::__construct($element);
 
-        $category = new \Zend\GData\App\Extension\Category(
+        $category = new \Zend2\GData\App\Extension\Category(
             'http://schemas.google.com/photos/2007#photo',
             'http://schemas.google.com/g/2005#kind');
         $this->setCategory(array($category));
@@ -289,12 +289,12 @@ class PhotoEntry extends \Zend\GData\Media\Entry
                 $this->_gphotoCommentCount = $commentCount;
                 break;
             case $this->lookupNamespace('exif') . ':' . 'tags';
-                $exifTags = new \Zend\GData\EXIF\Extension\Tags();
+                $exifTags = new \Zend2\GData\EXIF\Extension\Tags();
                 $exifTags->transferFromDOM($child);
                 $this->_exifTags = $exifTags;
                 break;
             case $this->lookupNamespace('georss') . ':' . 'where';
-                $geoRssWhere = new \Zend\GData\Geo\Extension\GeoRssWhere();
+                $geoRssWhere = new \Zend2\GData\Geo\Extension\GeoRssWhere();
                 $geoRssWhere->transferFromDOM($child);
                 $this->_geoRssWhere = $geoRssWhere;
                 break;
@@ -320,7 +320,7 @@ class PhotoEntry extends \Zend\GData\Media\Entry
      * Set the value for this element's gphoto:albumid attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\AlbumId The element being modified.
+     * @return \Zend2\GData\Photos\Extension\AlbumId The element being modified.
      */
     public function setGphotoAlbumId($value)
     {
@@ -343,7 +343,7 @@ class PhotoEntry extends \Zend\GData\Media\Entry
      * Set the value for this element's gphoto:id attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Id The element being modified.
+     * @return \Zend2\GData\Photos\Extension\Id The element being modified.
      */
     public function setGphotoId($value)
     {
@@ -366,7 +366,7 @@ class PhotoEntry extends \Zend\GData\Media\Entry
      * Set the value for this element's gphoto:version attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Version The element being modified.
+     * @return \Zend2\GData\Photos\Extension\Version The element being modified.
      */
     public function setGphotoVersion($value)
     {
@@ -389,7 +389,7 @@ class PhotoEntry extends \Zend\GData\Media\Entry
      * Set the value for this element's gphoto:width attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Width The element being modified.
+     * @return \Zend2\GData\Photos\Extension\Width The element being modified.
      */
     public function setGphotoWidth($value)
     {
@@ -412,7 +412,7 @@ class PhotoEntry extends \Zend\GData\Media\Entry
      * Set the value for this element's gphoto:height attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Height The element being modified.
+     * @return \Zend2\GData\Photos\Extension\Height The element being modified.
      */
     public function setGphotoHeight($value)
     {
@@ -435,7 +435,7 @@ class PhotoEntry extends \Zend\GData\Media\Entry
      * Set the value for this element's gphoto:size attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Size The element being modified.
+     * @return \Zend2\GData\Photos\Extension\Size The element being modified.
      */
     public function setGphotoSize($value)
     {
@@ -458,7 +458,7 @@ class PhotoEntry extends \Zend\GData\Media\Entry
      * Set the value for this element's gphoto:client attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Client The element being modified.
+     * @return \Zend2\GData\Photos\Extension\Client The element being modified.
      */
     public function setGphotoClient($value)
     {
@@ -481,7 +481,7 @@ class PhotoEntry extends \Zend\GData\Media\Entry
      * Set the value for this element's gphoto:checksum attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Checksum The element being modified.
+     * @return \Zend2\GData\Photos\Extension\Checksum The element being modified.
      */
     public function setGphotoChecksum($value)
     {
@@ -504,7 +504,7 @@ class PhotoEntry extends \Zend\GData\Media\Entry
      * Set the value for this element's gphoto:timestamp attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Timestamp The element being modified.
+     * @return \Zend2\GData\Photos\Extension\Timestamp The element being modified.
      */
     public function setGphotoTimestamp($value)
     {
@@ -527,7 +527,7 @@ class PhotoEntry extends \Zend\GData\Media\Entry
      * Set the value for this element's gphoto:commentCount attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\CommentCount The element being modified.
+     * @return \Zend2\GData\Photos\Extension\CommentCount The element being modified.
      */
     public function setGphotoCommentCount($value)
     {
@@ -550,7 +550,7 @@ class PhotoEntry extends \Zend\GData\Media\Entry
      * Set the value for this element's gphoto:commentingEnabled attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\CommentingEnabled The element being modified.
+     * @return \Zend2\GData\Photos\Extension\CommentingEnabled The element being modified.
      */
     public function setGphotoCommentingEnabled($value)
     {
@@ -573,7 +573,7 @@ class PhotoEntry extends \Zend\GData\Media\Entry
      * Set the value for this element's exif:tags attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\EXIF\Extension\Tags The element being modified.
+     * @return \Zend2\GData\EXIF\Extension\Tags The element being modified.
      */
     public function setExifTags($value)
     {
@@ -596,7 +596,7 @@ class PhotoEntry extends \Zend\GData\Media\Entry
      * Set the value for this element's georss:where attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Geo\Extension\GeoRssWhere The element being modified.
+     * @return \Zend2\GData\Geo\Extension\GeoRssWhere The element being modified.
      */
     public function setGeoRssWhere($value)
     {
@@ -619,7 +619,7 @@ class PhotoEntry extends \Zend\GData\Media\Entry
      * Set the value for this element's media:group attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Media\Extension\MediaGroup The element being modified.
+     * @return \Zend2\GData\Media\Extension\MediaGroup The element being modified.
      */
     public function setMediaGroup($value)
     {

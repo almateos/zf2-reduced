@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Fonts
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Fonts
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Resource\Font\Simple\Standard;
-use Zend\Pdf\InternalType;
-use Zend\Pdf;
+namespace Zend2\Pdf\Resource\Font\Simple\Standard;
+use Zend2\Pdf\InternalType;
+use Zend2\Pdf;
 
 /**
  * Abstract class definition for the standard 14 Type 1 PDF fonts.
@@ -33,34 +33,34 @@ use Zend\Pdf;
  *
  * The standard fonts and the corresponding subclasses that manage them:
  * <ul>
- *  <li>Courier - {@link \Zend\Pdf\Resource\Font\Simple\Standard\Courier}
- *  <li>Courier-Bold - {@link \Zend\Pdf\Resource\Font\Simple\Standard\CourierBold}
- *  <li>Courier-Oblique - {@link \Zend\Pdf\Resource\Font\Simple\Standard\CourierOblique}
- *  <li>Courier-BoldOblique - {@link \Zend\Pdf\Resource\Font\Simple\Standard\CourierBoldOblique}
- *  <li>Helvetica - {@link \Zend\Pdf\Resource\Font\Simple\Standard\Helvetica}
- *  <li>Helvetica-Bold - {@link \Zend\Pdf\Resource\Font\Simple\Standard\HelveticaBold}
- *  <li>Helvetica-Oblique - {@link \Zend\Pdf\Resource\Font\Simple\Standard\HelveticaOblique}
- *  <li>Helvetica-BoldOblique - {@link \Zend\Pdf\Resource\Font\Simple\Standard\HelveticaBoldOblique}
- *  <li>Symbol - {@link \Zend\Pdf\Resource\Font\Simple\Standard\Symbol}
- *  <li>Times - {@link \Zend\Pdf\Resource\Font\Simple\Standard\Times}
- *  <li>Times-Bold - {@link \Zend\Pdf\Resource\Font\Simple\Standard\TimesBold}
- *  <li>Times-Italic - {@link \Zend\Pdf\Resource\Font\Simple\Standard\TimesItalic}
- *  <li>Times-BoldItalic - {@link \Zend\Pdf\Resource\Font\Simple\Standard\TimesBoldItalic}
- *  <li>ZapfDingbats - {@link \Zend\Pdf\Resource\Font\Simple\Standard\ZapfDingbats}
+ *  <li>Courier - {@link \Zend2\Pdf\Resource\Font\Simple\Standard\Courier}
+ *  <li>Courier-Bold - {@link \Zend2\Pdf\Resource\Font\Simple\Standard\CourierBold}
+ *  <li>Courier-Oblique - {@link \Zend2\Pdf\Resource\Font\Simple\Standard\CourierOblique}
+ *  <li>Courier-BoldOblique - {@link \Zend2\Pdf\Resource\Font\Simple\Standard\CourierBoldOblique}
+ *  <li>Helvetica - {@link \Zend2\Pdf\Resource\Font\Simple\Standard\Helvetica}
+ *  <li>Helvetica-Bold - {@link \Zend2\Pdf\Resource\Font\Simple\Standard\HelveticaBold}
+ *  <li>Helvetica-Oblique - {@link \Zend2\Pdf\Resource\Font\Simple\Standard\HelveticaOblique}
+ *  <li>Helvetica-BoldOblique - {@link \Zend2\Pdf\Resource\Font\Simple\Standard\HelveticaBoldOblique}
+ *  <li>Symbol - {@link \Zend2\Pdf\Resource\Font\Simple\Standard\Symbol}
+ *  <li>Times - {@link \Zend2\Pdf\Resource\Font\Simple\Standard\Times}
+ *  <li>Times-Bold - {@link \Zend2\Pdf\Resource\Font\Simple\Standard\TimesBold}
+ *  <li>Times-Italic - {@link \Zend2\Pdf\Resource\Font\Simple\Standard\TimesItalic}
+ *  <li>Times-BoldItalic - {@link \Zend2\Pdf\Resource\Font\Simple\Standard\TimesBoldItalic}
+ *  <li>ZapfDingbats - {@link \Zend2\Pdf\Resource\Font\Simple\Standard\ZapfDingbats}
  * </ul>
  *
  * Font objects should be normally be obtained from the factory methods
- * {@link \Zend\Pdf\Font::fontWithName} and {@link \Zend\Pdf\Font::fontWithPath}.
+ * {@link \Zend2\Pdf\Font::fontWithName} and {@link \Zend2\Pdf\Font::fontWithPath}.
  *
- * @uses       \Zend\Pdf\InternalType\NameObject
- * @uses       \Zend\Pdf\Font
- * @uses       \Zend\Pdf\Resource\Font\Simple\AbstractSimple
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Fonts
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\InternalType\NameObject
+ * @uses       \Zend2\Pdf\Font
+ * @uses       \Zend2\Pdf\Resource\Font\Simple\AbstractSimple
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Fonts
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class AbstractStandard extends \Zend\Pdf\Resource\Font\Simple\AbstractSimple
+abstract class AbstractStandard extends \Zend2\Pdf\Resource\Font\Simple\AbstractSimple
 {
     /**** Public Interface ****/
 

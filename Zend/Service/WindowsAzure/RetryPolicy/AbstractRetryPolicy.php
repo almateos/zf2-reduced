@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage RetryPolicy
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_WindowsAzure_RetryPolicy_NoRetry
- * @uses       Zend_Service_WindowsAzure_RetryPolicy_RetryN
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @uses       Zend2_Service_WindowsAzure_RetryPolicy_NoRetry
+ * @uses       Zend2_Service_WindowsAzure_RetryPolicy_RetryN
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage RetryPolicy
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class Zend_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy
+abstract class Zend2_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy
 {
     /**
      * Execute function under retry policy
@@ -40,24 +40,24 @@ abstract class Zend_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy
     public abstract function execute($function, $parameters = array());
     
     /**
-     * Create a Zend_Service_WindowsAzure_RetryPolicy_NoRetry instance
+     * Create a Zend2_Service_WindowsAzure_RetryPolicy_NoRetry instance
      * 
-     * @return Zend_Service_WindowsAzure_RetryPolicy_NoRetry
+     * @return Zend2_Service_WindowsAzure_RetryPolicy_NoRetry
      */
     public static function noRetry()
     {
-        return new Zend_Service_WindowsAzure_RetryPolicy_NoRetry();
+        return new Zend2_Service_WindowsAzure_RetryPolicy_NoRetry();
     }
     
     /**
-     * Create a Zend_Service_WindowsAzure_RetryPolicy_RetryN instance
+     * Create a Zend2_Service_WindowsAzure_RetryPolicy_RetryN instance
      * 
      * @param int $count                    Number of retries
      * @param int $intervalBetweenRetries   Interval between retries (in milliseconds)
-     * @return Zend_Service_WindowsAzure_RetryPolicy_RetryN
+     * @return Zend2_Service_WindowsAzure_RetryPolicy_RetryN
      */
     public static function retryN($count = 1, $intervalBetweenRetries = 0)
     {
-        return new Zend_Service_WindowsAzure_RetryPolicy_RetryN($count, $intervalBetweenRetries);
+        return new Zend2_Service_WindowsAzure_RetryPolicy_RetryN($count, $intervalBetweenRetries);
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,46 +13,46 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_OpenId
- * @subpackage Zend_OpenId_Provider
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OpenId
+ * @subpackage Zend2_OpenId_Provider
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\OpenId\Provider\User;
+namespace Zend2\OpenId\Provider\User;
 
 /**
  * Class to get/store information about logged in user in Web Browser using
  * PHP session
  *
- * @uses       Zend\OpenId\Provider\User\AbstractUser
- * @uses       Zend\Session\Container
- * @category   Zend
- * @package    Zend_OpenId
- * @subpackage Zend_OpenId_Provider
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\OpenId\Provider\User\AbstractUser
+ * @uses       Zend2\Session\Container
+ * @category   Zend2
+ * @package    Zend2_OpenId
+ * @subpackage Zend2_OpenId_Provider
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Session extends AbstractUser
 {
     /**
-     * Reference to an implementation of Zend\Session\Container object
+     * Reference to an implementation of Zend2\Session\Container object
      *
-     * @var \Zend\Session\Container $_session
+     * @var \Zend2\Session\Container $_session
      */
     private $_session = null;
 
     /**
-     * Creates \Zend\OpenId\Provider\User\Session object with given session
+     * Creates \Zend2\OpenId\Provider\User\Session object with given session
      * namespace or creates new session namespace named "openid"
      *
-     * @param \Zend\Session\Container $session
+     * @param \Zend2\Session\Container $session
      */
-    public function __construct(\Zend\Session\Container $session = null)
+    public function __construct(\Zend2\Session\Container $session = null)
     {
         if ($session === null) {
-            $this->_session = new \Zend\Session\Container("openid");
+            $this->_session = new \Zend2\Session\Container("openid");
         } else {
             $this->_session = $session;
         }

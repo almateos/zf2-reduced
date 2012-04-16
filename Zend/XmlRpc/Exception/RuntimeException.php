@@ -1,9 +1,9 @@
 <?php
 
-namespace Zend\XmlRpc\Exception;
+namespace Zend2\XmlRpc\Exception;
 
 class RuntimeException
     extends \RuntimeException
-    implements \Zend\XmlRpc\Exception
+    implements \Zend2\XmlRpc\Exception
 {}
     

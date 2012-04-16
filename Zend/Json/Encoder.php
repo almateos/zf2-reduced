@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Json
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Json
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Json;
+namespace Zend2\Json;
 
-use Zend\Json\Exception\RecursionException,
-    Zend\Json\Exception\InvalidArgumentException;
+use Zend2\Json\Exception\RecursionException,
+    Zend2\Json\Exception\InvalidArgumentException;
 
 /**
  * Encode PHP constructs to JSON
  *
  * @uses       ReflectionClass
- * @uses       Zend\Json\Exception\RecursionException
- * @uses       Zend\Json\Exception\InvalidArgumentException
- * @category   Zend
- * @package    Zend_Json
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Json\Exception\RecursionException
+ * @uses       Zend2\Json\Exception\InvalidArgumentException
+ * @category   Zend2
+ * @package    Zend2_Json
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Encoder
@@ -117,7 +117,7 @@ class Encoder
      *
      * @param $value object
      * @return string
-     * @throws Zend\Json\Exception\RecursionException If recursive checks are enabled
+     * @throws Zend2\Json\Exception\RecursionException If recursive checks are enabled
      *                                                and the object has been serialized previously
      */
     protected function _encodeObject(&$value)
@@ -409,7 +409,7 @@ class Encoder
      * @param $package string Optional package name appended to JavaScript
      * proxy class name
      * @return string The class2 (JavaScript) encoding of the class
-     * @throws Zend\Json\Exception\InvalidArgumentException
+     * @throws Zend2\Json\Exception\InvalidArgumentException
      */
     public static function encodeClass($className, $package = '')
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Module\Consumer;
+namespace Zend2\Module\Consumer;
 
 /**
  * LocatorRegistered 

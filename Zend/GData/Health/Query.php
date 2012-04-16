@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Health
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Health;
-use Zend\GData\App;
+namespace Zend2\GData\Health;
+use Zend2\GData\App;
 
 /**
  * Assists in constructing queries for Google Health
  *
  * @link http://code.google.com/apis/health
  *
- * @uses       \Zend\GData\App\InvalidArgumentException
- * @uses       \Zend\GData\Query
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\InvalidArgumentException
+ * @uses       \Zend2\GData\Query
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Health
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Query extends \Zend\GData\Query
+class Query extends \Zend2\GData\Query
 {
     /**
      * URI of a user's profile feed.
@@ -65,7 +65,7 @@ class Query extends \Zend\GData\Query
      * Sets the digest parameter's value.
      *
      * @param string $value
-     * @return \Zend\GData\Health\Query Provides a fluent interface
+     * @return \Zend2\GData\Health\Query Provides a fluent interface
      */
     public function setDigest($value)
     {
@@ -95,7 +95,7 @@ class Query extends \Zend\GData\Query
      * @param string $item A category to query.
      * @param string $name (optional) A specific item to search a category for.
      *     An example would be 'Lipitor' if $item is set to 'medication'.
-     * @return \Zend\GData\Health\Query Provides a fluent interface
+     * @return \Zend2\GData\Health\Query Provides a fluent interface
      */
     public function setCategory($item, $name = null)
     {
@@ -118,7 +118,7 @@ class Query extends \Zend\GData\Query
      * Setter for the grouped parameter.
      *
      * @param string $value setting a count of results per group.
-     * @return \Zend\GData\Health\Query Provides a fluent interface
+     * @return \Zend2\GData\Health\Query Provides a fluent interface
      */
     public function setGrouped($value)
     {
@@ -148,7 +148,7 @@ class Query extends \Zend\GData\Query
      * @param int $value Specifies the maximum number of groups to be
      *     retrieved. Must be an integer value greater than zero. This parameter
      *     is only valid if grouped=true.
-     * @return \Zend\GData\Health\Query Provides a fluent interface
+     * @return \Zend2\GData\Health\Query Provides a fluent interface
      */
     public function setMaxResultsGroup($value)
     {
@@ -185,7 +185,7 @@ class Query extends \Zend\GData\Query
      *     retrieved from each group.  The limits that you specify with this
      *     parameter apply to all groups. Must be an integer value greater than
      *     zero. This parameter is only valid if grouped=true.
-     * @return \Zend\GData\Health\Query Provides a fluent interface
+     * @return \Zend2\GData\Health\Query Provides a fluent interface
      */
     public function setMaxResultsInGroup($value)
     {
@@ -222,7 +222,7 @@ class Query extends \Zend\GData\Query
      *     least start-index-group. This should be set to a 1-based index of the
      *     first group to be retrieved. The range is applied per category.
      *     This parameter is only valid if grouped=true.
-     * @return \Zend\GData\Health\Query Provides a fluent interface
+     * @return \Zend2\GData\Health\Query Provides a fluent interface
      */
     public function setStartIndexGroup($value)
     {
@@ -254,7 +254,7 @@ class Query extends \Zend\GData\Query
      *
      * @param int $value  A 1-based index of the records to be retrieved from
      *     each group. This parameter is only valid if grouped=true.
-     * @return \Zend\GData\Health\Query Provides a fluent interface
+     * @return \Zend2\GData\Health\Query Provides a fluent interface
      */
     public function setStartIndexInGroup($value)
     {

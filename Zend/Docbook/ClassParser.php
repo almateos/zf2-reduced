@@ -1,10 +1,10 @@
 <?php
 
-namespace Zend\Docbook;
+namespace Zend2\Docbook;
 
 use ReflectionMethod,
-    Zend\Filter\Word\CamelCaseToDash as CamelCaseToDashFilter,
-    Zend\Code\Reflection\ClassReflection;
+    Zend2\Filter\Word\CamelCaseToDash as CamelCaseToDashFilter,
+    Zend2\Code\Reflection\ClassReflection;
 
 class ClassParser
 {

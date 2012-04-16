@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\Form\Element;
+namespace Zend2\Dojo\Form\Element;
 
 /**
  * CheckBox dijit
  *
  * Note: this would be easier with mixins or traits...
  *
- * @uses       \Zend\Dojo\Form\Element\Dijit
- * @package    Zend_Dojo
+ * @uses       \Zend2\Dojo\Form\Element\Dijit
+ * @package    Zend2_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class DijitMulti extends Dijit
@@ -99,7 +99,7 @@ abstract class DijitMulti extends Dijit
      *
      * @param  string $option
      * @param  string $value
-     * @return \Zend\Form\Element\Multi
+     * @return \Zend2\Form\Element\Multi
      */
     public function addMultiOption($option, $value = '')
     {
@@ -116,7 +116,7 @@ abstract class DijitMulti extends Dijit
      * Add many options at once
      *
      * @param  array $options
-     * @return \Zend\Form\Element\Multi
+     * @return \Zend2\Form\Element\Multi
      */
     public function addMultiOptions(array $options)
     {
@@ -137,7 +137,7 @@ abstract class DijitMulti extends Dijit
      * Set all options at once (overwrites)
      *
      * @param  array $options
-     * @return \Zend\Form\Element\Multi
+     * @return \Zend2\Form\Element\Multi
      */
     public function setMultiOptions(array $options)
     {
@@ -201,7 +201,7 @@ abstract class DijitMulti extends Dijit
     /**
      * Clear all options
      *
-     * @return \Zend\Form\Element\Multi
+     * @return \Zend2\Form\Element\Multi
      */
     public function clearMultiOptions()
     {
@@ -214,7 +214,7 @@ abstract class DijitMulti extends Dijit
      * Set flag indicating whether or not to auto-register inArray validator
      *
      * @param  bool $flag
-     * @return \Zend\Form\Element\Multi
+     * @return \Zend2\Form\Element\Multi
      */
     public function setRegisterInArrayValidator($flag)
     {

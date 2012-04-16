@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,42 +12,42 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search\Query\Preprocessing;
+namespace Zend2\Search\Lucene\Search\Query\Preprocessing;
 
-use Zend\Search\Lucene,
-	Zend\Search\Lucene\Index,
-	Zend\Search\Lucene\Search\Query,
-	Zend\Search\Lucene\Analysis\Analyzer,
-	Zend\Search\Lucene\Search\Highlighter,
-	Zend\Search\Lucene\Search\Exception\QueryParserException;
+use Zend2\Search\Lucene,
+	Zend2\Search\Lucene\Index,
+	Zend2\Search\Lucene\Search\Query,
+	Zend2\Search\Lucene\Analysis\Analyzer,
+	Zend2\Search\Lucene\Search\Highlighter,
+	Zend2\Search\Lucene\Search\Exception\QueryParserException;
 
 /**
  * It's an internal abstract class intended to finalize ase a query processing after query parsing.
  * This type of query is not actually involved into query execution.
  *
- * @uses       \Zend\Search\Lucene\Index
- * @uses       \Zend\Search\Lucene\Analysis\Analyzer
- * @uses       \Zend\Search\Lucene\Index\Term
- * @uses       \Zend\Search\Lucene\Search\Exception\QueryParserException
- * @uses       \Zend\Search\Lucene\Search\Query\EmptyResult
- * @uses       \Zend\Search\Lucene\Search\Query\Insignificant
- * @uses       \Zend\Search\Lucene\Search\Query\MultiTerm
- * @uses       \Zend\Search\Lucene\Search\Query\Preprocessing\AbstractPreprocessing
- * @uses       \Zend\Search\Lucene\Search\Query\Preprocessing\Term
- * @uses       \Zend\Search\Lucene\Search\Query\Term
- * @uses       \Zend\Search\Lucene\Search\Query\Wildcard
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Index
+ * @uses       \Zend2\Search\Lucene\Analysis\Analyzer
+ * @uses       \Zend2\Search\Lucene\Index\Term
+ * @uses       \Zend2\Search\Lucene\Search\Exception\QueryParserException
+ * @uses       \Zend2\Search\Lucene\Search\Query\EmptyResult
+ * @uses       \Zend2\Search\Lucene\Search\Query\Insignificant
+ * @uses       \Zend2\Search\Lucene\Search\Query\MultiTerm
+ * @uses       \Zend2\Search\Lucene\Search\Query\Preprocessing\AbstractPreprocessing
+ * @uses       \Zend2\Search\Lucene\Search\Query\Preprocessing\Term
+ * @uses       \Zend2\Search\Lucene\Search\Query\Term
+ * @uses       \Zend2\Search\Lucene\Search\Query\Wildcard
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
  * @internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Term extends AbstractPreprocessing
@@ -91,9 +91,9 @@ class Term extends AbstractPreprocessing
     /**
      * Re-write query into primitive queries in the context of specified index
      *
-     * @param \Zend\Search\Lucene\SearchIndex $index
-     * @throws \Zend\Search\Lucene\Search\Exception\QueryParserException
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @param \Zend2\Search\Lucene\SearchIndex $index
+     * @throws \Zend2\Search\Lucene\Search\Exception\QueryParserException
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     public function rewrite(Lucene\SearchIndex $index)
     {
@@ -152,7 +152,7 @@ class Term extends AbstractPreprocessing
         // -------------------------------------
         // Recognize wildcard queries
 
-        /** @todo check for PCRE unicode support may be performed through Zend_Environment in some future */
+        /** @todo check for PCRE unicode support may be performed through Zend2_Environment in some future */
         if (@preg_match('/\pL/u', 'a') == 1) {
             $word = iconv($this->_encoding, 'UTF-8', $this->_word);
             $wildcardsPattern = '/[*?]/u';
@@ -237,7 +237,7 @@ class Term extends AbstractPreprocessing
     /**
      * Query specific matches highlighting
      *
-     * @param \Zend\Search\Lucene\Search\Highlighter $highlighter  Highlighter object (also contains doc for highlighting)
+     * @param \Zend2\Search\Lucene\Search\Highlighter $highlighter  Highlighter object (also contains doc for highlighting)
      */
     protected function _highlightMatches(Highlighter $highlighter)
     {
@@ -247,7 +247,7 @@ class Term extends AbstractPreprocessing
 
         // -------------------------------------
         // Recognize wildcard queries
-        /** @todo check for PCRE unicode support may be performed through Zend_Environment in some future */
+        /** @todo check for PCRE unicode support may be performed through Zend2_Environment in some future */
         if (@preg_match('/\pL/u', 'a') == 1) {
             $word = iconv($this->_encoding, 'UTF-8', $this->_word);
             $wildcardsPattern = '/[*?]/u';

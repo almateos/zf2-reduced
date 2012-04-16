@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Crypt
+ * @category   Zend2
+ * @package    Zend2_Crypt
  * @subpackage Rsa
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Crypt\Rsa;
+namespace Zend2\Crypt\Rsa;
 
 /**
- * @uses       Zend\Crypt\Exception
- * @category   Zend
- * @package    Zend_Crypt
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Crypt\Exception
+ * @category   Zend2
+ * @package    Zend2_Crypt
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Key implements \Countable
@@ -61,7 +61,7 @@ class Key implements \Countable
 
     /**
      * @return string
-     * @throws Zend\Crypt\Exception
+     * @throws Zend2\Crypt\Exception
      */
     public function toString()
     {
@@ -70,7 +70,7 @@ class Key implements \Countable
         } elseif (!empty($this->_certificateString)) {
             return $this->_certificateString;
         }
-        throw new \Zend\Crypt\Exception('No public key string representation is available');
+        throw new \Zend2\Crypt\Exception('No public key string representation is available');
     }
 
     /**

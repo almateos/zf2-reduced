@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Db
+ * @category   Zend2
+ * @package    Zend2_Db
  * @subpackage Sql
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Db\Sql;
+namespace Zend2\Db\Sql;
 
-use Zend\Db\Adapter\Adapter,
-    Zend\Db\Adapter\Driver\StatementInterface,
-    Zend\Db\Adapter\Platform\PlatformInterface,
-    Zend\Db\Adapter\Platform\Sql92,
-    Zend\Db\Adapter\ParameterContainer,
-    Zend\Db\Adapter\ParameterContainerInterface;
+use Zend2\Db\Adapter\Adapter,
+    Zend2\Db\Adapter\Driver\StatementInterface,
+    Zend2\Db\Adapter\Platform\PlatformInterface,
+    Zend2\Db\Adapter\Platform\Sql92,
+    Zend2\Db\Adapter\ParameterContainer,
+    Zend2\Db\Adapter\ParameterContainerInterface;
 
 /**
- * @category   Zend
- * @package    Zend_Db
+ * @category   Zend2
+ * @package    Zend2_Db
  * @subpackage Sql
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  *
  * @property Where $where
@@ -288,8 +288,8 @@ class Select extends AbstractSql implements SqlInterface, PreparableSqlInterface
     /**
      * Prepare statement
      *
-     * @param \Zend\Db\Adapter\Adapter $adapter
-     * @param \Zend\Db\Adapter\Driver\StatementInterface $statement
+     * @param \Zend2\Db\Adapter\Adapter $adapter
+     * @param \Zend2\Db\Adapter\Driver\StatementInterface $statement
      * @return void
      */
     public function prepareStatement(Adapter $adapter, StatementInterface $statement)

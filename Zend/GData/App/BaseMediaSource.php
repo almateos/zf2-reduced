@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\App;
+namespace Zend2\GData\App;
 
 /**
  * Concrete class to use a file handle as an attachment within a MediaEntry.
  *
  * @uses       ReflectionClass
- * @uses       \Zend\GData\App\InvalidArgumentException
- * @uses       \Zend\GData\App\MediaSource
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\InvalidArgumentException
+ * @uses       \Zend2\GData\App\MediaSource
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class BaseMediaSource implements MediaSource
@@ -66,7 +66,7 @@ abstract class BaseMediaSource implements MediaSource
      * Set the content type for the file attached (example image/png)
      *
      * @param string $value The content type
-     * @return \Zend\GData\App\MediaFileSource Provides a fluent interface
+     * @return \Zend2\GData\App\MediaFileSource Provides a fluent interface
      */
     public function setContentType($value)
     {
@@ -89,7 +89,7 @@ abstract class BaseMediaSource implements MediaSource
      * title for the uploaded file.  A null value indicates no slug header.
      *
      * @var string The slug value
-     * @return \Zend\GData\App\MediaSource Provides a fluent interface
+     * @return \Zend2\GData\App\MediaSource Provides a fluent interface
      */
     public function setSlug($value){
         $this->_slug = $value;

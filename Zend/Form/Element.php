@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,38 +12,38 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form;
+namespace Zend2\Form;
 
 use Traversable,
-    Zend\Config\Config,
-    Zend\Filter\Filter,
-    Zend\Form\Element\Exception as ElementException,
-    Zend\Loader\PrefixPathLoader,
-    Zend\Loader\PrefixPathMapper,
-    Zend\Stdlib\ArrayUtils,
-    Zend\Translator,
-    Zend\Validator\AbstractValidator,
-    Zend\Validator\Validator,
-    Zend\View\Renderer\PhpRenderer,
-    Zend\View\Renderer as View;
+    Zend2\Config\Config,
+    Zend2\Filter\Filter,
+    Zend2\Form\Element\Exception as ElementException,
+    Zend2\Loader\PrefixPathLoader,
+    Zend2\Loader\PrefixPathMapper,
+    Zend2\Stdlib\ArrayUtils,
+    Zend2\Translator,
+    Zend2\Validator\AbstractValidator,
+    Zend2\Validator\Validator,
+    Zend2\View\Renderer\PhpRenderer,
+    Zend2\View\Renderer as View;
 
 /**
- * Zend_Form_Element
+ * Zend2_Form_Element
  *
  * @todo       Modify to utilize ValidatorChain
  * @todo       Modify to utilize FilterChain
  * @todo       Modify to utilize PluginBroker for decorators (or remove decoration and move to view layer)
- * @category   Zend
- * @package    Zend_Form
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Element implements Validator
@@ -238,7 +238,7 @@ class Element implements Validator
      * $spec may be:
      * - string: name of element
      * - array: options with which to configure element
-     * - Zend_Config: Zend_Config with options for configuring element
+     * - Zend2_Config: Zend2_Config with options for configuring element
      *
      * @param  string|array|Config $spec
      * @param  array|Traversable $options
@@ -264,7 +264,7 @@ class Element implements Validator
         }
 
         if (null === $this->getName()) {
-            throw new ElementException\UnexpectedValueException('Zend_Form_Element requires each element to have a name');
+            throw new ElementException\UnexpectedValueException('Zend2_Form_Element requires each element to have a name');
         }
 
         /**
@@ -312,7 +312,7 @@ class Element implements Validator
     /**
      * Load default decorators
      *
-     * @return Zend_Form_Element
+     * @return Zend2_Form_Element
      */
     public function loadDefaultDecorators()
     {
@@ -377,7 +377,7 @@ class Element implements Validator
     }
 
     /**
-     * Set object state from Zend_Config object
+     * Set object state from Zend2_Config object
      *
      * @param  Config $config
      * @return Element
@@ -1002,7 +1002,7 @@ class Element implements Validator
      *
      * @param  string $type
      * @return PrefixPathMapper
-     * @throws \Zend\Loader\Exception on invalid type.
+     * @throws \Zend2\Loader\Exception on invalid type.
      */
     public function getPluginLoader($type)
     {
@@ -1019,7 +1019,7 @@ class Element implements Validator
                 }
                 if (!isset($this->_loaders[$type])) {
                     $this->_loaders[$type] = new PrefixPathLoader(
-                        array('Zend\\' . $prefixSegment . '\\' => 'Zend/' . $pathSegment . '/')
+                        array('Zend2\\' . $prefixSegment . '\\' => 'Zend2/' . $pathSegment . '/')
                     );
                 }
                 return $this->_loaders[$type];
@@ -1146,7 +1146,7 @@ class Element implements Validator
                 'options'             => $options,
             );
         } else {
-            throw new ElementException\InvalidArgumentException('Invalid validator provided to addValidator; must be string or Zend\Validator\Validator');
+            throw new ElementException\InvalidArgumentException('Invalid validator provided to addValidator; must be string or Zend2\Validator\Validator');
         }
 
 
@@ -1339,9 +1339,9 @@ class Element implements Validator
             $this->setValidators($validators);
         }
 
-        // Find the correct translator. Zend\Validator\AbstractValidator::getDefaultTranslator()
-        // will get either the static translator attached to Zend\Validator\AbstractValidator
-        // or the 'Zend_Translator' from Zend\Registry.
+        // Find the correct translator. Zend2\Validator\AbstractValidator::getDefaultTranslator()
+        // will get either the static translator attached to Zend2\Validator\AbstractValidator
+        // or the 'Zend2_Translator' from Zend2\Registry.
         if (AbstractValidator::hasDefaultTranslator()
             && !Form::hasDefaultTranslator())
         {
@@ -1618,7 +1618,7 @@ class Element implements Validator
             );
             $this->_filters[$name] = $filter;
         } else {
-            throw new ElementException\InvalidArgumentException('Invalid filter provided to addFilter; must be string or Zend_Filter_Interface');
+            throw new ElementException\InvalidArgumentException('Invalid filter provided to addFilter; must be string or Zend2_Filter_Interface');
         }
 
         $this->_filters[$name] = $filter;
@@ -1850,7 +1850,7 @@ class Element implements Validator
                 $decorator = $spec;
             }
         } else {
-            throw new ElementException\InvalidArgumentException('Invalid decorator provided to addDecorator; must be string or Zend_Form_Decorator_Interface');
+            throw new ElementException\InvalidArgumentException('Invalid decorator provided to addDecorator; must be string or Zend2_Form_Decorator_Interface');
         }
 
         $this->_decorators[$name] = $decorator;

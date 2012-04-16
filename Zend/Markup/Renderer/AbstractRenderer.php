@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Markup
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Renderer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Markup\Renderer;
-use Zend\Markup\Token,
-    Zend\Markup\TokenList,
-    Zend\Markup\Parser,
-    Zend\Markup\Renderer\Markup,
-    Zend\Config\Config;
+namespace Zend2\Markup\Renderer;
+use Zend2\Markup\Token,
+    Zend2\Markup\TokenList,
+    Zend2\Markup\Parser,
+    Zend2\Markup\Renderer\Markup,
+    Zend2\Config\Config;
 
 /**
  * Defines the basic rendering functionality
  *
- * @uses       \Zend\Markup\Renderer\Exception
- * @uses       \Zend\Markup\Renderer\Markup\MarkupInterface
- * @category   Zend
- * @package    Zend_Markup
+ * @uses       \Zend2\Markup\Renderer\Exception
+ * @uses       \Zend2\Markup\Renderer\Markup\MarkupInterface
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Renderer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractRenderer
@@ -57,14 +57,14 @@ abstract class AbstractRenderer
     /**
      * Parser
      *
-     * @var \Zend\Markup\Parser
+     * @var \Zend2\Markup\Parser
      */
     protected $_parser;
 
     /**
      * The current token
      *
-     * @var \Zend\Markup\Token
+     * @var \Zend2\Markup\Token
      */
     protected $_token;
 
@@ -79,7 +79,7 @@ abstract class AbstractRenderer
     /**
      * Constructor
      *
-     * @param array|\Zend\Config\Config $options
+     * @param array|\Zend2\Config\Config $options
      *
      * @todo make constructor compliant with new configuration standards
      *
@@ -105,9 +105,9 @@ abstract class AbstractRenderer
     /**
      * Set the parser
      *
-     * @param  \Zend\Markup\Parser $parser
+     * @param  \Zend2\Markup\Parser $parser
      *
-     * @return \Zend\Markup\Renderer\RendererAbstract
+     * @return \Zend2\Markup\Renderer\RendererAbstract
      */
     public function setParser(Parser $parser)
     {
@@ -119,7 +119,7 @@ abstract class AbstractRenderer
     /**
      * Get the parser
      *
-     * @return \Zend\Markup\Parser
+     * @return \Zend2\Markup\Parser
      */
     public function getParser()
     {
@@ -131,7 +131,7 @@ abstract class AbstractRenderer
      *
      * @param string $encoding
      *
-     * @return \Zend\Markup\Renderer\AbstractRenderer
+     * @return \Zend2\Markup\Renderer\AbstractRenderer
      */
     public function setEncoding($encoding)
     {
@@ -224,15 +224,15 @@ abstract class AbstractRenderer
     /**
      * Render function
      *
-     * @param  \Zend\Markup\TokenList|string $tokenList
+     * @param  \Zend2\Markup\TokenList|string $tokenList
      *
      * @throws Exception\RuntimeException when there is no root markup given
      * @return string
      */
     public function render($value)
     {
-        if (!isset($this->_markups['Zend_Markup_Root'])) {
-            throw new Exception\RuntimeException("There is no Zend_Markup_Root markup.");
+        if (!isset($this->_markups['Zend2_Markup_Root'])) {
+            throw new Exception\RuntimeException("There is no Zend2_Markup_Root markup.");
         }
 
         if ($value instanceof TokenList) {
@@ -244,7 +244,7 @@ abstract class AbstractRenderer
         $root = $tokenList->current();
 
         // set the default markup
-        $this->_markup = $this->_markups['Zend_Markup_Root'];
+        $this->_markup = $this->_markups['Zend2_Markup_Root'];
 
         return $this->_render($root);
     }
@@ -252,7 +252,7 @@ abstract class AbstractRenderer
     /**
      * Render a single token
      *
-     * @param  \Zend\Markup\Token $token
+     * @param  \Zend2\Markup\Token $token
      * @return string
      */
     protected function _render(Token $token)
@@ -277,7 +277,7 @@ abstract class AbstractRenderer
     /**
      * Execute the token
      *
-     * @param  \Zend\Markup\Token $token
+     * @param  \Zend2\Markup\Token $token
      *
      * @return string
      */

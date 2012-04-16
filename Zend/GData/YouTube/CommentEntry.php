@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\YouTube;
+namespace Zend2\GData\YouTube;
 
-use Zend\GData\YouTube;
+use Zend2\GData\YouTube;
 
 /**
  * The YouTube comments flavor of an Atom Entry
  *
- * @uses       \Zend\GData\Media\Feed
- * @uses       \Zend\GData\YouTube
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Media\Feed
+ * @uses       \Zend2\GData\YouTube
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class CommentEntry extends \Zend\GData\Entry
+class CommentEntry extends \Zend2\GData\Entry
 {
 
     /**
@@ -42,10 +42,10 @@ class CommentEntry extends \Zend\GData\Entry
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\YouTube\CommentEntry';
+    protected $_entryClassName = 'Zend2\GData\YouTube\CommentEntry';
 
     /**
-     * Constructs a new Zend_Gdata_YouTube_CommentEntry object.
+     * Constructs a new Zend2_Gdata_YouTube_CommentEntry object.
      * @param DOMElement $element (optional) The DOMElement on which to
      * base this object.
      */

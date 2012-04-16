@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Locale
+ * @category   Zend2
+ * @package    Zend2_Locale
  * @subpackage Cldr
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Locale\Data;
+namespace Zend2\Locale\Data;
 
-use Zend\Cache\Storage\Adapter as CacheAdapter,
-    Zend\Locale\Locale,
-    Zend\Locale\Exception\InvalidArgumentException;
+use Zend2\Cache\Storage\Adapter as CacheAdapter,
+    Zend2\Locale\Locale,
+    Zend2\Locale\Exception\InvalidArgumentException;
 
 /**
  * Locale data reader, handles the CLDR
  *
- * @category   Zend
- * @package    Zend_Locale
+ * @category   Zend2
+ * @package    Zend2_Locale
  * @subpackage Data
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractLocale
@@ -70,7 +70,7 @@ abstract class AbstractLocale
     }
 
     /**
-     * Set a cache for Zend_Locale_Data
+     * Set a cache for Zend2_Locale_Data
      *
      * @param CacheAdapter $cache A cache frontend
      */
@@ -122,7 +122,7 @@ abstract class AbstractLocale
 
         if (self::$_cacheTags) {
             if ($tag == null) {
-                $tag = 'Zend_Locale';
+                $tag = 'Zend2_Locale';
             }
 
             self::$_cache->clear(CacheAdapter::MATCH_TAGS_OR, array('tags' => array($tag)));

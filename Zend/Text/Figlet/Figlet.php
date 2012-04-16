@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Text_Figlet
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Text_Figlet
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Text\Figlet;
-use Zend\Config;
+namespace Zend2\Text\Figlet;
+use Zend2\Config;
 
 /**
- * Zend_Text_Figlet is a PHP implementation of FIGlet
+ * Zend2_Text_Figlet is a PHP implementation of FIGlet
  *
- * @uses      \Zend\Text\Figlet\Exception\InvalidArgumentException
- * @category  Zend
- * @package   Zend_Text_Figlet
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Text\Figlet\Exception\InvalidArgumentException
+ * @category  Zend2
+ * @package   Zend2_Text_Figlet
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Figlet
@@ -158,7 +158,7 @@ class Figlet
      * Justification for the text, according to $_outputWidth
      *
      * For using font default, this parameter should be null, else one of
-     * the values of Zend_Text_Figlet::JUSTIFICATION_*
+     * the values of Zend2_Text_Figlet::JUSTIFICATION_*
      *
      * @var integer
      */
@@ -168,7 +168,7 @@ class Figlet
      * Direction of text-writing, namely right to left
      *
      * For using font default, this parameter should be null, else one of
-     * the values of Zend_Text_Figlet::DIRECTION_*
+     * the values of Zend2_Text_Figlet::DIRECTION_*
      *
      * @var integer
      */
@@ -272,9 +272,9 @@ class Figlet
      * Instantiate the FIGlet with a specific font. If no font is given, the
      * standard font is used. You can also supply multiple options via
      * the $options variable, which can either be an array or an instance of
-     * Zend_Config.
+     * Zend2_Config.
      *
-     * @param array|\Zend\Config\Config $options Options for the output
+     * @param array|\Zend2\Config\Config $options Options for the output
      */
     public function __construct($options = null)
     {
@@ -294,8 +294,8 @@ class Figlet
     /**
      * Set options from array
      *
-     * @param  array $options Configuration for \Zend\Text\Figlet\Figlet
-     * @return \Zend\Text\Figlet\Figlet
+     * @param  array $options Configuration for \Zend2\Text\Figlet\Figlet
+     * @return \Zend2\Text\Figlet\Figlet
      */
     public function setOptions(array $options)
     {
@@ -315,8 +315,8 @@ class Figlet
     /**
      * Set options from config object
      *
-     * @param  Zend_Config $config Configuration for \Zend\Text\Figlet\Figlet
-     * @return \Zend\Text\Figlet\Figlet
+     * @param  Zend2_Config $config Configuration for \Zend2\Text\Figlet\Figlet
+     * @return \Zend2\Text\Figlet\Figlet
      */
     public function setConfig(Config\Config $config)
     {
@@ -327,7 +327,7 @@ class Figlet
      * Set a font to use
      *
      * @param  string $font Path to the font
-     * @return \Zend\Text\Figlet\Figlet
+     * @return \Zend2\Text\Figlet\Figlet
      */
     public function setFont($font)
     {
@@ -339,7 +339,7 @@ class Figlet
      * Set handling of paragraphs
      *
      * @param  boolean $handleParagraphs Wether to handle paragraphs or not
-     * @return \Zend\Text\Figlet\Figlet
+     * @return \Zend2\Text\Figlet\Figlet
      */
     public function setHandleParagraphs($handleParagraphs)
     {
@@ -352,7 +352,7 @@ class Figlet
      * for right aligned.
      *
      * @param  integer $justification Justification of the output text
-     * @return \Zend\Text\Figlet\Figlet
+     * @return \Zend2\Text\Figlet\Figlet
      */
     public function setJustification($justification)
     {
@@ -365,7 +365,7 @@ class Figlet
      *
      * @param  integer $outputWidth Output with which should be used for word
      *                              wrapping and justification
-     * @return \Zend\Text\Figlet\Figlet
+     * @return \Zend2\Text\Figlet\Figlet
      */
     public function setOutputWidth($outputWidth)
     {
@@ -375,11 +375,11 @@ class Figlet
 
     /**
      * Set right to left mode. For writing from left to right, use
-     * Zend_Text_Figlet::DIRECTION_LEFT_TO_RIGHT. For writing from right to left,
-     * use Zend_Text_Figlet::DIRECTION_RIGHT_TO_LEFT.
+     * Zend2_Text_Figlet::DIRECTION_LEFT_TO_RIGHT. For writing from right to left,
+     * use Zend2_Text_Figlet::DIRECTION_RIGHT_TO_LEFT.
      *
      * @param  integer $rightToLeft Right-to-left mode
-     * @return \Zend\Text\Figlet\Figlet
+     * @return \Zend2\Text\Figlet\Figlet
      */
     public function setRightToLeft($rightToLeft)
     {
@@ -390,10 +390,10 @@ class Figlet
     /**
      * Set the smush mode.
      *
-     * Use one of the constants of Zend_Text_Figlet::SM_*, you may combine them.
+     * Use one of the constants of Zend2_Text_Figlet::SM_*, you may combine them.
      *
      * @param  integer $smushMode Smush mode to use for generating text
-     * @return \Zend\Text\Figlet\Figlet
+     * @return \Zend2\Text\Figlet\Figlet
      */
     public function setSmushMode($smushMode)
     {
@@ -423,8 +423,8 @@ class Figlet
      *
      * @param  string $text     Text to convert to a figlet text
      * @param  string $encoding Encoding of the input string
-     * @throws \Zend\Text\Figlet\Exception\InvalidArgumentException When $text is not a string
-     * @throws \Zend\Text\Figlet\Exception\UnexpectedValueException When $text it not properly encoded
+     * @throws \Zend2\Text\Figlet\Exception\InvalidArgumentException When $text is not a string
+     * @throws \Zend2\Text\Figlet\Exception\UnexpectedValueException When $text it not properly encoded
      * @return string
      */
     public function render($text, $encoding = 'UTF-8')
@@ -961,10 +961,10 @@ class Figlet
      * Load the specified font
      *
      * @param  string $fontFile Font file to load
-     * @throws \Zend\Text\Figlet\Exception\RuntimeException When font file was not found
-     * @throws \Zend\Text\Figlet\Exception\RuntimeException When GZIP library is required but not found
-     * @throws \Zend\Text\Figlet\Exception\RuntimeException When font file is not readable
-     * @throws \Zend\Text\Figlet\Exception\UnexpectedValueException When font file is not a FIGlet 2 font file
+     * @throws \Zend2\Text\Figlet\Exception\RuntimeException When font file was not found
+     * @throws \Zend2\Text\Figlet\Exception\RuntimeException When GZIP library is required but not found
+     * @throws \Zend2\Text\Figlet\Exception\RuntimeException When font file is not readable
+     * @throws \Zend2\Text\Figlet\Exception\UnexpectedValueException When font file is not a FIGlet 2 font file
      * @return void
      */
     protected function _loadFont($fontFile)

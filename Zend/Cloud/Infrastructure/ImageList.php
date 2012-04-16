@@ -1,16 +1,16 @@
 <?php
 /**
- * @category   Zend
- * @package    Zend\Cloud
+ * @category   Zend2
+ * @package    Zend2\Cloud
  * @subpackage Infrastructure
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Cloud\Infrastructure;
+namespace Zend2\Cloud\Infrastructure;
 
-use Zend\Cloud\Infrastructure\Image,  
-    Zend\Cloud\Infrastructure\Exception,
+use Zend2\Cloud\Infrastructure\Image,  
+    Zend2\Cloud\Infrastructure\Exception,
     Countable,
     Iterator,
     ArrayAccess;
@@ -18,15 +18,15 @@ use Zend\Cloud\Infrastructure\Image,
 /**
  * List of images
  *
- * @package    Zend\Cloud
+ * @package    Zend2\Cloud
  * @subpackage Infrastructure
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ImageList implements Countable, Iterator, ArrayAccess
 {
     /**
-     * @var array Array of Zend\Cloud\Infrastructure\Image
+     * @var array Array of Zend2\Cloud\Infrastructure\Image
      */
     protected $images = array();
 

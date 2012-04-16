@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Spreadsheets
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Spreadsheets\Extension;
+namespace Zend2\GData\Spreadsheets\Extension;
 
 /**
  * Concrete class for working with cell elements.
  *
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\Extension
- * @uses       \Zend\GData\Spreadsheets
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\Extension
+ * @uses       \Zend2\GData\Spreadsheets
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Spreadsheets
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Cell extends \Zend\GData\Extension
+class Cell extends \Zend2\GData\Extension
 {
     protected $_rootElement = 'cell';
     protected $_rootNamespace = 'gs';
@@ -67,7 +67,7 @@ class Cell extends \Zend\GData\Extension
     protected $_numericValue = null;
 
     /**
-     * Constructs a new Zend_Gdata_Spreadsheets_Extension_Cell element.
+     * Constructs a new Zend2_Gdata_Spreadsheets_Extension_Cell element.
      *
      * @param string $text (optional) Text contents of the element.
      * @param string $row (optional) Row attribute of the element.
@@ -77,7 +77,7 @@ class Cell extends \Zend\GData\Extension
      */
     public function __construct($text = null, $row = null, $col = null, $inputValue = null, $numericValue = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Spreadsheets::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\Spreadsheets::$namespaces);
         parent::__construct();
         $this->_text = $text;
         $this->_row = $row;

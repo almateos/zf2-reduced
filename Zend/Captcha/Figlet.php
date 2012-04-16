@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Captcha
+ * @category   Zend2
+ * @package    Zend2_Captcha
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Captcha;
+namespace Zend2\Captcha;
 
 /**
  * Captcha based on figlet text rendering service
  *
  * Note that this engine seems not to like numbers
  *
- * @uses       Zend\Captcha\Word
- * @uses       Zend\Text\Figlet\Figlet
- * @category   Zend
- * @package    Zend_Captcha
+ * @uses       Zend2\Captcha\Word
+ * @uses       Zend2\Text\Figlet\Figlet
+ * @category   Zend2
+ * @package    Zend2_Captcha
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Figlet extends Word
@@ -39,20 +39,20 @@ class Figlet extends Word
     /**
      * Figlet text renderer
      *
-     * @var \Zend\Text\Figlet\Figlet
+     * @var \Zend2\Text\Figlet\Figlet
      */
     protected $_figlet;
 
     /**
      * Constructor
      *
-     * @param  null|string|array|\Zend\Config\Config $options
+     * @param  null|string|array|\Zend2\Config\Config $options
      * @return void
      */
     public function __construct($options = null)
     {
         parent::__construct($options);
-        $this->_figlet = new \Zend\Text\Figlet\Figlet($options);
+        $this->_figlet = new \Zend2\Text\Figlet\Figlet($options);
     }
 
     /**
@@ -69,11 +69,11 @@ class Figlet extends Word
     /**
      * Display the captcha
      *
-     * @param \Zend\View\Renderer $view
+     * @param \Zend2\View\Renderer $view
      * @param mixed $element
      * @return string
      */
-    public function render(\Zend\View\Renderer $view = null, $element = null)
+    public function render(\Zend2\View\Renderer $view = null, $element = null)
     {
         return '<pre>'
              . $this->_figlet->render($this->getWord())

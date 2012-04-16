@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Pubsubhubbub
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Pubsubhubbub
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\PubSubHubbub;
+namespace Zend2\Feed\PubSubHubbub;
 
-use Zend\Date,
-    Zend\Uri;
+use Zend2\Date,
+    Zend2\Uri;
 
 /**
- * @category   Zend
- * @package    Zend_Feed_Pubsubhubbub
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Pubsubhubbub
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Subscriber
@@ -76,7 +76,7 @@ class Subscriber
      * Subscriber prefers synchronous verification, but is considered
      * desireable to support asynchronous verification if possible.
      *
-     * Zend\Feed\Pubsubhubbub\Subscriber will always send both modes, whose
+     * Zend2\Feed\Pubsubhubbub\Subscriber will always send both modes, whose
      * order of occurance in the parameter list determines this preference.
      *
      * @var string
@@ -85,7 +85,7 @@ class Subscriber
 
     /**
      * An array of any errors including keys for 'response', 'hubUrl'.
-     * The response is the actual Zend\Http\Response object.
+     * The response is the actual Zend2\Http\Response object.
      *
      * @var array
      */
@@ -100,10 +100,10 @@ class Subscriber
     protected $_asyncHubs = array();
 
     /**
-     * An instance of Zend\Feed\Pubsubhubbub\Model\SubscriptionPersistence used to background
+     * An instance of Zend2\Feed\Pubsubhubbub\Model\SubscriptionPersistence used to background
      * save any verification tokens associated with a subscription or other.
      *
-     * @var \Zend\Feed\PubSubHubbub\Model\SubscriptionPersistence
+     * @var \Zend2\Feed\PubSubHubbub\Model\SubscriptionPersistence
      */
     protected $_storage = null;
 
@@ -124,9 +124,9 @@ class Subscriber
      *
      * This is required for all Hubs using the Pubsubhubbub 0.1 Specification.
      * It should be manually intercepted and passed to the Callback class using
-     * Zend\Feed\Pubsubhubbub\Subscriber\Callback::setSubscriptionKey(). Will
+     * Zend2\Feed\Pubsubhubbub\Subscriber\Callback::setSubscriptionKey(). Will
      * require a route in the form "callback/:subkey" to allow the parameter be
-     * retrieved from an action using the Zend\Controller\Action::\getParam()
+     * retrieved from an action using the Zend2\Controller\Action::\getParam()
      * method.
      *
      * @var string
@@ -134,11 +134,11 @@ class Subscriber
     protected $_usePathParameter = false;
 
     /**
-     * Constructor; accepts an array or Zend\Config instance to preset
+     * Constructor; accepts an array or Zend2\Config instance to preset
      * options for the Subscriber without calling all supported setter
      * methods in turn.
      *
-     * @param  array|\Zend\Config\Config $options Options array or \Zend\Config\Config instance
+     * @param  array|\Zend2\Config\Config $options Options array or \Zend2\Config\Config instance
      * @return void
      */
     public function __construct($config = null)
@@ -151,15 +151,15 @@ class Subscriber
     /**
      * Process any injected configuration options
      *
-     * @param  array|\Zend\Config\Config $options Options array or \Zend\Config\Config instance
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Subscriber
+     * @param  array|\Zend2\Config\Config $options Options array or \Zend2\Config\Config instance
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Subscriber
      */
     public function setConfig($config)
     {
-        if ($config instanceof \Zend\Config\Config) {
+        if ($config instanceof \Zend2\Config\Config) {
             $config = $config->toArray();
         } elseif (!is_array($config)) {
-            throw new Exception('Array or Zend\Config object'
+            throw new Exception('Array or Zend2\Config object'
                 . ' expected, got ' . gettype($config));
         }
         if (array_key_exists('hubUrls', $config)) {
@@ -199,7 +199,7 @@ class Subscriber
      * event will relate
      *
      * @param  string $url
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Subscriber
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Subscriber
      */
     public function setTopicUrl($url)
     {
@@ -231,7 +231,7 @@ class Subscriber
      * Set the number of seconds for which any subscription will remain valid
      *
      * @param  int $seconds
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Subscriber
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Subscriber
      */
     public function setLeaseSeconds($seconds)
     {
@@ -259,7 +259,7 @@ class Subscriber
      * this Subscriber
      *
      * @param  string $url
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Subscriber
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Subscriber
      */
     public function setCallbackUrl($url)
     {
@@ -292,11 +292,11 @@ class Subscriber
      * Subscriber prefers synchronous verification, but does support
      * asynchronous if that's the Hub Server's utilised mode.
      *
-     * Zend\Feed\Pubsubhubbub\Subscriber will always send both modes, whose
+     * Zend2\Feed\Pubsubhubbub\Subscriber will always send both modes, whose
      * order of occurance in the parameter list determines this preference.
      *
      * @param  string $mode Should be 'sync' or 'async'
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Subscriber
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Subscriber
      */
     public function setPreferredVerificationMode($mode)
     {
@@ -305,8 +305,8 @@ class Subscriber
         ) {
             throw new Exception('Invalid preferred'
                 . ' mode specified: "' . $mode . '" but should be one of'
-                . ' Zend\Feed\Pubsubhubbub::VERIFICATION_MODE_SYNC or'
-                . ' Zend\Feed\Pubsubhubbub::VERIFICATION_MODE_ASYNC');
+                . ' Zend2\Feed\Pubsubhubbub::VERIFICATION_MODE_SYNC or'
+                . ' Zend2\Feed\Pubsubhubbub::VERIFICATION_MODE_ASYNC');
         }
         $this->_preferredVerificationMode = $mode;
         return $this;
@@ -326,7 +326,7 @@ class Subscriber
      * Add a Hub Server URL supported by Publisher
      *
      * @param  string $url
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Subscriber
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Subscriber
      */
     public function addHubUrl($url)
     {
@@ -343,7 +343,7 @@ class Subscriber
      * Add an array of Hub Server URLs supported by Publisher
      *
      * @param  array $urls
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Subscriber
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Subscriber
      */
     public function addHubUrls(array $urls)
     {
@@ -357,7 +357,7 @@ class Subscriber
      * Remove a Hub Server URL
      *
      * @param  string $url
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Subscriber
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Subscriber
      */
     public function removeHubUrl($url)
     {
@@ -385,7 +385,7 @@ class Subscriber
      * 
      * @param  string $url 
      * @param  array $authentication 
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Subscriber
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Subscriber
      */
     public function addAuthentication($url, array $authentication)
     {
@@ -402,7 +402,7 @@ class Subscriber
      * Add authentication credentials for hub URLs
      * 
      * @param  array $authentications 
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Subscriber
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Subscriber
      */
     public function addAuthentications(array $authentications)
     {
@@ -426,7 +426,7 @@ class Subscriber
      * Set flag indicating whether or not to use a path parameter
      * 
      * @param  bool $bool 
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Subscriber
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Subscriber
      */
     public function usePathParameter($bool = true)
     {
@@ -439,7 +439,7 @@ class Subscriber
      *
      * @param  string $name
      * @param  string|null $value
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Subscriber
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Subscriber
      */
     public function setParameter($name, $value = null)
     {
@@ -468,7 +468,7 @@ class Subscriber
      *
      * @param  string $name
      * @param  string|null $value
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Subscriber
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Subscriber
      */
     public function setParameters(array $parameters)
     {
@@ -482,7 +482,7 @@ class Subscriber
      * Remove an optional parameter for the (un)subscribe requests
      *
      * @param  string $name
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Subscriber
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Subscriber
      */
     public function removeParameter($name)
     {
@@ -507,11 +507,11 @@ class Subscriber
     }
 
     /**
-     * Sets an instance of Zend\Feed\Pubsubhubbub\Model\SubscriptionPersistence used to background
+     * Sets an instance of Zend2\Feed\Pubsubhubbub\Model\SubscriptionPersistence used to background
      * save any verification tokens associated with a subscription or other.
      *
-     * @param  \Zend\Feed\PubSubHubbub\Model\SubscriptionPersistence $storage
-     * @return \Zend\Feed\PubSubHubbub\Subscriber\Subscriber
+     * @param  \Zend2\Feed\PubSubHubbub\Model\SubscriptionPersistence $storage
+     * @return \Zend2\Feed\PubSubHubbub\Subscriber\Subscriber
      */
     public function setStorage(Model\SubscriptionPersistence $storage)
     {
@@ -520,11 +520,11 @@ class Subscriber
     }
 
     /**
-     * Gets an instance of Zend\Feed\Pubsubhubbub\Storage\StoragePersistence used 
+     * Gets an instance of Zend2\Feed\Pubsubhubbub\Storage\StoragePersistence used 
      * to background save any verification tokens associated with a subscription
      * or other.
      *
-     * @return \Zend\Feed\PubSubHubbub\Model\SubscriptionPersistence
+     * @return \Zend2\Feed\PubSubHubbub\Model\SubscriptionPersistence
      */
     public function getStorage()
     {
@@ -573,7 +573,7 @@ class Subscriber
 
     /**
      * Return an array of errors met from any failures, including keys:
-     * 'response' => the Zend\Http\Response object from the failure
+     * 'response' => the Zend2\Http\Response object from the failure
      * 'hubUrl' => the URL of the Hub Server whose notification failed
      *
      * @return array
@@ -647,14 +647,14 @@ class Subscriber
      * Get a basic prepared HTTP client for use
      *
      * @param  string $mode Must be "subscribe" or "unsubscribe"
-     * @return \Zend\Http\Client
+     * @return \Zend2\Http\Client
      */
     protected function _getHttpClient()
     {
         $client = PubSubHubbub::getHttpClient();
-        $client->setMethod(\Zend\Http\Client::POST);
-        $client->setConfig(array('useragent' => 'Zend_Feed_Pubsubhubbub_Subscriber/'
-            . \Zend\Version::VERSION));
+        $client->setMethod(\Zend2\Http\Client::POST);
+        $client->setConfig(array('useragent' => 'Zend2_Feed_Pubsubhubbub_Subscriber/'
+            . \Zend2\Version::VERSION));
         return $client;
     }
 

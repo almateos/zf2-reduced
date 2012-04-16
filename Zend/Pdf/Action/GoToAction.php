@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Action
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Action
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Action;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
-use Zend\Pdf\Destination;
-use Zend\Pdf\InternalType;
+namespace Zend2\Pdf\Action;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
+use Zend2\Pdf\Destination;
+use Zend2\Pdf\InternalType;
 
 /**
  * PDF 'Go to' action
  *
  * @uses       SplObjectStorage
- * @uses       \Zend\Pdf\Action\AbstractAction
- * @uses       \Zend\Pdf\Destination\AbstractDestination
- * @uses       \Zend\Pdf\Destination\Named
- * @uses       \Zend\Pdf\InternalType\DictionaryObject
- * @uses       \Zend\Pdf\InternalType\NameObject
- * @uses       \Zend\Pdf\Exception
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Action
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Action\AbstractAction
+ * @uses       \Zend2\Pdf\Destination\AbstractDestination
+ * @uses       \Zend2\Pdf\Destination\Named
+ * @uses       \Zend2\Pdf\InternalType\DictionaryObject
+ * @uses       \Zend2\Pdf\InternalType\NameObject
+ * @uses       \Zend2\Pdf\Exception
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Action
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class GoToAction extends AbstractAction
@@ -45,7 +45,7 @@ class GoToAction extends AbstractAction
     /**
      * GoTo Action destination
      *
-     * @var \Zend\Pdf\Destination\AbstractDestination
+     * @var \Zend2\Pdf\Destination\AbstractDestination
      */
     protected $_destination;
 
@@ -53,7 +53,7 @@ class GoToAction extends AbstractAction
     /**
      * Object constructor
      *
-     * @param \Zend\Pdf\InternalType\DictionaryObject $dictionary
+     * @param \Zend2\Pdf\InternalType\DictionaryObject $dictionary
      * @param SplObjectStorage    $processedActions  list of already processed action dictionaries,
      *                                               used to avoid cyclic references
      */
@@ -65,10 +65,10 @@ class GoToAction extends AbstractAction
     }
 
     /**
-     * Create new \Zend\Pdf\Action\GoToAction object using specified destination
+     * Create new \Zend2\Pdf\Action\GoToAction object using specified destination
      *
-     * @param \Zend\Pdf\Destination\AbstractDestination|string $destination
-     * @return \Zend\Pdf\Action\GoToAction
+     * @param \Zend2\Pdf\Destination\AbstractDestination|string $destination
+     * @return \Zend2\Pdf\Action\GoToAction
      */
     public static function create($destination)
     {
@@ -77,7 +77,7 @@ class GoToAction extends AbstractAction
         }
 
         if (!$destination instanceof Destination\AbstractDestination) {
-            throw new Exception\InvalidArgumentException('$destination parameter must be a \Zend\Pdf\Destination object or string.');
+            throw new Exception\InvalidArgumentException('$destination parameter must be a \Zend2\Pdf\Destination object or string.');
         }
 
         $dictionary       = new InternalType\DictionaryObject();
@@ -92,8 +92,8 @@ class GoToAction extends AbstractAction
     /**
      * Set goto action destination
      *
-     * @param \Zend\Pdf\Destination\AbstractDestination|string $destination
-     * @return \Zend\Pdf\Action\GoToAction
+     * @param \Zend2\Pdf\Destination\AbstractDestination|string $destination
+     * @return \Zend2\Pdf\Action\GoToAction
      */
     public function setDestination(Destination\AbstractDestination $destination)
     {
@@ -108,7 +108,7 @@ class GoToAction extends AbstractAction
     /**
      * Get goto action destination
      *
-     * @return \Zend\Pdf\Destination\AbstractDestination
+     * @return \Zend2\Pdf\Destination\AbstractDestination
      */
     public function getDestination()
     {

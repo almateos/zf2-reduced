@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\App;
+namespace Zend2\GData\App;
 
 /**
- * Utility class for static functions needed by \Zend\Gdata\App
+ * Utility class for static functions needed by \Zend2\Gdata\App
  *
- * @uses       \Zend\GData\App\Exception
- * @uses       \Zend\GData\App\InvalidArgumentException
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Exception
+ * @uses       \Zend2\GData\App\InvalidArgumentException
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Util
@@ -40,7 +40,7 @@ class Util
      *  2005-04-19T15:30:00
      *
      * @param int $timestamp
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \Zend2\GData\App\InvalidArgumentException
      */
     public static function formatTimestamp($timestamp)
     {
@@ -69,7 +69,7 @@ class Util
       * @param array $collection An two-dimensional array of key/value pairs
       *        to search through.
       * @returns mixed The value corresponding to the located key.
-      * @throws \Zend\GData\App\Exception Thrown if $collection is empty.
+      * @throws \Zend2\GData\App\Exception Thrown if $collection is empty.
       */
     public static function findGreatestBoundedValue($maximumKey, $collection)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Ldap
+ * @category   Zend2
+ * @package    Zend2_Ldap
  * @subpackage Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Ldap\Filter;
+namespace Zend2\Ldap\Filter;
 
-use Zend\Ldap\Filter\Exception;
+use Zend2\Ldap\Filter\Exception;
 
 /**
- * Zend\Ldap\Filter\LogicalFilter provides a base implementation for a grouping filter.
+ * Zend2\Ldap\Filter\LogicalFilter provides a base implementation for a grouping filter.
  *
- * @category   Zend
- * @package    Zend_Ldap
+ * @category   Zend2
+ * @package    Zend2_Ldap
  * @subpackage Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class LogicalFilter extends AbstractFilter
@@ -63,7 +63,7 @@ abstract class LogicalFilter extends AbstractFilter
             if (is_string($s)) {
                 $subfilters[$key] = new StringFilter($s);
             } else if (!($s instanceof AbstractFilter)) {
-                throw new Exception\FilterException('Only strings or Zend\Ldap\Filter\AbstractFilter allowed.');
+                throw new Exception\FilterException('Only strings or Zend2\Ldap\Filter\AbstractFilter allowed.');
             }
         }
         $this->subfilters = $subfilters;

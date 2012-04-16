@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Tag
+ * @category   Zend2
+ * @package    Zend2_Tag
  * @subpackage ItemList
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Tag;
+namespace Zend2\Tag;
 
-use Zend\Amf\Parser\Exception;
+use Zend2\Amf\Parser\Exception;
 
-use Zend\Tag\Exception\InvalidArgumentException,
-	Zend\Tag\Exception\OutOfBoundsException;
+use Zend2\Tag\Exception\InvalidArgumentException,
+	Zend2\Tag\Exception\OutOfBoundsException;
 
 /**
  * @uses       ArrayAccess
  * @uses       Countable
  * @uses       SeekableIterator
- * @uses       \Zend\Tag\Exception\InvalidArgumentException
- * @uses       \Zend\Tag\Exception\OutOfBoundsException
- * @category   Zend
- * @package    Zend_Tag
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Tag\Exception\InvalidArgumentException
+ * @uses       \Zend2\Tag\Exception\OutOfBoundsException
+ * @category   Zend2
+ * @package    Zend2_Tag
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ItemList implements \Countable, \SeekableIterator, \ArrayAccess
@@ -60,7 +60,7 @@ class ItemList implements \Countable, \SeekableIterator, \ArrayAccess
      * Spread values in the items relative to their weight
      *
      * @param  array $values
-     * @throws \Zend\Tag\Exception\InvalidArgumentException When value list is empty
+     * @throws \Zend2\Tag\Exception\InvalidArgumentException When value list is empty
      * @return void
      */
     public function spreadWeightValues(array $values)
@@ -120,7 +120,7 @@ class ItemList implements \Countable, \SeekableIterator, \ArrayAccess
      * Seek to an absolute positio
      *
      * @param  integer $index
-     * @throws \Zend\Tag\Exception\OutOfBoundsException When the seek position is invalid
+     * @throws \Zend2\Tag\Exception\OutOfBoundsException When the seek position is invalid
      * @return void
      */
     public function seek($index)
@@ -202,7 +202,7 @@ class ItemList implements \Countable, \SeekableIterator, \ArrayAccess
      * Get the value of an offset
      *
      * @param  mixed $offset
-     * @return \Zend\Tag\Taggable
+     * @return \Zend2\Tag\Taggable
      */
     public function offsetGet($offset) {
         return $this->_items[$offset];
@@ -212,15 +212,15 @@ class ItemList implements \Countable, \SeekableIterator, \ArrayAccess
      * Append a new item
      *
      * @param  mixed          $offset
-     * @param  \Zend\Tag\Taggable $item
-     * @throws \Zend\Tag\Exception\OutOfBoundsException When item does not implement Zend\Tag\Taggable
+     * @param  \Zend2\Tag\Taggable $item
+     * @throws \Zend2\Tag\Exception\OutOfBoundsException When item does not implement Zend2\Tag\Taggable
      * @return void
      */
     public function offsetSet($offset, $item) {
         // We need to make that check here, as the method signature must be
         // compatible with ArrayAccess::offsetSet()
         if (!($item instanceof Taggable)) {
-            throw new OutOfBoundsException('Item must implement Zend\Tag\Taggable');
+            throw new OutOfBoundsException('Item must implement Zend2\Tag\Taggable');
         }
 
         if ($offset === null) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Session
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Session
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Session\Storage;
+namespace Zend2\Session\Storage;
 
 use ArrayObject,
-    Zend\Session\Storage as Storable,
-    Zend\Session\Exception;
+    Zend2\Session\Storage as Storable,
+    Zend2\Session\Exception;
 
 /**
  * Array session storage
@@ -30,10 +30,10 @@ use ArrayObject,
  * Defines an ArrayObject interface for accessing session storage, with options 
  * for setting metadata, locking, and marking as immutable.
  *
- * @category   Zend
- * @package    Zend_Session
+ * @category   Zend2
+ * @package    Zend2_Session
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ArrayStorage extends ArrayObject implements Storable

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Color
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Color
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Color;
+namespace Zend2\Pdf\Color;
 
-use Zend\Pdf\Color,
-    Zend\Pdf\InternalType;
+use Zend2\Pdf\Color,
+    Zend2\Pdf\InternalType;
 
 /**
  * CMYK color implementation
  *
- * @uses       \Zend\Pdf\Color
- * @uses       \Zend\Pdf\InternalType\NumericObject
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Color
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Color
+ * @uses       \Zend2\Pdf\InternalType\NumericObject
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Color
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Cmyk implements Color
@@ -41,7 +41,7 @@ class Cmyk implements Color
      * Cyan level.
      * 0.0 (zero concentration) - 1.0 (maximum concentration)
      *
-     * @var \Zend\Pdf\InternalType\NumericObject
+     * @var \Zend2\Pdf\InternalType\NumericObject
      */
     private $_c;
 
@@ -49,7 +49,7 @@ class Cmyk implements Color
      * Magenta level.
      * 0.0 (zero concentration) - 1.0 (maximum concentration)
      *
-     * @var \Zend\Pdf\InternalType\NumericObject
+     * @var \Zend2\Pdf\InternalType\NumericObject
      */
     private $_m;
 
@@ -57,7 +57,7 @@ class Cmyk implements Color
      * Yellow level.
      * 0.0 (zero concentration) - 1.0 (maximum concentration)
      *
-     * @var \Zend\Pdf\InternalType\NumericObject
+     * @var \Zend2\Pdf\InternalType\NumericObject
      */
     private $_y;
 
@@ -65,7 +65,7 @@ class Cmyk implements Color
      * Key (BlacK) level.
      * 0.0 (zero concentration) - 1.0 (maximum concentration)
      *
-     * @var \Zend\Pdf\InternalType\NumericObject
+     * @var \Zend2\Pdf\InternalType\NumericObject
      */
     private $_k;
 

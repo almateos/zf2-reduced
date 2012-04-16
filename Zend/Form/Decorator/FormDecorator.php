@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form\Decorator;
+namespace Zend2\Form\Decorator;
 
-use Zend\Form as ZendForm;
+use Zend2\Form as Zend2Form;
 
 /**
- * Zend_Form_Decorator_Form
+ * Zend2_Form_Decorator_Form
  *
- * Render a Zend_Form object.
+ * Render a Zend2_Form object.
  *
  * Accepts following options:
  * - separator: Separator to use between elements
@@ -35,12 +35,12 @@ use Zend\Form as ZendForm;
  *
  * Any other options passed will be used as HTML attributes of the form tag.
  *
- * @uses       \Zend\Form\Form
- * @uses       \Zend\Form\Decorator\AbstractDecorator
- * @category   Zend
- * @package    Zend_Form
+ * @uses       \Zend2\Form\Form
+ * @uses       \Zend2\Form\Decorator\AbstractDecorator
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class FormDecorator extends AbstractDecorator
@@ -55,7 +55,7 @@ class FormDecorator extends AbstractDecorator
      * Set view helper for rendering form
      *
      * @param  string $helper
-     * @return \Zend\Form\Decorator\Form
+     * @return \Zend2\Form\Decorator\Form
      */
     public function setHelper($helper)
     {
@@ -88,16 +88,16 @@ class FormDecorator extends AbstractDecorator
     public function getOptions()
     {
         if (null !== ($element = $this->getElement())) {
-            if ($element instanceof ZendForm\Form) {
+            if ($element instanceof Zend2Form\Form) {
                 $element->getAction();
                 $method = $element->getMethod();
-                if ($method == ZendForm\Form::METHOD_POST) {
+                if ($method == Zend2Form\Form::METHOD_POST) {
                     $this->setOption('enctype', 'application/x-www-form-urlencoded');
                 }
                 foreach ($element->getAttribs() as $key => $value) {
                     $this->setOption($key, $value);
                 }
-            } elseif ($element instanceof ZendForm\DisplayGroup) {
+            } elseif ($element instanceof Zend2Form\DisplayGroup) {
                 foreach ($element->getAttribs() as $key => $value) {
                     $this->setOption($key, $value);
                 }

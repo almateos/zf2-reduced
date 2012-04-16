@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator\File;
+namespace Zend2\Validator\File;
 
-use Zend\Loader,
-    Zend\Validator\Exception;
+use Zend2\Loader,
+    Zend2\Validator\Exception;
 
 /**
  * Validator for the sha1 hash of given files
  *
- * @uses      \Zend\Loader
- * @uses      \Zend\Validator\Exception
- * @uses      \Zend\Validator\File\Hash
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Loader
+ * @uses      \Zend2\Validator\Exception
+ * @uses      \Zend2\Validator\File\Hash
+ * @category  Zend2
+ * @package   Zend2_Validate
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Sha1 extends Hash
@@ -76,7 +76,7 @@ class Sha1 extends Hash
      * Sets the sha1 hash for one or multiple files
      *
      * @param  string|array $options
-     * @return \Zend\Validator\File\Hash Provides a fluent interface
+     * @return \Zend2\Validator\File\Hash Provides a fluent interface
      */
     public function setSha1($options)
     {
@@ -88,7 +88,7 @@ class Sha1 extends Hash
      * Adds the sha1 hash for one or multiple files
      *
      * @param  string|array $options
-     * @return \Zend\Validator\File\Hash Provides a fluent interface
+     * @return \Zend2\Validator\File\Hash Provides a fluent interface
      */
     public function addSha1($options)
     {
@@ -100,7 +100,7 @@ class Sha1 extends Hash
      * Returns true if and only if the given file confirms the set hash
      *
      * @param  string $value Filename to check for hash
-     * @param  array  $file  File data from \Zend\File\Transfer\Transfer
+     * @param  array  $file  File data from \Zend2\File\Transfer\Transfer
      * @return boolean
      */
     public function isValid($value, $file = null)

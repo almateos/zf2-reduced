@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GBase
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\GBase;
+namespace Zend2\GData\GBase;
 
-use Zend\GData\GBase;
+use Zend2\GData\GBase;
 
 /**
  * Base class for working with Google Base entries.
  *
  * @link http://code.google.com/apis/base/
  *
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\GBase
- * @uses       \Zend\GData\GBase\Extension\BaseAttribute
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\GBase
+ * @uses       \Zend2\GData\GBase\Extension\BaseAttribute
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GBase
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Entry extends \Zend\GData\Entry
+class Entry extends \Zend2\GData\Entry
 {
 
     /**
@@ -45,7 +45,7 @@ class Entry extends \Zend\GData\Entry
      *
      * var @string
      */
-    protected $_entryClassName = 'Zend\GData\GBase\Entry';
+    protected $_entryClassName = 'Zend2\GData\GBase\Entry';
 
     /**
      * Google Base attribute elements in the 'g' namespace
@@ -55,7 +55,7 @@ class Entry extends \Zend\GData\Entry
     protected $_baseAttributes = array();
 
     /**
-     * Constructs a new Zend_Gdata_GBase_ItemEntry object.
+     * Constructs a new Zend2_Gdata_GBase_ItemEntry object.
      * @param DOMElement $element (optional) The DOMElement on which to base this object.
      */
     public function __construct($element = null)
@@ -104,7 +104,7 @@ class Entry extends \Zend\GData\Entry
     /**
      * Get the value of the itme_type
      *
-     * @return Zend_Gdata_GBase_Extension_ItemType The requested object.
+     * @return Zend2_Gdata_GBase_Extension_ItemType The requested object.
      */
     public function getItemType()
     {
@@ -118,7 +118,7 @@ class Entry extends \Zend\GData\Entry
 
     /**
      * Return all the Base attributes
-     * @return \Zend\GData\GBase\Extension\BaseAttribute
+     * @return \Zend2\GData\GBase\Extension\BaseAttribute
      */
     public function getGBaseAttributes() {
         return $this->_baseAttributes;

@@ -1,5 +1,5 @@
 <?php
-namespace Zend\Stdlib;
+namespace Zend2\Stdlib;
 
 interface Dispatchable
 {

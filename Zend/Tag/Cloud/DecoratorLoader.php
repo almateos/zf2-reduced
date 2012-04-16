@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Tag
+ * @category   Zend2
+ * @package    Zend2_Tag
  * @subpackage Cloud
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Tag\Cloud;
+namespace Zend2\Tag\Cloud;
 
-use Zend\Loader\PluginClassLoader;
+use Zend2\Loader\PluginClassLoader;
 
 /**
  * Plugin Class Loader implementation for decorators.
  *
- * @category   Zend
- * @package    Zend_Tag
+ * @category   Zend2
+ * @package    Zend2_Tag
  * @subpackage Cloud
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DecoratorLoader extends PluginClassLoader
@@ -38,10 +38,10 @@ class DecoratorLoader extends PluginClassLoader
      * @var array Pre-aliased decorators 
      */
     protected $plugins = array(
-        'html_cloud' => 'Zend\Tag\Cloud\Decorator\HtmlCloud',
-        'htmlcloud'  => 'Zend\Tag\Cloud\Decorator\HtmlCloud',
-        'html_tag'   => 'Zend\Tag\Cloud\Decorator\HtmlTag',
-        'htmltag'    => 'Zend\Tag\Cloud\Decorator\HtmlTag',
-        'tag'        => 'Zend\Tag\Cloud\Decorator\Tag',
+        'html_cloud' => 'Zend2\Tag\Cloud\Decorator\HtmlCloud',
+        'htmlcloud'  => 'Zend2\Tag\Cloud\Decorator\HtmlCloud',
+        'html_tag'   => 'Zend2\Tag\Cloud\Decorator\HtmlTag',
+        'htmltag'    => 'Zend2\Tag\Cloud\Decorator\HtmlTag',
+        'tag'        => 'Zend2\Tag\Cloud\Decorator\Tag',
     );
 }

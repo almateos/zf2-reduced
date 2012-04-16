@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id:$
  */
 
-namespace Zend\GData\GApps;
+namespace Zend2\GData\GApps;
 
-use Zend\GData\GApps;
+use Zend2\GData\GApps;
 
 /**
  * Data model class for a Google Apps Group Entry.
@@ -32,26 +32,26 @@ use Zend\GData\GApps;
  *
  * To transfer group entries to and from the Google Apps servers, including
  * creating new entries, refer to the Google Apps service class,
- * \Zend\Gdata\Gapps.
+ * \Zend2\Gdata\Gapps.
  *
  * This class represents <atom:entry> in the Google Data protocol.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class GroupEntry extends \Zend\GData\Entry
+class GroupEntry extends \Zend2\GData\Entry
 {
 
-    protected $_entryClassName = '\Zend\Gdata\Gapps\GroupEntry';
+    protected $_entryClassName = '\Zend2\Gdata\Gapps\GroupEntry';
 
     /**
      * <apps:property> element containing information about other items
      * relevant to this entry.
      *
-     * @var \Zend\Gdata\Gapps\Extension\Property
+     * @var \Zend2\Gdata\Gapps\Extension\Property
      */
     protected $_property = array();
 
@@ -63,7 +63,7 @@ class GroupEntry extends \Zend\GData\Entry
      */
     public function __construct($element = null)
     {
-        $this->registerAllNamespaces(\Zend\Gdata\Gapps::$namespaces);
+        $this->registerAllNamespaces(\Zend2\Gdata\Gapps::$namespaces);
         parent::__construct($element);
     }
 
@@ -99,7 +99,7 @@ class GroupEntry extends \Zend\GData\Entry
         switch ($absoluteNodeName) {
 
             case $this->lookupNamespace('apps') . ':' . 'property';
-                $property = new \Zend\Gdata\Gapps\Extension\Property();
+                $property = new \Zend2\Gdata\Gapps\Extension\Property();
                 $property->transferFromDOM($child);
                 $this->_property[] = $property;
                 break;
@@ -114,9 +114,9 @@ class GroupEntry extends \Zend\GData\Entry
      *
      * @param string $rel The rel value of the property to be found. If null,
      *          the array of properties is returned instead.
-     * @return mixed Either an array of \Zend\Gdata\Gapps\Extension\Property
+     * @return mixed Either an array of \Zend2\Gdata\Gapps\Extension\Property
      *          objects if $rel is null, a single
-     *          \Zend\Gdata\Gapps\Extension\Property object if $rel is specified
+     *          \Zend2\Gdata\Gapps\Extension\Property object if $rel is specified
      *          and a matching feed link is found, or null if $rel is
      *          specified and no matching property is found.
      */
@@ -138,8 +138,8 @@ class GroupEntry extends \Zend\GData\Entry
      * Set the value of the  property property for this object.
      *
      * @param array $value A collection of
-     *          \Zend\Gdata\Gapps\Extension\Property objects.
-     * @return \Zend\Gdata\Gapps\GroupEntry Provides a fluent interface.
+     *          \Zend2\Gdata\Gapps\Extension\Property objects.
+     * @return \Zend2\Gdata\Gapps\GroupEntry Provides a fluent interface.
      */
     public function setProperty($value)
     {

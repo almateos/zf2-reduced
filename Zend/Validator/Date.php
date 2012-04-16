@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
+namespace Zend2\Validator;
 
 use Traversable,
-    Zend\Date as ZendDate,
-    Zend\Locale\Format,
-    Zend\Locale\Locale,
-    Zend\Registry,
-    Zend\Stdlib\ArrayUtils;
+    Zend2\Date as Zend2Date,
+    Zend2\Locale\Format,
+    Zend2\Locale\Locale,
+    Zend2\Registry,
+    Zend2\Stdlib\ArrayUtils;
 
 /**
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Date extends AbstractValidator
@@ -45,7 +45,7 @@ class Date extends AbstractValidator
      * @var array
      */
     protected $_messageTemplates = array(
-        self::INVALID        => "Invalid type given. String, integer, array or Zend_Date expected",
+        self::INVALID        => "Invalid type given. String, integer, array or Zend2_Date expected",
         self::INVALID_DATE   => "'%value%' does not appear to be a valid date",
         self::FALSEFORMAT    => "'%value%' does not fit the date format '%format%'",
     );
@@ -67,7 +67,7 @@ class Date extends AbstractValidator
     /**
      * Optional locale
      *
-     * @var string|\Zend\Locale\Locale|null
+     * @var string|\Zend2\Locale\Locale|null
      */
     protected $locale;
 
@@ -96,8 +96,8 @@ class Date extends AbstractValidator
         }
 
         if (!array_key_exists('locale', $options)) {
-            if (Registry::isRegistered('Zend_Locale')) {
-                $options['locale'] = Registry::get('Zend_Locale');
+            if (Registry::isRegistered('Zend2_Locale')) {
+                $options['locale'] = Registry::get('Zend2_Locale');
             }
         }
 
@@ -144,7 +144,7 @@ class Date extends AbstractValidator
      * Sets the format option
      *
      * @param  string $format
-     * @return \Zend\Validator\Date provides a fluent interface
+     * @return \Zend2\Validator\Date provides a fluent interface
      */
     public function setFormat($format = null)
     {
@@ -155,9 +155,9 @@ class Date extends AbstractValidator
     /**
      * Returns true if $value is a valid date of the format YYYY-MM-DD
      * If optional $format or $locale is set the date format is checked
-     * according to Zend_Date, see Zend_Date::isDate()
+     * according to Zend2_Date, see Zend2_Date::isDate()
      *
-     * @param  string|array|ZendDate $value
+     * @param  string|array|Zend2Date $value
      * @return boolean
      */
     public function isValid($value)
@@ -166,7 +166,7 @@ class Date extends AbstractValidator
             && !is_int($value) 
             && !is_float($value) 
             && !is_array($value) 
-            && !($value instanceof ZendDate\Date)
+            && !($value instanceof Zend2Date\Date)
         ) {
             $this->error(self::INVALID);
             return false;
@@ -177,9 +177,9 @@ class Date extends AbstractValidator
         if (($this->format !== null) 
             || ($this->locale !== null)
             || is_array($value) 
-            || $value instanceof ZendDate\Date
+            || $value instanceof Zend2Date\Date
         ) {
-            if (!ZendDate\Date::isDate($value, $this->format, $this->locale)) {
+            if (!Zend2Date\Date::isDate($value, $this->format, $this->locale)) {
                 if ($this->checkFormat($value) === false) {
                     $this->error(self::FALSEFORMAT);
                 } else {
@@ -224,7 +224,7 @@ class Date extends AbstractValidator
                 && ((strpos(strtoupper($this->format), 'YY') !== false) 
                     && (strpos(strtoupper($this->format), 'YYYY') === false))
             ) {
-                $parsed['year'] = ZendDate\Date::getFullYear($parsed['year']);
+                $parsed['year'] = Zend2Date\Date::getFullYear($parsed['year']);
             }
         } catch (\Exception $e) {
             // Date can not be parsed

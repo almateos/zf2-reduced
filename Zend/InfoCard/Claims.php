@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard;
+namespace Zend2\InfoCard;
 
 /**
  * Result value of the InfoCard component, contains any error messages and claims
  * from the processing of an information card.
  *
- * @uses       \Zend\InfoCard\Exception
- * @category   Zend
- * @package    Zend_InfoCard
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\InfoCard\Exception
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Claims
@@ -86,7 +86,7 @@ class Claims
      * Override for the safeguard which ensures that you don't use claims which failed validation.
      * Used in situations when there was a validation error you'd like to ignore
      *
-     * @return \Zend\InfoCard\Claims
+     * @return \Zend2\InfoCard\Claims
      */
     public function forceValid()
     {
@@ -110,7 +110,7 @@ class Claims
      * set, it figures out which one to consider 'default' by taking the first namespace sorted by use-count
      * in claims
      *
-     * @throws \Zend\InfoCard\Exception
+     * @throws \Zend2\InfoCard\Exception
      * @return string The default namespace
      */
     public function getDefaultNamespace()
@@ -143,9 +143,9 @@ class Claims
     /**
      * Set the default namespace, overriding any existing default
      *
-     * @throws \Zend\InfoCard\Exception
+     * @throws \Zend2\InfoCard\Exception
      * @param string $namespace The default namespace to use
-     * @return \Zend\InfoCard\Claims
+     * @return \Zend2\InfoCard\Claims
      */
     public function setDefaultNamespace($namespace)
     {
@@ -174,7 +174,7 @@ class Claims
      * Set the error message contained within the claims object
      *
      * @param string $error The error message
-     * @return \Zend\InfoCard\Claims
+     * @return \Zend2\InfoCard\Claims
      */
     public function setError($error)
     {
@@ -197,9 +197,9 @@ class Claims
      * Set the claims for the claims object. Can only be set once and is done
      * by the component itself. Internal use only.
      *
-     * @throws \Zend\InfoCard\Exception
+     * @throws \Zend2\InfoCard\Exception
      * @param array $claims
-     * @return \Zend\InfoCard\Claims
+     * @return \Zend2\InfoCard\Claims
      */
     public function setClaims(Array $claims)
     {
@@ -214,9 +214,9 @@ class Claims
     /**
      * Set the result code of the claims object.
      *
-     * @throws \Zend\InfoCard\Exception
+     * @throws \Zend2\InfoCard\Exception
      * @param int $code The result code
-     * @return \Zend\InfoCard\Claims
+     * @return \Zend2\InfoCard\Claims
      */
     public function setCode($code)
     {
@@ -269,7 +269,7 @@ class Claims
 
     /**
      * Magic helper function
-     * @throws \Zend\InfoCard\Exception
+     * @throws \Zend2\InfoCard\Exception
      */
     public function __unset($k)
     {
@@ -294,7 +294,7 @@ class Claims
 
     /**
      * Magic helper function
-     * @throws \Zend\InfoCard\Exception
+     * @throws \Zend2\InfoCard\Exception
      */
     public function __set($k, $v)
     {

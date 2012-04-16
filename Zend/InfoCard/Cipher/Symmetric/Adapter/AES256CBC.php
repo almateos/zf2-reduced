@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Cipher
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Cipher
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard\Cipher\Symmetric\Adapter;
-use Zend\InfoCard\Cipher;
+namespace Zend2\InfoCard\Cipher\Symmetric\Adapter;
+use Zend2\InfoCard\Cipher;
 
 /**
  * Implements AES256 with CBC encryption implemented using the mCrypt extension
  *
- * @uses       \Zend\InfoCard\Cipher\Exception
- * @uses       \Zend\InfoCard\Cipher\Symmetric\Adapter\AbstractAdapter
- * @uses       \Zend\InfoCard\Cipher\Symmetric\AES256CBC
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Cipher
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\InfoCard\Cipher\Exception
+ * @uses       \Zend2\InfoCard\Cipher\Symmetric\Adapter\AbstractAdapter
+ * @uses       \Zend2\InfoCard\Cipher\Symmetric\AES256CBC
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Cipher
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class AES256CBC
@@ -56,7 +56,7 @@ class AES256CBC
     /**
      * The object constructor
      *
-     * @throws \Zend\InfoCard\Cipher\Exception
+     * @throws \Zend2\InfoCard\Cipher\Exception
      */
     public function __construct()
     {
@@ -71,7 +71,7 @@ class AES256CBC
     /**
      * Decrypts data using the AES Algorithm using the mCrypt extension
      *
-     * @throws \Zend\InfoCard\Cipher\Exception
+     * @throws \Zend2\InfoCard\Cipher\Exception
      * @param string $encryptedData The encrypted data in binary format
      * @param string $decryptionKey The decryption key
      * @param integer $iv_length The IV length to use

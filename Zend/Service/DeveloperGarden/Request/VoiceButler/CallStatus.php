@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_VoiceButler_AbstractVoiceButler
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_VoiceButler_AbstractVoiceButler
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_Request_VoiceButler_CallStatus
-    extends Zend_Service_DeveloperGarden_Request_VoiceButler_AbstractVoiceButler
+class Zend2_Service_DeveloperGarden_Request_VoiceButler_CallStatus
+    extends Zend2_Service_DeveloperGarden_Request_VoiceButler_AbstractVoiceButler
 {
     /**
      * extend the keep alive for this call
@@ -44,7 +44,7 @@ class Zend_Service_DeveloperGarden_Request_VoiceButler_CallStatus
      * @param integer $environment
      * @param string $sessionId
      * @param integer $keepAlive
-     * @return Zend_Service_DeveloperGarden_Request_AbstractRequest
+     * @return Zend2_Service_DeveloperGarden_Request_AbstractRequest
      */
     public function __construct($environment, $sessionId, $keepAlive = null)
     {
@@ -65,7 +65,7 @@ class Zend_Service_DeveloperGarden_Request_VoiceButler_CallStatus
      * sets new sessionId
      *
      * @param string $sessionId
-     * @return Zend_Service_DeveloperGarden_Request_VoiceButler_CallStatus
+     * @return Zend2_Service_DeveloperGarden_Request_VoiceButler_CallStatus
      */
     public function setSessionId($sessionId)
     {
@@ -85,7 +85,7 @@ class Zend_Service_DeveloperGarden_Request_VoiceButler_CallStatus
      * sets new keepAlive flag
      *
      * @param integer $keepAlive
-     * @return Zend_Service_DeveloperGarden_Request_VoiceButler_CallStatus
+     * @return Zend2_Service_DeveloperGarden_Request_VoiceButler_CallStatus
      */
     public function setKeepAlive($keepAlive)
     {

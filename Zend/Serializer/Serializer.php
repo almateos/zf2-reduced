@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Serializer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Serializer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Serializer;
+namespace Zend2\Serializer;
 
-use Zend\Loader\Broker;
+use Zend2\Loader\Broker;
 
 /**
- * @category   Zend
- * @package    Zend_Serializer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Serializer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Serializer
@@ -33,24 +33,24 @@ class Serializer
     /**
      * Broker for loading adapters
      *
-     * @var null|Zend\Loader\Broker
+     * @var null|Zend2\Loader\Broker
      */
     private static $_adapterBroker = null;
 
     /**
      * The default adapter.
      *
-     * @var string|Zend\Serializer\Adapter
+     * @var string|Zend2\Serializer\Adapter
      */
     protected static $_defaultAdapter = 'PhpSerialize';
 
     /**
      * Create a serializer adapter instance.
      *
-     * @param string|Zend\Serializer\Adapter $adapterName Name of the adapter class
-     * @param array |Zend\Config\Config $opts Serializer options
-     * @return Zend\Serializer\Adapter
-     * @throws Zend\Serializer\Exception
+     * @param string|Zend2\Serializer\Adapter $adapterName Name of the adapter class
+     * @param array |Zend2\Config\Config $opts Serializer options
+     * @return Zend2\Serializer\Adapter
+     * @throws Zend2\Serializer\Exception
      */
     public static function factory($adapterName, $opts = array()) 
     {
@@ -64,7 +64,7 @@ class Serializer
     /**
      * Get the adapter broker
      *
-     * @return Zend\Loader\Broker
+     * @return Zend2\Loader\Broker
      */
     public static function getAdapterBroker() 
     {
@@ -77,7 +77,7 @@ class Serializer
     /**
      * Change the adapter broker
      *
-     * @param  Zend\Loader\Broker $broker
+     * @param  Zend2\Loader\Broker $broker
      * @return void
      */
     public static function setAdapterBroker(Broker $broker) 
@@ -88,7 +88,7 @@ class Serializer
     /**
      * Resets the internal adapter broker
      *
-     * @return Zend\Loader\Broker
+     * @return Zend2\Loader\Broker
      */
     public static function resetAdapterBroker()
     {
@@ -99,7 +99,7 @@ class Serializer
     /**
      * Returns a default adapter broker
      *
-     * @return Zend\Loader\Broker
+     * @return Zend2\Loader\Broker
      */
     protected static function _getDefaultAdapterBroker()
     {
@@ -110,8 +110,8 @@ class Serializer
     /**
      * Change the default adapter.
      *
-     * @param string|Zend\Serializer\Adapter $adapter
-     * @param array|Zend\Config\Config $options
+     * @param string|Zend2\Serializer\Adapter $adapter
+     * @param array|Zend2\Config\Config $options
      */
     public static function setDefaultAdapter($adapter, $options = array()) 
     {
@@ -121,7 +121,7 @@ class Serializer
     /**
      * Get the default adapter.
      *
-     * @return Zend\Serializer\Adapter
+     * @return Zend2\Serializer\Adapter
      */
     public static function getDefaultAdapter() 
     {
@@ -137,7 +137,7 @@ class Serializer
      * @param mixed $value
      * @param array $options
      * @return string
-     * @throws Zend\Serializer\Exception
+     * @throws Zend2\Serializer\Exception
      */
     public static function serialize($value, array $options = array()) 
     {
@@ -157,7 +157,7 @@ class Serializer
      * @param string $serialized
      * @param array $options
      * @return mixed
-     * @throws Zend\Serializer\Exception
+     * @throws Zend2\Serializer\Exception
      */
     public static function unserialize($serialized, array $options = array()) 
     {

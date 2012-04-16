@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend\Http\Client
- * @uses       Zend\Http\Response
- * @uses       Zend_Service_WindowsAzure_Credentials_AbstractCredentials
- * @uses       Zend_Service_WindowsAzure_Credentials_SharedKey
- * @uses       Zend_Service_WindowsAzure_Exception
- * @uses       Zend_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy
- * @uses       Zend_Service_WindowsAzure_Storage
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @uses       Zend2\Http\Client
+ * @uses       Zend2\Http\Response
+ * @uses       Zend2_Service_WindowsAzure_Credentials_AbstractCredentials
+ * @uses       Zend2_Service_WindowsAzure_Credentials_SharedKey
+ * @uses       Zend2_Service_WindowsAzure_Exception
+ * @uses       Zend2_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy
+ * @uses       Zend2_Service_WindowsAzure_Storage
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_WindowsAzure_Storage
+class Zend2_Service_WindowsAzure_Storage
 {
 	/**
 	 * Development storage URLS
@@ -95,23 +95,23 @@ class Zend_Service_WindowsAzure_Storage
 	protected $_usePathStyleUri = false;
 	
 	/**
-	 * Zend_Service_WindowsAzure_Credentials_AbstractCredentials instance
+	 * Zend2_Service_WindowsAzure_Credentials_AbstractCredentials instance
 	 *
-	 * @var Zend_Service_WindowsAzure_Credentials_AbstractCredentials
+	 * @var Zend2_Service_WindowsAzure_Credentials_AbstractCredentials
 	 */
 	protected $_credentials = null;
 	
 	/**
-	 * Zend_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy instance
+	 * Zend2_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy instance
 	 * 
-	 * @var Zend_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy
+	 * @var Zend2_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy
 	 */
 	protected $_retryPolicy = null;
 	
 	/**
-	 * Zend_Http_Client channel used for communication with REST services
+	 * Zend2_Http_Client channel used for communication with REST services
 	 * 
-	 * @var Zend_Http_Client
+	 * @var Zend2_Http_Client
 	 */
 	protected $_httpClientChannel = null;
 	
@@ -144,20 +144,20 @@ class Zend_Service_WindowsAzure_Storage
 	protected $_proxyCredentials = '';
 	
 	/**
-	 * Creates a new Zend_Service_WindowsAzure_Storage instance
+	 * Creates a new Zend2_Service_WindowsAzure_Storage instance
 	 *
 	 * @param string $host Storage host name
 	 * @param string $accountName Account name for Windows Azure
 	 * @param string $accountKey Account key for Windows Azure
 	 * @param boolean $usePathStyleUri Use path-style URI's
-	 * @param Zend_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy $retryPolicy Retry policy to use when making requests
+	 * @param Zend2_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy $retryPolicy Retry policy to use when making requests
 	 */
 	public function __construct(
 		$host            = self::URL_DEV_BLOB,
-		$accountName     = Zend_Service_WindowsAzure_Credentials_AbstractCredentials::DEVSTORE_ACCOUNT,
-		$accountKey      = Zend_Service_WindowsAzure_Credentials_AbstractCredentials::DEVSTORE_KEY,
+		$accountName     = Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::DEVSTORE_ACCOUNT,
+		$accountKey      = Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::DEVSTORE_KEY,
 		$usePathStyleUri = false,
-		Zend_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy $retryPolicy = null
+		Zend2_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy $retryPolicy = null
 	) {
 		$this->_host = $host;
 		$this->_accountName = $accountName;
@@ -175,18 +175,18 @@ class Zend_Service_WindowsAzure_Storage
 		}
 		
 		if ($this->_credentials === null) {
-		    $this->_credentials = new Zend_Service_WindowsAzure_Credentials_SharedKey(
+		    $this->_credentials = new Zend2_Service_WindowsAzure_Credentials_SharedKey(
 		    	$this->_accountName, $this->_accountKey, $this->_usePathStyleUri);
 		}
 		
 		$this->_retryPolicy = $retryPolicy;
 		if ($this->_retryPolicy === null) {
-		    $this->_retryPolicy = Zend_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy::noRetry();
+		    $this->_retryPolicy = Zend2_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy::noRetry();
 		}
 		
-		// Setup default Zend_Http_Client channel
+		// Setup default Zend2_Http_Client channel
 		$options = array(
-			'adapter' => 'Zend\\Http\\Client\\Adapter\\Proxy'
+			'adapter' => 'Zend2\\Http\\Client\\Adapter\\Proxy'
 		);
 		if (function_exists('curl_init')) {
 			// Set cURL options if cURL is used afterwards
@@ -195,15 +195,15 @@ class Zend_Service_WindowsAzure_Storage
 					CURLOPT_TIMEOUT => 120,
 			);
 		}
-		$this->_httpClientChannel = new Zend\Http\Client(null, $options);
+		$this->_httpClientChannel = new Zend2\Http\Client(null, $options);
 	}
 	
 	/**
 	 * Set the HTTP client channel to use
 	 * 
-	 * @param Zend_Http_Client_Adapter_Interface|string $adapterInstance Adapter instance or adapter class name.
+	 * @param Zend2_Http_Client_Adapter_Interface|string $adapterInstance Adapter instance or adapter class name.
 	 */
-	public function setHttpClientChannel($adapterInstance = 'Zend\\Http\\Client\\Adapter\\Proxy')
+	public function setHttpClientChannel($adapterInstance = 'Zend2\\Http\\Client\\Adapter\\Proxy')
 	{
 		$this->_httpClientChannel->setAdapter($adapterInstance);
 	}
@@ -211,13 +211,13 @@ class Zend_Service_WindowsAzure_Storage
 	/**
 	 * Set retry policy to use when making requests
 	 *
-	 * @param Zend_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy $retryPolicy Retry policy to use when making requests
+	 * @param Zend2_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy $retryPolicy Retry policy to use when making requests
 	 */
-	public function setRetryPolicy(Zend_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy $retryPolicy = null)
+	public function setRetryPolicy(Zend2_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy $retryPolicy = null)
 	{
 		$this->_retryPolicy = $retryPolicy;
 		if ($this->_retryPolicy === null) {
-		    $this->_retryPolicy = Zend_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy::noRetry();
+		    $this->_retryPolicy = Zend2_Service_WindowsAzure_RetryPolicy_AbstractRetryPolicy::noRetry();
 		}
 	}
 	
@@ -282,11 +282,11 @@ class Zend_Service_WindowsAzure_Storage
 	}
 	
 	/**
-	 * Set Zend_Service_WindowsAzure_Credentials_AbstractCredentials instance
+	 * Set Zend2_Service_WindowsAzure_Credentials_AbstractCredentials instance
 	 * 
-	 * @param Zend_Service_WindowsAzure_Credentials_AbstractCredentials $credentials Zend_Service_WindowsAzure_Credentials_AbstractCredentials instance to use for request signing.
+	 * @param Zend2_Service_WindowsAzure_Credentials_AbstractCredentials $credentials Zend2_Service_WindowsAzure_Credentials_AbstractCredentials instance to use for request signing.
 	 */
-	public function setCredentials(Zend_Service_WindowsAzure_Credentials_AbstractCredentials $credentials)
+	public function setCredentials(Zend2_Service_WindowsAzure_Credentials_AbstractCredentials $credentials)
 	{
 	    $this->_credentials = $credentials;
 	    $this->_credentials->setAccountName($this->_accountName);
@@ -295,9 +295,9 @@ class Zend_Service_WindowsAzure_Storage
 	}
 	
 	/**
-	 * Get Zend_Service_WindowsAzure_Credentials_AbstractCredentials instance
+	 * Get Zend2_Service_WindowsAzure_Credentials_AbstractCredentials instance
 	 * 
-	 * @return Zend_Service_WindowsAzure_Credentials_AbstractCredentials
+	 * @return Zend2_Service_WindowsAzure_Credentials_AbstractCredentials
 	 */
 	public function getCredentials()
 	{
@@ -305,7 +305,7 @@ class Zend_Service_WindowsAzure_Storage
 	}
 	
 	/**
-	 * Perform request using Zend_Http_Client channel
+	 * Perform request using Zend2_Http_Client channel
 	 *
 	 * @param string $path Path
 	 * @param string $queryString Query string
@@ -315,17 +315,17 @@ class Zend_Service_WindowsAzure_Storage
 	 * @param mixed $rawData Optional RAW HTTP data to be sent over the wire
 	 * @param string $resourceType Resource type
 	 * @param string $requiredPermission Required permission
-	 * @return Zend_Http_Response
+	 * @return Zend2_Http_Response
 	 */
 	protected function _performRequest(
 		$path = '/',
 		$queryString = '',
-		$httpVerb = Zend\Http\Client::GET,
+		$httpVerb = Zend2\Http\Client::GET,
 		$headers = array(),
 		$forTableStorage = false,
 		$rawData = null,
-		$resourceType = Zend_Service_WindowsAzure_Storage::RESOURCE_UNKNOWN,
-		$requiredPermission = Zend_Service_WindowsAzure_Credentials_AbstractCredentials::PERMISSION_READ
+		$resourceType = Zend2_Service_WindowsAzure_Storage::RESOURCE_UNKNOWN,
+		$requiredPermission = Zend2_Service_WindowsAzure_Credentials_AbstractCredentials::PERMISSION_READ
 	) {
 	    // Clean path
 		if (strpos($path, '/') !== 0) {
@@ -374,16 +374,16 @@ class Zend_Service_WindowsAzure_Storage
 	}
 	
 	/** 
-	 * Parse result from Zend_Http_Response
+	 * Parse result from Zend2_Http_Response
 	 *
-	 * @param Zend_Http_Response $response Response from HTTP call
+	 * @param Zend2_Http_Response $response Response from HTTP call
 	 * @return object
-	 * @throws Zend_Service_WindowsAzure_Exception
+	 * @throws Zend2_Service_WindowsAzure_Exception
 	 */
-	protected function _parseResponse(Zend\Http\Response $response = null)
+	protected function _parseResponse(Zend2\Http\Response $response = null)
 	{
 		if ($response === null) {
-			throw new Zend_Service_WindowsAzure_Exception('Response should not be null.');
+			throw new Zend2_Service_WindowsAzure_Exception('Response should not be null.');
 		}
 		
         $xml = @simplexml_load_string($response->getBody());
@@ -420,7 +420,7 @@ class Zend_Service_WindowsAzure_Storage
 		$headers = array();
 		foreach ($metadata as $key => $value) {
 			if (strpos($value, "\r") !== false || strpos($value, "\n") !== false) {
-				throw new Zend_Service_WindowsAzure_Exception('Metadata cannot contain newline characters.');
+				throw new Zend2_Service_WindowsAzure_Exception('Metadata cannot contain newline characters.');
 			}
 		    $headers["x-ms-meta-" . strtolower($key)] = $value;
 		}

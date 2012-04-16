@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Json
+ * @category   Zend2
+ * @package    Zend2_Json
  * @subpackage Expr
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Json;
+namespace Zend2\Json;
 
 /**
- * Class for Zend_Json encode method.
+ * Class for Zend2_Json encode method.
  *
  * This class simply holds a string with a native Javascript Expression,
- * so objects | arrays to be encoded with Zend_Json can contain native
+ * so objects | arrays to be encoded with Zend2_Json can contain native
  * Javascript Expressions.
  *
  * Example:
@@ -33,20 +33,20 @@ namespace Zend\Json;
  * $foo = array(
  *     'integer'  =>9,
  *     'string'   =>'test string',
- *     'function' => Zend_Json_Expr(
- *         'function(){ window.alert("javascript function encoded by Zend_Json") }'
+ *     'function' => Zend2_Json_Expr(
+ *         'function(){ window.alert("javascript function encoded by Zend2_Json") }'
  *     ),
  * );
  *
- * Zend_Json::encode($foo, false, array('enableJsonExprFinder' => true));
+ * Zend2_Json::encode($foo, false, array('enableJsonExprFinder' => true));
  * // it will returns json encoded string:
- * // {"integer":9,"string":"test string","function":function(){window.alert("javascript function encoded by Zend_Json")}}
+ * // {"integer":9,"string":"test string","function":function(){window.alert("javascript function encoded by Zend2_Json")}}
  * </code>
  *
- * @category   Zend
- * @package    Zend_Json
+ * @category   Zend2
+ * @package    Zend2_Json
  * @subpackage Expr
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Expr

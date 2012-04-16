@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper;
+namespace Zend2\View\Helper;
 
-use Zend\Mvc\Router\RouteStack,
-    Zend\Mvc\Router\RouteMatch,
-    Zend\View\Exception;
+use Zend2\Mvc\Router\RouteStack,
+    Zend2\Mvc\Router\RouteMatch,
+    Zend2\View\Exception;
 
 /**
  * Helper for making easy links and getting urls that depend on the routes and router.
  *
- * @uses       \Zend\View\Helper\AbstractHelper
- * @package    Zend_View
+ * @uses       \Zend2\View\Helper\AbstractHelper
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Url extends AbstractHelper
@@ -77,7 +77,7 @@ class Url extends AbstractHelper
     /**
      * Generates an url given the name of a route.
      *
-     * @see    Zend\Mvc\Router\Route::assemble()
+     * @see    Zend2\Mvc\Router\Route::assemble()
      * @param  string  $name               Name of the route
      * @param  array   $params             Parameters for the link
      * @param  array   $options            Options for the route

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,37 +12,37 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Analysis
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Analysis\TokenFilter;
+namespace Zend2\Search\Lucene\Analysis\TokenFilter;
 
-use Zend\Search\Lucene\Analysis\TokenFilter,
-    Zend\Search\Lucene\Analysis\Token,
-    Zend\Search\Lucene,
-    Zend\Search\Lucene\Exception\ExtensionNotLoadedExtension;
+use Zend2\Search\Lucene\Analysis\TokenFilter,
+    Zend2\Search\Lucene\Analysis\Token,
+    Zend2\Search\Lucene,
+    Zend2\Search\Lucene\Exception\ExtensionNotLoadedExtension;
 
 /**
  * Lower case Token filter.
  *
- * @uses       \Zend\Search\Lucene\Analysis\Token
- * @uses       \Zend\Search\Lucene\Analysis\TokenFilter
- * @uses       \Zend\Search\Lucene\Exception\ExtensionNotLoadedException
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Analysis\Token
+ * @uses       \Zend2\Search\Lucene\Analysis\TokenFilter
+ * @uses       \Zend2\Search\Lucene\Exception\ExtensionNotLoadedException
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Analysis
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class LowerCaseUtf8 implements TokenFilter
 {
     /**
      * Object constructor
-     * @throws \Zend\Search\Lucene\Exception\ExtensionNotLoadedException
+     * @throws \Zend2\Search\Lucene\Exception\ExtensionNotLoadedException
      */
     public function __construct()
     {
@@ -55,8 +55,8 @@ class LowerCaseUtf8 implements TokenFilter
     /**
      * Normalize Token or remove it (if null is returned)
      *
-     * @param \Zend\Search\Lucene\Analysis\Token $srcToken
-     * @return \Zend\Search\Lucene\Analysis\Token
+     * @param \Zend2\Search\Lucene\Analysis\Token $srcToken
+     * @return \Zend2\Search\Lucene\Analysis\Token
      */
     public function normalize(Token $srcToken)
     {

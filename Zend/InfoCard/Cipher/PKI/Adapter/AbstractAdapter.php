@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Cipher
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Cipher
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard\Cipher\PKI\Adapter;
+namespace Zend2\InfoCard\Cipher\PKI\Adapter;
 
 /**
  * An abstract class for public-key ciphers
  *
- * @uses       \Zend\InfoCard\Cipher\Exception
- * @uses       \Zend\InfoCard\Cipher\PKI
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Cipher
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\InfoCard\Cipher\Exception
+ * @uses       \Zend2\InfoCard\Cipher\PKI
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Cipher
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class AbstractAdapter implements \Zend\InfoCard\Cipher\PKI
+abstract class AbstractAdapter implements \Zend2\InfoCard\Cipher\PKI
 {
     /**
      * OAEP Padding public key encryption
@@ -54,9 +54,9 @@ abstract class AbstractAdapter implements \Zend\InfoCard\Cipher\PKI
     /**
      * Set the padding of the public key encryption
      *
-     * @throws \Zend\InfoCard\Cipher\Exception
+     * @throws \Zend2\InfoCard\Cipher\Exception
      * @param integer $padding One of the constnats in this class
-     * @return Zend_InfoCard_Pki_Adapter_Abstract
+     * @return Zend2_InfoCard_Pki_Adapter_Abstract
      */
     public function setPadding($padding)
     {
@@ -66,7 +66,7 @@ abstract class AbstractAdapter implements \Zend\InfoCard\Cipher\PKI
                 $this->_padding = $padding;
                 break;
             default:
-                throw new \Zend\InfoCard\Cipher\Exception\InvalidArgumentException("Invalid Padding Type Provided");
+                throw new \Zend2\InfoCard\Cipher\Exception\InvalidArgumentException("Invalid Padding Type Provided");
                 break;
         }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Db\Sql\Exception;
+namespace Zend2\Db\Sql\Exception;
 
 class InvalidArgumentException extends \InvalidArgumentException
 {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Queue
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Message
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Queue\Message;
-use Zend\Queue;
+namespace Zend2\Queue\Message;
+use Zend2\Queue;
 
 /**
- * Class for managing Zend Platform JobQueue jobs via Zend_Queue
+ * Class for managing Zend2 Platform JobQueue jobs via Zend2_Queue
  *
- * @uses       \ZendAPI_Job
- * @uses       \Zend\Queue\Exception
- * @uses       \Zend\Queue\Message\Message
- * @category   Zend
- * @package    Zend_Queue
+ * @uses       \Zend2API_Job
+ * @uses       \Zend2\Queue\Exception
+ * @uses       \Zend2\Queue\Message\Message
+ * @category   Zend2
+ * @package    Zend2_Queue
  * @subpackage Message
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PlatformJob extends Message
 {
     /**
-     * @var \ZendAPI_Job
+     * @var \Zend2API_Job
      */
     protected $_job;
 
@@ -52,23 +52,23 @@ class PlatformJob extends Message
      *
      * The constructor should be an array of options.
      *
-     * If the option 'data' is provided, and is an instance of \ZendAPI_Job,
+     * If the option 'data' is provided, and is an instance of \Zend2API_Job,
      * that object will be used as the internal job; if that option is not a
-     * \ZendAPI_Job instance, an exception will be thrown.
+     * \Zend2API_Job instance, an exception will be thrown.
      *
      * Alternately, you may specify the 'script' parameter, which should be a
-     * JobQueue script the job will request. A new \ZendAPI_Job object will then
+     * JobQueue script the job will request. A new \Zend2API_Job object will then
      * be created using that script and any options you provide.
      *
      * @param  array $options
      * @return void
-     * @throws \Zend\Queue\Exception
+     * @throws \Zend2\Queue\Exception
      */
     public function __construct(array $options = array())
     {
         if (isset($options['data'])) {
-            if (!($options['data'] instanceof \ZendAPI_Job)) {
-                throw new Queue\Exception('Data must be an instance of \ZendAPI_Job');
+            if (!($options['data'] instanceof \Zend2API_Job)) {
+                throw new Queue\Exception('Data must be an instance of \Zend2API_Job');
             }
             $this->_job = $options['data'];
             parent::__construct($this->_job->getProperties());
@@ -79,7 +79,7 @@ class PlatformJob extends Message
                 throw new Queue\Exception('The script is mandatory data');
             }
 
-            $this->_job = new \ZendAPI_Job($options['script']);
+            $this->_job = new \Zend2API_Job($options['script']);
             $this->_setJobProperties();
         }
     }
@@ -87,10 +87,10 @@ class PlatformJob extends Message
     /**
      * Set the job identifier
      *
-     * Used within Zend_Queue only.
+     * Used within Zend2_Queue only.
      *
      * @param  string $id
-     * @return \Zend\Queue\Message\PlatformJob
+     * @return \Zend2\Queue\Message\PlatformJob
      */
     public function setJobId($id)
     {
@@ -109,9 +109,9 @@ class PlatformJob extends Message
     }
 
     /**
-     * Retrieve the internal \ZendAPI_Job instance
+     * Retrieve the internal \Zend2API_Job instance
      *
-     * @return \ZendAPI_Job
+     * @return \Zend2API_Job
      */
     public function getJob()
     {
@@ -136,14 +136,14 @@ class PlatformJob extends Message
      */
     public function getQueueClass()
     {
-        return '\Zend\Queue\Adapter\PlatformJobQueue';
+        return '\Zend2\Queue\Adapter\PlatformJobQueue';
     }
 
     /**
-     * Sets properties on the \ZendAPI_Job instance
+     * Sets properties on the \Zend2API_Job instance
      *
      * Any options in the {@link $_data} array will be checked. Those matching
-     * options in \ZendAPI_Job will be used to set those options in that
+     * options in \Zend2API_Job will be used to set those options in that
      * instance.
      *
      * @return void

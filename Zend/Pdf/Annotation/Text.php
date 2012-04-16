@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Annotation
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Annotation
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Annotation;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
-use Zend\Pdf\InternalType;
+namespace Zend2\Pdf\Annotation;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
+use Zend2\Pdf\InternalType;
 
 /**
  * A text annotation represents a "sticky note" attached to a point in the PDF document.
  *
- * @uses       \Zend\Pdf\Annotation\AbstractAnnotation
- * @uses       \Zend\Pdf\InternalType
- * @uses       \Zend\Pdf\Exception
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Annotation
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Annotation\AbstractAnnotation
+ * @uses       \Zend2\Pdf\InternalType
+ * @uses       \Zend2\Pdf\Exception
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Annotation
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Text extends AbstractAnnotation
@@ -40,7 +40,7 @@ class Text extends AbstractAnnotation
     /**
      * Annotation object constructor
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct(InternalType\AbstractTypeObject $annotationDictionary)
     {
@@ -65,7 +65,7 @@ class Text extends AbstractAnnotation
      * @param float $x2
      * @param float $y2
      * @param string $text
-     * @return \Zend\Pdf\Annotation\Text
+     * @return \Zend2\Pdf\Annotation\Text
      */
     public static function create($x1, $y1, $x2, $y2, $text)
     {

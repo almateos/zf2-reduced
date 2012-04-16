@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,37 +12,37 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search;
-use Zend\Search\Lucene;
-use Zend\Search\Lucene\Document;
+namespace Zend2\Search\Lucene\Search;
+use Zend2\Search\Lucene;
+use Zend2\Search\Lucene\Document;
 
 /**
- * @uses       \Zend\Search\Lucene\SearchIndex
- * @uses       \Zend\Search\Lucene\Document
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\SearchIndex
+ * @uses       \Zend2\Search\Lucene\Document
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class QueryHit
 {
     /**
      * Object handle of the index
-     * @var \Zend\Search\Lucene\SearchIndex
+     * @var \Zend2\Search\Lucene\SearchIndex
      */
     protected $_index = null;
 
     /**
      * Object handle of the document associated with this hit
-     * @var \Zend\Search\Lucene\Document
+     * @var \Zend2\Search\Lucene\Document
      */
     protected $_document = null;
 
@@ -60,10 +60,10 @@ class QueryHit
 
 
     /**
-     * Constructor - pass object handle of Zend_Search_Lucene_Interface index that produced
+     * Constructor - pass object handle of Zend2_Search_Lucene_Interface index that produced
      * the hit so the document can be retrieved easily from the hit.
      *
-     * @param \Zend\Search\Lucene\SearchIndex $index
+     * @param \Zend2\Search\Lucene\SearchIndex $index
      */
 
     public function __construct(Lucene\SearchIndex $index)
@@ -99,7 +99,7 @@ class QueryHit
     /**
      * Return the document object for this hit
      *
-     * @return \Zend\Search\Lucene\Document
+     * @return \Zend2\Search\Lucene\Document
      */
     public function getDocument()
     {
@@ -114,7 +114,7 @@ class QueryHit
     /**
      * Return the index object for this hit
      *
-     * @return \Zend\Search\Lucene\SearchIndex
+     * @return \Zend2\Search\Lucene\SearchIndex
      */
     public function getIndex()
     {

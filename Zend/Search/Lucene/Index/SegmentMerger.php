@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Index
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Index;
+namespace Zend2\Search\Lucene\Index;
 
-use Zend\Search\Lucene,
-	Zend\Search\Lucene\Document,
-	Zend\Search\Lucene\Exception\RuntimeException;
+use Zend2\Search\Lucene,
+	Zend2\Search\Lucene\Document,
+	Zend2\Search\Lucene\Exception\RuntimeException;
 
 /**
- * @uses       \Zend\Search\Lucene\Exception\RuntimeException
- * @uses       \Zend\Search\Lucene\Document\Field
- * @uses       \Zend\Search\Lucene\Index\SegmentInfo
- * @uses       \Zend\Search\Lucene\Index\SegmentWriter\StreamWriter
- * @uses       \Zend\Search\Lucene\Index\TermsPriorityQueue
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Exception\RuntimeException
+ * @uses       \Zend2\Search\Lucene\Document\Field
+ * @uses       \Zend2\Search\Lucene\Index\SegmentInfo
+ * @uses       \Zend2\Search\Lucene\Index\SegmentWriter\StreamWriter
+ * @uses       \Zend2\Search\Lucene\Index\TermsPriorityQueue
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Index
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class SegmentMerger
@@ -42,7 +42,7 @@ class SegmentMerger
     /**
      * Target segment writer
      *
-     * @var \Zend\Search\Lucene\Index\SegmentWriter\StreamWriter
+     * @var \Zend2\Search\Lucene\Index\SegmentWriter\StreamWriter
      */
     private $_writer;
 
@@ -56,7 +56,7 @@ class SegmentMerger
     /**
      * A set of segments to be merged
      *
-     * @var array \Zend\Search\Lucene\Index\SegmentInfo
+     * @var array \Zend2\Search\Lucene\Index\SegmentInfo
      */
     private $_segmentInfos = array();
 
@@ -83,12 +83,12 @@ class SegmentMerger
      * Creates new segment merger with $directory as target to merge segments into
      * and $name as a name of new segment
      *
-     * @param \Zend\Search\Lucene\Storage\Directory $directory
+     * @param \Zend2\Search\Lucene\Storage\Directory $directory
      * @param string $name
      */
     public function __construct($directory, $name)
     {
-        /** \Zend\Search\Lucene\Index\SegmentWriter\StreamWriter */
+        /** \Zend2\Search\Lucene\Index\SegmentWriter\StreamWriter */
         $this->_writer = new SegmentWriter\StreamWriter($directory, $name);
     }
 
@@ -96,7 +96,7 @@ class SegmentMerger
     /**
      * Add segmnet to a collection of segments to be merged
      *
-     * @param \Zend\Search\Lucene\Index\SegmentInfo $segment
+     * @param \Zend2\Search\Lucene\Index\SegmentInfo $segment
      */
     public function addSource(SegmentInfo $segmentInfo)
     {
@@ -109,8 +109,8 @@ class SegmentMerger
      *
      * Returns number of documents in newly created segment
      *
-     * @return \Zend\Search\Lucene\Index\SegmentInfo
-     * @throws \Zend\Search\Lucene\Exception\RuntimeException
+     * @return \Zend2\Search\Lucene\Index\SegmentInfo
+     * @throws \Zend2\Search\Lucene\Exception\RuntimeException
      */
     public function merge()
     {

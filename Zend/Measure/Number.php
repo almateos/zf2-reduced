@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Measure
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Measure
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Measure;
-use Zend\Locale;
-use Zend\Locale\Math;
+namespace Zend2\Measure;
+use Zend2\Locale;
+use Zend2\Locale\Math;
 
 /**
  * Class for handling number conversions
  *
  * This class can only handle numbers without precision
  *
- * @uses       Zend\Locale
- * @uses       Zend\Locale\Math
- * @category   Zend
- * @package    Zend_Measure
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Locale
+ * @uses       Zend2\Locale\Math
+ * @category   Zend2
+ * @package    Zend2_Measure
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Number extends AbstractMeasure
@@ -132,13 +132,13 @@ class Number extends AbstractMeasure
     );
 
     /**
-     * Zend\Measure\AbstractMeasure is an abstract class for the different measurement types
+     * Zend2\Measure\AbstractMeasure is an abstract class for the different measurement types
      *
      * @param  integer                   $value  Value
-     * @param  string                    $type   (Optional) A Zend\Measure\Number Type
-     * @param  string|Zend\Locale\Locale $locale (Optional) A Zend\Locale\Locale
-     * @throws Zend\Measure\Exception When language is unknown
-     * @throws Zend\Measure\Exception When type is unknown
+     * @param  string                    $type   (Optional) A Zend2\Measure\Number Type
+     * @param  string|Zend2\Locale\Locale $locale (Optional) A Zend2\Locale\Locale
+     * @throws Zend2\Measure\Exception When language is unknown
+     * @throws Zend2\Measure\Exception When type is unknown
      */
     public function __construct($value, $type, $locale = null)
     {
@@ -176,9 +176,9 @@ class Number extends AbstractMeasure
      * Set a new value
      *
      * @param  integer                   $value  Value
-     * @param  string                    $type   (Optional) A Zend\Measure\Number Type
-     * @param  string|Zend\Locale\Locale $locale (Optional) A Zend\Locale\Locale Type
-     * @throws Zend\Measure\Exception
+     * @param  string                    $type   (Optional) A Zend2\Measure\Number Type
+     * @param  string|Zend2\Locale\Locale $locale (Optional) A Zend2\Locale\Locale Type
+     * @throws Zend2\Measure\Exception
      */
     public function setValue($value, $type = null, $locale = null)
     {
@@ -316,7 +316,7 @@ class Number extends AbstractMeasure
      * @param  integer $value Input string
      * @param  string  $type  Type to convert to
      * @return string
-     * @throws Zend\Measure\Exception When more than 200 digits are calculated
+     * @throws Zend2\Measure\Exception When more than 200 digits are calculated
      */
     private function _fromDecimal($value, $type)
     {
@@ -379,7 +379,7 @@ class Number extends AbstractMeasure
      * Set a new type, and convert the value
      *
      * @param  string $type New type to set
-     * @throws Zend\Measure\Exception When a unknown type is given
+     * @throws Zend2\Measure\Exception When a unknown type is given
      * @return void
      */
     public function setType($type)

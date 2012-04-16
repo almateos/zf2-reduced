@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Code\Annotation;
+namespace Zend2\Code\Annotation;
 
-use Zend\Code\Exception;
+use Zend2\Code\Exception;
 
 class AnnotationManager
 {

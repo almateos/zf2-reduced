@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Reader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Reader
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Reader;
+namespace Zend2\Feed\Reader;
 
 /**
- * @uses       \Zend\Feed\Exception
- * @uses       \Zend\Feed\Reader\Reader
- * @uses       Zend\Feed\Reader\Feed
- * @category   Zend
- * @package    Zend_Feed_Reader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Feed\Exception
+ * @uses       \Zend2\Feed\Reader\Reader
+ * @uses       Zend2\Feed\Reader\Feed
+ * @category   Zend2
+ * @package    Zend2_Feed_Reader
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractFeed implements Feed
@@ -138,7 +138,7 @@ abstract class AbstractFeed implements Feed
     /**
      * Return the current entry
      *
-     * @return \Zend\Feed\Reader\Entry
+     * @return \Zend2\Feed\Reader\Entry
      */
     public function current()
     {
@@ -267,7 +267,7 @@ abstract class AbstractFeed implements Feed
                 return call_user_func_array(array($extension, $method), $args);
             }
         }
-        throw new \Zend\Feed\Exception('Method: ' . $method
+        throw new \Zend2\Feed\Exception('Method: ' . $method
         . 'does not exist and could not be located on a registered Extension');
     }
 
@@ -275,7 +275,7 @@ abstract class AbstractFeed implements Feed
      * Return an Extension object with the matching name (postfixed with _Feed)
      *
      * @param string $name
-     * @return \Zend\Feed\Reader\Extension\AbstractFeed
+     * @return \Zend2\Feed\Reader\Extension\AbstractFeed
      */
     public function getExtension($name)
     {

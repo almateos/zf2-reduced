@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Form
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Form
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Form;
+namespace Zend2\Form;
 
-use Zend\Config\Config;
+use Zend2\Config\Config;
 
 /**
  * Form Decorator interface
  *
- * @category   Zend
- * @package    Zend_Form
+ * @category   Zend2
+ * @package    Zend2_Form
  * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface Decorator
@@ -38,7 +38,7 @@ interface Decorator
      *
      * Accept options during initialization.
      *
-     * @param  array|\Zend\Config\Config $options
+     * @param  array|\Zend2\Config\Config $options
      * @return void
      */
     public function __construct($options = null);
@@ -50,7 +50,7 @@ interface Decorator
      * an element or a form object.
      *
      * @param  mixed $element
-     * @return \Zend\Form\Decorator
+     * @return \Zend2\Form\Decorator
      */
     public function setElement($element);
 
@@ -65,15 +65,15 @@ interface Decorator
      * Set decorator options from an array
      *
      * @param  array $options
-     * @return \Zend\Form\Decorator
+     * @return \Zend2\Form\Decorator
      */
     public function setOptions(array $options);
 
     /**
      * Set decorator options from a config object
      *
-     * @param  \Zend\Config\Config $config
-     * @return \Zend\Form\Decorator
+     * @param  \Zend2\Config\Config $config
+     * @return \Zend2\Form\Decorator
      */
     public function setConfig(Config $config);
 
@@ -82,7 +82,7 @@ interface Decorator
      *
      * @param  string $key
      * @param  mixed $value
-     * @return \Zend\Form\Decorator
+     * @return \Zend2\Form\Decorator
      */
     public function setOption($key, $value);
 
@@ -112,7 +112,7 @@ interface Decorator
     /**
      * Clear all options
      *
-     * @return \Zend\Form\Decorator
+     * @return \Zend2\Form\Decorator
      */
     public function clearOptions();
 

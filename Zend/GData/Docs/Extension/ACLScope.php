@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,26 +13,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id: EmailList.php 20096 2010-01-06 02:05:09Z bkarwin $
  */
 
-namespace Zend\GData\Docs\Extension;
+namespace Zend2\GData\Docs\Extension;
 
 /**
  * Represents the gAcl:scope element used by the Docs data API.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class ACLScope extends \Zend\GData\Extension
+class ACLScope extends \Zend2\GData\Extension
 {
 
     protected $_rootNamespace = 'gAcl';
@@ -53,14 +53,14 @@ class ACLScope extends \Zend\GData\Extension
     protected $_value = null;
 
     /**
-     * Constructs a new \Zend\Gdata\Docs\Extension\ACLScope object.
+     * Constructs a new \Zend2\Gdata\Docs\Extension\ACLScope object.
      *
      * @param string $type The type of entity to share with
      * @param string $value the entity to share with (usually email address)
      */
     public function __construct($type = null, $value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Docs::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\Docs::$namespaces);
         parent::__construct();
         $this->_type = $type;
         $this->_value = $value;
@@ -125,7 +125,7 @@ class ACLScope extends \Zend\GData\Extension
     /**
      * Set the value for this element's type attribute.
      * @param string $value The desired value for this attribute.
-     * @return \Zend\Gdata\Docs\Extension\ACLScope The element being modified.
+     * @return \Zend2\Gdata\Docs\Extension\ACLScope The element being modified.
      */
     public function setType($value)
     {
@@ -148,7 +148,7 @@ class ACLScope extends \Zend\GData\Extension
      * Set the value for this element's value attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\Gdata\Docs\Extension\ACLScope The element being modified.
+     * @return \Zend2\Gdata\Docs\Extension\ACLScope The element being modified.
      */
     public function setValue($value)
     {

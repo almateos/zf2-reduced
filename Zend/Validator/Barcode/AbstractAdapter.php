@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,19 +12,19 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator\Barcode;
+namespace Zend2\Validator\Barcode;
 
 /**
- * @uses       \Zend\Validator\Barcode\Adapter
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Validator\Barcode\Adapter
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractAdapter implements Adapter
@@ -162,7 +162,7 @@ abstract class AbstractAdapter implements Adapter
      * Sets the checksum validation method
      *
      * @param callback $checksum Checksum method to call
-     * @return \Zend\Validator\Barcode\AbstractAdapter
+     * @return \Zend2\Validator\Barcode\AbstractAdapter
      */
     protected function setChecksum($checksum)
     {
@@ -174,7 +174,7 @@ abstract class AbstractAdapter implements Adapter
      * Sets the checksum validation, if no value is given, the actual setting is returned
      *
      * @param  boolean $check
-     * @return \Zend\Validator\Barcode\AbstractAdapter|boolean
+     * @return \Zend2\Validator\Barcode\AbstractAdapter|boolean
      */
     public function useChecksum($check = null)
     {
@@ -190,7 +190,7 @@ abstract class AbstractAdapter implements Adapter
      * Sets the length of this barcode
      *
      * @param integer $length
-     * @return \Zend\Validator\Barcode\AbstractAdapter
+     * @return \Zend2\Validator\Barcode\AbstractAdapter
      */
     protected function setLength($length)
     {
@@ -202,7 +202,7 @@ abstract class AbstractAdapter implements Adapter
      * Sets the allowed characters of this barcode
      *
      * @param integer $characters
-     * @return \Zend\Validator\Barcode\AbstractAdapter
+     * @return \Zend2\Validator\Barcode\AbstractAdapter
      */
     protected function setCharacters($characters)
     {

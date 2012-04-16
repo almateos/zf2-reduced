@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Http
+ * @category   Zend2
+ * @package    Zend2_Http
  * @subpackage Client_Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Http\Client\Adapter;
-use Zend\Http\Client\Adapter as HttpAdapter,
-    Zend\Http\Client\Adapter\Exception as AdapterException,
-    Zend\Http\Response;
+namespace Zend2\Http\Client\Adapter;
+use Zend2\Http\Client\Adapter as HttpAdapter,
+    Zend2\Http\Client\Adapter\Exception as AdapterException,
+    Zend2\Http\Response;
 
 /**
- * A sockets based (stream\socket\client) adapter class for Zend\Http\Client. Can be used
+ * A sockets based (stream\socket\client) adapter class for Zend2\Http\Client. Can be used
  * on almost every PHP environment, and does not require any special extensions.
  *
- * @category   Zend
- * @package    Zend_Http
+ * @category   Zend2
+ * @package    Zend2_Http
  * @subpackage Client_Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Socket implements HttpAdapter, Stream
@@ -95,16 +95,16 @@ class Socket implements HttpAdapter, Stream
     /**
      * Set the configuration array for the adapter
      *
-     * @param \Zend\Config\Config | array $config
+     * @param \Zend2\Config\Config | array $config
      */
     public function setConfig($config = array())
     {
-        if ($config instanceof \Zend\Config\Config) {
+        if ($config instanceof \Zend2\Config\Config) {
             $config = $config->toArray();
 
         } elseif (! is_array($config)) {
             throw new AdapterException\InvalidArgumentException(
-                'Array or Zend_Config object expected, got ' . gettype($config)
+                'Array or Zend2_Config object expected, got ' . gettype($config)
             );
         }
 
@@ -131,10 +131,10 @@ class Socket implements HttpAdapter, Stream
      * stream_context_create() PHP function. In such case a new stream context
      * will be created using the passed options.
      *
-     * @since  Zend Framework 1.9
+     * @since  Zend2 Framework 1.9
      *
      * @param  mixed $context Stream context or array of context options
-     * @return \Zend\Http\Client\Adapter\Socket
+     * @return \Zend2\Http\Client\Adapter\Socket
      */
     public function setStreamContext($context)
     {
@@ -236,7 +236,7 @@ class Socket implements HttpAdapter, Stream
      * Send request to the remote server
      *
      * @param string        $method
-     * @param \Zend\Uri\Uri $uri
+     * @param \Zend2\Uri\Uri $uri
      * @param string        $http_ver
      * @param array         $headers
      * @param string        $body
@@ -324,7 +324,7 @@ class Socket implements HttpAdapter, Stream
          * to have a body - stop reading here
          */
         if ($statusCode == 304 || $statusCode == 204 ||
-            $this->method == \Zend\Http\Request::METHOD_HEAD) {
+            $this->method == \Zend2\Http\Request::METHOD_HEAD) {
 
             // Close the connection if requested to do so by the server
             $connection = $headers->get('connection');
@@ -394,7 +394,7 @@ class Socket implements HttpAdapter, Stream
             }
             
             // We automatically decode chunked-messages when writing to a stream
-            // this means we have to disallow the Zend_Http_Response to do it again
+            // this means we have to disallow the Zend2_Http_Response to do it again
             if ($this->out_stream) {
                 $response = str_ireplace("Transfer-Encoding: chunked\r\n", '', $response);
             }
@@ -482,7 +482,7 @@ class Socket implements HttpAdapter, Stream
      * Check if the socket has timed out - if so close connection and throw
      * an exception
      *
-     * @throws \Zend\Http\Client\Adapter\Exception with READ_TIMEOUT code
+     * @throws \Zend2\Http\Client\Adapter\Exception with READ_TIMEOUT code
      */
     protected function _checkSocketReadTimeout()
     {
@@ -503,7 +503,7 @@ class Socket implements HttpAdapter, Stream
      * Set output stream for the response
      * 
      * @param resource $stream
-     * @return \Zend\Http\Client\Adapter\Socket
+     * @return \Zend2\Http\Client\Adapter\Socket
      */
     public function setOutputStream($stream) 
     {

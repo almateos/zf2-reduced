@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Di;
+namespace Zend2\Di;
 
 use Traversable;
 
@@ -9,7 +9,7 @@ class Configuration
     protected $data = array();
     
     /**
-     * @var Zend\Di\DependencyInjector
+     * @var Zend2\Di\DependencyInjector
      */
     protected $di = null;
     
@@ -23,7 +23,7 @@ class Configuration
             }
         } elseif (!is_array($data)) {
             throw new Exception\InvalidArgumentException(
-                'Configuration data must be of type Zend\Config\Config or an array'
+                'Configuration data must be of type Zend2\Config\Config or an array'
             );
         }
         $this->data = $data;
@@ -53,7 +53,7 @@ class Configuration
                     break;
                 case 'class':
                     foreach ($definitionData as $className => $classData) {
-                        $classDefinitions = $di->definitions()->getDefinitionsByType('Zend\Di\Definition\ClassDefinition');
+                        $classDefinitions = $di->definitions()->getDefinitionsByType('Zend2\Di\Definition\ClassDefinition');
                         foreach ($classDefinitions as $classDefinition) {
                             if (!$classDefinition->hasClass($className)) {
                                 unset($classDefinition);

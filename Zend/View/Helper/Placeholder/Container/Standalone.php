@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper\Placeholder\Container;
+namespace Zend2\View\Helper\Placeholder\Container;
 
-use Zend\View\Helper\Placeholder\Registry,
-    Zend\View\Exception;
+use Zend2\View\Helper\Placeholder\Registry,
+    Zend2\View\Exception;
 
 /**
  * Base class for targetted placeholder helpers
@@ -30,25 +30,25 @@ use Zend\View\Helper\Placeholder\Registry,
  * @uses       ArrayAccess
  * @uses       Countable
  * @uses       IteratorAggregate
- * @uses       \Zend\View\Exception
- * @uses       \Zend\View\Helper\AbstractHelper
- * @uses       \Zend\View\Helper\Placeholder\Registry
- * @package    Zend_View
+ * @uses       \Zend2\View\Exception
+ * @uses       \Zend2\View\Helper\AbstractHelper
+ * @uses       \Zend2\View\Helper\Placeholder\Registry
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Standalone
-    extends \Zend\View\Helper\AbstractHelper
+    extends \Zend2\View\Helper\AbstractHelper
     implements \IteratorAggregate, \Countable, \ArrayAccess
 {
     /**
-     * @var \Zend\View\Helper\Placeholder\Container\AbstractContainer
+     * @var \Zend2\View\Helper\Placeholder\Container\AbstractContainer
      */
     protected $_container;
 
     /**
-     * @var \Zend\View\Helper\Placeholder\Registry
+     * @var \Zend2\View\Helper\Placeholder\Registry
      */
     protected $_registry;
 
@@ -79,7 +79,7 @@ abstract class Standalone
     /**
      * Retrieve registry
      *
-     * @return \Zend\View\Helper\Placeholder\Registry
+     * @return \Zend2\View\Helper\Placeholder\Registry
      */
     public function getRegistry()
     {
@@ -89,8 +89,8 @@ abstract class Standalone
     /**
      * Set registry object
      *
-     * @param  \Zend\View\Helper\Placeholder\Registry $registry
-     * @return \Zend\View\Helper\Placeholder\Container\Standalone
+     * @param  \Zend2\View\Helper\Placeholder\Registry $registry
+     * @return \Zend2\View\Helper\Placeholder\Container\Standalone
      */
     public function setRegistry(Registry $registry)
     {
@@ -102,7 +102,7 @@ abstract class Standalone
      * Set whether or not auto escaping should be used
      *
      * @param  bool $autoEscape whether or not to auto escape output
-     * @return \Zend\View\Helper\Placeholder\Container\Standalone
+     * @return \Zend2\View\Helper\Placeholder\Container\Standalone
      */
     public function setAutoEscape($autoEscape = true)
     {
@@ -129,7 +129,7 @@ abstract class Standalone
     protected function _escape($string)
     {
         $enc = 'UTF-8';
-        if ($this->view instanceof \Zend\View\Renderer
+        if ($this->view instanceof \Zend2\View\Renderer
             && method_exists($this->view, 'getEncoding')
         ) {
             $enc = $this->view->getEncoding();
@@ -141,8 +141,8 @@ abstract class Standalone
     /**
      * Set container on which to operate
      *
-     * @param  \Zend\View\Helper\Placeholder\Container\AbstractContainer $container
-     * @return \Zend\View\Helper\Placeholder\Container\Standalone
+     * @param  \Zend2\View\Helper\Placeholder\Container\AbstractContainer $container
+     * @return \Zend2\View\Helper\Placeholder\Container\Standalone
      */
     public function setContainer(AbstractContainer $container)
     {
@@ -153,7 +153,7 @@ abstract class Standalone
     /**
      * Retrieve placeholder container
      *
-     * @return \Zend\View\Helper\Placeholder\Container\AbstractContainer
+     * @return \Zend2\View\Helper\Placeholder\Container\AbstractContainer
      */
     public function getContainer()
     {

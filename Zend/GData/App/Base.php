@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\App;
+namespace Zend2\GData\App;
 
 /**
  * Abstract class for all XML elements
  *
  * @uses       DOMDocument
- * @uses       \Zend\GData\App\Exception
- * @uses       \Zend\GData\App\InvalidArgumentException
- * @uses       \Zend\GData\App\Util
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\Exception
+ * @uses       \Zend2\GData\App\InvalidArgumentException
+ * @uses       \Zend2\GData\App\Util
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Base
@@ -131,7 +131,7 @@ abstract class Base
      * This represents any raw text contained within the XML element
      *
      * @param string $value Child text node
-     * @return \Zend\GData\App\Base Returns an object of the same type as 'this' to provide a fluent interface.
+     * @return \Zend2\GData\App\Base Returns an object of the same type as 'this' to provide a fluent interface.
      */
     public function setText($value)
     {
@@ -156,7 +156,7 @@ abstract class Base
      * child XML elements to any data model class.
      *
      * @param array $value All extension elements
-     * @return \Zend\GData\App\Base Returns an object of the same type as 'this' to provide a fluent interface.
+     * @return \Zend2\GData\App\Base Returns an object of the same type as 'this' to provide a fluent interface.
      */
     public function setExtensionElements($value)
     {
@@ -185,7 +185,7 @@ abstract class Base
      * This can be used to add arbitrary attributes to any data model element
      *
      * @param array $value All extension attributes
-     * @return \Zend\GData\App\Base Returns an object of the same type as 'this' to provide a fluent interface.
+     * @return \Zend2\GData\App\Base Returns an object of the same type as 'this' to provide a fluent interface.
      */
     public function setExtensionAttributes($value)
     {

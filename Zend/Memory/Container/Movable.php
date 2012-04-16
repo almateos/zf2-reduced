@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Memory
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Memory
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Memory\Container;
-use Zend\Memory,
-    Zend\Memory\Exception;
+namespace Zend2\Memory\Container;
+use Zend2\Memory,
+    Zend2\Memory\Exception;
 
 /**
  * Memory value container
  *
  * Movable (may be swapped with specified backend and unloaded).
  *
- * @uses       \Zend\Memory\Container\AbstractContainer
- * @uses       \Zend\Memory\Exception
- * @uses       \Zend\Memory\Value
- * @category   Zend
- * @package    Zend_Memory
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Memory\Container\AbstractContainer
+ * @uses       \Zend2\Memory\Exception
+ * @uses       \Zend2\Memory\Value
+ * @category   Zend2
+ * @package    Zend2_Memory
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Movable extends AbstractContainer
@@ -47,14 +47,14 @@ class Movable extends AbstractContainer
     /**
      * Memory manager reference
      *
-     * @var \Zend\Memory\MemoryManager
+     * @var \Zend2\Memory\MemoryManager
      */
     private $_memManager;
 
     /**
      * Value object
      *
-     * @var \Zend\Memory\Value
+     * @var \Zend2\Memory\Value
      */
     private $_value;
 
@@ -73,7 +73,7 @@ class Movable extends AbstractContainer
     /**
      * Object constructor
      *
-     * @param \Zend\Memory\MemoryManager $memoryManager
+     * @param \Zend2\Memory\MemoryManager $memoryManager
      * @param integer $id
      * @param string $value
      */
@@ -131,12 +131,12 @@ class Movable extends AbstractContainer
      *
      * @param string $property
      * @return string
-     * @throws \Zend\Memory\Exception
+     * @throws \Zend2\Memory\Exception
      */
     public function __get($property)
     {
         if ($property != 'value') {
-            throw new Exception\InvalidArgumentException('Unknown property: \Zend\Memory\Container\Movable::$' . $property);
+            throw new Exception\InvalidArgumentException('Unknown property: \Zend2\Memory\Container\Movable::$' . $property);
         }
 
         if ( !($this->_state & self::LOADED) ) {
@@ -157,7 +157,7 @@ class Movable extends AbstractContainer
     public function __set($property, $value)
     {
         if ($property != 'value') {
-            throw new Exception\InvalidArgumentException('Unknown property: \Zend\Memory\Container\Movable::$' . $property);
+            throw new Exception\InvalidArgumentException('Unknown property: \Zend2\Memory\Container\Movable::$' . $property);
         }
 
         $this->_state = self::LOADED;

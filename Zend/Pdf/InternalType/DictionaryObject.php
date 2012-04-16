@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,34 +12,34 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\InternalType;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
+namespace Zend2\Pdf\InternalType;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
 
 /**
  * PDF file 'dictionary' element implementation
  *
- * @uses       \Zend\Pdf\InternalType\AbstractTypeObject
- * @uses       \Zend\Pdf\InternalType\NameObject
- * @uses       \Zend\Pdf\Exception
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Internal
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\InternalType\AbstractTypeObject
+ * @uses       \Zend2\Pdf\InternalType\NameObject
+ * @uses       \Zend2\Pdf\Exception
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Internal
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DictionaryObject extends AbstractTypeObject
 {
     /**
      * Dictionary elements
-     * Array of \Zend\Pdf\InternalType objects ('name' => \Zend\Pdf\InternalType\AbstaractTypeObject)
+     * Array of \Zend2\Pdf\InternalType objects ('name' => \Zend2\Pdf\InternalType\AbstaractTypeObject)
      *
      * @var array
      */
@@ -49,8 +49,8 @@ class DictionaryObject extends AbstractTypeObject
     /**
      * Object constructor
      *
-     * @param array $val   - array of \Zend\Pdf\InternalType\AbstractTypeObject objects
-     * @throws \Zend\Pdf\Exception
+     * @param array $val   - array of \Zend2\Pdf\InternalType\AbstractTypeObject objects
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct($val = null)
     {
@@ -62,7 +62,7 @@ class DictionaryObject extends AbstractTypeObject
 
         foreach ($val as $name => $element) {
             if (!$element instanceof AbstractTypeObject) {
-                throw new Exception\RuntimeException('Array elements must be \Zend\Pdf\InternalType\AbstractTypeObject objects');
+                throw new Exception\RuntimeException('Array elements must be \Zend2\Pdf\InternalType\AbstractTypeObject objects');
             }
             if (!is_string($name)) {
                 throw new Exception\RuntimeException('Array keys must be strings');
@@ -75,9 +75,9 @@ class DictionaryObject extends AbstractTypeObject
     /**
      * Add element to an array
      *
-     * @name \Zend\Pdf\InternalType\NameObject $name
-     * @param \Zend\Pdf\InternalType\AbstractTypeObject $val   - \Zend\Pdf\InternalType\AbstractTypeObject object
-     * @throws \Zend\Pdf\Exception
+     * @name \Zend2\Pdf\InternalType\NameObject $name
+     * @param \Zend2\Pdf\InternalType\AbstractTypeObject $val   - \Zend2\Pdf\InternalType\AbstractTypeObject object
+     * @throws \Zend2\Pdf\Exception
      */
     public function add(NameObject $name, AbstractTypeObject $val)
     {
@@ -99,7 +99,7 @@ class DictionaryObject extends AbstractTypeObject
      * Get handler
      *
      * @param string $property
-     * @return \Zend\Pdf\InternalType\AbstractTypeObject | null
+     * @return \Zend2\Pdf\InternalType\AbstractTypeObject | null
      */
     public function __get($item)
     {
@@ -137,7 +137,7 @@ class DictionaryObject extends AbstractTypeObject
     /**
      * Return object as string
      *
-     * @param \Zend\Pdf\ObjectFactory $factory
+     * @param \Zend2\Pdf\ObjectFactory $factory
      * @return string
      */
     public function toString(Pdf\ObjectFactory $factory = null)
@@ -166,11 +166,11 @@ class DictionaryObject extends AbstractTypeObject
     /**
      * Detach PDF object from the factory (if applicable), clone it and attach to new factory.
      *
-     * @param \Zend\Pdf\ObjectFactory $factory  The factory to attach
+     * @param \Zend2\Pdf\ObjectFactory $factory  The factory to attach
      * @param array &$processed List of already processed indirect objects, used to avoid objects duplication
      * @param integer $mode  Cloning mode (defines filter for objects cloning)
-     * @returns \Zend\Pdf\InternalType\AbstractTypeObject
-     * @throws \Zend\Pdf\Exception
+     * @returns \Zend2\Pdf\InternalType\AbstractTypeObject
+     * @throws \Zend2\Pdf\Exception
      */
     public function makeClone(Pdf\ObjectFactory $factory, array &$processed, $mode)
     {
@@ -200,7 +200,7 @@ class DictionaryObject extends AbstractTypeObject
     /**
      * Set top level parent indirect object.
      *
-     * @param \Zend\Pdf\InternalType\IndirectObject $parent
+     * @param \Zend2\Pdf\InternalType\IndirectObject $parent
      */
     public function setParentObject(IndirectObject $parent)
     {

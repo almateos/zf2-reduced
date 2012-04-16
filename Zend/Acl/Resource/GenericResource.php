@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Acl
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Acl
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Acl\Resource;
+namespace Zend2\Acl\Resource;
 
-use Zend\Acl\Resource\ResourceInterface;
+use Zend2\Acl\Resource\ResourceInterface;
 
 /**
- * @category   Zend
- * @package    Zend_Acl
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Acl
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class GenericResource implements ResourceInterface
@@ -49,7 +49,7 @@ class GenericResource implements ResourceInterface
     }
 
     /**
-     * Defined by Zend\Acl\Resource; returns the Resource identifier
+     * Defined by Zend2\Acl\Resource; returns the Resource identifier
      *
      * @return string
      */
@@ -59,7 +59,7 @@ class GenericResource implements ResourceInterface
     }
 
     /**
-     * Defined by Zend\Acl\Resource; returns the Resource identifier
+     * Defined by Zend2\Acl\Resource; returns the Resource identifier
      * Proxies to getResourceId()
      *
      * @return string

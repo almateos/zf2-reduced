@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper;
+namespace Zend2\View\Helper;
 
-use Zend\View\Helper;
+use Zend2\View\Helper;
 
 /**
- * @uses       \Zend\View\Helper
- * @category   Zend
- * @package    Zend_View
+ * @uses       \Zend2\View\Helper
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractHelper implements Helper
@@ -36,17 +36,17 @@ abstract class AbstractHelper implements Helper
     /**
      * View object
      *
-     * @var \Zend\View\Renderer
+     * @var \Zend2\View\Renderer
      */
     protected $view = null;
 
     /**
      * Set the View object
      *
-     * @param  \Zend\View\Renderer $view
-     * @return \Zend\View\Helper\AbstractHelper
+     * @param  \Zend2\View\Renderer $view
+     * @return \Zend2\View\Helper\AbstractHelper
      */
-    public function setView(\Zend\View\Renderer $view)
+    public function setView(\Zend2\View\Renderer $view)
     {
         $this->view = $view;
         return $this;

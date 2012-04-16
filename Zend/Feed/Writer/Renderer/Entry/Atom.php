@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Writer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Writer\Renderer\Entry;
+namespace Zend2\Feed\Writer\Renderer\Entry;
 
 use DOMDocument,
     DOMElement,
-    Zend\Date,
-    Zend\Feed\Writer,
-    Zend\Feed\Writer\Renderer,
-    Zend\Uri,
-    Zend\Validator;
+    Zend2\Date,
+    Zend2\Feed\Writer,
+    Zend2\Feed\Writer\Renderer,
+    Zend2\Uri,
+    Zend2\Validator;
 
 /**
  * @uses tidy
- * @category Zend
- * @package Zend_Feed_Writer
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category Zend2
+ * @package Zend2_Feed_Writer
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license http://framework.zend.com/license/new-bsd New BSD License
  */
 class Atom extends Renderer\AbstractRenderer implements Renderer\Renderer
@@ -40,7 +40,7 @@ class Atom extends Renderer\AbstractRenderer implements Renderer\Renderer
     /**
      * Constructor
      *
-     * @param  Zend_Feed_Writer_Entry $container
+     * @param  Zend2_Feed_Writer_Entry $container
      * @return void
      */
     public function __construct (Writer\Entry $container)
@@ -51,7 +51,7 @@ class Atom extends Renderer\AbstractRenderer implements Renderer\Renderer
     /**
      * Render atom entry
      *
-     * @return Zend_Feed_Writer_Renderer_Entry_Atom
+     * @return Zend2_Feed_Writer_Renderer_Entry_Atom
      */
     public function render()
     {

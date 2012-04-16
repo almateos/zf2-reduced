@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,56 +12,56 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Config
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Config\Processor;
+namespace Zend2\Config\Processor;
 
-use Zend\Config\Config,
-    Zend\Config\Processor,
-    Zend\Config\Exception\InvalidArgumentException,
-    Zend\Translator\Translator as ZendTranslator,
-    Zend\Locale\Locale,
+use Zend2\Config\Config,
+    Zend2\Config\Processor,
+    Zend2\Config\Exception\InvalidArgumentException,
+    Zend2\Translator\Translator as Zend2Translator,
+    Zend2\Locale\Locale,
     \Traversable,
     \ArrayObject;
 
 /**
- * @category   Zend
- * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Config
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Translator implements Processor
 {
     /**
-     * @var \Zend\Translator\Translator
+     * @var \Zend2\Translator\Translator
      */
     protected $translator;
 
     /**
-     * @var \Zend\Locale\Locale|string|null
+     * @var \Zend2\Locale\Locale|string|null
      */
     protected $locale = null;
 
     /**
-     * Translator uses the supplied Zend\Translator\Translator to find and
+     * Translator uses the supplied Zend2\Translator\Translator to find and
      * translate language strings in config.
      *
-     * @param  ZendTranslator $translator
+     * @param  Zend2Translator $translator
      * @param  Locale|string|null $locale
-     * @return ZendTranslator
+     * @return Zend2Translator
      */
-    public function __construct(ZendTranslator $translator, $locale = null)
+    public function __construct(Zend2Translator $translator, $locale = null)
     {
         $this->setTranslator($translator);
         $this->setLocale($locale);
     }
 
     /**
-     * @return \Zend\Translator\Translator
+     * @return \Zend2\Translator\Translator
      */
     public function getTranslator()
     {
@@ -69,15 +69,15 @@ class Translator implements Processor
     }
 
     /**
-     * @param \Zend\Translator\Translator $translator
+     * @param \Zend2\Translator\Translator $translator
      */
-    public function setTranslator(ZendTranslator $translator)
+    public function setTranslator(Zend2Translator $translator)
     {
         $this->translator = $translator;
     }
 
     /**
-     * @return \Zend\Locale\Locale|string|null
+     * @return \Zend2\Locale\Locale|string|null
      */
     public function getLocale()
     {
@@ -85,7 +85,7 @@ class Translator implements Processor
     }
 
     /**
-     * @param \Zend\Locale\Locale|string|null $locale
+     * @param \Zend2\Locale\Locale|string|null $locale
      */
     public function setLocale($locale)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail\Protocol;
+namespace Zend2\Mail\Protocol;
 
-use Zend\Loader\PluginClassLoader;
+use Zend2\Loader\PluginClassLoader;
 
 /**
  * Plugin Class Loader implementation for SMTP protocol authentication extensions.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class SmtpLoader extends PluginClassLoader
@@ -38,9 +38,9 @@ class SmtpLoader extends PluginClassLoader
      * @var array Pre-aliased authentication plugins
      */
     protected $plugins = array(
-        'crammd5'          => 'Zend\Mail\Protocol\Smtp\Auth\Crammd5',
-        'login'            => 'Zend\Mail\Protocol\Smtp\Auth\Login',
-        'plain'            => 'Zend\Mail\Protocol\Smtp\Auth\Plain',
-        'smtp'             => 'Zend\Mail\Protocol\Smtp',
+        'crammd5'          => 'Zend2\Mail\Protocol\Smtp\Auth\Crammd5',
+        'login'            => 'Zend2\Mail\Protocol\Smtp\Auth\Login',
+        'plain'            => 'Zend2\Mail\Protocol\Smtp\Auth\Plain',
+        'smtp'             => 'Zend2\Mail\Protocol\Smtp',
     );
 }

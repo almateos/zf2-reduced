@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Client
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\XmlRpc\Client;
+namespace Zend2\XmlRpc\Client;
 
-use Zend\XmlRpc\Client as XMLRPCClient;
+use Zend2\XmlRpc\Client as XMLRPCClient;
 
 /**
  * The namespace decorator enables object chaining to permit
  * calling XML-RPC namespaced functions like "foo.bar.baz()"
  * as "$remote->foo->bar->baz()".
  *
- * @category   Zend
- * @package    Zend_XmlRpc
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
  * @subpackage Client
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ServerProxy
 {
     /**
-     * @var \Zend\XmlRpc\Client
+     * @var \Zend2\XmlRpc\Client
      */
     private $_client = null;
 
@@ -48,7 +48,7 @@ class ServerProxy
 
 
     /**
-     * @var array of \Zend\XmlRpc\Client\ServerProxy
+     * @var array of \Zend2\XmlRpc\Client\ServerProxy
      */
     private $_cache = array();
 
@@ -56,7 +56,7 @@ class ServerProxy
     /**
      * Class constructor
      *
-     * @param \Zend\XmlRpc\Client $client
+     * @param \Zend2\XmlRpc\Client $client
      * @param string             $namespace
      */
     public function __construct(XMLRPCClient $client, $namespace = '')
@@ -70,7 +70,7 @@ class ServerProxy
      * Get the next successive namespace
      *
      * @param string $name
-     * @return \Zend\XmlRpc\Client\ServerProxy
+     * @return \Zend2\XmlRpc\Client\ServerProxy
      */
     public function __get($namespace)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Di;
+namespace Zend2\Di;
 
 class InstanceManager /* implements InstanceCollection */
 {

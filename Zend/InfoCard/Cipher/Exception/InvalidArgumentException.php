@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\InfoCard\Cipher\Exception;
+namespace Zend2\InfoCard\Cipher\Exception;
 
 class InvalidArgumentException
     extends \InvalidArgumentException
-    implements \Zend\InfoCard\Cipher\Exception
+    implements \Zend2\InfoCard\Cipher\Exception
 {}

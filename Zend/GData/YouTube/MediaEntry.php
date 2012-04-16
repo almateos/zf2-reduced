@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,36 +12,36 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\YouTube;
+namespace Zend2\GData\YouTube;
 
 /**
  * Represents the YouTube flavor of a Gdata Media Entry
  *
- * @uses       \Zend\GData\Media
- * @uses       \Zend\GData\Media\Entry
- * @uses       \Zend\GData\YouTube\Extension\MediaGroup
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Media
+ * @uses       \Zend2\GData\Media\Entry
+ * @uses       \Zend2\GData\YouTube\Extension\MediaGroup
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class MediaEntry extends \Zend\GData\Media\Entry
+class MediaEntry extends \Zend2\GData\Media\Entry
 {
 
-    protected $_entryClassName = '\Zend\GData\YouTube\MediaEntry';
+    protected $_entryClassName = '\Zend2\GData\YouTube\MediaEntry';
 
     /**
      * media:group element
      *
-     * @var \Zend\GData\YouTube\Extension\MediaGroup
+     * @var \Zend2\GData\YouTube\Extension\MediaGroup
      */
     protected $_mediaGroup = null;
 

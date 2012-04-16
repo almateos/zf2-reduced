@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene;
+namespace Zend2\Search\Lucene;
 
-use Zend\Search\Lucene\Exception\UnsupportedMethodCallException;
+use Zend2\Search\Lucene\Exception\UnsupportedMethodCallException;
 
 /**
- * @uses       \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
- * @uses       \Zend\Search\Lucene\Storage\Directory
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
+ * @uses       \Zend2\Search\Lucene\Storage\Directory
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Lucene
@@ -63,7 +63,7 @@ class Lucene
      * Create index
      *
      * @param mixed $directory
-     * @return \Zend\Search\Lucene\IndexInterface
+     * @return \Zend2\Search\Lucene\IndexInterface
      */
     public static function create($directory)
     {
@@ -74,7 +74,7 @@ class Lucene
      * Open index
      *
      * @param mixed $directory
-     * @return \Zend\Search\Lucene\IndexInterface
+     * @return \Zend2\Search\Lucene\IndexInterface
      */
     public static function open($directory)
     {
@@ -82,11 +82,11 @@ class Lucene
     }
 
     /**
-     * @throws \Zend\Search\Lucene\Exception\UnsupportedMethodCallException
+     * @throws \Zend2\Search\Lucene\Exception\UnsupportedMethodCallException
      */
     public function __construct()
     {
-        throw new UnsupportedMethodCallException('\Zend\Search\Lucene class is the only container for static methods. Use Lucene::open() or Lucene::create() methods.');
+        throw new UnsupportedMethodCallException('\Zend2\Search\Lucene class is the only container for static methods. Use Lucene::open() or Lucene::create() methods.');
     }
 
     /**

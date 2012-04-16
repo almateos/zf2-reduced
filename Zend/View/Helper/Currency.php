@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper;
-use Zend;
-use Zend\Locale;
+namespace Zend2\View\Helper;
+use Zend2;
+use Zend2\Locale;
 
 /**
  * Currency view helper
  *
- * @uses      \Zend\Currency\Currency
- * @uses      \Zend\Locale\Locale
- * @uses      \Zend\Registry
- * @uses      \Zend\View\Helper\AbstractHelper
- * @category  Zend
- * @package   Zend_View
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Currency\Currency
+ * @uses      \Zend2\Locale\Locale
+ * @uses      \Zend2\Registry
+ * @uses      \Zend2\View\Helper\AbstractHelper
+ * @category  Zend2
+ * @package   Zend2_View
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Currency extends AbstractHelper
@@ -40,21 +40,21 @@ class Currency extends AbstractHelper
     /**
      * Currency object
      *
-     * @var \Zend\Currency\Currency
+     * @var \Zend2\Currency\Currency
      */
     protected $_currency;
 
     /**
      * Constructor for manually handling
      *
-     * @param  \Zend\Currency\Currency $currency Instance of \Zend\Currency\Currency
+     * @param  \Zend2\Currency\Currency $currency Instance of \Zend2\Currency\Currency
      * @return void
      */
     public function __construct($currency = null)
     {
         if ($currency === null) {
-            if (\Zend\Registry::isRegistered('Zend_Currency')) {
-                $currency = \Zend\Registry::get('Zend_Currency');
+            if (\Zend2\Registry::isRegistered('Zend2_Currency')) {
+                $currency = \Zend2\Registry::get('Zend2_Currency');
             }
         }
 
@@ -65,7 +65,7 @@ class Currency extends AbstractHelper
      * Output a formatted currency
      *
      * @param  integer|float                    $value    Currency value to output
-     * @param  string|Zend_Locale|\Zend\Currency\Currency $currency OPTIONAL Currency to use for this call
+     * @param  string|Zend2_Locale|\Zend2\Currency\Currency $currency OPTIONAL Currency to use for this call
      * @return string Formatted currency
      */
     public function __invoke($value = null, $currency = null)
@@ -94,14 +94,14 @@ class Currency extends AbstractHelper
     /**
      * Sets a currency to use
      *
-     * @param  Zend_Currency|String|\Zend\Locale\Locale $currency Currency to use
-     * @throws \Zend\View\Exception When no or a false currency was set
-     * @return \Zend\View\Helper\Currency
+     * @param  Zend2_Currency|String|\Zend2\Locale\Locale $currency Currency to use
+     * @throws \Zend2\View\Exception When no or a false currency was set
+     * @return \Zend2\View\Helper\Currency
      */
     public function setCurrency($currency = null)
     {
-        if (!$currency instanceof \Zend\Currency\Currency) {
-            $currency = new \Zend\Currency\Currency($currency);
+        if (!$currency instanceof \Zend2\Currency\Currency) {
+            $currency = new \Zend2\Currency\Currency($currency);
         }
         $this->_currency = $currency;
 
@@ -111,7 +111,7 @@ class Currency extends AbstractHelper
     /**
      * Retrieve currency object
      *
-     * @return \Zend\Currency\Currency|null
+     * @return \Zend2\Currency\Currency|null
      */
     public function getCurrency()
     {

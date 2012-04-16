@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Technorati;
+namespace Zend2\Service\Technorati;
 
 use DomElement,
-    Zend\Uri;
+    Zend2\Uri;
 
 /**
  * Represents a single Technorati Search query result object.
  * It is never returned as a standalone object,
  * but it always belongs to a valid SearchResultSet object.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class SearchResult extends Result
@@ -64,7 +64,7 @@ class SearchResult extends Result
     /**
      * The datetime the entry was created.
      *
-     * @var     ZendDate
+     * @var     Zend2Date
      * @access  protected
      */
     protected $created;
@@ -132,7 +132,7 @@ class SearchResult extends Result
     /**
      * Returns the datetime the entry was created.
      *
-     * @return  ZendDate
+     * @return  Zend2Date
      */
     public function getCreated()
     {

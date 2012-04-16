@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Paginator;
+namespace Zend2\Paginator;
 
-use Zend\Loader\PluginClassLoader;
+use Zend2\Loader\PluginClassLoader;
 
 /**
  * Plugin Class Loader implementation for pagination adapters.
  *
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Paginator
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class AdapterLoader extends PluginClassLoader
@@ -36,10 +36,10 @@ class AdapterLoader extends PluginClassLoader
      * @var array Pre-aliased adapters 
      */
     protected $plugins = array(
-        'array'           => 'Zend\Paginator\Adapter\ArrayAdapter',
-        'db_select'       => 'Zend\Paginator\Adapter\DbSelect',
-        'db_table_select' => 'Zend\Paginator\Adapter\DbTableSelect',
-        'iterator'        => 'Zend\Paginator\Adapter\Iterator',
-        'null'            => 'Zend\Paginator\Adapter\Null',
+        'array'           => 'Zend2\Paginator\Adapter\ArrayAdapter',
+        'db_select'       => 'Zend2\Paginator\Adapter\DbSelect',
+        'db_table_select' => 'Zend2\Paginator\Adapter\DbTableSelect',
+        'iterator'        => 'Zend2\Paginator\Adapter\Iterator',
+        'null'            => 'Zend2\Paginator\Adapter\Null',
     );
 }

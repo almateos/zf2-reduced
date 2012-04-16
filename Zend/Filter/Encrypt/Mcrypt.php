@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Filter\Encrypt;
-use Zend\Filter\Exception,
-    Zend\Filter\Compress,
-    Zend\Filter\Decompress;
+namespace Zend2\Filter\Encrypt;
+use Zend2\Filter\Exception,
+    Zend2\Filter\Compress,
+    Zend2\Filter\Decompress;
 
 /**
  * Encryption adapter for mcrypt
  *
- * @uses       \Zend\Filter\Encrypt\EncryptionAlgorithm
- * @uses       \Zend\Filter\Exception
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Filter\Encrypt\EncryptionAlgorithm
+ * @uses       \Zend2\Filter\Exception
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Mcrypt implements EncryptionAlgorithm
@@ -46,7 +46,7 @@ class Mcrypt implements EncryptionAlgorithm
      * )
      */
     protected $_encryption = array(
-        'key'                 => 'ZendFramework',
+        'key'                 => 'Zend2Framework',
         'algorithm'           => 'blowfish',
         'algorithm_directory' => '',
         'mode'                => 'cbc',
@@ -65,7 +65,7 @@ class Mcrypt implements EncryptionAlgorithm
     /**
      * Class constructor
      *
-     * @param string|array|\Zend\Config\Config $options Cryption Options
+     * @param string|array|\Zend2\Config\Config $options Cryption Options
      */
     public function __construct($options)
     {
@@ -73,7 +73,7 @@ class Mcrypt implements EncryptionAlgorithm
             throw new Exception\ExtensionNotLoadedException('This filter needs the mcrypt extension');
         }
 
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         } elseif (is_string($options)) {
             $options = array('key' => $options);
@@ -108,7 +108,7 @@ class Mcrypt implements EncryptionAlgorithm
      * Sets new encryption options
      *
      * @param  string|array $options Encryption options
-     * @return Zend_Filter_File_Encryption
+     * @return Zend2_Filter_File_Encryption
      */
     public function setEncryption($options)
     {
@@ -159,7 +159,7 @@ class Mcrypt implements EncryptionAlgorithm
      * Sets the initialization vector
      *
      * @param string $vector (Optional) Vector to set
-     * @return \Zend\Filter\Encrypt\Mcrypt
+     * @return \Zend2\Filter\Encrypt\Mcrypt
      */
     public function setVector($vector = null)
     {
@@ -199,7 +199,7 @@ class Mcrypt implements EncryptionAlgorithm
      * Sets a internal compression for values to encrypt
      *
      * @param string|array $compression
-     * @return \Zend\Filter\Encrypt\Mcrypt
+     * @return \Zend2\Filter\Encrypt\Mcrypt
      */
     public function setCompression($compression)
     {
@@ -212,7 +212,7 @@ class Mcrypt implements EncryptionAlgorithm
     }
 
     /**
-     * Defined by Zend_Filter_Interface
+     * Defined by Zend2_Filter_Interface
      *
      * Encrypts $value with the defined settings
      *
@@ -237,7 +237,7 @@ class Mcrypt implements EncryptionAlgorithm
     }
 
     /**
-     * Defined by Zend_Filter_Interface
+     * Defined by Zend2_Filter_Interface
      *
      * Decrypts $value with the defined settings
      *
@@ -274,7 +274,7 @@ class Mcrypt implements EncryptionAlgorithm
     /**
      * Open a cipher
      *
-     * @throws \Zend\Filter\Exception When the cipher can not be opened
+     * @throws \Zend2\Filter\Exception When the cipher can not be opened
      * @return resource Returns the opened cipher
      */
     protected function _openCipher()
@@ -296,7 +296,7 @@ class Mcrypt implements EncryptionAlgorithm
      * Close a cipher
      *
      * @param  resource $cipher Cipher to close
-     * @return \Zend\Filter\Encrypt\Mcrypt
+     * @return \Zend2\Filter\Encrypt\Mcrypt
      */
     protected function _closeCipher($cipher)
     {

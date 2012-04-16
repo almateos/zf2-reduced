@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml_Security
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml_Security
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard\XML\Security\Transform;
+namespace Zend2\InfoCard\XML\Security\Transform;
 
-use Zend\InfoCard\XML\Security\Transform,
-    Zend\InfoCard\XML\Security;
+use Zend2\InfoCard\XML\Security\Transform,
+    Zend2\InfoCard\XML\Security;
 
 /**
  * A class to create a transform rule set based on XML URIs and then apply those rules
  * in the correct order to a given XML input
  *
- * @uses       \Zend\InfoCard\XML\Security\Exception
- * @uses       \Zend\Loader
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml_Security
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\InfoCard\XML\Security\Exception
+ * @uses       \Zend2\Loader
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml_Security
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class TransformChain
@@ -48,7 +48,7 @@ class TransformChain
     /**
      * Returns the name of the transform class based on a given URI
      *
-     * @throws \Zend\InfoCard\XML\Security\Exception
+     * @throws \Zend2\InfoCard\XML\Security\Exception
      * @param string $uri The transform URI
      * @return string The transform implementation class name
      */
@@ -56,9 +56,9 @@ class TransformChain
     {
         switch($uri) {
             case 'http://www.w3.org/2000/09/xmldsig#enveloped-signature':
-                return 'Zend\InfoCard\XML\Security\Transform\EnvelopedSignature';
+                return 'Zend2\InfoCard\XML\Security\Transform\EnvelopedSignature';
             case 'http://www.w3.org/2001/10/xml-exc-c14n#':
-                return 'Zend\InfoCard\XML\Security\Transform\XMLExcC14N';
+                return 'Zend2\InfoCard\XML\Security\Transform\XMLExcC14N';
             default:
                 throw new Security\Exception\InvalidArgumentException("Unknown or Unsupported Transformation Requested");
         }
@@ -68,7 +68,7 @@ class TransformChain
      * Add a Transform URI to the list of transforms to perform
      *
      * @param string $uri The Transform URI
-     * @return \Zend\InfoCard\XML\Security\Transform
+     * @return \Zend2\InfoCard\XML\Security\Transform
      */
     public function addTransform($uri)
     {

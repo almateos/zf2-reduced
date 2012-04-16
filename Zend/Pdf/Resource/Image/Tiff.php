@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Image
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Image
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Resource\Image;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
-use Zend\Pdf\InternalType;
+namespace Zend2\Pdf\Resource\Image;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
+use Zend2\Pdf\InternalType;
 
 /**
  * TIFF image
  *
- * @uses       \Zend\Pdf\InternalType\ArrayObject
- * @uses       \Zend\Pdf\InternalType\NameObject
- * @uses       \Zend\Pdf\InternalType\NumericObject
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\Resource\Image\AbstractImage
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Image
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\InternalType\ArrayObject
+ * @uses       \Zend2\Pdf\InternalType\NameObject
+ * @uses       \Zend2\Pdf\InternalType\NumericObject
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\Resource\Image\AbstractImage
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Image
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Tiff extends AbstractImage
@@ -102,7 +102,7 @@ class Tiff extends AbstractImage
      *
      * @param int $type
      * @param string $bytes
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     protected function unpackBytes($type, $bytes) {
         if(!isset($this->_endianType)) {
@@ -138,7 +138,7 @@ class Tiff extends AbstractImage
      * Object constructor
      *
      * @param string $imageFileName
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct($imageFileName)
     {
@@ -410,21 +410,21 @@ class Tiff extends AbstractImage
     }
 
     /**
-     * Image width (defined in \Zend\Pdf\Resource\Image\AbstractImage)
+     * Image width (defined in \Zend2\Pdf\Resource\Image\AbstractImage)
      */
     public function getPixelWidth() {
         return $this->_width;
     }
 
     /**
-     * Image height (defined in \Zend\Pdf\Resource\Image\AbstractImage)
+     * Image height (defined in \Zend2\Pdf\Resource\Image\AbstractImage)
      */
     public function getPixelHeight() {
         return $this->_height;
     }
 
     /**
-     * Image properties (defined in \Zend\Pdf\Resource\Image\AbstractImage)
+     * Image properties (defined in \Zend2\Pdf\Resource\Image\AbstractImage)
      */
     public function getProperties() {
         return $this->_imageProperties;

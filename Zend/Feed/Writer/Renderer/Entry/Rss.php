@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Writer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Writer\Renderer\Entry;
+namespace Zend2\Feed\Writer\Renderer\Entry;
 
-use Zend\Date,
-    Zend\Feed\Writer,
-    Zend\Feed\Writer\Renderer,
-    Zend\Uri;
+use Zend2\Date,
+    Zend2\Feed\Writer,
+    Zend2\Feed\Writer\Renderer,
+    Zend2\Uri;
 
 /**
-* @category Zend
-* @package Zend_Feed_Writer
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @category Zend2
+* @package Zend2_Feed_Writer
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 class Rss extends Renderer\AbstractRenderer implements Renderer\Renderer
@@ -36,7 +36,7 @@ class Rss extends Renderer\AbstractRenderer implements Renderer\Renderer
     /**
      * Constructor
      * 
-     * @param  Zend_Feed_Writer_Entry $container 
+     * @param  Zend2_Feed_Writer_Entry $container 
      * @return void
      */
     public function __construct (Writer\Entry $container)
@@ -47,7 +47,7 @@ class Rss extends Renderer\AbstractRenderer implements Renderer\Renderer
     /**
      * Render RSS entry
      * 
-     * @return Zend_Feed_Writer_Renderer_Entry_Rss
+     * @return Zend2_Feed_Writer_Renderer_Entry_Rss
      */
     public function render()
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail\Storage;
+namespace Zend2\Mail\Storage;
 
-use Zend\Mail\Protocol,
-    Zend\Mail\Storage;
+use Zend2\Mail\Protocol,
+    Zend2\Mail\Storage;
 
 /**
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Imap extends AbstractStorage implements MailFolder, Writable
@@ -38,7 +38,7 @@ class Imap extends AbstractStorage implements MailFolder, Writable
 
     /**
      * protocol handler
-     * @var null|\Zend\Mail\Protocol\Imap
+     * @var null|\Zend2\Mail\Protocol\Imap
      */
     protected $_protocol;
 
@@ -74,8 +74,8 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      * Count messages all messages in current box
      *
      * @return int number of messages
-     * @throws \Zend\Mail\Storage\Exception
-     * @throws \Zend\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
      */
     public function countMessages($flags = null)
     {
@@ -104,7 +104,7 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      *
      * @param int $id number of message
      * @return int|array size of given message of list with all messages as array(num => size)
-     * @throws \Zend\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
      */
     public function getSize($id = 0)
     {
@@ -118,8 +118,8 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      * Fetch a message
      *
      * @param int $id number of message
-     * @return \Zend\Mail\Message\Message
-     * @throws \Zend\Mail\Protocol\Exception
+     * @return \Zend2\Mail\Message\Message
+     * @throws \Zend2\Mail\Protocol\Exception
      */
     public function getMessage($id)
     {
@@ -142,8 +142,8 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      * @param  int               $topLines include this many lines with header (after an empty line)
      * @param  int $topLines include this many lines with header (after an empty line)
      * @return string raw header
-     * @throws \Zend\Mail\Protocol\Exception
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function getRawHeader($id, $part = null, $topLines = 0)
     {
@@ -162,8 +162,8 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      * @param  int               $id   number of message
      * @param  null|array|string $part path to part or null for messsage content
      * @return string raw content
-     * @throws \Zend\Mail\Protocol\Exception
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function getRawContent($id, $part = null)
     {
@@ -186,8 +186,8 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      *   - folder select this folder [optional, default = 'INBOX']
      *
      * @param  array $params mail reader specific parameters
-     * @throws \Zend\Mail\Storage\Exception
-     * @throws \Zend\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
      */
     public function __construct($params)
     {
@@ -240,7 +240,7 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      * Keep the server busy.
      *
      * @return null
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function noop()
     {
@@ -256,7 +256,7 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      *
      * @param   int $id number of message
      * @return  null
-     * @throws  \Zend\Mail\Storage\Exception
+     * @throws  \Zend2\Mail\Storage\Exception
      */
     public function removeMessage($id)
     {
@@ -276,7 +276,7 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      *
      * @param int|null $id message number
      * @return array|string message number for given message or all messages as array
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function getUniqueId($id = null)
     {
@@ -295,7 +295,7 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      *
      * @param string $id unique id
      * @return int message number
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function getNumberByUniqueId($id)
     {
@@ -315,9 +315,9 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      * get root folder or given folder
      *
      * @param  string $rootFolder get folder structure for given folder, else root
-     * @return \Zend\Mail\Storage\Folder root or wanted folder
-     * @throws \Zend\Mail\Storage\Exception
-     * @throws \Zend\Mail\Protocol\Exception
+     * @return \Zend2\Mail\Storage\Folder root or wanted folder
+     * @throws \Zend2\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
      */
     public function getFolders($rootFolder = null)
     {
@@ -369,10 +369,10 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      *
      * folder must be selectable!
      *
-     * @param  \Zend\Mail\Storage\Folder|string $globalName global name of folder or instance for subfolder
+     * @param  \Zend2\Mail\Storage\Folder|string $globalName global name of folder or instance for subfolder
      * @return null
-     * @throws \Zend\Mail\Storage\Exception
-     * @throws \Zend\Mail\Protocol\Exception
+     * @throws \Zend2\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Protocol\Exception
      */
     public function selectFolder($globalName)
     {
@@ -385,10 +385,10 @@ class Imap extends AbstractStorage implements MailFolder, Writable
 
 
     /**
-     * get \Zend\Mail\Storage\Folder instance for current folder
+     * get \Zend2\Mail\Storage\Folder instance for current folder
      *
-     * @return \Zend\Mail\Storage\Folder instance of current folder
-     * @throws \Zend\Mail\Storage\Exception
+     * @return \Zend2\Mail\Storage\Folder instance of current folder
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function getCurrentFolder()
     {
@@ -402,9 +402,9 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      * may be used as parent or which chars may be used in the folder name
      *
      * @param  string                          $name         global name of folder, local name if $parentFolder is set
-     * @param  string|\Zend\Mail\Storage\Folder $parentFolder parent folder for new folder, else root folder is parent
+     * @param  string|\Zend2\Mail\Storage\Folder $parentFolder parent folder for new folder, else root folder is parent
      * @return null
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function createFolder($name, $parentFolder = null)
     {
@@ -425,9 +425,9 @@ class Imap extends AbstractStorage implements MailFolder, Writable
     /**
      * remove a folder
      *
-     * @param  string|\Zend\Mail\Storage\Folder $name      name or instance of folder
+     * @param  string|\Zend2\Mail\Storage\Folder $name      name or instance of folder
      * @return null
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function removeFolder($name)
     {
@@ -445,10 +445,10 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      *
      * The new name has the same restrictions as in createFolder()
      *
-     * @param  string|\Zend\Mail\Storage\Folder $oldName name or instance of folder
+     * @param  string|\Zend2\Mail\Storage\Folder $oldName name or instance of folder
      * @param  string                          $newName new global name of folder
      * @return null
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function renameFolder($oldName, $newName)
     {
@@ -465,11 +465,11 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      * append a new message to mail storage
      *
      * @param  string                                     $message message as string or instance of message class
-     * @param  null|string|\Zend\Mail\Storage\Folder       $folder  folder for new message, else current folder is taken
+     * @param  null|string|\Zend2\Mail\Storage\Folder       $folder  folder for new message, else current folder is taken
      * @param  null|array                                 $flags   set flags for new message, else a default set is used
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
-     // not yet * @param string|\Zend\Mail\Message|\Zend\Mime\Message $message message as string or instance of message class
+     // not yet * @param string|\Zend2\Mail\Message|\Zend2\Mime\Message $message message as string or instance of message class
     public function appendMessage($message, $folder = null, $flags = null)
     {
         if ($folder === null) {
@@ -490,9 +490,9 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      * copy an existing message
      *
      * @param  int                             $id     number of message
-     * @param  string|\Zend\Mail\Storage\Folder $folder name or instance of targer folder
+     * @param  string|\Zend2\Mail\Storage\Folder $folder name or instance of targer folder
      * @return null
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function copyMessage($id, $folder)
     {
@@ -507,9 +507,9 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      * NOTE: imap has no native move command, thus it's emulated with copy and delete
      *
      * @param  int                             $id     number of message
-     * @param  string|\Zend\Mail\Storage\Folder $folder name or instance of targer folder
+     * @param  string|\Zend2\Mail\Storage\Folder $folder name or instance of targer folder
      * @return null
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function moveMessage($id, $folder)
     {
@@ -524,7 +524,7 @@ class Imap extends AbstractStorage implements MailFolder, Writable
      *
      * @param  int   $id    number of message
      * @param  array $flags new flags for message
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function setFlags($id, $flags)
     {

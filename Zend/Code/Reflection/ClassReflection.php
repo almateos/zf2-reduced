@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Code\Reflection;
+namespace Zend2\Code\Reflection;
 
-use Zend\Code\Reflection,
+use Zend2\Code\Reflection,
     ReflectionClass,
-    Zend\Code\Reflection\FileReflection,
-    Zend\Code\Scanner\FileScanner,
-    Zend\Code\Annotation,
-    Zend\Code\Scanner\AnnotationScanner;
+    Zend2\Code\Reflection\FileReflection,
+    Zend2\Code\Scanner\FileScanner,
+    Zend2\Code\Annotation,
+    Zend2\Code\Scanner\AnnotationScanner;
 
 /**
  * @uses       ReflectionClass
- * @uses       Zend_Reflection_Docblock
- * @uses       \Zend\Code\Reflection\Exception
- * @uses       \Zend\Code\Reflection\ReflectionMethod
- * @uses       \Zend\Code\Reflection\ReflectionProperty
- * @category   Zend
- * @package    Zend_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2_Reflection_Docblock
+ * @uses       \Zend2\Code\Reflection\Exception
+ * @uses       \Zend2\Code\Reflection\ReflectionMethod
+ * @uses       \Zend2\Code\Reflection\ReflectionProperty
+ * @category   Zend2
+ * @package    Zend2_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ClassReflection extends ReflectionClass implements Reflection
@@ -63,7 +63,7 @@ class ClassReflection extends ReflectionClass implements Reflection
      * Return the classes DocBlock reflection object
      *
      * @return DocBlockReflection
-     * @throws \Zend\Code\Reflection\Exception for missing docblock or invalid reflection class
+     * @throws \Zend2\Code\Reflection\Exception for missing docblock or invalid reflection class
      */
     public function getDocBlock()
     {
@@ -131,7 +131,7 @@ class ClassReflection extends ReflectionClass implements Reflection
     /**
      * Get all reflection objects of implemented interfaces
      *
-     * @return array Array of \Zend\Code\Reflection\ReflectionClass
+     * @return array Array of \Zend2\Code\Reflection\ReflectionClass
      */
     public function getInterfaces()
     {
@@ -177,7 +177,7 @@ class ClassReflection extends ReflectionClass implements Reflection
     /**
      * Get parent reflection class of reflected class
      *
-     * @return \Zend\Code\Reflection\ReflectionClass
+     * @return \Zend2\Code\Reflection\ReflectionClass
      */
     public function getParentClass()
     {
@@ -209,7 +209,7 @@ class ClassReflection extends ReflectionClass implements Reflection
      * Return reflection properties of this class
      *
      * @param  int $filter
-     * @return array Array of \Zend\Code\Reflection\ReflectionProperty
+     * @return array Array of \Zend2\Code\Reflection\ReflectionProperty
      */
     public function getProperties($filter = -1)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData;
+namespace Zend2\GData;
 
 /**
  * Provides a mechanism to build a query URL for Gdata services.
  * Queries are not defined for APP, but are provided by Gdata services
  * as an extension.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Query
@@ -119,7 +119,7 @@ class Query
     /**
      * @param string $name
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \Zend2\GData\Query Provides a fluent interface
      */
     public function setParam($name, $value)
     {
@@ -137,7 +137,7 @@ class Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \Zend2\GData\Query Provides a fluent interface
      */
     public function setAlt($value)
     {
@@ -151,7 +151,7 @@ class Query
 
     /**
      * @param int $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \Zend2\GData\Query Provides a fluent interface
      */
     public function setMaxResults($value)
     {
@@ -165,7 +165,7 @@ class Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \Zend2\GData\Query Provides a fluent interface
      */
     public function setQuery($value)
     {
@@ -179,7 +179,7 @@ class Query
 
     /**
      * @param int $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \Zend2\GData\Query Provides a fluent interface
      */
     public function setStartIndex($value)
     {
@@ -193,7 +193,7 @@ class Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \Zend2\GData\Query Provides a fluent interface
      */
     public function setUpdatedMax($value)
     {
@@ -207,7 +207,7 @@ class Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \Zend2\GData\Query Provides a fluent interface
      */
     public function setUpdatedMin($value)
     {
@@ -221,7 +221,7 @@ class Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \Zend2\GData\Query Provides a fluent interface
      */
     public function setPublishedMax($value)
     {
@@ -235,7 +235,7 @@ class Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \Zend2\GData\Query Provides a fluent interface
      */
     public function setPublishedMin($value)
     {
@@ -249,7 +249,7 @@ class Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \Zend2\GData\Query Provides a fluent interface
      */
     public function setAuthor($value)
     {
@@ -371,7 +371,7 @@ class Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \Zend2\GData\Query Provides a fluent interface
      */
     public function setCategory($value)
     {

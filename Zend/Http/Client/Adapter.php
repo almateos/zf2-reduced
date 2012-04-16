@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Http
+ * @category   Zend2
+ * @package    Zend2_Http
  * @subpackage Client_Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Http\Client;
+namespace Zend2\Http\Client;
 
 /**
- * An interface description for Zend_Http_Client_Adapter classes.
+ * An interface description for Zend2_Http_Client_Adapter classes.
  *
- * These classes are used as connectors for Zend_Http_Client, performing the
+ * These classes are used as connectors for Zend2_Http_Client, performing the
  * tasks of connecting, writing, reading and closing connection to the server.
  *
- * @category   Zend
- * @package    Zend_Http
+ * @category   Zend2
+ * @package    Zend2_Http
  * @subpackage Client_Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface Adapter
@@ -55,7 +55,7 @@ interface Adapter
      * Send request to the remote server
      *
      * @param string        $method
-     * @param \Zend\Uri\Uri $url
+     * @param \Zend2\Uri\Uri $url
      * @param string        $http_ver
      * @param array         $headers
      * @param string        $body

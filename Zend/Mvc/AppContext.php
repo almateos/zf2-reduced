@@ -1,11 +1,11 @@
 <?php
 
-namespace Zend\Mvc;
+namespace Zend2\Mvc;
 
-use Zend\Di\Locator,
-    Zend\EventManager\EventCollection,
-    Zend\Stdlib\RequestDescription as Request,
-    Zend\Stdlib\ResponseDescription as Response;
+use Zend2\Di\Locator,
+    Zend2\EventManager\EventCollection,
+    Zend2\Stdlib\RequestDescription as Request,
+    Zend2\Stdlib\ResponseDescription as Response;
 
 interface AppContext
 {
@@ -91,7 +91,7 @@ interface AppContext
     /**
      * Run the application
      * 
-     * @return \Zend\Http\Response
+     * @return \Zend2\Http\Response
      */
     public function run();
 }

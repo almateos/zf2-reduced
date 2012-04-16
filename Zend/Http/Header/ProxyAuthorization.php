@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Http\Header;
+namespace Zend2\Http\Header;
 
 /**
  * @throws Exception\InvalidArgumentException

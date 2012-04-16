@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
+namespace Zend2\Validator;
 
 /**
- * @uses       \Zend\Loader
- * @uses       \Zend\Validator\AbstractValidator
- * @uses       \Zend\Validator\Exception
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Loader
+ * @uses       \Zend2\Validator\AbstractValidator
+ * @uses       \Zend2\Validator\Exception
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Barcode extends AbstractValidator
@@ -53,7 +53,7 @@ class Barcode extends AbstractValidator
     );
 
     protected $options = array(
-        'adapter'     => null,  // Barcode adapter Zend\Validator\Barcode\AbstractAdapter
+        'adapter'     => null,  // Barcode adapter Zend2\Validator\Barcode\AbstractAdapter
         'options'     => null,  // Options for this adapter
         'length'      => null,
         'useChecksum' => null,
@@ -66,7 +66,7 @@ class Barcode extends AbstractValidator
      */
     public function __construct($options = null)
     {
-        if (!is_array($options) && !($options instanceof \Zend\Config\Config)) {
+        if (!is_array($options) && !($options instanceof \Zend2\Config\Config)) {
             $options = array('adapter' => $options);
         }
 
@@ -80,7 +80,7 @@ class Barcode extends AbstractValidator
     /**
      * Returns the set adapter
      *
-     * @return Zend\Validate\Barcode\Adapter
+     * @return Zend2\Validate\Barcode\Adapter
      */
     public function getAdapter()
     {
@@ -94,18 +94,18 @@ class Barcode extends AbstractValidator
     /**
      * Sets a new barcode adapter
      *
-     * @param  string|\Zend\Validator\Barcode\Adapter $adapter Barcode adapter to use
+     * @param  string|\Zend2\Validator\Barcode\Adapter $adapter Barcode adapter to use
      * @param  array  $options Options for this adapter
-     * @return Zend\Validator\Barcode
-     * @throws \Zend\Validator\Exception
+     * @return Zend2\Validator\Barcode
+     * @throws \Zend2\Validator\Exception
      */
     public function setAdapter($adapter, $options = null)
     {
         if (is_string($adapter)) {
             $adapter = ucfirst(strtolower($adapter));
-            $adapter = 'Zend\Validator\Barcode\\' . $adapter;
-            if (\Zend\Loader::isReadable('Zend/Validator/Barcode/' . $adapter . '.php')) {
-                $adapter = 'Zend\Validator\Barcode\\' . $adapter;
+            $adapter = 'Zend2\Validator\Barcode\\' . $adapter;
+            if (\Zend2\Loader::isReadable('Zend2/Validator/Barcode/' . $adapter . '.php')) {
+                $adapter = 'Zend2\Validator\Barcode\\' . $adapter;
             }
 
             if (!class_exists($adapter)) {
@@ -117,7 +117,7 @@ class Barcode extends AbstractValidator
 
         if (!$this->options['adapter'] instanceof Barcode\Adapter) {
             throw new Exception\InvalidArgumentException(
-                "Adapter " . $adapter . " does not implement Zend\Validate\Barcode\Adapter"
+                "Adapter " . $adapter . " does not implement Zend2\Validate\Barcode\Adapter"
             );
         }
 
@@ -146,7 +146,7 @@ class Barcode extends AbstractValidator
     }
 
     /**
-     * Defined by Zend\Validator\Validator
+     * Defined by Zend2\Validator\Validator
      *
      * Returns true if and only if $value contains a valid barcode
      *

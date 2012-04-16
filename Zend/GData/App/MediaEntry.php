@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\App;
+namespace Zend2\GData\App;
 
 /**
  * Concrete class for working with Atom entries containing multi-part data.
  *
- * @uses       \Zend\GData\App\InvalidArgumentException
- * @uses       \Zend\GData\App\Entry
- * @uses       \Zend\GData\App\MediaSource
- * @uses       \Zend\GData\MediaMimeStream
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\App\InvalidArgumentException
+ * @uses       \Zend2\GData\App\Entry
+ * @uses       \Zend2\GData\App\MediaSource
+ * @uses       \Zend2\GData\MediaMimeStream
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class MediaEntry extends Entry
@@ -39,7 +39,7 @@ class MediaEntry extends Entry
     /**
      * The attached MediaSource/file
      *
-     * @var \Zend\GData\App\MediaSource
+     * @var \Zend2\GData\App\MediaSource
      */
     protected $_mediaSource = null;
 
@@ -59,7 +59,7 @@ class MediaEntry extends Entry
     /**
      * Return the MIME multipart representation of this MediaEntry.
      *
-     * @return string|\Zend\GData\MediaMimeStream The MIME multipart
+     * @return string|\Zend2\GData\MediaMimeStream The MIME multipart
      *         representation of this MediaEntry. If the entry consisted only
      *         of XML, a string is returned.
      */
@@ -71,7 +71,7 @@ class MediaEntry extends Entry
             // No attachment, just send XML for entry
             return $xmlData;
         } else {
-            return new \Zend\GData\MediaMimeStream($xmlData,
+            return new \Zend2\GData\MediaMimeStream($xmlData,
                 $mediaSource->getFilename(), $mediaSource->getContentType());
         }
     }
@@ -80,7 +80,7 @@ class MediaEntry extends Entry
      * Return the MediaSource object representing the file attached to this
      * MediaEntry.
      *
-     * @return \Zend\GData\App\MediaSource The attached MediaSource/file
+     * @return \Zend2\GData\App\MediaSource The attached MediaSource/file
      */
     public function getMediaSource()
     {
@@ -90,8 +90,8 @@ class MediaEntry extends Entry
     /**
      * Set the MediaSource object (file) for this MediaEntry
      *
-     * @param \Zend\GData\App\MediaSource $value The attached MediaSource/file
-     * @return \Zend\GData\App\MediaEntry Provides a fluent interface
+     * @param \Zend2\GData\App\MediaSource $value The attached MediaSource/file
+     * @return \Zend2\GData\App\MediaEntry Provides a fluent interface
      */
     public function setMediaSource($value)
     {
@@ -99,7 +99,7 @@ class MediaEntry extends Entry
             $this->_mediaSource = $value;
         } else {
             throw new InvalidArgumentException(
-                    'You must specify the media data as a class that conforms to \Zend\Gdata\App\MediaSource.');
+                    'You must specify the media data as a class that conforms to \Zend2\Gdata\App\MediaSource.');
         }
         return $this;
     }

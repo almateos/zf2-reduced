@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\OAuth\Http;
+namespace Zend2\OAuth\Http;
 
-use Zend\OAuth;
+use Zend2\OAuth;
 
 /**
- * @uses       Zend\OAuth\OAuth
- * @uses       Zend\OAuth\Http
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\OAuth\OAuth
+ * @uses       Zend2\OAuth\Http
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Utility
@@ -37,7 +37,7 @@ class Utility
      * params other than the defaults expected for any OAuth query.
      *
      * @param  string $url
-     * @param  Zend\OAuth\Config $config
+     * @param  Zend2\OAuth\Config $config
      * @param  null|array $serviceProviderParams
      * @return array
      */
@@ -147,10 +147,10 @@ class Utility
         $hashAlgo  = null;
         $parts     = explode('-', $signatureMethod);
         if (count($parts) > 1) {
-            $className = 'Zend\OAuth\Signature\\' . ucfirst(strtolower($parts[0]));
+            $className = 'Zend2\OAuth\Signature\\' . ucfirst(strtolower($parts[0]));
             $hashAlgo  = $parts[1];
         } else {
-            $className = 'Zend\OAuth\Signature\\' . ucfirst(strtolower($signatureMethod));
+            $className = 'Zend2\OAuth\Signature\\' . ucfirst(strtolower($signatureMethod));
         }
 
         $signatureObject = new $className($consumerSecret, $tokenSecret, $hashAlgo);

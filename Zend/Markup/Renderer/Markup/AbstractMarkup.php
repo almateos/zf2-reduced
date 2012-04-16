@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Markup
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Renderer_Markup
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Markup\Renderer\Markup;
+namespace Zend2\Markup\Renderer\Markup;
 
-use Zend\Markup\Renderer\Markup,
-    Zend\Markup\Renderer\AbstractRenderer,
-    Zend\Filter\Filter,
-    Zend\Filter\FilterChain;
+use Zend2\Markup\Renderer\Markup,
+    Zend2\Markup\Renderer\AbstractRenderer,
+    Zend2\Filter\Filter,
+    Zend2\Filter\FilterChain;
 
 /**
  * Abstract markup
  *
- * @uses       \Zend\Markup\Renderer\Markup
- * @uses       \Zend\Markup\Renderer\AbstractRenderer
- * @category   Zend
- * @package    Zend_Markup
+ * @uses       \Zend2\Markup\Renderer\Markup
+ * @uses       \Zend2\Markup\Renderer\AbstractRenderer
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Renderer_Markup
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractMarkup implements Markup
@@ -43,7 +43,7 @@ abstract class AbstractMarkup implements Markup
     /**
      * The renderer
      *
-     * @var \Zend\Markup\Renderer\AbstractRenderer
+     * @var \Zend2\Markup\Renderer\AbstractRenderer
      */
     protected $_renderer;
 
@@ -57,7 +57,7 @@ abstract class AbstractMarkup implements Markup
     /**
      * Chain filter
      *
-     * @var \Zend\Filter\FilterChain
+     * @var \Zend2\Filter\FilterChain
      */
     protected $_filter;
 
@@ -67,7 +67,7 @@ abstract class AbstractMarkup implements Markup
      *
      * @param string $encoding
      *
-     * @return \Zend\Markup\Renderer\Markup\AbstractMarkup
+     * @return \Zend2\Markup\Renderer\Markup\AbstractMarkup
      */
     public function setEncoding($encoding = 'UTF-8')
     {
@@ -89,9 +89,9 @@ abstract class AbstractMarkup implements Markup
     /**
      * Set the renderer instance
      *
-     * @param \Zend\Markup\Renderer\AbstractRenderer $renderer
+     * @param \Zend2\Markup\Renderer\AbstractRenderer $renderer
      *
-     * @return \Zend\Markup\Renderer\Markup\AbstractMarkup
+     * @return \Zend2\Markup\Renderer\Markup\AbstractMarkup
      */
     public function setRenderer(AbstractRenderer $renderer)
     {
@@ -105,7 +105,7 @@ abstract class AbstractMarkup implements Markup
     /**
      * Get the renderer instance
      *
-     * @return \Zend\Markup\Renderer\AbstractRenderer
+     * @return \Zend2\Markup\Renderer\AbstractRenderer
      */
     public function getRenderer()
     {
@@ -115,7 +115,7 @@ abstract class AbstractMarkup implements Markup
     /**
      * Get the filter chain
      *
-     * @return \Zend\Filter\FilterChain
+     * @return \Zend2\Filter\FilterChain
      */
     public function getFilterChain()
     {
@@ -129,9 +129,9 @@ abstract class AbstractMarkup implements Markup
     /**
      * Adds a filter to the chain
      *
-     * @param  \Zend\Filter\Filter $filter
+     * @param  \Zend2\Filter\Filter $filter
      * @param  int $priority Priority at which to add filter; higher numbers are executed earlier. Defaults to 0
-     * @return \Zend\Markup\Renderer\AbstractMarkup
+     * @return \Zend2\Markup\Renderer\AbstractMarkup
      */
     public function addFilter(Filter $filter, $priority = 0)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,14 +12,14 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Test
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Test\PHPUnit\Db\Operation;
+namespace Zend2\Test\PHPUnit\Db\Operation;
 
 /**
  * Delete All Operation that can be executed on set up or tear down of a database tester.
@@ -28,12 +28,12 @@ namespace Zend\Test\PHPUnit\Db\Operation;
  * @uses       PHPUnit_Extensions_Database_DB_IDatabaseConnection
  * @uses       PHPUnit_Extensions_Database_Operation_Exception
  * @uses       PHPUnit_Extensions_Database_Operation_IDatabaseOperation
- * @uses       \Zend\Test\PHPUnit\Db\Connection
- * @uses       \Zend\Test\PHPUnit\Db\Exception\InvalidArgumentException
- * @category   Zend
- * @package    Zend_Test
+ * @uses       \Zend2\Test\PHPUnit\Db\Connection
+ * @uses       \Zend2\Test\PHPUnit\Db\Exception\InvalidArgumentException
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DeleteAll implements \PHPUnit_Extensions_Database_Operation_IDatabaseOperation
@@ -44,9 +44,9 @@ class DeleteAll implements \PHPUnit_Extensions_Database_Operation_IDatabaseOpera
      */
     public function execute(\PHPUnit_Extensions_Database_DB_IDatabaseConnection $connection, \PHPUnit_Extensions_Database_DataSet_IDataSet $dataSet)
     {
-        if(!($connection instanceof \Zend\Test\PHPUnit\Db\Connection)) {
-            throw new \Zend\Test\PHPUnit\Db\Exception\InvalidArgumentException(
-            	"Not a valid Zend_Test_PHPUnit_Db_Connection instance, ".get_class($connection)." given!"
+        if(!($connection instanceof \Zend2\Test\PHPUnit\Db\Connection)) {
+            throw new \Zend2\Test\PHPUnit\Db\Exception\InvalidArgumentException(
+            	"Not a valid Zend2_Test_PHPUnit_Db_Connection instance, ".get_class($connection)." given!"
             );
         }
 

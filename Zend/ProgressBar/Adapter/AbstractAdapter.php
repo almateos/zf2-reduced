@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_ProgressBar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_ProgressBar
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\ProgressBar\Adapter;
+namespace Zend2\ProgressBar\Adapter;
 
-use Zend\Config\Config;
+use Zend2\Config\Config;
 
 /**
- * Abstract class for Zend_ProgressBar_Adapters
+ * Abstract class for Zend2_ProgressBar_Adapters
  *
- * @category  Zend
- * @package   Zend_ProgressBar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_ProgressBar
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractAdapter
@@ -45,10 +45,10 @@ abstract class AbstractAdapter
     /**
      * Create a new adapter
      *
-     * $options may be either be an array or a Zend_Config object which
+     * $options may be either be an array or a Zend2_Config object which
      * specifies adapter related options.
      *
-     * @param null|array|\Zend\Config\Config $options
+     * @param null|array|\Zend2\Config\Config $options
      */
     public function __construct($options = null)
     {
@@ -60,10 +60,10 @@ abstract class AbstractAdapter
     }
 
     /**
-     * Set options via a Zend_Config instance
+     * Set options via a Zend2_Config instance
      *
-     * @param  \Zend\Config\Config $config
-     * @return \Zend\ProgressBar\Adapter\Adapter
+     * @param  \Zend2\Config\Config $config
+     * @return \Zend2\ProgressBar\Adapter\Adapter
      */
     public function setConfig(Config $config)
     {
@@ -76,7 +76,7 @@ abstract class AbstractAdapter
      * Set options via an array
      *
      * @param  array $options
-     * @return \Zend\ProgressBar\Adapter\Adapter
+     * @return \Zend2\ProgressBar\Adapter\Adapter
      */
     public function setOptions(array $options)
     {

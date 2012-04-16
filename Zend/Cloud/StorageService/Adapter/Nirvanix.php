@@ -10,30 +10,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Cloud\StorageService
+ * @category   Zend2
+ * @package    Zend2\Cloud\StorageService
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * namespace
  */
-namespace Zend\Cloud\StorageService\Adapter;
+namespace Zend2\Cloud\StorageService\Adapter;
 
-use Zend\Cloud\StorageService\Adapter,
-    Zend\Cloud\StorageService\Exception,
-    Zend\Service\Nirvanix\Nirvanix as NirvanixService,
-    Zend\Http\Client as HttpClient;
+use Zend2\Cloud\StorageService\Adapter,
+    Zend2\Cloud\StorageService\Exception,
+    Zend2\Service\Nirvanix\Nirvanix as NirvanixService,
+    Zend2\Http\Client as HttpClient;
 
 /**
  * Adapter for Nirvanix cloud storage
  *
- * @category   Zend
- * @package    Zend\Cloud\StorageService
+ * @category   Zend2
+ * @package    Zend2\Cloud\StorageService
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Nirvanix implements Adapter
@@ -45,7 +45,7 @@ class Nirvanix implements Adapter
 
     /**
      * The Nirvanix adapter
-     * @var Zend\Service\Nirvanix
+     * @var Zend2\Service\Nirvanix
      */
     protected $_nirvanix;
     protected $_imfNs;
@@ -56,12 +56,12 @@ class Nirvanix implements Adapter
     /**
      * Constructor
      *
-     * @param  array|Zend\Config\Config $options
+     * @param  array|Zend2\Config\Config $options
      * @return void
      */
     function __construct($options = array())
     {
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         }
 
@@ -85,7 +85,7 @@ class Nirvanix implements Adapter
             $this->_remoteDirectory = $options[self::REMOTE_DIRECTORY];
             $this->_imfNs = $this->_nirvanix->getService('IMFS');
             $this->_metadataNs = $this->_nirvanix->getService('Metadata');
-        } catch (Zend\Service\Nirvanix\Exception  $e) {
+        } catch (Zend2\Service\Nirvanix\Exception  $e) {
             throw new Exception\RuntimeException('Error on create: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -102,7 +102,7 @@ class Nirvanix implements Adapter
         $path = $this->_getFullPath($path);
         try {
             $item = $this->_imfNs->getContents($path);
-        } catch (Zend\Service\Nirvanix\Exception $e) {
+        } catch (Zend2\Service\Nirvanix\Exception $e) {
             throw new Exception\RuntimeException('Error on fetch: '.$e->getMessage(), $e->getCode(), $e);
         }
         return $item;
@@ -122,7 +122,7 @@ class Nirvanix implements Adapter
         try {
             $path = $this->_getFullPath($destinationPath);
             $this->_imfNs->putContents($path, $data);
-        } catch (Zend\Service\Nirvanix\Exception $e) {
+        } catch (Zend2\Service\Nirvanix\Exception $e) {
             throw new Exception\RuntimeException('Error on store: '.$e->getMessage(), $e->getCode(), $e);
         }
         return true;
@@ -140,7 +140,7 @@ class Nirvanix implements Adapter
         try {
             $path = $this->_getFullPath($path);
             $this->_imfNs->unlink($path);
-        } catch(Zend\Service\Nirvanix\Exception $e) {
+        } catch(Zend2\Service\Nirvanix\Exception $e) {
 //            if (trim(strtoupper($e->getMessage())) != 'INVALID PATH') {
 //                // TODO Differentiate among errors in the Nirvanix adapter
             throw new Exception\RunTimeException('Error on delete: '.$e->getMessage(), $e->getCode(), $e);
@@ -164,7 +164,7 @@ class Nirvanix implements Adapter
             $destinationPath = $this->_getFullPath($destinationPath);
             $this->_imfNs->CopyFiles(array('srcFilePath' => $sourcePath,
                                             'destFolderPath' => $destinationPath));
-        } catch (Zend\Service\Nirvanix\Exception $e) {
+        } catch (Zend2\Service\Nirvanix\Exception $e) {
             throw new Exception\RuntimeException('Error on copy: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -188,7 +188,7 @@ class Nirvanix implements Adapter
                                              'newFileName' => $destinationPath));
     //        $this->_imfNs->MoveFiles(array('srcFilePath' => $sourcePath,
     //                                         'destFolderPath' => $destinationPath));
-        } catch (Zend\Service\Nirvanix\Exception $e) {
+        } catch (Zend2\Service\Nirvanix\Exception $e) {
             throw new Exception\RuntimeException('Error on move: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -220,7 +220,7 @@ class Nirvanix implements Adapter
         $path = $this->_getFullPath($path);
         try {
             $metadataNode = $this->_metadataNs->getMetadata(array('path' => $path));
-        } catch (Zend\Service\Nirvanix\Exception $e) {
+        } catch (Zend2\Service\Nirvanix\Exception $e) {
             throw new Exception\RuntimeException('Error on fetching metadata: '.$e->getMessage(), $e->getCode(), $e);
         }
 
@@ -265,7 +265,7 @@ class Nirvanix implements Adapter
                         'metadata' => $metadataString,
                     ));
                 }
-            } catch (Zend\Service\Nirvanix\Exception $e) {
+            } catch (Zend2\Service\Nirvanix\Exception $e) {
                 throw new Exception\RunTimeException('Error on storing metadata: '.$e->getMessage(), $e->getCode(), $e);
             }
         }
@@ -295,7 +295,7 @@ class Nirvanix implements Adapter
                     ));
                     }
             }
-        } catch (Zend\Service\Nirvanix\Exception $e) {
+        } catch (Zend2\Service\Nirvanix\Exception $e) {
             throw new Exception\RuntimeException('Error on deleting metadata: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -357,7 +357,7 @@ class Nirvanix implements Adapter
                     'pageNumber' => 1,
                     'pageSize'   => $this->maxPageSize,
                 ));
-            } catch (Zend\Service\Nirvanix\Exception $e) {
+            } catch (Zend2\Service\Nirvanix\Exception $e) {
                 throw new Exception\RuntimeException('Error on list: '.$e->getMessage(), $e->getCode(), $e);
             }
 
@@ -394,7 +394,7 @@ class Nirvanix implements Adapter
 
     /**
      * Get the concrete client.
-     * @return Zend\Service\Nirvanix
+     * @return Zend2\Service\Nirvanix
      */
     public function getClient()
     {

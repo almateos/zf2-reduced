@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper\Navigation;
+namespace Zend2\View\Helper\Navigation;
 
-use Zend\Acl,
-    Zend\Navigation;
+use Zend2\Acl,
+    Zend2\Navigation;
 
 /**
  * Interface for navigational helpers
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface Helper
@@ -57,8 +57,8 @@ interface Helper
      * Sets translator to use in helper
      *
      * @param  mixed $translator [optional] translator.  Expects an object of 
-     *                           type {@link \Zend\Translator\Adapter} or 
-     *                           {@link \Zend\Translator\Translator}, or null. 
+     *                           type {@link \Zend2\Translator\Adapter} or 
+     *                           {@link \Zend2\Translator\Translator}, or null. 
      *                           Default is null.
      * @return Helper  fluent interface, returns self
      */
@@ -67,7 +67,7 @@ interface Helper
     /**
      * Returns translator used in helper
      *
-     * @return \Zend\Translator\Adapter|null  translator or null
+     * @return \Zend2\Translator\Adapter|null  translator or null
      */
     public function getTranslator();
 
@@ -93,7 +93,7 @@ interface Helper
      * @param  mixed $role [optional] role to set.  Expects a string, an 
      *                     instance of type {@link Acl\Role}, or null. Default 
      *                     is null.
-     * @throws \Zend\View\Exception if $role is invalid
+     * @throws \Zend2\View\Exception if $role is invalid
      * @return Helper fluent interface, returns
      *                                             self
      */
@@ -196,7 +196,7 @@ interface Helper
      *                                         the container returned by {@link 
      *                                         getContainer()}.
      * @return string helper output
-     * @throws \Zend\View\Exception if unable to render
+     * @throws \Zend2\View\Exception if unable to render
      */
     public function render(Navigation\Container $container = null);
 }

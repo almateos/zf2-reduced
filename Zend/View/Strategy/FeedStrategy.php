@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,35 +12,35 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Strategy
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Strategy;
+namespace Zend2\View\Strategy;
 
-use Zend\EventManager\EventCollection,
-    Zend\EventManager\ListenerAggregate,
-    Zend\Feed\Writer\Feed,
-    Zend\Http\Request as HttpRequest,
-    Zend\Http\Response as HttpResponse,
-    Zend\View\Model,
-    Zend\View\Renderer\FeedRenderer,
-    Zend\View\ViewEvent;
+use Zend2\EventManager\EventCollection,
+    Zend2\EventManager\ListenerAggregate,
+    Zend2\Feed\Writer\Feed,
+    Zend2\Http\Request as HttpRequest,
+    Zend2\Http\Response as HttpResponse,
+    Zend2\View\Model,
+    Zend2\View\Renderer\FeedRenderer,
+    Zend2\View\ViewEvent;
 
 /**
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Strategy
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class FeedStrategy implements ListenerAggregate
 {
     /**
-     * @var \Zend\Stdlib\CallbackHandler[]
+     * @var \Zend2\Stdlib\CallbackHandler[]
      */
     protected $listeners = array();
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Authentication
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Authentication;
+namespace Zend2\Authentication;
 
 /**
- * @category   Zend
- * @package    Zend_Authentication
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface Storage
@@ -33,7 +33,7 @@ interface Storage
     /**
      * Returns true if and only if storage is empty
      *
-     * @throws Zend\Authentication\Storage\Exception If it is impossible to determine whether storage is empty
+     * @throws Zend2\Authentication\Storage\Exception If it is impossible to determine whether storage is empty
      * @return boolean
      */
     public function isEmpty();
@@ -43,7 +43,7 @@ interface Storage
      *
      * Behavior is undefined when storage is empty.
      *
-     * @throws Zend\Authentication\Storage\Exception If reading contents from storage is impossible
+     * @throws Zend2\Authentication\Storage\Exception If reading contents from storage is impossible
      * @return mixed
      */
     public function read();
@@ -52,7 +52,7 @@ interface Storage
      * Writes $contents to storage
      *
      * @param  mixed $contents
-     * @throws Zend\Authentication\Storage\Exception If writing $contents to storage is impossible
+     * @throws Zend2\Authentication\Storage\Exception If writing $contents to storage is impossible
      * @return void
      */
     public function write($contents);
@@ -60,7 +60,7 @@ interface Storage
     /**
      * Clears contents from storage
      *
-     * @throws Zend\Authentication\Storage\Exception If clearing contents from storage is impossible
+     * @throws Zend2\Authentication\Storage\Exception If clearing contents from storage is impossible
      * @return void
      */
     public function clear();

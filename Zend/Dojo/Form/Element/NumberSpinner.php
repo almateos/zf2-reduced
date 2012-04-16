@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\Form\Element;
+namespace Zend2\Dojo\Form\Element;
 
 /**
  * NumberSpinner dijit
  *
- * @uses       \Zend\Dojo\Form\Element\ValidationTextBox
- * @package    Zend_Dojo
+ * @uses       \Zend2\Dojo\Form\Element\ValidationTextBox
+ * @package    Zend2_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class NumberSpinner extends ValidationTextBox
@@ -42,7 +42,7 @@ class NumberSpinner extends ValidationTextBox
      * Set defaultTimeout
      *
      * @param  int $timeout
-     * @return \Zend\Dojo\Form\Element\NumberSpinner
+     * @return \Zend2\Dojo\Form\Element\NumberSpinner
      */
     public function setDefaultTimeout($timeout)
     {
@@ -64,7 +64,7 @@ class NumberSpinner extends ValidationTextBox
      * Set timeoutChangeRate
      *
      * @param  int $rate
-     * @return \Zend\Dojo\Form\Element\NumberSpinner
+     * @return \Zend2\Dojo\Form\Element\NumberSpinner
      */
     public function setTimeoutChangeRate($rate)
     {
@@ -86,7 +86,7 @@ class NumberSpinner extends ValidationTextBox
      * Set largeDelta
      *
      * @param  int $delta
-     * @return \Zend\Dojo\Form\Element\NumberSpinner
+     * @return \Zend2\Dojo\Form\Element\NumberSpinner
      */
     public function setLargeDelta($delta)
     {
@@ -108,7 +108,7 @@ class NumberSpinner extends ValidationTextBox
      * Set smallDelta
      *
      * @param  int $delta
-     * @return \Zend\Dojo\Form\Element\NumberSpinner
+     * @return \Zend2\Dojo\Form\Element\NumberSpinner
      */
     public function setSmallDelta($delta)
     {
@@ -130,7 +130,7 @@ class NumberSpinner extends ValidationTextBox
      * Set intermediateChanges flag
      *
      * @param  bool $flag
-     * @return \Zend\Dojo\Form\Element\TextBox
+     * @return \Zend2\Dojo\Form\Element\TextBox
      */
     public function setIntermediateChanges($flag)
     {
@@ -155,7 +155,7 @@ class NumberSpinner extends ValidationTextBox
      * Set rangeMessage
      *
      * @param  string $message
-     * @return \Zend\Dojo\Form\Element\NumberSpinner
+     * @return \Zend2\Dojo\Form\Element\NumberSpinner
      */
     public function setRangeMessage($message)
     {
@@ -177,7 +177,7 @@ class NumberSpinner extends ValidationTextBox
      * Set minimum value
      *
      * @param  int $value
-     * @return \Zend\Dojo\Form\Element\NumberSpinner
+     * @return \Zend2\Dojo\Form\Element\NumberSpinner
      */
     public function setMin($value)
     {
@@ -211,7 +211,7 @@ class NumberSpinner extends ValidationTextBox
      * Set maximum value
      *
      * @param  int $value
-     * @return \Zend\Dojo\Form\Element\NumberSpinner
+     * @return \Zend2\Dojo\Form\Element\NumberSpinner
      */
     public function setMax($value)
     {

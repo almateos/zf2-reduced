@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Code\Annotation;
+namespace Zend2\Code\Annotation;
 
 interface Annotation
 {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,34 +12,34 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_File_Transfer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_File_Transfer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\File\Transfer\Adapter;
+namespace Zend2\File\Transfer\Adapter;
 
-use Zend\File\Transfer,
-    Zend\File\Transfer\Exception,
-    Zend\Filter,
-    Zend\Loader,
-    Zend\Translator,
-    Zend\Validator;
+use Zend2\File\Transfer,
+    Zend2\File\Transfer\Exception,
+    Zend2\Filter,
+    Zend2\Loader,
+    Zend2\Translator,
+    Zend2\Validator;
 
 /**
  * Abstract class for file transfers (Downloads and Uploads)
  *
  * This class needs a full rewrite. It re-implements functionality present in
- * Zend\Filter\Input and/or Zend\Form\Element, and in a way that's inconsistent
+ * Zend2\Filter\Input and/or Zend2\Form\Element, and in a way that's inconsistent
  * with either one. Additionally, plugin loader usage is now deprecated -- but
  * modifying that should be done in tandem with a rewrite to utilize validator
  * and filter chains instead.
  *
  * @todo      Rewrite
- * @category  Zend
- * @package   Zend_File_Transfer
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_File_Transfer
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractAdapter
@@ -257,15 +257,15 @@ abstract class AbstractAdapter
                 $pathSegment   = $prefixSegment;
                 if (!isset($this->loaders[$type])) {
                     $paths         = array(
-                        'Zend\\' . $prefixSegment . '\\'    => 'Zend/' . $pathSegment . '/',
-                        'Zend\\' . $prefixSegment . '\File' => 'Zend/' . $pathSegment . '/File',
+                        'Zend2\\' . $prefixSegment . '\\'    => 'Zend2/' . $pathSegment . '/',
+                        'Zend2\\' . $prefixSegment . '\File' => 'Zend2/' . $pathSegment . '/File',
                     );
 
                     $this->loaders[$type] = new Loader\PrefixPathLoader($paths);
                 } else {
                     $loader = $this->loaders[$type];
                     if ($loader instanceof Loader\PrefixPathMapper) {
-                        $prefix = 'Zend\\' . $prefixSegment . '\File\\';
+                        $prefix = 'Zend2\\' . $prefixSegment . '\File\\';
                         if (!$loader->getPaths($prefix)) {
                             $loader->addPrefixPath($prefix, str_replace('_', '/', $prefix));
                         }
@@ -395,7 +395,7 @@ abstract class AbstractAdapter
                 unset($options['messages']);
             }
         } else {
-            throw new Exception\InvalidArgumentException('Invalid validator provided to addValidator; must be string or Zend\Validator\Validator');
+            throw new Exception\InvalidArgumentException('Invalid validator provided to addValidator; must be string or Zend2\Validator\Validator');
         }
 
         $this->validators[$name] = $validator;
@@ -672,8 +672,8 @@ abstract class AbstractAdapter
         $break           = false;
         foreach($check as $key => $content) {
             if (array_key_exists('validators', $content) &&
-                in_array('Zend\Validator\File\Count', $content['validators'])) {
-                $validator = $this->validators['Zend\Validator\File\Count'];
+                in_array('Zend2\Validator\File\Count', $content['validators'])) {
+                $validator = $this->validators['Zend2\Validator\File\Count'];
                 $count     = $content;
                 if (empty($content['tmp_name'])) {
                     continue;
@@ -709,7 +709,7 @@ abstract class AbstractAdapter
                         $validator->setTranslator($translator);
                     }
 
-                    if (($class === 'Zend\Validator\File\Upload') and (empty($content['tmp_name']))) {
+                    if (($class === 'Zend2\Validator\File\Upload') and (empty($content['tmp_name']))) {
                         $tocheck = $key;
                     } else {
                         $tocheck = $content['tmp_name'];
@@ -724,7 +724,7 @@ abstract class AbstractAdapter
                         break;
                     }
 
-                    if (($class === 'Zend\Validator\File\Upload') and (count($fileerrors) > 0)) {
+                    if (($class === 'Zend2\Validator\File\Upload') and (count($fileerrors) > 0)) {
                         break;
                     }
 

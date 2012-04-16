@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Server;
+namespace Zend2\Server;
 
 /**
- * \Zend\Server\Cache: cache server definitions
+ * \Zend2\Server\Cache: cache server definitions
  *
- * @uses       \Zend\Server\Definition
- * @category   Zend
- * @package    Zend_Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Server\Definition
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Cache
@@ -46,7 +46,7 @@ class Cache
      * on success.
      *
      * @param  string $filename
-     * @param  \Zend\Server\Server $server
+     * @param  \Zend2\Server\Server $server
      * @return bool
      */
     public static function save($filename, Server $server)
@@ -87,7 +87,7 @@ class Cache
      * request. Sample usage:
      *
      * <code>
-     * if (!Zend\Server\Cache::get($filename, $server)) {
+     * if (!Zend2\Server\Cache::get($filename, $server)) {
      *     require_once 'Some/Service/ServiceClass.php';
      *     require_once 'Another/Service/ServiceClass.php';
      *
@@ -97,7 +97,7 @@ class Cache
      *     // Attach Another\Service\ServiceClass with namespace 'another'
      *     $server->attach('Another\Service\ServiceClass', 'another');
      *
-     *     Zend\Server\Cache::save($filename, $server);
+     *     Zend2\Server\Cache::save($filename, $server);
      * }
      *
      * $response = $server->handle();
@@ -105,7 +105,7 @@ class Cache
      * </code>
      *
      * @param  string $filename
-     * @param  \Zend\Server\Server $server
+     * @param  \Zend2\Server\Server $server
      * @return bool
      */
     public static function get($filename, Server $server)

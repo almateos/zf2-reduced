@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Service
+ * @category   Zend2
+ * @package    Zend2\Service
  * @subpackage GoGrid
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\GoGrid;
+namespace Zend2\Service\GoGrid;
 
-use Zend\Http\Client as HttpClient;
+use Zend2\Http\Client as HttpClient;
 
 abstract class GoGrid
 {
@@ -52,11 +52,11 @@ abstract class GoGrid
      */
     protected $_apiVersion = self::VERSION_API;
     /**
-     * @var Zend\Http\Client
+     * @var Zend2\Http\Client
      */
     protected $_httpClient;
     /**
-     * @var Zend\Http\Response
+     * @var Zend2\Http\Response
      */
     protected $_lastResponse;
     /**
@@ -81,7 +81,7 @@ abstract class GoGrid
     /**
      * get the HttpClient static instance
      * 
-     * @return Zend\Http\Client
+     * @return Zend2\Http\Client
      */
     public function getHttpClient()
     {

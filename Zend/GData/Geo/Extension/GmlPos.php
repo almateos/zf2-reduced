@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,40 +12,40 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Geo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Geo\Extension;
+namespace Zend2\GData\Geo\Extension;
 
 /**
  * Represents the gml:pos element used by the Gdata Geo extensions.
  *
- * @uses       \Zend\GData\Extension
- * @uses       \Zend\GData\Geo
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Extension
+ * @uses       \Zend2\GData\Geo
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Geo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class GmlPos extends \Zend\GData\Extension
+class GmlPos extends \Zend2\GData\Extension
 {
 
     protected $_rootNamespace = 'gml';
     protected $_rootElement = 'pos';
 
     /**
-     * Constructs a new Zend_Gdata_Geo_Extension_GmlPos object.
+     * Constructs a new Zend2_Gdata_Geo_Extension_GmlPos object.
      *
      * @param string $text (optional) The value to use for this element.
      */
     public function __construct($text = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Geo::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\Geo::$namespaces);
         parent::__construct();
         $this->setText($text);
     }

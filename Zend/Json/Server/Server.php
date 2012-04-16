@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Json
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Json
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Json\Server;
+namespace Zend2\Json\Server;
 
 use ReflectionFunction,
     ReflectionMethod,
-    Zend\Server\AbstractServer,
-    Zend\Server\Definition,
-    Zend\Server\Method,
-    Zend\Server\Reflection;
+    Zend2\Server\AbstractServer,
+    Zend2\Server\Definition,
+    Zend2\Server\Method,
+    Zend2\Server\Reflection;
 
 /**
- * @category   Zend
- * @package    Zend_Json
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Json
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Server extends AbstractServer
@@ -494,7 +494,7 @@ class Server extends AbstractServer
     {
         if (null === $this->_smdMethods) {
             $this->_smdMethods = array();
-            $methods = get_class_methods('Zend\\Json\\Server\\Smd');
+            $methods = get_class_methods('Zend2\\Json\\Server\\Smd');
             foreach ($methods as $key => $method) {
                 if (!preg_match('/^(set|get)/', $method)) {
                     continue;

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_WindowsAzure_Exception
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @uses       Zend2_Service_WindowsAzure_Exception
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * 
  * @property string  $Name                     Name of the queue
  * @property array   $Metadata                 Key/value pairs of meta data
  * @property integer $ApproximateMessageCount  The approximate number of messages in the queue
  */
-class Zend_Service_WindowsAzure_Storage_QueueInstance
+class Zend2_Service_WindowsAzure_Storage_QueueInstance
 {
     /**
      * Data
@@ -67,7 +67,7 @@ class Zend_Service_WindowsAzure_Storage_QueueInstance
             return;
         }
 
-        throw new Zend_Service_WindowsAzure_Exception("Unknown property: " . $name);
+        throw new Zend2_Service_WindowsAzure_Exception("Unknown property: " . $name);
     }
 
     /**
@@ -80,6 +80,6 @@ class Zend_Service_WindowsAzure_Storage_QueueInstance
             return $this->_data[strtolower($name)];
         }
 
-        throw new Zend_Service_WindowsAzure_Exception("Unknown property: " . $name);
+        throw new Zend2_Service_WindowsAzure_Exception("Unknown property: " . $name);
     }
 }

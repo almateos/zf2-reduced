@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Controller
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Controller
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\XmlRpc\Request;
+namespace Zend2\XmlRpc\Request;
 
-use Zend\XmlRpc\Request as XmlRpcRequest,
-    Zend\XmlRpc\Server\Exception as ServerException;
+use Zend2\XmlRpc\Request as XmlRpcRequest,
+    Zend2\XmlRpc\Server\Exception as ServerException;
 
 /**
  * XmlRpc Request object -- Request via STDIN
  *
- * Extends {@link Zend_XmlRpc_Request} to accept a request via STDIN. Request is
+ * Extends {@link Zend2_XmlRpc_Request} to accept a request via STDIN. Request is
  * built at construction time using data from STDIN; if no data is available, the
  * request is declared a fault.
  *
- * @uses       \Zend\XmlRpc\Request\Request
- * @uses       \Zend\XmlRpc\Server\Exception
- * @category   Zend
- * @package    Zend_XmlRpc
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\XmlRpc\Request\Request
+ * @uses       \Zend2\XmlRpc\Server\Exception
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Stdin extends XmlRpcRequest

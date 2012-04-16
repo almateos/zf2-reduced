@@ -10,26 +10,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_ProgressBar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_ProgressBar
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\ProgressBar\Adapter;
+namespace Zend2\ProgressBar\Adapter;
 
-use Zend\Json\Json;
+use Zend2\Json\Json;
 
 /**
- * Zend_ProgressBar_Adapter_JsPush offers a simple method for updating a
+ * Zend2_ProgressBar_Adapter_JsPush offers a simple method for updating a
  * progressbar in a browser.
  *
- * @uses      \Zend\Json\Json
- * @uses      \Zend\ProgressBar\Adapter\Adapter
- * @category  Zend
- * @package   Zend_ProgressBar
- * @uses      Zend_ProgressBar_Adapter_Interface
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Json\Json
+ * @uses      \Zend2\ProgressBar\Adapter\Adapter
+ * @category  Zend2
+ * @package   Zend2_ProgressBar
+ * @uses      Zend2_ProgressBar_Adapter_Interface
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class JsPush extends AbstractAdapter
@@ -39,7 +39,7 @@ class JsPush extends AbstractAdapter
      *
      * @var string
      */
-    protected $_updateMethodName = 'Zend\ProgressBar\ProgressBar\Update';
+    protected $_updateMethodName = 'Zend2\ProgressBar\ProgressBar\Update';
 
     /**
      * Name of the JavaScript method to call on finish
@@ -52,7 +52,7 @@ class JsPush extends AbstractAdapter
      * Set the update method name
      *
      * @param  string $methodName
-     * @return \Zend\ProgressBar\Adapter\JsPush
+     * @return \Zend2\ProgressBar\Adapter\JsPush
      */
     public function setUpdateMethodName($methodName)
     {
@@ -65,7 +65,7 @@ class JsPush extends AbstractAdapter
      * Set the finish method name
      *
      * @param  string $methodName
-     * @return \Zend\ProgressBar\Adapter\JsPush
+     * @return \Zend2\ProgressBar\Adapter\JsPush
      */
     public function setFinishMethodName($methodName)
     {
@@ -75,7 +75,7 @@ class JsPush extends AbstractAdapter
     }
 
     /**
-     * Defined by Zend_ProgressBar_Adapter_Interface
+     * Defined by Zend2_ProgressBar_Adapter_Interface
      *
      * @param  float   $current       Current progress value
      * @param  float   $max           Max progress value
@@ -105,7 +105,7 @@ class JsPush extends AbstractAdapter
     }
 
     /**
-     * Defined by Zend_ProgressBar_Adapter_Interface
+     * Defined by Zend2_ProgressBar_Adapter_Interface
      *
      * @return void
      */

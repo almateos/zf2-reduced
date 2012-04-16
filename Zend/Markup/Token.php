@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Markup
+ * @category   Zend2
+ * @package    Zend2_Markup
  * @subpackage Parser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Markup;
+namespace Zend2\Markup;
 
 /**
- * @uses       \Zend\Markup\TokenList
- * @category   Zend
- * @package    Zend_Markup
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Markup\TokenList
+ * @category   Zend2
+ * @package    Zend2_Markup
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Token
@@ -36,7 +36,7 @@ class Token
     /**
      * Children of this token
      *
-     * @var \Zend\Markup\TokenList
+     * @var \Zend2\Markup\TokenList
      */
     protected $_children;
 
@@ -78,7 +78,7 @@ class Token
     /**
      * The parent token
      *
-     * @var \Zend\Markup\Token
+     * @var \Zend2\Markup\Token
      */
     protected $_parent;
 
@@ -90,7 +90,7 @@ class Token
      * @param  string $type
      * @param  string $name
      * @param  array $attributes
-     * @param  \Zend\Markup\Token $parent
+     * @param  \Zend2\Markup\Token $parent
      * @return void
      */
     public function __construct(
@@ -113,7 +113,7 @@ class Token
      * Set the stopper
      *
      * @param string $stopper
-     * @return \Zend\Markup\Token
+     * @return \Zend2\Markup\Token
      */
     public function setStopper($stopper)
     {
@@ -199,7 +199,7 @@ class Token
     /**
      * Add an attribute
      *
-     * @return \Zend\Markup\Token
+     * @return \Zend2\Markup\Token
      */
     public function addAttribute($name, $value)
     {
@@ -235,8 +235,8 @@ class Token
     /**
      * Set the children token list
      *
-     * @param  \Zend\Markup\TokenList $children
-     * @return \Zend\Markup\Token
+     * @param  \Zend2\Markup\TokenList $children
+     * @return \Zend2\Markup\Token
      */
     public function setChildren(TokenList $children)
     {
@@ -247,7 +247,7 @@ class Token
     /**
      * Get the children for this token
      *
-     * @return \Zend\Markup\TokenList
+     * @return \Zend2\Markup\TokenList
      */
     public function getChildren()
     {
@@ -270,7 +270,7 @@ class Token
     /**
      * Get the parent token (if any)
      *
-     * @return \Zend\Markup\Token
+     * @return \Zend2\Markup\Token
      */
     public function getParent()
     {
@@ -280,8 +280,8 @@ class Token
     /**
      * Set a parent token
      *
-     * @param  \Zend\Markup\Token $parent
-     * @return \Zend\Markup\Token
+     * @param  \Zend2\Markup\Token $parent
+     * @return \Zend2\Markup\Token
      */
     public function setParent(Token $parent)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,17 +12,17 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Service
+ * @category   Zend2
+ * @package    Zend2\Service
  * @subpackage Rackspace
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Rackspace;
+namespace Zend2\Service\Rackspace;
 
-use Zend\Service\Rackspace\Rackspace as RackspaceAbstract,
-    Zend\Http\Client as HttpClient;
+use Zend2\Service\Rackspace\Rackspace as RackspaceAbstract,
+    Zend2\Http\Client as HttpClient;
 
 class Files extends RackspaceAbstract
 {
@@ -100,7 +100,7 @@ class Files extends RackspaceAbstract
      * Get all the containers
      *
      * @param array $options
-     * @return Zend\Service\Rackspace\Files\ContainerList|boolean
+     * @return Zend2\Service\Rackspace\Files\ContainerList|boolean
      */
     public function getContainers($options=array())
     {
@@ -151,7 +151,7 @@ class Files extends RackspaceAbstract
      *
      * @param string $container
      * @param array $options
-     * @return  Zend\Service\Rackspace\Files\ObjectList|boolean
+     * @return  Zend2\Service\Rackspace\Files\ObjectList|boolean
      */
     public function getObjects($container,$options=array())
     {
@@ -169,7 +169,7 @@ class Files extends RackspaceAbstract
      *
      * @param string $container
      * @param array $metadata
-     * @return Zend\Service\Rackspace\Files\Container|boolean
+     * @return Zend2\Service\Rackspace\Files\Container|boolean
      */
     public function createContainer($container,$metadata=array())
     {
@@ -289,7 +289,7 @@ class Files extends RackspaceAbstract
      * @param string $container
      * @param string $object
      * @param array $headers
-     * @return Zend\Service\Rackspace\Files\Object|boolean
+     * @return Zend2\Service\Rackspace\Files\Object|boolean
      */
     public function getObject($container,$object,$headers=array())
     {

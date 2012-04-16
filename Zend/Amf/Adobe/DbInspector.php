@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Amf
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Amf
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Amf\Adobe;
+namespace Zend2\Amf\Adobe;
 
 /**
  * This class implements authentication against XML file with roles for Flex Builder.
  *
- * @package    Zend_Amf
+ * @package    Zend2_Amf
  * @subpackage Adobe
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DbInspector
@@ -33,17 +33,17 @@ class DbInspector
     /**
      * Connect to the database
      *
-     * @see    Zend_Db::factory()
-     * @param  string $dbType Database adapter type for Zend_Db
+     * @see    Zend2_Db::factory()
+     * @param  string $dbType Database adapter type for Zend2_Db
      * @param  array|object $dbDescription Adapter-specific connection settings
-     * @return Zend_Db_Adapter_Abstract
+     * @return Zend2_Db_Adapter_Abstract
      */
     protected function _connect($dbType, $dbDescription)
     {
         if (is_object($dbDescription)) {
             $dbDescription = get_object_vars($dbDescription);
         }
-        return \Zend_Db::factory($dbType, $dbDescription);
+        return \Zend2_Db::factory($dbType, $dbDescription);
     }
 
     /**
@@ -60,9 +60,9 @@ class DbInspector
      *     'mytable'
      * );
      *
-     * @see    Zend_Db::describeTable()
-     * @see    Zend_Db::factory()
-     * @param  string $dbType Database adapter type for Zend_Db
+     * @see    Zend2_Db::describeTable()
+     * @see    Zend2_Db::factory()
+     * @param  string $dbType Database adapter type for Zend2_Db
      * @param  array|object $dbDescription Adapter-specific connection settings
      * @param  string $tableName Table name
      * @return array Table description
@@ -76,8 +76,8 @@ class DbInspector
     /**
      * Test database connection
      *
-     * @see    Zend_Db::factory()
-     * @param  string $dbType Database adapter type for Zend_Db
+     * @see    Zend2_Db::factory()
+     * @param  string $dbType Database adapter type for Zend2_Db
      * @param  array|object $dbDescription Adapter-specific connection settings
      * @return bool
      */
@@ -91,7 +91,7 @@ class DbInspector
     /**
      * Get the list of database tables
      *
-     * @param  string $dbType Database adapter type for Zend_Db
+     * @param  string $dbType Database adapter type for Zend2_Db
      * @param  array|object $dbDescription Adapter-specific connection settings
      * @return array List of the tables
      */

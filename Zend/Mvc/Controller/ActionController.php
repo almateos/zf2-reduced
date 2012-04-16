@@ -1,29 +1,29 @@
 <?php
 
-namespace Zend\Mvc\Controller;
+namespace Zend2\Mvc\Controller;
 
-use Zend\Di\Locator,
-    Zend\EventManager\EventCollection,
-    Zend\EventManager\EventDescription as Event,
-    Zend\EventManager\EventManager,
-    Zend\Http\PhpEnvironment\Response as HttpResponse,
-    Zend\Loader\Broker,
-    Zend\Loader\Pluggable,
-    Zend\Mvc\Exception,
-    Zend\Mvc\InjectApplicationEvent,
-    Zend\Mvc\LocatorAware,
-    Zend\Mvc\MvcEvent,
-    Zend\Stdlib\Dispatchable,
-    Zend\Stdlib\RequestDescription as Request,
-    Zend\Stdlib\ResponseDescription as Response,
-    Zend\View\Model\ViewModel;
+use Zend2\Di\Locator,
+    Zend2\EventManager\EventCollection,
+    Zend2\EventManager\EventDescription as Event,
+    Zend2\EventManager\EventManager,
+    Zend2\Http\PhpEnvironment\Response as HttpResponse,
+    Zend2\Loader\Broker,
+    Zend2\Loader\Pluggable,
+    Zend2\Mvc\Exception,
+    Zend2\Mvc\InjectApplicationEvent,
+    Zend2\Mvc\LocatorAware,
+    Zend2\Mvc\MvcEvent,
+    Zend2\Stdlib\Dispatchable,
+    Zend2\Stdlib\RequestDescription as Request,
+    Zend2\Stdlib\ResponseDescription as Response,
+    Zend2\View\Model\ViewModel;
 
 /**
  * Basic action controller
  */
 abstract class ActionController implements Dispatchable, InjectApplicationEvent, LocatorAware, Pluggable
 {
-    //use \Zend\EventManager\ProvidesEvents;
+    //use \Zend2\EventManager\ProvidesEvents;
 
     protected $broker;
     protected $event;
@@ -170,7 +170,7 @@ abstract class ActionController implements Dispatchable, InjectApplicationEvent,
     {
         if (!$this->events instanceof EventCollection) {
             $this->setEventManager(new EventManager(array(
-                'Zend\Stdlib\Dispatchable',
+                'Zend2\Stdlib\Dispatchable',
                 __CLASS__,
                 get_called_class()
             )));
@@ -237,7 +237,7 @@ abstract class ActionController implements Dispatchable, InjectApplicationEvent,
     /**
      * Get plugin broker instance
      *
-     * @return Zend\Loader\Broker
+     * @return Zend2\Loader\Broker
      */
     public function getBroker()
     {
@@ -251,12 +251,12 @@ abstract class ActionController implements Dispatchable, InjectApplicationEvent,
      * Set plugin broker instance
      *
      * @param  string|Broker $broker Plugin broker to load plugins
-     * @return Zend\Loader\Pluggable
+     * @return Zend2\Loader\Pluggable
      */
     public function setBroker($broker)
     {
         if (!$broker instanceof Broker) {
-            throw new Exception\InvalidArgumentException('Broker must implement Zend\Loader\Broker');
+            throw new Exception\InvalidArgumentException('Broker must implement Zend2\Loader\Broker');
         }
         $this->broker = $broker;
         if (method_exists($broker, 'setController')) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,41 +12,41 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Photos
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Photos\Extension;
+namespace Zend2\GData\Photos\Extension;
 
 /**
  * Represents the gphoto:thumbnail element used by the API.
  * This class represents the URI for a thumbnail image.
  *
- * @uses       \Zend\GData\Extension
- * @uses       \Zend\GData\Photos
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Extension
+ * @uses       \Zend2\GData\Photos
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Photos
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Thumbnail extends \Zend\GData\Extension
+class Thumbnail extends \Zend2\GData\Extension
 {
 
     protected $_rootNamespace = 'gphoto';
     protected $_rootElement = 'thumbnail';
 
     /**
-     * Constructs a new Zend_Gdata_Photos_Extension_Thumbnail object.
+     * Constructs a new Zend2_Gdata_Photos_Extension_Thumbnail object.
      *
      * @param string $text (optional) The thumbnail URI to represent.
      */
     public function __construct($text = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Photos::$namespaces);
+        $this->registerAllNamespaces(\Zend2\GData\Photos::$namespaces);
         parent::__construct();
         $this->setText($text);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Reader
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Reader
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
  
-namespace Zend\Feed\Reader\Feed;
+namespace Zend2\Feed\Reader\Feed;
 
-use Zend\Feed\Reader,
-    Zend\Feed\Reader\Exception;
+use Zend2\Feed\Reader,
+    Zend2\Feed\Reader\Exception;
 
 /**
-* @uses \Zend\Feed\Exception
-* @uses \Zend\Feed\Reader\Reader
-* @uses \Zend\Feed\Reader\Feed
-* @category Zend
-* @package Zend_Feed_Reader
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @uses \Zend2\Feed\Exception
+* @uses \Zend2\Feed\Reader\Reader
+* @uses \Zend2\Feed\Reader\Feed
+* @category Zend2
+* @package Zend2_Feed_Reader
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 abstract class AbstractFeed implements Reader\Feed
@@ -141,7 +141,7 @@ abstract class AbstractFeed implements Reader\Feed
     /**
      * Return the current entry
      *
-     * @return Zend_Feed_Reader_EntryInterface
+     * @return Zend2_Feed_Reader_EntryInterface
      */
     public function current()
     {
@@ -278,7 +278,7 @@ abstract class AbstractFeed implements Reader\Feed
      * Return an Extension object with the matching name (postfixed with _Feed)
      *
      * @param string $name
-     * @return Zend_Feed_Reader_Extension_FeedAbstract
+     * @return Zend2_Feed_Reader_Extension_FeedAbstract
      */
     public function getExtension($name)
     {

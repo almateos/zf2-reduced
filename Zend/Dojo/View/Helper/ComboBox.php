@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\View\Helper;
+namespace Zend2\Dojo\View\Helper;
 
-use Zend\Json\Json;
+use Zend2\Json\Json;
 
 /**
  * Dojo ComboBox dijit
  *
- * @uses       \Zend\Dojo\View\Helper\Dijit
- * @uses       \Zend\Json\Json
- * @package    Zend_Dojo
+ * @uses       \Zend2\Dojo\View\Helper\Dijit
+ * @uses       \Zend2\Json\Json
+ * @package    Zend2_Dojo
  * @subpackage View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ComboBox extends Dijit
@@ -145,7 +145,7 @@ class ComboBox extends Dijit
                     .     Json::encode($extraParams)
                     . ");\n";
                 $js = "function() {\n$js\n}";
-                $this->dojo->_addZendLoad($js);
+                $this->dojo->_addZend2Load($js);
             }
             return true;
         }

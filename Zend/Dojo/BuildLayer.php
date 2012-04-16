@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Dojo
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo;
+namespace Zend2\Dojo;
 
-use Zend\Config\Config,
-    Zend\Json\Json,
-    Zend\View\Renderer;
+use Zend2\Config\Config,
+    Zend2\Json\Json,
+    Zend2\View\Renderer;
 
 /**
  * Dojo module layer and custom build profile generation support
  *
- * @uses       \Zend\Json\Json
- * @package    Zend_Dojo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Json\Json
+ * @package    Zend2_Dojo
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class BuildLayer
@@ -51,7 +51,7 @@ class BuildLayer
 
     /**
      * Dojo view helper reference
-     * @var \Zend\Dojo\View\Helper\Dojo\Container
+     * @var \Zend2\Dojo\View\Helper\Dojo\Container
      */
     protected $_dojo;
 
@@ -88,17 +88,17 @@ class BuildLayer
     protected $_profilePrefixes = array();
 
     /**
-     * Zend\View reference
-     * @var \Zend\View\Renderer
+     * Zend2\View reference
+     * @var \Zend2\View\Renderer
      */
     protected $_view;
 
     /**
      * Constructor
      *
-     * @param  array|\Zend\Config\Config $options
+     * @param  array|\Zend2\Config\Config $options
      * @return void
-     * @throws \Zend\Dojo\Exception for invalid option argument
+     * @throws \Zend2\Dojo\Exception for invalid option argument
      */
     public function __construct($options = null)
     {
@@ -118,7 +118,7 @@ class BuildLayer
      * Proxies to any setter that matches an option key.
      *
      * @param  array $options
-     * @return \Zend\Dojo\BuildLayer
+     * @return \Zend2\Dojo\BuildLayer
      */
     public function setOptions(array $options)
     {
@@ -135,8 +135,8 @@ class BuildLayer
     /**
      * Set View object
      *
-     * @param  \Zend\View\Renderer $view
-     * @return \Zend\Dojo\BuildLayer
+     * @param  \Zend2\View\Renderer $view
+     * @return \Zend2\Dojo\BuildLayer
      */
     public function setView(Renderer $view)
     {
@@ -147,7 +147,7 @@ class BuildLayer
     /**
      * Retrieve view object
      *
-     * @return \Zend\View\Renderer|null
+     * @return \Zend2\View\Renderer|null
      */
     public function getView()
     {
@@ -157,8 +157,8 @@ class BuildLayer
     /**
      * Set dojo() view helper instance
      *
-     * @param  \Zend\Dojo\View\Helper\Dojo\Container $helper
-     * @return \Zend\Dojo\BuildLayer
+     * @param  \Zend2\Dojo\View\Helper\Dojo\Container $helper
+     * @return \Zend2\Dojo\BuildLayer
      */
     public function setDojoHelper(View\Helper\Dojo\Container $helper)
     {
@@ -171,8 +171,8 @@ class BuildLayer
      *
      * Will retrieve it from the view object if not registered.
      *
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
-     * @throws \Zend\Dojo\Exception if not registered and no view object found
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
+     * @throws \Zend2\Dojo\Exception if not registered and no view object found
      */
     public function getDojoHelper()
     {
@@ -190,7 +190,7 @@ class BuildLayer
      * Set custom layer name; e.g. "custom.main"
      *
      * @param  string $name
-     * @return \Zend\Dojo\BuildLayer
+     * @return \Zend2\Dojo\BuildLayer
      */
     public function setLayerName($name)
     {
@@ -217,7 +217,7 @@ class BuildLayer
      * Should be a path relative to dojo.js
      *
      * @param  string $path
-     * @return \Zend\Dojo\BuildLayer
+     * @return \Zend2\Dojo\BuildLayer
      */
     public function setLayerScriptPath($path)
     {
@@ -240,7 +240,7 @@ class BuildLayer
      * view helper
      *
      * @param  bool $flag
-     * @return \Zend\Dojo\BuildLayer
+     * @return \Zend2\Dojo\BuildLayer
      */
     public function setConsumeJavascript($flag)
     {
@@ -264,7 +264,7 @@ class BuildLayer
      * aggregated in dojo() view helper
      *
      * @param  bool $flag
-     * @return \Zend\Dojo\BuildLayer
+     * @return \Zend2\Dojo\BuildLayer
      */
     public function setConsumeOnLoad($flag)
     {
@@ -286,7 +286,7 @@ class BuildLayer
      * Set many build profile options at once
      *
      * @param  array $options
-     * @return \Zend\Dojo\BuildLayer
+     * @return \Zend2\Dojo\BuildLayer
      */
     public function setProfileOptions(array $options)
     {
@@ -298,7 +298,7 @@ class BuildLayer
      * Add many build profile options at once
      *
      * @param  array $options
-     * @return \Zend\Dojo\BuildLayer
+     * @return \Zend2\Dojo\BuildLayer
      */
     public function addProfileOptions(array $options)
     {
@@ -311,7 +311,7 @@ class BuildLayer
      *
      * @param  string $key
      * @param  value $value
-     * @return \Zend\Dojo\BuildLayer
+     * @return \Zend2\Dojo\BuildLayer
      */
     public function addProfileOption($key, $value)
     {
@@ -360,7 +360,7 @@ class BuildLayer
      * Remove a build profile option
      *
      * @param  string $name
-     * @return \Zend\Dojo\BuildLayer
+     * @return \Zend2\Dojo\BuildLayer
      */
     public function removeProfileOption($name)
     {
@@ -373,7 +373,7 @@ class BuildLayer
     /**
      * Remove all build profile options
      *
-     * @return \Zend\Dojo\BuildLayer
+     * @return \Zend2\Dojo\BuildLayer
      */
     public function clearProfileOptions()
     {
@@ -388,7 +388,7 @@ class BuildLayer
      *
      * @param  string $prefix
      * @param  null|string $path
-     * @return \Zend\Dojo\BuildLayer
+     * @return \Zend2\Dojo\BuildLayer
      */
     public function addProfilePrefix($prefix, $path = null)
     {
@@ -403,7 +403,7 @@ class BuildLayer
      * Set multiple dependency prefixes for bulid profile
      *
      * @param  array $prefixes
-     * @return \Zend\Dojo\BuildLayer
+     * @return \Zend2\Dojo\BuildLayer
      */
     public function setProfilePrefixes(array $prefixes)
     {

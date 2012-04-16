@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml_Security
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml_Security
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard\XML\Security\Transform;
+namespace Zend2\InfoCard\XML\Security\Transform;
 
-use Zend\InfoCard\XML\Security\Transform,
-    Zend\InfoCard\XML\Security\Exception;
+use Zend2\InfoCard\XML\Security\Transform,
+    Zend2\InfoCard\XML\Security\Exception;
 
 /**
  * A object implementing the EnvelopedSignature XML Transform
  *
- * @uses       \Zend\InfoCard\XML\Security\Transform\Exception
- * @uses       \Zend\InfoCard\XML\Security\Transform
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml_Security
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\InfoCard\XML\Security\Transform\Exception
+ * @uses       \Zend2\InfoCard\XML\Security\Transform
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Xml_Security
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class EnvelopedSignature implements Transform
@@ -40,7 +40,7 @@ class EnvelopedSignature implements Transform
     /**
      * Transforms the XML Document according to the EnvelopedSignature Transform
      *
-     * @throws \Zend\InfoCard\XML\Security\Transform\Exception
+     * @throws \Zend2\InfoCard\XML\Security\Transform\Exception
      * @param string $strXMLData The input XML data
      * @return string the transformed XML data
      */

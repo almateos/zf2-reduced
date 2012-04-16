@@ -1,9 +1,9 @@
 <?php
 
-namespace Zend\Http;
+namespace Zend2\Http;
 
-use Zend\Loader\PluginClassLoader,
-    Zend\Loader\PluginClassLocator,
+use Zend2\Loader\PluginClassLoader,
+    Zend2\Loader\PluginClassLocator,
     Iterator,
     Countable;
 
@@ -15,7 +15,7 @@ use Zend\Loader\PluginClassLoader,
 class Headers implements Iterator, Countable
 {
     /**
-     * @var \Zend\Loader\PluginClassLoader
+     * @var \Zend2\Loader\PluginClassLoader
      */
     protected $pluginClassLoader = null;
 
@@ -82,7 +82,7 @@ class Headers implements Iterator, Countable
     /**
      * Set an alternate implementation for the PluginClassLoader
      *
-     * @param \Zend\Loader\PluginClassLocator $pluginClassLoader
+     * @param \Zend2\Loader\PluginClassLocator $pluginClassLoader
      * @return Headers
      */
     public function setPluginClassLoader(PluginClassLocator $pluginClassLoader)
@@ -99,60 +99,60 @@ class Headers implements Iterator, Countable
     public function getPluginClassLoader()
     {
         if ($this->pluginClassLoader === null) {
-            $this->pluginClassLoader = new \Zend\Loader\PluginClassLoader(array(
-                'accept'             => 'Zend\Http\Header\Accept',
-                'acceptcharset'      => 'Zend\Http\Header\AcceptCharset',
-                'acceptencoding'     => 'Zend\Http\Header\AcceptEncoding',
-                'acceptlanguage'     => 'Zend\Http\Header\AcceptLanguage',
-                'acceptranges'       => 'Zend\Http\Header\AcceptRanges',
-                'age'                => 'Zend\Http\Header\Age',
-                'allow'              => 'Zend\Http\Header\Allow',
-                'authenticationinfo' => 'Zend\Http\Header\AuthenticationInfo',
-                'authorization'      => 'Zend\Http\Header\Authorization',
-                'cachecontrol'       => 'Zend\Http\Header\CacheControl',
-                'connection'         => 'Zend\Http\Header\Connection',
-                'contentdisposition' => 'Zend\Http\Header\ContentDisposition',
-                'contentencoding'    => 'Zend\Http\Header\ContentEncoding',
-                'contentlanguage'    => 'Zend\Http\Header\ContentLanguage',
-                'contentlength'      => 'Zend\Http\Header\ContentLength',
-                'contentlocation'    => 'Zend\Http\Header\ContentLocation',
-                'contentmd5'         => 'Zend\Http\Header\ContentMD5',
-                'contentrange'       => 'Zend\Http\Header\ContentRange',
-                'contenttype'        => 'Zend\Http\Header\ContentType',
-                'cookie'             => 'Zend\Http\Header\Cookie',
-                'date'               => 'Zend\Http\Header\Date',
-                'etag'               => 'Zend\Http\Header\Etag',
-                'expect'             => 'Zend\Http\Header\Expect',
-                'expires'            => 'Zend\Http\Header\Expires',
-                'from'               => 'Zend\Http\Header\From',
-                'host'               => 'Zend\Http\Header\Host',
-                'ifmatch'            => 'Zend\Http\Header\IfMatch',
-                'ifmodifiedsince'    => 'Zend\Http\Header\IfModifiedSince',
-                'ifnonematch'        => 'Zend\Http\Header\IfNoneMatch',
-                'ifrange'            => 'Zend\Http\Header\IfRange',
-                'ifunmodifiedsince'  => 'Zend\Http\Header\IfUnmodifiedSince',
-                'keepalive'          => 'Zend\Http\Header\KeepAlive',
-                'lastmodified'       => 'Zend\Http\Header\LastModified',
-                'location'           => 'Zend\Http\Header\Location',
-                'maxforwards'        => 'Zend\Http\Header\MaxForwards',
-                'pragma'             => 'Zend\Http\Header\Pragma',
-                'proxyauthenticate'  => 'Zend\Http\Header\ProxyAuthenticate',
-                'proxyauthorization' => 'Zend\Http\Header\ProxyAuthorization',
-                'range'              => 'Zend\Http\Header\Range',
-                'referer'            => 'Zend\Http\Header\Referer',
-                'refresh'            => 'Zend\Http\Header\Refresh',
-                'retryafter'         => 'Zend\Http\Header\RetryAfter',
-                'server'             => 'Zend\Http\Header\Server',
-                'setcookie'          => 'Zend\Http\Header\SetCookie',
-                'te'                 => 'Zend\Http\Header\TE',
-                'trailer'            => 'Zend\Http\Header\Trailer',
-                'transferencoding'   => 'Zend\Http\Header\TransferEncoding',
-                'upgrade'            => 'Zend\Http\Header\Upgrade',
-                'useragent'          => 'Zend\Http\Header\UserAgent',
-                'vary'               => 'Zend\Http\Header\Vary',
-                'via'                => 'Zend\Http\Header\Via',
-                'warning'            => 'Zend\Http\Header\Warning',
-                'wwwauthenticate'    => 'Zend\Http\Header\WWWAuthenticate'
+            $this->pluginClassLoader = new \Zend2\Loader\PluginClassLoader(array(
+                'accept'             => 'Zend2\Http\Header\Accept',
+                'acceptcharset'      => 'Zend2\Http\Header\AcceptCharset',
+                'acceptencoding'     => 'Zend2\Http\Header\AcceptEncoding',
+                'acceptlanguage'     => 'Zend2\Http\Header\AcceptLanguage',
+                'acceptranges'       => 'Zend2\Http\Header\AcceptRanges',
+                'age'                => 'Zend2\Http\Header\Age',
+                'allow'              => 'Zend2\Http\Header\Allow',
+                'authenticationinfo' => 'Zend2\Http\Header\AuthenticationInfo',
+                'authorization'      => 'Zend2\Http\Header\Authorization',
+                'cachecontrol'       => 'Zend2\Http\Header\CacheControl',
+                'connection'         => 'Zend2\Http\Header\Connection',
+                'contentdisposition' => 'Zend2\Http\Header\ContentDisposition',
+                'contentencoding'    => 'Zend2\Http\Header\ContentEncoding',
+                'contentlanguage'    => 'Zend2\Http\Header\ContentLanguage',
+                'contentlength'      => 'Zend2\Http\Header\ContentLength',
+                'contentlocation'    => 'Zend2\Http\Header\ContentLocation',
+                'contentmd5'         => 'Zend2\Http\Header\ContentMD5',
+                'contentrange'       => 'Zend2\Http\Header\ContentRange',
+                'contenttype'        => 'Zend2\Http\Header\ContentType',
+                'cookie'             => 'Zend2\Http\Header\Cookie',
+                'date'               => 'Zend2\Http\Header\Date',
+                'etag'               => 'Zend2\Http\Header\Etag',
+                'expect'             => 'Zend2\Http\Header\Expect',
+                'expires'            => 'Zend2\Http\Header\Expires',
+                'from'               => 'Zend2\Http\Header\From',
+                'host'               => 'Zend2\Http\Header\Host',
+                'ifmatch'            => 'Zend2\Http\Header\IfMatch',
+                'ifmodifiedsince'    => 'Zend2\Http\Header\IfModifiedSince',
+                'ifnonematch'        => 'Zend2\Http\Header\IfNoneMatch',
+                'ifrange'            => 'Zend2\Http\Header\IfRange',
+                'ifunmodifiedsince'  => 'Zend2\Http\Header\IfUnmodifiedSince',
+                'keepalive'          => 'Zend2\Http\Header\KeepAlive',
+                'lastmodified'       => 'Zend2\Http\Header\LastModified',
+                'location'           => 'Zend2\Http\Header\Location',
+                'maxforwards'        => 'Zend2\Http\Header\MaxForwards',
+                'pragma'             => 'Zend2\Http\Header\Pragma',
+                'proxyauthenticate'  => 'Zend2\Http\Header\ProxyAuthenticate',
+                'proxyauthorization' => 'Zend2\Http\Header\ProxyAuthorization',
+                'range'              => 'Zend2\Http\Header\Range',
+                'referer'            => 'Zend2\Http\Header\Referer',
+                'refresh'            => 'Zend2\Http\Header\Refresh',
+                'retryafter'         => 'Zend2\Http\Header\RetryAfter',
+                'server'             => 'Zend2\Http\Header\Server',
+                'setcookie'          => 'Zend2\Http\Header\SetCookie',
+                'te'                 => 'Zend2\Http\Header\TE',
+                'trailer'            => 'Zend2\Http\Header\Trailer',
+                'transferencoding'   => 'Zend2\Http\Header\TransferEncoding',
+                'upgrade'            => 'Zend2\Http\Header\Upgrade',
+                'useragent'          => 'Zend2\Http\Header\UserAgent',
+                'vary'               => 'Zend2\Http\Header\Vary',
+                'via'                => 'Zend2\Http\Header\Via',
+                'warning'            => 'Zend2\Http\Header\Warning',
+                'wwwauthenticate'    => 'Zend2\Http\Header\WWWAuthenticate'
             ));
         }
         return $this->pluginClassLoader;
@@ -286,9 +286,9 @@ class Headers implements Iterator, Countable
             return false;
         }
 
-        $class = ($this->getPluginClassLoader()->load($key)) ?: 'Zend\Http\Header\GenericHeader';
+        $class = ($this->getPluginClassLoader()->load($key)) ?: 'Zend2\Http\Header\GenericHeader';
 
-        if (in_array('Zend\Http\Header\MultipleHeaderDescription', class_implements($class, true))) {
+        if (in_array('Zend2\Http\Header\MultipleHeaderDescription', class_implements($class, true))) {
             $headers = array();
             foreach (array_keys($this->headersKeys, $key) as $index) {
                 if (is_array($this->headers[$index])) {
@@ -467,7 +467,7 @@ class Headers implements Iterator, Countable
 
         $key = $this->headersKeys[$index];
         /* @var $class Header\HeaderDescription */
-        $class = ($this->getPluginClassLoader()->load($key)) ?: 'Zend\Http\Header\GenericHeader';
+        $class = ($this->getPluginClassLoader()->load($key)) ?: 'Zend2\Http\Header\GenericHeader';
 
         $headers = $class::fromString($current['line']);
         if (is_array($headers)) {

@@ -10,29 +10,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Cloud\StorageService
+ * @category   Zend2
+ * @package    Zend2\Cloud\StorageService
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * namespace
  */
-namespace Zend\Cloud\StorageService\Adapter;
+namespace Zend2\Cloud\StorageService\Adapter;
 
-use Zend\Cloud\StorageService\Adapter,
-    Zend\Cloud\StorageService\Exception,
-    Zend\Service\Amazon\S3\S3 as AmazonS3;
+use Zend2\Cloud\StorageService\Adapter,
+    Zend2\Cloud\StorageService\Exception,
+    Zend2\Service\Amazon\S3\S3 as AmazonS3;
 
 /**
  * S3 adapter for unstructured cloud storage.
  *
- * @category   Zend
- * @package    Zend\Cloud\StorageService
+ * @category   Zend2
+ * @package    Zend2\Cloud\StorageService
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class S3 implements Adapter
@@ -53,7 +53,7 @@ class S3 implements Adapter
 
     /**
      * S3 service instance.
-     * @var Zend\Service\Amazon\S3\S3
+     * @var Zend2\Service\Amazon\S3\S3
      */
     protected $_s3;
     protected $_defaultBucketName = null;
@@ -62,12 +62,12 @@ class S3 implements Adapter
     /**
      * Constructor
      *
-     * @param  array|Zend\Config\Config $options
+     * @param  array|Zend2\Config\Config $options
      * @return void
      */
     public function __construct($options = array())
     {
-        if ($options instanceof \Zend\Config\Config) {
+        if ($options instanceof \Zend2\Config\Config) {
             $options = $options->toArray();
         }
 
@@ -82,7 +82,7 @@ class S3 implements Adapter
         try {
             $this->_s3 = new AmazonS3($options[self::AWS_ACCESS_KEY],
                                       $options[self::AWS_SECRET_KEY]);
-        } catch (Zend\Service\Amazon\S3\Exception  $e) {
+        } catch (Zend2\Service\Amazon\S3\Exception  $e) {
             throw new Exception\RuntimeException('Error on create: '.$e->getMessage(), $e->getCode(), $e);
         }
 
@@ -117,7 +117,7 @@ class S3 implements Adapter
             } else {
                 return $this->_s3->getObject($fullPath);
             }
-        } catch (Zend\Service\Amazon\S3\Exception  $e) {
+        } catch (Zend2\Service\Amazon\S3\Exception  $e) {
             throw new Exception\RuntimeException('Error on fetch: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -144,7 +144,7 @@ class S3 implements Adapter
                 $data,
                 empty($options[self::METADATA]) ? null : $options[self::METADATA]
             );
-        } catch (Zend\Service\Amazon\S3\Exception  $e) {
+        } catch (Zend2\Service\Amazon\S3\Exception  $e) {
             throw new Exception\RuntimeException('Error on store: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -160,7 +160,7 @@ class S3 implements Adapter
     {
         try {
             $this->_s3->removeObject($this->_getFullPath($path, $options));
-        } catch (Zend\Service\Amazon\S3\Exception  $e) {
+        } catch (Zend2\Service\Amazon\S3\Exception  $e) {
             throw new Exception\RuntimeException('Error on delete: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -184,7 +184,7 @@ class S3 implements Adapter
             // TODO We *really* need to add support for object copying in the S3 adapter
             $item = $this->fetch($this->_getFullPath(sourcePath), $options);
             $this->storeItem($item, $destinationPath, $options);
-        } catch (Zend\Service\Amazon\S3\Exception  $e) {
+        } catch (Zend2\Service\Amazon\S3\Exception  $e) {
             throw new Exception\RunTimeException('Error on copy: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -209,7 +209,7 @@ class S3 implements Adapter
                 $fullDestPath,
                 empty($options[self::METADATA]) ? null : $options[self::METADATA]
             );
-        } catch (Zend\Service\Amazon\S3\Exception  $e) {
+        } catch (Zend2\Service\Amazon\S3\Exception  $e) {
             throw new Exception\RuntimeException('Error on move: '.$e->getMessage(), $e->getCode(), $e);
         }
      }
@@ -241,9 +241,9 @@ class S3 implements Adapter
     public function listItems($path, $options = null)
     {
         try {
-            // TODO Support 'prefix' parameter for Zend\Service\Amazon\S3\S3::getObjectsByBucket()
+            // TODO Support 'prefix' parameter for Zend2\Service\Amazon\S3\S3::getObjectsByBucket()
             return $this->_s3->getObjectsByBucket($this->_defaultBucketName);
-        } catch (Zend\Service\Amazon\S3\Exception  $e) {
+        } catch (Zend2\Service\Amazon\S3\Exception  $e) {
             throw new Exception\RuntimeException('Error on list: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -259,7 +259,7 @@ class S3 implements Adapter
     {
         try {
             return $this->_s3->getInfo($this->_getFullPath($path, $options));
-        } catch (Zend\Service\Amazon\S3\Exception  $e) {
+        } catch (Zend2\Service\Amazon\S3\Exception  $e) {
             throw new Exception\RuntimeException('Error on fetch: '.$e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -317,7 +317,7 @@ class S3 implements Adapter
 
     /**
      * Get the concrete client.
-     * @return Zend\Service\Amazon\S3\S3
+     * @return Zend2\Service\Amazon\S3\S3
      */
     public function getClient()
     {

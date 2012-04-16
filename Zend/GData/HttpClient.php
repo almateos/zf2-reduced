@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData;
+namespace Zend2\GData;
 
-use Zend\Http;
+use Zend2\Http;
 
 /**
  * Gdata Http Client object.
  *
- * Class to extend the generic Zend Http Client with the ability to perform
+ * Class to extend the generic Zend2 Http Client with the ability to perform
  * secure AuthSub requests
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class HttpClient extends Http\Client
@@ -112,13 +112,13 @@ class HttpClient extends Http\Client
      * Sets the PEM formatted private key to be used for secure AuthSub auth.
      *
      * In order to call this method, openssl must be enabled in your PHP
-     * installation.  Otherwise, a Zend_Gdata_App_InvalidArgumentException
+     * installation.  Otherwise, a Zend2_Gdata_App_InvalidArgumentException
      * will be thrown.
      *
      * @param string $key The private key
      * @param string $passphrase The optional private key passphrase
-     * @throws \Zend\GData\App\InvalidArgumentException
-     * @return \Zend\GData\HttpClient Provides a fluent interface
+     * @throws \Zend2\GData\App\InvalidArgumentException
+     * @return \Zend2\GData\HttpClient Provides a fluent interface
      */
     public function setAuthSubPrivateKey($key, $passphrase = null)
     {
@@ -154,7 +154,7 @@ class HttpClient extends Http\Client
      * Sets the AuthSub token used for authentication
      *
      * @param string $token The token
-     * @return \Zend\GData\HttpClient Provides a fluent interface
+     * @return \Zend2\GData\HttpClient Provides a fluent interface
      */
     public function setAuthSubToken($token) {
         $this->_authSubToken = $token;
@@ -174,7 +174,7 @@ class HttpClient extends Http\Client
      * Sets the ClientLogin token used for authentication
      *
      * @param string $token The token
-     * @return \Zend\GData\HttpClient Provides a fluent interface
+     * @return \Zend2\GData\HttpClient Provides a fluent interface
      */
     public function setClientLoginToken($token) {
         $this->_clientLoginToken = $token;
@@ -198,7 +198,7 @@ class HttpClient extends Http\Client
      *                       sent with the request or null
      * @param string $body The body of the request or null
      * @param string $contentType The MIME content type of the body or null
-     * @throws \Zend\GData\App\Exception if there was a signing failure
+     * @throws \Zend2\GData\App\Exception if there was a signing failure
      * @return array The processed values in an associative array,
      *               using the same names as the params
      */
@@ -241,8 +241,8 @@ class HttpClient extends Http\Client
      * Method for filtering the HTTP response, though no filtering is
      * currently done.
      *
-     * @param \Zend\Http\Response $response The response object to filter
-     * @return \Zend\Http\Response The filterd response object
+     * @param \Zend2\Http\Response $response The response object to filter
+     * @return \Zend2\Http\Response The filterd response object
      */
     public function filterHttpResponse($response) {
         return $response;
@@ -251,7 +251,7 @@ class HttpClient extends Http\Client
     /**
      * Return the current connection adapter
      *
-     * @return \Zend\Http\Client\Adapter|string $adapter
+     * @return \Zend2\Http\Client\Adapter|string $adapter
      */
     public function getAdapter()
     {
@@ -261,7 +261,7 @@ class HttpClient extends Http\Client
    /**
      * Load the connection adapter
      *
-     * @param \Zend\Http\Client\Adapter $adapter
+     * @param \Zend2\Http\Client\Adapter $adapter
      * @return void
      */
     public function setAdapter($adapter)
@@ -303,7 +303,7 @@ class HttpClient extends Http\Client
      * Prepare the request body (for POST and PUT requests)
      *
      * @return string
-     * @throws \Zend\Http\Client\Exception
+     * @throws \Zend2\Http\Client\Exception
      */
     protected function _prepareBody()
     {
@@ -320,7 +320,7 @@ class HttpClient extends Http\Client
     /**
      * Clear all custom parameters we set.
      *
-     * @return \Zend\Http\Client
+     * @return \Zend2\Http\Client
      */
     public function resetParameters($clearAll = false)
     {
@@ -334,11 +334,11 @@ class HttpClient extends Http\Client
      *
      * This is used to support POSTing from open file handles without
      * caching the entire body into memory. It is a wrapper around
-     * Zend_Http_Client::setRawData().
+     * Zend2_Http_Client::setRawData().
      *
      * @param string $data The request data
      * @param string $enctype The encoding type
-     * @return \Zend\Http\Client
+     * @return \Zend2\Http\Client
      */
     public function setRawDataStream($data, $enctype = null)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Soap
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage Client
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Soap\Client;
+namespace Zend2\Soap\Client;
 
-use Zend\Soap\Client as SOAPClient,
-    Zend\Soap\Server as SOAPServer;
+use Zend2\Soap\Client as SOAPClient,
+    Zend2\Soap\Server as SOAPServer;
 
 /**
- * \Zend\Soap\Client\Local
+ * \Zend2\Soap\Client\Local
  *
  * Class is intended to be used as local SOAP client which works
  * with a provided Server object.
  *
  * Could be used for development or testing purposes.
  *
- * @uses       \Zend\Soap\Client
- * @uses       \Zend\Soap\Server
- * @category   Zend
- * @package    Zend_Soap
+ * @uses       \Zend2\Soap\Client
+ * @uses       \Zend2\Soap\Server
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage Client
  */
 class Local extends SOAPClient
@@ -43,14 +43,14 @@ class Local extends SOAPClient
     /**
      * Server object
      *
-     * @var \Zend\Soap\Server
+     * @var \Zend2\Soap\Server
      */
     protected $_server;
 
     /**
      * Local client constructor
      *
-     * @param \Zend\Soap\Server $server
+     * @param \Zend2\Soap\Server $server
      * @param string $wsdl
      * @param array $options
      */
@@ -68,7 +68,7 @@ class Local extends SOAPClient
      * Actual "do request" method.
      *
      * @internal
-     * @param \Zend\Soap\Client\Common $client
+     * @param \Zend2\Soap\Client\Common $client
      * @param string $request
      * @param string $location
      * @param string $action

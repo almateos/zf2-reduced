@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Date
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Date
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Date;
+namespace Zend2\Date;
 
-use Zend\Cache\Storage\Adapter as CacheAdapter,
-    Zend\Locale\Data\Cldr,
-    Zend\Locale\Format,
-    Zend\Locale\Locale,
-    Zend\Locale\Math,
-    Zend\TimeSync;
+use Zend2\Cache\Storage\Adapter as CacheAdapter,
+    Zend2\Locale\Data\Cldr,
+    Zend2\Locale\Format,
+    Zend2\Locale\Locale,
+    Zend2\Locale\Math,
+    Zend2\TimeSync;
 
 /**
- * @category  Zend
- * @package   Zend_Date
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Date
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Date extends DateObject
@@ -127,12 +127,12 @@ class Date extends DateObject
      * For example, in your bootstrap: date_default_timezone_set('America/Los_Angeles');
      * For detailed instructions please look in the docu.
      *
-     * @param  string|integer|\Zend\Date\Date|array  $date    OPTIONAL Date value or value of date part to set
+     * @param  string|integer|\Zend2\Date\Date|array  $date    OPTIONAL Date value or value of date part to set
      *                                                 ,depending on $part. If null the actual time is set
      * @param  string                          $part    OPTIONAL Defines the input format of $date
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date
-     * @throws \Zend\Date\Exception
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date
+     * @throws \Zend2\Date\Exception
      */
     public function __construct($date = null, $part = null, $locale = null)
     {
@@ -232,7 +232,7 @@ class Date extends DateObject
      * Sets class wide options, if no option was given, the actual set options will be returned
      *
      * @param  array  $options  Options to set
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      * @return Options array if no option was given
      */
     public static function setOptions(array $options = array())
@@ -266,7 +266,7 @@ class Date extends DateObject
                             parent::$_cache = null;
                         } else {
                             if (!$value instanceof CacheAdapter) {
-                                throw new Exception\InvalidArgumentException("Instance of Zend\Cache\Storage\Adapter expected");
+                                throw new Exception\InvalidArgumentException("Instance of Zend2\Cache\Storage\Adapter expected");
                             }
 
                             parent::$_cache     = $value;
@@ -278,7 +278,7 @@ class Date extends DateObject
                             parent::$_defaultOffset = 0;
                         } else {
                             if (!$value instanceof TimeSync\Protocol) {
-                                throw new Exception\InvalidArgumentException("Instance of Zend_TimeSync expected for option timesync");
+                                throw new Exception\InvalidArgumentException("Instance of Zend2_TimeSync expected for option timesync");
                             }
 
                             $date = $value->getInfo();
@@ -295,7 +295,7 @@ class Date extends DateObject
     }
 
     /**
-     * Returns this object's internal UNIX timestamp (equivalent to Zend_Date::TIMESTAMP).
+     * Returns this object's internal UNIX timestamp (equivalent to Zend2_Date::TIMESTAMP).
      * If the timestamp is too large for integers, then the return value will be a string.
      * This function does not return the timestamp as an object.
      * Use clone() or copyPart() instead.
@@ -312,9 +312,9 @@ class Date extends DateObject
      * HINT: timestamps are always GMT
      *
      * @param  string                          $calc    Type of calculation to make
-     * @param  string|integer|array|\Zend\Date\Date  $stamp   Timestamp to calculate, when null the actual timestamp is calculated
-     * @return \Zend\Date\Date|integer
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $stamp   Timestamp to calculate, when null the actual timestamp is calculated
+     * @return \Zend2\Date\Date|integer
+     * @throws \Zend2\Date\Exception
      */
     private function _timestamp($calc, $stamp)
     {
@@ -345,9 +345,9 @@ class Date extends DateObject
     /**
      * Sets a new timestamp
      *
-     * @param  integer|string|array|\Zend\Date\Date  $timestamp  Timestamp to set
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  integer|string|array|\Zend2\Date\Date  $timestamp  Timestamp to set
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function setTimestamp($timestamp)
     {
@@ -357,9 +357,9 @@ class Date extends DateObject
     /**
      * Adds a timestamp
      *
-     * @param  integer|string|array|\Zend\Date\Date  $timestamp  Timestamp to add
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  integer|string|array|\Zend2\Date\Date  $timestamp  Timestamp to add
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function addTimestamp($timestamp)
     {
@@ -369,9 +369,9 @@ class Date extends DateObject
     /**
      * Subtracts a timestamp
      *
-     * @param  integer|string|array|\Zend\Date\Date  $timestamp  Timestamp to sub
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  integer|string|array|\Zend2\Date\Date  $timestamp  Timestamp to sub
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function subTimestamp($timestamp)
     {
@@ -381,9 +381,9 @@ class Date extends DateObject
     /**
      * Compares two timestamps, returning the difference as integer
      *
-     * @param  integer|string|array|\Zend\Date\Date  $timestamp  Timestamp to compare
+     * @param  integer|string|array|\Zend2\Date\Date  $timestamp  Timestamp to compare
      * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function compareTimestamp($timestamp)
     {
@@ -409,7 +409,7 @@ class Date extends DateObject
      *
      * @param  string              $format  OPTIONAL Rule for formatting output. If null the default date format is used
      * @param  string              $type    OPTIONAL Type for the format string which overrides the standard setting
-     * @param  string|\Zend\Locale\Locale  $locale  OPTIONAL Locale for parsing input
+     * @param  string|\Zend2\Locale\Locale  $locale  OPTIONAL Locale for parsing input
      * @return string
      */
     public function toString($format = null, $type = null, $locale = null)
@@ -473,7 +473,7 @@ class Date extends DateObject
      * Returns a integer representation of the object
      * But returns false when the given part is no value f.e. Month-Name
      *
-     * @param  string|integer|\Zend\Date\Date  $part  OPTIONAL Defines the date or datepart to return as integer
+     * @param  string|integer|\Zend2\Date\Date  $part  OPTIONAL Defines the date or datepart to return as integer
      * @return integer|false
      */
     public function toValue($part = null)
@@ -514,7 +514,7 @@ class Date extends DateObject
      * For a complete list of supported datepart values look into the docu
      *
      * @param  string              $part    OPTIONAL Part of the date to return, if null the timestamp is returned
-     * @param  string|\Zend\Locale\Locale  $locale  OPTIONAL Locale for parsing input
+     * @param  string|\Zend2\Locale\Locale  $locale  OPTIONAL Locale for parsing input
      * @return string  date or datepart
      */
     public function get($part = null, $locale = null)
@@ -982,7 +982,7 @@ class Date extends DateObject
      *
      * @param  string  $name
      * @return integer  Number of this month
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     private function _getDigitFromName($name)
     {
@@ -1053,11 +1053,11 @@ class Date extends DateObject
      * the month or only the seconds. There are about 50 different supported date parts.
      * For a complete list of supported datepart values look into the docu
      *
-     * @param  string|integer|array|\Zend\Date\Date  $date    Date or datepart to set
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Date or datepart to set
      * @param  string                          $part    OPTIONAL Part of the date to set, if null the timestamp is set
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function set($date, $part = null, $locale = null)
     {
@@ -1081,11 +1081,11 @@ class Date extends DateObject
      * There are about 50 different supported date parts.
      * For a complete list of supported datepart values look into the docu.
      *
-     * @param  string|integer|array|\Zend\Date\Date  $date    Date or datepart to add
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Date or datepart to add
      * @param  string                          $part    OPTIONAL Part of the date to add, if null the timestamp is added
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function add($date, $part = self::TIMESTAMP, $locale = null)
     {
@@ -1104,11 +1104,11 @@ class Date extends DateObject
      * For a complete list of supported datepart values look into the docu
      * Be aware: Adding -2 Months is not equal to Subtracting 2 Months !!!
      *
-     * @param  string|integer|array|\Zend\Date\Date  $date    Date or datepart to subtract
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Date or datepart to subtract
      * @param  string                          $part    OPTIONAL Part of the date to sub, if null the timestamp is subtracted
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function sub($date, $part = self::TIMESTAMP, $locale = null)
     {
@@ -1124,11 +1124,11 @@ class Date extends DateObject
      * Compares a date or datepart with the existing one.
      * Returns -1 if earlier, 0 if equal and 1 if later.
      *
-     * @param  string|integer|array|\Zend\Date\Date  $date    Date or datepart to compare with the date object
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Date or datepart to compare with the date object
      * @param  string                          $part    OPTIONAL Part of the date to compare, if null the timestamp is subtracted
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
      * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function compare($date, $part = self::TIMESTAMP, $locale = null)
     {
@@ -1147,7 +1147,7 @@ class Date extends DateObject
     }
 
     /**
-     * Returns a new instance of Zend_Date with the selected part copied.
+     * Returns a new instance of Zend2_Date with the selected part copied.
      * To make an exact copy, use PHP's clone keyword.
      * For a complete list of supported date part values look into the docu.
      * If a date part is copied, all other date parts are set to standard values.
@@ -1157,8 +1157,8 @@ class Date extends DateObject
      * 01-01-1970 HOUR:00:00 (so $this contains a timestamp equal to a timestamp of 0 plus HOUR).
      *
      * @param  string              $part    Part of the date to compare, if null the timestamp is subtracted
-     * @param  string|\Zend\Locale\Locale  $locale  OPTIONAL New object's locale.  No adjustments to timezone are made.
-     * @return \Zend\Date\Date New clone with requested part
+     * @param  string|\Zend2\Locale\Locale  $locale  OPTIONAL New object's locale.  No adjustments to timezone are made.
+     * @return \Zend2\Date\Date New clone with requested part
      */
     public function copyPart($part, $locale = null)
     {
@@ -1226,7 +1226,7 @@ class Date extends DateObject
      * @param  string|integer            $date  Date for calculation
      * @param  string|integer            $comp  Second date for calculation
      * @param  boolean|integer           $dst   Use dst correction if option is set
-     * @return integer|string|\Zend\Date\Date  new timestamp or \Zend\Date\Date depending on calculation
+     * @return integer|string|\Zend2\Date\Date  new timestamp or \Zend2\Date\Date depending on calculation
      */
     private function _assign($calc, $date, $comp = 0, $dst = false)
     {
@@ -1272,11 +1272,11 @@ class Date extends DateObject
      * Calculates the date or object
      *
      * @param  string                          $calc    Calculation to make, one of: 'add'|'sub'|'cmp'|'copy'|'set'
-     * @param  string|integer|array|\Zend\Date\Date  $date    Date or datepart to calculate with
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Date or datepart to calculate with
      * @param  string                          $part    Part of the date to calculate, if null the timestamp is used
-     * @param  string|\Zend\Locale\Locale              $locale  Locale for parsing input
-     * @return integer|string|\Zend\Date\Date        new timestamp
-     * @throws \Zend\Date\Exception
+     * @param  string|\Zend2\Locale\Locale              $locale  Locale for parsing input
+     * @return integer|string|\Zend2\Date\Date        new timestamp
+     * @throws \Zend2\Date\Exception
      */
     private function _calculate($calc, $date, $part, $locale)
     {
@@ -2110,7 +2110,7 @@ class Date extends DateObject
 
                     return $this->_assign($calc, $this->mktime(0, 0, 0, 1 + $parsed['month'], 1 + $parsed['day'], 1970 + $parsed['year'], true),
                                                  $this->mktime(0, 0, 0, 1 + $month,           1 + $day,           1970 + $year,           true), $hour);
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\RuntimeException($e->getMessage());
                 }
                 break;
@@ -2130,7 +2130,7 @@ class Date extends DateObject
                     }
                     return $this->_assign($calc, $this->mktime(0, 0, 0, 1 + $parsed['month'], 1 + $parsed['day'], 1970 + $parsed['year'], true),
                                                  $this->mktime(0, 0, 0, 1 + $month,           1 + $day,           1970 + $year,           true), $hour);
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\RuntimeException($e->getMessage());
                 }
                 break;
@@ -2150,7 +2150,7 @@ class Date extends DateObject
                     }
                     return $this->_assign($calc, $this->mktime(0, 0, 0, 1 + $parsed['month'], 1 + $parsed['day'], 1970 + $parsed['year'], true),
                                                  $this->mktime(0, 0, 0, 1 + $month,           1 + $day,           1970 + $year,           true), $hour);
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\RuntimeException($e->getMessage());
                 }
                 break;
@@ -2170,7 +2170,7 @@ class Date extends DateObject
                     }
                     return $this->_assign($calc, $this->mktime(0, 0, 0, 1 + $parsed['month'], 1 + $parsed['day'], 1970 + $parsed['year'], true),
                                                  $this->mktime(0, 0, 0, 1 + $month,           1 + $day,           1970 + $year,           true), $hour);
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\RuntimeException($e->getMessage());
                 }
                 break;
@@ -2192,7 +2192,7 @@ class Date extends DateObject
                     }
                     return $this->_assign($calc, $this->mktime(0, 0, 0, 1 + $parsed['month'], 1 + $parsed['day'], 1970 + $parsed['year'], true),
                                                  $this->mktime(0, 0, 0, 1 + $month,           1 + $day,           1970 + $year,           true), $hour);
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\RuntimeException($e->getMessage());
                 }
                 break;
@@ -2207,7 +2207,7 @@ class Date extends DateObject
                     $parsed = Format::getTime($date, array('locale' => $locale, 'format_type' => 'iso', 'fix_date' => true));
                     return $this->_assign($calc, $this->mktime($parsed['hour'], $parsed['minute'], $parsed['second'], $month, $day, $year, true),
                                                  $this->mktime($hour,           $minute,           $second,           $month, $day, $year, true), false);
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\RuntimeException($e->getMessage());
                 }
                 break;
@@ -2228,7 +2228,7 @@ class Date extends DateObject
 
                     return $this->_assign($calc, $this->mktime($parsed['hour'], $parsed['minute'], $parsed['second'], $month, $day, $year, true),
                                                  $this->mktime($hour,           $minute,           $second,           $month, $day, $year, true), false);
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\RuntimeException($e->getMessage());
                 }
                 break;
@@ -2244,7 +2244,7 @@ class Date extends DateObject
                     }
                     return $this->_assign($calc, $this->mktime($parsed['hour'], $parsed['minute'], $parsed['second'], $month, $day, $year, true),
                                                  $this->mktime($hour,           $minute,           $second,           $month, $day, $year, true), false);
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\RuntimeException($e->getMessage());
                 }
                 break;
@@ -2260,7 +2260,7 @@ class Date extends DateObject
                     }
                     return $this->_assign($calc, $this->mktime($parsed['hour'], $parsed['minute'], $parsed['second'], $month, $day, $year, true),
                                                  $this->mktime($hour,           $minute,           $second,           $month, $day, $year, true), false);
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\RuntimeException($e->getMessage());
                 }
                 break;
@@ -2281,7 +2281,7 @@ class Date extends DateObject
 
                     return $this->_assign($calc, $this->mktime($parsed['hour'], $parsed['minute'], $parsed['second'], $month, $day, $year, true),
                                                  $this->mktime($hour,           $minute,           $second,           $month, $day, $year, true), false);
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\RuntimeException($e->getMessage());
                 }
                 break;
@@ -2299,7 +2299,7 @@ class Date extends DateObject
                     }
                     return $this->_assign($calc, $this->mktime($parsed['hour'], $parsed['minute'], $parsed['second'], 1 + $parsed['month'], 1 + $parsed['day'], 1970 + $parsed['year'], true),
                                                  $this->mktime($hour,           $minute,           $second,           1 + $month,           1 + $day,           1970 + $year,           true), $hour);
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\RuntimeException($e->getMessage());
                 }
                 break;
@@ -2324,7 +2324,7 @@ class Date extends DateObject
 
                     return $this->_assign($calc, $this->mktime($parsed['hour'], $parsed['minute'], $parsed['second'], 1 + $parsed['month'], 1 + $parsed['day'], 1970 + $parsed['year'], true),
                                                  $this->mktime($hour,           $minute,           $second,           1 + $month,           1 + $day,           1970 + $year,           true), $hour);
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\RuntimeException($e->getMessage());
                 }
                 break;
@@ -2344,7 +2344,7 @@ class Date extends DateObject
                     }
                     return $this->_assign($calc, $this->mktime($parsed['hour'], $parsed['minute'], $parsed['second'], 1 + $parsed['month'], 1 + $parsed['day'], 1970 + $parsed['year'], true),
                                                  $this->mktime($hour,           $minute,           $second,           1 + $month,           1 + $day,           1970 + $year,           true), $hour);
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\RuntimeException($e->getMessage());
                 }
                 break;
@@ -2363,7 +2363,7 @@ class Date extends DateObject
                     }
                     return $this->_assign($calc, $this->mktime($parsed['hour'], $parsed['minute'], $parsed['second'], 1 + $parsed['month'], 1 + $parsed['day'], 1970 + $parsed['year'], true),
                                                  $this->mktime($hour,           $minute,           $second,           1 + $month,           1 + $day,           1970 + $year,           true), $hour);
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\RuntimeException($e->getMessage());
                 }
                 break;
@@ -2390,7 +2390,7 @@ class Date extends DateObject
 
                     return $this->_assign($calc, $this->mktime($parsed['hour'], $parsed['minute'], $parsed['second'], 1 + $parsed['month'], 1 + $parsed['day'], 1970 + $parsed['year'], true),
                                                  $this->mktime($hour,           $minute,           $second,           1 + $month,           1 + $day,           1970 + $year,           true), $hour);
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\RuntimeException($e->getMessage());
                 }
                 break;
@@ -2585,7 +2585,7 @@ class Date extends DateObject
                             isset($parsed['day']) ? (1 + $parsed['day']) : 1,
                             isset($parsed['year']) ? (1970 + $parsed['year']) : 1970,
                             false), $this->getUnixTimestamp(), false);
-                    } catch (\Zend\Locale\Exception $e) {
+                    } catch (\Zend2\Locale\Exception $e) {
                         if (!is_numeric($date)) {
                             throw new Exception\RuntimeException($e->getMessage(), 0, $e);
                         }
@@ -2602,11 +2602,11 @@ class Date extends DateObject
      * For example:
      * 15.May.2000 <-> 15.June.2000 Equals only for Day or Year... all other will return false
      *
-     * @param  string|integer|array|\Zend\Date\Date  $date    Date or datepart to equal with
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Date or datepart to equal with
      * @param  string                          $part    OPTIONAL Part of the date to compare, if null the timestamp is used
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
      * @return boolean
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function equals($date, $part = self::TIMESTAMP, $locale = null)
     {
@@ -2624,11 +2624,11 @@ class Date extends DateObject
      * For example:
      * 15.May.2000 <-> 13.June.1999 will return true for day, year and date, but not for month
      *
-     * @param  string|integer|array|\Zend\Date\Date  $date    Date or datepart to compare with
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Date or datepart to compare with
      * @param  string                          $part    OPTIONAL Part of the date to compare, if null the timestamp is used
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
      * @return boolean
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function isEarlier($date, $part = null, $locale = null)
     {
@@ -2647,11 +2647,11 @@ class Date extends DateObject
      * 15.May.2000 <-> 13.June.1999 will return true for month but false for day, year and date
      * Returns if the given date is later
      *
-     * @param  string|integer|array|\Zend\Date\Date  $date    Date or datepart to compare with
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Date or datepart to compare with
      * @param  string                          $part    OPTIONAL Part of the date to compare, if null the timestamp is used
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
      * @return boolean
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function isLater($date, $part = null, $locale = null)
     {
@@ -2665,12 +2665,12 @@ class Date extends DateObject
     }
 
     /**
-     * Returns only the time of the date as new Zend_Date object
+     * Returns only the time of the date as new Zend2_Date object
      * For example:
      * 15.May.2000 10:11:23 will return a dateobject equal to 01.Jan.1970 10:11:23
      *
-     * @param  string|\Zend\Locale\Locale  $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date
+     * @param  string|\Zend2\Locale\Locale  $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date
      */
     public function getTime($locale = null)
     {
@@ -2687,11 +2687,11 @@ class Date extends DateObject
      * Returns the calculated time
      *
      * @param  string                    $calc    Calculation to make
-     * @param  string|integer|array|\Zend\Date\Date  $time    Time to calculate with, if null the actual time is taken
+     * @param  string|integer|array|\Zend2\Date\Date  $time    Time to calculate with, if null the actual time is taken
      * @param  string                          $format  Timeformat for parsing input
-     * @param  string|\Zend\Locale\Locale              $locale  Locale for parsing input
-     * @return integer|\Zend\Date\Date  new time
-     * @throws \Zend\Date\Exception
+     * @param  string|\Zend2\Locale\Locale              $locale  Locale for parsing input
+     * @return integer|\Zend2\Date\Date  new time
+     * @throws \Zend2\Date\Exception
      */
     private function _time($calc, $time, $format, $locale)
     {
@@ -2720,7 +2720,7 @@ class Date extends DateObject
                     }
 
                     $parsed = Format::getTime($time, array('date_format' => $format, 'locale' => $locale, 'format_type' => 'iso'));
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\InvalidArgumentException($e->getMessage(), 0, $e);
                 }
             }
@@ -2757,11 +2757,11 @@ class Date extends DateObject
      * For example: dd.MMMM.yyTHH:mm' and 'ss sec'-> 10.May.07T25:11 and 44 sec => 1h11min44sec + 1 day
      * Returned is the new date object and the existing date is left as it was before
      *
-     * @param  string|integer|array|\Zend\Date\Date  $time    Time to set
+     * @param  string|integer|array|\Zend2\Date\Date  $time    Time to set
      * @param  string                          $format  OPTIONAL Timeformat for parsing input
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function setTime($time, $format = null, $locale = null)
     {
@@ -2775,11 +2775,11 @@ class Date extends DateObject
      * If no format is given, the standardformat of this locale is used.
      * For example: HH:mm:ss -> 10 -> +10 hours
      *
-     * @param  string|integer|array|\Zend\Date\Date  $time    Time to add
+     * @param  string|integer|array|\Zend2\Date\Date  $time    Time to add
      * @param  string                          $format  OPTIONAL Timeformat for parsing input
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function addTime($time, $format = null, $locale = null)
     {
@@ -2793,11 +2793,11 @@ class Date extends DateObject
      * If no format is given, the standardformat of this locale is used.
      * For example: HH:mm:ss -> 10 -> -10 hours
      *
-     * @param  string|integer|array|\Zend\Date\Date  $time    Time to sub
+     * @param  string|integer|array|\Zend2\Date\Date  $time    Time to sub
      * @param  string                          $format  OPTIONAL Timeformat for parsing input
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid inteface
-     * @throws \Zend\Date\Exception
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid inteface
+     * @throws \Zend2\Date\Exception
      */
     public function subTime($time, $format = null, $locale = null)
     {
@@ -2811,11 +2811,11 @@ class Date extends DateObject
      * If no format us given, the standardformat of this locale is used.
      * For example: HH:mm:ss -> 10 -> 10 hours
      *
-     * @param  string|integer|array|\Zend\Date\Date  $time    Time to compare
+     * @param  string|integer|array|\Zend2\Date\Date  $time    Time to compare
      * @param  string                          $format  OPTIONAL Timeformat for parsing input
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
      * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function compareTime($time, $format = null, $locale = null)
     {
@@ -2825,8 +2825,8 @@ class Date extends DateObject
     /**
      * Returns a clone of $this, with the time part set to 00:00:00.
      *
-     * @param  string|\Zend\Locale\Locale  $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date
+     * @param  string|\Zend2\Locale\Locale  $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date
      */
     public function getDate($locale = null)
     {
@@ -2846,11 +2846,11 @@ class Date extends DateObject
      * Returns the calculated date
      *
      * @param  string                          $calc    Calculation to make
-     * @param  string|integer|array|\Zend\Date\Date  $date    Date to calculate with, if null the actual date is taken
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Date to calculate with, if null the actual date is taken
      * @param  string                          $format  Date format for parsing
-     * @param  string|\Zend\Locale\Locale              $locale  Locale for parsing input
-     * @return integer|\Zend\Date\Date  new date
-     * @throws \Zend\Date\Exception
+     * @param  string|\Zend2\Locale\Locale              $locale  Locale for parsing input
+     * @return integer|\Zend2\Date\Date  new date
+     * @throws \Zend2\Date\Exception
      */
     private function _date($calc, $date, $format, $locale)
     {
@@ -2882,7 +2882,7 @@ class Date extends DateObject
                     if ((strpos(strtoupper($format), 'YY') !== false) and (strpos(strtoupper($format), 'YYYY') === false)) {
                         $parsed['year'] = self::getFullYear($parsed['year']);
                     }
-                } catch (\Zend\Locale\Exception $e) {
+                } catch (\Zend2\Locale\Exception $e) {
                     throw new Exception\InvalidArgumentException($e->getMessage(), 0, $e);
                 }
             }
@@ -2916,11 +2916,11 @@ class Date extends DateObject
      * For example: MMMM.yy HH:mm-> May.07 22:11 => 01.May.07 00:00
      * Returned is the new date object and the existing time is left as it was before
      *
-     * @param  string|integer|array|\Zend\Date\Date  $date    Date to set
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Date to set
      * @param  string                          $format  OPTIONAL Date format for parsing
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function setDate($date, $format = null, $locale = null)
     {
@@ -2934,11 +2934,11 @@ class Date extends DateObject
      * If no format is given, the standardformat of this locale is used.
      * For example: MM.dd.YYYY -> 10 -> +10 months
      *
-     * @param  string|integer|array|\Zend\Date\Date  $date    Date to add
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Date to add
      * @param  string                          $format  OPTIONAL Date format for parsing input
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function addDate($date, $format = null, $locale = null)
     {
@@ -2953,11 +2953,11 @@ class Date extends DateObject
      * For example: MM.dd.YYYY -> 10 -> -10 months
      * Be aware: Subtracting 2 months is not equal to Adding -2 months !!!
      *
-     * @param  string|integer|array|\Zend\Date\Date  $date    Date to sub
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Date to sub
      * @param  string                          $format  OPTIONAL Date format for parsing input
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function subDate($date, $format = null, $locale = null)
     {
@@ -2972,11 +2972,11 @@ class Date extends DateObject
      * If no format is given, the standardformat of this locale is used.
      * For example: 10.01.2000 => 10.02.1999 -> false
      *
-     * @param  string|integer|array|\Zend\Date\Date  $date    Date to compare
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Date to compare
      * @param  string                          $format  OPTIONAL Date format for parsing input
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
      * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function compareDate($date, $format = null, $locale = null)
     {
@@ -2990,7 +2990,7 @@ class Date extends DateObject
      * (ISO 8601 defines several formats) use toString() instead.
      * This function does not return the ISO date as object. Use copy() instead.
      *
-     * @param  string|\Zend\Locale\Locale  $locale  OPTIONAL Locale for parsing input
+     * @param  string|\Zend2\Locale\Locale  $locale  OPTIONAL Locale for parsing input
      * @return string
      */
     public function getIso($locale = null)
@@ -3005,10 +3005,10 @@ class Date extends DateObject
      * For example: 050901 -> 01.Sept.2005 00:00:00, 20050201T10:00:30 -> 01.Feb.2005 10h00m30s
      * Returned is the new date object
      *
-     * @param  string|integer|\Zend\Date\Date  $date    ISO Date to set
-     * @param  string|\Zend\Locale\Locale        $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|\Zend2\Date\Date  $date    ISO Date to set
+     * @param  string|\Zend2\Locale\Locale        $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function setIso($date, $locale = null)
     {
@@ -3022,10 +3022,10 @@ class Date extends DateObject
      * For example: 050901 -> + 01.Sept.2005 00:00:00, 10:00:00 -> +10h
      * Returned is the new date object
      *
-     * @param  string|integer|\Zend\Date\Date  $date    ISO Date to add
-     * @param  string|\Zend\Locale\Locale        $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|\Zend2\Date\Date  $date    ISO Date to add
+     * @param  string|\Zend2\Locale\Locale        $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function addIso($date, $locale = null)
     {
@@ -3039,10 +3039,10 @@ class Date extends DateObject
      * For example: 050901 -> - 01.Sept.2005 00:00:00, 10:00:00 -> -10h
      * Returned is the new date object
      *
-     * @param  string|integer|\Zend\Date\Date  $date    ISO Date to sub
-     * @param  string|\Zend\Locale\Locale        $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|\Zend2\Date\Date  $date    ISO Date to sub
+     * @param  string|\Zend2\Locale\Locale        $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function subIso($date, $locale = null)
     {
@@ -3056,10 +3056,10 @@ class Date extends DateObject
      * For example: 050901 -> - 01.Sept.2005 00:00:00, 10:00:00 -> -10h
      * Returns if equal, earlier or later
      *
-     * @param  string|integer|\Zend\Date\Date  $date    ISO Date to sub
-     * @param  string|\Zend\Locale\Locale        $locale  OPTIONAL Locale for parsing input
+     * @param  string|integer|\Zend2\Date\Date  $date    ISO Date to sub
+     * @param  string|\Zend2\Locale\Locale        $locale  OPTIONAL Locale for parsing input
      * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function compareIso($date, $locale = null)
     {
@@ -3071,7 +3071,7 @@ class Date extends DateObject
      * Returns a RFC 822 compilant datestring from the date object.
      * This function does not return the RFC date as object. Use copy() instead.
      *
-     * @param  string|\Zend\Locale\Locale  $locale  OPTIONAL Locale for parsing input
+     * @param  string|\Zend2\Locale\Locale  $locale  OPTIONAL Locale for parsing input
      * @return string
      */
     public function getArpa($locale = null)
@@ -3092,10 +3092,10 @@ class Date extends DateObject
      * For example: Sat, 14 Feb 09 00:31:30 +0100
      * Returned is the new date object
      *
-     * @param  string|integer|\Zend\Date\Date  $date    RFC 822 to set
-     * @param  string|\Zend\Locale\Locale        $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|\Zend2\Date\Date  $date    RFC 822 to set
+     * @param  string|\Zend2\Locale\Locale        $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function setArpa($date, $locale = null)
     {
@@ -3110,10 +3110,10 @@ class Date extends DateObject
      * For example: Sat, 14 Feb 09 00:31:30 +0100
      * Returned is the new date object
      *
-     * @param  string|integer|\Zend\Date\Date  $date    RFC 822 Date to add
-     * @param  string|\Zend\Locale\Locale        $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|\Zend2\Date\Date  $date    RFC 822 Date to add
+     * @param  string|\Zend2\Locale\Locale        $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function addArpa($date, $locale = null)
     {
@@ -3128,10 +3128,10 @@ class Date extends DateObject
      * For example: Sat, 14 Feb 09 00:31:30 +0100
      * Returned is the new date object
      *
-     * @param  string|integer|\Zend\Date\Date  $date    RFC 822 Date to sub
-     * @param  string|\Zend\Locale\Locale        $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|\Zend2\Date\Date  $date    RFC 822 Date to sub
+     * @param  string|\Zend2\Locale\Locale        $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function subArpa($date, $locale = null)
     {
@@ -3146,10 +3146,10 @@ class Date extends DateObject
      * For example: Sat, 14 Feb 09 00:31:30 +0100
      * Returns if equal, earlier or later
      *
-     * @param  string|integer|\Zend\Date\Date  $date    RFC 822 Date to sub
-     * @param  string|\Zend\Locale\Locale        $locale  OPTIONAL Locale for parsing input
+     * @param  string|integer|\Zend2\Date\Date  $date    RFC 822 Date to sub
+     * @param  string|\Zend2\Locale\Locale        $locale  OPTIONAL Locale for parsing input
      * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function compareArpa($date, $locale = null)
     {
@@ -3198,14 +3198,14 @@ class Date extends DateObject
 
     /**
      * Returns the time of sunrise for this date and a given location as new date object
-     * For a list of cities and correct locations use the class Zend_Date_Cities
+     * For a list of cities and correct locations use the class Zend2_Date_Cities
      *
      * @param array $location Location of sunrise
      *                   ['horizon']   -> civil, nautic, astronomical, effective (default)
      *                   ['longitude'] -> longitude of location
      *                   ['latitude']  -> latitude of location
-     * @return \Zend\Date\Date
-     * @throws \Zend\Date\Exception
+     * @return \Zend2\Date\Date
+     * @throws \Zend2\Date\Exception
      */
     public function getSunrise($location)
     {
@@ -3218,14 +3218,14 @@ class Date extends DateObject
 
     /**
      * Returns the time of sunset for this date and a given location as new date object
-     * For a list of cities and correct locations use the class Zend_Date_Cities
+     * For a list of cities and correct locations use the class Zend2_Date_Cities
      *
      * @param array $location Location of sunset
      *                   ['horizon']   -> civil, nautic, astronomical, effective (default)
      *                   ['longitude'] -> longitude of location
      *                   ['latitude']  -> latitude of location
-     * @return \Zend\Date\Date
-     * @throws \Zend\Date\Exception
+     * @return \Zend2\Date\Date
+     * @throws \Zend2\Date\Exception
      */
     public function getSunset($location)
     {
@@ -3238,14 +3238,14 @@ class Date extends DateObject
 
     /**
      * Returns an array with the sunset and sunrise dates for all horizon types
-     * For a list of cities and correct locations use the class Zend_Date_Cities
+     * For a list of cities and correct locations use the class Zend2_Date_Cities
      *
      * @param array $location Location of suninfo
      *                   ['horizon']   -> civil, nautic, astronomical, effective (default)
      *                   ['longitude'] -> longitude of location
      *                   ['latitude']  -> latitude of location
      * @return array - [sunset|sunrise][effective|civil|nautic|astronomic]
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function getSunInfo($location)
     {
@@ -3280,7 +3280,7 @@ class Date extends DateObject
     /**
      * Check a given year for leap year.
      *
-     * @param  integer|array|\Zend\Date\Date  $year  Year to check
+     * @param  integer|array|\Zend2\Date\Date  $year  Year to check
      * @return boolean
      */
     public static function checkLeapYear($year)
@@ -3361,8 +3361,8 @@ class Date extends DateObject
     /**
      * Returns the actual date as new date object
      *
-     * @param  string|\Zend\Locale\Locale        $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date
+     * @param  string|\Zend2\Locale\Locale        $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date
      */
     public static function now($locale = null)
     {
@@ -3373,11 +3373,11 @@ class Date extends DateObject
      * Calculate date details
      *
      * @param  string                          $calc    Calculation to make
-     * @param  string|integer|array|\Zend\Date\Date  $date    Date or Part to calculate
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Date or Part to calculate
      * @param  string                          $part    Datepart for Calculation
-     * @param  string|\Zend\Locale\Locale              $locale  Locale for parsing input
+     * @param  string|\Zend2\Locale\Locale              $locale  Locale for parsing input
      * @return integer|string  new date
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     private function _calcdetail($calc, $date, $type, $locale)
     {
@@ -3413,10 +3413,10 @@ class Date extends DateObject
      * Internal calculation, returns the requested date type
      *
      * @param  string                    $calc    Calculation to make
-     * @param  string|integer|\Zend\Date\Date  $value   Datevalue to calculate with, if null the actual value is taken
-     * @param  string|\Zend\Locale\Locale        $locale  Locale for parsing input
-     * @return integer|\Zend\Date\Date  new date
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|\Zend2\Date\Date  $value   Datevalue to calculate with, if null the actual value is taken
+     * @param  string|\Zend2\Locale\Locale        $locale  Locale for parsing input
+     * @return integer|\Zend2\Date\Date  new date
+     * @throws \Zend2\Date\Exception
      */
     private function _calcvalue($calc, $value, $type, $parameter, $locale)
     {
@@ -3447,8 +3447,8 @@ class Date extends DateObject
      * Returns only the year from the date object as new object.
      * For example: 10.May.2000 10:30:00 -> 01.Jan.2000 00:00:00
      *
-     * @param  string|\Zend\Locale\Locale  $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date
+     * @param  string|\Zend2\Locale\Locale  $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date
      */
     public function getYear($locale = null)
     {
@@ -3470,10 +3470,10 @@ class Date extends DateObject
      * use set() instead.
      * Returned is the new date object
      *
-     * @param  string|integer|array|\Zend\Date\Date  $date    Year to set
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Year to set
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function setYear($year, $locale = null)
     {
@@ -3489,10 +3489,10 @@ class Date extends DateObject
      * use add() instead.
      * Returned is the new date object
      *
-     * @param  string|integer|array|\Zend\Date\Date  $date    Year to add
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Year to add
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function addYear($year, $locale = null)
     {
@@ -3508,10 +3508,10 @@ class Date extends DateObject
      * use sub() instead.
      * Returned is the new date object
      *
-     * @param  string|integer|array|\Zend\Date\Date  $date    Year to sub
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $date    Year to sub
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function subYear($year, $locale = null)
     {
@@ -3524,10 +3524,10 @@ class Date extends DateObject
      * For example: 10.03.2000 -> 15.02.2000 -> true
      * Returns if equal, earlier or later
      *
-     * @param  string|integer|array|\Zend\Date\Date  $year    Year to compare
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @param  string|integer|array|\Zend2\Date\Date  $year    Year to compare
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
      * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function compareYear($year, $locale = null)
     {
@@ -3539,8 +3539,8 @@ class Date extends DateObject
      * Returns only the month from the date object as new object.
      * For example: 10.May.2000 10:30:00 -> 01.May.1970 00:00:00
      *
-     * @param  string|\Zend\Locale\Locale  $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date
+     * @param  string|\Zend2\Locale\Locale  $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date
      */
     public function getMonth($locale = null)
     {
@@ -3558,10 +3558,10 @@ class Date extends DateObject
      * Returns the calculated month
      *
      * @param  string                          $calc    Calculation to make
-     * @param  string|integer|array|\Zend\Date\Date  $month   Month to calculate with, if null the actual month is taken
-     * @param  string|\Zend\Locale\Locale              $locale  Locale for parsing input
-     * @return integer|\Zend\Date\Date  new time
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $month   Month to calculate with, if null the actual month is taken
+     * @param  string|\Zend2\Locale\Locale              $locale  Locale for parsing input
+     * @return integer|\Zend2\Date\Date  new time
+     * @throws \Zend2\Date\Exception
      */
     private function _month($calc, $month, $locale)
     {
@@ -3629,10 +3629,10 @@ class Date extends DateObject
      * set locale.
      * Returned is the new date object
      *
-     * @param  string|integer|array|\Zend\Date\Date  $month   Month to set
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $month   Month to set
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function setMonth($month, $locale = null)
     {
@@ -3648,10 +3648,10 @@ class Date extends DateObject
      * set locale.
      * Returned is the new date object
      *
-     * @param  string|integer|array|\Zend\Date\Date  $month   Month to add
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $month   Month to add
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function addMonth($month, $locale = null)
     {
@@ -3667,10 +3667,10 @@ class Date extends DateObject
      * set locale.
      * Returned is the new date object
      *
-     * @param  string|integer|array|\Zend\Date\Date  $month   Month to sub
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $month   Month to sub
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function subMonth($month, $locale = null)
     {
@@ -3683,10 +3683,10 @@ class Date extends DateObject
      * For example: 10.03.2000 -> 15.03.1950 -> true
      * Returns if equal, earlier or later
      *
-     * @param  string|integer|array|\Zend\Date\Date  $month   Month to compare
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @param  string|integer|array|\Zend2\Date\Date  $month   Month to compare
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
      * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function compareMonth($month, $locale = null)
     {
@@ -3698,8 +3698,8 @@ class Date extends DateObject
      * Returns the day as new date object
      * Example: 20.May.1986 -> 20.Jan.1970 00:00:00
      *
-     * @param string|\Zend\Locale\Locale $locale OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date
+     * @param string|\Zend2\Locale\Locale $locale OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date
      */
     public function getDay($locale = null)
     {
@@ -3711,9 +3711,9 @@ class Date extends DateObject
      * Returns the calculated day
      *
      * @param string $calc                           Type of calculation to make
-     * @param string|integer|\Zend\Date\Date $day    Day to calculate, when null the actual day is calculated
-     * @param string|\Zend\Locale\Locale     $locale Locale for parsing input
-     * @return \Zend\Date\Date|integer
+     * @param string|integer|\Zend2\Date\Date $day    Day to calculate, when null the actual day is calculated
+     * @param string|\Zend2\Locale\Locale     $locale Locale for parsing input
+     * @return \Zend2\Date\Date|integer
      */
     private function _day($calc, $day, $locale)
     {
@@ -3771,10 +3771,10 @@ class Date extends DateObject
      * Returned is the new date object
      * Example: setDay('Montag', 'de_AT'); will set the monday of this week as day.
      *
-     * @param  string|integer|array|\Zend\Date\Date  $month   Day to set
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $month   Day to set
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function setDay($day, $locale = null)
     {
@@ -3789,10 +3789,10 @@ class Date extends DateObject
      * If a localized dayname is given it will be parsed with the default locale or the optional
      * set locale.
      *
-     * @param  string|integer|array|\Zend\Date\Date  $month   Day to add
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $month   Day to add
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function addDay($day, $locale = null)
     {
@@ -3807,10 +3807,10 @@ class Date extends DateObject
      * If a localized dayname is given it will be parsed with the default locale or the optional
      * set locale.
      *
-     * @param  string|integer|array|\Zend\Date\Date  $month   Day to sub
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $month   Day to sub
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function subDay($day, $locale = null)
     {
@@ -3823,10 +3823,10 @@ class Date extends DateObject
      * For example: 'Monday', 'en' -> 08.Jan.2007 -> 0
      * Returns if equal, earlier or later
      *
-     * @param  string|integer|array|\Zend\Date\Date  $day     Day to compare
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @param  string|integer|array|\Zend2\Date\Date  $day     Day to compare
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
      * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function compareDay($day, $locale = null)
     {
@@ -3839,8 +3839,8 @@ class Date extends DateObject
      * Weekday is always from 1-7
      * Example: 09-Jan-2007 -> 2 = Tuesday -> 02-Jan-1970 (when 02.01.1970 is also Tuesday)
      *
-     * @param  string|\Zend\Locale\Locale $locale OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date
+     * @param  string|\Zend2\Locale\Locale $locale OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date
      */
     public function getWeekday($locale = null)
     {
@@ -3858,10 +3858,10 @@ class Date extends DateObject
      * Returns the calculated weekday
      *
      * @param  string                               $calc    Type of calculation to make
-     * @param  string|integer|array|\Zend\Date\Date $weekday Weekday to calculate, when null the actual weekday is calculated
-     * @param  string|\Zend\Locale\Locale           $locale  Locale for parsing input
-     * @return \Zend\Date\Date|integer
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date $weekday Weekday to calculate, when null the actual weekday is calculated
+     * @param  string|\Zend2\Locale\Locale           $locale  Locale for parsing input
+     * @return \Zend2\Date\Date|integer
+     * @throws \Zend2\Date\Exception
      */
     private function _weekday($calc, $weekday, $locale)
     {
@@ -3917,10 +3917,10 @@ class Date extends DateObject
      * Returned is the new date object.
      * Example: setWeekday(3); will set the wednesday of this week as day.
      *
-     * @param  string|integer|array|\Zend\Date\Date  $month   Weekday to set
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $month   Weekday to set
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function setWeekday($weekday, $locale = null)
     {
@@ -3937,10 +3937,10 @@ class Date extends DateObject
      * Example: addWeekday(3); will add the difference of days from the begining of the month until
      * wednesday.
      *
-     * @param  string|integer|array|\Zend\Date\Date  $month   Weekday to add
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $month   Weekday to add
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function addWeekday($weekday, $locale = null)
     {
@@ -3957,10 +3957,10 @@ class Date extends DateObject
      * Example: subWeekday(3); will subtract the difference of days from the begining of the month until
      * wednesday.
      *
-     * @param  string|integer|array|\Zend\Date\Date  $month   Weekday to sub
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $month   Weekday to sub
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function subWeekday($weekday, $locale = null)
     {
@@ -3973,10 +3973,10 @@ class Date extends DateObject
      * For example: 'Monday', 'en' -> 08.Jan.2007 -> 0
      * Returns if equal, earlier or later
      *
-     * @param  string|integer|array|\Zend\Date\Date  $weekday  Weekday to compare
-     * @param  string|\Zend\Locale\Locale              $locale   OPTIONAL Locale for parsing input
+     * @param  string|integer|array|\Zend2\Date\Date  $weekday  Weekday to compare
+     * @param  string|\Zend2\Locale\Locale              $locale   OPTIONAL Locale for parsing input
      * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function compareWeekday($weekday, $locale = null)
     {
@@ -3988,8 +3988,8 @@ class Date extends DateObject
      * Returns the day of year as new date object
      * Example: 02.Feb.1986 10:00:00 -> 02.Feb.1970 00:00:00
      *
-     * @param  string|\Zend\Locale\Locale  $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date
+     * @param  string|\Zend2\Locale\Locale  $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date
      */
     public function getDayOfYear($locale = null)
     {
@@ -4009,10 +4009,10 @@ class Date extends DateObject
      * Returned is the new date object
      * Example: 04.May.2004 -> setDayOfYear(10) -> 10.Jan.2004
      *
-     * @param  string|integer|array|\Zend\Date\Date  $day     Day of Year to set
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $day     Day of Year to set
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function setDayOfYear($day, $locale = null)
     {
@@ -4026,10 +4026,10 @@ class Date extends DateObject
      * Returned is the new date object
      * Example: addDayOfYear(10); will add 10 days to the existing date object.
      *
-     * @param  string|integer|array|\Zend\Date\Date  $day     Day of Year to add
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $day     Day of Year to add
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function addDayOfYear($day, $locale = null)
     {
@@ -4043,10 +4043,10 @@ class Date extends DateObject
      * Returned is the new date object
      * Example: subDayOfYear(10); will subtract 10 days from the existing date object.
      *
-     * @param  string|integer|array|\Zend\Date\Date  $day     Day of Year to sub
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $day     Day of Year to sub
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function subDayOfYear($day, $locale = null)
     {
@@ -4059,10 +4059,10 @@ class Date extends DateObject
      * For example: compareDayOfYear(33) -> 02.Feb.2007 -> 0
      * Returns if equal, earlier or later
      *
-     * @param  string|integer|array|\Zend\Date\Date  $day     Day of Year to compare
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @param  string|integer|array|\Zend2\Date\Date  $day     Day of Year to compare
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
      * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function compareDayOfYear($day, $locale = null)
     {
@@ -4074,8 +4074,8 @@ class Date extends DateObject
      * Returns the hour as new date object
      * Example: 02.Feb.1986 10:30:25 -> 01.Jan.1970 10:00:00
      *
-     * @param  string|\Zend\Locale\Locale $locale OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date
+     * @param  string|\Zend2\Locale\Locale $locale OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date
      */
     public function getHour($locale = null)
     {
@@ -4089,10 +4089,10 @@ class Date extends DateObject
      * Returned is the new date object
      * Example: 04.May.1993 13:07:25 -> setHour(7); -> 04.May.1993 07:07:25
      *
-     * @param  string|integer|array|\Zend\Date\Date  $hour    Hour to set
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $hour    Hour to set
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function setHour($hour, $locale = null)
     {
@@ -4106,10 +4106,10 @@ class Date extends DateObject
      * Returned is the new date object
      * Example: 04.May.1993 13:07:25 -> addHour(12); -> 05.May.1993 01:07:25
      *
-     * @param  string|integer|array|\Zend\Date\Date  $hour    Hour to add
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $hour    Hour to add
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function addHour($hour, $locale = null)
     {
@@ -4123,10 +4123,10 @@ class Date extends DateObject
      * Returned is the new date object
      * Example: 04.May.1993 13:07:25 -> subHour(6); -> 05.May.1993 07:07:25
      *
-     * @param  string|integer|array|\Zend\Date\Date  $hour    Hour to sub
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $hour    Hour to sub
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function subHour($hour, $locale = null)
     {
@@ -4139,10 +4139,10 @@ class Date extends DateObject
      * For example: 10:30:25 -> compareHour(10) -> 0
      * Returns if equal, earlier or later
      *
-     * @param  string|integer|array|\Zend\Date\Date  $hour    Hour to compare
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @param  string|integer|array|\Zend2\Date\Date  $hour    Hour to compare
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
      * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function compareHour($hour, $locale = null)
     {
@@ -4154,8 +4154,8 @@ class Date extends DateObject
      * Returns the minute as new date object
      * Example: 02.Feb.1986 10:30:25 -> 01.Jan.1970 00:30:00
      *
-     * @param  string|\Zend\Locale\Locale  $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date
+     * @param  string|\Zend2\Locale\Locale  $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date
      */
     public function getMinute($locale = null)
     {
@@ -4175,10 +4175,10 @@ class Date extends DateObject
      * Returned is the new date object
      * Example: 04.May.1993 13:07:25 -> setMinute(29); -> 04.May.1993 13:29:25
      *
-     * @param  string|integer|array|\Zend\Date\Date  $minute  Minute to set
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $minute  Minute to set
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function setMinute($minute, $locale = null)
     {
@@ -4192,10 +4192,10 @@ class Date extends DateObject
      * Returned is the new date object
      * Example: 04.May.1993 13:07:25 -> addMinute(65); -> 04.May.1993 13:12:25
      *
-     * @param  string|integer|array|\Zend\Date\Date  $minute  Minute to add
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $minute  Minute to add
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function addMinute($minute, $locale = null)
     {
@@ -4209,10 +4209,10 @@ class Date extends DateObject
      * Returned is the new date object
      * Example: 04.May.1993 13:07:25 -> subMinute(9); -> 04.May.1993 12:58:25
      *
-     * @param  string|integer|array|\Zend\Date\Date  $minute  Minute to sub
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $minute  Minute to sub
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function subMinute($minute, $locale = null)
     {
@@ -4225,10 +4225,10 @@ class Date extends DateObject
      * For example: 10:30:25 -> compareMinute(30) -> 0
      * Returns if equal, earlier or later
      *
-     * @param  string|integer|array|\Zend\Date\Date  $minute  Hour to compare
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @param  string|integer|array|\Zend2\Date\Date  $minute  Hour to compare
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
      * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function compareMinute($minute, $locale = null)
     {
@@ -4240,8 +4240,8 @@ class Date extends DateObject
      * Returns the second as new date object
      * Example: 02.Feb.1986 10:30:25 -> 01.Jan.1970 00:00:25
      *
-     * @param  string|\Zend\Locale\Locale  $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date
+     * @param  string|\Zend2\Locale\Locale  $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date
      */
     public function getSecond($locale = null)
     {
@@ -4261,10 +4261,10 @@ class Date extends DateObject
      * Returned is the new date object
      * Example: 04.May.1993 13:07:25 -> setSecond(100); -> 04.May.1993 13:08:40
      *
-     * @param  string|integer|array|\Zend\Date\Date $second Second to set
-     * @param  string|\Zend\Locale\Locale             $locale (Optional) Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date $second Second to set
+     * @param  string|\Zend2\Locale\Locale             $locale (Optional) Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function setSecond($second, $locale = null)
     {
@@ -4278,10 +4278,10 @@ class Date extends DateObject
      * Returned is the new date object
      * Example: 04.May.1993 13:07:25 -> addSecond(65); -> 04.May.1993 13:08:30
      *
-     * @param  string|integer|array|\Zend\Date\Date $second Second to add
-     * @param  string|\Zend\Locale\Locale             $locale (Optional) Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date $second Second to add
+     * @param  string|\Zend2\Locale\Locale             $locale (Optional) Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function addSecond($second, $locale = null)
     {
@@ -4295,10 +4295,10 @@ class Date extends DateObject
      * Returned is the new date object
      * Example: 04.May.1993 13:07:25 -> subSecond(10); -> 04.May.1993 13:07:15
      *
-     * @param  string|integer|array|\Zend\Date\Date $second Second to sub
-     * @param  string|\Zend\Locale\Locale             $locale (Optional) Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date $second Second to sub
+     * @param  string|\Zend2\Locale\Locale             $locale (Optional) Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function subSecond($second, $locale = null)
     {
@@ -4311,10 +4311,10 @@ class Date extends DateObject
      * For example: 10:30:25 -> compareSecond(25) -> 0
      * Returns if equal, earlier or later
      *
-     * @param  string|integer|array|\Zend\Date\Date $second Second to compare
-     * @param  string|\Zend\Locale\Locale             $locale (Optional) Locale for parsing input
+     * @param  string|integer|array|\Zend2\Date\Date $second Second to compare
+     * @param  string|\Zend2\Locale\Locale             $locale (Optional) Locale for parsing input
      * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws \Zend\Date\Exception
+     * @throws \Zend2\Date\Exception
      */
     public function compareSecond($second, $locale = null)
     {
@@ -4337,8 +4337,8 @@ class Date extends DateObject
      * Sets a new precision for fractional seconds
      *
      * @param  integer $precision Precision for the fractional datepart 3 = milliseconds
-     * @throws \Zend\Date\Exception
-     * @return \Zend\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
+     * @return \Zend2\Date\Date Provides fluid interface
      */
     public function setFractionalPrecision($precision)
     {
@@ -4372,9 +4372,9 @@ class Date extends DateObject
      * Sets new milliseconds for the date object
      * Example: setMilliSecond(550, 2) -> equals +5 Sec +50 MilliSec
      *
-     * @param  integer|\Zend\Date\Date $milli     (Optional) Millisecond to set, when null the actual millisecond is set
+     * @param  integer|\Zend2\Date\Date $milli     (Optional) Millisecond to set, when null the actual millisecond is set
      * @param  integer           $precision (Optional) Fraction precision of the given milliseconds
-     * @return \Zend\Date\Date Provides fluid interface
+     * @return \Zend2\Date\Date Provides fluid interface
      */
     public function setMilliSecond($milli = null, $precision = null)
     {
@@ -4403,9 +4403,9 @@ class Date extends DateObject
     /**
      * Adds milliseconds to the date object
      *
-     * @param  integer|\Zend\Date\Date $milli     (Optional) Millisecond to add, when null the actual millisecond is added
+     * @param  integer|\Zend2\Date\Date $milli     (Optional) Millisecond to add, when null the actual millisecond is added
      * @param  integer           $precision (Optional) Fractional precision for the given milliseconds
-     * @return \Zend\Date\Date Provides fluid interface
+     * @return \Zend2\Date\Date Provides fluid interface
      */
     public function addMilliSecond($milli = null, $precision = null)
     {
@@ -4457,9 +4457,9 @@ class Date extends DateObject
     /**
      * Subtracts a millisecond
      *
-     * @param  integer|\Zend\Date\Date $milli     (Optional) Millisecond to sub, when null the actual millisecond is subtracted
+     * @param  integer|\Zend2\Date\Date $milli     (Optional) Millisecond to sub, when null the actual millisecond is subtracted
      * @param  integer           $precision (Optional) Fractional precision for the given milliseconds
-     * @return \Zend\Date\Date Provides fluid interface
+     * @return \Zend2\Date\Date Provides fluid interface
      */
     public function subMilliSecond($milli = null, $precision = null)
     {
@@ -4470,9 +4470,9 @@ class Date extends DateObject
     /**
      * Compares only the millisecond part, returning the difference
      *
-     * @param  integer|\Zend\Date\Date  $milli  OPTIONAL Millisecond to compare, when null the actual millisecond is compared
+     * @param  integer|\Zend2\Date\Date  $milli  OPTIONAL Millisecond to compare, when null the actual millisecond is compared
      * @param  integer            $precision  OPTIONAL Fractional precision for the given milliseconds
-     * @throws \Zend\Date\Exception On invalid input
+     * @throws \Zend2\Date\Exception On invalid input
      * @return integer  0 = equal, 1 = later, -1 = earlier
      */
     public function compareMilliSecond($milli = null, $precision = null)
@@ -4517,8 +4517,8 @@ class Date extends DateObject
      * Returns the week as new date object using monday as begining of the week
      * Example: 12.Jan.2007 -> 08.Jan.1970 00:00:00
      *
-     * @param string|\Zend\Locale\Locale $locale OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date
+     * @param string|\Zend2\Locale\Locale $locale OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date
      */
     public function getWeek($locale = null)
     {
@@ -4536,10 +4536,10 @@ class Date extends DateObject
      * Returned is the new date object
      * Example: 09.Jan.2007 13:07:25 -> setWeek(1); -> 02.Jan.2007 13:07:25
      *
-     * @param  string|integer|array|\Zend\Date\Date  $week    Week to set
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $week    Week to set
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function setWeek($week, $locale = null)
     {
@@ -4551,10 +4551,10 @@ class Date extends DateObject
      * Returned is the new date object
      * Example: 09.Jan.2007 13:07:25 -> addWeek(1); -> 16.Jan.2007 13:07:25
      *
-     * @param  string|integer|array|\Zend\Date\Date  $week    Week to add
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $week    Week to add
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function addWeek($week, $locale = null)
     {
@@ -4566,10 +4566,10 @@ class Date extends DateObject
      * Returned is the new date object
      * Example: 09.Jan.2007 13:07:25 -> subWeek(1); -> 02.Jan.2007 13:07:25
      *
-     * @param  string|integer|array|\Zend\Date\Date  $week    Week to sub
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
-     * @return \Zend\Date\Date Provides fluid interface
-     * @throws \Zend\Date\Exception
+     * @param  string|integer|array|\Zend2\Date\Date  $week    Week to sub
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @return \Zend2\Date\Date Provides fluid interface
+     * @throws \Zend2\Date\Exception
      */
     public function subWeek($week, $locale = null)
     {
@@ -4582,8 +4582,8 @@ class Date extends DateObject
      * Returns if equal, earlier or later
      * Example: 09.Jan.2007 13:07:25 -> compareWeek(2); -> 0
      *
-     * @param  string|integer|array|\Zend\Date\Date  $week    Week to compare
-     * @param  string|\Zend\Locale\Locale              $locale  OPTIONAL Locale for parsing input
+     * @param  string|integer|array|\Zend2\Date\Date  $week    Week to compare
+     * @param  string|\Zend2\Locale\Locale              $locale  OPTIONAL Locale for parsing input
      * @return integer 0 = equal, 1 = later, -1 = earlier
      */
     public function compareWeek($week, $locale = null)
@@ -4598,15 +4598,15 @@ class Date extends DateObject
      * Example: 'de_XX' will be set to 'de' because 'de_XX' does not exist
      * 'xx_YY' will be set to 'root' because 'xx' does not exist
      *
-     * @param  string|\Zend\Locale\Locale $locale (Optional) Locale for parsing input
-     * @throws \Zend\Date\Exception When the given locale does not exist
-     * @return \Zend\Date\Date Provides fluent interface
+     * @param  string|\Zend2\Locale\Locale $locale (Optional) Locale for parsing input
+     * @throws \Zend2\Date\Exception When the given locale does not exist
+     * @return \Zend2\Date\Date Provides fluent interface
      */
     public function setLocale($locale = null)
     {
         try {
             $this->_locale = Locale::findLocale($locale);
-        } catch (\Zend\Locale\Exception $e) {
+        } catch (\Zend2\Locale\Exception $e) {
             throw new Exception\InvalidArgumentException($e->getMessage(), 0, $e);
         }
 
@@ -4630,9 +4630,9 @@ class Date extends DateObject
      * If no format is given the standard dateformat for the actual locale is used.
      * f.e. 30.February.2007 will return false if format is 'dd.MMMM.YYYY'
      *
-     * @param  string|array|\Zend\Date\Date $date   Date to parse for correctness
+     * @param  string|array|\Zend2\Date\Date $date   Date to parse for correctness
      * @param  string                 $format (Optional) Format for parsing the date string
-     * @param  string|\Zend\Locale\Locale     $locale (Optional) Locale for parsing date parts
+     * @param  string|\Zend2\Locale\Locale     $locale (Optional) Locale for parsing date parts
      * @return boolean                True when all date parts are correct
      */
     public static function isDate($date, $format = null, $locale = null)
@@ -4677,7 +4677,7 @@ class Date extends DateObject
                     'format_type' => 'iso',
                     'fix_date'    => false,
                 ));
-            } catch (\Zend\Locale\Exception $e) {
+            } catch (\Zend2\Locale\Exception $e) {
                 // Date can not be parsed
                 return false;
             }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,29 +12,29 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage Session
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_WindowsAzure_Exception
- * @uses       Zend_Service_WindowsAzure_Storage_DynamicTableEntity
- * @uses       Zend_Service_WindowsAzure_Storage_Table
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @uses       Zend2_Service_WindowsAzure_Exception
+ * @uses       Zend2_Service_WindowsAzure_Storage_DynamicTableEntity
+ * @uses       Zend2_Service_WindowsAzure_Storage_Table
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage Session
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_WindowsAzure_SessionHandler
+class Zend2_Service_WindowsAzure_SessionHandler
 {
     /**
      * Table storage
      * 
-     * @var Zend_Service_WindowsAzure_Storage_Table
+     * @var Zend2_Service_WindowsAzure_Storage_Table
      */
     protected $_tableStorage;
     
@@ -53,13 +53,13 @@ class Zend_Service_WindowsAzure_SessionHandler
     protected $_sessionTablePartition;
 	
     /**
-     * Creates a new Zend_Service_WindowsAzure_SessionHandler instance
+     * Creates a new Zend2_Service_WindowsAzure_SessionHandler instance
      * 
-     * @param Zend_Service_WindowsAzure_Storage_Table $tableStorage Table storage
+     * @param Zend2_Service_WindowsAzure_Storage_Table $tableStorage Table storage
      * @param string $sessionTable Session table name
      * @param string $sessionTablePartition Session table partition
      */
-    public function __construct(Zend_Service_WindowsAzure_Storage_Table $tableStorage, $sessionTable = 'phpsessions', $sessionTablePartition = 'sessions')
+    public function __construct(Zend2_Service_WindowsAzure_Storage_Table $tableStorage, $sessionTable = 'phpsessions', $sessionTablePartition = 'sessions')
 	{
 	    // Set properties
 		$this->_tableStorage = $tableStorage;
@@ -127,7 +127,7 @@ class Zend_Service_WindowsAzure_SessionHandler
             );
             return base64_decode($sessionRecord->serializedData);
         }
-        catch (Zend_Service_WindowsAzure_Exception $ex)
+        catch (Zend2_Service_WindowsAzure_Exception $ex)
         {
             return '';
         }
@@ -141,7 +141,7 @@ class Zend_Service_WindowsAzure_SessionHandler
      */
     public function write($id, $serializedData)
     {
-        $sessionRecord = new Zend_Service_WindowsAzure_Storage_DynamicTableEntity($this->_sessionTablePartition, $id);
+        $sessionRecord = new Zend2_Service_WindowsAzure_Storage_DynamicTableEntity($this->_sessionTablePartition, $id);
         $sessionRecord->sessionExpires = time();
         $sessionRecord->serializedData = base64_encode($serializedData);
         
@@ -151,7 +151,7 @@ class Zend_Service_WindowsAzure_SessionHandler
         {
             $this->_tableStorage->updateEntity($this->_sessionTable, $sessionRecord);
         }
-        catch (Zend_Service_WindowsAzure_Exception $unknownRecord)
+        catch (Zend2_Service_WindowsAzure_Exception $unknownRecord)
         {
             $this->_tableStorage->insertEntity($this->_sessionTable, $sessionRecord);
         }
@@ -176,7 +176,7 @@ class Zend_Service_WindowsAzure_SessionHandler
             
             return true;
         }
-        catch (Zend_Service_WindowsAzure_Exception $ex)
+        catch (Zend2_Service_WindowsAzure_Exception $ex)
         {
             return false;
         }
@@ -203,7 +203,7 @@ class Zend_Service_WindowsAzure_SessionHandler
             }
             return true;
         }
-        catch (Zend_Service_WindowsAzure_exception $ex)
+        catch (Zend2_Service_WindowsAzure_exception $ex)
         {
             return false;
         }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mime
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Mime
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mime;
+namespace Zend2\Mime;
 
 /**
- * @uses       \Zend\Mime\Exception\RuntimeException
- * @uses       \Zend\Mime\Mime
- * @category   Zend
- * @package    Zend_Mime
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Mime\Exception\RuntimeException
+ * @uses       \Zend2\Mime\Mime
+ * @category   Zend2
+ * @package    Zend2_Mime
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Decode
@@ -81,7 +81,7 @@ class Decode
      *
      * @param  string $message  raw message content
      * @param  string $boundary boundary as found in content-type
-     * @param  string $EOL EOL string; defaults to {@link Zend_Mime::LINEEND}
+     * @param  string $EOL EOL string; defaults to {@link Zend2_Mime::LINEEND}
      * @return array|null parts as array('header' => array(name => value), 'body' => content), null if no parts found
      * @throws Exception\RuntimeException
      */
@@ -111,7 +111,7 @@ class Decode
      * @param  string $message raw message with header and optional content
      * @param  array  $headers output param, array with headers as array(name => value)
      * @param  string $body    output param, content of message
-     * @param  string $EOL EOL string; defaults to {@link Zend_Mime::LINEEND}
+     * @param  string $EOL EOL string; defaults to {@link Zend2_Mime::LINEEND}
      * @return null
      */
     public static function splitMessage($message, &$headers, &$body, $EOL = Mime::LINEEND)

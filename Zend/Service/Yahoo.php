@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,33 +12,33 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Yahoo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * @uses       DOMDocument
  * @uses       DOMXPath
- * @uses       Zend_Rest_Client
- * @uses       Zend\Service\Exception
- * @uses       Zend_Service_Yahoo_ImageResultSet
- * @uses       Zend_Service_Yahoo_InlinkDataResultSet
- * @uses       Zend_Service_Yahoo_LocalResultSet
- * @uses       Zend_Service_Yahoo_NewsResultSet
- * @uses       Zend_Service_Yahoo_PageDataResultSet
- * @uses       Zend_Service_Yahoo_VideoResultSet
- * @uses       Zend_Service_Yahoo_WebResultSet
- * @uses       Zend\Validator\Between
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Rest_Client
+ * @uses       Zend2\Service\Exception
+ * @uses       Zend2_Service_Yahoo_ImageResultSet
+ * @uses       Zend2_Service_Yahoo_InlinkDataResultSet
+ * @uses       Zend2_Service_Yahoo_LocalResultSet
+ * @uses       Zend2_Service_Yahoo_NewsResultSet
+ * @uses       Zend2_Service_Yahoo_PageDataResultSet
+ * @uses       Zend2_Service_Yahoo_VideoResultSet
+ * @uses       Zend2_Service_Yahoo_WebResultSet
+ * @uses       Zend2\Validator\Between
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Yahoo
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_Yahoo
+class Zend2_Service_Yahoo
 {
     /**
      * Yahoo Developer Application ID
@@ -50,7 +50,7 @@ class Zend_Service_Yahoo
     /**
      * Reference to the REST client
      *
-     * @var Zend_Rest_Client
+     * @var Zend2_Rest_Client
      */
     protected $_rest;
 
@@ -64,7 +64,7 @@ class Zend_Service_Yahoo
     public function __construct($appId)
     {
         $this->appId = (string) $appId;
-        $this->_rest = new Zend\Rest\Client\RestClient('http://search.yahooapis.com');
+        $this->_rest = new Zend2\Rest\Client\RestClient('http://search.yahooapis.com');
     }
 
 
@@ -79,8 +79,8 @@ class Zend_Service_Yahoo
      *
      * @param  string $query    the query being run
      * @param  array  $options  any optional parameters
-     * @return Zend_Service_Yahoo_ResultSet  The return set
-     * @throws Zend\Service\Exception
+     * @return Zend2_Service_Yahoo_ResultSet  The return set
+     * @throws Zend2\Service\Exception
      */
     public function inlinkDataSearch($query, array $options = array())
     {
@@ -95,7 +95,7 @@ class Zend_Service_Yahoo
         $response = $this->_rest->restGet('/SiteExplorerService/V1/inlinkData', $options);
 
         if ($response->isError()) {
-            throw new Zend\Service\Exception('An error occurred sending request. Status code: ' .
+            throw new Zend2\Service\Exception('An error occurred sending request. Status code: ' .
                                              $response->getStatus());
         }
 
@@ -104,7 +104,7 @@ class Zend_Service_Yahoo
 
         self::_checkErrors($dom);
 
-        return new Zend_Service_Yahoo_InlinkDataResultSet($dom);
+        return new Zend2_Service_Yahoo_InlinkDataResultSet($dom);
     }
 
 
@@ -123,8 +123,8 @@ class Zend_Service_Yahoo
      *
      * @param  string $query   the query to be run
      * @param  array  $options an optional array of query options
-     * @return Zend_Service_Yahoo_ImageResultSet the search results
-     * @throws Zend\Service\Exception
+     * @return Zend2_Service_Yahoo_ImageResultSet the search results
+     * @throws Zend2\Service\Exception
      */
     public function imageSearch($query, array $options = array())
     {
@@ -143,7 +143,7 @@ class Zend_Service_Yahoo
         $response = $this->_rest->restGet('/ImageSearchService/V1/imageSearch', $options);
 
         if ($response->isError()) {
-            throw new Zend\Service\Exception('An error occurred sending request. Status code: ' .
+            throw new Zend2\Service\Exception('An error occurred sending request. Status code: ' .
                                              $response->getStatus());
         }
 
@@ -152,7 +152,7 @@ class Zend_Service_Yahoo
 
         self::_checkErrors($dom);
 
-        return new Zend_Service_Yahoo_ImageResultSet($dom);
+        return new Zend2_Service_Yahoo_ImageResultSet($dom);
     }
 
 
@@ -180,8 +180,8 @@ class Zend_Service_Yahoo
      *
      * @param  string $query    The query string you want to run
      * @param  array  $options  The search options, including location
-     * @return Zend_Service_Yahoo_LocalResultSet The results
-     * @throws Zend\Service\Exception
+     * @return Zend2_Service_Yahoo_LocalResultSet The results
+     * @throws Zend2\Service\Exception
      */
     public function localSearch($query, array $options = array())
     {
@@ -199,7 +199,7 @@ class Zend_Service_Yahoo
         $response = $this->_rest->restGet('/LocalSearchService/V1/localSearch', $options);
 
         if ($response->isError()) {
-            throw new Zend\Service\Exception('An error occurred sending request. Status code: ' .
+            throw new Zend2\Service\Exception('An error occurred sending request. Status code: ' .
                                              $response->getStatus());
         }
 
@@ -208,7 +208,7 @@ class Zend_Service_Yahoo
 
         self::_checkErrors($dom);
 
-        return new Zend_Service_Yahoo_LocalResultSet($dom);
+        return new Zend2_Service_Yahoo_LocalResultSet($dom);
     }
 
 
@@ -227,8 +227,8 @@ class Zend_Service_Yahoo
      *
      * @param  string $query    The query to run
      * @param  array  $options  The array of optional parameters
-     * @return Zend_Service_Yahoo_NewsResultSet  The query return set
-     * @throws Zend\Service\Exception
+     * @return Zend2_Service_Yahoo_NewsResultSet  The query return set
+     * @throws Zend2\Service\Exception
      */
     public function newsSearch($query, array $options = array())
     {
@@ -245,7 +245,7 @@ class Zend_Service_Yahoo
         $response = $this->_rest->restGet('/NewsSearchService/V1/newsSearch', $options);
 
         if ($response->isError()) {
-            throw new Zend\Service\Exception('An error occurred sending request. Status code: ' .
+            throw new Zend2\Service\Exception('An error occurred sending request. Status code: ' .
                                              $response->getStatus());
         }
 
@@ -254,7 +254,7 @@ class Zend_Service_Yahoo
 
         self::_checkErrors($dom);
 
-        return new Zend_Service_Yahoo_NewsResultSet($dom);
+        return new Zend2_Service_Yahoo_NewsResultSet($dom);
     }
 
 
@@ -268,8 +268,8 @@ class Zend_Service_Yahoo
      *
      * @param  string $query    the query being run
      * @param  array  $options  any optional parameters
-     * @return Zend_Service_Yahoo_ResultSet  The return set
-     * @throws Zend\Service\Exception
+     * @return Zend2_Service_Yahoo_ResultSet  The return set
+     * @throws Zend2\Service\Exception
      */
     public function pageDataSearch($query, array $options = array())
     {
@@ -284,7 +284,7 @@ class Zend_Service_Yahoo
         $response = $this->_rest->restGet('/SiteExplorerService/V1/pageData', $options);
 
         if ($response->isError()) {
-            throw new Zend\Service\Exception('An error occurred sending request. Status code: ' .
+            throw new Zend2\Service\Exception('An error occurred sending request. Status code: ' .
                                              $response->getStatus());
         }
 
@@ -293,7 +293,7 @@ class Zend_Service_Yahoo
 
         self::_checkErrors($dom);
 
-        return new Zend_Service_Yahoo_PageDataResultSet($dom);
+        return new Zend2_Service_Yahoo_PageDataResultSet($dom);
     }
 
 
@@ -311,8 +311,8 @@ class Zend_Service_Yahoo
      *
      * @param  string $query   the query to be run
      * @param  array  $options an optional array of query options
-     * @return Zend_Service_Yahoo_VideoResultSet the search results
-     * @throws Zend\Service\Exception
+     * @return Zend2_Service_Yahoo_VideoResultSet the search results
+     * @throws Zend2\Service\Exception
      */
     public function videoSearch($query, array $options = array())
     {
@@ -330,7 +330,7 @@ class Zend_Service_Yahoo
         $response = $this->_rest->restGet('/VideoSearchService/V1/videoSearch', $options);
 
         if ($response->isError()) {
-            throw new Zend\Service\Exception('An error occurred sending request. Status code: ' .
+            throw new Zend2\Service\Exception('An error occurred sending request. Status code: ' .
                                              $response->getStatus());
         }
 
@@ -339,7 +339,7 @@ class Zend_Service_Yahoo
 
         self::_checkErrors($dom);
 
-        return new Zend_Service_Yahoo_VideoResultSet($dom);
+        return new Zend2_Service_Yahoo_VideoResultSet($dom);
     }
 
 
@@ -361,8 +361,8 @@ class Zend_Service_Yahoo
      *
      * @param  string $query    the query being run
      * @param  array  $options  any optional parameters
-     * @return Zend_Service_Yahoo_WebResultSet  The return set
-     * @throws Zend\Service\Exception
+     * @return Zend2_Service_Yahoo_WebResultSet  The return set
+     * @throws Zend2\Service\Exception
      */
     public function webSearch($query, array $options = array())
     {
@@ -379,7 +379,7 @@ class Zend_Service_Yahoo
         $response = $this->_rest->restGet('/WebSearchService/V1/webSearch', $options);
 
         if ($response->isError()) {
-            throw new Zend\Service\Exception('An error occurred sending request. Status code: ' .
+            throw new Zend2\Service\Exception('An error occurred sending request. Status code: ' .
                                              $response->getStatus());
         }
 
@@ -388,14 +388,14 @@ class Zend_Service_Yahoo
 
         self::_checkErrors($dom);
 
-        return new Zend_Service_Yahoo_WebResultSet($dom);
+        return new Zend2_Service_Yahoo_WebResultSet($dom);
     }
 
 
     /**
      * Returns a reference to the REST client
      *
-     * @return Zend_Rest_Client
+     * @return Zend2_Rest_Client
      */
     public function getRestClient()
     {
@@ -408,7 +408,7 @@ class Zend_Service_Yahoo
      *
      * @param  array $options
      * @return void
-     * @throws Zend\Service\Exception
+     * @throws Zend2\Service\Exception
      */
     protected function _validateInlinkDataSearch(array $options)
     {
@@ -416,14 +416,14 @@ class Zend_Service_Yahoo
 
         $this->_compareOptions($options, $validOptions);
 
-        $between = new Zend\Validator\Between(1, 100, true);
+        $between = new Zend2\Validator\Between(1, 100, true);
 
         if (isset($options['results']) && !$between->setMin(1)->setMax(100)->isValid($options['results'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'results': {$options['results']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'results': {$options['results']}");
         }
 
         if (isset($options['start']) && !$between->setMin(1)->setMax(1000)->isValid($options['start'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'start': {$options['start']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'start': {$options['start']}");
         }
 
         if (isset($options['omit_inlinks'])) {
@@ -437,7 +437,7 @@ class Zend_Service_Yahoo
      *
      * @param  array $options
      * @return void
-     * @throws Zend\Service\Exception
+     * @throws Zend2\Service\Exception
      */
     protected function _validateImageSearch(array $options)
     {
@@ -452,18 +452,18 @@ class Zend_Service_Yahoo
                 case 'phrase':
                     break;
                 default:
-                    throw new Zend\Service\Exception("Invalid value for option 'type': '{$options['type']}'");
+                    throw new Zend2\Service\Exception("Invalid value for option 'type': '{$options['type']}'");
             }
         }
 
-        $between = new Zend\Validator\Between(1, 50, true);
+        $between = new Zend2\Validator\Between(1, 50, true);
 
         if (isset($options['results']) && !$between->setMin(1)->setMax(50)->isValid($options['results'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'results': {$options['results']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'results': {$options['results']}");
         }
 
         if (isset($options['start']) && !$between->setMin(1)->setMax(1000)->isValid($options['start'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'start': {$options['start']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'start': {$options['start']}");
         }
 
         if (isset($options['format'])) {
@@ -475,7 +475,7 @@ class Zend_Service_Yahoo
                 case 'png':
                     break;
                 default:
-                    throw new Zend\Service\Exception("Invalid value for option 'format': {$options['format']}");
+                    throw new Zend2\Service\Exception("Invalid value for option 'format': {$options['format']}");
             }
         }
 
@@ -486,7 +486,7 @@ class Zend_Service_Yahoo
                 case 'bw':
                     break;
                 default:
-                    throw new Zend\Service\Exception("Invalid value for option 'coloration': "
+                    throw new Zend2\Service\Exception("Invalid value for option 'coloration': "
                                                    . "{$options['coloration']}");
             }
         }
@@ -498,7 +498,7 @@ class Zend_Service_Yahoo
      *
      * @param  array $options
      * @return void
-     * @throws Zend\Service\Exception
+     * @throws Zend2\Service\Exception
      */
     protected function _validateLocalSearch(array $options)
     {
@@ -507,26 +507,26 @@ class Zend_Service_Yahoo
 
         $this->_compareOptions($options, $validOptions);
 
-        $between = new Zend\Validator\Between(1, 20, true);
+        $between = new Zend2\Validator\Between(1, 20, true);
 
         if (isset($options['results']) && !$between->setMin(1)->setMax(20)->isValid($options['results'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'results': {$options['results']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'results': {$options['results']}");
         }
 
         if (isset($options['start']) && !$between->setMin(1)->setMax(1000)->isValid($options['start'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'start': {$options['start']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'start': {$options['start']}");
         }
 
         if (isset($options['longitude']) && !$between->setMin(-90)->setMax(90)->isValid($options['longitude'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'longitude': {$options['longitude']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'longitude': {$options['longitude']}");
         }
 
         if (isset($options['latitude']) && !$between->setMin(-180)->setMax(180)->isValid($options['latitude'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'latitude': {$options['latitude']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'latitude': {$options['latitude']}");
         }
 
         if (isset($options['zip']) && !preg_match('/(^\d{5}$)|(^\d{5}-\d{4}$)/', $options['zip'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'zip': {$options['zip']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'zip': {$options['zip']}");
         }
 
         $hasLocation = false;
@@ -539,11 +539,11 @@ class Zend_Service_Yahoo
         }
 
         if (!$hasLocation && (!isset($options['latitude']) || !isset($options['longitude']))) {
-            throw new Zend\Service\Exception('Location data are required but missing');
+            throw new Zend2\Service\Exception('Location data are required but missing');
         }
 
         if (!in_array($options['sort'], array('relevance', 'title', 'distance', 'rating'))) {
-            throw new Zend\Service\Exception("Invalid value for option 'sort': {$options['sort']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'sort': {$options['sort']}");
         }
     }
 
@@ -553,7 +553,7 @@ class Zend_Service_Yahoo
      *
      * @param  array $options
      * @return void
-     * @throws Zend\Service\Exception
+     * @throws Zend2\Service\Exception
      */
     protected function _validateNewsSearch(array $options)
     {
@@ -561,14 +561,14 @@ class Zend_Service_Yahoo
 
         $this->_compareOptions($options, $validOptions);
 
-        $between = new Zend\Validator\Between(1, 50, true);
+        $between = new Zend2\Validator\Between(1, 50, true);
 
         if (isset($options['results']) && !$between->setMin(1)->setMax(50)->isValid($options['results'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'results': {$options['results']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'results': {$options['results']}");
         }
 
         if (isset($options['start']) && !$between->setMin(1)->setMax(1000)->isValid($options['start'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'start': {$options['start']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'start': {$options['start']}");
         }
 
         if (isset($options['language'])) {
@@ -585,7 +585,7 @@ class Zend_Service_Yahoo
      *
      * @param  array $options
      * @return void
-     * @throws Zend\Service\Exception
+     * @throws Zend2\Service\Exception
      */
     protected function _validatePageDataSearch(array $options)
     {
@@ -593,14 +593,14 @@ class Zend_Service_Yahoo
 
         $this->_compareOptions($options, $validOptions);
 
-        $between = new Zend\Validator\Between(1, 100, true);
+        $between = new Zend2\Validator\Between(1, 100, true);
 
         if (isset($options['results']) && !$between->setMin(1)->setMax(100)->isValid($options['results'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'results': {$options['results']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'results': {$options['results']}");
         }
 
         if (isset($options['start']) && !$between->setMin(1)->setMax(1000)->isValid($options['start'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'start': {$options['start']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'start': {$options['start']}");
         }
     }
 
@@ -610,7 +610,7 @@ class Zend_Service_Yahoo
      *
      * @param  array $options
      * @return void
-     * @throws Zend\Service\Exception
+     * @throws Zend2\Service\Exception
      */
     protected function _validateVideoSearch(array $options)
     {
@@ -622,14 +622,14 @@ class Zend_Service_Yahoo
             $this->_validateInArray('type', $options['type'], array('all', 'any', 'phrase'));
         }
 
-        $between = new Zend\Validator\Between(1, 50, true);
+        $between = new Zend2\Validator\Between(1, 50, true);
 
         if (isset($options['results']) && !$between->setMin(1)->setMax(50)->isValid($options['results'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'results': {$options['results']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'results': {$options['results']}");
         }
 
         if (isset($options['start']) && !$between->setMin(1)->setMax(1000)->isValid($options['start'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'start': {$options['start']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'start': {$options['start']}");
         }
 
         if (isset($options['format'])) {
@@ -643,7 +643,7 @@ class Zend_Service_Yahoo
      *
      * @param  array $options
      * @return void
-     * @throws Zend\Service\Exception
+     * @throws Zend2\Service\Exception
      */
     protected function _validateWebSearch(array $options)
     {
@@ -652,14 +652,14 @@ class Zend_Service_Yahoo
 
         $this->_compareOptions($options, $validOptions);
 
-        $between = new Zend\Validator\Between(1, 100, true);
+        $between = new Zend2\Validator\Between(1, 100, true);
 
         if (isset($options['results']) && !$between->setMin(1)->setMax(100)->isValid($options['results'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'results': {$options['results']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'results': {$options['results']}");
         }
 
         if (isset($options['start']) && !$between->setMin(1)->setMax(1000)->isValid($options['start'])) {
-            throw new Zend\Service\Exception("Invalid value for option 'start': {$options['start']}");
+            throw new Zend2\Service\Exception("Invalid value for option 'start': {$options['start']}");
         }
 
         if (isset($options['language'])) {
@@ -705,7 +705,7 @@ class Zend_Service_Yahoo
      *
      * @param  string $lang Language code
      * @return void
-     * @throws Zend\Service\Exception
+     * @throws Zend2\Service\Exception
      */
     protected function _validateLanguage($lang)
     {
@@ -714,7 +714,7 @@ class Zend_Service_Yahoo
             'es', 'sv', 'th', 'tr'
             );
         if (!in_array($lang, $languages)) {
-            throw new Zend\Service\Exception("The selected language '$lang' is not supported");
+            throw new Zend2\Service\Exception("The selected language '$lang' is not supported");
         }
     }
 
@@ -725,13 +725,13 @@ class Zend_Service_Yahoo
      * @param  array $options      User specified options
      * @param  array $validOptions Valid options
      * @return void
-     * @throws Zend\Service\Exception if difference is found (e.g., unsupported query option)
+     * @throws Zend2\Service\Exception if difference is found (e.g., unsupported query option)
      */
     protected function _compareOptions(array $options, array $validOptions)
     {
         $difference = array_diff(array_keys($options), $validOptions);
         if ($difference) {
-            throw new Zend\Service\Exception('The following parameters are invalid: ' . implode(', ', $difference));
+            throw new Zend2\Service\Exception('The following parameters are invalid: ' . implode(', ', $difference));
         }
     }
 
@@ -743,12 +743,12 @@ class Zend_Service_Yahoo
      * @param  mixed  $value Value
      * @param  array  $array Array in which to check for the value
      * @return void
-     * @throws Zend\Service\Exception
+     * @throws Zend2\Service\Exception
      */
     protected function _validateInArray($name, $value, array $array)
     {
         if (!in_array($value, $array)) {
-            throw new Zend\Service\Exception("Invalid value for option '$name': $value");
+            throw new Zend2\Service\Exception("Invalid value for option '$name': $value");
         }
     }
 
@@ -758,7 +758,7 @@ class Zend_Service_Yahoo
      *
      * @param  DOMDocument $dom DOM Object representing the result XML
      * @return void
-     * @throws Zend\Service\Exception Thrown when the result from Yahoo! is an error
+     * @throws Zend2\Service\Exception Thrown when the result from Yahoo! is an error
      */
     protected static function _checkErrors(DOMDocument $dom)
     {
@@ -767,7 +767,7 @@ class Zend_Service_Yahoo
 
         if ($xpath->query('//yapi:Error')->length >= 1) {
             $message = $xpath->query('//yapi:Error/yapi:Message/text()')->item(0)->data;
-            throw new Zend\Service\Exception($message);
+            throw new Zend2\Service\Exception($message);
         }
     }
 }

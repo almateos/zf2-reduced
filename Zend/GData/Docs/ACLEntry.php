@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\Docs;
+namespace Zend2\GData\Docs;
 
-use Zend\GData\Gapps;
+use Zend2\GData\Gapps;
 
 /**
  * Data model class for a Google Docs ACL Entry.
@@ -31,27 +31,27 @@ use Zend\GData\Gapps;
  *
  * This class represents <atom:entry> in the Google Data protocol.
  *
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\Extension\FeedLink
- * @uses       \Zend\GData\GApps
- * @uses       \Zend\GData\Docs\Extension\ACLRole
- * @uses       \Zend\GData\Docs\Extension\ACLScope
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\Extension\FeedLink
+ * @uses       \Zend2\GData\GApps
+ * @uses       \Zend2\GData\Docs\Extension\ACLRole
+ * @uses       \Zend2\GData\Docs\Extension\ACLScope
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class ACLEntry extends \Zend\GData\Entry
+class ACLEntry extends \Zend2\GData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\Docs\ACLEntry';
+    protected $_entryClassName = 'Zend2\GData\Docs\ACLEntry';
 
     /**
      * <gAcl:role> element containing information about the
      * role of the ACL.
      *
-     * @var \Zend\GData\Docs\Extension\ACLRole
+     * @var \Zend2\GData\Docs\Extension\ACLRole
      */
     protected $_role = null;
 
@@ -59,7 +59,7 @@ class ACLEntry extends \Zend\GData\Entry
      * <gAcl:scope> element containing the information about
      * the scope of the ACL (user type and user id);
      *
-     * @var \Zend\GData\Docs\Extension\ACLScope
+     * @var \Zend2\GData\Docs\Extension\ACLScope
      */
     protected $_scope = null;
 
@@ -127,7 +127,7 @@ class ACLEntry extends \Zend\GData\Entry
      * Get the value of the role property for this object.
      *
      * @see setRole
-     * @return \Zend\GData\GApps\Extension\Login The requested object.
+     * @return \Zend2\GData\GApps\Extension\Login The requested object.
      */
     public function getRole()
     {
@@ -137,9 +137,9 @@ class ACLEntry extends \Zend\GData\Entry
     /**
      * Set the value of the role property for this object.
      *
-     * @param \Zend\GData\Docs\Extension\ACLRole $value The desired value for
+     * @param \Zend2\GData\Docs\Extension\ACLRole $value The desired value for
      *          this instance's login property.
-     * @return \Zend\GData\Docs\ACLEntry Provides a fluent interface.
+     * @return \Zend2\GData\Docs\ACLEntry Provides a fluent interface.
      */
     public function setRole($value)
     {
@@ -151,7 +151,7 @@ class ACLEntry extends \Zend\GData\Entry
      * Get the value of the scope property for this object.
      *
      * @see setScope
-     * @return \Zend\GData\Docs\Extension\ACLScope The requested object.
+     * @return \Zend2\GData\Docs\Extension\ACLScope The requested object.
      */
     public function getScope()
     {
@@ -161,9 +161,9 @@ class ACLEntry extends \Zend\GData\Entry
     /**
      * Set the value of the scope property for this object.
      *
-     * @param \Zend\GData\Docs\Extension\ACLScope $value The desired value for
+     * @param \Zend2\GData\Docs\Extension\ACLScope $value The desired value for
      *          this instance's name property.
-     * @return \Zend\GData\Docs\ACLEntry Provides a fluent interface.
+     * @return \Zend2\GData\Docs\ACLEntry Provides a fluent interface.
      */
     public function setScope($value)
     {

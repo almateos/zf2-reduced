@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Loader
+ * @category   Zend2
+ * @package    Zend2_Loader
  * @subpackage Exception
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id$
  */
 
-namespace Zend\Loader\Exception;
+namespace Zend2\Loader\Exception;
 require_once __DIR__ . '/../Exception.php';
-use Zend\Loader\Exception;
+use Zend2\Loader\Exception;
 
 /**
  * Plugin class loader exceptions
  *
- * @category   Zend
- * @package    Zend_Loader
+ * @category   Zend2
+ * @package    Zend2_Loader
  * @subpackage Exception
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class PluginLoaderException extends \DomainException implements Exception

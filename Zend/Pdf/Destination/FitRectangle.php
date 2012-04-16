@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Destination
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Destination
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Destination;
-use Zend\Pdf\Exception;
-use Zend\Pdf\InternalType;
-use Zend\Pdf;
+namespace Zend2\Pdf\Destination;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf\InternalType;
+use Zend2\Pdf;
 
 /**
- * \Zend\Pdf\Destination\FitRectangle explicit detination
+ * \Zend2\Pdf\Destination\FitRectangle explicit detination
  *
  * Destination array: [page /FitR left bottom right top]
  *
@@ -35,14 +35,14 @@ use Zend\Pdf;
  * horizontal and vertical magnification factors are different, use the smaller of
  * the two, centering the rectangle within the window in the other dimension.
  *
- * @uses       \Zend\Pdf\Destination\Explicit
- * @uses       \Zend\Pdf\InternalType\ArrayObject
- * @uses       \Zend\Pdf\InternalType\NameObject
- * @uses       \Zend\Pdf\InternalType\NumericObject
- * @uses       \Zend\Pdf\Exception
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Destination
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Destination\Explicit
+ * @uses       \Zend2\Pdf\InternalType\ArrayObject
+ * @uses       \Zend2\Pdf\InternalType\NameObject
+ * @uses       \Zend2\Pdf\InternalType\NumericObject
+ * @uses       \Zend2\Pdf\Exception
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Destination
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class FitRectangle extends Explicit
@@ -50,13 +50,13 @@ class FitRectangle extends Explicit
     /**
      * Create destination object
      *
-     * @param \Zend\Pdf\Page|integer $page  Page object or page number
+     * @param \Zend2\Pdf\Page|integer $page  Page object or page number
      * @param float $left    Left edge of displayed page
      * @param float $bottom  Bottom edge of displayed page
      * @param float $right   Right edge of displayed page
      * @param float $top     Top edge of displayed page
-     * @return \Zend\Pdf\Destination\FitRectangle
-     * @throws \Zend\Pdf\Exception
+     * @return \Zend2\Pdf\Destination\FitRectangle
+     * @throws \Zend2\Pdf\Exception
      */
     public static function create($page, $left, $bottom, $right, $top)
     {
@@ -67,7 +67,7 @@ class FitRectangle extends Explicit
         } else if (is_integer($page)) {
             $destinationArray->items[] = new InternalType\NumericObject($page);
         } else {
-            throw new Exception\InvalidArgumentException('$page parametr must be a \Zend\Pdf\Page object or a page number.');
+            throw new Exception\InvalidArgumentException('$page parametr must be a \Zend2\Pdf\Page object or a page number.');
         }
 
         $destinationArray->items[] = new InternalType\NameObject('FitR');
@@ -93,7 +93,7 @@ class FitRectangle extends Explicit
      * Set left edge of the displayed page
      *
      * @param float $left
-     * @return \Zend\Pdf\Destination\FitRectangle
+     * @return \Zend2\Pdf\Destination\FitRectangle
      */
     public function setLeftEdge($left)
     {
@@ -115,7 +115,7 @@ class FitRectangle extends Explicit
      * Set bottom edge of the displayed page
      *
      * @param float $bottom
-     * @return \Zend\Pdf\Destination\FitRectangle
+     * @return \Zend2\Pdf\Destination\FitRectangle
      */
     public function setBottomEdge($bottom)
     {
@@ -137,7 +137,7 @@ class FitRectangle extends Explicit
      * Set right edge of the displayed page
      *
      * @param float $right
-     * @return \Zend\Pdf\Destination\FitRectangle
+     * @return \Zend2\Pdf\Destination\FitRectangle
      */
     public function setRightEdge($right)
     {
@@ -159,7 +159,7 @@ class FitRectangle extends Explicit
      * Set top edge of the displayed page
      *
      * @param float $top
-     * @return \Zend\Pdf\Destination\FitRectangle
+     * @return \Zend2\Pdf\Destination\FitRectangle
      */
     public function setTopEdge($top)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Amf
+ * @category   Zend2
+ * @package    Zend2_Amf
  * @subpackage Parser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Amf\Parser;
+namespace Zend2\Amf\Parser;
 
-use Zend\Loader\PluginBroker;
+use Zend2\Loader\PluginBroker;
 
 /**
  * Loads a local class and executes the instantiation of that class.
  *
  * @todo       PHP 5.3 can drastically change this class w/ namespace and the new call_user_func w/ namespace
- * @uses       Zend\Amf\Exception
- * @uses       Zend\Amf\Value\Messaging\AcknowledgeMessage
- * @uses       Zend\Amf\Value\Messaging\AsyncMessage
- * @uses       Zend\Amf\Value\Messaging\CommandMessage
- * @uses       Zend\Amf\Value\Messaging\ErrorMessage
- * @uses       Zend\Amf\Value\Messaging\RemotingMessage
- * @package    Zend_Amf
+ * @uses       Zend2\Amf\Exception
+ * @uses       Zend2\Amf\Value\Messaging\AcknowledgeMessage
+ * @uses       Zend2\Amf\Value\Messaging\AsyncMessage
+ * @uses       Zend2\Amf\Value\Messaging\CommandMessage
+ * @uses       Zend2\Amf\Value\Messaging\ErrorMessage
+ * @uses       Zend2\Amf\Value\Messaging\RemotingMessage
+ * @package    Zend2_Amf
  * @subpackage Parser
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 final class TypeLoader
@@ -49,28 +49,28 @@ final class TypeLoader
      * @var array AMF class map
      */
     public static $classMap = array (
-        'flex.messaging.messages.AcknowledgeMessage' => 'Zend\\Amf\\Value\\Messaging\\AcknowledgeMessage',
-        'flex.messaging.messages.ErrorMessage'       => 'Zend\\Amf\\Value\\Messaging\\AsyncMessage',
-        'flex.messaging.messages.CommandMessage'     => 'Zend\\Amf\\Value\\Messaging\\CommandMessage',
-        'flex.messaging.messages.ErrorMessage'       => 'Zend\\Amf\\Value\\Messaging\\ErrorMessage',
-        'flex.messaging.messages.RemotingMessage'    => 'Zend\\Amf\\Value\\Messaging\\RemotingMessage',
-        'flex.messaging.io.ArrayCollection'          => 'Zend\\Amf\\Value\\Messaging\\ArrayCollection',
+        'flex.messaging.messages.AcknowledgeMessage' => 'Zend2\\Amf\\Value\\Messaging\\AcknowledgeMessage',
+        'flex.messaging.messages.ErrorMessage'       => 'Zend2\\Amf\\Value\\Messaging\\AsyncMessage',
+        'flex.messaging.messages.CommandMessage'     => 'Zend2\\Amf\\Value\\Messaging\\CommandMessage',
+        'flex.messaging.messages.ErrorMessage'       => 'Zend2\\Amf\\Value\\Messaging\\ErrorMessage',
+        'flex.messaging.messages.RemotingMessage'    => 'Zend2\\Amf\\Value\\Messaging\\RemotingMessage',
+        'flex.messaging.io.ArrayCollection'          => 'Zend2\\Amf\\Value\\Messaging\\ArrayCollection',
     );
 
     /**
      * @var array Default class map
      */
     protected static $_defaultClassMap = array(
-        'flex.messaging.messages.AcknowledgeMessage' => 'Zend\\Amf\\Value\\Messaging\\AcknowledgeMessage',
-        'flex.messaging.messages.ErrorMessage'       => 'Zend\\Amf\\Value\\Messaging\\AsyncMessage',
-        'flex.messaging.messages.CommandMessage'     => 'Zend\\Amf\\Value\\Messaging\\CommandMessage',
-        'flex.messaging.messages.ErrorMessage'       => 'Zend\\Amf\\Value\\Messaging\\ErrorMessage',
-        'flex.messaging.messages.RemotingMessage'    => 'Zend\\Amf\\Value\\Messaging\\RemotingMessage',
-        'flex.messaging.io.ArrayCollection'          => 'Zend\\Amf\\Value\\Messaging\\ArrayCollection',
+        'flex.messaging.messages.AcknowledgeMessage' => 'Zend2\\Amf\\Value\\Messaging\\AcknowledgeMessage',
+        'flex.messaging.messages.ErrorMessage'       => 'Zend2\\Amf\\Value\\Messaging\\AsyncMessage',
+        'flex.messaging.messages.CommandMessage'     => 'Zend2\\Amf\\Value\\Messaging\\CommandMessage',
+        'flex.messaging.messages.ErrorMessage'       => 'Zend2\\Amf\\Value\\Messaging\\ErrorMessage',
+        'flex.messaging.messages.RemotingMessage'    => 'Zend2\\Amf\\Value\\Messaging\\RemotingMessage',
+        'flex.messaging.io.ArrayCollection'          => 'Zend2\\Amf\\Value\\Messaging\\ArrayCollection',
     );
 
     /**
-     * @var \Zend\Loader\PluginBroker
+     * @var \Zend2\Loader\PluginBroker
      */
     protected static $_resourceBroker = null;
 
@@ -145,7 +145,7 @@ final class TypeLoader
     /**
      * Set loader for resource type handlers
      *
-     * @param \Zend\Loader\PluginBroker $loader
+     * @param \Zend2\Loader\PluginBroker $loader
      */
     public static function setResourceBroker(PluginBroker $broker)
     {

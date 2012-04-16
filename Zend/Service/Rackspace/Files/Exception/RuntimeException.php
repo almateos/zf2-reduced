@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Service\Rackspace\Files
+ * @category   Zend2
+ * @package    Zend2\Service\Rackspace\Files
  * @subpackage Exception
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Rackspace\Files\Exception;
+namespace Zend2\Service\Rackspace\Files\Exception;
 
 /**
- * @package    Zend\Service\Rackspace
+ * @package    Zend2\Service\Rackspace
  * @subpackage Files
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class RuntimeException 
     extends \RuntimeException 
-    implements \Zend\Service\Rackspace\Files\Exception
+    implements \Zend2\Service\Rackspace\Files\Exception
 {
 }

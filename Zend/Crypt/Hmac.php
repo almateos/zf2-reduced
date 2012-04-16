@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,13 +12,13 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Crypt
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Crypt
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Crypt;
+namespace Zend2\Crypt;
 
 /**
  * PHP implementation of the RFC 2104 Hash based Message Authentication Code
@@ -26,11 +26,11 @@ namespace Zend\Crypt;
  *
  * @todo  Patch for refactoring failed tests (key block sizes >80 using internal algo)
  * @todo       Check if mhash() is a required alternative (will be PECL-only soon)
- * @uses       Zend\Crypt\Crypt
- * @uses       Zend\Crypt\HmacException
- * @category   Zend
- * @package    Zend_Crypt
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Crypt\Crypt
+ * @uses       Zend2\Crypt\HmacException
+ * @category   Zend2
+ * @package    Zend2_Crypt
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Hmac extends Crypt

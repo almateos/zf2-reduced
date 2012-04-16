@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,35 +12,35 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Test
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Test\PHPUnit\Db;
+namespace Zend2\Test\PHPUnit\Db;
 
 /**
- * Generic Abstraction of Zend_Db Connections in the PHPUnit Database Extension context.
+ * Generic Abstraction of Zend2_Db Connections in the PHPUnit Database Extension context.
  *
  * @uses       PHPUnit_Extensions_Database_DB_DefaultDatabaseConnection
- * @uses       \Zend\Db\Adapter\AbstractAdapter
- * @uses       \Zend\Test\PHPUnit\Db\DataSet\QueryTable
- * @uses       \Zend\Test\PHPUnit\Db\Metadata\Generic
+ * @uses       \Zend2\Db\Adapter\AbstractAdapter
+ * @uses       \Zend2\Test\PHPUnit\Db\DataSet\QueryTable
+ * @uses       \Zend2\Test\PHPUnit\Db\Metadata\Generic
  * @uses       PHPUnit_Extensions_Database_DB_DefaultDatabaseConnection
- * @category   Zend
- * @package    Zend_Test
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Connection extends \PHPUnit_Extensions_Database_DB_DefaultDatabaseConnection
 {
     /**
-     * Zend_Db_Adapter_Abstract
+     * Zend2_Db_Adapter_Abstract
      *
-     * @var \Zend\Db\Adapter\AbstractAdapter
+     * @var \Zend2\Db\Adapter\AbstractAdapter
      */
     protected $_connection;
 
@@ -59,12 +59,12 @@ class Connection extends \PHPUnit_Extensions_Database_DB_DefaultDatabaseConnecti
     protected $_metaData;
 
     /**
-     * Construct Connection based on Zend_Db_Adapter_Abstract
+     * Construct Connection based on Zend2_Db_Adapter_Abstract
      *
-     * @param \Zend\Db\Adapter\AbstractAdapter $db
+     * @param \Zend2\Db\Adapter\AbstractAdapter $db
      * @param string $schema
      */
-    public function __construct(\Zend\Db\Adapter\AbstractAdapter $db, $schema)
+    public function __construct(\Zend2\Db\Adapter\AbstractAdapter $db, $schema)
     {
         $this->_connection = $db;
         $this->_schema = $schema;
@@ -93,9 +93,9 @@ class Connection extends \PHPUnit_Extensions_Database_DB_DefaultDatabaseConnecti
     }
 
     /**
-     * Returns a Zend_Db Connection
+     * Returns a Zend2_Db Connection
      *
-     * @return \Zend\Db\Adapter\AbstractAdapter
+     * @return \Zend2\Db\Adapter\AbstractAdapter
      */
     public function getConnection()
     {

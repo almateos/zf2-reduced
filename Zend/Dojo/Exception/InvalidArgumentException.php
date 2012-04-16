@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\Dojo\Exception;
+namespace Zend2\Dojo\Exception;
 
 class InvalidArgumentException
     extends \InvalidArgumentException
-    implements \Zend\Dojo\Exception
+    implements \Zend2\Dojo\Exception
 {}

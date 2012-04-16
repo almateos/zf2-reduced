@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Filter\Word;
+namespace Zend2\Filter\Word;
 
 /**
- * @uses       \Zend\Filter\Exception
- * @uses       \Zend\Filter\PregReplace
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Filter\Exception
+ * @uses       \Zend2\Filter\PregReplace
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class SeparatorToSeparator extends \Zend\Filter\PregReplace
+class SeparatorToSeparator extends \Zend2\Filter\PregReplace
 {
     protected $_searchSeparator = null;
     protected $_replacementSeparator = null;
@@ -91,7 +91,7 @@ class SeparatorToSeparator extends \Zend\Filter\PregReplace
     }
 
     /**
-     * Defined by Zend\Filter\Filter
+     * Defined by Zend2\Filter\Filter
      *
      * Returns the string $value, replacing the searched seperators with the defined ones
      *
@@ -114,7 +114,7 @@ class SeparatorToSeparator extends \Zend\Filter\PregReplace
     protected function _separatorToSeparatorFilter($value)
     {
         if ($this->_searchSeparator == null) {
-            throw new \Zend\Filter\Exception\RuntimeException('You must provide a search separator for this filter to work.');
+            throw new \Zend2\Filter\Exception\RuntimeException('You must provide a search separator for this filter to work.');
         }
 
         $this->setMatchPattern('#' . preg_quote($this->_searchSeparator, '#') . '#');

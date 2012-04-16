@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\OAuth\Http;
-use Zend\OAuth\Http as HTTPClient,
-    Zend\OAuth,
-    Zend\Http;
+namespace Zend2\OAuth\Http;
+use Zend2\OAuth\Http as HTTPClient,
+    Zend2\OAuth,
+    Zend2\Http;
 
 /**
- * @uses       Zend\Http\Client
- * @uses       Zend\OAuth\OAuth
- * @uses       Zend\OAuth\Http
- * @uses       Zend\OAuth\Token\Access
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Http\Client
+ * @uses       Zend2\OAuth\OAuth
+ * @uses       Zend2\OAuth\Http
+ * @uses       Zend2\OAuth\Token\Access
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class AccessToken extends HTTPClient
@@ -38,14 +38,14 @@ class AccessToken extends HTTPClient
     /**
      * Singleton instance if required of the HTTP client
      *
-     * @var \Zend\Http\Client
+     * @var \Zend2\Http\Client
      */
     protected $_httpClient = null;
 
     /**
      * Initiate a HTTP request to retrieve an Access Token.
      *
-     * @return \Zend\OAuth\Token\Access
+     * @return \Zend2\OAuth\Token\Access
      */
     public function execute()
     {
@@ -92,7 +92,7 @@ class AccessToken extends HTTPClient
      * specified by OAuth, for use in requesting an Access Token.
      *
      * @param  array $params
-     * @return Zend\Http\Client
+     * @return Zend2\Http\Client
      */
     public function getRequestSchemeHeaderClient(array $params)
     {
@@ -112,7 +112,7 @@ class AccessToken extends HTTPClient
      * Scheme specified by OAuth, for use in requesting an Access Token.
      *
      * @param  array $params
-     * @return Zend\Http\Client
+     * @return Zend2\Http\Client
      */
     public function getRequestSchemePostBodyClient(array $params)
     {
@@ -133,7 +133,7 @@ class AccessToken extends HTTPClient
      *
      * @param  array $params
      * @param  string $url
-     * @return Zend\Http\Client
+     * @return Zend2\Http\Client
      */
     public function getRequestSchemeQueryStringClient(array $params, $url)
     {

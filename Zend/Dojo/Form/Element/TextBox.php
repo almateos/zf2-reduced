@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\Form\Element;
+namespace Zend2\Dojo\Form\Element;
 
 /**
  * TextBox dijit
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class TextBox extends Dijit
@@ -42,7 +42,7 @@ class TextBox extends Dijit
      * Set lowercase flag
      *
      * @param  bool $lowercase
-     * @return \Zend\Dojo\Form\Element\TextBox
+     * @return \Zend2\Dojo\Form\Element\TextBox
      */
     public function setLowercase($flag)
     {
@@ -67,7 +67,7 @@ class TextBox extends Dijit
      * Set propercase flag
      *
      * @param  bool $propercase
-     * @return \Zend\Dojo\Form\Element\TextBox
+     * @return \Zend2\Dojo\Form\Element\TextBox
      */
     public function setPropercase($flag)
     {
@@ -92,7 +92,7 @@ class TextBox extends Dijit
      * Set uppercase flag
      *
      * @param  bool $uppercase
-     * @return \Zend\Dojo\Form\Element\TextBox
+     * @return \Zend2\Dojo\Form\Element\TextBox
      */
     public function setUppercase($flag)
     {
@@ -117,7 +117,7 @@ class TextBox extends Dijit
      * Set trim flag
      *
      * @param  bool $trim
-     * @return \Zend\Dojo\Form\Element\TextBox
+     * @return \Zend2\Dojo\Form\Element\TextBox
      */
     public function setTrim($flag)
     {
@@ -142,7 +142,7 @@ class TextBox extends Dijit
      * Set maxLength
      *
      * @param  int $length
-     * @return \Zend\Dojo\Form\Element\TextBox
+     * @return \Zend2\Dojo\Form\Element\TextBox
      */
     public function setMaxLength($length)
     {

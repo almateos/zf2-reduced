@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Technorati;
+namespace Zend2\Service\Technorati;
 
 use DomElement,
-    Zend\Date\Date as ZendDate;
+    Zend2\Date\Date as Zend2Date;
 
 /**
  * Represents a single Technorati DailyCounts query result object.
  * It is never returned as a standalone object,
  * but it always belongs to a valid DailyCountsResultSet object.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class DailyCountsResult extends Result
@@ -40,7 +40,7 @@ class DailyCountsResult extends Result
     /**
      * Date of count.
      *
-     * @var     ZendDate
+     * @var     Zend2Date
      * @access  protected
      */
     protected $date;
@@ -66,14 +66,14 @@ class DailyCountsResult extends Result
         parent::__construct($dom);
 
         // filter fields
-        $this->date  = new ZendDate(strtotime($this->date));
+        $this->date  = new Zend2Date(strtotime($this->date));
         $this->count = (int) $this->count;
     }
 
     /**
      * Returns the date of count.
      *
-     * @return  ZendDate
+     * @return  Zend2Date
      */
     public function getDate()
     {

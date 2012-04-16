@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
+namespace Zend2\Validator;
 
 use Traversable,
-    Zend\Stdlib\ArrayUtils;
+    Zend2\Stdlib\ArrayUtils;
 
 /**
- * @uses       \Zend\Validator\AbstractValidator
- * @uses       \Zend\Validator\Exception
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Validator\AbstractValidator
+ * @uses       \Zend2\Validator\Exception
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Regex extends AbstractValidator
@@ -64,7 +64,7 @@ class Regex extends AbstractValidator
      * Sets validator options
      *
      * @param  string|Traversable $pattern
-     * @throws \Zend\Validator\Exception On missing 'pattern' parameter
+     * @throws \Zend2\Validator\Exception On missing 'pattern' parameter
      * @return void
      */
     public function __construct($pattern)
@@ -106,8 +106,8 @@ class Regex extends AbstractValidator
      * Sets the pattern option
      *
      * @param  string $pattern
-     * @throws \Zend\Validator\Exception if there is a fatal error in pattern matching
-     * @return \Zend\Validator\Regex Provides a fluent interface
+     * @throws \Zend2\Validator\Exception if there is a fatal error in pattern matching
+     * @return \Zend2\Validator\Regex Provides a fluent interface
      */
     public function setPattern($pattern)
     {

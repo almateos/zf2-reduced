@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Writer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Writer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\Writer;
-use Zend\Feed\Writer\Exception;
-use Zend\Uri;
-use Zend\Date;
+namespace Zend2\Feed\Writer;
+use Zend2\Feed\Writer\Exception;
+use Zend2\Uri;
+use Zend2\Date;
 
 /**
-* @category Zend
-* @package Zend_Feed_Writer
-* @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+* @category Zend2
+* @package Zend2_Feed_Writer
+* @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 class Entry
@@ -199,7 +199,7 @@ class Entry
         } elseif ($date instanceof Date\Date) {
             $zdate = $date;
         } else {
-            throw new Exception('Invalid Zend\Date\Date object or UNIX Timestamp passed as parameter');
+            throw new Exception('Invalid Zend2\Date\Date object or UNIX Timestamp passed as parameter');
         }
         $this->_data['dateCreated'] = $zdate;
     }
@@ -670,11 +670,11 @@ class Entry
     }
 
     /**
-     * Creates a new Zend_Feed_Writer_Source data container for use. This is NOT
+     * Creates a new Zend2_Feed_Writer_Source data container for use. This is NOT
      * added to the current feed automatically, but is necessary to create a
      * container with some initial values preset based on the current feed data.
      *
-     * @return Zend_Feed_Writer_Source
+     * @return Zend2_Feed_Writer_Source
      */
     public function createSource()
     {
@@ -687,10 +687,10 @@ class Entry
     }
 
     /**
-     * Appends a Zend_Feed_Writer_Entry object representing a new entry/item
+     * Appends a Zend2_Feed_Writer_Entry object representing a new entry/item
      * the feed data container's internal group of entries.
      *
-     * @param Zend_Feed_Writer_Source $source
+     * @param Zend2_Feed_Writer_Source $source
      */
     public function setSource(Source $source)
     {
@@ -698,7 +698,7 @@ class Entry
     }
 
     /**
-     * @return Zend_Feed_Writer_Source
+     * @return Zend2_Feed_Writer_Source
      */
     public function getSource()
     {
@@ -709,7 +709,7 @@ class Entry
     }
 
     /**
-     * Load extensions from Zend_Feed_Writer
+     * Load extensions from Zend2_Feed_Writer
      *
      * @return void
      */

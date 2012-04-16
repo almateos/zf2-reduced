@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
+namespace Zend2\Validator;
 
 use Traversable,
-    Zend\Locale\Locale,
-    Zend\Registry,
-    Zend\Stdlib\ArrayUtils;
+    Zend2\Locale\Locale,
+    Zend2\Registry,
+    Zend2\Stdlib\ArrayUtils;
 
 /**
  * Validates IBAN Numbers (International Bank Account Numbers)
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Iban extends AbstractValidator
@@ -128,8 +128,8 @@ class Iban extends AbstractValidator
         }
 
         if (empty($locale) && ($locale !== false)) {
-            if (Registry::isRegistered('Zend_Locale')) {
-                $locale = Registry::get('Zend_Locale');
+            if (Registry::isRegistered('Zend2_Locale')) {
+                $locale = Registry::get('Zend2_Locale');
             }
         }
 

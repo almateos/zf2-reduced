@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Soap
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage WSDL
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Soap\AutoDiscover\DiscoveryStrategy;
+namespace Zend2\Soap\AutoDiscover\DiscoveryStrategy;
 
-use Zend\Soap\AutoDiscover\DiscoveryStrategy,
-    Zend\Server\Reflection\AbstractFunction,
-    Zend\Server\Reflection\Prototype,
-    Zend\Server\Reflection\ReflectionParameter;
+use Zend2\Soap\AutoDiscover\DiscoveryStrategy,
+    Zend2\Server\Reflection\AbstractFunction,
+    Zend2\Server\Reflection\Prototype,
+    Zend2\Server\Reflection\ReflectionParameter;
 
 /**
  * Describes how types, return values and method details are detected during AutoDiscovery of a WSDL.
  *
- * @category   Zend
- * @package    Zend_Soap
+ * @category   Zend2
+ * @package    Zend2_Soap
  * @subpackage WSDL
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 

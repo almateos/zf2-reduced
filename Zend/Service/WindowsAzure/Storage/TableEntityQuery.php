@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @category   Zend
- * @package    Zend_Service_WindowsAzure
+ * @category   Zend2
+ * @package    Zend2_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_WindowsAzure_Storage_TableEntityQuery
+class Zend2_Service_WindowsAzure_Storage_TableEntityQuery
 {
     /**
      * From
@@ -73,7 +73,7 @@ class Zend_Service_WindowsAzure_Storage_TableEntityQuery
 	/**
 	 * Select clause
 	 * 
-	 * @return Zend_Service_WindowsAzure_Storage_TableEntityQuery
+	 * @return Zend2_Service_WindowsAzure_Storage_TableEntityQuery
 	 */
 	public function select()
 	{
@@ -84,7 +84,7 @@ class Zend_Service_WindowsAzure_Storage_TableEntityQuery
 	 * From clause
 	 * 
 	 * @param string $name Table name to select entities from
-	 * @return Zend_Service_WindowsAzure_Storage_TableEntityQuery
+	 * @return Zend2_Service_WindowsAzure_Storage_TableEntityQuery
 	 */
 	public function from($name)
 	{
@@ -96,7 +96,7 @@ class Zend_Service_WindowsAzure_Storage_TableEntityQuery
 	 * Specify partition key
 	 * 
 	 * @param string $value Partition key to query for
-	 * @return Zend_Service_WindowsAzure_Storage_TableEntityQuery
+	 * @return Zend2_Service_WindowsAzure_Storage_TableEntityQuery
 	 */
 	public function wherePartitionKey($value = null)
 	{
@@ -108,7 +108,7 @@ class Zend_Service_WindowsAzure_Storage_TableEntityQuery
 	 * Specify row key
 	 * 
 	 * @param string $value Row key to query for
-	 * @return Zend_Service_WindowsAzure_Storage_TableEntityQuery
+	 * @return Zend2_Service_WindowsAzure_Storage_TableEntityQuery
 	 */
 	public function whereRowKey($value = null)
 	{
@@ -122,7 +122,7 @@ class Zend_Service_WindowsAzure_Storage_TableEntityQuery
 	 * @param string       $condition   Condition, can contain question mark(s) (?) for parameter insertion.
 	 * @param string|array $value       Value(s) to insert in question mark (?) parameters.
 	 * @param string       $cond        Condition for the clause (and/or/not)
-	 * @return Zend_Service_WindowsAzure_Storage_TableEntityQuery
+	 * @return Zend2_Service_WindowsAzure_Storage_TableEntityQuery
 	 */
 	public function where($condition, $value = null, $cond = '')
 	{
@@ -147,7 +147,7 @@ class Zend_Service_WindowsAzure_Storage_TableEntityQuery
 	 * 
 	 * @param string       $condition   Condition, can contain question mark(s) (?) for parameter insertion.
 	 * @param string|array $value       Value(s) to insert in question mark (?) parameters.
-	 * @return Zend_Service_WindowsAzure_Storage_TableEntityQuery
+	 * @return Zend2_Service_WindowsAzure_Storage_TableEntityQuery
 	 */
 	public function andWhere($condition, $value = null)
 	{
@@ -159,7 +159,7 @@ class Zend_Service_WindowsAzure_Storage_TableEntityQuery
 	 * 
 	 * @param string       $condition   Condition, can contain question mark(s) (?) for parameter insertion.
 	 * @param string|array $value       Value(s) to insert in question mark (?) parameters.
-	 * @return Zend_Service_WindowsAzure_Storage_TableEntityQuery
+	 * @return Zend2_Service_WindowsAzure_Storage_TableEntityQuery
 	 */
 	public function orWhere($condition, $value = null)
 	{
@@ -171,7 +171,7 @@ class Zend_Service_WindowsAzure_Storage_TableEntityQuery
 	 * 
 	 * @param string $column    Column to sort by
 	 * @param string $direction Direction to sort (asc/desc)
-	 * @return Zend_Service_WindowsAzure_Storage_TableEntityQuery
+	 * @return Zend2_Service_WindowsAzure_Storage_TableEntityQuery
 	 */
 	public function orderBy($column, $direction = 'asc')
 	{
@@ -183,7 +183,7 @@ class Zend_Service_WindowsAzure_Storage_TableEntityQuery
 	 * Top clause
 	 * 
 	 * @param int $top  Top to fetch
-	 * @return Zend_Service_WindowsAzure_Storage_TableEntityQuery
+	 * @return Zend2_Service_WindowsAzure_Storage_TableEntityQuery
 	 */
     public function top($top = null)
     {

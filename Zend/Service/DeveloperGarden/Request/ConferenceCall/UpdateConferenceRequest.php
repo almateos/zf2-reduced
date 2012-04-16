@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_Request_AbstractRequest
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Request_AbstractRequest
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_Request_ConferenceCall_UpdateConferenceRequest
-    extends Zend_Service_DeveloperGarden_Request_AbstractRequest
+class Zend2_Service_DeveloperGarden_Request_ConferenceCall_UpdateConferenceRequest
+    extends Zend2_Service_DeveloperGarden_Request_AbstractRequest
 {
     /**
      * conference id
@@ -55,14 +55,14 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_UpdateConferenceReques
     /**
      * object with details for this conference
      *
-     * @var Zend_Service_DeveloperGarden_ConferenceCall_ConferenceDetail
+     * @var Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceDetail
      */
     public $detail = null;
 
     /**
      * object with schedule for this conference
      *
-     * @var Zend_Service_DeveloperGarden_ConferenceCall_ConferenceSchedule
+     * @var Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceSchedule
      */
     public $schedule = null;
 
@@ -72,13 +72,13 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_UpdateConferenceReques
      * @param integer $environment
      * @param string $conferenceId
      * @param string $ownerId
-     * @param Zend_Service_DeveloperGarden_ConferenceCall_ConferenceDetail $conferenceDetails
-     * @param Zend_Service_DeveloperGarden_ConferenceCall_ConferenceSchedule $conferenceSchedule
+     * @param Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceDetail $conferenceDetails
+     * @param Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceSchedule $conferenceSchedule
      * @param integer $account
      */
     public function __construct($environment, $conferenceId, $ownerId = null,
-        Zend_Service_DeveloperGarden_ConferenceCall_ConferenceDetail $conferenceDetails = null,
-        Zend_Service_DeveloperGarden_ConferenceCall_ConferenceSchedule $conferenceSchedule = null,
+        Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceDetail $conferenceDetails = null,
+        Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceSchedule $conferenceSchedule = null,
         $account = null
     ) {
         parent::__construct($environment);
@@ -93,7 +93,7 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_UpdateConferenceReques
      * sets $conferenceId
      *
      * @param string $conferenceId
-     * @return Zend_Service_DeveloperGarden_Request_ConferenceCall_UpdateConferenceRequest
+     * @return Zend2_Service_DeveloperGarden_Request_ConferenceCall_UpdateConferenceRequest
      */
     public function setConferenceId($conferenceId)
     {
@@ -104,11 +104,11 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_UpdateConferenceReques
     /**
      * sets $schedule
      *
-     * @param Zend_Service_DeveloperGarden_ConferenceCall_ConferenceSchedule $schedule
-     * @return Zend_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceRequest
+     * @param Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceSchedule $schedule
+     * @return Zend2_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceRequest
      */
     public function setSchedule(
-        Zend_Service_DeveloperGarden_ConferenceCall_ConferenceSchedule $schedule = null
+        Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceSchedule $schedule = null
     ) {
         $this->schedule = $schedule;
         return $this;
@@ -117,11 +117,11 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_UpdateConferenceReques
     /**
      * sets $detail
      *
-     * @param Zend_Service_DeveloperGarden_ConferenceCall_ConferenceDetail $detail
-     * @return Zend_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceRequest
+     * @param Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceDetail $detail
+     * @return Zend2_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceRequest
      */
     public function setDetail(
-        Zend_Service_DeveloperGarden_ConferenceCall_ConferenceDetail $detail = null
+        Zend2_Service_DeveloperGarden_ConferenceCall_ConferenceDetail $detail = null
     ) {
         $this->detail = $detail;
         return $this;
@@ -131,7 +131,7 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_UpdateConferenceReques
      * sets $ownerId
      *
      * @param string $ownerId
-     * @return Zend_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceRequest
+     * @return Zend2_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceRequest
      */
     public function setOwnerId($ownerId = null)
     {
@@ -143,7 +143,7 @@ class Zend_Service_DeveloperGarden_Request_ConferenceCall_UpdateConferenceReques
      * sets $account
      *
      * @param $account
-     * @return Zend_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceRequest
+     * @return Zend2_Service_DeveloperGarden_Request_ConferenceCall_CreateConferenceRequest
      */
     public function setAccount($account = null)
     {

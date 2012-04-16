@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,24 +12,24 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Config
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Config;
+namespace Zend2\Config;
 
 use Countable,
     Iterator,
     ArrayAccess,
-    Zend\Stdlib\ArrayUtils
+    Zend2\Stdlib\ArrayUtils
 ;
 
 /**
- * @category   Zend
- * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Config
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Config implements Countable, Iterator, ArrayAccess
@@ -64,11 +64,11 @@ class Config implements Countable, Iterator, ArrayAccess
     protected $skipNextIteration;
 
     /**
-     * Zend_Config provides a property based interface to
+     * Zend2_Config provides a property based interface to
      * an array. The data are read-only unless $allowModifications
      * is set to true on construction.
      *
-     * Zend_Config also implements Countable, Iterator and ArrayAccess to
+     * Zend2_Config also implements Countable, Iterator and ArrayAccess to
      * facilitate easy access to the data.
      *
      * @param  array   $array
@@ -143,7 +143,7 @@ class Config implements Countable, Iterator, ArrayAccess
     }
 
     /**
-     * Deep clone of this instance to ensure that nested Zend\Configs are also
+     * Deep clone of this instance to ensure that nested Zend2\Configs are also
      * cloned.
      *
      * @return void

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Resolver
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Resolver;
+namespace Zend2\View\Resolver;
 
 use SplFileInfo,
-    Zend\Stdlib\SplStack,
-    Zend\View\Exception,
-    Zend\View\Renderer,
-    Zend\View\Resolver;
+    Zend2\Stdlib\SplStack,
+    Zend2\View\Exception,
+    Zend2\View\Renderer,
+    Zend2\View\Resolver;
 
 /**
  * Resolves view scripts based on a stack of paths
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Resolver
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class TemplatePathStack implements Resolver
@@ -87,7 +87,7 @@ class TemplatePathStack implements Resolver
         $this->useViewStream = (bool) ini_get('short_open_tag');
         if ($this->useViewStream) {
             if (!in_array('zend.view', stream_get_wrappers())) {
-                stream_wrapper_register('zend.view', 'Zend\View\Stream');
+                stream_wrapper_register('zend.view', 'Zend2\View\Stream');
             }
         }
 
@@ -247,7 +247,7 @@ class TemplatePathStack implements Resolver
      * Set LFI protection flag
      *
      * @param  bool $flag
-     * @return \Zend\View\TemplatePathStack
+     * @return \Zend2\View\TemplatePathStack
      */
     public function setLfiProtection($flag)
     {
@@ -269,7 +269,7 @@ class TemplatePathStack implements Resolver
      * Set flag indicating if stream wrapper should be used if short_open_tag is off
      *
      * @param  bool $flag
-     * @return \Zend\View\View
+     * @return \Zend2\View\View
      */
     public function setUseStreamWrapper($flag)
     {

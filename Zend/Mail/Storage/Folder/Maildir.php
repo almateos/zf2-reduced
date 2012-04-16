@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,36 +12,36 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail\Storage\Folder;
+namespace Zend2\Mail\Storage\Folder;
 
-use Zend\Mail\Storage\MailFolder,
-    Zend\Mail\Storage\Folder,
-    Zend\Mail\Storage\Exception,
-    Zend\Mail\Storage;
+use Zend2\Mail\Storage\MailFolder,
+    Zend2\Mail\Storage\Folder,
+    Zend2\Mail\Storage\Exception,
+    Zend2\Mail\Storage;
 
 /**
- * @uses       \Zend\Mail\Storage\Exception
- * @uses       \Zend\Mail\Storage\Folder
- * @uses       \Zend\Mail\Storage\Folder\FolderInterface
- * @uses       \Zend\Mail\Storage\Maildir
- * @category   Zend
- * @package    Zend_Mail
+ * @uses       \Zend2\Mail\Storage\Exception
+ * @uses       \Zend2\Mail\Storage\Folder
+ * @uses       \Zend2\Mail\Storage\Folder\FolderInterface
+ * @uses       \Zend2\Mail\Storage\Maildir
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Maildir extends Storage\Maildir implements MailFolder
 {
     /**
-     * \Zend\Mail\Storage\Folder root folder for folder structure
-     * @var \Zend\Mail\Storage\Folder
+     * \Zend2\Mail\Storage\Folder root folder for folder structure
+     * @var \Zend2\Mail\Storage\Folder
      */
     protected $_rootFolder;
 
@@ -71,7 +71,7 @@ class Maildir extends Storage\Maildir implements MailFolder
      *   - folder intial selected folder, default is 'INBOX'
      *
      * @param  $params array mail reader specific parameters
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function __construct($params)
     {
@@ -96,11 +96,11 @@ class Maildir extends Storage\Maildir implements MailFolder
     /**
      * find all subfolders and mbox files for folder structure
      *
-     * Result is save in \Zend\Mail\Storage\Folder instances with the root in $this->_rootFolder.
+     * Result is save in \Zend2\Mail\Storage\Folder instances with the root in $this->_rootFolder.
      * $parentFolder and $parentGlobalName are only used internally for recursion.
      *
      * @return null
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     protected function _buildFolderTree()
     {
@@ -158,8 +158,8 @@ class Maildir extends Storage\Maildir implements MailFolder
      * get root folder or given folder
      *
      * @param string $rootFolder get folder structure for given folder, else root
-     * @return \Zend\Mail\Storage\Folder root or wanted folder
-     * @throws \Zend\Mail\Storage\Exception
+     * @return \Zend2\Mail\Storage\Folder root or wanted folder
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function getFolders($rootFolder = null)
     {
@@ -192,9 +192,9 @@ class Maildir extends Storage\Maildir implements MailFolder
      *
      * folder must be selectable!
      *
-     * @param \Zend\Mail\Storage\Folder|string $globalName global name of folder or instance for subfolder
+     * @param \Zend2\Mail\Storage\Folder|string $globalName global name of folder or instance for subfolder
      * @return null
-     * @throws \Zend\Mail\Storage\Exception
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function selectFolder($globalName)
     {
@@ -218,10 +218,10 @@ class Maildir extends Storage\Maildir implements MailFolder
     }
 
     /**
-     * get \Zend\Mail\Storage\Folder instance for current folder
+     * get \Zend2\Mail\Storage\Folder instance for current folder
      *
-     * @return \Zend\Mail\Storage\Folder instance of current folder
-     * @throws \Zend\Mail\Storage\Exception
+     * @return \Zend2\Mail\Storage\Folder instance of current folder
+     * @throws \Zend2\Mail\Storage\Exception
      */
     public function getCurrentFolder()
     {

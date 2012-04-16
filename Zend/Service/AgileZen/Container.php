@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,14 +12,14 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage AgileZen
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\AgileZen;
+namespace Zend2\Service\AgileZen;
 
 use ArrayAccess,
     Countable,
@@ -27,16 +27,16 @@ use ArrayAccess,
     Traversable;
 
 /**
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage AgileZen
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Container implements Countable, Iterator, ArrayAccess
 {
     /**
-     * @var array of Zend\Service\AgileZen\Resources\*
+     * @var array of Zend2\Service\AgileZen\Resources\*
      */
     protected $objects = array();
 
@@ -62,7 +62,7 @@ class Container implements Countable, Iterator, ArrayAccess
      * 
      * @var string 
      */
-    protected $namespacePrefix = 'Zend\Service\AgileZen\Resources';
+    protected $namespacePrefix = 'Zend2\Service\AgileZen\Resources';
 
     /**
      * Constructor
@@ -142,7 +142,7 @@ class Container implements Countable, Iterator, ArrayAccess
      *
      * Implement Iterator::current()
      *
-     * @return Zend\Service\AgileZen\Resources\*
+     * @return Zend2\Service\AgileZen\Resources\*
      */
     public function current()
     {
@@ -221,7 +221,7 @@ class Container implements Countable, Iterator, ArrayAccess
      *
      * @param   int     $offset
      * @throws  Exception\OutOfBoundsException
-     * @return  Zend\Service\AgileZen\Resources\*
+     * @return  Zend2\Service\AgileZen\Resources\*
      */
     public function offsetGet($offset)
     {

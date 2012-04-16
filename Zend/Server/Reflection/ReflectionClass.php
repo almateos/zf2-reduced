@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Zend_Server_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @subpackage Zend2_Server_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Server\Reflection;
+namespace Zend2\Server\Reflection;
 
 /**
  * Class/Object reflection
  *
  * Proxies calls to a ReflectionClass object, and decorates getMethods() by
- * creating its own list of {@link Zend_Server_Reflection_Method}s.
+ * creating its own list of {@link Zend2_Server_Reflection_Method}s.
  *
  * @uses       ReflectionClass
- * @uses       \Zend\Server\Reflection\Exception
- * @uses       \Zend\Server\Reflection\Method
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Zend_Server_Reflection
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Server\Reflection\Exception
+ * @uses       \Zend2\Server\Reflection\Method
+ * @category   Zend2
+ * @package    Zend2_Server
+ * @subpackage Zend2_Server_Reflection
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class ReflectionClass
@@ -46,7 +46,7 @@ class ReflectionClass
     protected $_config = array();
 
     /**
-     * Array of {@link \Zend\Server\Reflection\Method}s
+     * Array of {@link \Zend2\Server\Reflection\Method}s
      * @var array
      */
     protected $_methods = array();
@@ -67,7 +67,7 @@ class ReflectionClass
      * Constructor
      *
      * Create array of dispatchable methods, each a
-     * {@link Zend\Server\Reflection\ReflectionMethod}. Sets reflection object property.
+     * {@link Zend2\Server\Reflection\ReflectionMethod}. Sets reflection object property.
      *
      * @param ReflectionClass $reflection
      * @param string $namespace
@@ -141,7 +141,7 @@ class ReflectionClass
     }
 
     /**
-     * Return array of dispatchable {@link \Zend\Server\Reflection\Method}s.
+     * Return array of dispatchable {@link \Zend2\Server\Reflection\Method}s.
      *
      * @access public
      * @return array

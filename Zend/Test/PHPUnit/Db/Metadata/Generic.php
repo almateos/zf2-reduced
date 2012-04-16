@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Test
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Test\PHPUnit\Db\Metadata;
+namespace Zend2\Test\PHPUnit\Db\Metadata;
 
 /**
- * Generic Metadata accessor for the Zend_Db adapters
+ * Generic Metadata accessor for the Zend2_Db adapters
  *
  * @uses       PHPUnit_Extensions_Database_DB_IMetaData
- * @uses       \Zend\Db\Adapter\AbstractAdapter
- * @category   Zend
- * @package    Zend_Test
+ * @uses       \Zend2\Db\Adapter\AbstractAdapter
+ * @category   Zend2
+ * @package    Zend2_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Generic implements \PHPUnit_Extensions_Database_DB_IMetaData
 {
     /**
-     * Zend_Db Connection
+     * Zend2_Db Connection
      *
-     * @var \Zend\Db\Adapter\AbstractAdapter
+     * @var \Zend2\Db\Adapter\AbstractAdapter
      */
     protected $_connection;
 
@@ -62,7 +62,7 @@ class Generic implements \PHPUnit_Extensions_Database_DB_IMetaData
      * @param PDO $pdo
      * @param string $schema
      */
-    public final function __construct(\Zend\Db\Adapter\AbstractAdapter $db, $schema)
+    public final function __construct(\Zend2\Db\Adapter\AbstractAdapter $db, $schema)
     {
         $this->_connection = $db;
         $this->_schema     = $schema;

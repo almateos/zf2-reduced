@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Json
+ * @category   Zend2
+ * @package    Zend2_Json
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Json\Server;
-use Zend\Json\Server\Exception\InvalidArgumentException,
-    Zend\Json\Server\Exception\RuntimeException;
+namespace Zend2\Json\Server;
+use Zend2\Json\Server\Exception\InvalidArgumentException,
+    Zend2\Json\Server\Exception\RuntimeException;
 
 /**
- * @uses       Zend\Json\Json
- * @uses       Zend\Json\Server\Exception\InvalidArgumentException
- * @uses       Zend\Json\Server\Exception\RuntimeException
- * @uses       Zend\Json\Server\Smd\Service
- * @category   Zend
- * @package    Zend_Json
+ * @uses       Zend2\Json\Json
+ * @uses       Zend2\Json\Server\Exception\InvalidArgumentException
+ * @uses       Zend2\Json\Server\Exception\RuntimeException
+ * @uses       Zend2\Json\Server\Smd\Service
+ * @category   Zend2
+ * @package    Zend2_Json
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Smd
@@ -113,7 +113,7 @@ class Smd
      * Set object state via options
      *
      * @param  array $options
-     * @return Zend\Json\Server\Smd
+     * @return Zend2\Json\Server\Smd
      */
     public function setOptions(array $options)
     {
@@ -130,7 +130,7 @@ class Smd
      * Set transport
      *
      * @param  string $transport
-     * @return Zend\Json\Server\Smd
+     * @return Zend2\Json\Server\Smd
      */
     public function setTransport($transport)
     {
@@ -155,7 +155,7 @@ class Smd
      * Set envelope
      *
      * @param  string $envelopeType
-     * @return Zend\Json\Server\Smd
+     * @return Zend2\Json\Server\Smd
      */
     public function setEnvelope($envelopeType)
     {
@@ -181,7 +181,7 @@ class Smd
      * Set content type
      *
      * @param  string $type
-     * @return Zend\Json\Server\Smd
+     * @return Zend2\Json\Server\Smd
      */
     public function setContentType($type)
     {
@@ -206,7 +206,7 @@ class Smd
      * Set service target
      *
      * @param  string $target
-     * @return Zend\Json\Server\Smd
+     * @return Zend2\Json\Server\Smd
      */
     public function setTarget($target)
     {
@@ -228,7 +228,7 @@ class Smd
      * Set service ID
      *
      * @param  string $Id
-     * @return Zend\Json\Server\Smd
+     * @return Zend2\Json\Server\Smd
      */
     public function setId($id)
     {
@@ -250,7 +250,7 @@ class Smd
      * Set service description
      *
      * @param  string $description
-     * @return Zend\Json\Server\Smd
+     * @return Zend2\Json\Server\Smd
      */
     public function setDescription($description)
     {
@@ -272,7 +272,7 @@ class Smd
      * Indicate whether or not to generate Dojo-compatible SMD
      *
      * @param  bool $flag
-     * @return Zend\Json\Server\Smd
+     * @return Zend2\Json\Server\Smd
      */
     public function setDojoCompatible($flag)
     {
@@ -293,7 +293,7 @@ class Smd
     /**
      * Add Service
      *
-     * @param Zend\Json\Server\Smd\Service|array $service
+     * @param Zend2\Json\Server\Smd\Service|array $service
      * @return void
      */
     public function addService($service)
@@ -318,7 +318,7 @@ class Smd
      * Add many services
      *
      * @param  array $services
-     * @return Zend\Json\Server\Smd
+     * @return Zend2\Json\Server\Smd
      */
     public function addServices(array $services)
     {
@@ -332,7 +332,7 @@ class Smd
      * Overwrite existing services with new ones
      *
      * @param  array $services
-     * @return Zend\Json\Server\Smd
+     * @return Zend2\Json\Server\Smd
      */
     public function setServices(array $services)
     {
@@ -344,7 +344,7 @@ class Smd
      * Get service object
      *
      * @param  string $name
-     * @return false|Zend\Json\Server\Smd\Service
+     * @return false|Zend2\Json\Server\Smd\Service
      */
     public function getService($name)
     {
@@ -462,7 +462,7 @@ class Smd
      */
     public function toJson()
     {
-        return \Zend\Json\Json::encode($this->toArray());
+        return \Zend2\Json\Json::encode($this->toArray());
     }
 
     /**

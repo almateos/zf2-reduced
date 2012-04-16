@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Fonts
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Fonts
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\BinaryParser\Font;
-use Zend\Pdf\BinaryParser;
-use Zend\Log;
+namespace Zend2\Pdf\BinaryParser\Font;
+use Zend2\Pdf\BinaryParser;
+use Zend2\Log;
 
 /**
- * Abstract helper class for {@link \Zend\Pdf\Font} that parses font files.
+ * Abstract helper class for {@link \Zend2\Pdf\Font} that parses font files.
  *
  * Defines the public interface for concrete subclasses which are responsible
  * for parsing the raw binary data from the font file on disk. Also provides
  * a debug logging interface and a couple of shared utility methods.
  *
- * @uses       \Zend\Log\Logger
- * @uses       \Zend\Pdf\BinaryParser\AbstractBinaryParser
- * @uses       \Zend\Pdf\Font
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Fonts
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Log\Logger
+ * @uses       \Zend2\Pdf\BinaryParser\AbstractBinaryParser
+ * @uses       \Zend2\Pdf\Font
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Fonts
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractFont extends BinaryParser\AbstractBinaryParser
@@ -68,13 +68,13 @@ abstract class AbstractFont extends BinaryParser\AbstractBinaryParser
      *
      * Validates the data source and enables debug logging if so configured.
      *
-     * @param \Zend\Pdf\BinaryParser\DataSource\AbstractDataSource $dataSource
-     * @throws \Zend\Pdf\Exception
+     * @param \Zend2\Pdf\BinaryParser\DataSource\AbstractDataSource $dataSource
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct(BinaryParser\DataSource\AbstractDataSource $dataSource)
     {
         parent::__construct($dataSource);
-        $this->fontType = \Zend\Pdf\Font::TYPE_UNKNOWN;
+        $this->fontType = \Zend2\Pdf\Font::TYPE_UNKNOWN;
     }
 
 
@@ -108,11 +108,11 @@ abstract class AbstractFont extends BinaryParser\AbstractBinaryParser
      *
      * @param integer $byteCount Number of bytes (characters * 2) to return.
      * @param integer $byteOrder (optional) Big- or little-endian byte order.
-     *   Use the BYTE_ORDER_ constants defined in {@link \Zend\Pdf\BinaryParser\AbstractBinaryParser}. If
+     *   Use the BYTE_ORDER_ constants defined in {@link \Zend2\Pdf\BinaryParser\AbstractBinaryParser}. If
      *   omitted, uses big-endian.
      * @param string $characterSet (optional) --Ignored--
      * @return string
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function readStringUTF16($byteCount,
                                     $byteOrder = BinaryParser\AbstractBinaryParser::BYTE_ORDER_BIG_ENDIAN,
@@ -128,7 +128,7 @@ abstract class AbstractFont extends BinaryParser\AbstractBinaryParser
      * @param integer $byteCount Number of bytes (characters) to return.
      * @param string $characterSet (optional) --Ignored--
      * @return string
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function readStringMacRoman($byteCount, $characterSet = '')
     {
@@ -143,7 +143,7 @@ abstract class AbstractFont extends BinaryParser\AbstractBinaryParser
      * @param integer $lengthBytes (optional) Number of bytes that make up the
      *   length. Default is 1.
      * @return string
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function readStringPascal($characterSet = '', $lengthBytes = 1)
     {

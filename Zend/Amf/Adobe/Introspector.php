@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,38 +12,38 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Amf
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Amf
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Amf\Adobe;
+namespace Zend2\Amf\Adobe;
 
-use Zend\Amf\Exception,
-    Zend\Code\Reflection\ClassReflection,
-    Zend\Code\Reflection\PropertyReflection,
-    Zend\Server\Reflection,
-    Zend\Server\Reflection\ReflectionClass as ServerReflectionClass,
+use Zend2\Amf\Exception,
+    Zend2\Code\Reflection\ClassReflection,
+    Zend2\Code\Reflection\PropertyReflection,
+    Zend2\Server\Reflection,
+    Zend2\Server\Reflection\ReflectionClass as ServerReflectionClass,
     SplFileInfo;
 
 /**
  * This class implements a service for generating AMF service descriptions as XML.
  *
- * @uses       Zend\Amf\Parser\TypeLoader
- * @uses       Zend\Loader
- * @uses       Zend\Reflection\ReflectionClass
- * @uses       Zend\Server\Reflection
- * @package    Zend_Amf
+ * @uses       Zend2\Amf\Parser\TypeLoader
+ * @uses       Zend2\Loader
+ * @uses       Zend2\Reflection\ReflectionClass
+ * @uses       Zend2\Server\Reflection
+ * @package    Zend2_Amf
  * @subpackage Adobe
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Introspector
 {
     /**
      * Options used:
-     * - server: instance of Zend_Amf_Server to use
+     * - server: instance of Zend2_Amf_Server to use
      * - directories: directories where class files may be looked up
      *
      * @var array Introspector options
@@ -119,10 +119,10 @@ class Introspector
     /**
      * Authentication handler
      *
-     * @param  \Zend\Acl\Acl $acl
+     * @param  \Zend2\Acl\Acl $acl
      * @return unknown_type
      */
-    public function initAcl(\Zend\Acl\Acl $acl)
+    public function initAcl(\Zend2\Acl\Acl $acl)
     {
         return false; // we do not need auth for this class
     }
@@ -161,7 +161,7 @@ class Introspector
     /**
      * Build XML service description from reflection class
      *
-     * @param  \Zend\Server\Reflection\ReflectionClass $refclass
+     * @param  \Zend2\Server\Reflection\ReflectionClass $refclass
      * @param  DOMElement $target target XML element
      * @return void
      */
@@ -209,7 +209,7 @@ class Introspector
     /**
      * Extract type of the property from DocBlock
      *
-     * @param  \Zend\Code\Reflection\PropertyReflection $prop reflection property object
+     * @param  \Zend2\Code\Reflection\PropertyReflection $prop reflection property object
      * @return string Property type
      */
     protected function _getPropertyType(PropertyReflection $prop)
@@ -262,7 +262,7 @@ class Introspector
             }
         }
 
-        if (false !== ($asname = \Zend\Amf\Parser\TypeLoader::getMappedClassName($typename))) {
+        if (false !== ($asname = \Zend2\Amf\Parser\TypeLoader::getMappedClassName($typename))) {
             return $asname;
         }
 

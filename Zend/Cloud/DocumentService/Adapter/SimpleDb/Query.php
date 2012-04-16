@@ -10,36 +10,36 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Cloud\DocumentService\Adapter
+ * @category   Zend2
+ * @package    Zend2\Cloud\DocumentService\Adapter
  * @subpackage SimpleDb
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
  * namespace
  */
-namespace Zend\Cloud\DocumentService\Adapter\SimpleDb;
+namespace Zend2\Cloud\DocumentService\Adapter\SimpleDb;
 
-use Zend\Cloud\DocumentService\Query as QueryInterface,
-    Zend\Cloud\DocumentService\Adapter\Exception,
-    Zend\Cloud\DocumentService\Adapter\SimpleDb as SimpleDbAdapter;
+use Zend2\Cloud\DocumentService\Query as QueryInterface,
+    Zend2\Cloud\DocumentService\Adapter\Exception,
+    Zend2\Cloud\DocumentService\Adapter\SimpleDb as SimpleDbAdapter;
 
 /**
  * Class implementing Query adapter for working with SimpleDb queries in a
  * structured way
  *
- * @category   Zend
- * @package    Zend\Cloud\DocumentService\Adapter
+ * @category   Zend2
+ * @package    Zend2\Cloud\DocumentService\Adapter
  * @subpackage SimpleDb
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Query extends QueryInterface
 {
     /**
-     * @var Zend\Cloud\DocumentService\Adapter\SimpleDb
+     * @var Zend2\Cloud\DocumentService\Adapter\SimpleDb
      */
     protected $_adapter;
 

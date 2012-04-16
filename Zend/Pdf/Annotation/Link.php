@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,19 +12,19 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Annotation
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Annotation
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Annotation;
-use Zend\Pdf\Exception;
-use Zend\Pdf;
-use Zend\Pdf\InternalStructure;
-use Zend\Pdf\InternalType;
-use Zend\Pdf\Destination;
+namespace Zend2\Pdf\Annotation;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf;
+use Zend2\Pdf\InternalStructure;
+use Zend2\Pdf\InternalType;
+use Zend2\Pdf\Destination;
 
 /**
  * A link annotation represents either a hypertext link to a destination elsewhere in
@@ -33,19 +33,19 @@ use Zend\Pdf\Destination;
  * Only destinations are used now since only GoTo action can be created by user
  * in current implementation.
  *
- * @uses       \Zend\Pdf\Action\AbstractAction
- * @uses       \Zend\Pdf\Annotation\AbstractAnnotation
- * @uses       \Zend\Pdf\Destination\AbstractDestination
- * @uses       \Zend\Pdf\Destination\Named
- * @uses       \Zend\Pdf\InternalType\AbstractTypeObject
- * @uses       \Zend\Pdf\InternalType\ArrayObject
- * @uses       \Zend\Pdf\InternalType\DictionaryObject
- * @uses       \Zend\Pdf\InternalType\NameObject
- * @uses       \Zend\Pdf\InternalType\NumericObject
- * @uses       \Zend\Pdf\Exception
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Annotation
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Action\AbstractAction
+ * @uses       \Zend2\Pdf\Annotation\AbstractAnnotation
+ * @uses       \Zend2\Pdf\Destination\AbstractDestination
+ * @uses       \Zend2\Pdf\Destination\Named
+ * @uses       \Zend2\Pdf\InternalType\AbstractTypeObject
+ * @uses       \Zend2\Pdf\InternalType\ArrayObject
+ * @uses       \Zend2\Pdf\InternalType\DictionaryObject
+ * @uses       \Zend2\Pdf\InternalType\NameObject
+ * @uses       \Zend2\Pdf\InternalType\NumericObject
+ * @uses       \Zend2\Pdf\Exception
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Annotation
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Link extends AbstractAnnotation
@@ -53,7 +53,7 @@ class Link extends AbstractAnnotation
     /**
      * Annotation object constructor
      *
-     * @throws \Zend\Pdf\Exception
+     * @throws \Zend2\Pdf\Exception
      */
     public function __construct(InternalType\AbstractTypeObject $annotationDictionary)
     {
@@ -77,8 +77,8 @@ class Link extends AbstractAnnotation
      * @param float $y1
      * @param float $x2
      * @param float $y2
-     * @param \Zend\Pdf\InternalStructure\NavigationTarget|string $target
-     * @return \Zend\Pdf\Annotation\Link
+     * @param \Zend2\Pdf\InternalStructure\NavigationTarget|string $target
+     * @return \Zend2\Pdf\Annotation\Link
      */
     public static function create($x1, $y1, $x2, $y2, $target)
     {
@@ -86,7 +86,7 @@ class Link extends AbstractAnnotation
             $destination = Destination\Named::create($target);
         }
         if (!$target instanceof InternalStructure\NavigationTarget) {
-            throw new Exception\InvalidArgumentException('$target parameter must be a \Zend\Pdf\InternalStructure\NavigationTarget object or a string.');
+            throw new Exception\InvalidArgumentException('$target parameter must be a \Zend2\Pdf\InternalStructure\NavigationTarget object or a string.');
         }
 
         $annotationDictionary = new InternalType\DictionaryObject();
@@ -113,8 +113,8 @@ class Link extends AbstractAnnotation
     /**
      * Set link annotation destination
      *
-     * @param \Zend\Pdf\InternalStructure\NavigationTarget|string $target
-     * @return \Zend\Pdf\Annotation\Link
+     * @param \Zend2\Pdf\InternalStructure\NavigationTarget|string $target
+     * @return \Zend2\Pdf\Annotation\Link
      */
     public function setDestination($target)
     {
@@ -122,7 +122,7 @@ class Link extends AbstractAnnotation
             $destination = Destination\Named::create($target);
         }
         if (!$target instanceof InternalStructure\NavigationTarget) {
-            throw new Exception\InvalidArgumentException('$target parameter must be a \Zend\Pdf\InternalStructure\NavigationTarget object or a string.');
+            throw new Exception\InvalidArgumentException('$target parameter must be a \Zend2\Pdf\InternalStructure\NavigationTarget object or a string.');
         }
 
         $this->_annotationDictionary->touch();
@@ -141,7 +141,7 @@ class Link extends AbstractAnnotation
     /**
      * Get link annotation destination
      *
-     * @return \Zend\Pdf\InternalStructure\NavigationTarget|null
+     * @return \Zend2\Pdf\InternalStructure\NavigationTarget|null
      */
     public function getDestination()
     {

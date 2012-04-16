@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Authentication
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Authentication\Storage;
+namespace Zend2\Authentication\Storage;
 
-use Zend\Authentication\Storage as AuthenticationStorage;
+use Zend2\Authentication\Storage as AuthenticationStorage;
 
 /**
  * Non-Persistent Authentication Storage
@@ -30,11 +30,11 @@ use Zend\Authentication\Storage as AuthenticationStorage;
  * re-populated. So there's no need to use sessions, this simple value class
  * will hold the data for rest of the current request.
  *
- * @uses       Zend\Authentication\Storage
- * @category   Zend
- * @package    Zend_Authentication
+ * @uses       Zend2\Authentication\Storage
+ * @category   Zend2
+ * @package    Zend2_Authentication
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class NonPersistent implements AuthenticationStorage
@@ -47,7 +47,7 @@ class NonPersistent implements AuthenticationStorage
     /**
      * Returns true if and only if storage is empty
      *
-     * @throws Zend\Authentication\Storage\Exception If it is impossible to determine whether storage is empty
+     * @throws Zend2\Authentication\Storage\Exception If it is impossible to determine whether storage is empty
      * @return boolean
      */
     public function isEmpty()

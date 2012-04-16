@@ -1,14 +1,14 @@
 <?php
 
-namespace Zend\Mvc\Controller\Plugin;
+namespace Zend2\Mvc\Controller\Plugin;
 
-use Zend\Di\Locator,
-    Zend\Mvc\InjectApplicationEvent,
-    Zend\Mvc\Exception,
-    Zend\Mvc\LocatorAware,
-    Zend\Mvc\MvcEvent,
-    Zend\Mvc\Router\RouteMatch,
-    Zend\Stdlib\Dispatchable;
+use Zend2\Di\Locator,
+    Zend2\Mvc\InjectApplicationEvent,
+    Zend2\Mvc\Exception,
+    Zend2\Mvc\LocatorAware,
+    Zend2\Mvc\MvcEvent,
+    Zend2\Mvc\Router\RouteMatch,
+    Zend2\Stdlib\Dispatchable;
 
 class Forward extends AbstractPlugin
 {

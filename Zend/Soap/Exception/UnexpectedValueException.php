@@ -1,10 +1,10 @@
 <?php
 
-namespace Zend\Soap\Exception;
+namespace Zend2\Soap\Exception;
 
 class UnexpectedValueException
     extends \UnexpectedValueException
-    implements \Zend\Soap\Exception
+    implements \Zend2\Soap\Exception
 {
     
 }

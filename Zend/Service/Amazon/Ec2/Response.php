@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service_Amazon
+ * @category   Zend2
+ * @package    Zend2_Service_Amazon
  * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Amazon\Ec2;
+namespace Zend2\Service\Amazon\Ec2;
 
 /**
  * @uses       DOMDocument
  * @uses       DOMXPath
- * @uses       Zend_Http_Response
- * @category   Zend
- * @package    Zend_Service_Amazon
+ * @uses       Zend2_Http_Response
+ * @category   Zend2
+ * @package    Zend2_Service_Amazon
  * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Response
@@ -43,7 +43,7 @@ class Response
      *
      * This contains the response body and headers.
      *
-     * @var Zend_Http_Response
+     * @var Zend2_Http_Response
      */
     private $_httpResponse = null;
 
@@ -64,9 +64,9 @@ class Response
     /**
      * Creates a new high-level EC2 response object
      *
-     * @param Zend_Http_Response $httpResponse the HTTP response.
+     * @param Zend2_Http_Response $httpResponse the HTTP response.
      */
-    public function __construct(\Zend\Http\Response $httpResponse)
+    public function __construct(\Zend2\Http\Response $httpResponse)
     {
         $this->_httpResponse = $httpResponse;
     }
@@ -101,7 +101,7 @@ class Response
     {
         try {
             $body = $this->_httpResponse->getBody();
-        } catch (\Zend\Http\Exception $e) {
+        } catch (\Zend2\Http\Exception $e) {
             $body = false;
         }
 

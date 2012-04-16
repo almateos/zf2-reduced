@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Filter;
+namespace Zend2\Filter;
 
-use Zend\Loader\Broker;
+use Zend2\Loader\Broker;
 
 /**
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class StaticFilter
@@ -65,7 +65,7 @@ class StaticFilter
      *
      * The first argument of this method is a data input value, that you would have filtered.
      * The second argument is a string, which corresponds to the basename of the filter class,
-     * relative to the Zend_Filter namespace. This method automatically loads the class,
+     * relative to the Zend2_Filter namespace. This method automatically loads the class,
      * creates an instance, and applies the filter() method to the data input. You can also pass
      * an array of constructor arguments, if they are needed for the filter class.
      *
@@ -73,7 +73,7 @@ class StaticFilter
      * @param  string       $classBaseName
      * @param  array        $args          OPTIONAL
      * @return mixed
-     * @throws \Zend\Filter\Exception
+     * @throws \Zend2\Filter\Exception
      */
     public static function execute($value, $classBaseName, array $args = array())
     {

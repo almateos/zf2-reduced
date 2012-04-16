@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_File_Transfer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_File_Transfer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\File\Transfer;
+namespace Zend2\File\Transfer;
 
 /**
  * Base class for all protocols supporting file transfers
  *
- * @category  Zend
- * @package   Zend_File_Transfer
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_File_Transfer
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Transfer
@@ -66,13 +66,13 @@ class Transfer
         }
         
         if ($adapter[0] != '\\') {
-            $adapter = '\Zend\File\Transfer\Adapter\\' . ucfirst($adapter);
+            $adapter = '\Zend2\File\Transfer\Adapter\\' . ucfirst($adapter);
         }
 
         $direction = (integer) $direction;
         $this->adapter[$direction] = new $adapter($options);
         if (!$this->adapter[$direction] instanceof Adapter\AbstractAdapter) {
-            throw new Exception\InvalidArgumentException('Adapter ' . $adapter . ' does not extend Zend\File\Transfer\Adapter\AbstractAdapter');
+            throw new Exception\InvalidArgumentException('Adapter ' . $adapter . ' does not extend Zend2\File\Transfer\Adapter\AbstractAdapter');
         }
 
         return $this;

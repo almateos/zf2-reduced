@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,25 +12,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Cipher
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Cipher
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\InfoCard\Cipher\PKI;
+namespace Zend2\InfoCard\Cipher\PKI;
 
-use Zend\InfoCard\Cipher\PKI\Adapter;
+use Zend2\InfoCard\Cipher\PKI\Adapter;
 
 /**
  * The interface which defines the RSA Public-key encryption object
  *
- * @uses       Zend_InfoCard_Cipher_PKI_Adapter_Abstract
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Cipher
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2_InfoCard_Cipher_PKI_Adapter_Abstract
+ * @category   Zend2
+ * @package    Zend2_InfoCard
+ * @subpackage Zend2_InfoCard_Cipher
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface RSA
@@ -38,7 +38,7 @@ interface RSA
     /**
      * Decrypts RSA encrypted data using the given private key
      *
-     * @throws \Zend\InfoCard\Cipher\Exception
+     * @throws \Zend2\InfoCard\Cipher\Exception
      * @param string $encryptedData The encrypted data in binary format
      * @param string $privateKey The private key in binary format
      * @param string $password The private key passphrase

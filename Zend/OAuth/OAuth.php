@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,21 +12,21 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\OAuth;
+namespace Zend2\OAuth;
 
-use Zend\Http\Client as HTTPClient;
+use Zend2\Http\Client as HTTPClient;
 
 /**
- * @uses       Zend\Http\Client
- * @category   Zend
- * @package    Zend_OAuth
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Http\Client
+ * @category   Zend2
+ * @package    Zend2_OAuth
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class OAuth
@@ -43,15 +43,15 @@ class OAuth
     /**
      * Singleton instance if required of the HTTP client
      *
-     * @var Zend\Http\Client
+     * @var Zend2\Http\Client
      */
     protected static $httpClient = null;
 
     /**
-     * Allows the external environment to make Zend_OAuth use a specific
+     * Allows the external environment to make Zend2_OAuth use a specific
      * Client instance.
      *
-     * @param Zend\Http\Client $httpClient
+     * @param Zend2\Http\Client $httpClient
      * @return void
      */
     public static function setHttpClient(HTTPClient $httpClient)
@@ -64,7 +64,7 @@ class OAuth
      * the instance is reset and cleared of previous parameters and
      * Authorization header values.
      *
-     * @return Zend\Http\Client
+     * @return Zend2\Http\Client
      */
     public static function getHttpClient()
     {

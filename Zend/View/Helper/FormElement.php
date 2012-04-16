@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,39 +12,39 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_View
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\View\Helper;
+namespace Zend2\View\Helper;
 
-use Zend\View\Exception;
+use Zend2\View\Exception;
 
 /**
  * Base helper for form elements.  Extend this, don't use it on its own.
  *
- * @uses       \Zend\View\Exception
- * @uses       \Zend\View\Helper\HtmlElement
- * @category   Zend
- * @package    Zend_View
+ * @uses       \Zend2\View\Exception
+ * @uses       \Zend2\View\Helper\HtmlElement
+ * @category   Zend2
+ * @package    Zend2_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class FormElement extends HtmlElement
 {
     /**
-     * @var \Zend\Translator\Translator
+     * @var \Zend2\Translator\Translator
      */
     protected $_translator;
 
     /**
      * Get translator
      *
-     * @return \Zend\Translator\Translator
+     * @return \Zend2\Translator\Translator
      */
     public function getTranslator()
     {
@@ -54,17 +54,17 @@ abstract class FormElement extends HtmlElement
     /**
      * Set translator
      *
-     * @param  $translator|null \Zend\Translator\Translator
-     * @return \Zend\View\Helper\FormElement
+     * @param  $translator|null \Zend2\Translator\Translator
+     * @return \Zend2\View\Helper\FormElement
      * @throws Exception\InvalidArgumentException
      */
     public function setTranslator($translator = null)
     {
         if (null === $translator) {
             $this->_translator = null;
-        } elseif ($translator instanceof \Zend\Translator\Adapter\AbstractAdapter) {
+        } elseif ($translator instanceof \Zend2\Translator\Adapter\AbstractAdapter) {
             $this->_translator = $translator;
-        } elseif ($translator instanceof \Zend\Translator\Translator) {
+        } elseif ($translator instanceof \Zend2\Translator\Translator) {
             $this->_translator = $translator->getAdapter();
         } else {
             throw new Exception\InvalidArgumentException('Invalid translator specified');

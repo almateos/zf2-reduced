@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,33 +12,33 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Document
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene;
+namespace Zend2\Search\Lucene;
 
-use Zend\Search\Lucene\Exception\InvalidArgumentException;
+use Zend2\Search\Lucene\Exception\InvalidArgumentException;
 
 /**
  * A Document is a set of fields. Each field has a name and a textual value.
  *
- * @uses       \Zend\Search\Lucene\Exception\InvalidArgumentException
- * @uses       \Zend\Search\Lucene\Document\Field
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Exception\InvalidArgumentException
+ * @uses       \Zend2\Search\Lucene\Document\Field
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Document
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Document
 {
 
     /**
-     * Associative array \Zend\Search\Lucene\Document\Field objects where the keys to the
+     * Associative array \Zend2\Search\Lucene\Document\Field objects where the keys to the
      * array are the names of the fields.
      *
      * @var array
@@ -80,8 +80,8 @@ class Document
     /**
      * Add a field object to this document.
      *
-     * @param \Zend\Search\Lucene\Document\Field $field
-     * @return \Zend\Search\Lucene\Document
+     * @param \Zend2\Search\Lucene\Document\Field $field
+     * @return \Zend2\Search\Lucene\Document
      */
     public function addField(Document\Field $field)
     {
@@ -103,11 +103,11 @@ class Document
 
 
     /**
-     * Returns {@link \Zend\Search\Lucene\Document\Field} object for a named field in this document.
+     * Returns {@link \Zend2\Search\Lucene\Document\Field} object for a named field in this document.
      *
      * @param string $fieldName
-     * @throws \Zend\Search\Lucene\Exception\InvalidArgumentException
-     * @return \Zend\Search\Lucene\Document\Field
+     * @throws \Zend2\Search\Lucene\Exception\InvalidArgumentException
+     * @return \Zend2\Search\Lucene\Document\Field
      */
     public function getField($fieldName)
     {

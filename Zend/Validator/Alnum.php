@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
+namespace Zend2\Validator;
 
 /**
- * @uses       \Zend\Filter\Alnum
- * @uses       \Zend\Validator\AbstractValidator
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Filter\Alnum
+ * @uses       \Zend2\Validator\AbstractValidator
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Alnum extends AbstractValidator
@@ -37,7 +37,7 @@ class Alnum extends AbstractValidator
     /**
      * Alphanumeric filter used for validation
      *
-     * @var \Zend\Filter\Alnum
+     * @var \Zend2\Filter\Alnum
      */
     protected static $_filter = null;
 
@@ -64,7 +64,7 @@ class Alnum extends AbstractValidator
     /**
      * Sets default option values for this instance
      *
-     * @param  boolean|\Zend\Config\Config $allowWhiteSpace
+     * @param  boolean|\Zend2\Config\Config $allowWhiteSpace
      * @return void
      */
     public function __construct($options = array())
@@ -86,7 +86,7 @@ class Alnum extends AbstractValidator
      * Sets the allowWhiteSpace option
      *
      * @param boolean $allowWhiteSpace
-     * @return \Zend\Filter\Alnum Provides a fluent interface
+     * @return \Zend2\Filter\Alnum Provides a fluent interface
      */
     public function setAllowWhiteSpace($allowWhiteSpace)
     {
@@ -114,7 +114,7 @@ class Alnum extends AbstractValidator
         }
 
         if (null === self::$_filter) {
-            self::$_filter = new \Zend\Filter\Alnum();
+            self::$_filter = new \Zend2\Filter\Alnum();
         }
 
         self::$_filter->setAllowWhiteSpace($this->getAllowWhiteSpace());

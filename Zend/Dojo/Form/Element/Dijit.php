@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,28 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\Form\Element;
+namespace Zend2\Dojo\Form\Element;
 
-use Zend\View\Renderer as View;
+use Zend2\View\Renderer as View;
 
 /**
  * Base element for dijit elements
  *
- * @uses       \Zend\Form\Element
- * @category   Zend
- * @package    Zend_Dojo
+ * @uses       \Zend2\Form\Element
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class Dijit extends \Zend\Form\Element
+abstract class Dijit extends \Zend2\Form\Element
 {
     /**
      * Dijit parameters
@@ -57,7 +57,7 @@ abstract class Dijit extends \Zend\Form\Element
      */
     public function __construct($spec, $options = null)
     {
-        $this->addPrefixPath('Zend\Dojo\Form\Decorator', 'Zend/Dojo/Form/Decorator', 'decorator');
+        $this->addPrefixPath('Zend2\Dojo\Form\Decorator', 'Zend2/Dojo/Form/Decorator', 'decorator');
         parent::__construct($spec, $options);
     }
 
@@ -66,7 +66,7 @@ abstract class Dijit extends \Zend\Form\Element
      *
      * @param  string $key
      * @param  mixed $value
-     * @return \Zend\Dojo\Form\Element\Dijit
+     * @return \Zend2\Dojo\Form\Element\Dijit
      */
     public function setDijitParam($key, $value)
     {
@@ -79,7 +79,7 @@ abstract class Dijit extends \Zend\Form\Element
      * Set multiple dijit params at once
      *
      * @param  array $params
-     * @return \Zend\Dojo\Form\Element\Dijit
+     * @return \Zend2\Dojo\Form\Element\Dijit
      */
     public function setDijitParams(array $params)
     {
@@ -127,7 +127,7 @@ abstract class Dijit extends \Zend\Form\Element
      * Remove a single dijit parameter
      *
      * @param  string $key
-     * @return \Zend\Dojo\Form\Element\Dijit
+     * @return \Zend2\Dojo\Form\Element\Dijit
      */
     public function removeDijitParam($key)
     {
@@ -141,7 +141,7 @@ abstract class Dijit extends \Zend\Form\Element
     /**
      * Clear all dijit parameters
      *
-     * @return \Zend\Dojo\Form\Element\Dijit
+     * @return \Zend2\Dojo\Form\Element\Dijit
      */
     public function clearDijitParams()
     {
@@ -175,14 +175,14 @@ abstract class Dijit extends \Zend\Form\Element
      *
      * Ensures that the view object has the dojo view helper path set.
      *
-     * @param  \Zend\View\Renderer $view
-     * @return \Zend\Dojo\Form\Element\Dijit
+     * @param  \Zend2\View\Renderer $view
+     * @return \Zend2\Dojo\Form\Element\Dijit
      */
     public function setView(View $view = null)
     {
         if (null !== $view) {
             if(false === $view->getBroker()->isLoaded('dojo')) {
-                $loader = new \Zend\Dojo\View\HelperLoader();
+                $loader = new \Zend2\Dojo\View\HelperLoader();
                 $view->getBroker()->getClassLoader()->registerPlugins($loader);
             }
         }

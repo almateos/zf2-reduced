@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,26 +13,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Mail\Protocol;
+namespace Zend2\Mail\Protocol;
 
-use Zend\Mime\Mime;
+use Zend2\Mime\Mime;
 
 /**
- * Smtp implementation of Zend\Mail\Protocol\AbstractProtocol
+ * Smtp implementation of Zend2\Mail\Protocol\AbstractProtocol
  *
  * Minimum implementation according to RFC2821: EHLO, MAIL FROM, RCPT TO, DATA, RSET, NOOP, QUIT
  *
- * @category   Zend
- * @package    Zend_Mail
+ * @category   Zend2
+ * @package    Zend2_Mail
  * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Smtp extends AbstractProtocol
@@ -343,7 +343,7 @@ class Smtp extends AbstractProtocol
     /**
      * Issues the NOOP command end validates answer
      *
-     * Not used by Zend_Mail, could be used to keep a connection alive or check if it is still open.
+     * Not used by Zend2_Mail, could be used to keep a connection alive or check if it is still open.
      *
      * @return void
      */
@@ -357,7 +357,7 @@ class Smtp extends AbstractProtocol
     /**
      * Issues the VRFY command end validates answer
      *
-     * Not used by Zend_Mail.
+     * Not used by Zend2_Mail.
      *
      * @param  string $user User Name or eMail to verify
      * @return void

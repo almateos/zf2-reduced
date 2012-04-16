@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -13,25 +13,25 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData;
+namespace Zend2\GData;
 
-use Zend\Http\Client\Adapter;
+use Zend2\Http\Client\Adapter;
 
 /**
  * Extends the default HTTP adapter to handle streams instead of discrete body
  * strings.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class HttpAdapterStreamingSocket extends Adapter\Socket
@@ -48,7 +48,7 @@ class HttpAdapterStreamingSocket extends Adapter\Socket
      * Send request to the remote server with streaming support.
      *
      * @param string        $method
-     * @param \Zend\Uri\Uri $uri
+     * @param \Zend2\Uri\Uri $uri
      * @param string        $http_ver
      * @param array         $headers
      * @param string        $body

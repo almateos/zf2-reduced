@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category  Zend
- * @package   Zend_Text_Table
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category  Zend2
+ * @package   Zend2_Text_Table
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Text\Table;
+namespace Zend2\Text\Table;
 
 /**
- * Row class for Zend_Text_Table
+ * Row class for Zend2_Text_Table
  *
- * @uses      \Zend\Text\Table\Column
- * @uses      \Zend\Text\Table\Exception
- * @category  Zend
- * @package   Zend_Text_Table
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Text\Table\Column
+ * @uses      \Zend2\Text\Table\Exception
+ * @category  Zend2
+ * @package   Zend2_Text_Table
+ * @copyright Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Row
@@ -51,7 +51,7 @@ class Row
      *
      * @param  string $content
      * @param  array  $options
-     * @return \Zend\Text\Table\Row
+     * @return \Zend2\Text\Table\Row
      */
     public function createColumn($content, array $options = null)
     {
@@ -73,8 +73,8 @@ class Row
     /**
      * Append a column to the row
      *
-     * @param  \Zend\Text\Table\Column $column The column to append to the row
-     * @return \Zend\Text\Table\Row
+     * @param  \Zend2\Text\Table\Column $column The column to append to the row
+     * @return \Zend2\Text\Table\Row
      */
     public function appendColumn(Column $column)
     {
@@ -89,7 +89,7 @@ class Row
      * Returns null, when the index is out of range
      *
      * @param  integer $index
-     * @return \Zend\Text\Table\Column|null
+     * @return \Zend2\Text\Table\Column|null
      */
     public function getColumn($index)
     {
@@ -113,7 +113,7 @@ class Row
     /**
      * Get the widths of all columns, which were rendered last
      *
-     * @throws \Zend\Text\Table\Exception\UnexpectedValueException When no columns were rendered yet
+     * @throws \Zend2\Text\Table\Exception\UnexpectedValueException When no columns were rendered yet
      * @return integer
      */
     public function getColumnWidths()
@@ -129,9 +129,9 @@ class Row
      * Render the row
      *
      * @param  array                               $columnWidths Width of all columns
-     * @param  \Zend\Text\Table\Decorator $decorator    Decorator for the row borders
+     * @param  \Zend2\Text\Table\Decorator $decorator    Decorator for the row borders
      * @param  integer                             $padding      Padding for the columns
-     * @throws \Zend\Text\Table\Exception\OverflowException When there are too many columns
+     * @throws \Zend2\Text\Table\Exception\OverflowException When there are too many columns
      * @return string
      */
     public function render(array $columnWidths, Decorator $decorator, $padding = 0)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,30 +12,30 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /**
- * @uses       Zend_Service_DeveloperGarden_Client_AbstractClient
- * @uses       Zend_Service_DeveloperGarden_Request_IpLocation_LocateIPRequest
- * @uses       Zend_Service_DeveloperGarden_Response_IpLocation_CityType
- * @uses       Zend_Service_DeveloperGarden_Response_IpLocation_GeoCoordinatesType
- * @uses       Zend_Service_DeveloperGarden_Response_IpLocation_IPAddressLocationType
- * @uses       Zend_Service_DeveloperGarden_Response_IpLocation_LocateIPResponse
- * @uses       Zend_Service_DeveloperGarden_Response_IpLocation_LocateIPResponseType
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_DeveloperGarden_Client_AbstractClient
+ * @uses       Zend2_Service_DeveloperGarden_Request_IpLocation_LocateIPRequest
+ * @uses       Zend2_Service_DeveloperGarden_Response_IpLocation_CityType
+ * @uses       Zend2_Service_DeveloperGarden_Response_IpLocation_GeoCoordinatesType
+ * @uses       Zend2_Service_DeveloperGarden_Response_IpLocation_IPAddressLocationType
+ * @uses       Zend2_Service_DeveloperGarden_Response_IpLocation_LocateIPResponse
+ * @uses       Zend2_Service_DeveloperGarden_Response_IpLocation_LocateIPResponseType
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_DeveloperGarden_IpLocation 
-    extends Zend_Service_DeveloperGarden_Client_AbstractClient
+class Zend2_Service_DeveloperGarden_IpLocation 
+    extends Zend2_Service_DeveloperGarden_Client_AbstractClient
 {
     /**
      * wsdl file
@@ -58,29 +58,29 @@ class Zend_Service_DeveloperGarden_IpLocation
      *
      */
     protected $_classMap = array(
-        'LocateIPResponseType'  => 'Zend_Service_DeveloperGarden_Response_IpLocation_LocateIPResponseType',
-        'IPAddressLocationType' => 'Zend_Service_DeveloperGarden_Response_IpLocation_IPAddressLocationType',
-        'RegionType'            => 'Zend_Service_DeveloperGarden_Response_IpLocation_RegionType',
-        'GeoCoordinatesType'    => 'Zend_Service_DeveloperGarden_Response_IpLocation_GeoCoordinatesType',
-        'CityType'              => 'Zend_Service_DeveloperGarden_Response_IpLocation_CityType',
+        'LocateIPResponseType'  => 'Zend2_Service_DeveloperGarden_Response_IpLocation_LocateIPResponseType',
+        'IPAddressLocationType' => 'Zend2_Service_DeveloperGarden_Response_IpLocation_IPAddressLocationType',
+        'RegionType'            => 'Zend2_Service_DeveloperGarden_Response_IpLocation_RegionType',
+        'GeoCoordinatesType'    => 'Zend2_Service_DeveloperGarden_Response_IpLocation_GeoCoordinatesType',
+        'CityType'              => 'Zend2_Service_DeveloperGarden_Response_IpLocation_CityType',
     );
 
     /**
      * locate the given Ip address or array of addresses
      *
-     * @param Zend_Service_DeveloperGarden_IpLocation_IpAddress|string $ip
-     * @return Zend_Service_DeveloperGarden_Response_IpLocation_LocateIPResponse
+     * @param Zend2_Service_DeveloperGarden_IpLocation_IpAddress|string $ip
+     * @return Zend2_Service_DeveloperGarden_Response_IpLocation_LocateIPResponse
      */
     public function locateIP($ip)
     {
-        $request = new Zend_Service_DeveloperGarden_Request_IpLocation_LocateIPRequest(
+        $request = new Zend2_Service_DeveloperGarden_Request_IpLocation_LocateIPRequest(
             $this->getEnvironment(),
             $ip
         );
 
         $result = $this->getSoapClient()->locateIP($request);
 
-        $response = new Zend_Service_DeveloperGarden_Response_IpLocation_LocateIPResponse($result);
+        $response = new Zend2_Service_DeveloperGarden_Response_IpLocation_LocateIPResponse($result);
         return $response->parse();
     }
 }

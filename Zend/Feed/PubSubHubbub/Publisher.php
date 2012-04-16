@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,20 +12,20 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Feed_Pubsubhubbub
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Pubsubhubbub
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Feed\PubSubHubbub;
+namespace Zend2\Feed\PubSubHubbub;
 
-use Zend\Uri;
+use Zend2\Uri;
 
 /**
- * @category   Zend
- * @package    Zend_Feed_Pubsubhubbub
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Feed_Pubsubhubbub
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Publisher
@@ -48,7 +48,7 @@ class Publisher
 
     /**
      * An array of any errors including keys for 'response', 'hubUrl'.
-     * The response is the actual Zend_Http_Response object.
+     * The response is the actual Zend2_Http_Response object.
      *
      * @var array
      */
@@ -63,11 +63,11 @@ class Publisher
     protected $_parameters = array();
 
     /**
-     * Constructor; accepts an array or Zend_Config instance to preset
+     * Constructor; accepts an array or Zend2_Config instance to preset
      * options for the Publisher without calling all supported setter
      * methods in turn.
      *
-     * @param  array|\Zend\Config\Config $options Options array or \Zend\Config\Config instance
+     * @param  array|\Zend2\Config\Config $options Options array or \Zend2\Config\Config instance
      * @return void
      */
     public function __construct($config = null)
@@ -80,15 +80,15 @@ class Publisher
     /**
      * Process any injected configuration options
      *
-     * @param  array|\Zend\Config\Config $options Options array or \Zend\Config\Config instance
-     * @return \Zend\Feed\PubSubHubbub\Publisher
+     * @param  array|\Zend2\Config\Config $options Options array or \Zend2\Config\Config instance
+     * @return \Zend2\Feed\PubSubHubbub\Publisher
      */
     public function setConfig($config)
     {
-        if ($config instanceof \Zend\Config\Config) {
+        if ($config instanceof \Zend2\Config\Config) {
             $config = $config->toArray();
         } elseif (!is_array($config)) {
-            throw new Exception('Array or Zend_Config object'
+            throw new Exception('Array or Zend2_Config object'
                 . 'expected, got ' . gettype($config));
         }
         if (array_key_exists('hubUrls', $config)) {
@@ -107,7 +107,7 @@ class Publisher
      * Add a Hub Server URL supported by Publisher
      *
      * @param  string $url
-     * @return \Zend\Feed\PubSubHubbub\Publisher
+     * @return \Zend2\Feed\PubSubHubbub\Publisher
      */
     public function addHubUrl($url)
     {
@@ -124,7 +124,7 @@ class Publisher
      * Add an array of Hub Server URLs supported by Publisher
      *
      * @param  array $urls
-     * @return \Zend\Feed\PubSubHubbub\Publisher
+     * @return \Zend2\Feed\PubSubHubbub\Publisher
      */
     public function addHubUrls(array $urls)
     {
@@ -138,7 +138,7 @@ class Publisher
      * Remove a Hub Server URL
      *
      * @param  string $url
-     * @return \Zend\Feed\PubSubHubbub\Publisher
+     * @return \Zend2\Feed\PubSubHubbub\Publisher
      */
     public function removeHubUrl($url)
     {
@@ -165,7 +165,7 @@ class Publisher
      * Add a URL to a topic (Atom or RSS feed) which has been updated
      *
      * @param  string $url
-     * @return \Zend\Feed\PubSubHubbub\Publisher
+     * @return \Zend2\Feed\PubSubHubbub\Publisher
      */
     public function addUpdatedTopicUrl($url)
     {
@@ -182,7 +182,7 @@ class Publisher
      * Add an array of Topic URLs which have been updated
      *
      * @param  array $urls
-     * @return \Zend\Feed\PubSubHubbub\Publisher
+     * @return \Zend2\Feed\PubSubHubbub\Publisher
      */
     public function addUpdatedTopicUrls(array $urls)
     {
@@ -196,7 +196,7 @@ class Publisher
      * Remove an updated topic URL
      *
      * @param  string $url
-     * @return \Zend\Feed\PubSubHubbub\Publisher
+     * @return \Zend2\Feed\PubSubHubbub\Publisher
      */
     public function removeUpdatedTopicUrl($url)
     {
@@ -224,7 +224,7 @@ class Publisher
      *
      * @param  string $url The Hub Server's URL
      * @return void
-     * @throws \Zend\Feed\PubSubHubbub\Exception Thrown on failure
+     * @throws \Zend2\Feed\PubSubHubbub\Exception Thrown on failure
      */
     public function notifyHub($url)
     {
@@ -250,10 +250,10 @@ class Publisher
      * If a Hub notification fails, certain data will be retained in an
      * an array retrieved using getErrors(), if a failure occurs for any Hubs
      * the isSuccess() check will return FALSE. This method is designed not
-     * to needlessly fail with an Exception/Error unless from Zend_Http_Client.
+     * to needlessly fail with an Exception/Error unless from Zend2_Http_Client.
      *
      * @return void
-     * @throws \Zend\Feed\PubSubHubbub\Exception Thrown if no hubs attached
+     * @throws \Zend2\Feed\PubSubHubbub\Exception Thrown if no hubs attached
      */
     public function notifyAll()
     {
@@ -281,7 +281,7 @@ class Publisher
      *
      * @param  string $name
      * @param  string|null $value
-     * @return \Zend\Feed\PubSubHubbub\Publisher
+     * @return \Zend2\Feed\PubSubHubbub\Publisher
      */
     public function setParameter($name, $value = null)
     {
@@ -309,7 +309,7 @@ class Publisher
      * Add an optional parameter to the update notification requests
      *
      * @param  array $parameters
-     * @return \Zend\Feed\PubSubHubbub\Publisher
+     * @return \Zend2\Feed\PubSubHubbub\Publisher
      */
     public function setParameters(array $parameters)
     {
@@ -323,7 +323,7 @@ class Publisher
      * Remove an optional parameter for the notification requests
      *
      * @param  string $name
-     * @return \Zend\Feed\PubSubHubbub\Publisher
+     * @return \Zend2\Feed\PubSubHubbub\Publisher
      */
     public function removeParameter($name)
     {
@@ -363,7 +363,7 @@ class Publisher
 
     /**
      * Return an array of errors met from any failures, including keys:
-     * 'response' => the Zend_Http_Response object from the failure
+     * 'response' => the Zend2_Http_Response object from the failure
      * 'hubUrl' => the URL of the Hub Server whose notification failed
      *
      * @return array
@@ -376,14 +376,14 @@ class Publisher
     /**
      * Get a basic prepared HTTP client for use
      *
-     * @return \Zend\Http\Client
+     * @return \Zend2\Http\Client
      */
     protected function _getHttpClient()
     {
         $client = PubSubHubbub::getHttpClient();
-        $client->setMethod(\Zend\Http\Request::METHOD_POST);
+        $client->setMethod(\Zend2\Http\Request::METHOD_POST);
         $client->setConfig(array(
-            'useragent' => 'Zend_Feed_Pubsubhubbub_Publisher/' . \Zend\Version::VERSION,
+            'useragent' => 'Zend2_Feed_Pubsubhubbub_Publisher/' . \Zend2\Version::VERSION,
         ));
         $params   = array();
         $params[] = 'hub.mode=publish';

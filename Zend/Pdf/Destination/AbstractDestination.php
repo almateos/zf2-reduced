@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,37 +12,37 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Destination
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Destination
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf\Destination;
-use Zend\Pdf\Exception;
-use Zend\Pdf\InternalType;
-use Zend\Pdf;
+namespace Zend2\Pdf\Destination;
+use Zend2\Pdf\Exception;
+use Zend2\Pdf\InternalType;
+use Zend2\Pdf;
 
 /**
  * Abstract PDF destination representation class
  *
- * @uses       \Zend\Pdf\Destination\Fit
- * @uses       \Zend\Pdf\Destination\FitBoundingBox
- * @uses       \Zend\Pdf\Destination\FitBoundingBoxHorizontally
- * @uses       \Zend\Pdf\Destination\FitBoundingBoxVertically
- * @uses       \Zend\Pdf\Destination\FitHorizontally
- * @uses       \Zend\Pdf\Destination\FitRectangle
- * @uses       \Zend\Pdf\Destination\FitVertically
- * @uses       \Zend\Pdf\Destination\Named
- * @uses       \Zend\Pdf\Destination\Unknown
- * @uses       \Zend\Pdf\Destination\Zoom
- * @uses       \Zend\Pdf\InternalType\AbstractTypeObject
- * @uses       \Zend\Pdf\Exception
- * @uses       \Zend\Pdf\InternalStructure\NavigationTarget
- * @package    Zend_PDF
- * @subpackage Zend_PDF_Destination
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Destination\Fit
+ * @uses       \Zend2\Pdf\Destination\FitBoundingBox
+ * @uses       \Zend2\Pdf\Destination\FitBoundingBoxHorizontally
+ * @uses       \Zend2\Pdf\Destination\FitBoundingBoxVertically
+ * @uses       \Zend2\Pdf\Destination\FitHorizontally
+ * @uses       \Zend2\Pdf\Destination\FitRectangle
+ * @uses       \Zend2\Pdf\Destination\FitVertically
+ * @uses       \Zend2\Pdf\Destination\Named
+ * @uses       \Zend2\Pdf\Destination\Unknown
+ * @uses       \Zend2\Pdf\Destination\Zoom
+ * @uses       \Zend2\Pdf\InternalType\AbstractTypeObject
+ * @uses       \Zend2\Pdf\Exception
+ * @uses       \Zend2\Pdf\InternalStructure\NavigationTarget
+ * @package    Zend2_PDF
+ * @subpackage Zend2_PDF_Destination
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class AbstractDestination extends Pdf\InternalStructure\NavigationTarget
@@ -52,7 +52,7 @@ abstract class AbstractDestination extends Pdf\InternalStructure\NavigationTarge
      *
      * @internal
      * @param $destinationArray
-     * @return \Zend\Pdf\Destination\AbstractDestination
+     * @return \Zend2\Pdf\Destination\AbstractDestination
      */
     public static function load(InternalType\AbstractTypeObject $resource)
     {

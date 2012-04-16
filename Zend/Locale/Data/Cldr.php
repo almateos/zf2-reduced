@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Locale
+ * @category   Zend2
+ * @package    Zend2_Locale
  * @subpackage Data
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Locale\Data;
+namespace Zend2\Locale\Data;
 
-use Zend\Cache\StorageFactory as CacheFactory,
-    Zend\Cache\Storage\Adapter as CacheAdapter,
-    Zend\Locale\Locale,
-    Zend\Locale\Exception;
+use Zend2\Cache\StorageFactory as CacheFactory,
+    Zend2\Cache\Storage\Adapter as CacheAdapter,
+    Zend2\Locale\Locale,
+    Zend2\Locale\Exception;
 
 /**
  * Locale data provider, handles CLDR
  *
- * @category   Zend
- * @package    Zend_Locale
+ * @category   Zend2
+ * @package    Zend2_Locale
  * @subpackage Data
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Cldr extends AbstractLocale
@@ -266,7 +266,7 @@ class Cldr extends AbstractLocale
      * @param  string $locale
      * @param  string $path
      * @param  string $value
-     * @throws \Zend\Locale\Exception\InvalidArgumentException
+     * @throws \Zend2\Locale\Exception\InvalidArgumentException
      * @return array
      */
     public static function getList($locale, $path, $value = false)
@@ -286,7 +286,7 @@ class Cldr extends AbstractLocale
         }
 
         $val = urlencode($val);
-        $id = strtr('Zend_LocaleL_' . $locale . '_' . $path . '_' . $val, array('-' => '_', '%' => '_', '+' => '_'));
+        $id = strtr('Zend2_LocaleL_' . $locale . '_' . $path . '_' . $val, array('-' => '_', '%' => '_', '+' => '_'));
         if (!self::$_cacheDisabled && ($result = self::$_cache->getItem($id))) {
             return $result;
         }
@@ -851,7 +851,7 @@ class Cldr extends AbstractLocale
 
         if (isset(self::$_cache)) {
           if (self::$_cacheTags) {
-                self::$_cache->setItem($id, $temp, array('tags' => array('Zend_Locale')));
+                self::$_cache->setItem($id, $temp, array('tags' => array('Zend2_Locale')));
           } else {
                 self::$_cache->setItem($id, $temp);
           }
@@ -894,7 +894,7 @@ class Cldr extends AbstractLocale
             $val = implode('_' , $value);
         }
         $val = urlencode($val);
-        $id = strtr('Zend_LocaleC_' . $locale . '_' . $path . '_' . $val, array('-' => '_', '%' => '_', '+' => '_'));
+        $id = strtr('Zend2_LocaleC_' . $locale . '_' . $path . '_' . $val, array('-' => '_', '%' => '_', '+' => '_'));
         if (!self::$_cacheDisabled && ($result = self::$_cache->getItem($id))) {
             return $result;
         }
@@ -1353,7 +1353,7 @@ class Cldr extends AbstractLocale
         }
 
         if (self::$_cacheTags) {
-            self::$_cache->setItem($id, $temp, array('tags' => array('Zend_Locale')));
+            self::$_cache->setItem($id, $temp, array('tags' => array('Zend2_Locale')));
       } else {
             self::$_cache->setItem($id, $temp);
       }
@@ -1364,7 +1364,7 @@ class Cldr extends AbstractLocale
     /**
      * Internal function for checking the locale
      *
-     * @param string|\Zend\Locale $locale Locale to check
+     * @param string|\Zend2\Locale $locale Locale to check
      * @return string
      */
     protected static function _checkLocale($locale)
@@ -1596,7 +1596,7 @@ class Cldr extends AbstractLocale
         ksort(self::$_result);
 
         if (self::hasCacheTagSupport()) {
-            self::getCache()->setItem($cacheId, self::$_result, array('tags' => array('Zend_Locale')));
+            self::getCache()->setItem($cacheId, self::$_result, array('tags' => array('Zend2_Locale')));
         } elseif (self::hasCache()) {
             self::getCache()->setItem($cacheId, self::$_result);
         }

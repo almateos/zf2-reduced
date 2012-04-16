@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend\Service\Rackspace\
+ * @category   Zend2
+ * @package    Zend2\Service\Rackspace\
  * @subpackage Servers
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Rackspace\Servers;
+namespace Zend2\Service\Rackspace\Servers;
 
-use Zend\Service\Rackspace\Servers as RackspaceServers;
+use Zend2\Service\Rackspace\Servers as RackspaceServers;
 
 /**
  * List of shared Ip group of Rackspace
@@ -30,17 +30,17 @@ use Zend\Service\Rackspace\Servers as RackspaceServers;
  * @uses       Countable
  * @uses       Iterator
  * @uses       OutOfBoundsException
- * @uses       Zend\Service\Rackspace\Servers
- * @category   Zend
- * @package    Zend\Service\Rackspace
+ * @uses       Zend2\Service\Rackspace\Servers
+ * @category   Zend2
+ * @package    Zend2\Service\Rackspace
  * @subpackage Servers
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class SharedIpGroupList implements \Countable, \Iterator, \ArrayAccess
 {
     /**
-     * @var array of Zend\Service\Rackspace\Servers\SharedIpGroup
+     * @var array of Zend2\Service\Rackspace\Servers\SharedIpGroup
      */
     protected $shared = array();
     /**
@@ -48,7 +48,7 @@ class SharedIpGroupList implements \Countable, \Iterator, \ArrayAccess
      */
     protected $iteratorKey = 0;
     /**
-     * @var Zend\Service\Rackspace\Servers
+     * @var Zend2\Service\Rackspace\Servers
      */
     protected $service;
     /**
@@ -61,7 +61,7 @@ class SharedIpGroupList implements \Countable, \Iterator, \ArrayAccess
     public function __construct(RackspaceServers $service,$list = array())
     {
         if (!($service instanceof RackspaceServers) || !is_array($list)) {
-            throw new Exception\InvalidArgumentException("You must pass a Zend\Service\Rackspace\Servers object and an array");
+            throw new Exception\InvalidArgumentException("You must pass a Zend2\Service\Rackspace\Servers object and an array");
         }
         $this->service= $service;
         $this->constructFromArray($list);
@@ -81,8 +81,8 @@ class SharedIpGroupList implements \Countable, \Iterator, \ArrayAccess
     /**
      * Add a shared Ip group
      *
-     * @param  Zend\Service\Rackspace\Servers\SharedIpGroup $shared
-     * @return Zend\Service\Rackspace\Servers\SharedIpGroupList
+     * @param  Zend2\Service\Rackspace\Servers\SharedIpGroup $shared
+     * @return Zend2\Service\Rackspace\Servers\SharedIpGroupList
      */
     protected function addSharedIpGroup (SharedIpGroup $share)
     {
@@ -118,7 +118,7 @@ class SharedIpGroupList implements \Countable, \Iterator, \ArrayAccess
      *
      * Implement Iterator::current()
      *
-     * @return Zend\Service\Rackspace\Servers\SharedIpGroup
+     * @return Zend2\Service\Rackspace\Servers\SharedIpGroup
      */
     public function current()
     {
@@ -192,7 +192,7 @@ class SharedIpGroupList implements \Countable, \Iterator, \ArrayAccess
      *
      * @param   int  $offset
      * @throws  OutOfBoundsException
-     * @return  Zend\Service\Rackspace\Servers\SharedIpGroup
+     * @return  Zend2\Service\Rackspace\Servers\SharedIpGroup
      */
     public function offsetGet($offset)
     {
@@ -210,7 +210,7 @@ class SharedIpGroupList implements \Countable, \Iterator, \ArrayAccess
      *
      * @param   int     $offset
      * @param   string  $value
-     * @throws  Zend\Service\Rackspace\Exception
+     * @throws  Zend2\Service\Rackspace\Exception
      */
     public function offsetSet($offset, $value)
     {
@@ -223,7 +223,7 @@ class SharedIpGroupList implements \Countable, \Iterator, \ArrayAccess
      * Implement ArrayAccess::offsetUnset()
      *
      * @param  int $offset
-     * @throws Zend\Service\Rackspace\Exception
+     * @throws Zend2\Service\Rackspace\Exception
      */
     public function offsetUnset($offset)
     {

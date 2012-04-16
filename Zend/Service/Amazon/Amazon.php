@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Amazon;
-use Zend\Service,
-    Zend\Service\Amazon\Exception,
-    Zend\Rest\Client,
-    Zend\Crypt;
+namespace Zend2\Service\Amazon;
+use Zend2\Service,
+    Zend2\Service\Amazon\Exception,
+    Zend2\Rest\Client,
+    Zend2\Crypt;
 
 /**
  * @uses       DOMDocument
  * @uses       DOMXPath
- * @uses       Zend_Crypt_Hmac
- * @uses       Zend_Rest_Client
- * @uses       Zend_Service_Amazon_Item
- * @uses       Zend_Service_Amazon_ResultSet
- * @uses       Zend\Service\Amazon\Exception
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Crypt_Hmac
+ * @uses       Zend2_Rest_Client
+ * @uses       Zend2_Service_Amazon_Item
+ * @uses       Zend2_Service_Amazon_ResultSet
+ * @uses       Zend2\Service\Amazon\Exception
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Amazon
@@ -73,7 +73,7 @@ class Amazon
     /**
      * Reference to REST client object
      *
-     * @var Zend_Rest_Client
+     * @var Zend2_Rest_Client
      */
     protected $_rest = null;
 
@@ -83,8 +83,8 @@ class Amazon
      *
      * @param  string $appId       Developer's Amazon appid
      * @param  string $countryCode Country code for Amazon service; may be US, UK, DE, JP, FR, CA
-     * @throws \Zend\Service\Amazon\Exception
-     * @return \Zend\Service\Amazon
+     * @throws \Zend2\Service\Amazon\Exception
+     * @return \Zend2\Service\Amazon
      */
     public function __construct($appId, $countryCode = 'US', $secretKey = null)
     {
@@ -104,8 +104,8 @@ class Amazon
      * Search for Items
      *
      * @param  array $options Options to use for the Search Query
-     * @throws \Zend\Service\Amazon\Exception
-     * @return Zend_Service_Amazon_ResultSet
+     * @throws \Zend2\Service\Amazon\Exception
+     * @return Zend2_Service_Amazon_ResultSet
      * @see http://www.amazon.com/gp/aws/sdk/main.html/102-9041115-9057709?s=AWSEcommerceService&v=2005-10-05&p=ApiReference/ItemSearchOperation
      */
     public function itemSearch(array $options)
@@ -137,8 +137,8 @@ class Amazon
      * @param  string $asin    Amazon ASIN ID
      * @param  array  $options Query Options
      * @see http://www.amazon.com/gp/aws/sdk/main.html/102-9041115-9057709?s=AWSEcommerceService&v=2005-10-05&p=ApiReference/ItemLookupOperation
-     * @throws Zend\Service\Amazon\Exception
-     * @return Zend_Service_Amazon_Item|Zend_Service_Amazon_ResultSet
+     * @throws Zend2\Service\Amazon\Exception
+     * @return Zend2_Service_Amazon_Item|Zend2_Service_Amazon_ResultSet
      */
     public function itemLookup($asin, array $options = array())
     {
@@ -175,7 +175,7 @@ class Amazon
     /**
      * Returns a reference to the REST client
      *
-     * @return Zend_Rest_Client
+     * @return Zend2_Rest_Client
      */
     public function getRestClient()
     {
@@ -188,8 +188,8 @@ class Amazon
     /**
      * Set REST client
      *
-     * @param Zend_Rest_Client
-     * @return Zend_Service_Amazon
+     * @param Zend2_Rest_Client
+     * @return Zend2_Service_Amazon
      */
     public function setRestClient(Client\RestClient $client)
     {
@@ -276,7 +276,7 @@ class Amazon
      * Check result for errors
      *
      * @param  DOMDocument $dom
-     * @throws Zend\Servicei\Amazon\Exception
+     * @throws Zend2\Servicei\Amazon\Exception
      * @return void
      */
     protected static function _checkErrors(\DOMDocument $dom)

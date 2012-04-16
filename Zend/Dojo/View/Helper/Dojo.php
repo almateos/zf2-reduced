@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\View\Helper;
+namespace Zend2\Dojo\View\Helper;
 
-use Zend\Dojo\View\Exception,
-    Zend\Registry,
-    Zend\View\Renderer as View,
-    Zend\View\Helper\AbstractHelper as AbstractViewHelper;
+use Zend2\Dojo\View\Exception,
+    Zend2\Registry,
+    Zend2\View\Renderer as View,
+    Zend2\View\Helper\AbstractHelper as AbstractViewHelper;
 
 /**
- * Zend_Dojo_View_Helper_Dojo: Dojo View Helper
+ * Zend2_Dojo_View_Helper_Dojo: Dojo View Helper
  *
  * Allows specifying stylesheets, path to dojo, module paths, and onLoad
  * events.
  *
- * @uses       \Zend\Dojo\View\Exception
- * @uses       \Zend\Dojo\View\Helper\DojoContainer
- * @uses       \Zend\Registry
- * @package    Zend_Dojo
+ * @uses       \Zend2\Dojo\View\Exception
+ * @uses       \Zend2\Dojo\View\Helper\DojoContainer
+ * @uses       \Zend2\Registry
+ * @package    Zend2_Dojo
  * @subpackage View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Dojo extends AbstractViewHelper
@@ -50,12 +50,12 @@ class Dojo extends AbstractViewHelper
     /**#@-*/
 
     /**
-     * @var \Zend\View\Renderer
+     * @var \Zend2\View\Renderer
      */
     public $view;
 
     /**
-     * @var \Zend\Dojo\View\Helper\Dojo\Container
+     * @var \Zend2\Dojo\View\Helper\Dojo\Container
      */
     protected $_container;
 
@@ -86,7 +86,7 @@ class Dojo extends AbstractViewHelper
     /**
      * Set view object
      *
-     * @param  Zend\View\Renderer $view
+     * @param  Zend2\View\Renderer $view
      * @return void
      */
     public function setView(View $view)
@@ -98,7 +98,7 @@ class Dojo extends AbstractViewHelper
     /**
      * Return dojo container
      *
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function __invoke()
     {
@@ -111,7 +111,7 @@ class Dojo extends AbstractViewHelper
      * @param  string $method
      * @param  array $args
      * @return mixed
-     * @throws \Zend\Dojo\View\Exception For invalid method calls
+     * @throws \Zend2\Dojo\View\Exception For invalid method calls
      */
     public function __call($method, $args)
     {

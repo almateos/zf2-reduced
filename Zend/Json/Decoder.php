@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Json
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Json
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Json;
+namespace Zend2\Json;
 
-use Zend\Json\Exception\RuntimeException,
-    Zend\Json\Exception\InvalidArgumentException;
+use Zend2\Json\Exception\RuntimeException,
+    Zend2\Json\Exception\InvalidArgumentException;
 
 /**
  * Decode JSON encoded string to PHP variable constructs
  *
  * @uses       stdClass
- * @uses       Zend\Json\Json
- * @uses       Zend\Json\Exception\RuntimeException
- * @uses       Zend\Json\Exception\InvalidArgumentException
- * @category   Zend
- * @package    Zend_Json
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\Json\Json
+ * @uses       Zend2\Json\Exception\RuntimeException
+ * @uses       Zend2\Json\Exception\InvalidArgumentException
+ * @category   Zend2
+ * @package    Zend2_Json
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Decoder
@@ -94,7 +94,7 @@ class Decoder
      *
      * @param string $source String source to decode
      * @param int $decodeType How objects should be decoded -- see
-     * {@link Zend_Json::TYPE_ARRAY} and {@link Zend_Json::TYPE_OBJECT} for
+     * {@link Zend2_Json::TYPE_ARRAY} and {@link Zend2_Json::TYPE_OBJECT} for
      * valid values
      * @return void
      */
@@ -133,15 +133,15 @@ class Decoder
      *         - array of one or more of the above types
      *
      * By default, decoded objects will be returned as associative arrays; to
-     * return a StdClass object instead, pass {@link Zend_Json::TYPE_OBJECT} to
+     * return a StdClass object instead, pass {@link Zend2_Json::TYPE_OBJECT} to
      * the $objectDecodeType parameter.
      *
      * @static
      * @access public
      * @param string $source String to be decoded
      * @param int $objectDecodeType How objects should be decoded; should be
-     * either or {@link Zend_Json::TYPE_ARRAY} or
-     * {@link Zend_Json::TYPE_OBJECT}; defaults to TYPE_ARRAY
+     * either or {@link Zend2_Json::TYPE_ARRAY} or
+     * {@link Zend2_Json::TYPE_OBJECT}; defaults to TYPE_ARRAY
      * @return mixed
      */
     public static function decode($source, $objectDecodeType = Json::TYPE_OBJECT)
@@ -179,7 +179,7 @@ class Decoder
      * Decodes an object of the form:
      *  { "attribute: value, "attribute2" : value,...}
      *
-     * If Zend_Json_Encoder was used to encode the original object then
+     * If Zend2_Json_Encoder was used to encode the original object then
      * a special attribute called __className which specifies a class
      * name that should wrap the data contained within the encoded source.
      *
@@ -188,7 +188,7 @@ class Decoder
      * array.
      *
      * @return array|StdClass
-     * @throws Zend\Json\Exception\RuntimeException
+     * @throws Zend2\Json\Exception\RuntimeException
      */
     protected function _decodeObject()
     {
@@ -245,7 +245,7 @@ class Decoder
      *    [element, element2,...,elementN]
      *
      * @return array
-     * @throws Zend\Json\Exception\RuntimeException
+     * @throws Zend2\Json\Exception\RuntimeException
      */
     protected function _decodeArray()
     {
@@ -296,7 +296,7 @@ class Decoder
      * Retrieves the next token from the source stream
      *
      * @return int Token constant value specified in class definition
-     * @throws Zend\Json\Exception\RuntimeException
+     * @throws Zend2\Json\Exception\RuntimeException
      */
     protected function _getNextToken()
     {

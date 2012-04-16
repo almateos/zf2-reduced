@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,31 +12,31 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Amf
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Amf
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Amf\Request;
-use Zend\Amf\Request as AMFRequest,
-    Zend\Amf\Parser,
-    Zend\Amf\Value,
-    Zend\Amf;
+namespace Zend2\Amf\Request;
+use Zend2\Amf\Request as AMFRequest,
+    Zend2\Amf\Parser,
+    Zend2\Amf\Value,
+    Zend2\Amf;
 
 /**
  * Handle the incoming AMF request by deserializing the data to php object
- * types and storing the data for Zend_Amf_Server to handle for processing.
+ * types and storing the data for Zend2_Amf_Server to handle for processing.
  *
  * @todo       Currently not checking if the object needs to be Type Mapped to a server object.
- * @uses       \Zend\Amf\Constants
- * @uses       \Zend\Amf\Exception
- * @uses       \Zend\Amf\Parser\Amf0\Deserializer
- * @uses       \Zend\Amf\Parser\InputStream
- * @uses       \Zend\Amf\Value\MessageBody
- * @uses       \Zend\Amf\Value\MessageHeader
- * @package    Zend_Amf
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Amf\Constants
+ * @uses       \Zend2\Amf\Exception
+ * @uses       \Zend2\Amf\Parser\Amf0\Deserializer
+ * @uses       \Zend2\Amf\Parser\InputStream
+ * @uses       \Zend2\Amf\Value\MessageBody
+ * @uses       \Zend2\Amf\Value\MessageHeader
+ * @package    Zend2_Amf
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class StreamRequest implements AMFRequest
@@ -62,12 +62,12 @@ class StreamRequest implements AMFRequest
     protected $_objectEncoding = 0;
 
     /**
-     * @var \Zend\Amf\Parser\InputStream
+     * @var \Zend2\Amf\Parser\InputStream
      */
     protected $_inputStream;
 
     /**
-     * @var Zend_Amf_Parse_AMF0_Deserializer
+     * @var Zend2_Amf_Parse_AMF0_Deserializer
      */
     protected $_deserializer;
 
@@ -81,7 +81,7 @@ class StreamRequest implements AMFRequest
      * Prepare the AMF InputStream for parsing.
      *
      * @param  string $request
-     * @return \Zend\Amf\Request\StreamRequest
+     * @return \Zend2\Amf\Request\StreamRequest
      */
     public function initialize($request)
     {
@@ -94,8 +94,8 @@ class StreamRequest implements AMFRequest
     /**
      * Takes the raw AMF input stream and converts it into valid PHP objects
      *
-     * @param  \Zend\Amf\Parser\InputStream
-     * @return \Zend\Amf\Request\StreamRequest
+     * @param  \Zend2\Amf\Parser\InputStream
+     * @return \Zend2\Amf\Request\StreamRequest
      */
     public function readMessage(Parser\InputStream $stream)
     {
@@ -134,7 +134,7 @@ class StreamRequest implements AMFRequest
      * - LENGTH Int
      * - DATA Object
      *
-     * @return \Zend\Amf\Value\MessageHeader
+     * @return \Zend2\Amf\Value\MessageHeader
      */
     public function readHeader()
     {
@@ -155,7 +155,7 @@ class StreamRequest implements AMFRequest
     /**
      * Deserialize a message body from the input stream
      *
-     * @return \Zend\Amf\Value\MessageBody
+     * @return \Zend2\Amf\Value\MessageBody
      */
     public function readBody()
     {
@@ -201,8 +201,8 @@ class StreamRequest implements AMFRequest
     /**
      * Accessor to private array of message bodies.
      *
-     * @param  \Zend\Amf\Value\MessageBody $message
-     * @return \Zend\Amf\Request\StreamRequest
+     * @param  \Zend2\Amf\Value\MessageBody $message
+     * @return \Zend2\Amf\Request\StreamRequest
      */
     public function addAmfBody(Value\MessageBody $message)
     {
@@ -234,7 +234,7 @@ class StreamRequest implements AMFRequest
      * Set the object response encoding
      *
      * @param  mixed $int
-     * @return \Zend\Amf\Request\StreamRequest
+     * @return \Zend2\Amf\Request\StreamRequest
      */
     public function setObjectEncoding($int)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,16 +12,16 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Gdata
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\GData\GApps;
+namespace Zend2\GData\GApps;
 
-use Zend\GData\GApps;
+use Zend2\GData\GApps;
 
 /**
  * Data model class for a Google Apps Nickname Entry.
@@ -29,41 +29,41 @@ use Zend\GData\GApps;
  * Each nickname entry describes a single nickname within a Google Apps
  * hosted domain. Each user may own several nicknames, but each nickname may
  * only belong to one user. Multiple entries are contained within instances
- * of Zend_Gdata_GApps_NicknameFeed.
+ * of Zend2_Gdata_GApps_NicknameFeed.
  *
  * To transfer nickname entries to and from the Google Apps servers,
  * including creating new entries, refer to the Google Apps service class,
- * Zend_Gdata_GApps.
+ * Zend2_Gdata_GApps.
  *
  * This class represents <atom:entry> in the Google Data protocol.
  *
- * @uses       \Zend\GData\Entry
- * @uses       \Zend\GData\GApps
- * @uses       \Zend\GData\GApps\Extension\Login
- * @uses       \Zend\GData\GApps\Extension\Nickname
- * @category   Zend
- * @package    Zend_Gdata
+ * @uses       \Zend2\GData\Entry
+ * @uses       \Zend2\GData\GApps
+ * @uses       \Zend2\GData\GApps\Extension\Login
+ * @uses       \Zend2\GData\GApps\Extension\Nickname
+ * @category   Zend2
+ * @package    Zend2_Gdata
  * @subpackage GApps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class NicknameEntry extends \Zend\GData\Entry
+class NicknameEntry extends \Zend2\GData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\GApps\NicknameEntry';
+    protected $_entryClassName = 'Zend2\GData\GApps\NicknameEntry';
 
     /**
      * <apps:login> element used to hold information about the owner
      * of this nickname, including their username.
      *
-     * @var \Zend\GData\GApps\Extension\Login
+     * @var \Zend2\GData\GApps\Extension\Login
      */
     protected $_login = null;
 
     /**
      * <apps:nickname> element used to hold the name of this nickname.
      *
-     * @var \Zend\GData\GApps\Extension\Nickname
+     * @var \Zend2\GData\GApps\Extension\Nickname
      */
     protected $_nickname = null;
 
@@ -131,7 +131,7 @@ class NicknameEntry extends \Zend\GData\Entry
      * Get the value of the login property for this object.
      *
      * @see setLogin
-     * @return \Zend\GData\GApps\Extension\Login The requested object.
+     * @return \Zend2\GData\GApps\Extension\Login The requested object.
      */
     public function getLogin()
     {
@@ -142,9 +142,9 @@ class NicknameEntry extends \Zend\GData\Entry
      * Set the value of the login property for this object. This property
      * is used to store the username address of the current user.
      *
-     * @param \Zend\GData\GApps\Extension\Login $value The desired value for
+     * @param \Zend2\GData\GApps\Extension\Login $value The desired value for
      *          this instance's login property.
-     * @return \Zend\GData\GApps\NicknameEntry Provides a fluent interface.
+     * @return \Zend2\GData\GApps\NicknameEntry Provides a fluent interface.
      */
     public function setLogin($value)
     {
@@ -156,7 +156,7 @@ class NicknameEntry extends \Zend\GData\Entry
      * Get the value of the nickname property for this object.
      *
      * @see setNickname
-     * @return \Zend\GData\GApps\Extension\Nickname The requested object.
+     * @return \Zend2\GData\GApps\Extension\Nickname The requested object.
      */
     public function getNickname()
     {
@@ -167,9 +167,9 @@ class NicknameEntry extends \Zend\GData\Entry
      * Set the value of the nickname property for this object. This property
      * is used to store the the name of the current nickname.
      *
-     * @param \Zend\GData\GApps\Extension\Nickname $value The desired value for
+     * @param \Zend2\GData\GApps\Extension\Nickname $value The desired value for
      *          this instance's nickname property.
-     * @return \Zend\GData\GApps\NicknameEntry Provides a fluent interface.
+     * @return \Zend2\GData\GApps\NicknameEntry Provides a fluent interface.
      */
     public function setNickname($value)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,26 +12,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_PDF
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_PDF
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Pdf;
+namespace Zend2\Pdf;
 
 /**
  * Style object.
  * Style object doesn't directly correspond to any PDF file object.
  * It's utility class, used as a container for style information.
- * It's used by \Zend\Pdf\Page class for draw operations.
+ * It's used by \Zend2\Pdf\Page class for draw operations.
  *
- * @uses       \Zend\Pdf\Color\
- * @uses       \Zend\Pdf\InternalType
- * @uses       \Zend\Pdf\Page
- * @uses       \Zend\Pdf\Resource\Font\AbstractFont
- * @package    Zend_PDF
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Pdf\Color\
+ * @uses       \Zend2\Pdf\InternalType
+ * @uses       \Zend2\Pdf\Page
+ * @uses       \Zend2\Pdf\Resource\Font\AbstractFont
+ * @package    Zend2_PDF
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Style
@@ -40,7 +40,7 @@ class Style
      * Fill color.
      * Used to fill geometric shapes or text.
      *
-     * @var \Zend\Pdf\Color|null
+     * @var \Zend2\Pdf\Color|null
      */
     private $_fillColor = null;
 
@@ -48,7 +48,7 @@ class Style
      * Line color.
      * Current color, used for lines and font outlines.
      *
-     * @var \Zend\Pdf\Color|null
+     * @var \Zend2\Pdf\Color|null
      */
 
     private $_color;
@@ -56,7 +56,7 @@ class Style
     /**
      * Line width.
      *
-     * @var \Zend\Pdf\InternalType\NumericObject
+     * @var \Zend2\Pdf\InternalType\NumericObject
      */
     private $_lineWidth;
 
@@ -79,7 +79,7 @@ class Style
     /**
      * Current font
      *
-     * @var \Zend\Pdf\Resource\Font\AbstractFont
+     * @var \Zend2\Pdf\Resource\Font\AbstractFont
      */
     private $_font;
 
@@ -95,7 +95,7 @@ class Style
     /**
      * Create style.
      *
-     * @param \Zend\Pdf\Style $anotherStyle
+     * @param \Zend2\Pdf\Style $anotherStyle
      */
     public function __construct($anotherStyle = null)
     {
@@ -114,7 +114,7 @@ class Style
     /**
      * Set fill color.
      *
-     * @param \Zend\Pdf\Color $color
+     * @param \Zend2\Pdf\Color $color
      */
     public function setFillColor(Color $color)
     {
@@ -124,7 +124,7 @@ class Style
     /**
      * Set line color.
      *
-     * @param \Zend\Pdf\Color $color
+     * @param \Zend2\Pdf\Color $color
      */
     public function setLineColor(Color $color)
     {
@@ -163,7 +163,7 @@ class Style
     /**
      * Set current font.
      *
-     * @param \Zend\Pdf\Resource\Font\AbstractFont $font
+     * @param \Zend2\Pdf\Resource\Font\AbstractFont $font
      * @param float $fontSize
      */
     public function setFont(Resource\Font\AbstractFont $font, $fontSize)
@@ -185,7 +185,7 @@ class Style
     /**
      * Get fill color.
      *
-     * @return \Zend\Pdf\Color|null
+     * @return \Zend2\Pdf\Color|null
      */
     public function getFillColor()
     {
@@ -195,7 +195,7 @@ class Style
     /**
      * Get line color.
      *
-     * @return \Zend\Pdf\Color|null
+     * @return \Zend2\Pdf\Color|null
      */
     public function getLineColor()
     {
@@ -226,7 +226,7 @@ class Style
     /**
      * Get current font.
      *
-     * @return \Zend\Pdf\Resource\Font\AbstractFont $font
+     * @return \Zend2\Pdf\Resource\Font\AbstractFont $font
      */
     public function getFont()
     {

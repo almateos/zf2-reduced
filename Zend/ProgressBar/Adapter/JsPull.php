@@ -10,26 +10,26 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_ProgressBar
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_ProgressBar
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\ProgressBar\Adapter;
+namespace Zend2\ProgressBar\Adapter;
 
-use Zend\Json\Json;
+use Zend2\Json\Json;
 
 /**
- * Zend_ProgressBar_Adapter_JsPull offers a simple method for updating a
+ * Zend2_ProgressBar_Adapter_JsPull offers a simple method for updating a
  * progressbar in a browser.
  *
- * @uses      \Zend\Json\Json
- * @uses      \Zend\ProgressBar\Adapter\Adapter
- * @category  Zend
- * @package   Zend_ProgressBar
- * @uses      Zend_ProgressBar_Adapter_Interface
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses      \Zend2\Json\Json
+ * @uses      \Zend2\ProgressBar\Adapter\Adapter
+ * @category  Zend2
+ * @package   Zend2_ProgressBar
+ * @uses      Zend2_ProgressBar_Adapter_Interface
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class JsPull extends AbstractAdapter
@@ -45,7 +45,7 @@ class JsPull extends AbstractAdapter
      * Set wether to exit after json data send or not
      *
      * @param  boolean $exitAfterSend
-     * @return \Zend\ProgressBar\Adapter\JsPull
+     * @return \Zend2\ProgressBar\Adapter\JsPull
      */
     public function setExitAfterSend($exitAfterSend)
     {
@@ -53,7 +53,7 @@ class JsPull extends AbstractAdapter
     }
 
     /**
-     * Defined by Zend_ProgressBar_Adapter_Interface
+     * Defined by Zend2_ProgressBar_Adapter_Interface
      *
      * @param  float   $current       Current progress value
      * @param  float   $max           Max progress value
@@ -82,7 +82,7 @@ class JsPull extends AbstractAdapter
     }
 
     /**
-     * Defined by Zend_ProgressBar_Adapter_Interface
+     * Defined by Zend2_ProgressBar_Adapter_Interface
      *
      * @return void
      */

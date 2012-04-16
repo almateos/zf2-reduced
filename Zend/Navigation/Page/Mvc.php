@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Navigation
+ * @category   Zend2
+ * @package    Zend2_Navigation
  * @subpackage Page
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Navigation\Page;
+namespace Zend2\Navigation\Page;
 
-use Zend\Mvc\Router\RouteMatch,
-    Zend\Navigation\Exception,
-    Zend\View\Helper\Url as UrlHelper;
+use Zend2\Mvc\Router\RouteMatch,
+    Zend2\Navigation\Exception,
+    Zend2\View\Helper\Url as UrlHelper;
 
 /**
  * Represents a page that is defined using controller, action, route
  * name and route params to assemble the href
  *
- * @category   Zend
- * @package    Zend_Navigation
+ * @category   Zend2
+ * @package    Zend2_Navigation
  * @subpackage Page
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Mvc extends AbstractPage
@@ -186,7 +186,7 @@ class Mvc extends AbstractPage
         if (!$helper instanceof UrlHelper) {
             throw new Exception\DomainException(
                 __METHOD__
-                . ' cannot execute as no Zend\View\Helper\Url instance is composed'
+                . ' cannot execute as no Zend2\View\Helper\Url instance is composed'
             );
         }
 

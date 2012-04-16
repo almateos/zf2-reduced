@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Validator;
+namespace Zend2\Validator;
 
-use Zend\Config\Config;
+use Zend2\Config\Config;
 
 /**
- * @uses       \Zend\Validator\AbstractValidator
- * @uses       \Zend\Validator\Exception
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       \Zend2\Validator\AbstractValidator
+ * @uses       \Zend2\Validator\Exception
+ * @category   Zend2
+ * @package    Zend2_Validate
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class LessThan extends AbstractValidator
@@ -120,7 +120,7 @@ class LessThan extends AbstractValidator
      * Sets the max option
      *
      * @param  mixed $max
-     * @return \Zend\Validator\LessThan Provides a fluent interface
+     * @return \Zend2\Validator\LessThan Provides a fluent interface
      */
     public function setMax($max)
     {
@@ -142,7 +142,7 @@ class LessThan extends AbstractValidator
      * Sets the inclusive option
      *
      * @param  boolean $inclusive
-     * @return \Zend\Validator\LessThan Provides a fluent interface
+     * @return \Zend2\Validator\LessThan Provides a fluent interface
      */
     public function setInclusive($inclusive)
     {

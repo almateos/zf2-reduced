@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,37 +12,37 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Dojo
+ * @category   Zend2
+ * @package    Zend2_Dojo
  * @subpackage View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Dojo\View\Helper\Dojo;
+namespace Zend2\Dojo\View\Helper\Dojo;
 
-use Zend\Dojo\View\Exception,
-    Zend\Dojo\View\Helper\Dojo as DojoHelper,
-    Zend\Config\Config,
-    Zend\View\Renderer as View,
-    Zend\Json\Json;
+use Zend2\Dojo\View\Exception,
+    Zend2\Dojo\View\Helper\Dojo as DojoHelper,
+    Zend2\Config\Config,
+    Zend2\View\Renderer as View,
+    Zend2\Json\Json;
 
 /**
  * Container for  Dojo View Helper
  *
- * @uses       \Zend\Dojo\Dojo
- * @uses       \Zend\Dojo\View\Exception
- * @uses       \Zend\Dojo\View\Helper\Dojo
- * @uses       \Zend\Json\Json
- * @package    Zend_Dojo
+ * @uses       \Zend2\Dojo\Dojo
+ * @uses       \Zend2\Dojo\View\Exception
+ * @uses       \Zend2\Dojo\View\Helper\Dojo
+ * @uses       \Zend2\Json\Json
+ * @package    Zend2_Dojo
  * @subpackage View
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Container
 {
     /**
-     * @var \Zend\View\Renderer
+     * @var \Zend2\View\Renderer
      */
     public $view;
 
@@ -62,13 +62,13 @@ class Container
      * Base CDN url to utilize
      * @var string
      */
-    protected $_cdnBase = \Zend\Dojo\Dojo::CDN_BASE_GOOGLE;
+    protected $_cdnBase = \Zend2\Dojo\Dojo::CDN_BASE_GOOGLE;
 
     /**
      * Path segment following version string of CDN path
      * @var string
      */
-    protected $_cdnDojoPath = \Zend\Dojo\Dojo::CDN_DOJO_PATH_GOOGLE;
+    protected $_cdnDojoPath = \Zend2\Dojo\Dojo::CDN_DOJO_PATH_GOOGLE;
 
     /**
      * Dojo version to use from CDN
@@ -167,7 +167,7 @@ class Container
     protected $_stylesheets = array();
 
     /**
-     * Array of onLoad events specific to Zend_Dojo integration operations
+     * Array of onLoad events specific to Zend2_Dojo integration operations
      * @var array
      */
     protected $_zendLoadActions = array();
@@ -175,7 +175,7 @@ class Container
     /**
      * Set view object
      *
-     * @param  Zend\View\Interface $view
+     * @param  Zend2\View\Interface $view
      * @return void
      */
     public function setView(View $view)
@@ -186,7 +186,7 @@ class Container
     /**
      * Enable dojo
      *
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function enable()
     {
@@ -197,7 +197,7 @@ class Container
     /**
      * Disable dojo
      *
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function disable()
     {
@@ -218,8 +218,8 @@ class Container
     /**
      * Add options for the Dojo Container to use
      *
-     * @param array|\Zend\Config\Config Array or \Zend\Config\Config object with options to use
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @param array|\Zend2\Config\Config Array or \Zend2\Config\Config object with options to use
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function setOptions($options)
     {
@@ -290,7 +290,7 @@ class Container
      * Specify one or multiple modules to require
      *
      * @param  string|array $modules
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function requireModule($modules)
     {
@@ -328,7 +328,7 @@ class Container
      *
      * @param  string $module The module to register a path for
      * @param  string $path The path to register for the module
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function registerModulePath($module, $path)
     {
@@ -354,7 +354,7 @@ class Container
      * Add layer (custom build) path
      *
      * @param  string $path
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function addLayer($path)
     {
@@ -380,7 +380,7 @@ class Container
      * Remove a registered layer
      *
      * @param  string $path
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function removeLayer($path)
     {
@@ -396,7 +396,7 @@ class Container
     /**
      * Clear all registered layers
      *
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function clearLayers()
     {
@@ -408,7 +408,7 @@ class Container
      * Set CDN base path
      *
      * @param  string $url
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function setCdnBase($url)
     {
@@ -430,7 +430,7 @@ class Container
      * Use CDN, using version specified
      *
      * @param  string $version
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function setCdnVersion($version = null)
     {
@@ -455,7 +455,7 @@ class Container
      * Set CDN path to dojo (relative to CDN base + version)
      *
      * @param  string $path
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function setCdnDojoPath($path)
     {
@@ -487,7 +487,7 @@ class Container
      * Set path to local dojo
      *
      * @param  string $path
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function setLocalPath($path)
     {
@@ -521,7 +521,7 @@ class Container
      *
      * @param  string $option
      * @param  mixed $value
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function setDjConfig(array $config)
     {
@@ -534,7 +534,7 @@ class Container
      *
      * @param  string $option
      * @param  mixed $value
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function setDjConfigOption($option, $value)
     {
@@ -573,7 +573,7 @@ class Container
      * Add a stylesheet by module name
      *
      * @param  string $module
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function addStylesheetModule($module)
     {
@@ -600,7 +600,7 @@ class Container
      * Add a stylesheet
      *
      * @param  string $path
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function addStylesheet($path)
     {
@@ -618,7 +618,7 @@ class Container
      * the flag and returns the object.
      *
      * @param  null|bool $flag
-     * @return \Zend\Dojo\View\Helper\Dojo\Container|bool
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container|bool
      */
     public function registerDojoStylesheet($flag = null)
     {
@@ -648,7 +648,7 @@ class Container
      * - lambda
      *
      * @param  string $callback Lambda
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function addOnLoad($callback)
     {
@@ -662,7 +662,7 @@ class Container
      * Prepend an onLoad event to the list of onLoad actions
      *
      * @param  string $callback Lambda
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function prependOnLoad($callback)
     {
@@ -717,7 +717,7 @@ class Container
      *
      * @param  string $id
      * @param  array $params
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function addDijit($id, array $params)
     {
@@ -738,7 +738,7 @@ class Container
      *
      * @param  string $id
      * @param  array $params
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function setDijit($id, array $params)
     {
@@ -752,7 +752,7 @@ class Container
      * Expects an array of id => array $params pairs
      *
      * @param  array $dijits
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function addDijits(array $dijits)
     {
@@ -768,7 +768,7 @@ class Container
      * Expects an array of id => array $params pairs
      *
      * @param  array $dijits
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function setDijits(array $dijits)
     {
@@ -817,7 +817,7 @@ class Container
      * Remove a programmatic dijit if it exists
      *
      * @param  string $id
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function removeDijit($id)
     {
@@ -831,7 +831,7 @@ class Container
     /**
      * Clear all dijits
      *
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function clearDijits()
     {
@@ -869,7 +869,7 @@ function() {
 }
 EOJ;
             $this->requireModule('dojo.parser');
-            $this->_addZendLoad($js);
+            $this->_addZend2Load($js);
             $this->addJavascript('var zendDijits = ' . $this->dijitsToJson() . ';');
             $this->_dijitLoaderRegistered = true;
         }
@@ -879,7 +879,7 @@ EOJ;
      * Add arbitrary javascript to execute in dojo JS container
      *
      * @param  string $js
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function addJavascript($js)
     {
@@ -909,7 +909,7 @@ EOJ;
     /**
      * Clear arbitrary javascript stack
      *
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
     public function clearJavascript()
     {
@@ -1136,9 +1136,9 @@ EOJ;
         }
 
         $onLoadActions = array();
-        // Get Zend specific onLoad actions; these will always be first to
+        // Get Zend2 specific onLoad actions; these will always be first to
         // ensure that dijits are created in the correct order
-        foreach ($this->_getZendLoadActions() as $callback) {
+        foreach ($this->_getZend2LoadActions() as $callback) {
             $onLoadActions[] = 'dojo.addOnLoad(' . $callback . ');';
         }
 
@@ -1183,9 +1183,9 @@ EOJ;
      * creation.
      *
      * @param  string $callback
-     * @return \Zend\Dojo\View\Helper\Dojo\Container
+     * @return \Zend2\Dojo\View\Helper\Dojo\Container
      */
-    public function _addZendLoad($callback)
+    public function _addZend2Load($callback)
     {
         if (!in_array($callback, $this->_zendLoadActions, true)) {
             $this->_zendLoadActions[] = $callback;
@@ -1198,7 +1198,7 @@ EOJ;
      *
      * @return array
      */
-    public function _getZendLoadActions()
+    public function _getZend2LoadActions()
     {
         return $this->_zendLoadActions;
     }

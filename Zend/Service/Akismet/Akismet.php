@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,27 +12,27 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Akismet
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Akismet;
-use Zend\Http,
-    Zend\Uri;
+namespace Zend2\Service\Akismet;
+use Zend2\Http,
+    Zend2\Uri;
 
 /**
  * Akismet REST service implementation
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Akismet
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Akismet extends \Zend\Service\AbstractService
+class Akismet extends \Zend2\Service\AbstractService
 {
     /**
      * Akismet API key
@@ -75,7 +75,7 @@ class Akismet extends \Zend\Service\AbstractService
     {
         $this->setBlogUrl($blog)
              ->setApiKey($apiKey)
-             ->setUserAgent('Zend Framework/' . \Zend\Version::VERSION . ' | Akismet/1.11');
+             ->setUserAgent('Zend2 Framework/' . \Zend2\Version::VERSION . ' | Akismet/1.11');
     }
 
     /**
@@ -92,8 +92,8 @@ class Akismet extends \Zend\Service\AbstractService
      * Set blog URL
      *
      * @param string $blogUrl
-     * @return Zend_Service_Akismet
-     * @throws Zend\Service\Exception if invalid URL provided
+     * @return Zend2_Service_Akismet
+     * @throws Zend2\Service\Exception if invalid URL provided
      */
     public function setBlogUrl($blogUrl)
     {
@@ -119,7 +119,7 @@ class Akismet extends \Zend\Service\AbstractService
      * Set API key
      *
      * @param string $apiKey
-     * @return Zend_Service_Akismet
+     * @return Zend2_Service_Akismet
      */
     public function setApiKey($apiKey)
     {
@@ -141,7 +141,7 @@ class Akismet extends \Zend\Service\AbstractService
      * Set charset
      *
      * @param string $charset
-     * @return Zend_Service_Akismet
+     * @return Zend2_Service_Akismet
      */
     public function setCharset($charset)
     {
@@ -163,8 +163,8 @@ class Akismet extends \Zend\Service\AbstractService
      * Set TCP/IP port
      *
      * @param int $port
-     * @return Zend_Service_Akismet
-     * @throws Zend\Service\Exception if non-integer value provided
+     * @return Zend2_Service_Akismet
+     * @throws Zend2\Service\Exception if non-integer value provided
      */
     public function setPort($port)
     {
@@ -192,8 +192,8 @@ class Akismet extends \Zend\Service\AbstractService
      * Should be of form "Some user agent/version | Akismet/version"
      *
      * @param string $userAgent
-     * @return Zend_Service_Akismet
-     * @throws Zend\Service\Exception with invalid user agent string
+     * @return Zend2_Service_Akismet
+     * @throws Zend2\Service\Exception with invalid user agent string
      */
     public function setUserAgent($userAgent)
     {
@@ -264,8 +264,8 @@ class Akismet extends \Zend\Service\AbstractService
      *
      * @param string $path
      * @param array $params
-     * @return Zend_Http_Response
-     * @throws Zend\Service\Exception if missing user_ip or user_agent fields
+     * @return Zend2_Http_Response
+     * @throws Zend2\Service\Exception if missing user_ip or user_agent fields
      */
     protected function _makeApiCall($path, $params)
     {
@@ -304,7 +304,7 @@ class Akismet extends \Zend\Service\AbstractService
      *
      * @param array $params
      * @return boolean
-     * @throws Zend\Service\Exception with invalid API key
+     * @throws Zend2\Service\Exception with invalid API key
      */
     public function isSpam($params)
     {
@@ -334,7 +334,7 @@ class Akismet extends \Zend\Service\AbstractService
      *
      * @param array $params
      * @return void
-     * @throws Zend\Service\Exception with invalid API key
+     * @throws Zend2\Service\Exception with invalid API key
      */
     public function submitSpam($params)
     {

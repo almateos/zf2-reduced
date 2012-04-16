@@ -1,10 +1,10 @@
 <?php
 
-namespace Zend\Currency\Exception;
+namespace Zend2\Currency\Exception;
 
 class RuntimeException
     extends \RuntimeException
-    implements \Zend\Currency\Exception
+    implements \Zend2\Currency\Exception
 {
     
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,22 +12,22 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Db
+ * @category   Zend2
+ * @package    Zend2_Db
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Db\Adapter\Driver\Mysqli;
+namespace Zend2\Db\Adapter\Driver\Mysqli;
 
-use Zend\Db\Adapter\Driver\ConnectionInterface;
+use Zend2\Db\Adapter\Driver\ConnectionInterface;
 
 /**
- * @category   Zend
- * @package    Zend_Db
+ * @category   Zend2
+ * @package    Zend2_Db
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Connection implements ConnectionInterface
@@ -271,7 +271,7 @@ class Connection implements ConnectionInterface
 
         // if the returnValue is something other than a mysqli_result, bypass wrapping it
         if ($resultResource === false) {
-            throw new \Zend\Db\Adapter\Exception\InvalidQueryException($this->resource->error);
+            throw new \Zend2\Db\Adapter\Exception\InvalidQueryException($this->resource->error);
         }
 
         $resultPrototype = $this->driver->createResult(($resultResource === true) ? $this->resource : $resultResource);

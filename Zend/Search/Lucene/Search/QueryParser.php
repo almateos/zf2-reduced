@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,34 +12,34 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Search\Lucene\Search;
+namespace Zend2\Search\Lucene\Search;
 
-use Zend\Search\Lucene,
-	Zend\Search\Lucene\Analysis\Analyzer,
-	Zend\Search\Lucene\Index,
-	Zend\Search\Lucene\Search\Exception\QueryParserException,
-	Zend\Search\Lucene\Exception\RuntimeException;
+use Zend2\Search\Lucene,
+	Zend2\Search\Lucene\Analysis\Analyzer,
+	Zend2\Search\Lucene\Index,
+	Zend2\Search\Lucene\Search\Exception\QueryParserException,
+	Zend2\Search\Lucene\Exception\RuntimeException;
 
 /**
- * @uses       \Zend\Search\Lucene\Analysis\Analyzer
- * @uses       \Zend\Search\Lucene
- * @uses       \Zend\Search\Lucene\Index\Term
- * @uses       \Zend\Search\Lucene\Search
- * @uses       \Zend\Search\Lucene\Search\QueryEntry
- * @uses       \Zend\Search\Lucene\Search\Query
- * @uses	   \Zend\Search\Lucene\Search\Exception\QueryParserException
- * @uses	   \Zend\Search\Lucene\Exception\RuntimeException
- * @category   Zend
- * @package    Zend_Search_Lucene
+ * @uses       \Zend2\Search\Lucene\Analysis\Analyzer
+ * @uses       \Zend2\Search\Lucene
+ * @uses       \Zend2\Search\Lucene\Index\Term
+ * @uses       \Zend2\Search\Lucene\Search
+ * @uses       \Zend2\Search\Lucene\Search\QueryEntry
+ * @uses       \Zend2\Search\Lucene\Search\Query
+ * @uses	   \Zend2\Search\Lucene\Search\Exception\QueryParserException
+ * @uses	   \Zend2\Search\Lucene\Exception\RuntimeException
+ * @category   Zend2
+ * @package    Zend2_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class QueryParser extends Lucene\AbstractFSM
@@ -47,7 +47,7 @@ class QueryParser extends Lucene\AbstractFSM
     /**
      * Parser instance
      *
-     * @var \Zend\Search\Lucene\Search\QueryParser
+     * @var \Zend2\Search\Lucene\Search\QueryParser
      */
     private static $_instance = null;
 
@@ -55,13 +55,13 @@ class QueryParser extends Lucene\AbstractFSM
     /**
      * Query lexer
      *
-     * @var \Zend\Search\Lucene\Search\QueryLexer
+     * @var \Zend2\Search\Lucene\Search\QueryLexer
      */
     private $_lexer;
 
     /**
      * Tokens list
-     * Array of Zend_Search_Lucene_Search_QueryToken objects
+     * Array of Zend2_Search_Lucene_Search_QueryToken objects
      *
      * @var array
      */
@@ -79,7 +79,7 @@ class QueryParser extends Lucene\AbstractFSM
      *
      * It can be processed within FSM states, but this addirional state simplifies FSM
      *
-     * @var \Zend\Search\Lucene\Search\QueryToken
+     * @var \Zend2\Search\Lucene\Search\QueryToken
      */
     private $_lastToken = null;
 
@@ -93,7 +93,7 @@ class QueryParser extends Lucene\AbstractFSM
     /**
      * Current query parser context
      *
-     * @var \Zend\Search\Lucene\Search\QueryParserContext
+     * @var \Zend2\Search\Lucene\Search\QueryParserContext
      */
     private $_context;
 
@@ -130,9 +130,9 @@ class QueryParser extends Lucene\AbstractFSM
      *
      * Default is true.
      *
-     * Use {@link Zend_Search_Lucene::suppressQueryParsingExceptions()},
-     * {@link Zend_Search_Lucene::dontSuppressQueryParsingExceptions()} and
-     * {@link Zend_Search_Lucene::checkQueryParsingExceptionsSuppressMode()} to operate
+     * Use {@link Zend2_Search_Lucene::suppressQueryParsingExceptions()},
+     * {@link Zend2_Search_Lucene::dontSuppressQueryParsingExceptions()} and
+     * {@link Zend2_Search_Lucene::checkQueryParsingExceptionsSuppressMode()} to operate
      * with this setting.
      *
      * @var boolean
@@ -257,7 +257,7 @@ class QueryParser extends Lucene\AbstractFSM
     /**
      * Get query parser instance
      *
-     * @return \Zend\Search\Lucene\Search\QueryParser
+     * @return \Zend2\Search\Lucene\Search\QueryParser
      */
     private static function _getInstance()
     {
@@ -347,9 +347,9 @@ class QueryParser extends Lucene\AbstractFSM
      *
      * @param string $strQuery
      * @param string $encoding
-     * @throws \Zend\Search\Lucene\Search\Exception\QueryParserException
-     * @throws \Zend\Search\Lucene\Exception\RuntimeException
-     * @return \Zend\Search\Lucene\Search\Query\AbstractQuery
+     * @throws \Zend2\Search\Lucene\Search\Exception\QueryParserException
+     * @throws \Zend2\Search\Lucene\Exception\RuntimeException
+     * @return \Zend2\Search\Lucene\Search\Query\AbstractQuery
      */
     public static function parse($strQuery, $encoding = null)
     {
@@ -463,8 +463,8 @@ class QueryParser extends Lucene\AbstractFSM
     /**
      * Process modifier parameter
      *
-     * @throws \Zend\Search\Lucene\Search\Exception\QueryParserException
-     * @throws \Zend\Search\Lucene\Exception\RuntimeException
+     * @throws \Zend2\Search\Lucene\Search\Exception\QueryParserException
+     * @throws \Zend2\Search\Lucene\Exception\RuntimeException
      */
     public function processModifierParameter()
     {
@@ -531,7 +531,7 @@ class QueryParser extends Lucene\AbstractFSM
     /**
      * Process last range query term (opened interval)
      *
-     * @throws \Zend\Search\Lucene\Search\Exception\QueryParserException
+     * @throws \Zend2\Search\Lucene\Search\Exception\QueryParserException
      */
     public function openedRQLastTerm()
     {
@@ -573,7 +573,7 @@ class QueryParser extends Lucene\AbstractFSM
     /**
      * Process last range query term (closed interval)
      *
-     * @throws \Zend\Search\Lucene\Search\Exception\QueryParserException
+     * @throws \Zend2\Search\Lucene\Search\Exception\QueryParserException
      */
     public function closedRQLastTerm()
     {

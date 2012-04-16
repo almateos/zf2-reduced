@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,32 +12,32 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Captcha
+ * @category   Zend2
+ * @package    Zend2_Captcha
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Captcha;
+namespace Zend2\Captcha;
 
 use Traversable,
-    Zend\Config\Config;
+    Zend2\Config\Config;
 
 /**
  * Base class for Captcha adapters
  *
  * Provides some utility functionality to build on
  *
- * @uses       Zend\Captcha\Adapter
- * @uses       Zend\Validator\AbstractValidator
- * @category   Zend
- * @package    Zend_Captcha
+ * @uses       Zend2\Captcha\Adapter
+ * @uses       Zend2\Validator\AbstractValidator
+ * @category   Zend2
+ * @package    Zend2_Captcha
  * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class AbstractAdapter extends \Zend\Validator\AbstractValidator implements Adapter
+abstract class AbstractAdapter extends \Zend2\Validator\AbstractValidator implements Adapter
 {
     /**
      * Element name
@@ -88,7 +88,7 @@ abstract class AbstractAdapter extends \Zend\Validator\AbstractValidator impleme
     /**
      * Constructor
      *
-     * @param  array|Zend\Config\Config $options
+     * @param  array|Zend2\Config\Config $options
      * @return void
      */
     public function __construct($options = null)
@@ -106,7 +106,7 @@ abstract class AbstractAdapter extends \Zend\Validator\AbstractValidator impleme
      *
      * @param string $key
      * @param string $value
-     * @return Zend_Form_Element
+     * @return Zend2_Form_Element
      */
     public function setOption($key, $value)
     {
@@ -131,7 +131,7 @@ abstract class AbstractAdapter extends \Zend\Validator\AbstractValidator impleme
      * Set object state from options array
      *
      * @param  array|Traversable $options
-     * @return Zend_Form_Element
+     * @return Zend2_Form_Element
      */
     public function setOptions($options = array())
     {
@@ -158,8 +158,8 @@ abstract class AbstractAdapter extends \Zend\Validator\AbstractValidator impleme
     /**
      * Set object state from config object
      *
-     * @param  Zend\Config\Config $config
-     * @return Zend\Captcha\AbstractAdapter
+     * @param  Zend2\Config\Config $config
+     * @return Zend2\Captcha\AbstractAdapter
      */
     public function setConfig(Config $config)
     {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Zend\Amf\Exception;
+namespace Zend2\Amf\Exception;
 
 class RuntimeException
     extends \RuntimeException
-    implements \Zend\Amf\Exception
+    implements \Zend2\Amf\Exception
 {
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Zend\InfoCard\XML\Security\Exception;
+namespace Zend2\InfoCard\XML\Security\Exception;
 
 class ExtensionNotLoadedException
     extends \RuntimeException
-    implements \Zend\InfoCard\XML\Security\Exception
+    implements \Zend2\InfoCard\XML\Security\Exception
 {}

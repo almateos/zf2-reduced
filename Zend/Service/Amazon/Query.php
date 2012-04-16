@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,23 +12,23 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @category   Zend
- * @package    Zend_Service
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\Service\Amazon;
-use Zend\Service\Amazon\Exception;
+namespace Zend2\Service\Amazon;
+use Zend2\Service\Amazon\Exception;
 
 /**
- * @uses       Zend_Service_Amazon
- * @uses       \Zend\Service\Amazon\Exception
- * @category   Zend
- * @package    Zend_Service
+ * @uses       Zend2_Service_Amazon
+ * @uses       \Zend2\Service\Amazon\Exception
+ * @category   Zend2
+ * @package    Zend2_Service
  * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Query extends Amazon
@@ -52,8 +52,8 @@ class Query extends Amazon
      *
      * @param  string $method
      * @param  array  $args
-     * @throws \Zend\Service\Amazon\Exception
-     * @return Zend_Service_Amazon_Query Provides a fluent interface
+     * @throws \Zend2\Service\Amazon\Exception
+     * @return Zend2_Service_Amazon_Query Provides a fluent interface
      */
     public function __call($method, $args)
     {
@@ -78,7 +78,7 @@ class Query extends Amazon
     /**
      * Search using the prepared query
      *
-     * @return Zend_Service_Amazon_Item|Zend_Service_Amazon_ResultSet
+     * @return Zend2_Service_Amazon_Item|Zend2_Service_Amazon_ResultSet
      */
     public function search()
     {

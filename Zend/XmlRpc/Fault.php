@@ -1,6 +1,6 @@
 <?php
 /**
- * Zend Framework
+ * Zend2 Framework
  *
  * LICENSE
  *
@@ -12,13 +12,13 @@
  * obtain it through the world-wide-web, please send an email
  * to license@zend.com so we can send you a copy immediately.
  *
- * @package    Zend_XmlRpc
+ * @package    Zend2_XmlRpc
  * @subpackage Server
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-namespace Zend\XmlRpc;
+namespace Zend2\XmlRpc;
 
 /**
  * XMLRPC Faults
@@ -28,14 +28,14 @@ namespace Zend\XmlRpc;
  * fault, as well as generating the XML for an XMLRPC fault response.
  *
  * To allow method chaining, you may only use the {@link getInstance()} factory
- * to instantiate a Zend_XmlRpc_Server_Fault.
+ * to instantiate a Zend2_XmlRpc_Server_Fault.
  *
  * @uses       SimpleXMLElement
- * @uses       Zend\XmlRpc\Exception
- * @uses       Zend\XmlRpc\Value\Value
- * @category   Zend
- * @package    Zend_XmlRpc
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @uses       Zend2\XmlRpc\Exception
+ * @uses       Zend2\XmlRpc\Value\Value
+ * @category   Zend2
+ * @package    Zend2_XmlRpc
+ * @copyright  Copyright (c) 2005-2012 Zend2 Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Fault
@@ -118,7 +118,7 @@ class Fault
      * Set the fault code
      *
      * @param int $code
-     * @return Zend\XmlRpc\Fault
+     * @return Zend2\XmlRpc\Fault
      */
     public function setCode($code)
     {
@@ -140,7 +140,7 @@ class Fault
      * Retrieve fault message
      *
      * @param string
-     * @return Zend\XmlRpc\Fault
+     * @return Zend2\XmlRpc\Fault
      */
     public function setMessage($message)
     {
@@ -162,7 +162,7 @@ class Fault
      * Set encoding to use in fault response
      *
      * @param string $encoding
-     * @return Zend\XmlRpc\Fault
+     * @return Zend2\XmlRpc\Fault
      */
     public function setEncoding($encoding)
     {
@@ -187,7 +187,7 @@ class Fault
      * @param string $fault
      * @return boolean Returns true if successfully loaded fault response, false
      * if response was not a fault response
-     * @throws Zend\XmlRpc\Exception if no or faulty XML provided, or if fault
+     * @throws Zend2\XmlRpc\Exception if no or faulty XML provided, or if fault
      * response does not contain either code or message
      */
     public function loadXml($fault)
